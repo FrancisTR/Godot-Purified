@@ -37,7 +37,7 @@ text = "Option"
 layout_mode = 2
 text = "Exit"
 
-[node name="Label" type="Label" parent="."]
+[node name="TitleLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -49,4 +49,5 @@ grow_horizontal = 2
 text = "Game Title"
 vertical_alignment = 1
 
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
