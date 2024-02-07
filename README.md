@@ -20,7 +20,7 @@ If you want to take a look into the Godot Project, please do the following:
 
 ## Members
 - Francis (Game Producer)
-- John (Programmer)
+- John (Associate Producer)
 - Ben (Writer)
 - Zack (Co-Writer)
 - Michelle (Asset Designer)
