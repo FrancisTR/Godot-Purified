@@ -27,6 +27,7 @@ grow_vertical = 2
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ExitButton")
 text = "Start"
 
 [node name="OptionButton" type="Button" parent="VBoxContainer"]
@@ -35,6 +36,7 @@ text = "Option"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../StartButton")
 text = "Exit"
 
 [node name="TitleLabel" type="Label" parent="."]
