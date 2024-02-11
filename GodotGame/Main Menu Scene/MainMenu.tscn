@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4dhom44jopn2"]
+[gd_scene load_steps=3 format=3 uid="uid://c4dhom44jopn2"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/MainMenu.gd" id="1_m2j1f"]
+[ext_resource type="Texture2D" uid="uid://bipqa3xtfks8q" path="res://Assets/Tilesets/Water.png" id="2_3q7c4"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -10,6 +11,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m2j1f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3q7c4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -40,15 +51,19 @@ focus_neighbor_bottom = NodePath("../StartButton")
 text = "Exit"
 
 [node name="TitleLabel" type="Label" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -42.0
-offset_right = 42.0
-offset_bottom = 177.0
+offset_left = -130.0
+offset_top = 118.0
+offset_right = 130.0
+offset_bottom = 210.0
 grow_horizontal = 2
-text = "Game Title"
+theme_override_font_sizes/font_size = 50
+text = "Purified"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
