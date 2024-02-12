@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://decpyxnu3oocl"]
+
+[ext_resource type="Script" path="res://npc.gd" id="1_7ll4o"]
+[ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="1_we8v3"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_kithy"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_1oy2a"]
+[ext_resource type="Resource" uid="uid://cfcts3ec03suv" path="res://DialogueTest.tres" id="4_xa54b"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_hejlf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cu33"]
+atlas = ExtResource("1_we8v3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bxftl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cu33")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bc547"]
+size = Vector2(34, 37)
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_66oxl"]
+script = ExtResource("4_1oy2a")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_emjeb"]
+script = ExtResource("5_hejlf")
+
+[node name="NPC" type="Area2D"]
+script = ExtResource("1_7ll4o")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_bxftl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -0.5)
+shape = SubResource("RectangleShape2D_bc547")
+
+[node name="DialogueBox" type="Panel" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(256, 128)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -286.0
+offset_top = -160.0
+offset_right = 286.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_kithy")
+dialogue_data = ExtResource("4_xa54b")
+start_id = "NPC1"
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_66oxl"), SubResource("RichTextEffect_emjeb")])
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
