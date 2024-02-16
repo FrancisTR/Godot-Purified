@@ -14,7 +14,7 @@ nodes = {
 "start_id": "NPC1"
 },
 "1_1": {
-"dialogue": "Hello",
+"dialogue": "Hello ",
 "offset": Vector2(460, 180),
 "options": {
 0: {
@@ -23,7 +23,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(356, 485),
+"size": Vector2(395, 495),
 "speaker": "Chicken"
 },
 "1_2": {

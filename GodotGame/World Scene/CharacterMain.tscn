@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://crmshmhby6akr"]
 
-[ext_resource type="Script" path="res://CharacterMain.gd" id="1_cyksq"]
+[ext_resource type="Script" path="res://World Scene/CharacterMain.gd" id="1_cyksq"]
 [ext_resource type="Texture2D" uid="uid://eejcyodqnp5i" path="res://Assets/Characters/Basic Charakter Spritesheet.png" id="2_vhwy2"]
 [ext_resource type="AudioStream" uid="uid://5jxvmdhelg28" path="res://Assets/Sounds/Fantozzi-SandL1.ogg" id="3_ai8dy"]
 
