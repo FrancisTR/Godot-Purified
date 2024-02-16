@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bpa4rqvbeqdqw" path="res://Assets/Tilesets/Tilled_Dirt.png" id="5_ffoco"]
 [ext_resource type="Texture2D" uid="uid://c6e0kjxb8ktpr" path="res://Assets/Tilesets/Wooden House.png" id="6_ocsay"]
 [ext_resource type="Texture2D" uid="uid://bqwl7ha67y8uv" path="res://Assets/Tilesets/Fences.png" id="7_nqqbl"]
-[ext_resource type="PackedScene" uid="uid://crmshmhby6akr" path="res://CharacterMain.tscn" id="8_7n4r7"]
-[ext_resource type="PackedScene" uid="uid://decpyxnu3oocl" path="res://npc.tscn" id="10_6867b"]
+[ext_resource type="PackedScene" uid="uid://crmshmhby6akr" path="res://World Scene/CharacterMain.tscn" id="8_7n4r7"]
+[ext_resource type="PackedScene" uid="uid://decpyxnu3oocl" path="res://World Scene/npc.tscn" id="10_6867b"]
 [ext_resource type="Resource" uid="uid://ljd6hukuocs3" path="res://DialogueTestOptions.tres" id="11_611hs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6w24t"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://decpyxnu3oocl"]
 
-[ext_resource type="Script" path="res://npc.gd" id="1_7ll4o"]
+[ext_resource type="Script" path="res://World Scene/npc.gd" id="1_7ll4o"]
 [ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="1_we8v3"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_kithy"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_1oy2a"]
@@ -44,6 +44,7 @@ position = Vector2(-4, -0.5)
 shape = SubResource("RectangleShape2D_bc547")
 
 [node name="DialogueBox" type="Panel" parent="."]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
 anchors_preset = 7
