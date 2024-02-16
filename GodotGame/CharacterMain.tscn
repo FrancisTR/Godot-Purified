@@ -172,3 +172,5 @@ shape = SubResource("RectangleShape2D_iirhq")
 
 [node name="FootstepAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ai8dy")
+
+[connection signal="finished" from="FootstepAudio" to="." method="_on_footstep_audio_finished"]

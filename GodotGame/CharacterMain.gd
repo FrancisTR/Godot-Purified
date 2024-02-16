@@ -38,16 +38,18 @@ func _physics_process(delta):
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	if nowMoving:
-		print("moving")
 		if not isMoving:
+			# when starting to move
 			isMoving = true
 			footstep_audio.play()
-	else:
-		if isMoving:
-			isMoving = false
-			footstep_audio.stop()
-	
-	
+	elif isMoving:
+		# when starting to not move
+		isMoving = false
+		footstep_audio.stop()
 	
 	move_and_slide()
 
+func _on_footstep_audio_finished():
+	# loop audio
+	if isMoving:
+		footstep_audio.play()
