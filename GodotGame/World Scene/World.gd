@@ -10,10 +10,12 @@ func _ready():
 func _process(delta):
 	pass
 
-
 func increase_day(amount):
 	if(day+amount > 0):
 		day += amount
+
+func open_leave_menu():
+	$UI/LeaveVillage.show()
 
 #**********TEST BUTTONS***********#
 func _on_test_inc_1():

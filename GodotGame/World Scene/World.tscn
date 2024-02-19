@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b2fo6lc5k06cg"]
+[gd_scene load_steps=22 format=3 uid="uid://b2fo6lc5k06cg"]
 
 [ext_resource type="Script" path="res://World Scene/World.gd" id="1_1qbtd"]
 [ext_resource type="Script" path="res://World Scene/Day.gd" id="2_p8lk6"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://crmshmhby6akr" path="res://World Scene/CharacterMain.tscn" id="8_7n4r7"]
 [ext_resource type="PackedScene" uid="uid://decpyxnu3oocl" path="res://World Scene/npc.tscn" id="10_6867b"]
 [ext_resource type="Resource" uid="uid://ljd6hukuocs3" path="res://DialogueTestOptions.tres" id="11_611hs"]
+[ext_resource type="PackedScene" uid="uid://bw43arjwii3ih" path="res://World Scene/exit.tscn" id="12_purvp"]
+[ext_resource type="PackedScene" uid="uid://ctserqjkg74rt" path="res://UIs/LeaveVillage.tscn" id="13_hyjxq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6w24t"]
 texture = ExtResource("3_ob20m")
@@ -603,22 +605,31 @@ offset_bottom = 353.0
 text = "-1 Day
 V"
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("8_7n4r7")]
-position = Vector2(107, 103)
+[node name="LeaveVillage" parent="UI" instance=ExtResource("13_hyjxq")]
+offset_left = 506.0
+offset_top = 293.0
+offset_right = 506.0
+offset_bottom = 293.0
+pivot_offset = Vector2(58, -28)
 
 [node name="NPC" parent="." instance=ExtResource("10_6867b")]
 position = Vector2(318, 106)
-
-[node name="DialogueBox" parent="NPC" index="2"]
-visible = false
 
 [node name="NPC2" parent="." instance=ExtResource("10_6867b")]
 position = Vector2(977, 101)
 
 [node name="DialogueBox" parent="NPC2" index="2"]
-visible = false
 dialogue_data = ExtResource("11_611hs")
 start_id = "NPC2"
+
+[node name="exit door" parent="." instance=ExtResource("12_purvp")]
+position = Vector2(107, 192)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("8_7n4r7")]
+position = Vector2(107, 103)
+
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-107, -103)
 
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]

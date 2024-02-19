@@ -2,9 +2,8 @@ extends Label
 
 
 # Called when the node enters the scene tree for the first time.
-var world
+@onready var world = $"../.."
 func _ready():
-	world=$"../.."
 	pass # Replace with function body.
 
 
