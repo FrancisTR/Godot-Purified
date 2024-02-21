@@ -624,6 +624,7 @@ dialogue_data = ExtResource("11_611hs")
 start_id = "NPC2"
 
 [node name="exit door" parent="." instance=ExtResource("12_purvp")]
+z_index = 5
 position = Vector2(107, 192)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("8_7n4r7")]
