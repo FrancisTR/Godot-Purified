@@ -112,7 +112,7 @@ func _on_leave_village():
 				"Never gonna say goodbye",
 				"Never gonna tell a lie and hurt you",
 			],
-			"res://World Scene/World.tscn",
+			"res://Main Menu Scene/MainMenu.tscn",
 			3,
 			"[♪♪♪]"
 		)
