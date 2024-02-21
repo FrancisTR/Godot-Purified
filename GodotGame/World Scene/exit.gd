@@ -1,8 +1,7 @@
 extends StaticBody2D
 
-
+signal open_leave_menu
 # Called when the node enters the scene tree for the first time.
-@onready var world = $".."
 
 func _ready():
 	pass # Replace with function body.
@@ -14,4 +13,4 @@ func _process(delta):
 
 
 func _on_interaction_detection_body_entered(body):
-	world.open_leave_menu();
+	emit_signal("open_leave_menu")

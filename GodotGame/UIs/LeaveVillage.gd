@@ -1,16 +1,16 @@
 extends Control
 
-@onready var this = $"."
+signal leave_village
 
 func _ready():
-	this.hide()
+	self.hide()
 
 func _on_yes_pressed():
-	pass # Replace with function body.
+	self.hide()
+	emit_signal("leave_village")
 	print("y")
 
 
 func _on_no_pressed():
-	pass # Replace with function body.
+	self.hide()
 	print("n")
-	this.hide()

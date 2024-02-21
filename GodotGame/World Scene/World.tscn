@@ -1,7 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://b2fo6lc5k06cg"]
+[gd_scene load_steps=21 format=3 uid="uid://b2fo6lc5k06cg"]
 
 [ext_resource type="Script" path="res://World Scene/World.gd" id="1_1qbtd"]
-[ext_resource type="Script" path="res://World Scene/Day.gd" id="2_p8lk6"]
 [ext_resource type="Texture2D" uid="uid://4urql8egtdqr" path="res://Assets/Tilesets/Grass.png" id="3_ob20m"]
 [ext_resource type="Texture2D" uid="uid://bipqa3xtfks8q" path="res://Assets/Tilesets/Water.png" id="4_ejaol"]
 [ext_resource type="Texture2D" uid="uid://q5cr6dib6lsd" path="res://Assets/Tilesets/Hills.png" id="4_jvgjl"]
@@ -580,7 +579,6 @@ offset_bottom = 102.0
 grow_horizontal = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
-script = ExtResource("2_p8lk6")
 
 [node name="+1 Day [TEST]" type="Button" parent="UI"]
 anchors_preset = 6
@@ -606,10 +604,13 @@ text = "-1 Day
 V"
 
 [node name="LeaveVillage" parent="UI" instance=ExtResource("13_hyjxq")]
-offset_left = 506.0
-offset_top = 293.0
-offset_right = 506.0
-offset_bottom = 293.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 pivot_offset = Vector2(58, -28)
 
 [node name="NPC" parent="." instance=ExtResource("10_6867b")]
@@ -628,11 +629,10 @@ position = Vector2(107, 192)
 [node name="CharacterBody2D" parent="." instance=ExtResource("8_7n4r7")]
 position = Vector2(107, 103)
 
-[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(-107, -103)
-
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]
+[connection signal="leave_village" from="UI/LeaveVillage" to="." method="_on_leave_village"]
+[connection signal="open_leave_menu" from="exit door" to="." method="_on_open_leave_menu"]
 
 [editable path="NPC"]
 [editable path="NPC2"]

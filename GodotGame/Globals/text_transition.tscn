@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8pnygcokw57x"]
+
+[ext_resource type="Script" path="res://Globals/text_transition.gd" id="1_biuib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1eky"]
+size = Vector2(1152, 647.5)
+
+[node name="text_transition" type="CanvasLayer"]
+script = ExtResource("1_biuib")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextContent" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -519.5
+offset_top = -247.5
+offset_right = 519.5
+offset_bottom = 247.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instructions" type="Label" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -90.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(576, 324.25)
+shape = SubResource("RectangleShape2D_g1eky")
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
