@@ -23,7 +23,7 @@ func _ready():
 	$UI/Day.text = "Day " + str(GameData.day)
 	for i in range(0, len(npcs)):
 		var day = GameData.day
-		if GameData.day < 10:
+		if GameData.day > 10:
 			day = 10
 		npcs[i].position = npc_positions[('day'+str(day))][i]
 		print(npcs[i], "is set to", npc_positions[('day'+str(day))][i])
