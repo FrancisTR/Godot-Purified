@@ -1,13 +1,16 @@
-extends Label
+extends StaticBody2D
 
-
+signal open_leave_menu
 # Called when the node enters the scene tree for the first time.
-var world
+
 func _ready():
-	world=$"../.."
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	text = "Day " + str(world.day)
+	pass
+
+
+func _on_interaction_detection_body_entered(body):
+	emit_signal("open_leave_menu")

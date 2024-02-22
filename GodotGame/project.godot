@@ -15,6 +15,17 @@ run/main_scene="res://Main Menu Scene/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneTransition="*res://Globals/scene_transition.tscn"
+GameData="*res://Globals/GameData.gd"
+TextTransition="*res://Globals/text_transition.gd"
+TextTransitionData="*res://Globals/TextTransitionData.gd"
+
+[display]
+
+window/size/resizable=false
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_nodes/plugin.cfg")
