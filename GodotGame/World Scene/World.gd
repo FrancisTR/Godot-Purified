@@ -34,6 +34,7 @@ func increase_day(amount):
 
 func _on_open_leave_menu():
 	$UI/LeaveVillage.show()
+	$UI/LeaveVillage/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Yes.grab_focus()
 
 #**********TEST BUTTONS***********#
 func _on_test_inc_1():

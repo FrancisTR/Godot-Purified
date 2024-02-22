@@ -38,11 +38,13 @@ size_flags_horizontal = 4
 [node name="Yes" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+focus_neighbor_left = NodePath("../No")
 text = "Yes"
 
 [node name="No" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+focus_neighbor_right = NodePath("../Yes")
 text = "No
 "
 
