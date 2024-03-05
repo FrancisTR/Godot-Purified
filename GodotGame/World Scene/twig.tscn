@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://opyktl0penv5"]
+
+[ext_resource type="Script" path="res://Twig.gd" id="1_axgy0"]
+[ext_resource type="Texture2D" uid="uid://ds8p5ir5eu34l" path="res://Assets/Objects/Basic_tools_and_meterials.png" id="2_vyd6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vukrq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0rkc"]
+atlas = ExtResource("2_vyd6q")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5gstm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0rkc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Twig" type="Area2D"]
+script = ExtResource("1_axgy0")
+
+[node name="TwigCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vukrq")
+
+[node name="TwigSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5gstm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

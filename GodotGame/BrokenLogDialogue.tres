@@ -1,0 +1,144 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://uju0qaysxb1m"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_xj8oi"]
+
+[resource]
+script = ExtResource("1_xj8oi")
+starts = {
+"BrokenLog": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_8",
+"offset": Vector2(-432, 264),
+"start_id": "BrokenLog"
+},
+"1_1": {
+"dialogue": "[i]The tree stump says nothing to you[/i]",
+"offset": Vector2(552, 360),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(366.314, 274),
+"speaker": "A Tree Stump"
+},
+"1_2": {
+"dialogue": "[i]After continuing to stare at the tree stump... nothing happens[/i]",
+"offset": Vector2(1008, 552),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(528.294, 274),
+"speaker": "A Tree Stump"
+},
+"1_3": {
+"dialogue": "[i].....[/i]",
+"offset": Vector2(1632, 768),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 274),
+"speaker": "A Tree Stump"
+},
+"1_4": {
+"dialogue": "[b][color=purple]Who dares to disturb my eternal slumber?
+I WILL SLAY YOU WITH MY HOLY SWORD!
+TWIGGY, I SUMMON YOU![/color][/b]",
+"offset": Vector2(2040, 984),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(473.032, 274),
+"speaker": "A Telepathic Tree Stump??"
+},
+"1_5": {
+"dialogue": "[b][color=purple]....[/color][/b]",
+"offset": Vector2(2616, 1200),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 274),
+"speaker": "A Telepathic Tree Stump??"
+},
+"1_6": {
+"dialogue": "[b][color=purple]*cough* I seem to have misplaced my holy sword. Could you please bring it to me?[/color][/b]",
+"offset": Vector2(3000, 1416),
+"options": {
+0: {
+"condition": {},
+"link": &"4_1",
+"text": ""
+}
+},
+"size": Vector2(810.895, 274),
+"speaker": "A Telepathic Tree Stump??"
+},
+"1_7": {
+"dialogue": "[b][color=purple]Have you found Twig-
+I mean my holy sword yet?[/color][/b]",
+"offset": Vector2(552, 696),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(356.364, 299.182),
+"speaker": "A Telepathic Tree Stump??"
+},
+"1_8": {
+"dialogue": "[i]An old tree stump is before you[/i]",
+"offset": Vector2(-72, 240),
+"options": {
+0: {
+"condition": {},
+"link": &"1_1",
+"text": "*Wait patiently for it to do something*"
+},
+1: {
+"condition": {},
+"link": &"1_7",
+"text": "I have a wooden branch for you"
+}
+},
+"size": Vector2(404.684, 307),
+"speaker": "A Tree Stump"
+},
+"4_1": {
+"link": "END",
+"offset": Vector2(3912, 1584),
+"type": 0,
+"value": "true",
+"variable": "QuestGiven"
+}
+}
+variables = {
+"QuestGiven": {
+"type": 1,
+"value": true
+}
+}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = ""

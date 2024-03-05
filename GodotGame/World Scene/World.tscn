@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b2fo6lc5k06cg"]
+[gd_scene load_steps=23 format=3 uid="uid://b2fo6lc5k06cg"]
 
 [ext_resource type="Script" path="res://World Scene/World.gd" id="1_1qbtd"]
 [ext_resource type="Texture2D" uid="uid://4urql8egtdqr" path="res://Assets/Tilesets/Grass.png" id="3_ob20m"]
@@ -12,6 +12,8 @@
 [ext_resource type="Resource" uid="uid://ljd6hukuocs3" path="res://DialogueTestOptions.tres" id="11_611hs"]
 [ext_resource type="PackedScene" uid="uid://bw43arjwii3ih" path="res://World Scene/exit.tscn" id="12_purvp"]
 [ext_resource type="PackedScene" uid="uid://ctserqjkg74rt" path="res://UIs/LeaveVillage.tscn" id="13_hyjxq"]
+[ext_resource type="PackedScene" uid="uid://cnmqolms0g2oh" path="res://World Scene/brokenLog.tscn" id="13_py8a3"]
+[ext_resource type="PackedScene" uid="uid://opyktl0penv5" path="res://World Scene/twig.tscn" id="14_2o1q3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6w24t"]
 texture = ExtResource("3_ob20m")
@@ -614,6 +616,12 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(58, -28)
 
+[node name="Inventory" type="RichTextLabel" parent="UI"]
+offset_left = 27.0
+offset_top = 552.0
+offset_right = 180.0
+offset_bottom = 633.0
+
 [node name="NPC" parent="." instance=ExtResource("10_6867b")]
 position = Vector2(318, 106)
 
@@ -635,10 +643,17 @@ position = Vector2(107, 192)
 [node name="CharacterBody2D" parent="." instance=ExtResource("8_7n4r7")]
 position = Vector2(107, 103)
 
+[node name="BrokenLog" parent="." instance=ExtResource("13_py8a3")]
+position = Vector2(207, 107)
+
+[node name="Twig" parent="." instance=ExtResource("14_2o1q3")]
+position = Vector2(480, 107)
+
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]
 [connection signal="leave_village" from="UI/LeaveVillage" to="." method="_on_leave_village"]
 [connection signal="open_leave_menu" from="exit door" to="." method="_on_open_leave_menu"]
+[connection signal="PickedUp" from="Twig" to="." method="_on_twig_picked_up"]
 
 [editable path="NPC"]
 [editable path="NPC2"]

@@ -4,6 +4,8 @@ extends Node2D
 
 var signal_method = ""
 
+@export var NumTwigs: int = 0
+
 var npc_positions = {
 	'day1':[Vector2(318, 106), Vector2(997, 101)],
 	'day2':[Vector2(218, 606), Vector2(497, 201)],
@@ -19,6 +21,8 @@ var npc_positions = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#TODO: Make inventory system into its own scene w/ graphics
+	$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
 	#SceneTransition.manual_fade.connect(go_to_next_day)
 	$UI/Day.text = "Day " + str(GameData.day)
 	for i in range(0, len(npcs)):
@@ -47,6 +51,13 @@ func _on_test_dec_1():
 	increase_day(-1)
 	$UI/Day.text = "Day " + str(GameData.day)
 #*********************************#
+
+#********** INVENTORY ***********#
+func _on_twig_picked_up():
+	NumTwigs += 1
+	$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
+#*********************************#
+
 
 func _on_leave_village():
 	if GameData.day < 10:
