@@ -38,5 +38,4 @@ shape = SubResource("RectangleShape2D_vrggd")
 dialogue_data = ExtResource("4_yj5dj")
 start_id = "BrokenLog"
 
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="dialogue_signal" from="DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]

@@ -56,6 +56,7 @@ func _on_test_dec_1():
 func _on_twig_picked_up():
 	NumTwigs += 1
 	$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
+	GameData.twigItem += 1
 #*********************************#
 
 
