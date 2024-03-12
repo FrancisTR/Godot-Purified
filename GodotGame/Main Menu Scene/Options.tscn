@@ -1,0 +1,106 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq46ncf7jihje"]
+
+[ext_resource type="Script" path="res://Main Menu Scene/CanvasLayer.gd" id="1_sb17w"]
+
+[node name="EnterName" type="CanvasLayer"]
+script = ExtResource("1_sb17w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.403922, 0.403922, 0.403922, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.0
+offset_top = -196.0
+offset_right = 227.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = 51.0
+offset_right = 189.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "Okay"
+
+[node name="UsernameLabel" type="RichTextLabel" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -430.0
+offset_top = -219.0
+offset_right = -74.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "Username:"
+
+[node name="LineEdit2" type="LineEdit" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.5
+offset_top = -36.0
+offset_right = 239.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Yes/no"
+clear_button_enabled = true
+caret_blink = true
+caret_blink_interval = 0.34
+
+[node name="LineEdit" type="LineEdit" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -227.0
+offset_right = 239.0
+offset_bottom = -155.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Yes/no"
+clear_button_enabled = true
+caret_blink = true
+caret_blink_interval = 0.34
+
+[node name="BackButton" type="Button" parent="."]
+focus_neighbor_top = NodePath("../ExitButton")
+text = "Back"
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
