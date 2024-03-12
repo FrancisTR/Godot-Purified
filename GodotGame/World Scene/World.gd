@@ -6,18 +6,18 @@ var signal_method = ""
 
 @export var NumTwigs: int = 0
 
-var npc_positions = {
-	'day1':[Vector2(318, 106), Vector2(997, 101)],
-	'day2':[Vector2(218, 606), Vector2(497, 201)],
-	'day3':[Vector2(48, 406), Vector2(997, 101)],
-	'day4':[Vector2(218, 206), Vector2(897, 201)],
-	'day5':[Vector2(318, 106), Vector2(997, 101)],
-	'day6':[Vector2(218, 206), Vector2(897, 201)],
-	'day7':[Vector2(318, 106), Vector2(997, 101)],
-	'day8':[Vector2(218, 206), Vector2(897, 201)],
-	'day9':[Vector2(218, 206), Vector2(897, 201)],
-	'day10':[Vector2(218, 206), Vector2(897, 201)]
-	}
+#var npc_positions = {
+	#'day1':[Vector2(318, 106), Vector2(997, 101)],
+	#'day2':[Vector2(218, 606), Vector2(497, 201)],
+	#'day3':[Vector2(48, 406), Vector2(997, 101)],
+	#'day4':[Vector2(218, 206), Vector2(897, 201)],
+	#'day5':[Vector2(318, 106), Vector2(997, 101)],
+	#'day6':[Vector2(218, 206), Vector2(897, 201)],
+	#'day7':[Vector2(318, 106), Vector2(997, 101)],
+	#'day8':[Vector2(218, 206), Vector2(897, 201)],
+	#'day9':[Vector2(218, 206), Vector2(897, 201)],
+	#'day10':[Vector2(218, 206), Vector2(897, 201)]
+	#}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,8 +29,10 @@ func _ready():
 		var day = GameData.day
 		if GameData.day < 10:
 			day = 10
-		npcs[i].position = npc_positions[('day'+str(day))][i]
-		print(npcs[i], "is set to", npc_positions[('day'+str(day))][i])
+		
+		# Commented out for now
+		#npcs[i].position = npc_positions[('day'+str(day))][i]
+		#print(npcs[i], "is set to", npc_positions[('day'+str(day))][i])
 
 func increase_day(amount):
 	if(GameData.day+amount > 0):
