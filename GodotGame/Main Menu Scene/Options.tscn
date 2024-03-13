@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bq46ncf7jihje"]
 
-[ext_resource type="Script" path="res://Main Menu Scene/CanvasLayer.gd" id="1_sb17w"]
+[ext_resource type="Script" path="res://Main Menu Scene/Options.gd" id="1_pejof"]
 
 [node name="EnterName" type="CanvasLayer"]
-script = ExtResource("1_sb17w")
+script = ExtResource("1_pejof")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -57,7 +57,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -430.0
 offset_top = -219.0
-offset_right = -74.0
+offset_right = -235.0
 offset_bottom = -164.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -120,7 +120,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -384.0
 offset_top = -27.0
-offset_right = -28.0
+offset_right = -234.0
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -137,7 +137,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -486.0
 offset_top = -126.0
-offset_right = -130.0
+offset_right = -233.0
 offset_bottom = -71.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -212,4 +212,5 @@ text = "Work in progress
 "
 
 [connection signal="pressed" from="TextureRect/OkayButton" to="." method="_on_button_pressed"]
+[connection signal="text_changed" from="TextureRect/VolumeLineEdit" to="." method="_on_volume_line_edit_text_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
