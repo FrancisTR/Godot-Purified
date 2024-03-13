@@ -17,17 +17,4 @@ func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://Main Menu Scene/MainMenu.tscn")
 
 
-func _on_volume_line_edit_text_changed(new_text):
-	
-	if new_text.strip_edges() == str(float(new_text)):
-		var tmpVolume = float(new_text)
-		if tmpVolume > 100:
-			print('volume input: too large')
-			return
-		elif tmpVolume < 0:
-			print('volume input: too low')
-			return
-		
-		print('volume input: can be used')
-	else:
-		print('volume input: invalid number')
+# Related script: VolumeOptions.gd
