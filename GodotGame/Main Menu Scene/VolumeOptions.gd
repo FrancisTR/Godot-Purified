@@ -1,5 +1,6 @@
 extends HSlider
-
+@onready var sfx_label = get_node("SFXVolumeValueLabel")
+var fix_vol_temp = false
 
 @export
 var bus_name: String # might be better to just have local variables
@@ -12,15 +13,15 @@ func _ready() -> void:
 	value = db_to_linear(AudioServer.get_bus_index(bus_name))
 
 func _on_value_changed(v: float) -> void:
-	print("new slider value: ", v, " + index: ", bus_index)
+	if not fix_vol_temp:
+		fix_vol_temp = true
+		v = 100
+		$".".value = v
+	#print("[slider] bus index: ", bus_index)
 	
 	AudioServer.set_bus_volume_db(
 		bus_index,
 		linear_to_db(v / 100)
 	)
 	
-	$SFXVolumeValueLabel.text = str(v) + "%"
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-	#pass
+	sfx_label.text = str(v) + "%"
