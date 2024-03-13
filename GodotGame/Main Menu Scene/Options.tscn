@@ -26,7 +26,7 @@ offset_bottom = 196.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="TextureRect"]
+[node name="OkayButton" type="Button" parent="TextureRect"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -40,6 +40,10 @@ offset_right = 189.0
 offset_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_top = NodePath("../VolumeLineEdit")
+focus_neighbor_bottom = NodePath("../../BackButton")
+focus_next = NodePath("../../BackButton")
+focus_previous = NodePath("../VolumeLineEdit")
 theme_override_font_sizes/font_size = 35
 text = "Okay"
 
@@ -74,6 +78,10 @@ offset_right = 239.5
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_top = NodePath("../../BackButton/HBoxContainer/LeftKeyButton")
+focus_neighbor_bottom = NodePath("../OkayButton")
+focus_next = NodePath("../OkayButton")
+focus_previous = NodePath("../../BackButton/HBoxContainer/LeftKeyButton")
 placeholder_text = "Work in progress. Volume from 0 - 100"
 clear_button_enabled = true
 caret_blink = true
@@ -93,6 +101,10 @@ offset_right = 239.0
 offset_bottom = -155.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_top = NodePath("../../BackButton")
+focus_neighbor_bottom = NodePath("../../BackButton/HBoxContainer/LeftKeyButton")
+focus_next = NodePath("../../BackButton/HBoxContainer/LeftKeyButton")
+focus_previous = NodePath("../../BackButton")
 placeholder_text = "Enter username"
 clear_button_enabled = true
 caret_blink = true
@@ -149,7 +161,8 @@ theme_override_font_sizes/normal_font_size = 35
 text = "Options"
 
 [node name="BackButton" type="Button" parent="."]
-focus_neighbor_top = NodePath("../ExitButton")
+focus_next = NodePath("../TextureRect/LineEdit")
+focus_previous = NodePath("../TextureRect/OkayButton")
 text = "Back"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BackButton"]
@@ -159,27 +172,35 @@ offset_top = 192.0
 offset_right = 813.0
 offset_bottom = 261.0
 
-[node name="LeftButton" type="Button" parent="BackButton/HBoxContainer"]
+[node name="LeftKeyButton" type="Button" parent="BackButton/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+focus_neighbor_left = NodePath("../RightKeyButton")
+focus_neighbor_top = NodePath("../../../TextureRect/LineEdit")
+focus_neighbor_right = NodePath("../TopKeyButton")
+focus_neighbor_bottom = NodePath("../../../TextureRect/VolumeLineEdit")
+focus_next = NodePath("../TopKeyButton")
+focus_previous = NodePath("../../../TextureRect/LineEdit")
 theme_override_font_sizes/font_size = 35
 text = "A"
 
-[node name="LeftButton2" type="Button" parent="BackButton/HBoxContainer"]
+[node name="TopKeyButton" type="Button" parent="BackButton/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "W"
 
-[node name="LeftButton3" type="Button" parent="BackButton/HBoxContainer"]
+[node name="BottomKeyButton" type="Button" parent="BackButton/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "S"
 
-[node name="LeftButton4" type="Button" parent="BackButton/HBoxContainer"]
+[node name="RightKeyButton" type="Button" parent="BackButton/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+focus_next = NodePath("../../../TextureRect/VolumeLineEdit")
+focus_previous = NodePath("../BottomKeyButton")
 theme_override_font_sizes/font_size = 35
 text = "D"
 
@@ -190,5 +211,5 @@ theme_override_font_sizes/font_size = 35
 text = "Work in progress
 "
 
-[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureRect/OkayButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
