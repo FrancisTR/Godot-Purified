@@ -5,13 +5,19 @@
 [resource]
 script = ExtResource("1_gfbar")
 starts = {
-"NPC1": &"0_1"
+"NPC1": &"0_1",
+"NPC2": &"0_2"
 }
 nodes = {
 "0_1": {
 "link": &"1_1",
 "offset": Vector2(72, 249),
 "start_id": "NPC1"
+},
+"0_2": {
+"link": &"1_3",
+"offset": Vector2(-40, 760),
+"start_id": "NPC2"
 },
 "1_1": {
 "dialogue": "Hello ",
@@ -37,6 +43,19 @@ nodes = {
 }
 },
 "size": Vector2(516, 505),
+"speaker": "Chicken"
+},
+"1_3": {
+"dialogue": "New Timeline",
+"offset": Vector2(233.736, 753.139),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 241),
 "speaker": "Chicken"
 }
 }
