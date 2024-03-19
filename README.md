@@ -26,6 +26,5 @@ If you want to take a look into the Godot Project, please do the following:
 - Mike (Co-Writer / Voice Actor)
 - Nick (Sound Producer / Programmer)
 - Thien (Programmer)
-- Furaha (Programmer)
 - Michelle (Asset Designer)
 - Bev (Asset Designer)
