@@ -37,9 +37,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -189.0
-offset_top = 51.0
+offset_top = 102.0
 offset_right = 189.0
-offset_bottom = 142.0
+offset_bottom = 193.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_neighbor_bottom = NodePath("../../BackButton")
@@ -127,7 +127,6 @@ focus_previous = NodePath("../TextureRect/OkayButton")
 text = "Back"
 
 [node name="RemapContainer" type="HBoxContainer" parent="BackButton"]
-layout_mode = 1
 offset_left = 336.0
 offset_top = 192.0
 offset_right = 813.0
@@ -219,6 +218,54 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
 text = "SFX Volume:"
+
+[node name="MusicSlider" type="HSlider" parent="."]
+offset_left = 337.0
+offset_top = 369.0
+offset_right = 813.0
+offset_bottom = 385.0
+focus_neighbor_top = NodePath("../BackButton/RemapContainer/LeftMapButton")
+focus_neighbor_bottom = NodePath("../TextureRect/OkayButton")
+focus_next = NodePath("../TextureRect/OkayButton")
+focus_previous = NodePath("../BackButton/RemapContainer/LeftMapButton")
+value = 100.0
+script = ExtResource("2_jtr8r")
+bus_name = "music"
+
+[node name="SFXVolumeValueLabel" type="RichTextLabel" parent="MusicSlider"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 249.0
+offset_top = -29.0
+offset_right = 464.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "100
+"
+
+[node name="SFXVolumeLabel" type="RichTextLabel" parent="MusicSlider"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -493.0
+offset_top = -29.0
+offset_right = -240.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "Music Volume:"
 
 [connection signal="pressed" from="TextureRect/OkayButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
