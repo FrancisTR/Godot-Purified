@@ -1,5 +1,5 @@
 extends HSlider
-@onready var sfx_label = get_node("SFXVolumeValueLabel")
+@onready var vol_label = get_node("SFXVolumeValueLabel")
 var fix_vol_temp = false
 
 @export
@@ -24,4 +24,4 @@ func _on_value_changed(v: float) -> void:
 		linear_to_db(v / 100)
 	)
 	
-	sfx_label.text = str(v) + "%"
+	vol_label.text = str(v) + "%"
