@@ -17,6 +17,9 @@ func _toggled(button_pressed):
 		text = "Waiting for input"
 
 func _unhandled_input(e):
+	if not e is InputEventKey:
+		return
+	
 	if e.pressed:
 		InputMap.action_erase_events(action)
 		InputMap.action_add_event(action, e)
