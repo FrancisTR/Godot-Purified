@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq46ncf7jihje"]
+[gd_scene load_steps=4 format=3 uid="uid://bq46ncf7jihje"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Options.gd" id="1_pejof"]
 [ext_resource type="Script" path="res://Main Menu Scene/VolumeOptions.gd" id="2_jtr8r"]
+[ext_resource type="Script" path="res://Main Menu Scene/Remapper.gd" id="3_sdtpu"]
 
 [node name="EnterOptions" type="CanvasLayer"]
 script = ExtResource("1_pejof")
@@ -36,14 +37,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -189.0
-offset_top = 51.0
+offset_top = 102.0
 offset_right = 189.0
-offset_bottom = 142.0
+offset_bottom = 193.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_neighbor_bottom = NodePath("../../BackButton")
 focus_next = NodePath("../../BackButton")
-focus_previous = NodePath("../../SfxSlider")
+focus_previous = NodePath("../../MusicSlider")
 theme_override_font_sizes/font_size = 35
 text = "Okay"
 
@@ -79,8 +80,8 @@ offset_bottom = -155.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_neighbor_top = NodePath("../../BackButton")
-focus_neighbor_bottom = NodePath("../../BackButton/HBoxContainer/LeftKeyButton")
-focus_next = NodePath("../../BackButton/HBoxContainer/LeftKeyButton")
+focus_neighbor_bottom = NodePath("../../RemapContainer/LeftMapButton")
+focus_next = NodePath("../../RemapContainer/LeftMapButton")
 focus_previous = NodePath("../../BackButton")
 placeholder_text = "Enter username"
 clear_button_enabled = true
@@ -125,60 +126,60 @@ focus_next = NodePath("../TextureRect/LineEdit")
 focus_previous = NodePath("../TextureRect/OkayButton")
 text = "Back"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BackButton"]
-layout_mode = 1
+[node name="RemapContainer" type="HBoxContainer" parent="."]
 offset_left = 336.0
 offset_top = 192.0
 offset_right = 813.0
 offset_bottom = 261.0
 
-[node name="LeftKeyButton" type="Button" parent="BackButton/HBoxContainer"]
+[node name="LeftMapButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
-focus_neighbor_left = NodePath("../RightKeyButton")
-focus_neighbor_top = NodePath("../../../TextureRect/LineEdit")
-focus_neighbor_right = NodePath("../TopKeyButton")
-focus_next = NodePath("../TopKeyButton")
-focus_previous = NodePath("../../../TextureRect/LineEdit")
+focus_neighbor_left = NodePath("../RightMapButton")
+focus_neighbor_top = NodePath("../../TextureRect/LineEdit")
+focus_neighbor_right = NodePath("../UpMapButton")
+focus_next = NodePath("../UpMapButton")
+focus_previous = NodePath("../../TextureRect/LineEdit")
 theme_override_font_sizes/font_size = 35
-text = "A"
+text = " A "
+script = ExtResource("3_sdtpu")
+action = "Left"
 
-[node name="TopKeyButton" type="Button" parent="BackButton/HBoxContainer"]
+[node name="UpMapButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "W"
+text = " W "
+script = ExtResource("3_sdtpu")
+action = "Up"
 
-[node name="BottomKeyButton" type="Button" parent="BackButton/HBoxContainer"]
+[node name="DownMapButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = "S"
+text = " S "
+script = ExtResource("3_sdtpu")
+action = "Down"
 
-[node name="RightKeyButton" type="Button" parent="BackButton/HBoxContainer"]
+[node name="RightMapButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
-focus_next = NodePath("../../../SfxSlider")
-focus_previous = NodePath("../BottomKeyButton")
+focus_next = NodePath("../../SfxSlider")
+focus_previous = NodePath("../DownMapButton")
 theme_override_font_sizes/font_size = 35
-text = "D"
-
-[node name="TemporaryButton" type="Button" parent="BackButton/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "Work in progress
-"
+text = " D "
+script = ExtResource("3_sdtpu")
+action = "Right"
 
 [node name="SfxSlider" type="HSlider" parent="."]
 offset_left = 337.0
 offset_top = 318.0
 offset_right = 813.0
 offset_bottom = 334.0
-focus_neighbor_top = NodePath("../BackButton/HBoxContainer/LeftKeyButton")
-focus_neighbor_bottom = NodePath("../TextureRect/OkayButton")
-focus_next = NodePath("../TextureRect/OkayButton")
-focus_previous = NodePath("../BackButton/HBoxContainer/LeftKeyButton")
+focus_neighbor_top = NodePath("../RemapContainer/LeftMapButton")
+focus_neighbor_bottom = NodePath("../MusicSlider")
+focus_next = NodePath("../MusicSlider")
+focus_previous = NodePath("../RemapContainer/LeftMapButton")
 value = 100.0
 script = ExtResource("2_jtr8r")
 bus_name = "sfx"
@@ -217,6 +218,54 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
 text = "SFX Volume:"
+
+[node name="MusicSlider" type="HSlider" parent="."]
+offset_left = 337.0
+offset_top = 369.0
+offset_right = 813.0
+offset_bottom = 385.0
+focus_neighbor_top = NodePath("../SfxSlider")
+focus_neighbor_bottom = NodePath("../TextureRect/OkayButton")
+focus_next = NodePath("../TextureRect/OkayButton")
+focus_previous = NodePath("../SfxSlider")
+value = 100.0
+script = ExtResource("2_jtr8r")
+bus_name = "music"
+
+[node name="SFXVolumeValueLabel" type="RichTextLabel" parent="MusicSlider"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 249.0
+offset_top = -29.0
+offset_right = 464.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "100
+"
+
+[node name="SFXVolumeLabel" type="RichTextLabel" parent="MusicSlider"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -493.0
+offset_top = -29.0
+offset_right = -240.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "Music Volume:"
 
 [connection signal="pressed" from="TextureRect/OkayButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
