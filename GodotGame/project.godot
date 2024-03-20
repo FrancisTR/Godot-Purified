@@ -21,6 +21,7 @@ SceneTransition="*res://Globals/scene_transition.tscn"
 GameData="*res://Globals/GameData.gd"
 TextTransition="*res://Globals/text_transition.gd"
 TextTransitionData="*res://Globals/TextTransitionData.gd"
+Utils="*res://Globals/Util/Utils.gd"
 
 [display]
 
