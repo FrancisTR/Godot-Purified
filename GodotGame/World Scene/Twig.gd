@@ -18,4 +18,5 @@ func _on_body_entered(body):
 		#$TwigSprite.hide()
 		PickedUp.emit()
 		queue_free()
+		Utils.add_to_inventory("Twig", 1)
 			

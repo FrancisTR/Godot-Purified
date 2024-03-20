@@ -52,13 +52,16 @@ func _on_test_dec_1():
 	print("-")
 	increase_day(-1)
 	$UI/Day.text = "Day " + str(GameData.day)
+	#vvv removes twig from inventory
+	Utils.remove_from_inventory("Twig", 1)
+	print(GameData.inventory_amount)
 #*********************************#
 
 #********** INVENTORY ***********#
-func _on_twig_picked_up():
-	NumTwigs += 1
-	$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
-	GameData.twigItem += 1
+#func _on_twig_picked_up():
+	#NumTwigs += 1
+	#$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
+	#GameData.twigItem += 1
 #*********************************#
 
 
