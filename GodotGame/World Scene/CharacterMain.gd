@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var sprite_2d = $Sprite2D
 @onready var footstep_audio = $FootstepAudio
 var isMoving = false
+var inventory_opened = false
+var last_recorded_inventory_amount:Dictionary
 
 const SPEED = 300.0
 
@@ -14,6 +16,14 @@ func _ready():
 var characterDirection = 0
 
 func _physics_process(delta):
+	#created so that it only draws items once each time
+	if last_recorded_inventory_amount != GameData.inventory_amount:
+		print("last_recorded_inventory_amount != GameData.inventory_amount")
+		last_recorded_inventory_amount = GameData.inventory_amount.duplicate()
+		$"Inventory Layer/Inventory".draw_items(GameData.inventory)
+		print("a-relinked")
+		
+	
 		#Animation
 	if (velocity.x > 1):
 		sprite_2d.animation = "Right"
@@ -33,18 +43,21 @@ func _physics_process(delta):
 	var directionX = Input.get_axis("Left", "Right")
 	var directionY = Input.get_axis("Up", "Down")
 	var nowMoving = false # c nowMoving
+	var canMove = not inventory_opened #and this and that and ... and etc.
 	
-	if directionX:
-		velocity.x = directionX * SPEED
-		nowMoving = true
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	if directionY:
-		velocity.y = directionY * SPEED
-		nowMoving = true
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+	if canMove:
+		if directionX:
+			velocity.x = directionX * SPEED
+			nowMoving = true
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+
+		if directionY:
+			velocity.y = directionY * SPEED
+			nowMoving = true
+		else:
+			velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	if nowMoving:
 		if not isMoving:
@@ -66,7 +79,19 @@ func _physics_process(delta):
 		elif (characterDirection == 3):
 			sprite_2d.animation = "Left_Idle"
 			
-	
+	if Input.is_action_just_pressed("Inventory"):
+		if not inventory_opened:
+			inventory_opened = true
+			velocity.x = 0
+			velocity.y = 0
+			print("inventory_open")
+			$"Inventory Layer".show()
+		else:
+			inventory_opened = false
+			print("inventory_close")
+			$"Inventory Layer".hide()
+		print("pressed E")
+		$"Inventory Layer/Inventory".draw_items(GameData.inventory)
 	move_and_slide()
 
 func _on_footstep_audio_finished():

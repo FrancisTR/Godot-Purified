@@ -1,0 +1,322 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyge3pmntuk1g"]
+
+[ext_resource type="Script" path="res://UIs/Inventory.gd" id="1_bxwgv"]
+[ext_resource type="Texture2D" uid="uid://cosqqv8nuavny" path="res://Assets/Custom/Suitcase.png" id="1_v31nw"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.6, 1.6)
+script = ExtResource("1_bxwgv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -211.0
+offset_top = -169.5
+offset_right = 211.0
+offset_bottom = 169.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0.843137)
+layout_mode = 2
+texture = ExtResource("1_v31nw")
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="slot0" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -149.375
+offset_top = -56.25
+offset_right = 450.625
+offset_bottom = 343.75
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot1" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -89.375
+offset_top = -56.25
+offset_right = 510.625
+offset_bottom = 343.75
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot2" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = -56.25
+offset_right = 570.0
+offset_bottom = 343.75
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot3" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = 30.0
+offset_top = -56.25
+offset_right = 630.0
+offset_bottom = 343.75
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot4" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = 90.0
+offset_top = -56.25
+offset_right = 690.0
+offset_bottom = 343.75
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot5" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -149.375
+offset_top = 3.75
+offset_right = 450.625
+offset_bottom = 403.75
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot6" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -90.0
+offset_top = 3.75
+offset_right = 510.0
+offset_bottom = 403.75
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot7" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = 3.75
+offset_right = 570.0
+offset_bottom = 403.75
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot8" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = 30.0
+offset_top = 3.75
+offset_right = 630.0
+offset_bottom = 403.75
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot9" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = 90.0
+offset_top = 3.75
+offset_right = 690.0
+offset_bottom = 403.75
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot10" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -149.375
+offset_top = 63.125
+offset_right = 450.625
+offset_bottom = 463.125
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot11" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -90.0
+offset_top = 63.125
+offset_right = 510.0
+offset_bottom = 463.125
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot12" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = 63.125
+offset_right = 570.0
+offset_bottom = 463.125
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot13" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = 30.0
+offset_top = 63.125
+offset_right = 630.0
+offset_bottom = 463.125
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="slot14" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = 90.0
+offset_top = 63.125
+offset_right = 690.0
+offset_bottom = 463.125
+scale = Vector2(0.0989064, 0.147303)
+
+[node name="Amounts" type="Node2D" parent="."]
+
+[node name="slot0" type="Label" parent="Amounts"]
+offset_left = -149.375
+offset_top = -56.875
+offset_right = -94.375
+offset_bottom = 3.12501
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot1" type="Label" parent="Amounts"]
+offset_left = -89.375
+offset_top = -56.875
+offset_right = -34.375
+offset_bottom = 3.12501
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot2" type="Label" parent="Amounts"]
+offset_left = -28.75
+offset_top = -56.875
+offset_right = 26.25
+offset_bottom = 3.12501
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot3" type="Label" parent="Amounts"]
+offset_left = 31.25
+offset_top = -56.875
+offset_right = 86.25
+offset_bottom = 3.12501
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot4" type="Label" parent="Amounts"]
+offset_left = 90.625
+offset_top = -56.875
+offset_right = 145.625
+offset_bottom = 3.12501
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot5" type="Label" parent="Amounts"]
+offset_left = -149.375
+offset_top = 3.12501
+offset_right = -94.375
+offset_bottom = 63.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot6" type="Label" parent="Amounts"]
+offset_left = -89.375
+offset_top = 3.12501
+offset_right = -34.375
+offset_bottom = 63.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot7" type="Label" parent="Amounts"]
+offset_left = -28.75
+offset_top = 3.12501
+offset_right = 26.25
+offset_bottom = 63.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot8" type="Label" parent="Amounts"]
+offset_left = 31.25
+offset_top = 3.12501
+offset_right = 86.25
+offset_bottom = 63.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot9" type="Label" parent="Amounts"]
+offset_left = 90.625
+offset_top = 3.12501
+offset_right = 145.625
+offset_bottom = 63.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot10" type="Label" parent="Amounts"]
+offset_left = -149.375
+offset_top = 63.125
+offset_right = -94.375
+offset_bottom = 123.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot11" type="Label" parent="Amounts"]
+offset_left = -89.375
+offset_top = 63.125
+offset_right = -34.375
+offset_bottom = 123.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot12" type="Label" parent="Amounts"]
+offset_left = -28.75
+offset_top = 63.125
+offset_right = 26.25
+offset_bottom = 123.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot13" type="Label" parent="Amounts"]
+offset_left = 31.25
+offset_top = 63.125
+offset_right = 86.25
+offset_bottom = 123.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot14" type="Label" parent="Amounts"]
+offset_left = 90.625
+offset_top = 63.125
+offset_right = 145.625
+offset_bottom = 123.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
