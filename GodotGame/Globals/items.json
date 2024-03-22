@@ -5,10 +5,14 @@
 	},
 	{
 		"name":"Twig",
-		"description":"adsfasdf"
+		"description":"this is a twig",
+		"texture":"res://World Scene/twig.tscn",
+		"cropped":"yes"
 	},
 	{
 		"name":"Rock",
-		"description": "asdfasdf"
+		"description": "this is a rock",
+		"texture":"res://Assets/Custom/temp_rock.png",
+		"cropped":"no"
 	}
 ]
