@@ -18,4 +18,8 @@ func _on_body_entered(body):
 		#$TwigSprite.hide()
 		PickedUp.emit()
 		queue_free()
+		Utils.add_to_inventory("Twig", 1)
+		getTexture()
 			
+func getTexture():
+	return $TwigSprite.sprite_frames.get_frame_texture("default", 0)

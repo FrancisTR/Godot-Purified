@@ -1,0 +1,18 @@
+[
+	{
+		"Twig": 1,
+		"Rock": 2,
+	},
+	{
+		"name":"Twig",
+		"description":"this is a twig",
+		"texture":"res://World Scene/twig.tscn",
+		"cropped":"yes"
+	},
+	{
+		"name":"Rock",
+		"description": "this is a rock",
+		"texture":"res://Assets/Custom/temp_rock.png",
+		"cropped":"no"
+	}
+]
