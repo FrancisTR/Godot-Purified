@@ -18,10 +18,10 @@ func get_JSON(file_path):
 	
 	
 func get_item(item):
-	var test = get_JSON("res://Globals/items.json")
-	var index = test[0][item]
-	print(test[index])
-	return test[index]
+	var json = get_JSON("res://Globals/items.json")
+	var index = json[0][item]
+	print(json[index])
+	return json[index]
 	
 func add_to_inventory(item, amount):
 	if GameData.inventory_amount.has(item):
@@ -35,7 +35,9 @@ func add_to_inventory(item, amount):
 func remove_from_inventory(item, amount):
 	if(GameData.inventory_amount.has(item)):
 		if GameData.inventory_amount[str(item)] - amount <= 0:
-			GameData.inventory_amount[str(item)] = 0
+			#GameData.inventory_amount[str(item)] = 0
+			GameData.inventory_amount.erase(str(item))
+			print("no way: ", GameData.inventory_amount)
 			if GameData.inventory.find(get_item(item)) != -1:
 				GameData.inventory.remove_at(GameData.inventory.find(get_item(item)))
 		else:

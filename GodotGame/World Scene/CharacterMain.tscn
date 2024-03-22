@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://crmshmhby6akr"]
+[gd_scene load_steps=27 format=3 uid="uid://crmshmhby6akr"]
 
 [ext_resource type="Script" path="res://World Scene/CharacterMain.gd" id="1_cyksq"]
 [ext_resource type="Texture2D" uid="uid://eejcyodqnp5i" path="res://Assets/Characters/Basic Charakter Spritesheet.png" id="2_vhwy2"]
 [ext_resource type="AudioStream" uid="uid://5jxvmdhelg28" path="res://Assets/Sounds/Fantozzi-SandL1.ogg" id="3_ai8dy"]
+[ext_resource type="PackedScene" uid="uid://dyge3pmntuk1g" path="res://UIs/Inventory.tscn" id="4_2u5re"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kjq3p"]
 atlas = ExtResource("2_vhwy2")
@@ -224,5 +225,11 @@ shape = SubResource("RectangleShape2D_iirhq")
 stream = ExtResource("3_ai8dy")
 volume_db = -8.433
 bus = &"sfx"
+
+[node name="Inventory Layer" type="CanvasLayer" parent="."]
+layer = 4
+visible = false
+
+[node name="Inventory" parent="Inventory Layer" instance=ExtResource("4_2u5re")]
 
 [connection signal="finished" from="FootstepAudio" to="." method="_on_footstep_audio_finished"]

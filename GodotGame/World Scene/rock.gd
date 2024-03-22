@@ -1,6 +1,5 @@
 extends Area2D
 
-signal PickedUp
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,11 +14,5 @@ func _process(delta):
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
 		print("Player has picked up a twig")
-		#$TwigSprite.hide()
-		PickedUp.emit()
 		queue_free()
-		Utils.add_to_inventory("Twig", 1)
-		getTexture()
-			
-func getTexture():
-	return $TwigSprite.sprite_frames.get_frame_texture("default", 0)
+		Utils.add_to_inventory("Rock", 1)
