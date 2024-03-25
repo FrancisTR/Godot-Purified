@@ -53,7 +53,8 @@ func _on_test_dec_1():
 	increase_day(-1)
 	$UI/Day.text = "Day " + str(GameData.day)
 	#vvv removes twig from inventory
-	Utils.remove_from_inventory("Twig", 1)
+	#Utils.remove_from_inventory("Twig", 1)
+	Utils.remove_from_inventory("Rock", 1)
 	print(GameData.inventory_amount)
 #*********************************#
 
