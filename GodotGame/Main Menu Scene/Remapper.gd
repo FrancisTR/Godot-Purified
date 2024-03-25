@@ -9,6 +9,7 @@ func _init():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process_unhandled_input(false)
+	$HintLabel.text = action
 
 func _toggled(button_pressed):
 	set_process_unhandled_input(button_pressed)
