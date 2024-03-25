@@ -37,9 +37,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -189.0
-offset_top = 102.0
+offset_top = 179.0
 offset_right = 189.0
-offset_bottom = 193.0
+offset_bottom = 270.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_neighbor_bottom = NodePath("../../BackButton")
@@ -80,8 +80,8 @@ offset_bottom = -155.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_neighbor_top = NodePath("../../BackButton")
-focus_neighbor_bottom = NodePath("../../RemapContainer/LeftMapButton")
-focus_next = NodePath("../../RemapContainer/LeftMapButton")
+focus_neighbor_bottom = NodePath("../../ScrollContainer/HBoxContainer/LeftMapButton")
+focus_next = NodePath("../../ScrollContainer/HBoxContainer/LeftMapButton")
 focus_previous = NodePath("../../BackButton")
 placeholder_text = "Enter username"
 clear_button_enabled = true
@@ -132,90 +132,15 @@ offset_top = 192.0
 offset_right = 813.0
 offset_bottom = 261.0
 
-[node name="LeftMapButton" type="Button" parent="RemapContainer"]
-texture_filter = 1
-layout_mode = 2
-focus_neighbor_left = NodePath("../RightMapButton")
-focus_neighbor_top = NodePath("../../TextureRect/LineEdit")
-focus_neighbor_right = NodePath("../UpMapButton")
-focus_next = NodePath("../UpMapButton")
-focus_previous = NodePath("../../TextureRect/LineEdit")
-theme_override_font_sizes/font_size = 35
-text = " A "
-script = ExtResource("3_sdtpu")
-action = "Left"
-
-[node name="HintLabel" type="Label" parent="RemapContainer/LeftMapButton"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "..."
-horizontal_alignment = 1
-
-[node name="UpMapButton" type="Button" parent="RemapContainer"]
-texture_filter = 1
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = " W "
-script = ExtResource("3_sdtpu")
-action = "Up"
-
-[node name="HintLabel" type="Label" parent="RemapContainer/UpMapButton"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "..."
-horizontal_alignment = 1
-
-[node name="DownMapButton" type="Button" parent="RemapContainer"]
-texture_filter = 1
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = " S "
-script = ExtResource("3_sdtpu")
-action = "Down"
-
-[node name="HintLabel" type="Label" parent="RemapContainer/DownMapButton"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "..."
-horizontal_alignment = 1
-
-[node name="RightMapButton" type="Button" parent="RemapContainer"]
-texture_filter = 1
-layout_mode = 2
-focus_next = NodePath("../../SfxSlider")
-focus_previous = NodePath("../DownMapButton")
-theme_override_font_sizes/font_size = 35
-text = " D "
-script = ExtResource("3_sdtpu")
-action = "Right"
-
-[node name="HintLabel" type="Label" parent="RemapContainer/RightMapButton"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "..."
-horizontal_alignment = 1
-
 [node name="SfxSlider" type="HSlider" parent="."]
 offset_left = 337.0
 offset_top = 318.0
 offset_right = 813.0
 offset_bottom = 334.0
-focus_neighbor_top = NodePath("../RemapContainer/LeftMapButton")
+focus_neighbor_top = NodePath("../ScrollContainer/HBoxContainer/LeftMapButton")
 focus_neighbor_bottom = NodePath("../MusicSlider")
 focus_next = NodePath("../MusicSlider")
-focus_previous = NodePath("../RemapContainer/LeftMapButton")
+focus_previous = NodePath("../ScrollContainer/HBoxContainer/LeftMapButton")
 value = 100.0
 script = ExtResource("2_jtr8r")
 bus_name = "sfx"
@@ -302,6 +227,109 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
 text = "Music Volume:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 336.0
+offset_top = 195.0
+offset_right = 852.0
+offset_bottom = 258.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="LeftMapButton" type="Button" parent="ScrollContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+focus_neighbor_left = NodePath("../RightMapButton")
+focus_neighbor_top = NodePath("../../../TextureRect/LineEdit")
+focus_neighbor_right = NodePath("../UpMapButton")
+focus_next = NodePath("../UpMapButton")
+focus_previous = NodePath("../../../TextureRect/LineEdit")
+theme_override_font_sizes/font_size = 35
+text = " A "
+script = ExtResource("3_sdtpu")
+action = "Left"
+
+[node name="HintLabel" type="Label" parent="ScrollContainer/HBoxContainer/LeftMapButton"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "..."
+autowrap_mode = 2
+
+[node name="UpMapButton" type="Button" parent="ScrollContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = " W "
+script = ExtResource("3_sdtpu")
+action = "Up"
+
+[node name="HintLabel" type="Label" parent="ScrollContainer/HBoxContainer/UpMapButton"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "..."
+autowrap_mode = 2
+
+[node name="DownMapButton" type="Button" parent="ScrollContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = " S "
+script = ExtResource("3_sdtpu")
+action = "Down"
+
+[node name="HintLabel" type="Label" parent="ScrollContainer/HBoxContainer/DownMapButton"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "..."
+autowrap_mode = 2
+
+[node name="RightMapButton" type="Button" parent="ScrollContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+focus_next = NodePath("../../../SfxSlider")
+focus_previous = NodePath("../DownMapButton")
+theme_override_font_sizes/font_size = 35
+text = " D "
+script = ExtResource("3_sdtpu")
+action = "Right"
+
+[node name="HintLabel" type="Label" parent="ScrollContainer/HBoxContainer/RightMapButton"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "..."
+autowrap_mode = 2
+
+[node name="LastButton" type="Button" parent="ScrollContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+focus_next = NodePath("../../../SfxSlider")
+focus_previous = NodePath("../DownMapButton")
+theme_override_font_sizes/font_size = 35
+text = " E "
+script = ExtResource("3_sdtpu")
+action = "Inventory"
+
+[node name="HintLabel" type="Label" parent="ScrollContainer/HBoxContainer/LastButton"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "..."
+autowrap_mode = 2
 
 [connection signal="pressed" from="TextureRect/OkayButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
