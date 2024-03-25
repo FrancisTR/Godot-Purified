@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="1_we8v3"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_kithy"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_1oy2a"]
-[ext_resource type="Resource" uid="uid://cfcts3ec03suv" path="res://Dialogues/DialogueTest.tres" id="4_xa54b"]
+[ext_resource type="Resource" uid="uid://2d0hvs0mqxeq" path="res://Dialogues/Dialogue.tres" id="4_pn0gs"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_hejlf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6cu33"]
@@ -32,6 +32,8 @@ script = ExtResource("4_1oy2a")
 script = ExtResource("5_hejlf")
 
 [node name="NPC" type="Area2D"]
+z_index = 101
+texture_filter = 1
 script = ExtResource("1_7ll4o")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -39,12 +41,24 @@ texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_bxftl")
 
+[node name="PressForDialogue" type="Label" parent="."]
+visible = false
+z_index = 100
+texture_filter = 1
+offset_left = -18.0
+offset_top = -44.0
+offset_right = 10.0
+offset_bottom = -21.0
+text = "Q"
+horizontal_alignment = 1
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, -0.5)
 shape = SubResource("RectangleShape2D_bc547")
 
 [node name="DialogueBox" type="Panel" parent="."]
 visible = false
+z_index = 101
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
 anchors_preset = 7
@@ -58,8 +72,7 @@ offset_right = 286.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("2_kithy")
-dialogue_data = ExtResource("4_xa54b")
-start_id = "NPC1"
+dialogue_data = ExtResource("4_pn0gs")
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_66oxl"), SubResource("RichTextEffect_emjeb")])
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

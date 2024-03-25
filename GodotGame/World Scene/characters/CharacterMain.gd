@@ -45,56 +45,55 @@ func _physics_process(delta):
 	var nowMoving = false # c nowMoving
 	var canMove = not inventory_opened #and this and that and ... and etc.
 	
+	if GameData.charLock == false:
+		if canMove:
+			if directionX:
+				velocity.x = directionX * SPEED
+				nowMoving = true
+			else:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	if canMove:
-		if directionX:
-			velocity.x = directionX * SPEED
-			nowMoving = true
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			if directionY:
+				velocity.y = directionY * SPEED
+				nowMoving = true
+			else:
+				velocity.y = move_toward(velocity.y, 0, SPEED)
 
-		if directionY:
-			velocity.y = directionY * SPEED
-			nowMoving = true
-		else:
-			velocity.y = move_toward(velocity.y, 0, SPEED)
-
-	if nowMoving:
-		if not isMoving:
-			# when starting to move
-			isMoving = true
-			footstep_audio.play()
-	elif isMoving:
-		# when starting to not move
-		isMoving = false
-		footstep_audio.stop()
-		
-		# 0 is up, 1 is down, 2 is right, 3 is left
-		if (characterDirection == 0):
-			sprite_2d.animation = "Up_Idle"
-		elif (characterDirection == 1):
-			sprite_2d.animation = "Down_Idle"
-		elif (characterDirection == 2):
-			sprite_2d.animation = "Right_Idle"
-		elif (characterDirection == 3):
-			sprite_2d.animation = "Left_Idle"
+		if nowMoving:
+			if not isMoving:
+				# when starting to move
+				isMoving = true
+				footstep_audio.play()
+		elif isMoving:
+			# when starting to not move
+			isMoving = false
+			footstep_audio.stop()
 			
-	if Input.is_action_just_pressed("Inventory"):
-		if not inventory_opened:
-			inventory_opened = true
-			velocity.x = 0
-			velocity.y = 0
-			print("inventory_open")
-			$"Inventory Layer".show()
-		else:
-			inventory_opened = false
-			print("inventory_close")
-			$"Inventory Layer".hide()
-		print("pressed E")
-		$"Inventory Layer/Inventory".draw_items(GameData.inventory)
-	elif Input.is_action_just_pressed("Back"):
-		get_tree().change_scene_to_file("res://Main Menu Scene/Options.tscn")
-		
+			# 0 is up, 1 is down, 2 is right, 3 is left
+			if (characterDirection == 0):
+				sprite_2d.animation = "Up_Idle"
+			elif (characterDirection == 1):
+				sprite_2d.animation = "Down_Idle"
+			elif (characterDirection == 2):
+				sprite_2d.animation = "Right_Idle"
+			elif (characterDirection == 3):
+				sprite_2d.animation = "Left_Idle"
+				
+		if Input.is_action_just_pressed("Inventory"):
+			if not inventory_opened:
+				inventory_opened = true
+				velocity.x = 0
+				velocity.y = 0
+				print("inventory_open")
+				$"Inventory Layer".show()
+			else:
+				inventory_opened = false
+				print("inventory_close")
+				$"Inventory Layer".hide()
+			print("pressed E")
+			$"Inventory Layer/Inventory".draw_items(GameData.inventory)
+		elif Input.is_action_just_pressed("Back"):
+			get_tree().change_scene_to_file("res://Main Menu Scene/Options.tscn")
 	move_and_slide()
 
 func _on_footstep_audio_finished():
