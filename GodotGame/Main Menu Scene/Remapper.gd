@@ -2,6 +2,7 @@ extends Button
 
 @export var action: String
 @onready var remap_container = $"."
+#var not_waiting_input = false
 
 func _init():
 	toggle_mode = true
