@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4dhom44jopn2"]
+[gd_scene load_steps=16 format=3 uid="uid://c4dhom44jopn2"]
 
-[ext_resource type="Script" path="res://Main Menu Scene/MainMenu.gd" id="1_m2j1f"]
+[ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/MainMenu.gd" id="1_m2j1f"]
 [ext_resource type="Texture2D" uid="uid://bipqa3xtfks8q" path="res://Assets/Tilesets/Water.png" id="2_3q7c4"]
 [ext_resource type="Texture2D" uid="uid://cbid64fvoqhpa" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a1.png" id="3_1l2m6"]
 [ext_resource type="Texture2D" uid="uid://b3vhgylwtw1xu" path="res://Assets/MainMenuTitle.png" id="3_myful"]
 [ext_resource type="Texture2D" uid="uid://dxlxwg8v6uybo" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a2.png" id="4_1tbvl"]
+[ext_resource type="Texture2D" uid="uid://betian48tiv5j" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a2.png" id="6_ast7a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6dia3"]
 texture = ExtResource("3_1l2m6")
@@ -12,17 +13,26 @@ texture = ExtResource("3_1l2m6")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_485rp"]
 texture = ExtResource("4_1tbvl")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a6ue1"]
+texture = ExtResource("6_ast7a")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_shume"]
 texture = ExtResource("3_1l2m6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wl5ph"]
 texture = ExtResource("4_1tbvl")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52t2r"]
+texture = ExtResource("6_ast7a")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tpe8i"]
 texture = ExtResource("3_1l2m6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ctywu"]
 texture = ExtResource("4_1tbvl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d6qdx"]
+texture = ExtResource("6_ast7a")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -43,55 +53,71 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_3q7c4")
 
-[node name="StartButton" type="Button" parent="."]
-texture_filter = 1
-layout_mode = 2
-offset_left = 466.0
-offset_top = 224.0
-offset_right = 686.0
-offset_bottom = 273.0
-focus_neighbor_top = NodePath("../ExitButton")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_6dia3")
-theme_override_styles/hover = SubResource("StyleBoxTexture_485rp")
-text = "Start"
-
-[node name="OptionsButton" type="Button" parent="."]
-texture_filter = 1
-layout_mode = 2
-offset_left = 466.0
-offset_top = 273.0
-offset_right = 686.0
-offset_bottom = 322.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_shume")
-theme_override_styles/hover = SubResource("StyleBoxTexture_wl5ph")
-text = "Options"
-
-[node name="ExitButton" type="Button" parent="."]
-texture_filter = 1
-layout_mode = 2
-offset_left = 466.0
-offset_top = 322.0
-offset_right = 686.0
-offset_bottom = 371.0
-focus_neighbor_bottom = NodePath("../StartButton")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_tpe8i")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ctywu")
-text = "Exit"
-
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -159.0
-offset_top = 116.0
-offset_right = 160.0
-offset_bottom = 204.0
+offset_left = -320.0
+offset_top = 51.0
+offset_right = -1.0
+offset_bottom = 139.0
 grow_horizontal = 2
+scale = Vector2(2, 2)
 texture = ExtResource("3_myful")
+
+[node name="StartButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 34.0
+offset_top = 313.0
+offset_right = 254.0
+offset_bottom = 372.0
+scale = Vector2(1.5, 1.5)
+focus_neighbor_top = NodePath("../ExitButton")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_6dia3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_485rp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a6ue1")
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 34.0
+offset_top = 412.0
+offset_right = 254.0
+offset_bottom = 471.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_shume")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wl5ph")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_52t2r")
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 34.0
+offset_top = 511.0
+offset_right = 254.0
+offset_bottom = 570.0
+scale = Vector2(1.5, 1.5)
+focus_neighbor_bottom = NodePath("../StartButton")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_tpe8i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ctywu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_d6qdx")
+text = "Exit"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_option_button_pressed"]

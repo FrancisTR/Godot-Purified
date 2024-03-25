@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://decpyxnu3oocl"]
 
-[ext_resource type="Script" path="res://World Scene/npc.gd" id="1_7ll4o"]
+[ext_resource type="Script" path="res://World Scene/characters/npc.gd" id="1_7ll4o"]
 [ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="1_we8v3"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_kithy"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_1oy2a"]
-[ext_resource type="Resource" uid="uid://cfcts3ec03suv" path="res://DialogueTest.tres" id="4_xa54b"]
+[ext_resource type="Resource" uid="uid://cfcts3ec03suv" path="res://Dialogues/DialogueTest.tres" id="4_xa54b"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_hejlf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6cu33"]

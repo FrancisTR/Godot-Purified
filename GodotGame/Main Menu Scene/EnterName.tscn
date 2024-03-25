@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d24xfapo2kkt"]
 
-[ext_resource type="Script" path="res://Main Menu Scene/CanvasLayer.gd" id="1_x2q4l"]
+[ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/NameCharacter.gd" id="1_x2q4l"]
 
 [node name="EnterName" type="CanvasLayer"]
 script = ExtResource("1_x2q4l")
@@ -12,6 +12,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.403922, 0.403922, 0.403922, 1)
+
+[node name="Error" type="Label" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 151.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 25
+text = "Error: Testing"
+horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -58,6 +76,7 @@ offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Enter Name"
+max_length = 10
 clear_button_enabled = true
 caret_blink = true
 caret_blink_interval = 0.34
@@ -80,3 +99,4 @@ theme_override_font_sizes/normal_font_size = 35
 text = "Enter your username"
 
 [connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="text_changed" from="TextureRect/LineEdit" to="." method="_on_line_edit_text_changed"]

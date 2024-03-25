@@ -16,3 +16,6 @@ func _draw_item_instance(item):
 		return load(Utils.get_item(item)["texture"]).instantiate().getTexture()
 	else:
 		return load(Utils.get_item(item)["texture"])
+
+
+
