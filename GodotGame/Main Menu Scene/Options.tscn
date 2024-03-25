@@ -145,6 +145,15 @@ text = " A "
 script = ExtResource("3_sdtpu")
 action = "Left"
 
+[node name="HintLabel" type="Label" parent="RemapContainer/LeftMapButton"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "..."
+horizontal_alignment = 1
+
 [node name="UpMapButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
@@ -153,6 +162,15 @@ text = " W "
 script = ExtResource("3_sdtpu")
 action = "Up"
 
+[node name="HintLabel" type="Label" parent="RemapContainer/UpMapButton"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "..."
+horizontal_alignment = 1
+
 [node name="DownMapButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
@@ -160,6 +178,15 @@ theme_override_font_sizes/font_size = 35
 text = " S "
 script = ExtResource("3_sdtpu")
 action = "Down"
+
+[node name="HintLabel" type="Label" parent="RemapContainer/DownMapButton"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "..."
+horizontal_alignment = 1
 
 [node name="RightMapButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
@@ -170,6 +197,15 @@ theme_override_font_sizes/font_size = 35
 text = " D "
 script = ExtResource("3_sdtpu")
 action = "Right"
+
+[node name="HintLabel" type="Label" parent="RemapContainer/RightMapButton"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "..."
+horizontal_alignment = 1
 
 [node name="SfxSlider" type="HSlider" parent="."]
 offset_left = 337.0
