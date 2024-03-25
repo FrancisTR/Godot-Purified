@@ -1,32 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq46ncf7jihje"]
+[gd_scene load_steps=10 format=3 uid="uid://bq46ncf7jihje"]
 
-[ext_resource type="Script" path="res://Main Menu Scene/Options.gd" id="1_pejof"]
-[ext_resource type="Script" path="res://Main Menu Scene/VolumeOptions.gd" id="2_jtr8r"]
-[ext_resource type="Script" path="res://Main Menu Scene/Remapper.gd" id="3_sdtpu"]
+[ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Options.gd" id="1_pejof"]
+[ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/VolumeOptions.gd" id="2_jtr8r"]
+[ext_resource type="Texture2D" uid="uid://bipqa3xtfks8q" path="res://Assets/Tilesets/Water.png" id="2_ra03o"]
+[ext_resource type="Texture2D" uid="uid://cbid64fvoqhpa" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a1.png" id="3_q1kxr"]
+[ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Remapper.gd" id="3_sdtpu"]
+[ext_resource type="Texture2D" uid="uid://betian48tiv5j" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a2.png" id="5_se5ao"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ovysx"]
+texture = ExtResource("3_q1kxr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_chwq6"]
+texture = ExtResource("5_se5ao")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sknse"]
+texture = ExtResource("5_se5ao")
 
 [node name="EnterOptions" type="CanvasLayer"]
 script = ExtResource("1_pejof")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="background" type="TextureRect" parent="."]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.403922, 0.403922, 0.403922, 1)
+texture = ExtResource("2_ra03o")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -227.0
-offset_top = -196.0
-offset_right = 227.0
-offset_bottom = 196.0
+offset_left = 341.0
+offset_top = -303.0
+offset_right = 556.0
+offset_bottom = -220.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 55
+text = "Options"
 
 [node name="OkayButton" type="Button" parent="TextureRect"]
 texture_filter = 1
@@ -48,7 +64,7 @@ focus_previous = NodePath("../../MusicSlider")
 theme_override_font_sizes/font_size = 35
 text = "Okay"
 
-[node name="UsernameLabel" type="RichTextLabel" parent="TextureRect"]
+[node name="HotkeyLabel" type="RichTextLabel" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -56,37 +72,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -430.0
-offset_top = -219.0
-offset_right = -235.0
-offset_bottom = -164.0
+offset_left = -489.0
+offset_top = -192.0
+offset_right = -236.0
+offset_bottom = -126.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
-text = "Username:"
-
-[node name="LineEdit" type="LineEdit" parent="TextureRect"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -227.0
-offset_right = 239.0
-offset_bottom = -155.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_neighbor_top = NodePath("../../BackButton")
-focus_neighbor_bottom = NodePath("../../KeyShortcuts/HBoxContainer/LeftMapButton")
-focus_next = NodePath("../../KeyShortcuts/HBoxContainer/LeftMapButton")
-focus_previous = NodePath("../../BackButton")
-placeholder_text = "Enter username"
-clear_button_enabled = true
-caret_blink = true
-caret_blink_interval = 0.34
+text = "Key shortcuts: "
 
 [node name="HotkeyLabel" type="RichTextLabel" parent="TextureRect"]
 texture_filter = 1
@@ -104,6 +97,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
 text = "Key shortcuts: "
+texture = ExtResource("2_ra03o")
 
 [node name="OptionsTitle" type="RichTextLabel" parent="."]
 texture_filter = 1
@@ -112,10 +106,36 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -67.0
-offset_top = -302.0
-offset_right = 75.0
-offset_bottom = -247.0
+offset_left = 341.0
+offset_top = -303.0
+offset_right = 556.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 55
+text = "Options"
+
+[node name="RemapContainer" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HotkeyLabel" type="RichTextLabel" parent="RemapContainer"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -489.0
+offset_top = -192.0
+offset_right = -236.0
+offset_bottom = -126.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
@@ -125,6 +145,59 @@ text = "Options"
 focus_next = NodePath("../TextureRect/LineEdit")
 focus_previous = NodePath("../TextureRect/OkayButton")
 text = "Back"
+
+[node name="LeftMapButton" type="Button" parent="RemapContainer"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 337.0
+offset_top = 165.0
+offset_right = 457.0
+offset_bottom = 242.0
+focus_neighbor_left = NodePath("../RightMapButton")
+focus_neighbor_right = NodePath("../UpMapButton")
+focus_next = NodePath("../UpMapButton")
+theme_override_font_sizes/font_size = 35
+text = " A "
+script = ExtResource("3_sdtpu")
+action = "Left"
+
+[node name="UpMapButton" type="Button" parent="RemapContainer"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 477.0
+offset_top = 68.0
+offset_right = 597.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 35
+text = " W "
+script = ExtResource("3_sdtpu")
+action = "Up"
+
+[node name="DownMapButton" type="Button" parent="RemapContainer"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 477.0
+offset_top = 165.0
+offset_right = 597.0
+offset_bottom = 242.0
+theme_override_font_sizes/font_size = 35
+text = " S "
+script = ExtResource("3_sdtpu")
+action = "Down"
+
+[node name="RightMapButton" type="Button" parent="RemapContainer"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 617.0
+offset_top = 165.0
+offset_right = 737.0
+offset_bottom = 242.0
+focus_next = NodePath("../../SfxSlider")
+focus_previous = NodePath("../DownMapButton")
+theme_override_font_sizes/font_size = 35
+text = " D "
+script = ExtResource("3_sdtpu")
+action = "Right"
 
 [node name="SfxSlider" type="HSlider" parent="."]
 offset_left = 337.0
@@ -180,8 +253,6 @@ offset_top = 369.0
 offset_right = 813.0
 offset_bottom = 385.0
 focus_neighbor_top = NodePath("../SfxSlider")
-focus_neighbor_bottom = NodePath("../TextureRect/OkayButton")
-focus_next = NodePath("../TextureRect/OkayButton")
 focus_previous = NodePath("../SfxSlider")
 value = 100.0
 script = ExtResource("2_jtr8r")
@@ -344,4 +415,20 @@ text = "..."
 autowrap_mode = 2
 
 [connection signal="pressed" from="TextureRect/OkayButton" to="." method="_on_button_pressed"]
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 1
+offset_left = 37.0
+offset_top = 514.0
+offset_right = 257.0
+offset_bottom = 573.0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_ovysx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_chwq6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sknse")
+text = "Back"
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

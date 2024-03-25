@@ -6,7 +6,7 @@
 	{
 		"name":"Twig",
 		"description":"this is a twig",
-		"texture":"res://World Scene/twig.tscn",
+		"texture":"res://World Scene/Items/twig.tscn",
 		"cropped":"yes"
 	},
 	{

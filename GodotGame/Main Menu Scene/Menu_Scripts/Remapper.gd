@@ -1,5 +1,7 @@
 extends Button
 
+#TODO: Make user change the button one at a time
+
 @export var action: String
 @onready var remap_container = $"."
 #var not_waiting_input = false
@@ -17,7 +19,9 @@ func _toggled(button_pressed):
 	set_process_unhandled_input(button_pressed)
 	if button_pressed:
 		release_focus()
-		text = "Waiting for input"
+		text = "???"
+		
+
 
 func _unhandled_input(e):
 	if not e is InputEventKey:
