@@ -10,3 +10,5 @@ var username = ""
 var inventory:Array
 
 var inventory_amount:Dictionary
+
+var charLock = false

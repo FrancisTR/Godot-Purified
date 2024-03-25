@@ -1,0 +1,413 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://2d0hvs0mqxeq"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_mxhag"]
+
+[resource]
+script = ExtResource("1_mxhag")
+starts = {
+"Accept": &"0_5",
+"Accept2": &"0_16",
+"Accept3": &"0_17",
+"Anger": &"0_2",
+"Anger2": &"0_10",
+"Anger3": &"0_11",
+"Bargin": &"0_3",
+"Bargin2": &"0_12",
+"Bargin3": &"0_13",
+"Croak": &"0_6",
+"Croak2": &"0_18",
+"Croak3": &"0_19",
+"Denial": &"0_1",
+"Denial2": &"0_8",
+"Denial3": &"0_9",
+"Depress": &"0_4",
+"Depress2": &"0_14",
+"Depress3": &"0_15",
+"OldMan": &"0_7",
+"OldMan2": &"0_20",
+"OldMan3": &"0_21"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-120, -1640),
+"start_id": "Denial"
+},
+"0_10": {
+"link": &"1_10",
+"offset": Vector2(-120, -180),
+"start_id": "Anger2"
+},
+"0_11": {
+"link": &"1_11",
+"offset": Vector2(-120, 0),
+"start_id": "Anger3"
+},
+"0_12": {
+"link": &"1_12",
+"offset": Vector2(-300, 1460),
+"start_id": "Bargin2"
+},
+"0_13": {
+"link": &"1_13",
+"offset": Vector2(-300, 1640),
+"start_id": "Bargin3"
+},
+"0_14": {
+"link": &"1_14",
+"offset": Vector2(-260, 2700),
+"start_id": "Depress2"
+},
+"0_15": {
+"link": &"1_15",
+"offset": Vector2(-259.416, 2850.37),
+"start_id": "Depress3"
+},
+"0_16": {
+"link": &"1_16",
+"offset": Vector2(-220, 4120),
+"start_id": "Accept2"
+},
+"0_17": {
+"link": &"1_17",
+"offset": Vector2(-220, 4300),
+"start_id": "Accept3"
+},
+"0_18": {
+"link": &"1_18",
+"offset": Vector2(-240, 5480),
+"start_id": "Croak2"
+},
+"0_19": {
+"link": &"1_19",
+"offset": Vector2(-240, 5620),
+"start_id": "Croak3"
+},
+"0_2": {
+"link": &"1_2",
+"offset": Vector2(-120, -380),
+"start_id": "Anger"
+},
+"0_20": {
+"link": &"1_20",
+"offset": Vector2(-160, 7040),
+"start_id": "OldMan2"
+},
+"0_21": {
+"link": &"1_21",
+"offset": Vector2(-160, 7200),
+"start_id": "OldMan3"
+},
+"0_3": {
+"link": &"1_3",
+"offset": Vector2(-300, 1280),
+"start_id": "Bargin"
+},
+"0_4": {
+"link": &"1_4",
+"offset": Vector2(-260, 2520),
+"start_id": "Depress"
+},
+"0_5": {
+"link": &"1_5",
+"offset": Vector2(-220, 3940),
+"start_id": "Accept"
+},
+"0_6": {
+"link": &"1_6",
+"offset": Vector2(-240, 5340),
+"start_id": "Croak"
+},
+"0_7": {
+"link": &"1_7",
+"offset": Vector2(-160, 6880),
+"start_id": "OldMan"
+},
+"0_8": {
+"link": &"1_8",
+"offset": Vector2(-120, -1440),
+"start_id": "Denial2"
+},
+"0_9": {
+"link": &"1_9",
+"offset": Vector2(-120, -1180),
+"start_id": "Denial3"
+},
+"1_1": {
+"dialogue": "Danny1",
+"offset": Vector2(320, -1860),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": "Danny"
+},
+"1_10": {
+"dialogue": "Anger2",
+"offset": Vector2(320, 80),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": "Angelica"
+},
+"1_11": {
+"dialogue": "Anger3",
+"offset": Vector2(320, 520),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": "Angelica"
+},
+"1_12": {
+"dialogue": "Barry2",
+"offset": Vector2(320, 1440),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": "Barry"
+},
+"1_13": {
+"dialogue": "Barry3",
+"offset": Vector2(320, 1880),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": "Barry"
+},
+"1_14": {
+"dialogue": "Derek2",
+"offset": Vector2(320, 2820),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": "Derek"
+},
+"1_15": {
+"dialogue": "Derek3",
+"offset": Vector2(320, 3260),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": "Derek"
+},
+"1_16": {
+"dialogue": "Antonio2",
+"offset": Vector2(320, 4200),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": "Antonio"
+},
+"1_17": {
+"dialogue": "Antonio3",
+"offset": Vector2(320, 4620),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": "Antonio"
+},
+"1_18": {
+"dialogue": "Croak2",
+"offset": Vector2(320, 5580),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": "Croak"
+},
+"1_19": {
+"dialogue": "Croak3",
+"offset": Vector2(320, 6020),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": "Croak"
+},
+"1_2": {
+"dialogue": "Anger1",
+"offset": Vector2(320, -420),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": "Angelica"
+},
+"1_20": {
+"dialogue": "Old2",
+"offset": Vector2(340, 7080),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": "Old Man"
+},
+"1_21": {
+"dialogue": "Old3",
+"offset": Vector2(340, 7520),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": "Old Man"
+},
+"1_3": {
+"dialogue": "Barry1",
+"offset": Vector2(320, 960),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": "Barry"
+},
+"1_4": {
+"dialogue": "Derek1",
+"offset": Vector2(320, 2320),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 430.999),
+"speaker": "Derek"
+},
+"1_5": {
+"dialogue": "Antonio1",
+"offset": Vector2(320, 3700),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": "Antonio"
+},
+"1_6": {
+"dialogue": "Croak1",
+"offset": Vector2(320, 5080),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": "Croak"
+},
+"1_7": {
+"dialogue": "Old1",
+"offset": Vector2(340, 6600),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": "Old Man"
+},
+"1_8": {
+"dialogue": "Danny2",
+"offset": Vector2(320, -1360),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": "Danny"
+},
+"1_9": {
+"dialogue": "Danny3",
+"offset": Vector2(320, -860),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": "Danny"
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = ""

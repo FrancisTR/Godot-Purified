@@ -1,23 +1,24 @@
 extends Node2D
 
-@onready var npcs = [$NPC, $NPC2]
+@onready var npcs = [$NPCs/Denial_Danny, $NPCs/Anger_Angelica]
 
 var signal_method = ""
 
 @export var NumTwigs: int = 0
 
-#var npc_positions = {
-	#'day1':[Vector2(318, 106), Vector2(997, 101)],
-	#'day2':[Vector2(218, 606), Vector2(497, 201)],
-	#'day3':[Vector2(48, 406), Vector2(997, 101)],
-	#'day4':[Vector2(218, 206), Vector2(897, 201)],
-	#'day5':[Vector2(318, 106), Vector2(997, 101)],
-	#'day6':[Vector2(218, 206), Vector2(897, 201)],
-	#'day7':[Vector2(318, 106), Vector2(997, 101)],
-	#'day8':[Vector2(218, 206), Vector2(897, 201)],
-	#'day9':[Vector2(218, 206), Vector2(897, 201)],
-	#'day10':[Vector2(218, 206), Vector2(897, 201)]
-	#}
+#TODO: Add cord for all NPCs
+var npc_positions = {
+	'day1':[Vector2(318, 106), Vector2(997, 101)],
+	'day2':[Vector2(108, -353), Vector2(497, 201)],
+	'day3':[Vector2(48, 406), Vector2(997, 101)],
+	'day4':[Vector2(218, 206), Vector2(897, 201)],
+	'day5':[Vector2(318, 106), Vector2(997, 101)],
+	'day6':[Vector2(218, 206), Vector2(897, 201)],
+	'day7':[Vector2(318, 106), Vector2(997, 101)],
+	'day8':[Vector2(218, 206), Vector2(897, 201)],
+	'day9':[Vector2(218, 206), Vector2(897, 201)],
+	'day10':[Vector2(218, 206), Vector2(897, 201)]
+	}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,14 +32,15 @@ func _ready():
 			day = 10
 		
 		# Commented out for now
-		#npcs[i].position = npc_positions[('day'+str(day))][i]
-		#print(npcs[i], "is set to", npc_positions[('day'+str(day))][i])
+		npcs[i].position = npc_positions[('day'+str(day))][i]
+		print(npcs[i], "is set to", npc_positions[('day'+str(day))][i])
 
 func increase_day(amount):
 	if(GameData.day+amount > 0):
 		GameData.day += amount
 
 func _on_open_leave_menu():
+	print("leaving?")
 	$UI/LeaveVillage.show()
 	$UI/LeaveVillage/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Yes.grab_focus()
 
