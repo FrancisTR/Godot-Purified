@@ -92,6 +92,9 @@ func _physics_process(delta):
 			$"Inventory Layer".hide()
 		print("pressed E")
 		$"Inventory Layer/Inventory".draw_items(GameData.inventory)
+	elif Input.is_action_just_pressed("Back"):
+		get_tree().change_scene_to_file("res://Main Menu Scene/Options.tscn")
+		
 	move_and_slide()
 
 func _on_footstep_audio_finished():
