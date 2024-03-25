@@ -80,8 +80,8 @@ offset_bottom = -155.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_neighbor_top = NodePath("../../BackButton")
-focus_neighbor_bottom = NodePath("../../ScrollContainer/HBoxContainer/LeftMapButton")
-focus_next = NodePath("../../ScrollContainer/HBoxContainer/LeftMapButton")
+focus_neighbor_bottom = NodePath("../../KeyShortcuts/HBoxContainer/LeftMapButton")
+focus_next = NodePath("../../KeyShortcuts/HBoxContainer/LeftMapButton")
 focus_previous = NodePath("../../BackButton")
 placeholder_text = "Enter username"
 clear_button_enabled = true
@@ -126,21 +126,15 @@ focus_next = NodePath("../TextureRect/LineEdit")
 focus_previous = NodePath("../TextureRect/OkayButton")
 text = "Back"
 
-[node name="RemapContainer" type="HBoxContainer" parent="."]
-offset_left = 336.0
-offset_top = 192.0
-offset_right = 813.0
-offset_bottom = 261.0
-
 [node name="SfxSlider" type="HSlider" parent="."]
 offset_left = 337.0
 offset_top = 318.0
 offset_right = 813.0
 offset_bottom = 334.0
-focus_neighbor_top = NodePath("../ScrollContainer/HBoxContainer/LeftMapButton")
+focus_neighbor_top = NodePath("../KeyShortcuts/HBoxContainer/LeftMapButton")
 focus_neighbor_bottom = NodePath("../MusicSlider")
 focus_next = NodePath("../MusicSlider")
-focus_previous = NodePath("../ScrollContainer/HBoxContainer/LeftMapButton")
+focus_previous = NodePath("../KeyShortcuts/HBoxContainer/LeftMapButton")
 value = 100.0
 script = ExtResource("2_jtr8r")
 bus_name = "sfx"
@@ -228,16 +222,16 @@ grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
 text = "Music Volume:"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="KeyShortcuts" type="ScrollContainer" parent="."]
 offset_left = 336.0
 offset_top = 195.0
 offset_right = 852.0
 offset_bottom = 258.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyShortcuts"]
 layout_mode = 2
 
-[node name="LeftMapButton" type="Button" parent="ScrollContainer/HBoxContainer"]
+[node name="LeftMapButton" type="Button" parent="KeyShortcuts/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 focus_neighbor_left = NodePath("../RightMapButton")
@@ -246,11 +240,11 @@ focus_neighbor_right = NodePath("../UpMapButton")
 focus_next = NodePath("../UpMapButton")
 focus_previous = NodePath("../../../TextureRect/LineEdit")
 theme_override_font_sizes/font_size = 35
-text = " A "
+text = " Left "
 script = ExtResource("3_sdtpu")
 action = "Left"
 
-[node name="HintLabel" type="Label" parent="ScrollContainer/HBoxContainer/LeftMapButton"]
+[node name="HintLabel" type="Label" parent="KeyShortcuts/HBoxContainer/LeftMapButton"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -259,15 +253,15 @@ grow_horizontal = 2
 text = "..."
 autowrap_mode = 2
 
-[node name="UpMapButton" type="Button" parent="ScrollContainer/HBoxContainer"]
+[node name="UpMapButton" type="Button" parent="KeyShortcuts/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = " W "
+text = " Up "
 script = ExtResource("3_sdtpu")
 action = "Up"
 
-[node name="HintLabel" type="Label" parent="ScrollContainer/HBoxContainer/UpMapButton"]
+[node name="HintLabel" type="Label" parent="KeyShortcuts/HBoxContainer/UpMapButton"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -276,15 +270,15 @@ grow_horizontal = 2
 text = "..."
 autowrap_mode = 2
 
-[node name="DownMapButton" type="Button" parent="ScrollContainer/HBoxContainer"]
+[node name="DownMapButton" type="Button" parent="KeyShortcuts/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = " S "
+text = " Down "
 script = ExtResource("3_sdtpu")
 action = "Down"
 
-[node name="HintLabel" type="Label" parent="ScrollContainer/HBoxContainer/DownMapButton"]
+[node name="HintLabel" type="Label" parent="KeyShortcuts/HBoxContainer/DownMapButton"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -293,17 +287,17 @@ grow_horizontal = 2
 text = "..."
 autowrap_mode = 2
 
-[node name="RightMapButton" type="Button" parent="ScrollContainer/HBoxContainer"]
+[node name="RightMapButton" type="Button" parent="KeyShortcuts/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 focus_next = NodePath("../../../SfxSlider")
 focus_previous = NodePath("../DownMapButton")
 theme_override_font_sizes/font_size = 35
-text = " D "
+text = " Right "
 script = ExtResource("3_sdtpu")
 action = "Right"
 
-[node name="HintLabel" type="Label" parent="ScrollContainer/HBoxContainer/RightMapButton"]
+[node name="HintLabel" type="Label" parent="KeyShortcuts/HBoxContainer/RightMapButton"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -312,17 +306,35 @@ grow_horizontal = 2
 text = "..."
 autowrap_mode = 2
 
-[node name="LastButton" type="Button" parent="ScrollContainer/HBoxContainer"]
+[node name="BackMapButton" type="Button" parent="KeyShortcuts/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 focus_next = NodePath("../../../SfxSlider")
 focus_previous = NodePath("../DownMapButton")
 theme_override_font_sizes/font_size = 35
-text = " E "
+text = " "
+script = ExtResource("3_sdtpu")
+action = "Back"
+
+[node name="HintLabel" type="Label" parent="KeyShortcuts/HBoxContainer/BackMapButton"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "..."
+autowrap_mode = 2
+
+[node name="LastButton" type="Button" parent="KeyShortcuts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+focus_next = NodePath("../../../SfxSlider")
+focus_previous = NodePath("../DownMapButton")
+theme_override_font_sizes/font_size = 35
 script = ExtResource("3_sdtpu")
 action = "Inventory"
 
-[node name="HintLabel" type="Label" parent="ScrollContainer/HBoxContainer/LastButton"]
+[node name="HintLabel" type="Label" parent="KeyShortcuts/HBoxContainer/LastButton"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
