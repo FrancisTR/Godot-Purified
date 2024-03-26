@@ -162,9 +162,9 @@ autowrap_mode = 2
 texture_filter = 1
 layout_mode = 2
 offset_left = 800.0
-offset_top = 168.0
+offset_top = 139.0
 offset_right = 903.0
-offset_bottom = 234.0
+offset_bottom = 205.0
 scale = Vector2(1.1, 1.1)
 focus_next = NodePath("../../SfxSlider")
 focus_previous = NodePath("../DownMapButton")
@@ -186,9 +186,9 @@ autowrap_mode = 2
 texture_filter = 1
 layout_mode = 2
 offset_left = 800.0
-offset_top = 87.0
+offset_top = 219.0
 offset_right = 903.0
-offset_bottom = 153.0
+offset_bottom = 285.0
 scale = Vector2(1.1, 1.1)
 focus_next = NodePath("../../SfxSlider")
 focus_previous = NodePath("../DownMapButton")
@@ -198,6 +198,30 @@ script = ExtResource("3_sdtpu")
 action = "Back"
 
 [node name="HintLabel" type="Label" parent="RemapContainer/BackButton"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "..."
+autowrap_mode = 2
+
+[node name="DialogueButton" type="Button" parent="RemapContainer"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 800.0
+offset_top = 59.0
+offset_right = 903.0
+offset_bottom = 125.0
+scale = Vector2(1.1, 1.1)
+focus_next = NodePath("../../SfxSlider")
+focus_previous = NodePath("../DownMapButton")
+theme_override_font_sizes/font_size = 35
+text = "Q"
+script = ExtResource("3_sdtpu")
+action = "StartDialogue"
+
+[node name="HintLabel" type="Label" parent="RemapContainer/DialogueButton"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
