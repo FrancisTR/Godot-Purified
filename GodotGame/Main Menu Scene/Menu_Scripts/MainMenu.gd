@@ -2,7 +2,10 @@ extends Control # Originally Node2D; probably will conflict
 
 
 ## Called when the node enters the scene tree for the first time.
-#func _ready():
+func _ready():
+	# No buttons are selected until any arrow / tab is pressed.
+	# Note: hover is not very visible right now until you select something.
+	$InvisibleInputButton.grab_focus()
 	#$StartButton.grab_focus()
 
 
