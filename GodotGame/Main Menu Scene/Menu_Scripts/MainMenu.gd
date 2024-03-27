@@ -16,7 +16,11 @@ func _on_exit_button_pressed():
 
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://Main Menu Scene/EnterName.tscn")
+	# If first time, go to tutorial
+	if (GameData.visitTutorial == false):
+		get_tree().change_scene_to_file("res://Main Menu Scene/tutorial.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Main Menu Scene/EnterName.tscn")
 
 
 func _on_option_button_pressed():

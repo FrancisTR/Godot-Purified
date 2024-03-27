@@ -13,4 +13,5 @@ func _process(delta):
 
 
 func _on_interaction_detection_body_entered(body):
-	emit_signal("open_leave_menu")
+	if (body.name == "CharacterBody2D"):
+		emit_signal("open_leave_menu")

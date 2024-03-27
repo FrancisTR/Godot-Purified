@@ -9,6 +9,7 @@ size_flags_horizontal = 4
 script = ExtResource("1_hp0bo")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+texture_filter = 1
 layout_mode = 1
 offset_left = -147.0
 offset_top = -52.0
@@ -17,6 +18,7 @@ offset_bottom = 61.0
 color = Color(0.376471, 0.376471, 0.376471, 0.686275)
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 19.0
 offset_top = 28.0
@@ -24,24 +26,29 @@ offset_right = 275.0
 offset_bottom = 86.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+texture_filter = 1
 layout_mode = 2
 
 [node name="Leave Village?" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 text = "Do you want to leave this village?"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Yes" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 focus_neighbor_left = NodePath("../No")
 text = "Yes"
 
 [node name="No" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 focus_neighbor_right = NodePath("../Yes")

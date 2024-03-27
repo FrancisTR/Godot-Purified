@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjie6scx7ovoa"]
+
+[ext_resource type="Script" path="res://World Scene/Transitions/to_village.gd" id="1_fbexn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulbkt"]
+size = Vector2(566, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqafc"]
+size = Vector2(566, 16)
+
+[node name="ToVillage" type="StaticBody2D"]
+script = ExtResource("1_fbexn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ulbkt")
+
+[node name="Teleport" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_pqafc")
+
+[connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]
