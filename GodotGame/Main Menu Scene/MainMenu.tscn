@@ -67,6 +67,19 @@ grow_horizontal = 2
 scale = Vector2(2, 2)
 texture = ExtResource("3_myful")
 
+[node name="InvisibleInputButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -2016.0
+offset_top = -1581.0
+offset_right = -2008.0
+offset_bottom = -1573.0
+focus_neighbor_left = NodePath("../StartButton")
+focus_neighbor_top = NodePath("../StartButton")
+focus_neighbor_right = NodePath("../StartButton")
+focus_neighbor_bottom = NodePath("../StartButton")
+focus_next = NodePath("../StartButton")
+focus_previous = NodePath("../StartButton")
+
 [node name="StartButton" type="Button" parent="."]
 texture_filter = 1
 layout_mode = 2
@@ -76,6 +89,7 @@ offset_right = 254.0
 offset_bottom = 372.0
 scale = Vector2(1.5, 1.5)
 focus_neighbor_top = NodePath("../ExitButton")
+focus_previous = NodePath("../ExitButton")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -111,6 +125,7 @@ offset_right = 254.0
 offset_bottom = 570.0
 scale = Vector2(1.5, 1.5)
 focus_neighbor_bottom = NodePath("../StartButton")
+focus_next = NodePath("../StartButton")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
