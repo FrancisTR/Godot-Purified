@@ -1,0 +1,274 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://dwec833wachoy"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_hmqqi"]
+
+[resource]
+script = ExtResource("1_hmqqi")
+starts = {
+"Tutorial": &"0_1",
+"Tutorial2": &"0_2"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-620, -80),
+"start_id": "Tutorial"
+},
+"0_2": {
+"link": &"1_4",
+"offset": Vector2(-960, 340),
+"start_id": "Tutorial2"
+},
+"1_1": {
+"dialogue": "Oh..hello",
+"offset": Vector2(-80, -120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_10": {
+"dialogue": "The gist of it is they’ve been dealing with a lot of water problems. Luckily for them, in small doses, our product Toadable fixes that right up.",
+"offset": Vector2(2040, 800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_11": {
+"dialogue": "Alright, now. Do you know all of what you can do here?",
+"offset": Vector2(2420, 240),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
+"text": "Yes"
+},
+1: {
+"condition": {},
+"link": &"1_13",
+"text": "No"
+}
+},
+"size": Vector2(300, 494),
+"speaker": 1
+},
+"1_12": {
+"dialogue": "That should be all, so good luck!",
+"offset": Vector2(5000, 220),
+"options": {
+0: {
+"condition": {},
+"link": &"3_4",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_13": {
+"dialogue": "Okay, really quick",
+"offset": Vector2(2820, 720),
+"options": {
+0: {
+"condition": {},
+"link": &"3_2",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_14": {
+"dialogue": "Based on your resume, you prefer these controls. Feel free to change them right now.",
+"offset": Vector2(3440, 740),
+"options": {
+0: {
+"condition": {},
+"link": &"3_5",
+"text": ""
+}
+},
+"size": Vector2(300.001, 433),
+"speaker": 1
+},
+"1_15": {
+"dialogue": "Awesome. Also, selling the product is important.",
+"offset": Vector2(3820, 740),
+"options": {
+0: {
+"condition": {},
+"link": &"3_3",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_16": {
+"dialogue": "To interact, go up to one of the villagers and press the key that is showing above them to start talking.",
+"offset": Vector2(4420, 740),
+"options": {
+0: {
+"condition": {},
+"link": &"3_6",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_2": {
+"dialogue": "Welcome to your first day at work.",
+"offset": Vector2(293.076, -123.165),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_3": {
+"dialogue": "Remind me your name again?",
+"offset": Vector2(680, -120),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_4": {
+"dialogue": "Ahh got it!",
+"offset": Vector2(-200, 440),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_5": {
+"dialogue": "Okay buddy, this is the town you’ll be selling Toadable at.",
+"offset": Vector2(160, 440),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_6": {
+"dialogue": "Before I let you go and start selling, I just have a couple questions for you. First, do you know what’s happening here?",
+"offset": Vector2(520, 380),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": "Yes"
+},
+1: {
+"condition": {},
+"link": &"1_7",
+"text": "No"
+}
+},
+"size": Vector2(300, 494),
+"speaker": 1
+},
+"1_7": {
+"dialogue": "For starters, Well, the gist of it is they’ve been dealing with a lot of water problems, but that’s because they recently had their water source switched away from a clean water source, and replaced that with using the water from their river.",
+"offset": Vector2(940, 900),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_8": {
+"dialogue": "That water’s a bit polluted, so they used a lot of chemicals in it, which led to their pipes corroding a lot of the pipes that brings the water to their home.",
+"offset": Vector2(1280, 800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_9": {
+"dialogue": "That corrosion led to a bunch of lead getting in their water, which is a whole bunch of problems. The well in their town has been broken and neglected for sometime now, which made them use the water from their river, which also happens to be contaminated with lead and very polluted and [wave amp=50 freq=2]yada yada yada...[/wave]",
+"offset": Vector2(1660, 800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(1040, -120),
+"signalValue": "EnterName"
+},
+"3_2": {
+"link": &"1_14",
+"offset": Vector2(3180, 740),
+"signalValue": "ShowControls"
+},
+"3_3": {
+"link": &"1_16",
+"offset": Vector2(4140, 740),
+"signalValue": "DialogueControl"
+},
+"3_4": {
+"link": "END",
+"offset": Vector2(5380, 220),
+"signalValue": "Done"
+},
+"3_5": {
+"link": &"1_15",
+"offset": Vector2(3621.69, 1397.49),
+"signalValue": "Negate"
+},
+"3_6": {
+"link": &"1_12",
+"offset": Vector2(4760, 860),
+"signalValue": "Negate"
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://Dialogues/CharacterList.tres"

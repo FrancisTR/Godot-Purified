@@ -22,6 +22,9 @@ var npc_positions = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if (GameData.visitedWilderness == true):
+		$CharacterBody2D.position = Vector2(847, 1118)
+		GameData.visitedWilderness == false
 	#TODO: Make inventory system into its own scene w/ graphics
 	$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
 	#SceneTransition.manual_fade.connect(go_to_next_day)
@@ -43,6 +46,7 @@ func _on_open_leave_menu():
 	print("leaving?")
 	$UI/LeaveVillage.show()
 	$UI/LeaveVillage/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Yes.grab_focus()
+	GameData.charLock = true
 
 #**********TEST BUTTONS***********#
 func _on_test_inc_1():

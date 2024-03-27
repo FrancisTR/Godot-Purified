@@ -15,7 +15,10 @@ func _on_button_pressed():
 		$Error.visible = true
 	else:
 		GameData.username = line_edit.text
-		get_tree().change_scene_to_file("res://World Scene/World.tscn")
+		if (GameData.visitTutorial == false): #Continue the tutorial
+			get_tree().change_scene_to_file("res://Main Menu Scene/tutorial.tscn")
+		else:
+			get_tree().change_scene_to_file("res://World Scene/World.tscn")
 
 
 

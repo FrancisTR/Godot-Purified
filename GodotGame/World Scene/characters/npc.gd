@@ -1,6 +1,7 @@
 extends Area2D
 
-@onready var dialogue_box = $DialogueBox
+@onready var dialogue_box = $FixedDialoguePosition/DialogueBox
+
 var enterBody = false
 
 var NPCname = null

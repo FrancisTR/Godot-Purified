@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://cv86rq1ed4u3"]
+
+[ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Tutorial.gd" id="1_68151"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_jkygy"]
+[ext_resource type="Resource" uid="uid://dwec833wachoy" path="res://Dialogues/Tutorial.tres" id="3_tu0uu"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_akm0h"]
+[ext_resource type="Texture2D" uid="uid://ctdifh6jdv82p" path="res://Assets/profile0.png" id="4_vid2v"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_aeqdw"]
+[ext_resource type="PackedScene" uid="uid://bq46ncf7jihje" path="res://Main Menu Scene/Options.tscn" id="7_co0o4"]
+[ext_resource type="Texture2D" uid="uid://mdva1pov8txg" path="res://Assets/TutorialPlaceholder.png" id="8_d4a6u"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_a5mn1"]
+script = ExtResource("4_akm0h")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_uc7ri"]
+script = ExtResource("5_aeqdw")
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_68151")
+
+[node name="Dialogue" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" type="Panel" parent="Dialogue"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(256, 128)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -380.0
+offset_top = -173.0
+offset_right = 380.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_jkygy")
+dialogue_data = ExtResource("3_tu0uu")
+start_id = "Tutorial"
+sample_portrait = ExtResource("4_vid2v")
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a5mn1"), SubResource("RichTextEffect_uc7ri")])
+
+[node name="Controls" parent="." instance=ExtResource("7_co0o4")]
+visible = false
+
+[node name="background" parent="Controls" index="0"]
+visible = false
+
+[node name="OptionsTitle" parent="Controls" index="1"]
+visible = false
+
+[node name="RemapContainer" parent="Controls" index="3"]
+offset_bottom = -178.0
+
+[node name="BackButton" parent="Controls" index="6"]
+visible = false
+
+[node name="NPCexample" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.5
+offset_top = -83.0
+offset_right = 84.5
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_d4a6u")
+
+[connection signal="dialogue_signal" from="Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]
+
+[editable path="Controls"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcjc6w7kmje4r"]
+
+[ext_resource type="Script" path="res://World Scene/Transitions/ToWilderness.gd" id="1_8f0n2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulbkt"]
+size = Vector2(325, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqafc"]
+size = Vector2(326, 15)
+
+[node name="ToWilderness" type="StaticBody2D"]
+script = ExtResource("1_8f0n2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ulbkt")
+
+[node name="Teleport" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_pqafc")
+
+[connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]

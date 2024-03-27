@@ -94,7 +94,20 @@ func _physics_process(delta):
 			$"Inventory Layer/Inventory".draw_items(GameData.inventory)
 		elif Input.is_action_just_pressed("Back"):
 			get_tree().change_scene_to_file("res://Main Menu Scene/Options.tscn")
-	move_and_slide()
+		move_and_slide()
+	else:
+		velocity.x = 0
+		velocity.y = 0
+		# 0 is up, 1 is down, 2 is right, 3 is left
+		if (characterDirection == 0):
+			sprite_2d.animation = "Up_Idle"
+		elif (characterDirection == 1):
+			sprite_2d.animation = "Down_Idle"
+		elif (characterDirection == 2):
+			sprite_2d.animation = "Right_Idle"
+		elif (characterDirection == 3):
+			sprite_2d.animation = "Left_Idle"
+		footstep_audio.stop()
 
 func _on_footstep_audio_finished():
 	# loop audio

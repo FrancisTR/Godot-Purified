@@ -12,3 +12,10 @@ var inventory:Array
 var inventory_amount:Dictionary
 
 var charLock = false
+
+
+
+var visitTutorial = false
+
+
+var visitedWilderness = false

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw43arjwii3ih"]
+
+[ext_resource type="Script" path="res://World Scene/Transitions/exit.gd" id="1_3pee4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ush60"]
+size = Vector2(373, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_py4xi"]
+size = Vector2(373, 10.5)
+
+[node name="door" type="StaticBody2D"]
+script = ExtResource("1_3pee4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 9)
+shape = SubResource("RectangleShape2D_ush60")
+
+[node name="interaction detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction detection"]
+position = Vector2(-0.5, -11.25)
+shape = SubResource("RectangleShape2D_py4xi")
+
+[connection signal="body_entered" from="interaction detection" to="." method="_on_interaction_detection_body_entered"]
