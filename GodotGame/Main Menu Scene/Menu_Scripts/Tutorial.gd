@@ -4,6 +4,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	dialogue_box.variables["Player"] = GameData.username
 	if (not dialogue_box.running):
 		if GameData.username == "":
 			dialogue_box.start()

@@ -9,6 +9,7 @@ size_flags_horizontal = 4
 script = ExtResource("1_hp0bo")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 texture_filter = 1
 layout_mode = 1
 offset_left = -147.0
@@ -55,5 +56,44 @@ focus_neighbor_right = NodePath("../Yes")
 text = "No
 "
 
+[node name="QuotaError" type="ColorRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = -147.0
+offset_top = -52.0
+offset_right = 147.0
+offset_bottom = 61.0
+color = Color(0.376471, 0.376471, 0.376471, 0.686275)
+
+[node name="MarginContainer" type="MarginContainer" parent="QuotaError"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 19.0
+offset_top = 28.0
+offset_right = 274.0
+offset_bottom = 105.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuotaError/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="Quota" type="Label" parent="QuotaError/MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "You have not meet your quota."
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuotaError/MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Okay" type="Button" parent="QuotaError/MarginContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Okay"
+
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="QuotaError/MarginContainer/VBoxContainer/HBoxContainer/Okay" to="." method="_on_okay_pressed"]

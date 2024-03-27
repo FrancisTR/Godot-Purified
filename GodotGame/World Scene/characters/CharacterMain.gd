@@ -6,7 +6,7 @@ var isMoving = false
 var inventory_opened = false
 var last_recorded_inventory_amount:Dictionary
 
-const SPEED = 300.0
+const SPEED = 200.0
 
 func _ready():
 	$Label.text = GameData.username
