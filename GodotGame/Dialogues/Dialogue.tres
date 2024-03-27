@@ -156,7 +156,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": "Angelica"
 },
 "1_11": {
@@ -169,7 +169,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": "Angelica"
 },
 "1_12": {
@@ -182,7 +182,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": "Barry"
 },
 "1_13": {
@@ -195,7 +195,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": "Barry"
 },
 "1_14": {
@@ -208,7 +208,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": "Derek"
 },
 "1_15": {
@@ -221,7 +221,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": "Derek"
 },
 "1_16": {
@@ -234,7 +234,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": "Antonio"
 },
 "1_17": {
@@ -247,7 +247,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": "Antonio"
 },
 "1_18": {
@@ -260,7 +260,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": "Croak"
 },
 "1_19": {
@@ -273,7 +273,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": "Croak"
 },
 "1_2": {
@@ -299,7 +299,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": "Old Man"
 },
 "1_21": {
@@ -312,7 +312,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": "Old Man"
 },
 "1_3": {
@@ -338,7 +338,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 430.999),
+"size": Vector2(300, 431),
 "speaker": "Derek"
 },
 "1_5": {
@@ -403,11 +403,16 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": "Danny"
 }
 }
-variables = {}
+variables = {
+"Player": {
+"type": 4,
+"value": "???"
+}
+}
 comments = Array[String]([])
 strays = Array[String]([])
 characters = ""

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg42ftacgko3o"]
+
+[ext_resource type="Script" path="res://World Scene/Items/Pot.gd" id="1_dy3cv"]
+[ext_resource type="Texture2D" uid="uid://dxqfeifbgv4c6" path="res://Assets/CraftingPlaceholder.png" id="2_k6c35"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vukrq"]
+size = Vector2(14.6667, 14.6667)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2pln1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k6c35")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Pot" type="Area2D"]
+script = ExtResource("1_dy3cv")
+
+[node name="PotCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5034e-05, 0)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_vukrq")
+
+[node name="PotSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_2pln1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

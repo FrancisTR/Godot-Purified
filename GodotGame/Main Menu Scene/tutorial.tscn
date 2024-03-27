@@ -27,7 +27,6 @@ script = ExtResource("1_68151")
 [node name="Dialogue" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" type="Panel" parent="Dialogue"]
-visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
 anchors_preset = 7
@@ -46,21 +45,6 @@ start_id = "Tutorial"
 sample_portrait = ExtResource("4_vid2v")
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a5mn1"), SubResource("RichTextEffect_uc7ri")])
 
-[node name="Controls" parent="." instance=ExtResource("7_co0o4")]
-visible = false
-
-[node name="background" parent="Controls" index="0"]
-visible = false
-
-[node name="OptionsTitle" parent="Controls" index="1"]
-visible = false
-
-[node name="RemapContainer" parent="Controls" index="3"]
-offset_bottom = -178.0
-
-[node name="BackButton" parent="Controls" index="6"]
-visible = false
-
 [node name="NPCexample" type="TextureRect" parent="."]
 visible = false
 texture_filter = 1
@@ -77,6 +61,21 @@ offset_bottom = 83.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_d4a6u")
+
+[node name="Controls" parent="." instance=ExtResource("7_co0o4")]
+visible = false
+
+[node name="background" parent="Controls" index="0"]
+visible = false
+
+[node name="OptionsTitle" parent="Controls" index="1"]
+visible = false
+
+[node name="RemapContainer" parent="Controls" index="3"]
+offset_bottom = -228.0
+
+[node name="BackButton" parent="Controls" index="6"]
+visible = false
 
 [connection signal="dialogue_signal" from="Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]
 

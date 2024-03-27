@@ -11,9 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cwunwkiyvw3yl" path="res://Assets/Objects/Basic_Grass_Biom_things.png" id="8_c0eme"]
 [ext_resource type="PackedScene" uid="uid://decpyxnu3oocl" path="res://World Scene/characters/npc.tscn" id="11_omtwb"]
 [ext_resource type="PackedScene" uid="uid://bw43arjwii3ih" path="res://World Scene/Transitions/exit.tscn" id="12_qfqc7"]
-[ext_resource type="PackedScene" uid="uid://opyktl0penv5" path="res://World Scene/Items/twig.tscn" id="13_5grqj"]
 [ext_resource type="PackedScene" uid="uid://ctserqjkg74rt" path="res://World Scene/UIs/LeaveVillage.tscn" id="13_hyjxq"]
 [ext_resource type="PackedScene" uid="uid://dcjc6w7kmje4r" path="res://World Scene/Transitions/to_wilderness.tscn" id="14_wvqau"]
+[ext_resource type="PackedScene" uid="uid://opyktl0penv5" path="res://World Scene/Items/twig.tscn" id="15_040ch"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mk3nt"]
 texture = ExtResource("3_ob20m")
@@ -783,6 +783,7 @@ grow_vertical = 2
 pivot_offset = Vector2(58, -28)
 
 [node name="Inventory" type="RichTextLabel" parent="UI"]
+visible = false
 offset_left = 27.0
 offset_top = 552.0
 offset_right = 180.0
@@ -813,15 +814,18 @@ position = Vector2(638, 101)
 
 [node name="Other" type="Node" parent="."]
 
-[node name="Twig" parent="Other" instance=ExtResource("13_5grqj")]
-position = Vector2(317, 166)
-
 [node name="door" parent="Other" instance=ExtResource("12_qfqc7")]
 z_index = 100
 position = Vector2(-43, 655)
 
 [node name="ToWilderness" parent="Other" instance=ExtResource("14_wvqau")]
 position = Vector2(867, 1238)
+
+[node name="Twig" parent="Other" instance=ExtResource("15_040ch")]
+position = Vector2(97, 321)
+
+[node name="Twig2" parent="Other" instance=ExtResource("15_040ch")]
+position = Vector2(211, 289)
 
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]

@@ -1,5 +1,20 @@
 extends Control
 
+func _ready():
+	
+	#Todo list shown in the inventory
+	if GameData.day == 1:
+		GameData.inventory_requirement = {"Twigs": "2", "Rocks": "1"}
+	elif GameData.day == 2:
+		GameData.inventory_requirement = {"Twigs": "1", "Rocks": "2"}
+	elif GameData.day == 3:
+		GameData.inventory_requirement = {"Twigs": "2", "Rocks": "2"}
+	
+	#Add to the list based on the requirements
+	$TODOlist/Twigs/TwigsText.text = GameData.inventory_requirement["Twigs"]
+	$TODOlist/Rocks/RocksText.text = GameData.inventory_requirement["Rocks"]
+		
+
 func draw_items(items):
 	for i in range(0, 15):
 		var slot_item = get_node(str("Items/slot",i))

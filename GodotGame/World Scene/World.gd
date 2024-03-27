@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var npcs = [$NPCs/Denial_Danny, $NPCs/Anger_Angelica]
 
+
 var signal_method = ""
 
 @export var NumTwigs: int = 0
@@ -44,8 +45,17 @@ func increase_day(amount):
 
 func _on_open_leave_menu():
 	print("leaving?")
-	$UI/LeaveVillage.show()
-	$UI/LeaveVillage/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Yes.grab_focus()
+	$UI/LeaveVillage.hide()
+	$UI/LeaveVillage/QuotaError.hide()
+	$UI/LeaveVillage/ColorRect.hide()
+	#If the quota is not met, show a UI error message
+	if(len(GameData.inventory_amount) < 2 or int(GameData.inventory_amount["Rock"]) != int(GameData.inventory_requirement["Rocks"]) or int(GameData.inventory_amount["Twig"]) != int(GameData.inventory_requirement["Twigs"])):
+		$UI/LeaveVillage.show()
+		$UI/LeaveVillage/QuotaError.show()
+	else:
+		$UI/LeaveVillage.show()
+		$UI/LeaveVillage/ColorRect.show()
+		$UI/LeaveVillage/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Yes.grab_focus()
 	GameData.charLock = true
 
 #**********TEST BUTTONS***********#
@@ -60,7 +70,7 @@ func _on_test_dec_1():
 	$UI/Day.text = "Day " + str(GameData.day)
 	#vvv removes twig from inventory
 	#Utils.remove_from_inventory("Twig", 1)
-	Utils.remove_from_inventory("Rock", 1)
+	Utils.remove_from_inventory("Twig", 2)
 	print(GameData.inventory_amount)
 #*********************************#
 
@@ -73,7 +83,8 @@ func _on_test_dec_1():
 
 
 func _on_leave_village():
-	if GameData.day < 10:
+	#TODO: 3 days for MVP. 10 for full game
+	if GameData.day < 3:
 		TextTransition.set_to_click(
 			"You leave the village and come back the next day",
 			"res://World Scene/World.tscn",

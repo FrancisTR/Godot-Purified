@@ -31,6 +31,12 @@ window/size/resizable=false
 
 enabled=PackedStringArray("res://addons/dialogue_nodes/plugin.cfg")
 
+[importer_defaults]
+
+animation_library={
+"animation/fps": 60.0
+}
+
 [input]
 
 Up={

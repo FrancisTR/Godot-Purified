@@ -155,7 +155,7 @@ nodes = {
 "speaker": 1
 },
 "1_4": {
-"dialogue": "Ahh got it!",
+"dialogue": "So, your name is...\"{{Player}}\". Ahh got it!",
 "offset": Vector2(-200, 440),
 "options": {
 0: {
@@ -268,7 +268,12 @@ nodes = {
 "signalValue": "Negate"
 }
 }
-variables = {}
+variables = {
+"Player": {
+"type": 4,
+"value": "???"
+}
+}
 comments = Array[String]([])
 strays = Array[String]([])
 characters = "res://Dialogues/CharacterList.tres"
