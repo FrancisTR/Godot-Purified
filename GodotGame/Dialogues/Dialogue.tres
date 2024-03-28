@@ -408,6 +408,34 @@ nodes = {
 }
 }
 variables = {
+"Accept": {
+"type": 1,
+"value": false
+},
+"Anger": {
+"type": 1,
+"value": false
+},
+"Bargin": {
+"type": 1,
+"value": false
+},
+"Croak": {
+"type": 1,
+"value": false
+},
+"Denial": {
+"type": 1,
+"value": false
+},
+"Depress": {
+"type": 1,
+"value": false
+},
+"OldMan": {
+"type": 1,
+"value": false
+},
 "Player": {
 "type": 4,
 "value": "???"
