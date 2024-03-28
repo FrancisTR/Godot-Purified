@@ -122,6 +122,7 @@ offset_top = -56.25
 offset_right = 450.625
 offset_bottom = 343.75
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot1" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -130,6 +131,7 @@ offset_top = -56.25
 offset_right = 510.625
 offset_bottom = 343.75
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot2" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -138,6 +140,7 @@ offset_top = -56.25
 offset_right = 570.0
 offset_bottom = 343.75
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot3" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -146,6 +149,7 @@ offset_top = -56.25
 offset_right = 630.0
 offset_bottom = 343.75
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot4" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -154,6 +158,7 @@ offset_top = -56.25
 offset_right = 690.0
 offset_bottom = 343.75
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot5" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -162,6 +167,7 @@ offset_top = 3.75
 offset_right = 450.625
 offset_bottom = 403.75
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot6" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -170,6 +176,7 @@ offset_top = 3.75
 offset_right = 510.0
 offset_bottom = 403.75
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot7" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -178,6 +185,7 @@ offset_top = 3.75
 offset_right = 570.0
 offset_bottom = 403.75
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot8" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -186,6 +194,7 @@ offset_top = 3.75
 offset_right = 630.0
 offset_bottom = 403.75
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot9" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -194,6 +203,7 @@ offset_top = 3.75
 offset_right = 690.0
 offset_bottom = 403.75
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot10" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -202,6 +212,7 @@ offset_top = 63.125
 offset_right = 450.625
 offset_bottom = 463.125
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot11" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -210,6 +221,7 @@ offset_top = 63.125
 offset_right = 510.0
 offset_bottom = 463.125
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot12" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -218,6 +230,7 @@ offset_top = 63.125
 offset_right = 570.0
 offset_bottom = 463.125
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot13" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -226,6 +239,7 @@ offset_top = 63.125
 offset_right = 630.0
 offset_bottom = 463.125
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="slot14" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -234,6 +248,7 @@ offset_top = 63.125
 offset_right = 690.0
 offset_bottom = 463.125
 scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
 
 [node name="Amounts" type="Node2D" parent="."]
 
