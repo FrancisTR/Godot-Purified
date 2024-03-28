@@ -24,7 +24,7 @@ var npc_positions = {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if (GameData.visitedWilderness == true):
-		$CharacterBody2D.position = Vector2(847, 1118)
+		$Other/CharacterBody2D.position = Vector2(866, 1125)
 		GameData.visitedWilderness == false
 	#TODO: Make inventory system into its own scene w/ graphics
 	$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
