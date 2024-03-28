@@ -25,7 +25,7 @@ func draw_items(items):
 		else:
 			slot_item.texture = null
 			slot_amount.text = ""
-			
+
 func _draw_item_instance(item):
 	if Utils.get_item(item)["cropped"] == "yes":
 		return load(Utils.get_item(item)["texture"]).instantiate().getTexture()

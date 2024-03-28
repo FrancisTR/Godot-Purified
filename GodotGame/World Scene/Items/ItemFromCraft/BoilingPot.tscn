@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8uitntmm6ko7"]
+[gd_scene load_steps=5 format=3 uid="uid://c8uitntmm6ko7"]
 
 [ext_resource type="Texture2D" uid="uid://ctdifh6jdv82p" path="res://Assets/profile0.png" id="1_7u66e"]
+[ext_resource type="Script" path="res://World Scene/Items/ItemFromCraft/BoilingPot.gd" id="1_rxh7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vukrq"]
 size = Vector2(14.6667, 14.6667)
@@ -17,6 +18,7 @@ animations = [{
 }]
 
 [node name="BoilingPot" type="Area2D"]
+script = ExtResource("1_rxh7r")
 
 [node name="BoilingPotCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(-2.5034e-05, 0)
