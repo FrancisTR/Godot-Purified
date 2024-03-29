@@ -17,6 +17,7 @@ texture = ExtResource("1_nap51")
 shape = SubResource("RectangleShape2D_gh0p5")
 
 [node name="CraftingList" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ItemList" type="ColorRect" parent="CraftingList"]
 texture_filter = 1

@@ -27,7 +27,7 @@ var listValues
 func _ready():
 	$CraftingList.visible = false
 	if GameData.day == 1:
-		craftingList = {"Twig": 6, "Pot": 1}
+		craftingList = {"Twig": 6, "TinCan": 1}
 		listKeys = craftingList.keys()
 		listValues = craftingList.values()
 		ItemOfTheDay = "BoilingPot"

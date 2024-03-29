@@ -2,8 +2,8 @@
 	{
 		"Twig": 1,
 		"Rock": 2,
-		"Pot": 3,
-		"BoilingPot": 4,
+		"BoilingPot": 3,
+		"TinCan": 4,
 	},
 	{
 		"name":"Twig",
@@ -18,15 +18,15 @@
 		"cropped":"no"
 	},
 	{
-		"name":"Pot",
-		"description": "This is a pot",
-		"texture":"res://Assets/CraftingPlaceholder.png",
-		"cropped":"no"
-	},
-	{
 		"name":"BoilingPot",
 		"description": "This is a pot (Boils)",
 		"texture": "res://Assets/profile0.png",
+		"cropped":"no"
+	},
+	{
+		"name":"TinCan",
+		"description": "This is a TinCan",
+		"texture":"res://Assets/WaterBottle.png",
 		"cropped":"no"
 	}
 ]
