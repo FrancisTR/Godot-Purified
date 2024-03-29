@@ -22,6 +22,7 @@ animations = [{
 }]
 
 [node name="Twig" type="Area2D"]
+z_index = 1
 script = ExtResource("1_axgy0")
 
 [node name="TwigCollisionShape" type="CollisionShape2D" parent="."]

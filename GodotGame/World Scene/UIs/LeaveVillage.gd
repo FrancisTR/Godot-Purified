@@ -13,7 +13,7 @@ func _on_yes_pressed():
 	GameData.charLock = false
 	Utils.remove_from_inventory("Twig", int(GameData.inventory_amount["Twig"]))
 	Utils.remove_from_inventory("Rock", int(GameData.inventory_amount["Rock"]))
-
+	GameData.itemSpawnOnce = false #Spawn the items again on the next day
 
 func _on_no_pressed():
 	self.hide()

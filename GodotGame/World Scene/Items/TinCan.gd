@@ -17,8 +17,8 @@ func _on_body_entered(body):
 		print("Player has picked up a Pot")
 		PickedUp.emit()
 		queue_free()
-		Utils.add_to_inventory("Pot", 1)
+		Utils.add_to_inventory("TinCan", 1)
 		getTexture()
 			
 func getTexture():
-	return $PotSprite.sprite_frames.get_frame_texture("default", 0)
+	return $TinSprite.sprite_frames.get_frame_texture("default", 0)

@@ -19,5 +19,7 @@ var charLock = false
 
 
 var visitTutorial = false
-
 var visitedWilderness = false
+
+#Spawn the item once in the wilderness. Prevents duplication
+var itemSpawnOnce = false

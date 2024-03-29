@@ -189,7 +189,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iirhq"]
-size = Vector2(42, 30)
+size = Vector2(28, 23)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_cyksq")
@@ -212,7 +212,7 @@ vertical_alignment = 1
 z_index = 1
 texture_filter = 1
 position = Vector2(3.8147e-06, 0)
-scale = Vector2(3, 2.887)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_u76tt")
 animation = &"Up_Idle"
 autoplay = "Down_Idle"
@@ -220,7 +220,7 @@ autoplay = "Down_Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
 texture_filter = 1
-position = Vector2(0, 8)
+position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_iirhq")
 
 [node name="Camera2D" type="Camera2D" parent="."]

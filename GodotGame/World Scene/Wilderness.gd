@@ -4,6 +4,15 @@ var signal_method = ""
 
 @export var NumTwigs: int = 0
 
+var Twig = preload("res://World Scene/Items/twig.tscn")
+var Rock = preload("res://World Scene/Items/rock.tscn")
+var TinCan = preload("res://World Scene/Items/TinCan.tscn")
+
+
+
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameData.visitedWilderness = true
@@ -14,6 +23,24 @@ func _ready():
 	var day = GameData.day
 	if GameData.day > 10:
 		day = 10
+		
+		
+	#Add the item once. The bool is reset if going to the next day
+	if (GameData.itemSpawnOnce == false):
+		GameData.itemSpawnOnce = true
+		print(true)
+		inst(Vector2(1007,-527), Twig)
+		inst(Vector2(1005,-315), Rock)
+		inst(Vector2(1003,-418), TinCan)
+
+#Spawn the item in the wilderness
+func inst(pos, item):
+	#TODO: add more items later
+	var instance = item.instantiate()
+	instance.position = pos
+	add_child(instance)
+		
+	
 
 func increase_day(amount):
 	if(GameData.day+amount > 0):
