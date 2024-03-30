@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnu20bxninf0u"]
+
+[ext_resource type="Script" path="res://World Scene/Items/Moss.gd" id="1_oc3n2"]
+[ext_resource type="Texture2D" uid="uid://dhiamg2ophueu" path="res://Assets/Moss.png" id="2_qtgw3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vukrq"]
+size = Vector2(13.6667, 14.6667)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5gstm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qtgw3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Moss" type="Area2D"]
+z_index = 1
+script = ExtResource("1_oc3n2")
+
+[node name="MossCollisionShape" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_vukrq")
+
+[node name="MossSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-7.62939e-06, 0)
+scale = Vector2(0.134766, 0.128906)
+sprite_frames = SubResource("SpriteFrames_5gstm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

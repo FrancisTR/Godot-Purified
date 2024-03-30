@@ -3,6 +3,57 @@ extends Control # Originally Node2D; probably will conflict
 
 ## Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	#Reset global values
+	GameData.day = 1
+
+	GameData.twigItem = 0
+
+	GameData.username = ""
+
+	GameData.charLock = false
+
+
+	GameData.visitedWilderness = false
+
+	#Spawn the item once in the wilderness. Prevents duplication
+	GameData.itemSpawnOnce = false
+
+
+
+
+
+	GameData.villagersTalked = [
+		{
+			"Name": "Accept",
+			"Talked": false
+		},
+		{
+			"Name": "Anger",
+			"Talked": false
+		},
+		{
+			"Name": "Bargin",
+			"Talked": false
+		},
+		{
+			"Name": "Croak",
+			"Talked": false
+		},
+		{
+			"Name": "Denial",
+			"Talked": false
+		},
+		{
+			"Name": "Depress",
+			"Talked": false
+		},
+		{
+			"Name": "OldMan",
+			"Talked": false
+		}
+	]
+
 	# No buttons are selected until any arrow / tab is pressed.
 	# Note: hover is not very visible right now until you select something.
 	$InvisibleInputButton.grab_focus()

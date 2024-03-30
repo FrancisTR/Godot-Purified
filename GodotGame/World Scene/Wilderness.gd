@@ -4,11 +4,6 @@ var signal_method = ""
 
 @export var NumTwigs: int = 0
 
-var Twig = preload("res://World Scene/Items/twig.tscn")
-var Rock = preload("res://World Scene/Items/rock.tscn")
-var TinCan = preload("res://World Scene/Items/TinCan.tscn")
-
-
 
 
 
@@ -24,21 +19,28 @@ func _ready():
 	if GameData.day > 10:
 		day = 10
 		
-		
-	#Add the item once. The bool is reset if going to the next day
-	if (GameData.itemSpawnOnce == false):
-		GameData.itemSpawnOnce = true
-		print(true)
-		inst(Vector2(1007,-527), Twig)
-		inst(Vector2(1005,-315), Rock)
-		inst(Vector2(1003,-418), TinCan)
+	
+	#TODO add item spawns
+	inst(GameData.itemSpawns)
+
+
+func _process(delta):
+	#Keep constant track of the items being remove in the wild
+	for i in range(len(GameData.itemSpawns)):
+		if (GameData.get_item_posX == GameData.itemSpawns[i]["posX"] and GameData.get_item_posY == GameData.itemSpawns[i]["posY"]):
+			GameData.itemSpawns[i]["Taken"] = true
+			
+			
 
 #Spawn the item in the wilderness
-func inst(pos, item):
-	#TODO: add more items later
-	var instance = item.instantiate()
-	instance.position = pos
-	add_child(instance)
+# items: list of dictionaries
+func inst(items):
+	for i in range(len(items)):
+		if items[i]["Taken"] == false:
+			#Get the scene of the item
+			var instance = items[i]["Item"].instantiate()
+			instance.position = Vector2(items[i]["posX"], items[i]["posY"])
+			add_child(instance)
 		
 	
 

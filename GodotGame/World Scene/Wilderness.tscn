@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://q5cr6dib6lsd" path="res://Assets/Tilesets/Hills.png" id="5_syajd"]
 [ext_resource type="Texture2D" uid="uid://c6e0kjxb8ktpr" path="res://Assets/Tilesets/Wooden House.png" id="6_b4koe"]
 [ext_resource type="Texture2D" uid="uid://cwunwkiyvw3yl" path="res://Assets/Objects/Basic_Grass_Biom_things.png" id="7_ye6fi"]
-[ext_resource type="Texture2D" uid="uid://c7qq0rsxbi34h" path="res://Assets/murky_water.png" id="8_fr3f4"]
+[ext_resource type="Texture2D" uid="uid://c7qq0rsxbi34h" path="res://Assets/Custom/murky_water.png" id="8_fr3f4"]
 [ext_resource type="Texture2D" uid="uid://buj8denvaa0cg" path="res://Assets/Objects/Wood_Bridge.png" id="9_ufycb"]
 [ext_resource type="PackedScene" uid="uid://ctserqjkg74rt" path="res://World Scene/UIs/LeaveVillage.tscn" id="10_b7tbc"]
 [ext_resource type="PackedScene" uid="uid://cjie6scx7ovoa" path="res://World Scene/Transitions/to_village.tscn" id="11_fw73a"]
@@ -828,11 +828,11 @@ offset_bottom = 633.0
 position = Vector2(887, -870)
 
 [node name="CraftingTable" parent="Other" instance=ExtResource("12_hu71a")]
-position = Vector2(644, -459)
+position = Vector2(763, -451)
 
 [node name="CharacterBody2D" parent="Other" instance=ExtResource("2_2eck0")]
 texture_filter = 1
-position = Vector2(274, 913)
+position = Vector2(886, -707)
 
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]

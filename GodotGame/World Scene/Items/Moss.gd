@@ -14,7 +14,8 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
-		print("Player has picked up a Pot")
+		print("Player has picked up Moss")
+		#$TwigSprite.hide()
 		PickedUp.emit()
 		
 		#Before removal, we get its position and notify the master item
@@ -24,8 +25,8 @@ func _on_body_entered(body):
 		GameData.get_item_posY = $".".position.y
 		
 		queue_free()
-		Utils.add_to_inventory("TinCan", 1)
+		Utils.add_to_inventory("Moss", 1)
 		getTexture()
 			
 func getTexture():
-	return $TinSprite.sprite_frames.get_frame_texture("default", 0)
+	return $MossSprite.sprite_frames.get_frame_texture("default", 0)

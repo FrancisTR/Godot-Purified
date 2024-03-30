@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://yfjgae0b5wko"]
+
+[ext_resource type="Script" path="res://World Scene/Items/sand.gd" id="1_w5kmk"]
+[ext_resource type="Texture2D" uid="uid://deyn7a8rj8hqc" path="res://Assets/Sand.png" id="2_4jvgl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vukrq"]
+size = Vector2(13.6667, 14.6667)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5gstm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4jvgl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Sand" type="Area2D"]
+z_index = 1
+script = ExtResource("1_w5kmk")
+
+[node name="SandCollisionShape" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_vukrq")
+
+[node name="SandSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-3.8147e-06, -1.35525e-20)
+scale = Vector2(0.05375, 0.107639)
+sprite_frames = SubResource("SpriteFrames_5gstm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

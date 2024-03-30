@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var npcs = [$NPCs/Denial_Danny, $NPCs/Anger_Angelica]
+#TODO: Set NPC positions
+@onready var npcs = [$NPCs/Denial, $NPCs/Anger]
 
 
 var signal_method = ""
@@ -25,7 +26,7 @@ var npc_positions = {
 func _ready():
 	if (GameData.visitedWilderness == true):
 		$Other/CharacterBody2D.position = Vector2(866, 1125)
-		GameData.visitedWilderness == false
+		GameData.visitedWilderness = false
 	#TODO: Make inventory system into its own scene w/ graphics
 	$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
 	#SceneTransition.manual_fade.connect(go_to_next_day)
@@ -48,8 +49,24 @@ func _on_open_leave_menu():
 	$UI/LeaveVillage.hide()
 	$UI/LeaveVillage/QuotaError.hide()
 	$UI/LeaveVillage/ColorRect.hide()
+	
+	#TODO: Add more days' restriction
 	#If the quota is not met, show a UI error message
-	if(len(GameData.inventory_amount) < 2 or int(GameData.inventory_amount["Rock"]) != int(GameData.inventory_requirement["Rocks"]) or int(GameData.inventory_amount["Twig"]) != int(GameData.inventory_requirement["Twigs"])):
+	
+	#Check to see if the player has talked to everyone
+	var TalkedToVillagersCount = 0
+	for i in range (len(GameData.villagersTalked)):
+		if (GameData.villagersTalked[i]["Talked"] == true):
+			TalkedToVillagersCount = TalkedToVillagersCount + 1
+	print(TalkedToVillagersCount)
+	#len(GameData.inventory_amount) < 1
+	if ((GameData.inventory_amount.keys().find("WaterBottle") == -1 or TalkedToVillagersCount != 7) and GameData.day == 1):
+		$UI/LeaveVillage.show()
+		$UI/LeaveVillage/QuotaError.show()
+	elif ((GameData.inventory_amount.keys().find("BoilingPot") == -1 or TalkedToVillagersCount != 7) and GameData.day == 2):
+		$UI/LeaveVillage.show()
+		$UI/LeaveVillage/QuotaError.show()
+	elif ((GameData.inventory_amount.keys().find("WaterFilter") == -1 or TalkedToVillagersCount != 7) and GameData.day == 3):
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
 	else:
@@ -93,64 +110,13 @@ func _on_leave_village():
 	else:
 		TextTransition.set_to_chained_timed(
 			[
-				"We're no strangers to love",
-				"You know the rules and so do I (do I)",
-				"A full commitment's what I'm thinking of",
-				"You wouldn't get this from any other guy",
-				"I just wanna tell you how I'm feeling",
-				"Gotta make you understand",
-				"Never gonna give you up",
-				"Never gonna let you down",
-				"Never gonna run around and desert you",
-				"Never gonna make you cry",
-				"Never gonna say goodbye",
-				"Never gonna tell a lie and hurt you",
-				"We've known each other for so long",
-				"Your heart's been aching, but you're too shy to say it (say it)",
-				"Inside, we both know what's been going on (going on)",
-				"We know the game and we're gonna play it",
-				"And if you ask me how I'm feeling",
-				"Don't tell me you're too blind to see",
-				"Never gonna give you up",
-				"Never gonna let you down",
-				"Never gonna run around and desert you",
-				"Never gonna make you cry",
-				"Never gonna say goodbye",
-				"Never gonna tell a lie and hurt you",
-				"Never gonna give you up",
-				"Never gonna let you down",
-				"Never gonna run around and desert you",
-				"Never gonna make you cry",
-				"Never gonna say goodbye",
-				"Never gonna tell a lie and hurt you",
-				"We've known each other for so long",
-				"Your heart's been aching, but you're too shy to say it (to say it)",
-				"Inside, we both know what's been going on (going on)",
-				"We know the game and we're gonna play it",
-				"I just wanna tell you how I'm feeling",
-				"Gotta make you understand",
-				"Never gonna give you up",
-				"Never gonna let you down",
-				"Never gonna run around and desert you",
-				"Never gonna make you cry",
-				"Never gonna say goodbye",
-				"Never gonna tell a lie and hurt you",
-				"Never gonna give you up",
-				"Never gonna let you down",
-				"Never gonna run around and desert you",
-				"Never gonna make you cry",
-				"Never gonna say goodbye",
-				"Never gonna tell a lie and hurt you",
-				"Never gonna give you up",
-				"Never gonna let you down",
-				"Never gonna run around and desert you",
-				"Never gonna make you cry",
-				"Never gonna say goodbye",
-				"Never gonna tell a lie and hurt you",
+				"To be continued...",
+				"Thank you for playing our Demo."
 			],
 			"res://Main Menu Scene/MainMenu.tscn",
 			3,
-			"[♪♪♪]"
+			"[Please provide feedback in our Itch.io Page]"
 		)
 	SceneTransition.change_scene("res://Globals/text_transition.tscn")
 	increase_day(1)
+	

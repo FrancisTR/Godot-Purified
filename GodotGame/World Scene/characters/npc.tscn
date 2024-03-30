@@ -39,7 +39,6 @@ script = ExtResource("1_7ll4o")
 [node name="FixedDialoguePosition" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" type="Panel" parent="FixedDialoguePosition"]
-visible = false
 z_index = 101
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)

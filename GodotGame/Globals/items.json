@@ -2,8 +2,12 @@
 	{
 		"Twig": 1,
 		"Rock": 2,
-		"BoilingPot": 3,
-		"TinCan": 4,
+		"Sand": 3,
+		"Moss": 4,
+		"TinCan": 5,
+		"WaterBottle": 6,
+		"BoilingPot": 7,
+		"WaterFilter": 8
 	},
 	{
 		"name":"Twig",
@@ -18,15 +22,39 @@
 		"cropped":"no"
 	},
 	{
+		"name":"Sand",
+		"description": "this is sand",
+		"texture":"res://Assets/Sand.png",
+		"cropped":"no"
+	},
+	{
+		"name":"Moss",
+		"description": "this is moss",
+		"texture":"res://Assets/Moss.png",
+		"cropped":"no"
+	},
+	{
+		"name":"TinCan",
+		"description": "This is a TinCan",
+		"texture":"res://Assets/TinCan.png",
+		"cropped":"no"
+	},
+	{
+		"name":"WaterBottle",
+		"description": "This is a WaterBottle",
+		"texture":"res://Assets/WaterBottle.png",
+		"cropped":"no"
+	},
+	{
 		"name":"BoilingPot",
 		"description": "This is a pot (Boils)",
 		"texture": "res://Assets/profile0.png",
 		"cropped":"no"
 	},
 	{
-		"name":"TinCan",
-		"description": "This is a TinCan",
-		"texture":"res://Assets/WaterBottle.png",
+		"name":"WaterFilter",
+		"description": "This is a WaterFilter",
+		"texture": "res://Assets/WaterFilter.png",
 		"cropped":"no"
 	}
 ]
