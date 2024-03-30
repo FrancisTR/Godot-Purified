@@ -17,6 +17,13 @@ func _on_body_entered(body):
 		print("Player has picked up a twig")
 		#$TwigSprite.hide()
 		PickedUp.emit()
+		
+		#Before removal, we get its position and notify the master item
+		#that it has been "Taken", which is set true.
+		#This prevents from spawning again. This is used in Wilderness.gd
+		GameData.get_item_posX = $".".position.x
+		GameData.get_item_posY = $".".position.y
+		
 		queue_free()
 		Utils.add_to_inventory("Twig", 1)
 		getTexture()

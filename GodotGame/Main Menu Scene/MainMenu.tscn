@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://c4dhom44jopn2"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/MainMenu.gd" id="1_m2j1f"]
-[ext_resource type="Texture2D" uid="uid://bipqa3xtfks8q" path="res://Assets/Tilesets/Water.png" id="2_3q7c4"]
+[ext_resource type="Texture2D" uid="uid://c7qq0rsxbi34h" path="res://Assets/Custom/murky_water.png" id="2_woi1u"]
 [ext_resource type="Texture2D" uid="uid://cbid64fvoqhpa" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a1.png" id="3_1l2m6"]
 [ext_resource type="Texture2D" uid="uid://b3vhgylwtw1xu" path="res://Assets/MainMenuTitle.png" id="3_myful"]
 [ext_resource type="Texture2D" uid="uid://dxlxwg8v6uybo" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a2.png" id="4_1tbvl"]
@@ -51,7 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_3q7c4")
+texture = ExtResource("2_woi1u")
 
 [node name="Title" type="TextureRect" parent="."]
 texture_filter = 1

@@ -17,7 +17,6 @@ texture = ExtResource("1_nap51")
 shape = SubResource("RectangleShape2D_gh0p5")
 
 [node name="CraftingList" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ItemList" type="ColorRect" parent="CraftingList"]
 texture_filter = 1
@@ -65,7 +64,7 @@ offset_right = 202.0
 offset_bottom = 18.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
-text = "Crafting List"
+text = "No items to craft!"
 
 [node name="ItemText" type="RichTextLabel" parent="CraftingList/ItemList/ItemBox/Item"]
 texture_filter = 1
@@ -74,7 +73,7 @@ offset_left = 234.0
 offset_top = 4.0
 offset_right = 402.0
 offset_bottom = 29.0
-text = "???"
+text = "Come back later!"
 
 [node name="ItemBox2" type="Control" parent="CraftingList/ItemList"]
 layout_mode = 3
