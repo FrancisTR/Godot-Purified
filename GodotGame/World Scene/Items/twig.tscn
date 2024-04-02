@@ -1,20 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://opyktl0penv5"]
+[gd_scene load_steps=6 format=3 uid="uid://cllg5b804pc0j"]
 
-[ext_resource type="Script" path="res://World Scene/Items/Twig.gd" id="1_axgy0"]
-[ext_resource type="Texture2D" uid="uid://ds8p5ir5eu34l" path="res://Assets/Objects/Basic_tools_and_meterials.png" id="2_vyd6q"]
+[ext_resource type="Script" path="res://World Scene/Items/Twig.gd" id="1_l46kl"]
+[ext_resource type="Texture2D" uid="uid://cwunwkiyvw3yl" path="res://Assets/Objects/Basic_Grass_Biom_things.png" id="2_qufrr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vukrq"]
 size = Vector2(13.6667, 14.6667)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c0rkc"]
-atlas = ExtResource("2_vyd6q")
-region = Rect2(16, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_642u6"]
+atlas = ExtResource("2_qufrr")
+region = Rect2(80, 32, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5gstm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c0rkc")
+"texture": SubResource("AtlasTexture_642u6")
 }],
 "loop": true,
 "name": &"default",
@@ -23,16 +23,16 @@ animations = [{
 
 [node name="Twig" type="Area2D"]
 z_index = 1
-script = ExtResource("1_axgy0")
+script = ExtResource("1_l46kl")
 
 [node name="TwigCollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, 0)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_vukrq")
 
 [node name="TwigSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(3, 3)
+position = Vector2(-3.8147e-06, 4.76837e-07)
+scale = Vector2(2.4375, 2.5625)
 sprite_frames = SubResource("SpriteFrames_5gstm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

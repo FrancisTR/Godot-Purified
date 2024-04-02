@@ -1,17 +1,17 @@
 [gd_scene load_steps=16 format=3 uid="uid://c4dhom44jopn2"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/MainMenu.gd" id="1_m2j1f"]
-[ext_resource type="Texture2D" uid="uid://c7qq0rsxbi34h" path="res://Assets/Custom/murky_water.png" id="2_woi1u"]
+[ext_resource type="Texture2D" uid="uid://c7qq0rsxbi34h" path="res://Assets/Custom/Terrain/murky_water.png" id="2_woi1u"]
 [ext_resource type="Texture2D" uid="uid://cbid64fvoqhpa" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a1.png" id="3_1l2m6"]
 [ext_resource type="Texture2D" uid="uid://b3vhgylwtw1xu" path="res://Assets/MainMenuTitle.png" id="3_myful"]
-[ext_resource type="Texture2D" uid="uid://dxlxwg8v6uybo" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a2.png" id="4_1tbvl"]
+[ext_resource type="Texture2D" uid="uid://cf370ycp56cnk" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a1.png" id="5_sefst"]
 [ext_resource type="Texture2D" uid="uid://betian48tiv5j" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a2.png" id="6_ast7a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6dia3"]
 texture = ExtResource("3_1l2m6")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_485rp"]
-texture = ExtResource("4_1tbvl")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7yu4k"]
+texture = ExtResource("5_sefst")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a6ue1"]
 texture = ExtResource("6_ast7a")
@@ -19,8 +19,8 @@ texture = ExtResource("6_ast7a")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_shume"]
 texture = ExtResource("3_1l2m6")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wl5ph"]
-texture = ExtResource("4_1tbvl")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aw0um"]
+texture = ExtResource("5_sefst")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52t2r"]
 texture = ExtResource("6_ast7a")
@@ -28,8 +28,8 @@ texture = ExtResource("6_ast7a")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tpe8i"]
 texture = ExtResource("3_1l2m6")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ctywu"]
-texture = ExtResource("4_1tbvl")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2vmox"]
+texture = ExtResource("5_sefst")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d6qdx"]
 texture = ExtResource("6_ast7a")
@@ -92,10 +92,10 @@ focus_neighbor_top = NodePath("../ExitButton")
 focus_previous = NodePath("../ExitButton")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_6dia3")
-theme_override_styles/hover = SubResource("StyleBoxTexture_485rp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7yu4k")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_a6ue1")
 text = "Start"
 
@@ -109,10 +109,10 @@ offset_bottom = 471.0
 scale = Vector2(1.5, 1.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_shume")
-theme_override_styles/hover = SubResource("StyleBoxTexture_wl5ph")
+theme_override_styles/hover = SubResource("StyleBoxTexture_aw0um")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_52t2r")
 text = "Options"
 
@@ -128,10 +128,10 @@ focus_neighbor_bottom = NodePath("../StartButton")
 focus_next = NodePath("../StartButton")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_tpe8i")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ctywu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2vmox")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_d6qdx")
 text = "Exit"
 

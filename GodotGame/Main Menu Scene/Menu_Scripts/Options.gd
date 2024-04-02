@@ -9,6 +9,7 @@ func _ready():
 
 
 func _on_back_button_pressed():
+	SoundControl.is_playing_sound("button")
 	if GameData.username:
 		get_tree().change_scene_to_file("res://World Scene/World.tscn")
 	else:

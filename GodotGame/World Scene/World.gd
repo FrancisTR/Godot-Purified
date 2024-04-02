@@ -59,7 +59,8 @@ func _on_open_leave_menu():
 		if (GameData.villagersTalked[i]["Talked"] == true):
 			TalkedToVillagersCount = TalkedToVillagersCount + 1
 	print(TalkedToVillagersCount)
-	#len(GameData.inventory_amount) < 1
+
+
 	if ((GameData.inventory_amount.keys().find("WaterBottle") == -1 or TalkedToVillagersCount != 7) and GameData.day == 1):
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()

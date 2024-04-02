@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GodotProject"
-run/main_scene="res://Main Menu Scene/MainMenu.tscn"
+run/main_scene="res://Main Menu Scene/intro_screen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,7 @@ GameData="*res://Globals/Global_Scripts/GameData.gd"
 TextTransition="*res://Globals/Global_Scripts/text_transition.gd"
 TextTransitionData="*res://Globals/Global_Scripts/TextTransitionData.gd"
 Utils="*res://Globals/Global_Scripts/Util/Utils.gd"
+SoundControl="*res://Globals/sound_control.tscn"
 
 [display]
 

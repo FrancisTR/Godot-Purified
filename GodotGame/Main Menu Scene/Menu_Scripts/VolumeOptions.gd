@@ -25,3 +25,4 @@ func _on_value_changed(v: float) -> void:
 	)
 	
 	vol_label.text = str(v) + "%"
+	#print(str(bus_index)+":"+str(v))

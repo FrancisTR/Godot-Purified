@@ -1,17 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://bq46ncf7jihje"]
+[gd_scene load_steps=11 format=3 uid="uid://bq46ncf7jihje"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Options.gd" id="1_pejof"]
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/VolumeOptions.gd" id="2_jtr8r"]
-[ext_resource type="Texture2D" uid="uid://c7qq0rsxbi34h" path="res://Assets/Custom/murky_water.png" id="2_p4upr"]
+[ext_resource type="Texture2D" uid="uid://c7qq0rsxbi34h" path="res://Assets/Custom/Terrain/murky_water.png" id="2_p4upr"]
 [ext_resource type="Texture2D" uid="uid://cbid64fvoqhpa" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a1.png" id="3_q1kxr"]
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Remapper.gd" id="3_sdtpu"]
 [ext_resource type="Texture2D" uid="uid://betian48tiv5j" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a2.png" id="5_se5ao"]
+[ext_resource type="Texture2D" uid="uid://cf370ycp56cnk" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a1.png" id="6_o2yyx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ovysx"]
 texture = ExtResource("3_q1kxr")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_chwq6"]
-texture = ExtResource("5_se5ao")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_26alj"]
+texture = ExtResource("6_o2yyx")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sknse"]
 texture = ExtResource("5_se5ao")
@@ -320,19 +321,19 @@ text = "Music Volume:"
 
 [node name="BackButton" type="Button" parent="."]
 texture_filter = 1
-offset_left = 37.0
-offset_top = 514.0
-offset_right = 257.0
-offset_bottom = 573.0
+offset_left = 34.0
+offset_top = 511.0
+offset_right = 254.0
+offset_bottom = 570.0
 scale = Vector2(1.5, 1.5)
 focus_next = NodePath("../RemapContainer/DownMapButton")
 focus_previous = NodePath("../RemapContainer/DownMapButton")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_ovysx")
-theme_override_styles/hover = SubResource("StyleBoxTexture_chwq6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_26alj")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sknse")
 text = "Back"
 

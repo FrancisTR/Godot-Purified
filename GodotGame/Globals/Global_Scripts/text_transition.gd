@@ -7,7 +7,7 @@ func _ready():
 		$Timer.wait_time = TextTransitionData.duration
 		if TextTransitionData.enable_timer:
 			$Timer.wait_time = TextTransitionData.duration
-			$Timer.start(-1)
+			$Timer.start()
 
 func prepped(nodes):
 	for node in nodes:

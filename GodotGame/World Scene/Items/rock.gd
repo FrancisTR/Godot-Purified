@@ -14,6 +14,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
+		SoundControl.is_playing_sound("pickup")
 		print("Player has picked up a Rock")
 		PickedUp.emit()
 		
@@ -28,4 +29,4 @@ func _on_body_entered(body):
 		getTexture()
 		
 func getTexture():
-	return $Rock.sprite_frames.get_frame_texture("default", 0)
+	return $RockSprite.sprite_frames.get_frame_texture("default", 0)

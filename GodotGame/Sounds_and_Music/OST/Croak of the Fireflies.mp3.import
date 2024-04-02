@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dncutsoj2hnib"
+path="res://.godot/imported/Croak of the Fireflies.mp3-4e3c39aefa12f97a868f04445d4d7e2c.mp3str"
+
+[deps]
+
+source_file="res://Sounds_and_Music/OST/Croak of the Fireflies.mp3"
+dest_files=["res://.godot/imported/Croak of the Fireflies.mp3-4e3c39aefa12f97a868f04445d4d7e2c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
