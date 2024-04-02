@@ -14,6 +14,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
+		SoundControl.is_playing_sound("pickup")
 		print("Player has picked up Moss")
 		#$TwigSprite.hide()
 		PickedUp.emit()

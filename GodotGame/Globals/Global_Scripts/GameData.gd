@@ -16,6 +16,10 @@ var inventory_requirement:Dictionary
 
 var charLock = false
 
+#Music and sound. We store the values
+#TODO: This vars is not used. it is there just in case
+var SfxValue
+var MusicValue
 
 
 var visitTutorial = false

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wgeqfpvb0g3o"
+path="res://.godot/imported/Woodsy Labyrinth.mp3-a0caf93fb8c1abf38bf94cc982626b6d.mp3str"
+
+[deps]
+
+source_file="res://Sounds_and_Music/OST/Woodsy Labyrinth.mp3"
+dest_files=["res://.godot/imported/Woodsy Labyrinth.mp3-a0caf93fb8c1abf38bf94cc982626b6d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

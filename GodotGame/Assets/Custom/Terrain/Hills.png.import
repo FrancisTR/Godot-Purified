@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7qq0rsxbi34h"
-path="res://.godot/imported/murky_water.png-5ec5bdd48bcb03699f99806982f7010e.ctex"
+uid="uid://dp38t71roepqi"
+path="res://.godot/imported/Hills.png-8940162174a286ff5dc6d80b42d1809a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Custom/murky_water.png"
-dest_files=["res://.godot/imported/murky_water.png-5ec5bdd48bcb03699f99806982f7010e.ctex"]
+source_file="res://Assets/Custom/Terrain/Hills.png"
+dest_files=["res://.godot/imported/Hills.png-8940162174a286ff5dc6d80b42d1809a.ctex"]
 
 [params]
 

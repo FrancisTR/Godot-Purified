@@ -62,15 +62,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	SoundControl.is_playing_theme("main")
 	pass
 
 
 func _on_exit_button_pressed():
+	SoundControl.is_playing_sound("button")
 	get_tree().quit()
 
 
 func _on_start_button_pressed():
 	# If first time, go to tutorial
+	SoundControl.is_playing_sound("button")
 	if (GameData.visitTutorial == false):
 		get_tree().change_scene_to_file("res://Main Menu Scene/tutorial.tscn")
 	else:
@@ -78,4 +81,5 @@ func _on_start_button_pressed():
 
 
 func _on_option_button_pressed():
+	SoundControl.is_playing_sound("button")
 	get_tree().change_scene_to_file("res://Main Menu Scene/Options.tscn")

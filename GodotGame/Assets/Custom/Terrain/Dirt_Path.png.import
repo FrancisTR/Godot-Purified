@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://barhfkx4cbrku"
-path="res://.godot/imported/Dirt_Path.png-63fe1ca17f5394ce77f57269043bedc7.ctex"
+uid="uid://cgwe5cdxpul0y"
+path="res://.godot/imported/Dirt_Path.png-82922c73fa0ae0f9da82517303b0a732.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Custom/Dirt_Path.png"
-dest_files=["res://.godot/imported/Dirt_Path.png-63fe1ca17f5394ce77f57269043bedc7.ctex"]
+source_file="res://Assets/Custom/Terrain/Dirt_Path.png"
+dest_files=["res://.godot/imported/Dirt_Path.png-82922c73fa0ae0f9da82517303b0a732.ctex"]
 
 [params]
 

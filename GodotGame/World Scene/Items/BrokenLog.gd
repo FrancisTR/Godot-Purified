@@ -14,6 +14,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
+		SoundControl.is_playing_sound("pickup")
 		print("Player has entered the tree stump")
 		if not dialogue_box.running:
 			dialogue_box.start()
