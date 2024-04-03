@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://decpyxnu3oocl"]
+[gd_scene load_steps=20 format=3 uid="uid://decpyxnu3oocl"]
 
 [ext_resource type="Script" path="res://World Scene/characters/npc.gd" id="1_7ll4o"]
 [ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="1_we8v3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_1oy2a"]
 [ext_resource type="Resource" uid="uid://2d0hvs0mqxeq" path="res://Dialogues/Dialogue.tres" id="4_pn0gs"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_hejlf"]
+[ext_resource type="Texture2D" uid="uid://dw04cpaod6bun" path="res://Assets/Custom/temp_frog_icon.png" id="9_ilu2c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxqgd"]
 texture = ExtResource("2_ln8m6")
@@ -87,6 +88,7 @@ script = ExtResource("1_7ll4o")
 [node name="FixedDialoguePosition" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" type="Panel" parent="FixedDialoguePosition"]
+visible = false
 z_index = 101
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
@@ -126,6 +128,24 @@ offset_right = 10.0
 offset_bottom = -21.0
 text = "Q"
 horizontal_alignment = 1
+
+[node name="MapIcon" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_ilu2c")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

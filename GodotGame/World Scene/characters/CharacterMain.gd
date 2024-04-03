@@ -1,14 +1,19 @@
 extends CharacterBody2D
 
+signal open_map
+signal close_map
+
 @onready var sprite_2d = $Sprite2D
 @onready var footstep_audio = $FootstepAudio
 var isMoving = false
 var inventory_opened = false
+var map_opened = false
 var last_recorded_inventory_amount:Dictionary
 
 const SPEED = 100.0
 
 func _ready():
+	$Camera2D.make_current()
 	$Label.text = GameData.username
 
 # Character direction
@@ -43,7 +48,7 @@ func _physics_process(delta):
 	var directionX = Input.get_axis("Left", "Right")
 	var directionY = Input.get_axis("Up", "Down")
 	var nowMoving = false # c nowMoving
-	var canMove = not inventory_opened #and this and that and ... and etc.
+	var canMove = not inventory_opened and not map_opened #and this and that and ... and etc.
 	
 	if GameData.charLock == false:
 		if canMove:
@@ -78,16 +83,40 @@ func _physics_process(delta):
 				sprite_2d.animation = "Right_Idle"
 			elif (characterDirection == 3):
 				sprite_2d.animation = "Left_Idle"
+		
+		if Input.is_action_just_pressed("Map"):
+			if GameData.current_ui != "map" && GameData.current_ui != "":
+				return
+			if not map_opened:
+				map_opened = true
+				velocity.x = 0
+				velocity.y = 0
+				open_map.emit()
+				print("map_open")
+				GameData.current_ui = "map"
+			else:
+				map_opened = false
+				GameData.current_ui = ""
+				close_map.emit()
+				$Camera2D.make_current()
+				print("map_close")
+				
+				
+			
 				
 		if Input.is_action_just_pressed("Inventory"):
+			if GameData.current_ui != "inventory" && GameData.current_ui != "":
+				return
 			if not inventory_opened:
 				inventory_opened = true
 				velocity.x = 0
 				velocity.y = 0
 				print("inventory_open")
 				$"Inventory Layer".show()
+				GameData.current_ui = "inventory"
 			else:
 				inventory_opened = false
+				GameData.current_ui = ""
 				print("inventory_close")
 				$"Inventory Layer".hide()
 			print("pressed E")
@@ -113,3 +142,14 @@ func _on_footstep_audio_finished():
 	# loop audio
 	if isMoving:
 		footstep_audio.play()
+		
+
+func show_map_icon():
+	$MapIcon.show()
+	$Label.show()
+	$Sprite2D.hide()
+	
+func hide_map_icon():
+	$Sprite2D.show()
+	$MapIcon.hide()
+	$Label.hide()
