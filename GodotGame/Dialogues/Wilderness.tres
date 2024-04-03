@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://cku6yalipw20o"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_ksm4k"]
+
+[resource]
+script = ExtResource("1_ksm4k")
+starts = {
+"Children": &"0_1",
+"Children2": &"0_2",
+"Children3": &"0_3"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(300, 762),
+"start_id": "Children"
+},
+"0_2": {
+"link": &"1_2",
+"offset": Vector2(240, 1200),
+"start_id": "Children2"
+},
+"0_3": {
+"link": &"1_3",
+"offset": Vector2(160, 1760),
+"start_id": "Children3"
+},
+"1_1": {
+"dialogue": "Hey please don't go. Water Bottle",
+"offset": Vector2(659.748, 629.657),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(708.715, 460.158),
+"speaker": "Kids"
+},
+"1_2": {
+"dialogue": "Hey please don't go. Make me a pot",
+"offset": Vector2(660, 1180),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(851.465, 527.776),
+"speaker": "Kids"
+},
+"1_3": {
+"dialogue": "Make me a Water filter pls.",
+"offset": Vector2(558.261, 1803.88),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(726, 462),
+"speaker": "Kids"
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = ""

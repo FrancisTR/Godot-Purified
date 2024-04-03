@@ -224,6 +224,10 @@ position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_iirhq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+texture_filter = 1
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 
 [node name="FootstepAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ai8dy")

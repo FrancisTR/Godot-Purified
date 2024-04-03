@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+@onready var dialogue_box = $Dialogue/Dialogue/DialogueBox
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,11 +10,26 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if not dialogue_box.running:
+		GameData.charLock = false
 	pass
 
 
 
 func _on_teleport_body_entered(body):
 	if (body.name == "CharacterBody2D"):
-		get_tree().change_scene_to_file("res://World Scene/World.tscn")
+		
+		#Show an error dialogue where the player did not craft/find
+		if ((GameData.inventory_amount.keys().find("WaterBottle") == -1) and GameData.day == 1):
+			dialogue_box.start("Children")
+			GameData.charLock = true
+		elif ((GameData.inventory_amount.keys().find("BoilingPot") == -1) and GameData.day == 2):
+			dialogue_box.start("Children2")
+			GameData.charLock = true
+		elif ((GameData.inventory_amount.keys().find("WaterFilter") == -1) and GameData.day == 3):
+			dialogue_box.start("Children3")
+			GameData.charLock = true
+		else:
+			#All requirements met
+			get_tree().change_scene_to_file("res://World Scene/World.tscn")
 	pass # Replace with function body.

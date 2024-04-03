@@ -11,12 +11,12 @@ starts = {
 nodes = {
 "0_1": {
 "link": &"1_1",
-"offset": Vector2(-620, -80),
+"offset": Vector2(-620, -20),
 "start_id": "Tutorial"
 },
 "0_2": {
 "link": &"1_4",
-"offset": Vector2(-960, 340),
+"offset": Vector2(-620, 120),
 "start_id": "Tutorial2"
 },
 "1_1": {
@@ -33,8 +33,8 @@ nodes = {
 "speaker": 1
 },
 "1_10": {
-"dialogue": "The gist of it is they’ve been dealing with a lot of water problems. Luckily for them, in small doses, our product Toadable fixes that right up.",
-"offset": Vector2(2040, 800),
+"dialogue": "The gist of it is they’ve been dealing with a lot of water problems. Luckily for them, in small doses, our product fixes that right up.",
+"offset": Vector2(2040, 860),
 "options": {
 0: {
 "condition": {},
@@ -46,18 +46,13 @@ nodes = {
 "speaker": 1
 },
 "1_11": {
-"dialogue": "Alright, now. Do you know all of what you can do here?",
-"offset": Vector2(2420, 240),
+"dialogue": "Alright, let’s begin your training.",
+"offset": Vector2(2420, 520),
 "options": {
 0: {
 "condition": {},
-"link": &"1_12",
-"text": "Yes"
-},
-1: {
-"condition": {},
 "link": &"1_13",
-"text": "No"
+"text": ""
 }
 },
 "size": Vector2(300, 494),
@@ -65,7 +60,7 @@ nodes = {
 },
 "1_12": {
 "dialogue": "That should be all, so good luck!",
-"offset": Vector2(5000, 220),
+"offset": Vector2(5140, 1240),
 "options": {
 0: {
 "condition": {},
@@ -77,8 +72,8 @@ nodes = {
 "speaker": 1
 },
 "1_13": {
-"dialogue": "Okay, really quick",
-"offset": Vector2(2820, 720),
+"dialogue": "Let me see...",
+"offset": Vector2(2760, 1280),
 "options": {
 0: {
 "condition": {},
@@ -90,8 +85,8 @@ nodes = {
 "speaker": 1
 },
 "1_14": {
-"dialogue": "Based on your resume, you prefer these controls. Feel free to change them right now.",
-"offset": Vector2(3440, 740),
+"dialogue": "Based on your resume, you prefer these controls? Feel free to change them right now if you’d like. Otherwise, you can always change them later.",
+"offset": Vector2(3400, 1280),
 "options": {
 0: {
 "condition": {},
@@ -103,8 +98,8 @@ nodes = {
 "speaker": 1
 },
 "1_15": {
-"dialogue": "Awesome. Also, selling the product is important.",
-"offset": Vector2(3820, 740),
+"dialogue": "Uhh… moving on.",
+"offset": Vector2(3920, 1280),
 "options": {
 0: {
 "condition": {},
@@ -116,8 +111,8 @@ nodes = {
 "speaker": 1
 },
 "1_16": {
-"dialogue": "To interact, go up to one of the villagers and press the key that is showing above them to start talking.",
-"offset": Vector2(4420, 740),
+"dialogue": "There are certain things in the town you can interact with. You can do that by pressing the button that is displayed on top of the thing you are interacting with. In this simple case of talking to a villager, you just press \"Q\" for example.",
+"offset": Vector2(4520, 1280),
 "options": {
 0: {
 "condition": {},
@@ -168,7 +163,8 @@ nodes = {
 "speaker": 1
 },
 "1_5": {
-"dialogue": "Okay buddy, this is the town you’ll be selling Toadable at.",
+"dialogue": "Okay buddy, this is the town you’ll be selling Toadable to.
+Before I let you go and start selling, I just have one question for you.",
 "offset": Vector2(160, 440),
 "options": {
 0: {
@@ -181,7 +177,7 @@ nodes = {
 "speaker": 1
 },
 "1_6": {
-"dialogue": "Before I let you go and start selling, I just have a couple questions for you. First, do you know what’s happening here?",
+"dialogue": "Do you know what’s happening here?",
 "offset": Vector2(520, 380),
 "options": {
 0: {
@@ -199,8 +195,8 @@ nodes = {
 "speaker": 1
 },
 "1_7": {
-"dialogue": "For starters, Well, the gist of it is they’ve been dealing with a lot of water problems, but that’s because they recently had their water source switched away from a clean water source, and replaced that with using the water from their river.",
-"offset": Vector2(940, 900),
+"dialogue": "For starters, the well in their town has been broken and neglected for sometime now",
+"offset": Vector2(920, 880),
 "options": {
 0: {
 "condition": {},
@@ -212,8 +208,8 @@ nodes = {
 "speaker": 1
 },
 "1_8": {
-"dialogue": "That water’s a bit polluted, so they used a lot of chemicals in it, which led to their pipes corroding a lot of the pipes that brings the water to their home.",
-"offset": Vector2(1280, 800),
+"dialogue": "Which made them use the water from their river",
+"offset": Vector2(1280, 880),
 "options": {
 0: {
 "condition": {},
@@ -221,12 +217,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 1
 },
 "1_9": {
-"dialogue": "That corrosion led to a bunch of lead getting in their water, which is a whole bunch of problems. The well in their town has been broken and neglected for sometime now, which made them use the water from their river, which also happens to be contaminated with lead and very polluted and [wave amp=50 freq=2]yada yada yada...[/wave]",
-"offset": Vector2(1660, 800),
+"dialogue": "Which also happens to be contaminated with lead and is also very polluted and yada yada yada",
+"offset": Vector2(1660, 880),
 "options": {
 0: {
 "condition": {},
@@ -244,27 +240,27 @@ nodes = {
 },
 "3_2": {
 "link": &"1_14",
-"offset": Vector2(3180, 740),
+"offset": Vector2(3140, 1280),
 "signalValue": "ShowControls"
 },
 "3_3": {
 "link": &"1_16",
-"offset": Vector2(4140, 740),
+"offset": Vector2(4260, 1280),
 "signalValue": "DialogueControl"
 },
 "3_4": {
 "link": "END",
-"offset": Vector2(5380, 220),
+"offset": Vector2(5640, 1260),
 "signalValue": "Done"
 },
 "3_5": {
 "link": &"1_15",
-"offset": Vector2(3621.69, 1397.49),
+"offset": Vector2(3700, 1780),
 "signalValue": "Negate"
 },
 "3_6": {
 "link": &"1_12",
-"offset": Vector2(4760, 860),
+"offset": Vector2(4840, 1800),
 "signalValue": "Negate"
 }
 }

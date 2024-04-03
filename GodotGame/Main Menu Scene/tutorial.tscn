@@ -1,13 +1,62 @@
-[gd_scene load_steps=11 format=3 uid="uid://cv86rq1ed4u3"]
+[gd_scene load_steps=19 format=3 uid="uid://cv86rq1ed4u3"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Tutorial.gd" id="1_68151"]
+[ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_i2pyw"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_jkygy"]
+[ext_resource type="Texture2D" uid="uid://e02ocjjjfcme" path="res://Assets/UISprites/UI_Flat_Slot_01_Unavailable.png" id="2_ypyo4"]
+[ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="3_q13l2"]
 [ext_resource type="Resource" uid="uid://dwec833wachoy" path="res://Dialogues/Tutorial.tres" id="3_tu0uu"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_akm0h"]
 [ext_resource type="Texture2D" uid="uid://ctdifh6jdv82p" path="res://Assets/profile0.png" id="4_vid2v"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_aeqdw"]
 [ext_resource type="PackedScene" uid="uid://bq46ncf7jihje" path="res://Main Menu Scene/Options.tscn" id="7_co0o4"]
 [ext_resource type="Texture2D" uid="uid://mdva1pov8txg" path="res://Assets/TutorialPlaceholder.png" id="8_d4a6u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70tgp"]
+texture = ExtResource("2_i2pyw")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0, 0.45098, 0.345098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vdbo4"]
+texture = ExtResource("2_i2pyw")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0, 0.45098, 0.345098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wpafn"]
+texture = ExtResource("3_q13l2")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0, 0.45098, 0.345098, 1)
+
+[sub_resource type="Theme" id="Theme_na2ws"]
+Button/styles/hover = SubResource("StyleBoxTexture_70tgp")
+Button/styles/normal = SubResource("StyleBoxTexture_vdbo4")
+Button/styles/pressed = SubResource("StyleBoxTexture_wpafn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pox36"]
+bg_color = Color(0, 0.305882, 0.313726, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.113725, 0.541176, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_a5mn1"]
 script = ExtResource("4_akm0h")
@@ -24,23 +73,36 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_68151")
 
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ypyo4")
+
 [node name="Dialogue" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" type="Panel" parent="Dialogue"]
-visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -500.0
-offset_top = -141.0
+offset_top = -311.0
 offset_right = 500.0
-offset_bottom = 141.0
+offset_bottom = -29.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+theme = SubResource("Theme_na2ws")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pox36")
 script = ExtResource("2_jkygy")
 dialogue_data = ExtResource("3_tu0uu")
 start_id = "Tutorial"
@@ -51,17 +113,14 @@ custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a5mn1"), Sub
 visible = false
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -84.5
-offset_top = -83.0
-offset_right = 84.5
-offset_bottom = 83.0
+offset_left = -84.0
+offset_top = 112.0
+offset_right = 85.0
+offset_bottom = 278.0
 grow_horizontal = 2
-grow_vertical = 2
 texture = ExtResource("8_d4a6u")
 
 [node name="Controls" parent="." instance=ExtResource("7_co0o4")]
@@ -73,8 +132,17 @@ visible = false
 [node name="OptionsTitle" parent="Controls" index="1"]
 visible = false
 
+[node name="HotkeyLabel" parent="Controls" index="2"]
+visible = false
+
 [node name="RemapContainer" parent="Controls" index="3"]
 offset_bottom = -228.0
+
+[node name="SfxSlider" parent="Controls" index="4"]
+visible = false
+
+[node name="MusicSlider" parent="Controls" index="5"]
+visible = false
 
 [node name="BackButton" parent="Controls" index="6"]
 visible = false

@@ -1,6 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctserqjkg74rt"]
+[gd_scene load_steps=14 format=3 uid="uid://ctserqjkg74rt"]
 
 [ext_resource type="Script" path="res://World Scene/UIs/LeaveVillage.gd" id="1_hp0bo"]
+[ext_resource type="Texture2D" uid="uid://b4v1p1j4aonpn" path="res://Assets/UISprites/UI_Flat_Frame_02_Standard.png" id="2_8r7ji"]
+[ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="3_0umsk"]
+[ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="4_red4t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_md5mi"]
+texture = ExtResource("3_0umsk")
+expand_margin_left = 1.0
+expand_margin_top = 4.0
+expand_margin_right = 1.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_icgys"]
+texture = ExtResource("3_0umsk")
+expand_margin_left = 1.0
+expand_margin_top = 4.0
+expand_margin_right = 1.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_17pup"]
+texture = ExtResource("4_red4t")
+expand_margin_left = 1.0
+expand_margin_top = 4.0
+expand_margin_right = 1.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qo5hp"]
+texture = ExtResource("3_0umsk")
+expand_margin_left = 1.0
+expand_margin_top = 4.0
+expand_margin_right = 1.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ggau"]
+texture = ExtResource("3_0umsk")
+expand_margin_left = 1.0
+expand_margin_top = 4.0
+expand_margin_right = 1.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rfi1r"]
+texture = ExtResource("4_red4t")
+expand_margin_left = 1.0
+expand_margin_top = 4.0
+expand_margin_right = 1.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0yg0"]
+texture = ExtResource("3_0umsk")
+expand_margin_left = 7.0
+expand_margin_top = 4.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ohko"]
+texture = ExtResource("3_0umsk")
+expand_margin_left = 7.0
+expand_margin_top = 4.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3fwte"]
+texture = ExtResource("4_red4t")
+expand_margin_left = 7.0
+expand_margin_top = 4.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
 
 [node name="LeaveVillageMenu" type="Control"]
 layout_mode = 3
@@ -8,23 +74,38 @@ anchors_preset = 0
 size_flags_horizontal = 4
 script = ExtResource("1_hp0bo")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 visible = false
 texture_filter = 1
 layout_mode = 1
-offset_left = -147.0
-offset_top = -52.0
-offset_right = 147.0
-offset_bottom = 61.0
-color = Color(0.376471, 0.376471, 0.376471, 0.686275)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -115.0
+offset_right = -73.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_8r7ji")
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 texture_filter = 1
-layout_mode = 0
-offset_left = 19.0
-offset_top = 28.0
-offset_right = 275.0
-offset_bottom = 86.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.5
+offset_top = -26.0
+offset_right = 134.5
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
 texture_filter = 1
@@ -33,6 +114,7 @@ layout_mode = 2
 [node name="Leave Village?" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Do you want to leave this village?"
 horizontal_alignment = 1
 
@@ -46,6 +128,22 @@ texture_filter = 1
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 focus_neighbor_left = NodePath("../No")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_md5mi")
+theme_override_styles/hover = SubResource("StyleBoxTexture_icgys")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_17pup")
 text = "Yes"
 
 [node name="No" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -53,26 +151,43 @@ texture_filter = 1
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 focus_neighbor_right = NodePath("../Yes")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_qo5hp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5ggau")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rfi1r")
 text = "No
 "
 
-[node name="QuotaError" type="ColorRect" parent="."]
+[node name="QuotaError" type="TextureRect" parent="."]
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = -147.0
-offset_top = -52.0
-offset_right = 147.0
-offset_bottom = 61.0
-color = Color(0.376471, 0.376471, 0.376471, 0.686275)
+offset_left = -360.0
+offset_top = -115.0
+offset_right = -73.0
+offset_bottom = -19.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_8r7ji")
 
 [node name="MarginContainer" type="MarginContainer" parent="QuotaError"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 19.0
-offset_top = 28.0
-offset_right = 274.0
-offset_bottom = 105.0
+offset_left = 9.0
+offset_top = 22.0
+offset_right = 278.0
+offset_bottom = 93.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="QuotaError/MarginContainer"]
 texture_filter = 1
@@ -81,6 +196,7 @@ layout_mode = 2
 [node name="Quota" type="Label" parent="QuotaError/MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "You have not meet your quota."
 horizontal_alignment = 1
 
@@ -92,6 +208,22 @@ size_flags_horizontal = 4
 [node name="Okay" type="Button" parent="QuotaError/MarginContainer/VBoxContainer/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_n0yg0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2ohko")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3fwte")
 text = "Okay"
 
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]

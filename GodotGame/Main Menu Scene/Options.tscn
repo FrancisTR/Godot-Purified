@@ -1,12 +1,119 @@
-[gd_scene load_steps=11 format=3 uid="uid://bq46ncf7jihje"]
+[gd_scene load_steps=34 format=3 uid="uid://bq46ncf7jihje"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Options.gd" id="1_pejof"]
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/VolumeOptions.gd" id="2_jtr8r"]
 [ext_resource type="Texture2D" uid="uid://c7qq0rsxbi34h" path="res://Assets/Custom/Terrain/murky_water.png" id="2_p4upr"]
+[ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="3_6mq0h"]
 [ext_resource type="Texture2D" uid="uid://cbid64fvoqhpa" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a1.png" id="3_q1kxr"]
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Remapper.gd" id="3_sdtpu"]
+[ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="5_sapnn"]
 [ext_resource type="Texture2D" uid="uid://betian48tiv5j" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a2.png" id="5_se5ao"]
 [ext_resource type="Texture2D" uid="uid://cf370ycp56cnk" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a1.png" id="6_o2yyx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ln6wp"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_or7ge"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bb1h8"]
+texture = ExtResource("5_sapnn")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nqi67"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_okj23"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b2lnj"]
+texture = ExtResource("5_sapnn")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vc1nd"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mfkrs"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i51q6"]
+texture = ExtResource("5_sapnn")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gyjy"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qlop5"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nb3sh"]
+texture = ExtResource("5_sapnn")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e8aqq"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8xxu"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tiq2m"]
+texture = ExtResource("5_sapnn")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ritaw"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iexoi"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7safo"]
+texture = ExtResource("5_sapnn")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u3247"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cfm8k"]
+texture = ExtResource("3_6mq0h")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_outdn"]
+texture = ExtResource("5_sapnn")
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ovysx"]
 texture = ExtResource("3_q1kxr")
@@ -73,17 +180,38 @@ offset_bottom = 242.0
 focus_neighbor_left = NodePath("../RightMapButton")
 focus_neighbor_right = NodePath("../UpMapButton")
 focus_next = NodePath("../UpMapButton")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_ln6wp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_or7ge")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bb1h8")
 text = "A"
 script = ExtResource("3_sdtpu")
 action = "Left"
 
 [node name="HintLabel" type="Label" parent="RemapContainer/LeftMapButton"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = -4.0
+offset_bottom = 28.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
@@ -94,17 +222,38 @@ offset_left = 477.0
 offset_top = 68.0
 offset_right = 597.0
 offset_bottom = 145.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_nqi67")
+theme_override_styles/hover = SubResource("StyleBoxTexture_okj23")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b2lnj")
 text = "W"
 script = ExtResource("3_sdtpu")
 action = "Up"
 
 [node name="HintLabel" type="Label" parent="RemapContainer/UpMapButton"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = -4.0
+offset_bottom = 28.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
@@ -115,17 +264,38 @@ offset_left = 477.0
 offset_top = 165.0
 offset_right = 597.0
 offset_bottom = 242.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_vc1nd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mfkrs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i51q6")
 text = "S"
 script = ExtResource("3_sdtpu")
 action = "Down"
 
 [node name="HintLabel" type="Label" parent="RemapContainer/DownMapButton"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = -4.0
+offset_bottom = 28.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
@@ -138,17 +308,38 @@ offset_right = 737.0
 offset_bottom = 242.0
 focus_next = NodePath("../../SfxSlider")
 focus_previous = NodePath("../DownMapButton")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_0gyjy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qlop5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nb3sh")
 text = "D"
 script = ExtResource("3_sdtpu")
 action = "Right"
 
 [node name="HintLabel" type="Label" parent="RemapContainer/RightMapButton"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = -4.0
+offset_bottom = 28.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
@@ -156,23 +347,43 @@ autowrap_mode = 2
 texture_filter = 1
 layout_mode = 2
 offset_left = 800.0
-offset_top = 139.0
-offset_right = 903.0
-offset_bottom = 205.0
+offset_top = 124.0
+offset_right = 1022.0
+offset_bottom = 190.0
 scale = Vector2(1.1, 1.1)
 focus_next = NodePath("../../SfxSlider")
 focus_previous = NodePath("../DownMapButton")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_e8aqq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_a8xxu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tiq2m")
 text = "E"
 script = ExtResource("3_sdtpu")
 action = "Inventory"
 
 [node name="HintLabel" type="Label" parent="RemapContainer/InventoryButton"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_left = 14.0
+offset_right = -7.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
@@ -181,23 +392,43 @@ texture_filter = 1
 layout_mode = 2
 offset_left = 800.0
 offset_top = 219.0
-offset_right = 903.0
+offset_right = 1022.0
 offset_bottom = 285.0
 scale = Vector2(1.1, 1.1)
 focus_neighbor_bottom = NodePath("../../SfxSlider")
 focus_next = NodePath("../../SfxSlider")
 focus_previous = NodePath("../DownMapButton")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_ritaw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iexoi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7safo")
 text = "Esc"
 script = ExtResource("3_sdtpu")
 action = "Back"
 
 [node name="HintLabel" type="Label" parent="RemapContainer/BackButton"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_left = 14.0
+offset_right = -7.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
@@ -205,23 +436,43 @@ autowrap_mode = 2
 texture_filter = 1
 layout_mode = 2
 offset_left = 800.0
-offset_top = 59.0
-offset_right = 903.0
-offset_bottom = 125.0
+offset_top = 29.0
+offset_right = 1022.0
+offset_bottom = 95.0
 scale = Vector2(1.1, 1.1)
 focus_next = NodePath("../../SfxSlider")
 focus_previous = NodePath("../DownMapButton")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_u3247")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cfm8k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_outdn")
 text = "Q"
 script = ExtResource("3_sdtpu")
 action = "StartDialogue"
 
 [node name="HintLabel" type="Label" parent="RemapContainer/DialogueButton"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_left = 14.0
+offset_right = -7.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
@@ -330,7 +581,7 @@ focus_next = NodePath("../RemapContainer/DownMapButton")
 focus_previous = NodePath("../RemapContainer/DownMapButton")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_ovysx")
 theme_override_styles/hover = SubResource("StyleBoxTexture_26alj")

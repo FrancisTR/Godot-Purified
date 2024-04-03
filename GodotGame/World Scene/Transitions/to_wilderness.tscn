@@ -1,12 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcjc6w7kmje4r"]
+[gd_scene load_steps=9 format=3 uid="uid://dcjc6w7kmje4r"]
 
 [ext_resource type="Script" path="res://World Scene/Transitions/ToWilderness.gd" id="1_8f0n2"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_e218g"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_l05k2"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_ldby2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ulbkt"]
 size = Vector2(325, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqafc"]
 size = Vector2(326, 15)
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_a7g14"]
+script = ExtResource("4_l05k2")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_0a1o2"]
+script = ExtResource("5_ldby2")
 
 [node name="ToWilderness" type="StaticBody2D"]
 script = ExtResource("1_8f0n2")
@@ -19,5 +28,21 @@ shape = SubResource("RectangleShape2D_ulbkt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport"]
 position = Vector2(0, -9.5)
 shape = SubResource("RectangleShape2D_pqafc")
+
+[node name="Dialogue" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Dialogue" type="CanvasLayer" parent="Dialogue"]
+
+[node name="DialogueBox" type="Panel" parent="Dialogue/Dialogue"]
+visible = false
+custom_minimum_size = Vector2(256, 128)
+offset_right = 256.0
+offset_bottom = 128.0
+script = ExtResource("2_e218g")
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a7g14"), SubResource("RichTextEffect_0a1o2")])
 
 [connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]
