@@ -16,6 +16,8 @@ var inventory_requirement:Dictionary
 
 var charLock = false
 
+var current_ui = ""
+
 #Music and sound. We store the values
 #TODO: This vars is not used. it is there just in case
 var SfxValue

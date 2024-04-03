@@ -703,6 +703,11 @@ texture = ExtResource("12_0vo0q")
 y_sort_enabled = true
 script = ExtResource("1_1qbtd")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1295, 376)
+scale = Vector2(2.29262, 2.57975)
+zoom = Vector2(0.265, 0.265)
+
 [node name="Other" type="Node" parent="."]
 
 [node name="CharacterBody2D" parent="Other" instance=ExtResource("8_7n4r7")]
@@ -838,6 +843,8 @@ position = Vector2(862, -476)
 [node name="OldMan" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(-212, 168)
 
+[connection signal="close_map" from="Other/CharacterBody2D" to="." method="_on_close_map"]
+[connection signal="open_map" from="Other/CharacterBody2D" to="." method="_on_open_map"]
 [connection signal="open_leave_menu" from="Other/door" to="." method="_on_open_leave_menu"]
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]
