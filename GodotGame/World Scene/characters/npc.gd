@@ -6,6 +6,8 @@ var enterBody = false
 
 var NPCname = null
 
+var PressForDialogue_was_opened = false
+
 func _ready():
 	NPCname = null
 	set_process_input(true)
@@ -69,10 +71,12 @@ func _process(delta):
 	
 	
 	
-	if Input.is_action_just_pressed("StartDialogue") and enterBody == true:	
+	if Input.is_action_just_pressed("StartDialogue") and enterBody == true:
+		if GameData.current_ui != "dialogue" && GameData.current_ui != "":
+			return
 		if not dialogue_box.running:
 			GameData.charLock = true
-			
+			GameData.current_ui = "dialogue"
 			#Run the loop and check true that we talked to that villager
 			# This is for the requirement to leave the Day
 			dialogue_box.variables[NPCname] = true
@@ -84,7 +88,9 @@ func _process(delta):
 			dialogue_box.start()
 			print(dialogue_box)
 	elif not dialogue_box.running and enterBody == true:
-			GameData.charLock = false
+		GameData.charLock = false
+		if GameData.current_ui == "dialogue":
+			GameData.current_ui = ""
 
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
@@ -101,8 +107,24 @@ func _on_body_exited(body):
 		print("Player has left")
 		enterBody = false
 		$PressForDialogue.visible = false
+		GameData.current_ui = ""
 		NPCname = null
 		if dialogue_box.running:
 			GameData.charLock = false
 			dialogue_box.stop()
 		dialogue_box.start_id = ""
+		
+func show_map_icon():
+	$MapIcon.show()
+	$Sprite2D.hide()
+	if $PressForDialogue.visible:
+		$PressForDialogue.hide()
+		PressForDialogue_was_opened = true
+		
+	
+func hide_map_icon():
+	$Sprite2D.show()
+	$MapIcon.hide()
+	if PressForDialogue_was_opened:
+		$PressForDialogue.show()
+		PressForDialogue_was_opened = false
