@@ -765,6 +765,10 @@ layer_2/tile_data = PackedInt32Array(-917486, 5, 0, -851950, 5, 1, -786414, 5, 1
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="Map Camera" type="Camera2D" parent="UI"]
+position = Vector2(845, 416)
+zoom = Vector2(0.255, 0.255)
+
 [node name="Day" type="Label" parent="UI"]
 texture_filter = 1
 anchors_preset = 1
@@ -863,3 +867,5 @@ position = Vector2(1144, -369)
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]
 [connection signal="leave_village" from="UI/LeaveVillage" to="." method="_on_leave_village"]
+[connection signal="close_map" from="Other/CharacterBody2D" to="." method="_on_close_map"]
+[connection signal="open_map" from="Other/CharacterBody2D" to="." method="_on_open_map"]

@@ -123,7 +123,7 @@ func _on_leave_village():
 	increase_day(1)
 
 func _on_open_map():
-	$Camera2D.make_current()
+	$"UI/Map Camera".make_current()
 	$Other/CharacterBody2D.show_map_icon()
 	for i in range(0, len(npcs)):
 		npcs[i].show_map_icon()
