@@ -1,7 +1,8 @@
 extends Node2D
 
 #TODO: Set NPC positions
-@onready var npcs = [$NPCs/Denial, $NPCs/Anger]
+@onready var npcs = [$NPCs/Denial, $NPCs/Anger, $NPCs/Bargin,
+					$NPCs/Depress, $NPCs/Accept, $NPCs/Croak, $NPCs/OldMan]
 
 
 var signal_method = ""
@@ -10,16 +11,16 @@ var signal_method = ""
 
 #TODO: Add cord for all NPCs
 var npc_positions = {
-	'day1':[Vector2(318, 106), Vector2(997, 101)],
-	'day2':[Vector2(108, -353), Vector2(497, 201)],
-	'day3':[Vector2(48, 406), Vector2(997, 101)],
-	'day4':[Vector2(218, 206), Vector2(897, 201)],
-	'day5':[Vector2(318, 106), Vector2(997, 101)],
-	'day6':[Vector2(218, 206), Vector2(897, 201)],
-	'day7':[Vector2(318, 106), Vector2(997, 101)],
-	'day8':[Vector2(218, 206), Vector2(897, 201)],
-	'day9':[Vector2(218, 206), Vector2(897, 201)],
-	'day10':[Vector2(218, 206), Vector2(897, 201)]
+	'day1':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
+	'day2':[Vector2(108, -353), Vector2(497, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
+	'day3':[Vector2(48, 406), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
+	'day4':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
+	'day5':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
+	'day6':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
+	'day7':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
+	'day8':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
+	'day9':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
+	'day10':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)]
 	}
 
 # Called when the node enters the scene tree for the first time.
@@ -120,4 +121,14 @@ func _on_leave_village():
 		)
 	SceneTransition.change_scene("res://Globals/text_transition.tscn")
 	increase_day(1)
-	
+
+func _on_open_map():
+	$"UI/Map Camera".make_current()
+	$Other/CharacterBody2D.show_map_icon()
+	for i in range(0, len(npcs)):
+		npcs[i].show_map_icon()
+		
+func _on_close_map():
+	$Other/CharacterBody2D.hide_map_icon()
+	for i in range(0, len(npcs)):
+		npcs[i].hide_map_icon()

@@ -753,6 +753,11 @@ layer_2/tile_data = PackedInt32Array(65559, 65540, 0, 131095, 65540, 1, 65560, 1
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="Map Camera" type="Camera2D" parent="UI"]
+position = Vector2(1295, 376)
+scale = Vector2(2.29262, 2.57975)
+zoom = Vector2(0.265, 0.265)
+
 [node name="Day" type="Label" parent="UI"]
 texture_filter = 1
 anchors_preset = 1
@@ -838,6 +843,8 @@ position = Vector2(862, -476)
 [node name="OldMan" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(-212, 168)
 
+[connection signal="close_map" from="Other/CharacterBody2D" to="." method="_on_close_map"]
+[connection signal="open_map" from="Other/CharacterBody2D" to="." method="_on_open_map"]
 [connection signal="open_leave_menu" from="Other/door" to="." method="_on_open_leave_menu"]
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]

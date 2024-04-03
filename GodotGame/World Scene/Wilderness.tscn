@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cjie6scx7ovoa" path="res://World Scene/Transitions/to_village.tscn" id="11_fw73a"]
 [ext_resource type="PackedScene" uid="uid://0nmlup6yvr84" path="res://World Scene/UIs/crafting_table.tscn" id="12_hu71a"]
 [ext_resource type="PackedScene" uid="uid://dg42ftacgko3o" path="res://World Scene/Items/TinCan.tscn" id="14_hv5vl"]
-[ext_resource type="PackedScene" uid="uid://cllg5b804pc0j" path="res://World Scene/Items/Twig.tscn" id="15_38p05"]
+[ext_resource type="PackedScene" uid="uid://cllg5b804pc0j" path="res://World Scene/Items/twig.tscn" id="15_38p05"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5djji"]
 texture = ExtResource("2_31u2a")
@@ -765,6 +765,10 @@ layer_2/tile_data = PackedInt32Array(-917486, 5, 0, -851950, 5, 1, -786414, 5, 1
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="Map Camera" type="Camera2D" parent="UI"]
+position = Vector2(845, 416)
+zoom = Vector2(0.255, 0.255)
+
 [node name="Day" type="Label" parent="UI"]
 texture_filter = 1
 anchors_preset = 1
@@ -863,3 +867,5 @@ position = Vector2(1144, -369)
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]
 [connection signal="leave_village" from="UI/LeaveVillage" to="." method="_on_leave_village"]
+[connection signal="close_map" from="Other/CharacterBody2D" to="." method="_on_close_map"]
+[connection signal="open_map" from="Other/CharacterBody2D" to="." method="_on_open_map"]
