@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://caurrpk58l40x"]
+[gd_scene load_steps=29 format=3 uid="uid://caurrpk58l40x"]
 
 [ext_resource type="Script" path="res://World Scene/Wilderness.gd" id="1_4k4yr"]
 [ext_resource type="PackedScene" uid="uid://crmshmhby6akr" path="res://World Scene/characters/CharacterMain.tscn" id="2_2eck0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://buj8denvaa0cg" path="res://Assets/Objects/Wood_Bridge.png" id="9_ufycb"]
 [ext_resource type="PackedScene" uid="uid://ctserqjkg74rt" path="res://World Scene/UIs/LeaveVillage.tscn" id="10_b7tbc"]
 [ext_resource type="Texture2D" uid="uid://dp38t71roepqi" path="res://Assets/Custom/Terrain/Hills.png" id="10_crg72"]
+[ext_resource type="Texture2D" uid="uid://edjul52uedvi" path="res://Assets/UISprites/UI_Flat_Banner_01_Downward.png" id="10_jk0aj"]
 [ext_resource type="PackedScene" uid="uid://cjie6scx7ovoa" path="res://World Scene/Transitions/to_village.tscn" id="11_fw73a"]
 [ext_resource type="PackedScene" uid="uid://0nmlup6yvr84" path="res://World Scene/UIs/crafting_table.tscn" id="12_hu71a"]
 [ext_resource type="PackedScene" uid="uid://dg42ftacgko3o" path="res://World Scene/Items/TinCan.tscn" id="14_hv5vl"]
@@ -727,6 +728,9 @@ sources/4 = SubResource("TileSetAtlasSource_a7bfx")
 sources/5 = SubResource("TileSetAtlasSource_gfvmq")
 sources/6 = SubResource("TileSetAtlasSource_sra5n")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_32qm1"]
+texture = ExtResource("10_jk0aj")
+
 [node name="Wilderness" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_4k4yr")
@@ -760,22 +764,28 @@ layer_2/name = "Roof.5"
 layer_2/tile_data = PackedInt32Array(-917486, 5, 0, -851950, 5, 1, -786414, 5, 1, -720878, 5, 1, -655342, 5, 2)
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Day" type="Label" parent="UI"]
 texture_filter = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -114.0
+offset_left = -222.0
 offset_top = 25.0
-offset_right = -26.0
+offset_right = -82.0
 offset_bottom = 102.0
 grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(0.239216, 0.533333, 0.713726, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_32qm1")
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="+1 Day [TEST]" type="Button" parent="UI"]
+visible = false
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -791,6 +801,7 @@ text = "^
 +1 Day"
 
 [node name="-1 Day [TEST]" type="Button" parent="UI"]
+visible = false
 offset_left = 1039.0
 offset_top = 276.0
 offset_right = 1151.0
