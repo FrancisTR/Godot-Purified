@@ -99,27 +99,28 @@ offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "----Items Needed----"
+text = "----Requests----"
 horizontal_alignment = 1
 
-[node name="ItemCrafted" type="Label" parent="TODOlist"]
+[node name="ItemR" type="Label" parent="TODOlist"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 22.0
-offset_top = 174.0
-offset_right = 167.0
-offset_bottom = 237.0
+offset_left = 21.875
+offset_top = 180.0
+offset_right = 166.875
+offset_bottom = 204.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "???:"
+theme_override_font_sizes/font_size = 12
+text = "???"
 
-[node name="ItemText" type="RichTextLabel" parent="TODOlist/ItemCrafted"]
+[node name="ItemR2" type="Label" parent="TODOlist"]
 texture_filter = 1
-layout_mode = 0
-offset_left = 1.0
-offset_top = 38.0
-offset_right = 181.0
-offset_bottom = 62.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+offset_left = 21.875
+offset_top = 218.75
+offset_right = 166.875
+offset_bottom = 242.75
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
 text = "???"
 
 [node name="Items" type="Node2D" parent="."]

@@ -1,27 +1,9 @@
 extends Control
 
+
+
 func _ready():
-	
-	#TODO: Add more requirements for each day
-	#Todo list shown in the inventory
-	if GameData.day == 1:
-		GameData.inventory_requirement = {"WaterBottle": "1"}
-		
-		#Add to the list based on the requirements
-		$TODOlist/ItemCrafted.text = "WaterBottle"
-		$TODOlist/ItemCrafted/ItemText.text = GameData.inventory_requirement["WaterBottle"]
-	elif GameData.day == 2:
-		GameData.inventory_requirement = {"BoilingPot": "1"}
-		
-		#Add to the list based on the requirements
-		$TODOlist/ItemCrafted.text = "BoilingPot (Crafted)"
-		$TODOlist/ItemCrafted/ItemText.text = GameData.inventory_requirement["BoilingPot"]
-	elif GameData.day == 3:
-		GameData.inventory_requirement = {"WaterFilter": "1"}
-		
-		#Add to the list based on the requirements
-		$TODOlist/ItemCrafted.text = "WaterFilter (Crafted)"
-		$TODOlist/ItemCrafted/ItemText.text = GameData.inventory_requirement["WaterFilter"]
+	pass
 
 
 func _process(delta):
@@ -31,6 +13,41 @@ func _process(delta):
 		if GameData.villagersTalked[i]["Talked"] == true:
 			countTalked = countTalked + 1
 	$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/7"
+	
+	
+	
+	
+	
+	# Show in the UI of the item
+	#TODO: Add more requirements for each day and mae QMain and QWild
+	#Todo list shown in the inventory
+	if GameData.day == 1:
+		GameData.inventory_requirement = {"WaterBottle": "1"}
+		
+		#Add to the list based on the requirements
+		if (GameData.QMain == true):
+			$TODOlist/ItemR.text = "Twigs: Need 6"
+		if (GameData.QWild == true):
+			$TODOlist/ItemR2.text = "WaterBottle: Need "+str(GameData.inventory_requirement["WaterBottle"])
+	elif GameData.day == 2:
+		GameData.inventory_requirement = {"BoilingPot": "1"}
+		
+		#Add to the list based on the requirements
+		if (GameData.QWild == true):
+			$TODOlist/ItemR2.text = "BoilingPot: Need "+str(GameData.inventory_requirement["BoilingPot"])
+	elif GameData.day == 3:
+		GameData.inventory_requirement = {"WaterFilter": "1"}
+		
+		#Add to the list based on the requirements
+		if (GameData.QWild == true):
+			$TODOlist/ItemR2.text = "WaterFilter: Need "+str(GameData.inventory_requirement["WaterFilter"])
+
+
+
+
+
+
+
 
 
 func draw_items(items):

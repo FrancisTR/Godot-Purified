@@ -1,16 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://dg42ftacgko3o"]
 
 [ext_resource type="Script" path="res://World Scene/Items/TinCan.gd" id="1_r8gh7"]
-[ext_resource type="Texture2D" uid="uid://x360ca5lkupc" path="res://Assets/TinCan.png" id="2_6t3uu"]
+[ext_resource type="Texture2D" uid="uid://ccm17ho8pvdka" path="res://Assets/Custom/Items/TinCan.png" id="2_e4fsv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vukrq"]
-size = Vector2(5, 7)
+size = Vector2(13.3333, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aaplq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6t3uu")
+"texture": ExtResource("2_e4fsv")
 }],
 "loop": true,
 "name": &"default",
@@ -22,13 +22,14 @@ z_index = 1
 script = ExtResource("1_r8gh7")
 
 [node name="TinCollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0.5)
-scale = Vector2(3, 3)
+position = Vector2(2, -3)
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_vukrq")
 
 [node name="TinSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.0197044, 0.0184318)
+position = Vector2(0, -3)
+scale = Vector2(1.5, 1.875)
 sprite_frames = SubResource("SpriteFrames_aaplq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

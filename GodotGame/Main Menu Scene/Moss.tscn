@@ -1,16 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnu20bxninf0u"]
 
-[ext_resource type="Script" path="res://World Scene/Items/Moss.gd" id="1_oc3n2"]
-[ext_resource type="Texture2D" uid="uid://dhiamg2ophueu" path="res://Assets/Moss.png" id="2_qtgw3"]
+[ext_resource type="Script" path="res://World Scene/Items/Moss.gd" id="1_l21ve"]
+[ext_resource type="Texture2D" uid="uid://cu2ut1xv0sa0l" path="res://Assets/Custom/Items/Moss.png" id="2_kw7u5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vukrq"]
-size = Vector2(13.6667, 14.6667)
+size = Vector2(16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5gstm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qtgw3")
+"texture": ExtResource("2_kw7u5")
 }],
 "loop": true,
 "name": &"default",
@@ -19,16 +19,16 @@ animations = [{
 
 [node name="Moss" type="Area2D"]
 z_index = 1
-script = ExtResource("1_oc3n2")
+script = ExtResource("1_l21ve")
 
 [node name="MossCollisionShape" type="CollisionShape2D" parent="."]
-scale = Vector2(3, 3)
+position = Vector2(7.15256e-07, 7.15256e-07)
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_vukrq")
 
 [node name="MossSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-7.62939e-06, 0)
-scale = Vector2(0.134766, 0.128906)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_5gstm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,20 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cllg5b804pc0j"]
+[gd_scene load_steps=5 format=3 uid="uid://cllg5b804pc0j"]
 
 [ext_resource type="Script" path="res://World Scene/Items/Twig.gd" id="1_l46kl"]
-[ext_resource type="Texture2D" uid="uid://cwunwkiyvw3yl" path="res://Assets/Objects/Basic_Grass_Biom_things.png" id="2_qufrr"]
+[ext_resource type="Texture2D" uid="uid://g8nfb613ad36" path="res://Assets/Custom/Items/Twig.png" id="2_abofg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vukrq"]
-size = Vector2(13.6667, 14.6667)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_642u6"]
-atlas = ExtResource("2_qufrr")
-region = Rect2(80, 32, 16, 16)
+size = Vector2(7.33333, 7.66667)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5gstm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_642u6")
+"texture": ExtResource("2_abofg")
 }],
 "loop": true,
 "name": &"default",
@@ -26,13 +22,14 @@ z_index = 1
 script = ExtResource("1_l46kl")
 
 [node name="TwigCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-2.38419e-07, 0.5)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_vukrq")
 
 [node name="TwigSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-3.8147e-06, 4.76837e-07)
-scale = Vector2(2.4375, 2.5625)
+position = Vector2(0, -2.6226e-06)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_5gstm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

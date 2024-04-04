@@ -10,7 +10,7 @@ var inventory_opened = false
 var map_opened = false
 var last_recorded_inventory_amount:Dictionary
 
-const SPEED = 100.0
+const SPEED = 300.0
 
 func _ready():
 	$Camera2D.make_current()

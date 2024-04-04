@@ -2,6 +2,7 @@ extends Control
 
 @onready var dialogue_box = $Dialogue/DialogueBox
 
+var text = load("res://Dialogues/CharacterList.tres")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dialogue_box.variables["Player"] = GameData.username
@@ -14,8 +15,13 @@ func _ready():
 	pass
 
 
+#var testDic = {"Talia": 2}
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#print(dialogue_box.sample_portrait)
+	#var temp_index = testDic[str(text.characters[1].name)]
+	#$Character.texture = text.characters[temp_index].image
+	#print(text.characters[1].image)
 	pass
 
 
@@ -39,3 +45,4 @@ func _on_dialogue_box_dialogue_signal(value):
 		$Controls.visible = false
 		$NPCexample.visible = false
 	pass # Replace with function body.
+

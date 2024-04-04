@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cv86rq1ed4u3"]
+[gd_scene load_steps=18 format=3 uid="uid://cv86rq1ed4u3"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Tutorial.gd" id="1_68151"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_i2pyw"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="3_q13l2"]
 [ext_resource type="Resource" uid="uid://dwec833wachoy" path="res://Dialogues/Tutorial.tres" id="3_tu0uu"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_akm0h"]
-[ext_resource type="Texture2D" uid="uid://ctdifh6jdv82p" path="res://Assets/profile0.png" id="4_vid2v"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_aeqdw"]
 [ext_resource type="PackedScene" uid="uid://bq46ncf7jihje" path="res://Main Menu Scene/Options.tscn" id="7_co0o4"]
 [ext_resource type="Texture2D" uid="uid://mdva1pov8txg" path="res://Assets/TutorialPlaceholder.png" id="8_d4a6u"]
@@ -88,6 +87,7 @@ texture = ExtResource("2_ypyo4")
 [node name="Dialogue" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" type="Panel" parent="Dialogue"]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
 anchors_preset = 7
@@ -106,7 +106,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pox36")
 script = ExtResource("2_jkygy")
 dialogue_data = ExtResource("3_tu0uu")
 start_id = "Tutorial"
-sample_portrait = ExtResource("4_vid2v")
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a5mn1"), SubResource("RichTextEffect_uc7ri")])
 
 [node name="NPCexample" type="TextureRect" parent="."]
@@ -146,6 +145,12 @@ visible = false
 
 [node name="BackButton" parent="Controls" index="6"]
 visible = false
+
+[node name="Character" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 353.0
+offset_bottom = 666.0
+expand_mode = 2
 
 [connection signal="dialogue_signal" from="Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]
 

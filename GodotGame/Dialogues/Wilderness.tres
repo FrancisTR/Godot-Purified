@@ -7,7 +7,8 @@ script = ExtResource("1_ksm4k")
 starts = {
 "Children": &"0_1",
 "Children2": &"0_2",
-"Children3": &"0_3"
+"Children3": &"0_3",
+"Error": &"0_4"
 }
 nodes = {
 "0_1": {
@@ -24,6 +25,11 @@ nodes = {
 "link": &"1_3",
 "offset": Vector2(160, 1760),
 "start_id": "Children3"
+},
+"0_4": {
+"link": &"1_4",
+"offset": Vector2(360.682, 209.546),
+"start_id": "Error"
 },
 "1_1": {
 "dialogue": "Hey please don't go. Water Bottle",
@@ -53,7 +59,7 @@ nodes = {
 },
 "1_3": {
 "dialogue": "Make me a Water filter pls.",
-"offset": Vector2(558.261, 1803.88),
+"offset": Vector2(660, 1800),
 "options": {
 0: {
 "condition": {},
@@ -63,6 +69,19 @@ nodes = {
 },
 "size": Vector2(726, 462),
 "speaker": "Kids"
+},
+"1_4": {
+"dialogue": "Hmm. Maybe I should explore the Wilderness a bit more...",
+"offset": Vector2(760.487, 82.9828),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(1109.92, 452.645),
+"speaker": ""
 }
 }
 variables = {}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://caurrpk58l40x"]
+[gd_scene load_steps=30 format=3 uid="uid://caurrpk58l40x"]
 
 [ext_resource type="Script" path="res://World Scene/Wilderness.gd" id="1_4k4yr"]
 [ext_resource type="PackedScene" uid="uid://crmshmhby6akr" path="res://World Scene/characters/CharacterMain.tscn" id="2_2eck0"]
@@ -15,7 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://cjie6scx7ovoa" path="res://World Scene/Transitions/to_village.tscn" id="11_fw73a"]
 [ext_resource type="PackedScene" uid="uid://0nmlup6yvr84" path="res://World Scene/UIs/crafting_table.tscn" id="12_hu71a"]
 [ext_resource type="PackedScene" uid="uid://dg42ftacgko3o" path="res://World Scene/Items/TinCan.tscn" id="14_hv5vl"]
-[ext_resource type="PackedScene" uid="uid://cllg5b804pc0j" path="res://World Scene/Items/twig.tscn" id="15_38p05"]
+[ext_resource type="PackedScene" uid="uid://cllg5b804pc0j" path="res://World Scene/Items/Twig.tscn" id="15_38p05"]
+[ext_resource type="PackedScene" uid="uid://b01hucoucf7fr" path="res://World Scene/Items/WaterBottle.tscn" id="17_kbm4u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5djji"]
 texture = ExtResource("2_31u2a")
@@ -837,14 +838,11 @@ offset_bottom = 633.0
 position = Vector2(887, -870)
 
 [node name="CraftingTable" parent="Other" instance=ExtResource("12_hu71a")]
-position = Vector2(763, -451)
+position = Vector2(1119, -457)
 
 [node name="CharacterBody2D" parent="Other" instance=ExtResource("2_2eck0")]
 texture_filter = 1
 position = Vector2(886, -707)
-
-[node name="TinCan" parent="." instance=ExtResource("14_hv5vl")]
-position = Vector2(913, -377)
 
 [node name="Twig" parent="." instance=ExtResource("15_38p05")]
 position = Vector2(848, -389)
@@ -863,6 +861,12 @@ position = Vector2(870, -312)
 
 [node name="Twig6" parent="." instance=ExtResource("15_38p05")]
 position = Vector2(1144, -369)
+
+[node name="TinCan" parent="." instance=ExtResource("14_hv5vl")]
+position = Vector2(932, -343)
+
+[node name="WaterBottle" parent="." instance=ExtResource("17_kbm4u")]
+position = Vector2(780, -422)
 
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]
