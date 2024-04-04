@@ -21,14 +21,17 @@ func _on_teleport_body_entered(body):
 		
 		#Show an error dialogue where the player did not craft/find
 		if ((GameData.inventory_amount.keys().find("WaterBottle") == -1) and GameData.day == 1):
-			dialogue_box.start("Children")
+			dialogue_box.start("Error")
 			GameData.charLock = true
+			GameData.QWild = true
 		elif ((GameData.inventory_amount.keys().find("BoilingPot") == -1) and GameData.day == 2):
-			dialogue_box.start("Children2")
+			dialogue_box.start("Error")
 			GameData.charLock = true
+			GameData.QWild = true
 		elif ((GameData.inventory_amount.keys().find("WaterFilter") == -1) and GameData.day == 3):
-			dialogue_box.start("Children3")
+			dialogue_box.start("Error")
 			GameData.charLock = true
+			GameData.QWild = true
 		else:
 			#All requirements met
 			get_tree().change_scene_to_file("res://World Scene/World.tscn")

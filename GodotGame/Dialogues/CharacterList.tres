@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="CharacterList" load_steps=6 format=3 uid="uid://bksin52k7pe8u"]
+[gd_resource type="Resource" script_class="CharacterList" load_steps=14 format=3 uid="uid://bksin52k7pe8u"]
 
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="1_2cgx6"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_p0fqg"]
-[ext_resource type="Texture2D" uid="uid://ctdifh6jdv82p" path="res://Assets/profile0.png" id="2_w357c"]
+[ext_resource type="Texture2D" uid="uid://ctdifh6jdv82p" path="res://Assets/profile0.png" id="2_e6ut6"]
 
 [sub_resource type="Resource" id="Resource_d68ut"]
 script = ExtResource("1_p0fqg")
@@ -12,9 +12,49 @@ color = Color(1, 1, 1, 1)
 [sub_resource type="Resource" id="Resource_1b4a2"]
 script = ExtResource("1_p0fqg")
 name = "Talia"
-image = ExtResource("2_w357c")
 color = Color(1, 0.443137, 0.45098, 1)
+
+[sub_resource type="Resource" id="Resource_qjm23"]
+script = ExtResource("1_p0fqg")
+name = "TaliaIMG"
+image = ExtResource("2_e6ut6")
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_umkq6"]
+script = ExtResource("1_p0fqg")
+name = "Danny"
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_01wqa"]
+script = ExtResource("1_p0fqg")
+name = "Angelica"
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_lt2hy"]
+script = ExtResource("1_p0fqg")
+name = "Barry"
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_0h6xi"]
+script = ExtResource("1_p0fqg")
+name = "Derick"
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_evr13"]
+script = ExtResource("1_p0fqg")
+name = "Antonio"
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_2dvo0"]
+script = ExtResource("1_p0fqg")
+name = "Croak"
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_ixiiq"]
+script = ExtResource("1_p0fqg")
+name = "Old Man Tommy"
+color = Color(1, 1, 1, 1)
 
 [resource]
 script = ExtResource("1_2cgx6")
-characters = Array[ExtResource("1_p0fqg")]([SubResource("Resource_d68ut"), SubResource("Resource_1b4a2")])
+characters = Array[ExtResource("1_p0fqg")]([SubResource("Resource_d68ut"), SubResource("Resource_1b4a2"), SubResource("Resource_qjm23"), SubResource("Resource_umkq6"), SubResource("Resource_01wqa"), SubResource("Resource_lt2hy"), SubResource("Resource_0h6xi"), SubResource("Resource_evr13"), SubResource("Resource_2dvo0"), SubResource("Resource_ixiiq")])

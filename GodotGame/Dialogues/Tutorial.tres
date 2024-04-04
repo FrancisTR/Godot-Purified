@@ -60,7 +60,7 @@ nodes = {
 },
 "1_12": {
 "dialogue": "That should be all, so good luck!",
-"offset": Vector2(5140, 1240),
+"offset": Vector2(5680, 1240),
 "options": {
 0: {
 "condition": {},
@@ -117,6 +117,19 @@ nodes = {
 0: {
 "condition": {},
 "link": &"3_6",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_17": {
+"dialogue": "Lastly, if you ever get lost, press \"M\" to view a map of the place.",
+"offset": Vector2(5280, 1240),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
 "text": ""
 }
 },
@@ -250,7 +263,7 @@ Before I let you go and start selling, I just have one question for you.",
 },
 "3_4": {
 "link": "END",
-"offset": Vector2(5640, 1260),
+"offset": Vector2(6160, 1240),
 "signalValue": "Done"
 },
 "3_5": {
@@ -259,7 +272,7 @@ Before I let you go and start selling, I just have one question for you.",
 "signalValue": "Negate"
 },
 "3_6": {
-"link": &"1_12",
+"link": &"1_17",
 "offset": Vector2(4840, 1800),
 "signalValue": "Negate"
 }

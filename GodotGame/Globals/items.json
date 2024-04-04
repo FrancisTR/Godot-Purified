@@ -12,49 +12,49 @@
 	{
 		"name":"Twig",
 		"description":"this is a twig",
-		"texture":"res://World Scene/Items/twig.tscn",
-		"cropped":"yes"
+		"texture": "res://Assets/Custom/Items/Twig.png",
+		"cropped":"no"
 	},
 	{
 		"name":"Rock",
 		"description": "this is a rock",
-		"texture":"res://Assets/Custom/temp_rock.png",
+		"texture": "res://Assets/Custom/Items/Rock.png",
 		"cropped":"no"
 	},
 	{
 		"name":"Sand",
 		"description": "this is sand",
-		"texture":"res://Assets/Sand.png",
+		"texture": "res://Assets/Custom/Items/Sand.png",
 		"cropped":"no"
 	},
 	{
 		"name":"Moss",
 		"description": "this is moss",
-		"texture":"res://Assets/Moss.png",
+		"texture": "res://Assets/Custom/Items/Moss.png",
 		"cropped":"no"
 	},
 	{
 		"name":"TinCan",
 		"description": "This is a TinCan",
-		"texture":"res://Assets/TinCan.png",
+		"texture": "res://Assets/Custom/Items/TinCan.png",
 		"cropped":"no"
 	},
 	{
 		"name":"WaterBottle",
 		"description": "This is a WaterBottle",
-		"texture":"res://Assets/WaterBottle.png",
+		"texture": "res://Assets/Custom/Items/WaterBottle.png",
 		"cropped":"no"
 	},
 	{
 		"name":"BoilingPot",
 		"description": "This is a pot (Boils)",
-		"texture": "res://Assets/profile0.png",
+		"texture": "res://Assets/Custom/Items/BoilingPot.png",
 		"cropped":"no"
 	},
 	{
 		"name":"WaterFilter",
 		"description": "This is a WaterFilter",
-		"texture": "res://Assets/WaterFilter.png",
+		"texture": "res://Assets/Custom/Items/WaterFilter.png",
 		"cropped":"no"
 	}
 ]

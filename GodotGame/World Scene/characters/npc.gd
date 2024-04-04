@@ -17,8 +17,13 @@ func _ready():
 func _process(delta):
 	#Set the variables of the people that already talked to
 	#This prevents a reset if the player visited the wilderness and comes back
+	dialogue_box.variables["QMain"] = GameData.QMain
 	for i in range(len(GameData.villagersTalked)):
 		dialogue_box.variables[GameData.villagersTalked[i]["Name"]] = GameData.villagersTalked[i]["Talked"]
+	#Items updating
+	#TODO: Add more if needed
+	dialogue_box.variables["Twigs"] = GameData.itemDialogue[0]["Value"]
+		
 	# Get the day for the appropriate dialogue
 	if GameData.day == 1:
 		# Who is the player talking to?
@@ -80,6 +85,9 @@ func _process(delta):
 			#Run the loop and check true that we talked to that villager
 			# This is for the requirement to leave the Day
 			dialogue_box.variables[NPCname] = true
+			
+			#GameData.QWild = dialogue_box.variables["QWild"]
+			
 			print(dialogue_box.variables)
 			for i in range(len(GameData.villagersTalked)):
 				if GameData.villagersTalked[i]["Name"] == NPCname:
@@ -128,3 +136,13 @@ func hide_map_icon():
 	if PressForDialogue_was_opened:
 		$PressForDialogue.show()
 		PressForDialogue_was_opened = false
+
+
+
+
+func _on_dialogue_box_dialogue_ended():
+	
+	#Quest stuff for the Main World
+	if (dialogue_box.variables["QMain"] == true):
+		GameData.QMain = true
+	pass # Replace with function body.

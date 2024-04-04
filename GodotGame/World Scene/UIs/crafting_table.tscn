@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://0nmlup6yvr84"]
 
 [ext_resource type="Script" path="res://World Scene/UIs/crafting_table.gd" id="1_763sv"]
-[ext_resource type="Texture2D" uid="uid://dxqfeifbgv4c6" path="res://Assets/CraftingPlaceholder.png" id="1_nap51"]
+[ext_resource type="Texture2D" uid="uid://bui61mchuqel4" path="res://Assets/Custom/CraftingTable.png" id="2_k6jcn"]
 [ext_resource type="Texture2D" uid="uid://dv22rv7vcdnkm" path="res://Assets/UISprites/UI_Flat_Textfield_02.png" id="3_6q8d2"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="4_jad3i"]
 [ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="5_msu3t"]
@@ -37,8 +37,10 @@ texture = ExtResource("5_msu3t")
 script = ExtResource("1_763sv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_nap51")
+texture_filter = 1
+position = Vector2(-4.76837e-07, 4.76837e-07)
+scale = Vector2(2, 1.875)
+texture = ExtResource("2_k6jcn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gh0p5")

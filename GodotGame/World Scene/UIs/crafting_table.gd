@@ -35,14 +35,14 @@ func _ready():
 		listKeys = craftingList.keys()
 		listValues = craftingList.values()
 		ItemOfTheDay = "BoilingPot"
-		itemImage = load("res://Assets/profile0.png")
+		itemImage = load("res://Assets/Custom/Items/BoilingPot.png")
 		pass
 	elif GameData.day == 3:
 		craftingList = {"WaterBottle": 1, "Sand": 2, "Rock": 2, "Moss": 2}
 		listKeys = craftingList.keys()
 		listValues = craftingList.values()
 		ItemOfTheDay = "WaterFilter"
-		itemImage = load("res://Assets/WaterFilter.png")
+		itemImage = load("res://Assets/Custom/Items/WaterFilter.png")
 		pass
 		
 
@@ -56,17 +56,17 @@ func _process(delta):
 			listTextNumber[i].text = "" + str(listValues[i])
 			#add textures
 			if listKeys[i] == "Twig":
-				listTextImg[i].texture = load("res://Assets/CraftingPlaceholder.png")
+				listTextImg[i].texture = load("res://Assets/Custom/Items/Twig.png")
 			elif listKeys[i] == "TinCan":
-				listTextImg[i].texture = load("res://Assets/TinCan.png")
+				listTextImg[i].texture = load("res://Assets/Custom/Items/TinCan.png")
 			elif listKeys[i] == "WaterBottle":
-				listTextImg[i].texture = load("res://Assets/WaterBottle.png")
+				listTextImg[i].texture = load("res://Assets/Custom/Items/WaterBottle.png")
 			elif listKeys[i] == "Sand":
-				listTextImg[i].texture = load("res://Assets/Sand.png")
+				listTextImg[i].texture = load("res://Assets/Custom/Items/Sand.png")
 			elif listKeys[i] == "Rock":
-				listTextImg[i].texture = load("res://Assets/Custom/temp_rock.png")
+				listTextImg[i].texture = load("res://Assets/Custom/Items/Rock.png")
 			elif listKeys[i] == "Moss":
-				listTextImg[i].texture = load("res://Assets/Moss.png")
+				listTextImg[i].texture = load("res://Assets/Custom/Items/Moss.png")
 				
 	else:
 		$UI/CraftingList/CraftButton.visible = false
@@ -74,6 +74,10 @@ func _process(delta):
 		
 		
 	if Input.is_action_just_pressed("StartDialogue") and enterBody == true:	
+		if GameData.current_ui != "Crafting" && GameData.current_ui != "":
+			return
+		GameData.charLock = true
+		GameData.current_ui = "Crafting"
 		$UI/CraftingList.visible = true
 		$PressInteraction.visible = false
 		#Enable the crafting button if met
@@ -89,8 +93,7 @@ func _process(delta):
 			$UI/CraftingList/CraftButton.disabled = false
 		else:
 			$UI/CraftingList/CraftButton.disabled = true
-	pass
-
+		
 
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
@@ -107,6 +110,7 @@ func _on_body_exited(body):
 		$UI/CraftingList.visible = false
 		enterBody = false
 		print("Exit crafting")
+		GameData.current_ui = ""
 	pass # Replace with function body.
 
 
@@ -131,10 +135,13 @@ func _on_craft_button_pressed():
 func _on_okay_button_pressed():
 	$UI/CraftedItem.visible = false
 	GameData.charLock = false
+	GameData.current_ui = ""
 	pass # Replace with function body.
 
 
 func _on_x_button_pressed():
 	$UI/CraftingList.visible = false
 	GameData.charLock = false
+	$PressInteraction.visible = true
+	GameData.current_ui = ""
 	pass # Replace with function body.

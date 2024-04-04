@@ -38,9 +38,11 @@ func _on_yes_pressed():
 	
 	GameData.itemSpawnOnce = false #Spawn the items again on the next day
 	
-	#Reset villagers taled
+	#Reset villagers talked
 	for i in range(len(GameData.villagersTalked)):
 		GameData.villagersTalked[i]["Talked"] = false
+	GameData.QMain = false
+	GameData.QWild = false
 	
 	#Reset take items and spawn again on the next day
 	GameData.get_item_posX = null

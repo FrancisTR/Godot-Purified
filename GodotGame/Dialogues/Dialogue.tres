@@ -30,17 +30,17 @@ starts = {
 nodes = {
 "0_1": {
 "link": &"1_1",
-"offset": Vector2(-120, -1640),
+"offset": Vector2(-120, -2380),
 "start_id": "Denial"
 },
 "0_10": {
 "link": &"1_10",
-"offset": Vector2(-120, -180),
+"offset": Vector2(-80, 80),
 "start_id": "Anger2"
 },
 "0_11": {
 "link": &"1_11",
-"offset": Vector2(-120, 0),
+"offset": Vector2(-120, 600),
 "start_id": "Anger3"
 },
 "0_12": {
@@ -85,7 +85,7 @@ nodes = {
 },
 "0_2": {
 "link": &"1_2",
-"offset": Vector2(-120, -380),
+"offset": Vector2(-140, -460),
 "start_id": "Anger"
 },
 "0_20": {
@@ -95,7 +95,7 @@ nodes = {
 },
 "0_21": {
 "link": &"1_21",
-"offset": Vector2(-160, 7200),
+"offset": Vector2(-180, 7360),
 "start_id": "OldMan3"
 },
 "0_3": {
@@ -109,8 +109,8 @@ nodes = {
 "start_id": "Depress"
 },
 "0_5": {
-"link": &"1_5",
-"offset": Vector2(-220, 3940),
+"link": &"5_12",
+"offset": Vector2(-700, 3660),
 "start_id": "Accept"
 },
 "0_6": {
@@ -120,35 +120,35 @@ nodes = {
 },
 "0_7": {
 "link": &"1_7",
-"offset": Vector2(-160, 6880),
+"offset": Vector2(-140, 6600),
 "start_id": "OldMan"
 },
 "0_8": {
 "link": &"1_8",
-"offset": Vector2(-120, -1440),
+"offset": Vector2(-140, -1920),
 "start_id": "Denial2"
 },
 "0_9": {
 "link": &"1_9",
-"offset": Vector2(-120, -1180),
+"offset": Vector2(-140, -1380),
 "start_id": "Denial3"
 },
 "1_1": {
-"dialogue": "Danny1",
-"offset": Vector2(320, -1860),
+"dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
+"offset": Vector2(280, -2560),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_22",
 "text": ""
 }
 },
 "size": Vector2(300, 431),
-"speaker": "Danny"
+"speaker": ""
 },
 "1_10": {
 "dialogue": "Anger2",
-"offset": Vector2(320, 80),
+"offset": Vector2(260, -40),
 "options": {
 0: {
 "condition": {},
@@ -161,7 +161,7 @@ nodes = {
 },
 "1_11": {
 "dialogue": "Anger3",
-"offset": Vector2(320, 520),
+"offset": Vector2(260, 480),
 "options": {
 0: {
 "condition": {},
@@ -187,7 +187,7 @@ nodes = {
 },
 "1_13": {
 "dialogue": "Barry3",
-"offset": Vector2(320, 1880),
+"offset": Vector2(-60, 1820),
 "options": {
 0: {
 "condition": {},
@@ -195,7 +195,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 431),
+"size": Vector2(300, 431.001),
 "speaker": "Barry"
 },
 "1_14": {
@@ -208,12 +208,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 431),
+"size": Vector2(300, 431.001),
 "speaker": "Derek"
 },
 "1_15": {
 "dialogue": "Derek3",
-"offset": Vector2(320, 3260),
+"offset": Vector2(-160, 3080),
 "options": {
 0: {
 "condition": {},
@@ -226,7 +226,7 @@ nodes = {
 },
 "1_16": {
 "dialogue": "Antonio2",
-"offset": Vector2(320, 4200),
+"offset": Vector2(320, 4380),
 "options": {
 0: {
 "condition": {},
@@ -239,7 +239,7 @@ nodes = {
 },
 "1_17": {
 "dialogue": "Antonio3",
-"offset": Vector2(320, 4620),
+"offset": Vector2(-100, 4540),
 "options": {
 0: {
 "condition": {},
@@ -252,7 +252,7 @@ nodes = {
 },
 "1_18": {
 "dialogue": "Croak2",
-"offset": Vector2(320, 5580),
+"offset": Vector2(300, 5600),
 "options": {
 0: {
 "condition": {},
@@ -260,12 +260,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 431),
+"size": Vector2(300, 431.001),
 "speaker": "Croak"
 },
 "1_19": {
 "dialogue": "Croak3",
-"offset": Vector2(320, 6020),
+"offset": Vector2(-140, 5900),
 "options": {
 0: {
 "condition": {},
@@ -273,25 +273,25 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 431),
+"size": Vector2(300, 431.001),
 "speaker": "Croak"
 },
 "1_2": {
-"dialogue": "Anger1",
-"offset": Vector2(320, -420),
+"dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
+"offset": Vector2(260, -600),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_24",
 "text": ""
 }
 },
 "size": Vector2(300, 431),
-"speaker": "Angelica"
+"speaker": ""
 },
 "1_20": {
 "dialogue": "Old2",
-"offset": Vector2(340, 7080),
+"offset": Vector2(340, 7160),
 "options": {
 0: {
 "condition": {},
@@ -304,7 +304,7 @@ nodes = {
 },
 "1_21": {
 "dialogue": "Old3",
-"offset": Vector2(340, 7520),
+"offset": Vector2(340, 7740),
 "options": {
 0: {
 "condition": {},
@@ -312,12 +312,25 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 431),
+"size": Vector2(300, 430.999),
 "speaker": "Old Man"
 },
-"1_3": {
-"dialogue": "Barry1",
-"offset": Vector2(320, 960),
+"1_22": {
+"dialogue": "What are you talkin’ about? There’s nothin’ wrong with my water, and I don’t like you actin’ like there is. I don’t need what you’re sellin’, so you better look somewhere else.",
+"offset": Vector2(680, -2560),
+"options": {
+0: {
+"condition": {},
+"link": &"1_23",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 3
+},
+"1_23": {
+"dialogue": "Sounds like you’ve made up your mind. I’ll be back tomorrow in case it changes, but until then, good day and goodbye!",
+"offset": Vector2(1080, -2560),
 "options": {
 0: {
 "condition": {},
@@ -326,24 +339,271 @@ nodes = {
 }
 },
 "size": Vector2(300, 431),
-"speaker": "Barry"
+"speaker": ""
+},
+"1_24": {
+"dialogue": "How dare you? How dare you! You come strolling in here just to make a profit of the back of other people’s problems! You disgust me, I hope you know that.",
+"offset": Vector2(640, -600),
+"options": {
+0: {
+"condition": {},
+"link": &"1_25",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 4
+},
+"1_25": {
+"dialogue": "That’s a lot of anger pointed at someone here to fix the problem. Sure, I also want to make some profit on the side, but who wouldn’t? Also, you didn’t answer my question. Do you want to buy any Toadable",
+"offset": Vector2(1020, -600),
+"options": {
+0: {
+"condition": {},
+"link": &"1_26",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": ""
+},
+"1_26": {
+"dialogue": "Not with how pricey you’re selling for. Come back when your price is lower or don’t come back at all. I know which one I’d prefer.",
+"offset": Vector2(1380, -600),
+"options": {
+0: {
+"condition": {},
+"link": &"1_27",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 4
+},
+"1_27": {
+"dialogue": "Well, I look forward to checking in on you again tomorrow, maybe you’ll be willing to buy then. Good day and goodbye!",
+"offset": Vector2(1760, -600),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.001, 431),
+"speaker": ""
+},
+"1_28": {
+"dialogue": "What about for 50% off?",
+"offset": Vector2(720, 940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_29",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 5
+},
+"1_29": {
+"dialogue": "I can’t make a profit at that price.",
+"offset": Vector2(1120, 940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_30",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": ""
+},
+"1_3": {
+"dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
+"offset": Vector2(160, 960),
+"options": {
+0: {
+"condition": {},
+"link": &"1_28",
+"text": ""
+}
+},
+"size": Vector2(300.001, 431),
+"speaker": ""
+},
+"1_30": {
+"dialogue": " What about 30% off?",
+"offset": Vector2(1500, 940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_31",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 5
+},
+"1_31": {
+"dialogue": "I can’t make a profit at that price.",
+"offset": Vector2(1900, 940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_32",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": ""
+},
+"1_32": {
+"dialogue": "What about 25% off?",
+"offset": Vector2(2260, 940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_33",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 5
+},
+"1_33": {
+"dialogue": "I can’t make a profit at that price.",
+"offset": Vector2(2620, 940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_34",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": ""
+},
+"1_34": {
+"dialogue": "What about 10% off?",
+"offset": Vector2(2980, 940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_35",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 5
+},
+"1_35": {
+"dialogue": "I can’t make a profit at that price.",
+"offset": Vector2(3400, 940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_36",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": ""
+},
+"1_36": {
+"dialogue": "What about 1% off?",
+"offset": Vector2(3760, 940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_37",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 5
+},
+"1_37": {
+"dialogue": "I’ll get back to you on that",
+"offset": Vector2(4120, 940),
+"options": {
+0: {
+"condition": {},
+"link": &"1_38",
+"text": ""
+}
+},
+"size": Vector2(300.001, 431),
+"speaker": ""
+},
+"1_38": {
+"dialogue": "Okay.",
+"offset": Vector2(4480, 940),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.001, 433),
+"speaker": 5
+},
+"1_39": {
+"dialogue": "No.",
+"offset": Vector2(700, 2320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_40",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 6
 },
 "1_4": {
-"dialogue": "Derek1",
+"dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
 "offset": Vector2(320, 2320),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_39",
 "text": ""
 }
 },
 "size": Vector2(300, 431),
-"speaker": "Derek"
+"speaker": ""
 },
-"1_5": {
-"dialogue": "Antonio1",
-"offset": Vector2(320, 3700),
+"1_40": {
+"dialogue": "Are you sure?  I can assure you that Toadable does a lot. It will make the water safer for drinking, for cleaning, for bathing, and for any other use you could possibly want. As long as you use the right ratio of Toadable to water when mixing the two, the world becomes your oyster. Does that spark your interest?",
+"offset": Vector2(1080, 2320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_41",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": ""
+},
+"1_41": {
+"dialogue": "Please leave.",
+"offset": Vector2(1440, 2320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_42",
+"text": ""
+}
+},
+"size": Vector2(300.001, 433),
+"speaker": 6
+},
+"1_42": {
+"dialogue": "Okay then. I’ll be back tomorrow. Good day and goodbye!",
+"offset": Vector2(1810.58, 2296.82),
 "options": {
 0: {
 "condition": {},
@@ -352,24 +612,258 @@ nodes = {
 }
 },
 "size": Vector2(300, 431),
-"speaker": "Antonio"
+"speaker": ""
+},
+"1_43": {
+"dialogue": "Sure.",
+"offset": Vector2(720, 3580),
+"options": {
+0: {
+"condition": {},
+"link": &"5_1",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 7
+},
+"1_44": {
+"dialogue": "Okay, great. Sign here and give me your money, then I’ll give you that Toadable!",
+"offset": Vector2(4660, 3680),
+"options": {
+0: {
+"condition": {},
+"link": &"1_46",
+"text": ""
+}
+},
+"size": Vector2(300.001, 431),
+"speaker": ""
+},
+"1_45": {
+"dialogue": "It was a pleasure doing business with you. Good day and goodbye!",
+"offset": Vector2(4660, 4160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_46",
+"text": ""
+}
+},
+"size": Vector2(300.001, 431),
+"speaker": ""
+},
+"1_46": {
+"dialogue": "Hey, while you’re here, could you go out to the woods and get me some sticks. I’ve been planning to get some for fire but I haven’t had the chance yet.",
+"offset": Vector2(5140, 3860),
+"options": {
+0: {
+"condition": {},
+"link": &"1_47",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 7
+},
+"1_47": {
+"dialogue": "Well… Since you’ve helped me out, that’s the least I can do. Be back in back in a bit.",
+"offset": Vector2(5513.2, 3873.18),
+"options": {
+0: {
+"condition": {},
+"link": &"4_2",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": ""
+},
+"1_48": {
+"dialogue": "My parents told me not to talk to strangers.",
+"offset": Vector2(720, 5080),
+"options": {
+0: {
+"condition": {},
+"link": &"5_8",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 8
+},
+"1_49": {
+"dialogue": "That’s okay, I already talked to your dad, so I’m not a stranger.",
+"offset": Vector2(1577.05, 5065.75),
+"options": {
+0: {
+"condition": {},
+"link": &"1_50",
+"text": ""
+}
+},
+"size": Vector2(300.001, 431),
+"speaker": ""
+},
+"1_5": {
+"dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
+"offset": Vector2(380, 3560),
+"options": {
+0: {
+"condition": {},
+"link": &"1_43",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": ""
+},
+"1_50": {
+"dialogue": "Okay. Hey, what’s that?",
+"offset": Vector2(1940, 5060),
+"options": {
+0: {
+"condition": {},
+"link": &"1_51",
+"text": ""
+}
+},
+"size": Vector2(300.001, 433),
+"speaker": 8
+},
+"1_51": {
+"dialogue": "Well, it’s Pure-fi’s patented Toadable. It’s guaranteed to fix your water right up! It’s worth 83 Rana and 52 Sapo",
+"offset": Vector2(2320, 5060),
+"options": {
+0: {
+"condition": {},
+"link": &"1_52",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": ""
+},
+"1_52": {
+"dialogue": "Daddy doesn’t give me that much of an allowance. I’ve only got, um… 10 Rana and 2 Sapo.",
+"offset": Vector2(2680, 5040),
+"options": {
+0: {
+"condition": {},
+"link": &"1_53",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 8
+},
+"1_53": {
+"dialogue": "…Well… I could give you a small sample of Toadable for that much. How does that sound?",
+"offset": Vector2(3040, 5040),
+"options": {
+0: {
+"condition": {},
+"link": &"1_54",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": ""
+},
+"1_54": {
+"dialogue": "Sure!",
+"offset": Vector2(3382.44, 5029.52),
+"options": {
+0: {
+"condition": {},
+"link": &"4_3",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 8
+},
+"1_55": {
+"dialogue": "I’m not gonna buy your scam, so you can drop the act, whippersnapper. Try it on someone else for a change. Or better yet, actually talk to people instead of selling this. You might be surprised by what you learn.",
+"offset": Vector2(720, 6600),
+"options": {
+0: {
+"condition": {},
+"link": &"1_56",
+"text": ""
+}
+},
+"size": Vector2(391, 433),
+"speaker": 9
+},
+"1_56": {
+"dialogue": "Are you sure you don’t need any Toadable",
+"offset": Vector2(1180, 6600),
+"options": {
+0: {
+"condition": {},
+"link": &"1_57",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": ""
+},
+"1_57": {
+"dialogue": "…",
+"offset": Vector2(1520, 6580),
+"options": {
+0: {
+"condition": {},
+"link": &"1_58",
+"text": ""
+}
+},
+"size": Vector2(391, 433),
+"speaker": 9
+},
+"1_58": {
+"dialogue": "Point made. Good day and goodbye.",
+"offset": Vector2(1960, 6580),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 431),
+"speaker": ""
+},
+"1_59": {
+"dialogue": "Hey thanks for the sticks man!",
+"offset": Vector2(1240, 4000),
+"options": {
+0: {
+"condition": {},
+"link": &"4_4",
+"text": ""
+}
+},
+"size": Vector2(586.866, 445.765),
+"speaker": 7
 },
 "1_6": {
-"dialogue": "Croak1",
+"dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
 "offset": Vector2(320, 5080),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_48",
 "text": ""
 }
 },
 "size": Vector2(300, 431),
-"speaker": "Croak"
+"speaker": ""
 },
-"1_7": {
-"dialogue": "Old1",
-"offset": Vector2(340, 6600),
+"1_60": {
+"dialogue": "...",
+"offset": Vector2(1960, 4300),
 "options": {
 0: {
 "condition": {},
@@ -377,12 +871,38 @@ nodes = {
 "text": ""
 }
 },
+"size": Vector2(743.337, 433),
+"speaker": 7
+},
+"1_61": {
+"dialogue": "Thanks for the Twigs by the way!",
+"offset": Vector2(-1520, 4480),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(588, 400),
+"speaker": 7
+},
+"1_7": {
+"dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
+"offset": Vector2(340, 6600),
+"options": {
+0: {
+"condition": {},
+"link": &"1_55",
+"text": ""
+}
+},
 "size": Vector2(300, 431),
-"speaker": "Old Man"
+"speaker": ""
 },
 "1_8": {
 "dialogue": "Danny2",
-"offset": Vector2(320, -1360),
+"offset": Vector2(280, -2040),
 "options": {
 0: {
 "condition": {},
@@ -395,7 +915,7 @@ nodes = {
 },
 "1_9": {
 "dialogue": "Danny3",
-"offset": Vector2(320, -860),
+"offset": Vector2(280, -1480),
 "options": {
 0: {
 "condition": {},
@@ -405,6 +925,137 @@ nodes = {
 },
 "size": Vector2(300, 431),
 "speaker": "Danny"
+},
+"4_1": {
+"link": "END",
+"offset": Vector2(4840, 940),
+"type": 0,
+"value": "true",
+"variable": "Bargin"
+},
+"4_2": {
+"link": "END",
+"offset": Vector2(5920, 3920),
+"type": 0,
+"value": "true",
+"variable": "QMain"
+},
+"4_3": {
+"link": "END",
+"offset": Vector2(3780, 5040),
+"type": 0,
+"value": "true",
+"variable": "Profit?"
+},
+"4_4": {
+"link": "END",
+"offset": Vector2(1895.77, 4073.25),
+"type": 0,
+"value": "0",
+"variable": "Twigs"
+},
+"4_5": {
+"link": "END",
+"offset": Vector2(-980, 4020),
+"type": 0,
+"value": "false",
+"variable": "QMain"
+},
+"5_1": {
+"false": &"1_45",
+"offset": Vector2(1080, 3700),
+"operator": 0,
+"true": &"5_2",
+"value1": "{{Accept}}",
+"value2": "true"
+},
+"5_10": {
+"false": "END",
+"offset": Vector2(-1460, 3860),
+"operator": 0,
+"true": "END",
+"value1": "{{Accept}}",
+"value2": "true"
+},
+"5_11": {
+"false": "END",
+"offset": Vector2(-1380, 4160),
+"operator": -1,
+"true": "END",
+"value1": "",
+"value2": ""
+},
+"5_12": {
+"false": &"1_5",
+"offset": Vector2(-300, 3660),
+"operator": 0,
+"true": &"5_9",
+"value1": "{{QMain}}",
+"value2": "true"
+},
+"5_2": {
+"false": &"1_45",
+"offset": Vector2(1560, 3700),
+"operator": 0,
+"true": &"5_3",
+"value1": "{{Anger}}",
+"value2": "true"
+},
+"5_3": {
+"false": &"1_45",
+"offset": Vector2(2100, 3700),
+"operator": 0,
+"true": &"5_5",
+"value1": "{{Bargin}}",
+"value2": "true"
+},
+"5_4": {
+"false": &"1_45",
+"offset": Vector2(3120, 3700),
+"operator": 0,
+"true": &"5_6",
+"value1": "{{Denial}}",
+"value2": "true"
+},
+"5_5": {
+"false": &"1_45",
+"offset": Vector2(2620, 3700),
+"operator": 0,
+"true": &"5_4",
+"value1": "{{Profit?}}",
+"value2": "false"
+},
+"5_6": {
+"false": &"1_45",
+"offset": Vector2(3620, 3700),
+"operator": 0,
+"true": &"5_7",
+"value1": "{{Depress}}",
+"value2": "true"
+},
+"5_7": {
+"false": &"1_45",
+"offset": Vector2(4120, 3700),
+"operator": 0,
+"true": &"1_44",
+"value1": "{{OldMan}}",
+"value2": "true"
+},
+"5_8": {
+"false": "END",
+"offset": Vector2(1100, 5060),
+"operator": 0,
+"true": &"1_49",
+"value1": "{{Bargin}}",
+"value2": "true"
+},
+"5_9": {
+"false": &"1_60",
+"offset": Vector2(720, 4120),
+"operator": 0,
+"true": &"1_59",
+"value1": "{{Twigs}}",
+"value2": "6"
 }
 }
 variables = {
@@ -439,8 +1090,20 @@ variables = {
 "Player": {
 "type": 4,
 "value": "???"
+},
+"Profit?": {
+"type": 1,
+"value": false
+},
+"QMain": {
+"type": 1,
+"value": false
+},
+"Twigs": {
+"type": 2,
+"value": 0.0
 }
 }
 comments = Array[String]([])
-strays = Array[String]([])
-characters = ""
+strays = Array[String](["4_1", "5_11", "5_10", "4_5", "1_61"])
+characters = "res://Dialogues/CharacterList.tres"

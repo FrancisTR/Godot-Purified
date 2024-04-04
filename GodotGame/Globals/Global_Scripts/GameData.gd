@@ -32,7 +32,17 @@ var itemSpawnOnce = false
 
 
 
+#Dialogue related stuff
+var QMain = false
+var QWild = false
 
+#TODO Add more if needed
+var itemDialogue = [
+	{
+		"Name": "Twigs",
+		"Value": 0
+	}
+]
 
 var villagersTalked = [
 	{
