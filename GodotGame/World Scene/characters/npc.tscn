@@ -40,7 +40,7 @@ Button/styles/normal = SubResource("StyleBoxTexture_s7508")
 Button/styles/pressed = SubResource("StyleBoxTexture_m2aul")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d61p"]
-bg_color = Color(0, 0.305882, 0.313726, 1)
+bg_color = Color(0, 0.305882, 0.313726, 0.890196)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -87,6 +87,19 @@ script = ExtResource("1_7ll4o")
 
 [node name="FixedDialoguePosition" type="CanvasLayer" parent="."]
 
+[node name="CharacterIMG" type="TextureRect" parent="FixedDialoguePosition"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -442.0
+offset_top = -173.0
+offset_right = -167.0
+offset_bottom = 348.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="DialogueBox" type="Panel" parent="FixedDialoguePosition"]
 visible = false
 z_index = 101
@@ -98,7 +111,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -406.0
-offset_top = -239.0
+offset_top = -197.0
 offset_right = 406.0
 offset_bottom = -19.0
 grow_horizontal = 2
@@ -107,6 +120,7 @@ theme = SubResource("Theme_q0h0h")
 theme_override_styles/panel = SubResource("StyleBoxFlat_3d61p")
 script = ExtResource("2_kithy")
 dialogue_data = ExtResource("4_pn0gs")
+hide_portrait = true
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_66oxl"), SubResource("RichTextEffect_emjeb")])
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -146,6 +160,12 @@ scale = Vector2(4, 4)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("9_ilu2c")
+
+[node name="NPCActions" type="Node" parent="."]
+
+[node name="BarryDestination" type="Node" parent="NPCActions"]
+
+[node name="Marker2D" type="Marker2D" parent="NPCActions/BarryDestination"]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

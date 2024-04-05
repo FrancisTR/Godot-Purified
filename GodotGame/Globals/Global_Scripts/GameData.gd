@@ -36,7 +36,7 @@ var itemSpawnOnce = false
 var QMain = false
 var QWild = false
 
-#TODO Add more if needed
+#TODO Add more if needed to stack of the items needed for NPC
 var itemDialogue = [
 	{
 		"Name": "Twigs",

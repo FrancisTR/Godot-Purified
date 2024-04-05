@@ -46,3 +46,19 @@ func remove_from_inventory(item, amount):
 		print("AMOUNT", GameData.inventory_amount)
 	else:
 		print("No item to remove")
+
+
+################DIALOGUE################
+var character_list = load("res://Dialogues/CharacterList.tres")
+const char_dict = {
+	"Main": 0,
+	"Talia": 1,
+	"Danny": 2,
+	"Angelica": 3,
+	"Barry": 4,
+	"Derick": 5,
+	"Antonio": 6,
+	"Croak": 7,
+	"Old Man Tommy": 8
+}
+#############^^^DIALOGUE^^^#############

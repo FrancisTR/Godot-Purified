@@ -46,3 +46,8 @@ func _on_dialogue_box_dialogue_signal(value):
 		$NPCexample.visible = false
 	pass # Replace with function body.
 
+func _on_dialogue_box_dialogue_proceeded(node_type):
+	#print($Dialogue/DialogueBox.speaker.text," addf")
+	if $Dialogue/DialogueBox.speaker.text != "":
+		var idx = Utils.char_dict[str($Dialogue/DialogueBox.speaker.text)]
+		$CharacterIMG.texture = Utils.character_list.characters[idx].image

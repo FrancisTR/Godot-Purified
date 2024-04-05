@@ -115,6 +115,7 @@ text = "???"
 
 [node name="ItemR2" type="Label" parent="TODOlist"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 21.875
 offset_top = 218.75
 offset_right = 166.875
