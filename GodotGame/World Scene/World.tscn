@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b2fo6lc5k06cg"]
+[gd_scene load_steps=27 format=3 uid="uid://b2fo6lc5k06cg"]
 
 [ext_resource type="Script" path="res://World Scene/World.gd" id="1_1qbtd"]
 [ext_resource type="Texture2D" uid="uid://bipqa3xtfks8q" path="res://Assets/Tilesets/Water.png" id="4_ejaol"]
@@ -14,6 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://bw43arjwii3ih" path="res://World Scene/Transitions/exit.tscn" id="12_qfqc7"]
 [ext_resource type="PackedScene" uid="uid://ctserqjkg74rt" path="res://World Scene/UIs/LeaveVillage.tscn" id="13_hyjxq"]
 [ext_resource type="PackedScene" uid="uid://dcjc6w7kmje4r" path="res://World Scene/Transitions/to_wilderness.tscn" id="14_wvqau"]
+
+[sub_resource type="Environment" id="Environment_wqy3a"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 4
+fog_enabled = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lybif"]
 texture = ExtResource("5_b2c28")
@@ -703,6 +709,9 @@ texture = ExtResource("12_0vo0q")
 y_sort_enabled = true
 script = ExtResource("1_1qbtd")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wqy3a")
+
 [node name="Other" type="Node" parent="."]
 
 [node name="CharacterBody2D" parent="Other" instance=ExtResource("8_7n4r7")]
@@ -831,6 +840,9 @@ position = Vector2(1919, 508)
 [node name="Bargin" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(771, -478)
 
+[node name="Marker2D" parent="NPCs/Bargin/NPCActions/BarryDestination" index="0"]
+position = Vector2(1441, -504)
+
 [node name="Depress" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(-483, -705)
 
@@ -849,3 +861,5 @@ position = Vector2(-212, 168)
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]
 [connection signal="leave_village" from="UI/LeaveVillage" to="." method="_on_leave_village"]
+
+[editable path="NPCs/Bargin"]

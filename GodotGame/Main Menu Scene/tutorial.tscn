@@ -41,7 +41,7 @@ Button/styles/normal = SubResource("StyleBoxTexture_vdbo4")
 Button/styles/pressed = SubResource("StyleBoxTexture_wpafn")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pox36"]
-bg_color = Color(0, 0.305882, 0.313726, 1)
+bg_color = Color(0, 0.305882, 0.313726, 0.921569)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -84,6 +84,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ypyo4")
 
+[node name="CharacterIMG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 114.0
+offset_right = 310.0
+offset_bottom = 666.0
+expand_mode = 1
+
 [node name="Dialogue" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" type="Panel" parent="Dialogue"]
@@ -96,7 +104,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -500.0
-offset_top = -311.0
+offset_top = -231.0
 offset_right = 500.0
 offset_bottom = -29.0
 grow_horizontal = 2
@@ -106,6 +114,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pox36")
 script = ExtResource("2_jkygy")
 dialogue_data = ExtResource("3_tu0uu")
 start_id = "Tutorial"
+hide_portrait = true
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a5mn1"), SubResource("RichTextEffect_uc7ri")])
 
 [node name="NPCexample" type="TextureRect" parent="."]
@@ -146,12 +155,7 @@ visible = false
 [node name="BackButton" parent="Controls" index="6"]
 visible = false
 
-[node name="Character" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 353.0
-offset_bottom = 666.0
-expand_mode = 2
-
+[connection signal="dialogue_proceeded" from="Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_proceeded"]
 [connection signal="dialogue_signal" from="Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]
 
 [editable path="Controls"]

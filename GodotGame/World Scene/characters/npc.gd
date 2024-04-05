@@ -146,3 +146,10 @@ func _on_dialogue_box_dialogue_ended():
 	if (dialogue_box.variables["QMain"] == true):
 		GameData.QMain = true
 	pass # Replace with function body.
+	
+	
+func _on_dialogue_box_dialogue_proceeded(node_type):
+	#print($Dialogue/DialogueBox.speaker.text," addf")
+	if $FixedDialoguePosition/DialogueBox.speaker.text != "":
+		var idx = Utils.char_dict[str($FixedDialoguePosition/DialogueBox.speaker.text)]
+		$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
