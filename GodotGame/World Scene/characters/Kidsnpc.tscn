@@ -1,17 +1,17 @@
-[gd_scene load_steps=20 format=3 uid="uid://decpyxnu3oocl"]
+[gd_scene load_steps=20 format=3 uid="uid://er7rlhv6rpvh"]
 
-[ext_resource type="Script" path="res://World Scene/characters/npc.gd" id="1_7ll4o"]
-[ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="1_we8v3"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_kithy"]
-[ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_ln8m6"]
-[ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="3_vf4oi"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_1oy2a"]
-[ext_resource type="Resource" uid="uid://2d0hvs0mqxeq" path="res://Dialogues/Dialogue.tres" id="4_pn0gs"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_hejlf"]
-[ext_resource type="Texture2D" uid="uid://dw04cpaod6bun" path="res://Assets/Custom/temp_frog_icon.png" id="9_ilu2c"]
+[ext_resource type="Script" path="res://World Scene/characters/Kidsnpc.gd" id="1_o8im2"]
+[ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_11oe8"]
+[ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="3_ayov3"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="4_ao48n"]
+[ext_resource type="Resource" uid="uid://cku6yalipw20o" path="res://Dialogues/Wilderness.tres" id="5_150bx"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="6_vc6yi"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="7_m0hip"]
+[ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="8_t4rsh"]
+[ext_resource type="Texture2D" uid="uid://dw04cpaod6bun" path="res://Assets/Custom/temp_frog_icon.png" id="9_br5nv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxqgd"]
-texture = ExtResource("2_ln8m6")
+texture = ExtResource("2_11oe8")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
 texture_margin_right = 20.0
@@ -19,7 +19,7 @@ texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s7508"]
-texture = ExtResource("2_ln8m6")
+texture = ExtResource("2_11oe8")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
 texture_margin_right = 20.0
@@ -27,7 +27,7 @@ texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m2aul"]
-texture = ExtResource("3_vf4oi")
+texture = ExtResource("3_ayov3")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
 texture_margin_right = 20.0
@@ -57,13 +57,13 @@ expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_66oxl"]
-script = ExtResource("4_1oy2a")
+script = ExtResource("6_vc6yi")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_emjeb"]
-script = ExtResource("5_hejlf")
+script = ExtResource("7_m0hip")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6cu33"]
-atlas = ExtResource("1_we8v3")
+atlas = ExtResource("8_t4rsh")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bxftl"]
@@ -80,10 +80,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bc547"]
 size = Vector2(34, 37)
 
-[node name="NPC" type="Area2D"]
+[node name="KidsNPC" type="Area2D"]
 z_index = 101
 texture_filter = 1
-script = ExtResource("1_7ll4o")
+script = ExtResource("1_o8im2")
 
 [node name="FixedDialoguePosition" type="CanvasLayer" parent="."]
 
@@ -118,8 +118,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_q0h0h")
 theme_override_styles/panel = SubResource("StyleBoxFlat_3d61p")
-script = ExtResource("2_kithy")
-dialogue_data = ExtResource("4_pn0gs")
+script = ExtResource("4_ao48n")
+dialogue_data = ExtResource("5_150bx")
 hide_portrait = true
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_66oxl"), SubResource("RichTextEffect_emjeb")])
 
@@ -159,13 +159,7 @@ grow_vertical = 2
 scale = Vector2(4, 4)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("9_ilu2c")
-
-[node name="NPCActions" type="Node" parent="."]
-
-[node name="BarryDestination" type="Node" parent="NPCActions"]
-
-[node name="Marker2D" type="Marker2D" parent="NPCActions/BarryDestination"]
+texture = ExtResource("9_br5nv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

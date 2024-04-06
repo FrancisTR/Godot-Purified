@@ -23,7 +23,9 @@ func _toggled(button_pressed):
 	if button_pressed:
 		release_focus()
 		text = "???"
-
+		SoundControl.is_playing_sound("button")
+	
+	
 func _unhandled_input(e):
 	if not e is InputEventKey:
 		return

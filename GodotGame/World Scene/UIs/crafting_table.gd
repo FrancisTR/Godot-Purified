@@ -50,10 +50,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (GameData.day != 1):
-		#List of items needed in UI
+		#TODO: (in case) List of items needed in UI
 		for i in range(0, len(craftingList)):
-			listText[i].text = "" + str(listKeys[i])
-			listTextNumber[i].text = "" + str(listValues[i])
+			listText[i].text = str(listKeys[i])
+			
+			#How many items the player has in order to craft?
+			if (GameData.inventory_amount.keys().find(listKeys[i]) != -1):
+				listTextNumber[i].text = str(GameData.inventory_amount[listKeys[i]]) + "/" + str(listValues[i])
+			else:
+				listTextNumber[i].text = "0/" + str(listValues[i])
+			
+			
 			#add textures
 			if listKeys[i] == "Twig":
 				listTextImg[i].texture = load("res://Assets/Custom/Items/Twig.png")

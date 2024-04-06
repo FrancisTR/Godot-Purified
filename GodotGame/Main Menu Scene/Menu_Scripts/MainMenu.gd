@@ -75,11 +75,11 @@ func _on_start_button_pressed():
 	# If first time, go to tutorial
 	SoundControl.is_playing_sound("button")
 	if (GameData.visitTutorial == false):
-		get_tree().change_scene_to_file("res://Main Menu Scene/tutorial.tscn")
+		SceneTransition.change_scene("res://Main Menu Scene/tutorial.tscn")
 	else:
-		get_tree().change_scene_to_file("res://Main Menu Scene/EnterName.tscn")
+		SceneTransition.change_scene("res://Main Menu Scene/EnterName.tscn")
 
 
 func _on_option_button_pressed():
 	SoundControl.is_playing_sound("button")
-	get_tree().change_scene_to_file("res://Main Menu Scene/Options.tscn")
+	SceneTransition.change_scene("res://Main Menu Scene/Options.tscn")

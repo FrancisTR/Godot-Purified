@@ -53,7 +53,11 @@ func _on_yes_pressed():
 	
 	
 	GameData.visitedWilderness == false
-	
+	GameData.questComplete = {"Main": false, "Wild": false}
+
+
+
+
 func _on_no_pressed():
 	self.hide()
 	print("n")

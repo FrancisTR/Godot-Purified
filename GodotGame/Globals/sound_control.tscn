@@ -6,7 +6,9 @@
 script = ExtResource("1_swyf0")
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
+max_distance = 9.22337e+18
 bus = &"music"
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
+max_distance = 9.22337e+18
 bus = &"sfx"

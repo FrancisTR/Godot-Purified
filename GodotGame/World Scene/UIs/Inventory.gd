@@ -12,8 +12,10 @@ func _process(delta):
 	for i in range(len(GameData.villagersTalked)):
 		if GameData.villagersTalked[i]["Talked"] == true:
 			countTalked = countTalked + 1
-	$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/7"
-	
+	if (GameData.day >= 3):
+		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/6"
+	else:
+		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/7"
 	
 	
 	

@@ -19,6 +19,7 @@ func _ready():
 	if GameData.day > 10:
 		day = 10
 		
+		
 	
 	#TODO add item spawns
 	inst(GameData.itemSpawns)

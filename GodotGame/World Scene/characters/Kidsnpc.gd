@@ -18,18 +18,6 @@ var PressForDialogue_was_opened = false
 func _ready():
 	NPCname = null
 	set_process_input(true)
-	
-	#TODO: move Croak away from screen after day 3
-	#if (GameData.day >= 3):
-		#$"../Croak".visible = false #All days from now on have this
-	
-func go_pos(delta):
-	if moving:
-		$"../Bargin".global_position = $"../Bargin".global_position.move_toward(BarryDestination, delta*moving_speed)
-	if $"../Bargin".global_position == BarryDestination:
-		moving = false
-		$"../Bargin".queue_free()
-		GameData.charLock = false
 
 
 
@@ -41,67 +29,19 @@ func _process(delta):
 	for i in range(len(GameData.villagersTalked)):
 		dialogue_box.variables[GameData.villagersTalked[i]["Name"]] = GameData.villagersTalked[i]["Talked"]
 	
-	
 	#Items updating
 	#TODO: Add more if needed
 	dialogue_box.variables["Twigs"] = GameData.itemDialogue[0]["Value"]
 		
-	# Get the day for the appropriate dialogue
+
+	# Who is the player talking to?
 	if GameData.day == 1:
-		# Who is the player talking to?
-		if NPCname == "Denial":
-			dialogue_box.start_id = "Denial"
-		elif NPCname == "Anger":
-			dialogue_box.start_id = "Anger"
-		elif NPCname == "Bargin":
-			dialogue_box.start_id = "Bargin"
-		elif NPCname == "Depress":
-			dialogue_box.start_id = "Depress"
-		elif NPCname == "Accept":
-			dialogue_box.start_id = "Accept"
-		elif NPCname == "Croak":
-			dialogue_box.start_id = "Croak"
-		elif NPCname == "OldMan":
-			dialogue_box.start_id = "OldMan"
-			
-		#Wilderness
-		elif (NPCname == "Kids"):
-			print(true)
+		dialogue_box.start_id = "Children"
 	elif GameData.day == 2:
-		# Who is the player talking to?
-		if NPCname == "Denial":
-			dialogue_box.start_id = "Denial2"
-		elif NPCname == "Anger":
-			dialogue_box.start_id = "Anger2"
-		elif NPCname == "Bargin":
-			dialogue_box.start_id = "Bargin2"
-		elif NPCname == "Depress":
-			dialogue_box.start_id = "Depress2"
-		elif NPCname == "Accept":
-			dialogue_box.start_id = "Accept2"
-		elif NPCname == "Croak":
-			dialogue_box.start_id = "Croak2"
-		elif NPCname == "OldMan":
-			dialogue_box.start_id = "OldMan2"
+		dialogue_box.start_id = "Children"
 	elif GameData.day == 3:
-		# Who is the player talking to?
-		if NPCname == "Denial":
-			dialogue_box.start_id = "Denial3"
-		elif NPCname == "Anger":
-			dialogue_box.start_id = "Anger3"
-		elif NPCname == "Bargin":
-			dialogue_box.start_id = "Bargin3"
-		elif NPCname == "Depress":
-			dialogue_box.start_id = "Depress3"
-		elif NPCname == "Accept":
-			dialogue_box.start_id = "Accept3"
-		elif NPCname == "Croak":
-			dialogue_box.start_id = "Croak3"
-		elif NPCname == "OldMan":
-			dialogue_box.start_id = "OldMan3"
-	if moving:
-		GameData.charLock = true
-		go_pos(delta) #For barry
+		dialogue_box.start_id = "Children"
+
 	
 	
 	if Input.is_action_just_pressed("StartDialogue") and enterBody == true:
@@ -171,8 +111,8 @@ func hide_map_icon():
 func _on_dialogue_box_dialogue_ended():
 	
 	#Quest stuff for the Main World
-	if (dialogue_box.variables["QMain"] == true):
-		GameData.QMain = true
+	if (dialogue_box.variables["QWild"] == true):
+		GameData.QWild = true
 	pass # Replace with function body.
 	
 	
@@ -184,11 +124,4 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 
 
 func _on_dialogue_box_dialogue_signal(value):
-	if value == "BarryRun":
-		moving = true
-		
-		
-	if value == "MainComplete":
-		GameData.questComplete["Main"] = true
-	if value == "WildComplete":
-		GameData.questComplete["Wild"] = true
+	pass

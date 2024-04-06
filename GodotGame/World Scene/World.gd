@@ -14,6 +14,8 @@ var npc_positions = {
 	'day1':[Vector2(2721, -234), Vector2(1919, 508), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
 	'day2':[Vector2(108, -353), Vector2(497, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
 	'day3':[Vector2(48, 406), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
+	
+	#DLC
 	'day4':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
 	'day5':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
 	'day6':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
@@ -41,6 +43,23 @@ func _ready():
 		npcs[i].position = npc_positions[('day'+str(day))][i]
 		print(npcs[i], "is set to", npc_positions[('day'+str(day))][i])
 
+
+
+# Theme songs
+func _process(delta):
+	
+	#TODO: Add theme song based on the day
+	if GameData.day == 1 or GameData.day == 2:
+		SoundControl.is_playing_theme("main")
+	elif GameData.day == 3:
+		SoundControl.stop_playing()
+		SoundControl.is_playing_theme("croak")
+	else:
+		SoundControl.is_playing_theme("wild")
+
+
+
+
 func increase_day(amount):
 	if(GameData.day+amount > 0):
 		GameData.day += amount
@@ -62,13 +81,15 @@ func _on_open_leave_menu():
 	print(TalkedToVillagersCount)
 
 
-	if ((GameData.inventory_amount.keys().find("WaterBottle") == -1 or TalkedToVillagersCount != 7) and GameData.day == 1):
+	if ((GameData.inventory_amount.keys().find("WaterBottle") == -1 or TalkedToVillagersCount != 7 or GameData.questComplete["Main"] == false or GameData.questComplete["Wild"] == false) and GameData.day == 1):
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
-	elif ((GameData.inventory_amount.keys().find("BoilingPot") == -1 or TalkedToVillagersCount != 7) and GameData.day == 2):
+	elif ((GameData.inventory_amount.keys().find("BoilingPot") == -1 or TalkedToVillagersCount != 7 or GameData.questComplete["Main"] == false or GameData.questComplete["Wild"] == false) and GameData.day == 2):
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
-	elif ((GameData.inventory_amount.keys().find("WaterFilter") == -1 or TalkedToVillagersCount != 7) and GameData.day == 3):
+	
+	#TODO: After day 3 and beyond, you only need to talk to 6 villagers
+	elif ((GameData.inventory_amount.keys().find("WaterFilter") == -1 or TalkedToVillagersCount != 6 or GameData.questComplete["Main"] == false or GameData.questComplete["Wild"] == false) and GameData.day == 3):
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
 	else:

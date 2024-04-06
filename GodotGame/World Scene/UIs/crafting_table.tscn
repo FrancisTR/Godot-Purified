@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://0nmlup6yvr84"]
+[gd_scene load_steps=18 format=3 uid="uid://0nmlup6yvr84"]
 
 [ext_resource type="Script" path="res://World Scene/UIs/crafting_table.gd" id="1_763sv"]
 [ext_resource type="Texture2D" uid="uid://bui61mchuqel4" path="res://Assets/Custom/CraftingTable.png" id="2_k6jcn"]
@@ -16,22 +16,30 @@ texture = ExtResource("4_jad3i")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2tuo2"]
 texture = ExtResource("4_jad3i")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2xftd"]
 texture = ExtResource("5_msu3t")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_283uh"]
 texture = ExtResource("6_2bae6")
 modulate_color = Color(0.364706, 0.364706, 0.364706, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s5qrj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0j3ki"]
 texture = ExtResource("4_jad3i")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b1cy3"]
 texture = ExtResource("4_jad3i")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jntyi"]
 texture = ExtResource("5_msu3t")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_noqy8"]
 
 [node name="CraftingTable" type="Area2D"]
 script = ExtResource("1_763sv")
@@ -89,10 +97,11 @@ offset_right = 402.0
 offset_bottom = 134.0
 
 [node name="ItemImg" type="TextureRect" parent="UI/CraftingList/ItemList/ItemBox"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 27.0
+offset_left = 51.0
 offset_top = -7.0
-offset_right = 67.0
+offset_right = 91.0
 offset_bottom = 33.0
 expand_mode = 2
 
@@ -102,9 +111,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 69.0
+offset_left = 93.0
 offset_top = -9.0
-offset_right = 238.0
+offset_right = 262.0
 offset_bottom = 19.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -114,9 +123,9 @@ text = "No items to craft!"
 [node name="ItemText" type="RichTextLabel" parent="UI/CraftingList/ItemList/ItemBox/Item"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 189.0
+offset_left = 226.0
 offset_top = 4.0
-offset_right = 302.0
+offset_right = 339.0
 offset_bottom = 29.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 
@@ -129,9 +138,9 @@ offset_bottom = 190.0
 
 [node name="ItemImg2" type="TextureRect" parent="UI/CraftingList/ItemList/ItemBox2"]
 layout_mode = 0
-offset_left = 27.0
+offset_left = 51.0
 offset_top = 1.0
-offset_right = 67.0
+offset_right = 91.0
 offset_bottom = 41.0
 expand_mode = 2
 
@@ -141,9 +150,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 69.0
+offset_left = 93.0
 offset_top = -1.0
-offset_right = 238.0
+offset_right = 262.0
 offset_bottom = 27.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -152,9 +161,9 @@ theme_override_font_sizes/font_size = 20
 [node name="Item2Text" type="RichTextLabel" parent="UI/CraftingList/ItemList/ItemBox2/Item2"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 189.0
+offset_left = 226.0
 offset_top = 4.0
-offset_right = 302.0
+offset_right = 339.0
 offset_bottom = 29.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 
@@ -167,9 +176,9 @@ offset_bottom = 254.0
 
 [node name="ItemImg3" type="TextureRect" parent="UI/CraftingList/ItemList/ItemBox3"]
 layout_mode = 0
-offset_left = 27.0
+offset_left = 51.0
 offset_top = 1.0
-offset_right = 67.0
+offset_right = 91.0
 offset_bottom = 41.0
 expand_mode = 2
 
@@ -179,9 +188,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 69.0
+offset_left = 93.0
 offset_top = -1.0
-offset_right = 253.0
+offset_right = 277.0
 offset_bottom = 27.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -190,9 +199,9 @@ theme_override_font_sizes/font_size = 20
 [node name="Item3Text" type="RichTextLabel" parent="UI/CraftingList/ItemList/ItemBox3/Item3"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 189.0
+offset_left = 226.0
 offset_top = 4.0
-offset_right = 302.0
+offset_right = 339.0
 offset_bottom = 29.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 
@@ -205,9 +214,9 @@ offset_bottom = 319.0
 
 [node name="ItemImg4" type="TextureRect" parent="UI/CraftingList/ItemList/ItemBox4"]
 layout_mode = 0
-offset_left = 27.0
+offset_left = 51.0
 offset_top = -1.0
-offset_right = 67.0
+offset_right = 91.0
 offset_bottom = 39.0
 expand_mode = 2
 
@@ -217,9 +226,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 69.0
+offset_left = 93.0
 offset_top = -2.0
-offset_right = 253.0
+offset_right = 277.0
 offset_bottom = 26.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -228,9 +237,9 @@ theme_override_font_sizes/font_size = 20
 [node name="Item4Text" type="RichTextLabel" parent="UI/CraftingList/ItemList/ItemBox4/Item4"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 189.0
+offset_left = 226.0
 offset_top = 4.0
-offset_right = 302.0
+offset_right = 339.0
 offset_bottom = 29.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 
@@ -265,6 +274,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_6rxi2")
 theme_override_styles/hover = SubResource("StyleBoxTexture_2tuo2")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2xftd")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_283uh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s5qrj")
 text = "Craft Item"
 
 [node name="XButton" type="Button" parent="UI/CraftingList"]
@@ -368,6 +378,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxTexture_0j3ki")
 theme_override_styles/hover = SubResource("StyleBoxTexture_b1cy3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jntyi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_noqy8")
 text = "Okay"
 
 [node name="PressInteraction" type="Label" parent="."]
