@@ -59,6 +59,7 @@ const char_dict = {
 	"Derick": 5,
 	"Antonio": 6,
 	"Croak": 7,
-	"Old Man Tommy": 8
+	"Old Man Tommy": 8,
+	"Kids": 9
 }
 #############^^^DIALOGUE^^^#############

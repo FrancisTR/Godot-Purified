@@ -109,3 +109,4 @@ dialogue_data = ExtResource("3_16syn")
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_66oxl"), SubResource("RichTextEffect_emjeb")])
 
 [connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]
+[connection signal="dialogue_proceeded" from="Dialogue/Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_proceeded"]

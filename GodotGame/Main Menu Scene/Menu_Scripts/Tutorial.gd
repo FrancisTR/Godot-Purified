@@ -1,6 +1,7 @@
 extends Control
 
 @onready var dialogue_box = $Dialogue/DialogueBox
+@onready var dialogue_idx = 0 #For printing out the dialogue sound
 
 var text = load("res://Dialogues/CharacterList.tres")
 # Called when the node enters the scene tree for the first time.
@@ -20,10 +21,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	SoundControl.is_playing_theme("main")
-	#print(dialogue_box.sample_portrait)
-	#var temp_index = testDic[str(text.characters[1].name)]
-	#$Character.texture = text.characters[temp_index].image
-	#print(text.characters[1].image)
 	pass
 
 

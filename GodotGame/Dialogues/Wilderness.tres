@@ -8,12 +8,15 @@ starts = {
 "Children": &"0_1",
 "Children2": &"0_2",
 "Children3": &"0_3",
+"ChildrenComplete": &"0_5",
+"ChildrenComplete2": &"0_6",
+"ChildrenComplete3": &"0_7",
 "Error": &"0_4"
 }
 nodes = {
 "0_1": {
 "link": &"1_1",
-"offset": Vector2(300, 762),
+"offset": Vector2(140, -280),
 "start_id": "Children"
 },
 "0_2": {
@@ -23,17 +26,32 @@ nodes = {
 },
 "0_3": {
 "link": &"1_3",
-"offset": Vector2(160, 1760),
+"offset": Vector2(240, 2820),
 "start_id": "Children3"
 },
 "0_4": {
 "link": &"1_4",
-"offset": Vector2(360.682, 209.546),
+"offset": Vector2(120, -680),
 "start_id": "Error"
+},
+"0_5": {
+"link": &"1_5",
+"offset": Vector2(120, 260),
+"start_id": "ChildrenComplete"
+},
+"0_6": {
+"link": &"1_6",
+"offset": Vector2(220, 1840),
+"start_id": "ChildrenComplete2"
+},
+"0_7": {
+"link": &"1_7",
+"offset": Vector2(260, 3420),
+"start_id": "ChildrenComplete3"
 },
 "1_1": {
 "dialogue": "Hey please don't go. Water Bottle",
-"offset": Vector2(659.748, 629.657),
+"offset": Vector2(540, -280),
 "options": {
 0: {
 "condition": {},
@@ -42,11 +60,11 @@ nodes = {
 }
 },
 "size": Vector2(708.715, 460.158),
-"speaker": "Kids"
+"speaker": 9
 },
 "1_2": {
 "dialogue": "Hey please don't go. Make me a pot",
-"offset": Vector2(660, 1180),
+"offset": Vector2(760, 1140),
 "options": {
 0: {
 "condition": {},
@@ -55,11 +73,11 @@ nodes = {
 }
 },
 "size": Vector2(851.465, 527.776),
-"speaker": "Kids"
+"speaker": 9
 },
 "1_3": {
 "dialogue": "Make me a Water filter pls.",
-"offset": Vector2(660, 1800),
+"offset": Vector2(800, 2800),
 "options": {
 0: {
 "condition": {},
@@ -68,11 +86,11 @@ nodes = {
 }
 },
 "size": Vector2(726, 462),
-"speaker": "Kids"
+"speaker": 9
 },
 "1_4": {
 "dialogue": "Hmm. Maybe I should explore the Wilderness a bit more...",
-"offset": Vector2(760.487, 82.9828),
+"offset": Vector2(500, -820),
 "options": {
 0: {
 "condition": {},
@@ -82,9 +100,48 @@ nodes = {
 },
 "size": Vector2(1109.92, 452.645),
 "speaker": ""
+},
+"1_5": {
+"dialogue": "You found the bottle!",
+"offset": Vector2(540, 240),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(550, 522),
+"speaker": 9
+},
+"1_6": {
+"dialogue": "Yay Pot.",
+"offset": Vector2(800, 1800),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(884, 550),
+"speaker": 9
+},
+"1_7": {
+"dialogue": "No way Water filter",
+"offset": Vector2(800, 3360),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(1040, 433),
+"speaker": 9
 }
 }
 variables = {}
 comments = Array[String]([])
 strays = Array[String]([])
-characters = ""
+characters = "res://Dialogues/CharacterList.tres"

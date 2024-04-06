@@ -15,6 +15,7 @@ var inventory_amount:Dictionary
 var inventory_requirement:Dictionary
 
 var charLock = false
+var barryDespawned = false
 
 var current_ui = ""
 
@@ -30,6 +31,8 @@ var itemSpawnOnce = false
 #Dialogue related stuff
 var QMain = false
 var QWild = false
+var madeProfit = false
+var NPCgiveNoMore = false #Give items once and not dup
 #Quest is finished
 var questComplete = {"Main": false, "Wild": false}
 
@@ -37,6 +40,14 @@ var questComplete = {"Main": false, "Wild": false}
 var itemDialogue = [
 	{
 		"Name": "Twigs",
+		"Value": 0
+	},
+	{
+		"Name": "Rocks",
+		"Value": 0
+	},
+	{
+		"Name": "WaterBottle",
 		"Value": 0
 	}
 ]

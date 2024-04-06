@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyge3pmntuk1g"]
+[gd_scene load_steps=5 format=3 uid="uid://dyge3pmntuk1g"]
 
 [ext_resource type="Script" path="res://World Scene/UIs/Inventory.gd" id="1_bxwgv"]
 [ext_resource type="Texture2D" uid="uid://cosqqv8nuavny" path="res://Assets/Custom/Suitcase.png" id="1_v31nw"]
 [ext_resource type="Texture2D" uid="uid://dv22rv7vcdnkm" path="res://Assets/UISprites/UI_Flat_Textfield_02.png" id="3_j4byf"]
+[ext_resource type="Texture2D" uid="uid://dg2w5uxjqg6e7" path="res://Assets/UISprites/UI_Flat_Cross_Large.png" id="4_wkuso"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -93,9 +94,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -95.5
-offset_top = -2.0
+offset_top = -40.5
 offset_right = 95.5
-offset_bottom = 21.0
+offset_bottom = -17.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -105,24 +106,42 @@ horizontal_alignment = 1
 [node name="ItemR" type="Label" parent="TODOlist"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 21.875
-offset_top = 180.0
-offset_right = 166.875
-offset_bottom = 204.0
+offset_left = 45.0
+offset_top = 142.0
+offset_right = 167.0
+offset_bottom = 159.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
 text = "???"
 
+[node name="CheckMark" type="TextureRect" parent="TODOlist/ItemR"]
+layout_mode = 0
+offset_left = -20.625
+offset_top = -3.87501
+offset_right = -3.625
+offset_bottom = 13.125
+texture = ExtResource("4_wkuso")
+expand_mode = 1
+
 [node name="ItemR2" type="Label" parent="TODOlist"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 21.875
-offset_top = 218.75
-offset_right = 166.875
-offset_bottom = 242.75
+offset_left = 45.0
+offset_top = 181.0
+offset_right = 167.0
+offset_bottom = 198.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
 text = "???"
+
+[node name="CheckMark2" type="TextureRect" parent="TODOlist/ItemR2"]
+layout_mode = 0
+offset_left = -20.625
+offset_top = -3.87501
+offset_right = -3.625
+offset_bottom = 13.125
+texture = ExtResource("4_wkuso")
+expand_mode = 1
 
 [node name="Items" type="Node2D" parent="."]
 
