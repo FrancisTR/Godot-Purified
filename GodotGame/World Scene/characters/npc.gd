@@ -12,16 +12,15 @@ var moving = false
 var enterBody = false
 
 var NPCname = null
-
 var PressForDialogue_was_opened = false
 
 func _ready():
 	NPCname = null
 	set_process_input(true)
 	
-	#TODO: move Croak away from screen after day 3
-	#if (GameData.day >= 3):
-		#$"../Croak".visible = false #All days from now on have this
+	#TODO: Barry gone if he was gone before
+	if (GameData.barryDespawned == true):
+		$"../Bargin".queue_free()
 	
 func go_pos(delta):
 	if moving:
@@ -30,6 +29,7 @@ func go_pos(delta):
 		moving = false
 		$"../Bargin".queue_free()
 		GameData.charLock = false
+		GameData.barryDespawned = true
 
 
 
@@ -38,6 +38,7 @@ func _process(delta):
 	#Set the variables of the people that already talked to
 	#This prevents a reset if the player visited the wilderness and comes back
 	dialogue_box.variables["QMain"] = GameData.QMain
+	dialogue_box.variables["Profit?"] = GameData.madeProfit
 	for i in range(len(GameData.villagersTalked)):
 		dialogue_box.variables[GameData.villagersTalked[i]["Name"]] = GameData.villagersTalked[i]["Talked"]
 	
@@ -45,6 +46,8 @@ func _process(delta):
 	#Items updating
 	#TODO: Add more if needed
 	dialogue_box.variables["Twigs"] = GameData.itemDialogue[0]["Value"]
+	dialogue_box.variables["Rocks"] = GameData.itemDialogue[1]["Value"]
+	dialogue_box.variables["WaterBottle"] = GameData.itemDialogue[2]["Value"]
 		
 	# Get the day for the appropriate dialogue
 	if GameData.day == 1:
@@ -63,10 +66,6 @@ func _process(delta):
 			dialogue_box.start_id = "Croak"
 		elif NPCname == "OldMan":
 			dialogue_box.start_id = "OldMan"
-			
-		#Wilderness
-		elif (NPCname == "Kids"):
-			print(true)
 	elif GameData.day == 2:
 		# Who is the player talking to?
 		if NPCname == "Denial":
@@ -173,11 +172,14 @@ func _on_dialogue_box_dialogue_ended():
 	#Quest stuff for the Main World
 	if (dialogue_box.variables["QMain"] == true):
 		GameData.QMain = true
+	if (dialogue_box.variables["Profit?"] == true):
+		GameData.madeProfit = true
 	pass # Replace with function body.
 	
 	
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
+	SoundControl.is_playing_sound("button")
 	if $FixedDialoguePosition/DialogueBox.speaker.text != "":
 		var idx = Utils.char_dict[str($FixedDialoguePosition/DialogueBox.speaker.text)]
 		$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
@@ -190,5 +192,13 @@ func _on_dialogue_box_dialogue_signal(value):
 		
 	if value == "MainComplete":
 		GameData.questComplete["Main"] = true
-	if value == "WildComplete":
-		GameData.questComplete["Wild"] = true
+		#Remove the items since we gave them
+		#TODO: Add more days
+		if GameData.NPCgiveNoMore == false:
+			if GameData.day == 1:
+				Utils.remove_from_inventory("Twig", 6)
+			elif GameData.day == 2:
+				Utils.remove_from_inventory("WaterBottle", 1)
+			elif GameData.day == 3:
+				Utils.remove_from_inventory("Rock", 3)
+			GameData.NPCgiveNoMore = true

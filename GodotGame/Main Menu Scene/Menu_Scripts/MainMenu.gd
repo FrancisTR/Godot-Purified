@@ -83,3 +83,8 @@ func _on_start_button_pressed():
 func _on_option_button_pressed():
 	SoundControl.is_playing_sound("button")
 	SceneTransition.change_scene("res://Main Menu Scene/Options.tscn")
+
+
+func _on_credits_pressed():
+	SoundControl.is_playing_sound("button")
+	SceneTransition.change_scene("res://Main Menu Scene/credits.tscn")

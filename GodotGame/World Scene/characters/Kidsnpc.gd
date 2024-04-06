@@ -2,12 +2,6 @@ extends Area2D
 
 @onready var dialogue_box = $FixedDialoguePosition/DialogueBox
 
-#For Barry
-@onready var BarryDestination = $NPCActions/BarryDestination/Marker2D.global_position
-var moving_speed = 200
-var moving = false
-
-
 
 var enterBody = false
 
@@ -25,7 +19,7 @@ func _ready():
 func _process(delta):
 	#Set the variables of the people that already talked to
 	#This prevents a reset if the player visited the wilderness and comes back
-	dialogue_box.variables["QMain"] = GameData.QMain
+	dialogue_box.variables["QWild"] = GameData.QWild
 	for i in range(len(GameData.villagersTalked)):
 		dialogue_box.variables[GameData.villagersTalked[i]["Name"]] = GameData.villagersTalked[i]["Talked"]
 	
@@ -34,32 +28,36 @@ func _process(delta):
 	dialogue_box.variables["Twigs"] = GameData.itemDialogue[0]["Value"]
 		
 
-	# Who is the player talking to?
+	# Who is the player talking?
+	#TODO: Add more Dialogue
 	if GameData.day == 1:
 		dialogue_box.start_id = "Children"
+		if GameData.day == 1 and GameData.inventory_amount.keys().find("WaterBottle") != -1: #Quest Complete
+			dialogue_box.start_id = "ChildrenComplete"
+	
 	elif GameData.day == 2:
-		dialogue_box.start_id = "Children"
+		dialogue_box.start_id = "Children2"
+		if GameData.day == 2 and GameData.inventory_amount.keys().find("BoilingPot") != -1: #Quest Complete
+			dialogue_box.start_id = "ChildrenComplete2"
+	
 	elif GameData.day == 3:
-		dialogue_box.start_id = "Children"
-
+		dialogue_box.start_id = "Children3"
+		if GameData.day == 3 and GameData.inventory_amount.keys().find("WaterFilter") != -1: #Quest Complete
+			dialogue_box.start_id = "ChildrenComplete3"
 	
 	
-	if Input.is_action_just_pressed("StartDialogue") and enterBody == true:
+	if (Input.is_action_just_pressed("StartDialogue") and enterBody == true):
 		if GameData.current_ui != "dialogue" && GameData.current_ui != "":
 			return
 		if not dialogue_box.running:
+			GameData.QWild = true
 			GameData.charLock = true
 			GameData.current_ui = "dialogue"
-			#Run the loop and check true that we talked to that villager
-			# This is for the requirement to leave the Day
-			dialogue_box.variables[NPCname] = true
+
 			
 			#GameData.QWild = dialogue_box.variables["QWild"]
 			
 			print(dialogue_box.variables)
-			for i in range(len(GameData.villagersTalked)):
-				if GameData.villagersTalked[i]["Name"] == NPCname:
-					GameData.villagersTalked[i]["Talked"] = true
 			
 			dialogue_box.start()
 			print(dialogue_box)
@@ -118,10 +116,12 @@ func _on_dialogue_box_dialogue_ended():
 	
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
+	SoundControl.is_playing_sound("button")
 	if $FixedDialoguePosition/DialogueBox.speaker.text != "":
 		var idx = Utils.char_dict[str($FixedDialoguePosition/DialogueBox.speaker.text)]
 		$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
 
 
 func _on_dialogue_box_dialogue_signal(value):
-	pass
+	if value == "WildComplete":
+		GameData.questComplete["Wild"] = true

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterList" load_steps=13 format=3 uid="uid://bksin52k7pe8u"]
+[gd_resource type="Resource" script_class="CharacterList" load_steps=14 format=3 uid="uid://bksin52k7pe8u"]
 
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="1_2cgx6"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_p0fqg"]
@@ -50,6 +50,11 @@ script = ExtResource("1_p0fqg")
 name = "Old Man Tommy"
 color = Color(1, 1, 1, 1)
 
+[sub_resource type="Resource" id="Resource_ubiec"]
+script = ExtResource("1_p0fqg")
+name = "Kids"
+color = Color(1, 1, 1, 1)
+
 [resource]
 script = ExtResource("1_2cgx6")
-characters = Array[ExtResource("1_p0fqg")]([SubResource("Resource_d68ut"), SubResource("Resource_1b4a2"), SubResource("Resource_umkq6"), SubResource("Resource_01wqa"), SubResource("Resource_lt2hy"), SubResource("Resource_0h6xi"), SubResource("Resource_evr13"), SubResource("Resource_2dvo0"), SubResource("Resource_ixiiq")])
+characters = Array[ExtResource("1_p0fqg")]([SubResource("Resource_d68ut"), SubResource("Resource_1b4a2"), SubResource("Resource_umkq6"), SubResource("Resource_01wqa"), SubResource("Resource_lt2hy"), SubResource("Resource_0h6xi"), SubResource("Resource_evr13"), SubResource("Resource_2dvo0"), SubResource("Resource_ixiiq"), SubResource("Resource_ubiec")])

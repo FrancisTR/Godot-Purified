@@ -30,7 +30,14 @@ func _process(delta):
 	for i in range(len(GameData.itemSpawns)):
 		if (GameData.get_item_posX == GameData.itemSpawns[i]["posX"] and GameData.get_item_posY == GameData.itemSpawns[i]["posY"]):
 			GameData.itemSpawns[i]["Taken"] = true
-			
+	
+	#TODO: Add theme song based on the day
+	if GameData.day <= 2:
+		SoundControl.is_playing_theme("main")
+	elif GameData.day == 3:
+		SoundControl.is_playing_theme("croak")
+	else:
+		SoundControl.is_playing_theme("wild")
 			
 
 #Spawn the item in the wilderness

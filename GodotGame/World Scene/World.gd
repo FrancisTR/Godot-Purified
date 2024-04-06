@@ -13,16 +13,16 @@ var signal_method = ""
 var npc_positions = {
 	'day1':[Vector2(2721, -234), Vector2(1919, 508), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
 	'day2':[Vector2(108, -353), Vector2(497, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
-	'day3':[Vector2(48, 406), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
+	'day3':[Vector2(48, 406), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
 	
 	#DLC
-	'day4':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
-	'day5':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
-	'day6':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
-	'day7':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
-	'day8':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
-	'day9':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
-	'day10':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)]
+	'day4':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	'day5':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	'day6':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	'day7':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	'day8':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	'day9':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	'day10':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)]
 	}
 
 # Called when the node enters the scene tree for the first time.
@@ -49,10 +49,9 @@ func _ready():
 func _process(delta):
 	
 	#TODO: Add theme song based on the day
-	if GameData.day == 1 or GameData.day == 2:
+	if GameData.day <= 2:
 		SoundControl.is_playing_theme("main")
 	elif GameData.day == 3:
-		SoundControl.stop_playing()
 		SoundControl.is_playing_theme("croak")
 	else:
 		SoundControl.is_playing_theme("wild")
@@ -125,6 +124,7 @@ func _on_test_dec_1():
 func _on_leave_village():
 	#TODO: 3 days for MVP. 10 for full game
 	if GameData.day < 3:
+		SoundControl.stop_playing()
 		TextTransition.set_to_click(
 			"You leave the village and come back the next day",
 			"res://World Scene/World.tscn",

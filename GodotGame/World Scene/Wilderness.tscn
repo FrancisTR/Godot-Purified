@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://caurrpk58l40x"]
+[gd_scene load_steps=34 format=3 uid="uid://caurrpk58l40x"]
 
 [ext_resource type="Script" path="res://World Scene/Wilderness.gd" id="1_4k4yr"]
 [ext_resource type="PackedScene" uid="uid://crmshmhby6akr" path="res://World Scene/characters/CharacterMain.tscn" id="2_2eck0"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bnu20bxninf0u" path="res://World Scene/Items/Moss.tscn" id="18_anmg7"]
 [ext_resource type="PackedScene" uid="uid://diui2nk1yp3cq" path="res://World Scene/Items/rock.tscn" id="19_1h74x"]
 [ext_resource type="PackedScene" uid="uid://yfjgae0b5wko" path="res://World Scene/Items/sand.tscn" id="20_jl3ry"]
+[ext_resource type="PackedScene" uid="uid://er7rlhv6rpvh" path="res://World Scene/characters/Kidsnpc.tscn" id="21_e2yvs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5djji"]
 texture = ExtResource("2_31u2a")
@@ -847,65 +848,164 @@ position = Vector2(1119, -457)
 texture_filter = 1
 position = Vector2(886, -707)
 
+[node name="KidsNPC" parent="Other" instance=ExtResource("21_e2yvs")]
+position = Vector2(1246, -454)
+
 [node name="Twig" parent="." instance=ExtResource("15_38p05")]
-position = Vector2(848, -389)
+position = Vector2(601, -180)
 
 [node name="Twig2" parent="." instance=ExtResource("15_38p05")]
-position = Vector2(981, -390)
+position = Vector2(268, -73)
 
 [node name="Twig3" parent="." instance=ExtResource("15_38p05")]
-position = Vector2(1070, -377)
+position = Vector2(-131, 116)
 
 [node name="Twig4" parent="." instance=ExtResource("15_38p05")]
-position = Vector2(811, -320)
+position = Vector2(-148, 44)
 
 [node name="Twig5" parent="." instance=ExtResource("15_38p05")]
-position = Vector2(870, -312)
+position = Vector2(-212, 274)
 
 [node name="Twig6" parent="." instance=ExtResource("15_38p05")]
-position = Vector2(1144, -369)
+position = Vector2(-126, 443)
 
-[node name="TinCan" parent="." instance=ExtResource("14_hv5vl")]
-position = Vector2(932, -343)
+[node name="Twig7" parent="." instance=ExtResource("15_38p05")]
+position = Vector2(1060, -245)
 
-[node name="WaterBottle" parent="." instance=ExtResource("17_kbm4u")]
-position = Vector2(780, -422)
+[node name="Twig8" parent="." instance=ExtResource("15_38p05")]
+position = Vector2(1604, 173)
+
+[node name="Twig9" parent="." instance=ExtResource("15_38p05")]
+position = Vector2(1614, 359)
+
+[node name="Twig10" parent="." instance=ExtResource("15_38p05")]
+position = Vector2(1066, 1037)
+
+[node name="Twig11" parent="." instance=ExtResource("15_38p05")]
+position = Vector2(170, 700)
+
+[node name="Twig12" parent="." instance=ExtResource("15_38p05")]
+position = Vector2(375, 1412)
+
+[node name="Twig13" parent="." instance=ExtResource("15_38p05")]
+position = Vector2(567, 1413)
 
 [node name="Moss" parent="." instance=ExtResource("18_anmg7")]
-position = Vector2(743, -362)
+position = Vector2(1009, -461)
 
 [node name="Moss2" parent="." instance=ExtResource("18_anmg7")]
-position = Vector2(757, -281)
+position = Vector2(1102, -641)
 
 [node name="Moss3" parent="." instance=ExtResource("18_anmg7")]
-position = Vector2(674, -327)
+position = Vector2(751, -662)
+
+[node name="Moss4" parent="." instance=ExtResource("18_anmg7")]
+position = Vector2(399, -227)
+
+[node name="Moss5" parent="." instance=ExtResource("18_anmg7")]
+position = Vector2(1738, 471)
+
+[node name="Moss6" parent="." instance=ExtResource("18_anmg7")]
+position = Vector2(1653, 873)
+
+[node name="Moss7" parent="." instance=ExtResource("18_anmg7")]
+position = Vector2(1553, 982)
+
+[node name="Moss8" parent="." instance=ExtResource("18_anmg7")]
+position = Vector2(1098, 1236)
+
+[node name="Moss9" parent="." instance=ExtResource("18_anmg7")]
+position = Vector2(-167, 1219)
 
 [node name="Rock" parent="." instance=ExtResource("19_1h74x")]
-position = Vector2(881, -359)
+position = Vector2(1761, 536)
 
 [node name="Rock2" parent="." instance=ExtResource("19_1h74x")]
-position = Vector2(741, -317)
+position = Vector2(1763, 743)
 
 [node name="Rock3" parent="." instance=ExtResource("19_1h74x")]
-position = Vector2(698, -266)
+position = Vector2(1764, 634)
+
+[node name="Rock4" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(1935, 620)
+
+[node name="Rock5" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(1935, 570)
+
+[node name="Rock6" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(1935, 521)
+
+[node name="Rock7" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(1759, 351)
+
+[node name="Rock8" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(1938, 705)
+
+[node name="Rock9" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(1760, 698)
 
 [node name="Sand" parent="." instance=ExtResource("20_jl3ry")]
-position = Vector2(708, -383)
+position = Vector2(1158, 1370)
 
 [node name="Sand2" parent="." instance=ExtResource("20_jl3ry")]
-position = Vector2(753, -408)
+position = Vector2(1080, 1322)
 
 [node name="Sand3" parent="." instance=ExtResource("20_jl3ry")]
-position = Vector2(788, -361)
+position = Vector2(1236, 1372)
+
+[node name="Sand4" parent="." instance=ExtResource("20_jl3ry")]
+position = Vector2(1381, 1313)
+
+[node name="Sand5" parent="." instance=ExtResource("20_jl3ry")]
+position = Vector2(1456, 1240)
+
+[node name="Sand6" parent="." instance=ExtResource("20_jl3ry")]
+position = Vector2(1188, 1177)
+
+[node name="Sand7" parent="." instance=ExtResource("20_jl3ry")]
+position = Vector2(1466, 1321)
+
+[node name="Sand8" parent="." instance=ExtResource("20_jl3ry")]
+position = Vector2(1086, 1277)
+
+[node name="Sand9" parent="." instance=ExtResource("20_jl3ry")]
+position = Vector2(1100, 1363)
+
+[node name="Sand10" parent="." instance=ExtResource("20_jl3ry")]
+position = Vector2(1143, 1198)
+
+[node name="TinCan" parent="." instance=ExtResource("14_hv5vl")]
+position = Vector2(685, -473)
 
 [node name="TinCan2" parent="." instance=ExtResource("14_hv5vl")]
-position = Vector2(976, -347)
+position = Vector2(747, -470)
+
+[node name="TinCan3" parent="." instance=ExtResource("14_hv5vl")]
+position = Vector2(587, -376)
+
+[node name="TinCan4" parent="." instance=ExtResource("14_hv5vl")]
+position = Vector2(639, -425)
+
+[node name="WaterBottle" parent="." instance=ExtResource("17_kbm4u")]
+position = Vector2(267, -356)
 
 [node name="WaterBottle2" parent="." instance=ExtResource("17_kbm4u")]
-position = Vector2(934, -395)
+position = Vector2(464, -506)
 
-[node name="WaterBottle3" parent="." instance=ExtResource("17_kbm4u")]
-position = Vector2(814, -406)
+[node name="Rock10" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(1667, -182)
+
+[node name="Rock11" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(1932, -182)
+
+[node name="Rock12" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(1930, -286)
+
+[node name="Rock13" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(2074, -309)
+
+[node name="Rock14" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(2078, -233)
 
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]

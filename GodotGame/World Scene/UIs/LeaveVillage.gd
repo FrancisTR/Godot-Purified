@@ -8,6 +8,7 @@ func _ready():
 #TODO: Remove more items
 func _on_yes_pressed():
 	self.hide()
+	SoundControl.is_playing_sound("button")
 	emit_signal("leave_village")
 	print("y")
 	
@@ -43,7 +44,14 @@ func _on_yes_pressed():
 		GameData.villagersTalked[i]["Talked"] = false
 	GameData.QMain = false
 	GameData.QWild = false
+	GameData.questComplete = {"Main": false, "Wild": false}
+	GameData.NPCgiveNoMore = false
 	
+	#TODO: Add more when needed
+	GameData.itemDialogue[0]["Value"] = 0
+	GameData.itemDialogue[1]["Value"] = 0
+	GameData.itemDialogue[2]["Value"] = 0
+		
 	#Reset take items and spawn again on the next day
 	GameData.get_item_posX = null
 	GameData.get_item_posY = null
@@ -53,18 +61,21 @@ func _on_yes_pressed():
 	
 	
 	GameData.visitedWilderness == false
-	GameData.questComplete = {"Main": false, "Wild": false}
-
+	
+	GameData.madeProfit = false
+	GameData.barryDespawned = false
 
 
 
 func _on_no_pressed():
 	self.hide()
+	SoundControl.is_playing_sound("button")
 	print("n")
 	GameData.charLock = false
 
 
 func _on_okay_pressed():
 	self.hide()
+	SoundControl.is_playing_sound("button")
 	print("Okay")
 	GameData.charLock = false

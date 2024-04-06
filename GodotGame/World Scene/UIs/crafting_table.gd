@@ -121,15 +121,15 @@ func _on_body_exited(body):
 	pass # Replace with function body.
 
 
-
-
 func _on_craft_button_pressed():
 		SoundControl.is_playing_sound("crafted")
 		print("Crafted!")
+		GameData.questComplete["Wild"] = true
 		for i in range(0, len(listKeys)):
 			Utils.remove_from_inventory(str(listKeys[i]), int(craftingList[listKeys[i]]))
 		Utils.add_to_inventory(str(ItemOfTheDay), 1)
 		$UI/CraftingList.visible = false
+		
 		
 		$UI/CraftedItem.visible = true
 		#TODO add what item the player made along with an image
@@ -143,6 +143,7 @@ func _on_okay_button_pressed():
 	$UI/CraftedItem.visible = false
 	GameData.charLock = false
 	GameData.current_ui = ""
+	SoundControl.is_playing_sound("button")
 	pass # Replace with function body.
 
 
@@ -151,4 +152,5 @@ func _on_x_button_pressed():
 	GameData.charLock = false
 	$PressInteraction.visible = true
 	GameData.current_ui = ""
+	SoundControl.is_playing_sound("button")
 	pass # Replace with function body.
