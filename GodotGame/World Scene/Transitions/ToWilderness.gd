@@ -23,5 +23,5 @@ func _on_teleport_body_entered(body):
 	#elif ((GameData.inventory_amount.keys().find("WaterFilter") == -1 or TalkedToVillagersCount != 7) and GameData.day == 3):
 		#$UI/LeaveVillage.show()
 		#$UI/LeaveVillage/QuotaError.show()
-		get_tree().change_scene_to_file("res://World Scene/Wilderness.tscn")
+		SceneTransition.change_scene("res://World Scene/Wilderness.tscn")
 	pass # Replace with function body.

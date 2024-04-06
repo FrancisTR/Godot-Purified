@@ -29,7 +29,7 @@ SoundControl="*res://Globals/sound_control.tscn"
 window/size/mode=2
 window/size/resizable=false
 window/stretch/mode="viewport"
-window/stretch/aspect="keep_width"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 

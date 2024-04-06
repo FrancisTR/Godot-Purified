@@ -16,7 +16,7 @@ nodes = {
 },
 "0_2": {
 "link": &"1_4",
-"offset": Vector2(-620, 120),
+"offset": Vector2(-1440, 440),
 "start_id": "Tutorial2"
 },
 "1_1": {
@@ -120,7 +120,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 1
 },
 "1_17": {
@@ -134,6 +134,19 @@ nodes = {
 }
 },
 "size": Vector2(300, 433),
+"speaker": 1
+},
+"1_18": {
+"dialogue": "Uhhhhh... What is your name then?",
+"offset": Vector2(-580, 860),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
 "speaker": 1
 },
 "1_2": {
@@ -163,22 +176,27 @@ nodes = {
 "speaker": 1
 },
 "1_4": {
-"dialogue": "So, your name is...\"{{Player}}\". Ahh got it!",
-"offset": Vector2(-200, 440),
+"dialogue": "So, your name is...\"{{Player}}\". Is that correct?",
+"offset": Vector2(-1020, 440),
 "options": {
 0: {
 "condition": {},
 "link": &"1_5",
-"text": ""
+"text": "Yes"
+},
+1: {
+"condition": {},
+"link": &"1_18",
+"text": "Wait a Minute..."
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 494),
 "speaker": 1
 },
 "1_5": {
 "dialogue": "Okay buddy, this is the town you’ll be selling Toadable to.
 Before I let you go and start selling, I just have one question for you.",
-"offset": Vector2(160, 440),
+"offset": Vector2(-280, 380),
 "options": {
 0: {
 "condition": {},
@@ -191,7 +209,7 @@ Before I let you go and start selling, I just have one question for you.",
 },
 "1_6": {
 "dialogue": "Do you know what’s happening here?",
-"offset": Vector2(520, 380),
+"offset": Vector2(580, 380),
 "options": {
 0: {
 "condition": {},

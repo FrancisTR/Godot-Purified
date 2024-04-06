@@ -18,11 +18,6 @@ var charLock = false
 
 var current_ui = ""
 
-#Music and sound. We store the values
-#TODO: This vars is not used. it is there just in case
-var SfxValue
-var MusicValue
-
 
 var visitTutorial = false
 var visitedWilderness = false
@@ -35,6 +30,8 @@ var itemSpawnOnce = false
 #Dialogue related stuff
 var QMain = false
 var QWild = false
+#Quest is finished
+var questComplete = {"Main": false, "Wild": false}
 
 #TODO Add more if needed to stack of the items needed for NPC
 var itemDialogue = [

@@ -7,8 +7,12 @@ func _ready():
 	$Error.text = "Error: You must enter a valid name."
 	line_edit.grab_focus()
 
+func _process(delta):
+	SoundControl.is_playing_theme("main")
+
 func _on_button_pressed():
 	print(line_edit.text)
+	SoundControl.is_playing_sound("button")
 	line_edit.text = line_edit.text.strip_edges(true, true)
 	
 	if line_edit.text == "":
@@ -16,11 +20,12 @@ func _on_button_pressed():
 	else:
 		GameData.username = line_edit.text
 		if (GameData.visitTutorial == false): #Continue the tutorial
-			get_tree().change_scene_to_file("res://Main Menu Scene/tutorial.tscn")
+			SceneTransition.change_scene("res://Main Menu Scene/tutorial.tscn")
 		else:
-			get_tree().change_scene_to_file("res://World Scene/World.tscn")
+			SceneTransition.change_scene("res://World Scene/World.tscn")
 
 
 
 func _on_line_edit_text_changed(new_text):
+	SoundControl.is_playing_sound("dialogue")
 	$Error.visible = false

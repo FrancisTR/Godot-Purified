@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bq46ncf7jihje"]
+[gd_scene load_steps=41 format=3 uid="uid://bq46ncf7jihje"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Options.gd" id="1_pejof"]
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/VolumeOptions.gd" id="2_jtr8r"]
@@ -18,11 +18,15 @@ expand_margin_bottom = 10.0
 texture = ExtResource("3_6mq0h")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bb1h8"]
 texture = ExtResource("5_sapnn")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ih07g"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nqi67"]
 texture = ExtResource("3_6mq0h")
@@ -33,11 +37,15 @@ expand_margin_bottom = 10.0
 texture = ExtResource("3_6mq0h")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b2lnj"]
 texture = ExtResource("5_sapnn")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v12sv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vc1nd"]
 texture = ExtResource("3_6mq0h")
@@ -48,11 +56,15 @@ expand_margin_bottom = 10.0
 texture = ExtResource("3_6mq0h")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i51q6"]
 texture = ExtResource("5_sapnn")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yrf86"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gyjy"]
 texture = ExtResource("3_6mq0h")
@@ -63,11 +75,15 @@ expand_margin_bottom = 10.0
 texture = ExtResource("3_6mq0h")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nb3sh"]
 texture = ExtResource("5_sapnn")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_binxe"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e8aqq"]
 texture = ExtResource("3_6mq0h")
@@ -78,11 +94,15 @@ expand_margin_bottom = 10.0
 texture = ExtResource("3_6mq0h")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tiq2m"]
 texture = ExtResource("5_sapnn")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t5mgl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ritaw"]
 texture = ExtResource("3_6mq0h")
@@ -93,11 +113,15 @@ expand_margin_bottom = 10.0
 texture = ExtResource("3_6mq0h")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7safo"]
 texture = ExtResource("5_sapnn")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3hxp0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u3247"]
 texture = ExtResource("3_6mq0h")
@@ -108,20 +132,28 @@ expand_margin_bottom = 10.0
 texture = ExtResource("3_6mq0h")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_outdn"]
 texture = ExtResource("5_sapnn")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gafpo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ovysx"]
 texture = ExtResource("3_q1kxr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_26alj"]
 texture = ExtResource("6_o2yyx")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sknse"]
 texture = ExtResource("5_se5ao")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6d00w"]
 
 [node name="EnterOptions" type="CanvasLayer"]
 script = ExtResource("1_pejof")
@@ -150,9 +182,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -489.0
+offset_left = -510.0
 offset_top = -192.0
-offset_right = -236.0
+offset_right = -257.0
 offset_bottom = -137.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -195,6 +227,7 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_ln6wp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_or7ge")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bb1h8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ih07g")
 text = "A"
 script = ExtResource("3_sdtpu")
 action = "Left"
@@ -237,6 +270,7 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_nqi67")
 theme_override_styles/hover = SubResource("StyleBoxTexture_okj23")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_b2lnj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v12sv")
 text = "W"
 script = ExtResource("3_sdtpu")
 action = "Up"
@@ -279,6 +313,7 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_vc1nd")
 theme_override_styles/hover = SubResource("StyleBoxTexture_mfkrs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_i51q6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yrf86")
 text = "S"
 script = ExtResource("3_sdtpu")
 action = "Down"
@@ -323,6 +358,7 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_0gyjy")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qlop5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_nb3sh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_binxe")
 text = "D"
 script = ExtResource("3_sdtpu")
 action = "Right"
@@ -345,9 +381,9 @@ autowrap_mode = 2
 texture_filter = 1
 layout_mode = 2
 offset_left = 800.0
-offset_top = 124.0
+offset_top = 151.0
 offset_right = 1022.0
-offset_bottom = 190.0
+offset_bottom = 241.0
 scale = Vector2(1.1, 1.1)
 focus_next = NodePath("../../SfxSlider")
 focus_previous = NodePath("../DownMapButton")
@@ -368,6 +404,7 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_e8aqq")
 theme_override_styles/hover = SubResource("StyleBoxTexture_a8xxu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tiq2m")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t5mgl")
 text = "E"
 script = ExtResource("3_sdtpu")
 action = "Inventory"
@@ -377,9 +414,10 @@ texture_filter = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 14.0
-offset_right = -7.0
-offset_bottom = 23.0
+offset_left = 13.6363
+offset_top = 6.36364
+offset_right = -7.36366
+offset_bottom = 29.3636
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
@@ -389,9 +427,9 @@ autowrap_mode = 2
 texture_filter = 1
 layout_mode = 2
 offset_left = 800.0
-offset_top = 219.0
+offset_top = 280.0
 offset_right = 1022.0
-offset_bottom = 285.0
+offset_bottom = 370.0
 scale = Vector2(1.1, 1.1)
 focus_neighbor_bottom = NodePath("../../SfxSlider")
 focus_next = NodePath("../../SfxSlider")
@@ -413,6 +451,7 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_ritaw")
 theme_override_styles/hover = SubResource("StyleBoxTexture_iexoi")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7safo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3hxp0")
 text = "Esc"
 script = ExtResource("3_sdtpu")
 action = "Back"
@@ -422,9 +461,10 @@ texture_filter = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 14.0
-offset_right = -7.0
-offset_bottom = 23.0
+offset_left = 13.6363
+offset_top = 6.36364
+offset_right = -7.36366
+offset_bottom = 29.3636
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
@@ -434,9 +474,9 @@ autowrap_mode = 2
 texture_filter = 1
 layout_mode = 2
 offset_left = 800.0
-offset_top = 29.0
+offset_top = 22.0
 offset_right = 1022.0
-offset_bottom = 95.0
+offset_bottom = 112.0
 scale = Vector2(1.1, 1.1)
 focus_next = NodePath("../../SfxSlider")
 focus_previous = NodePath("../DownMapButton")
@@ -457,6 +497,7 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxTexture_u3247")
 theme_override_styles/hover = SubResource("StyleBoxTexture_cfm8k")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_outdn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gafpo")
 text = "Q"
 script = ExtResource("3_sdtpu")
 action = "StartDialogue"
@@ -466,9 +507,10 @@ texture_filter = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 14.0
-offset_right = -7.0
-offset_bottom = 23.0
+offset_left = 13.6363
+offset_top = 6.36364
+offset_right = -7.36366
+offset_bottom = 29.3636
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
@@ -476,9 +518,9 @@ autowrap_mode = 2
 
 [node name="SfxSlider" type="HSlider" parent="."]
 offset_left = 337.0
-offset_top = 318.0
+offset_top = 417.0
 offset_right = 813.0
-offset_bottom = 334.0
+offset_bottom = 433.0
 focus_neighbor_bottom = NodePath("../MusicSlider")
 focus_next = NodePath("../MusicSlider")
 focus_previous = NodePath("../RemapContainer/BackButton")
@@ -523,9 +565,9 @@ text = "SFX Volume:"
 
 [node name="MusicSlider" type="HSlider" parent="."]
 offset_left = 337.0
-offset_top = 369.0
+offset_top = 465.0
 offset_right = 813.0
-offset_bottom = 385.0
+offset_bottom = 481.0
 focus_neighbor_top = NodePath("../SfxSlider")
 focus_next = NodePath("../BackButton")
 focus_previous = NodePath("../SfxSlider")
@@ -584,6 +626,7 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_ovysx")
 theme_override_styles/hover = SubResource("StyleBoxTexture_26alj")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sknse")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6d00w")
 text = "Back"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

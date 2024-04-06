@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://caurrpk58l40x"]
+[gd_scene load_steps=33 format=3 uid="uid://caurrpk58l40x"]
 
 [ext_resource type="Script" path="res://World Scene/Wilderness.gd" id="1_4k4yr"]
 [ext_resource type="PackedScene" uid="uid://crmshmhby6akr" path="res://World Scene/characters/CharacterMain.tscn" id="2_2eck0"]
@@ -17,7 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://dg42ftacgko3o" path="res://World Scene/Items/TinCan.tscn" id="14_hv5vl"]
 [ext_resource type="PackedScene" uid="uid://cllg5b804pc0j" path="res://World Scene/Items/Twig.tscn" id="15_38p05"]
 [ext_resource type="PackedScene" uid="uid://b01hucoucf7fr" path="res://World Scene/Items/WaterBottle.tscn" id="17_kbm4u"]
-[ext_resource type="PackedScene" uid="uid://decpyxnu3oocl" path="res://World Scene/characters/npc.tscn" id="18_txo07"]
+[ext_resource type="PackedScene" uid="uid://bnu20bxninf0u" path="res://World Scene/Items/Moss.tscn" id="18_anmg7"]
+[ext_resource type="PackedScene" uid="uid://diui2nk1yp3cq" path="res://World Scene/Items/rock.tscn" id="19_1h74x"]
+[ext_resource type="PackedScene" uid="uid://yfjgae0b5wko" path="res://World Scene/Items/sand.tscn" id="20_jl3ry"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5djji"]
 texture = ExtResource("2_31u2a")
@@ -869,8 +871,41 @@ position = Vector2(932, -343)
 [node name="WaterBottle" parent="." instance=ExtResource("17_kbm4u")]
 position = Vector2(780, -422)
 
-[node name="Kids" parent="." instance=ExtResource("18_txo07")]
-position = Vector2(705, -400)
+[node name="Moss" parent="." instance=ExtResource("18_anmg7")]
+position = Vector2(743, -362)
+
+[node name="Moss2" parent="." instance=ExtResource("18_anmg7")]
+position = Vector2(757, -281)
+
+[node name="Moss3" parent="." instance=ExtResource("18_anmg7")]
+position = Vector2(674, -327)
+
+[node name="Rock" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(881, -359)
+
+[node name="Rock2" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(741, -317)
+
+[node name="Rock3" parent="." instance=ExtResource("19_1h74x")]
+position = Vector2(698, -266)
+
+[node name="Sand" parent="." instance=ExtResource("20_jl3ry")]
+position = Vector2(708, -383)
+
+[node name="Sand2" parent="." instance=ExtResource("20_jl3ry")]
+position = Vector2(753, -408)
+
+[node name="Sand3" parent="." instance=ExtResource("20_jl3ry")]
+position = Vector2(788, -361)
+
+[node name="TinCan2" parent="." instance=ExtResource("14_hv5vl")]
+position = Vector2(976, -347)
+
+[node name="WaterBottle2" parent="." instance=ExtResource("17_kbm4u")]
+position = Vector2(934, -395)
+
+[node name="WaterBottle3" parent="." instance=ExtResource("17_kbm4u")]
+position = Vector2(814, -406)
 
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]

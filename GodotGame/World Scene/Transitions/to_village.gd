@@ -34,5 +34,6 @@ func _on_teleport_body_entered(body):
 			GameData.QWild = true
 		else:
 			#All requirements met
-			get_tree().change_scene_to_file("res://World Scene/World.tscn")
+			GameData.questComplete["Wild"] = true
+			SceneTransition.change_scene("res://World Scene/World.tscn")
 	pass # Replace with function body.
