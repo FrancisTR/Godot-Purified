@@ -20,7 +20,7 @@ nodes = {
 "start_id": "Tutorial2"
 },
 "1_1": {
-"dialogue": "Oh..hello",
+"dialogue": "Oh..Hello! (Sigh...another boring day)",
 "offset": Vector2(-80, -120),
 "options": {
 0: {
@@ -72,7 +72,7 @@ nodes = {
 "speaker": 1
 },
 "1_13": {
-"dialogue": "Let me see...",
+"dialogue": "Give me a moment really quick...",
 "offset": Vector2(2760, 1280),
 "options": {
 0: {
@@ -85,7 +85,7 @@ nodes = {
 "speaker": 1
 },
 "1_14": {
-"dialogue": "Based on your resume, you prefer these controls? Feel free to change them right now if you’d like. Otherwise, you can always change them later.",
+"dialogue": "Based on your resume, you prefer these controls. Feel free to change them right now if you’d like. Otherwise, you can always change them later.",
 "offset": Vector2(3400, 1280),
 "options": {
 0: {
@@ -111,7 +111,7 @@ nodes = {
 "speaker": 1
 },
 "1_16": {
-"dialogue": "There are certain things in the town you can interact with. You can do that by pressing the button that is displayed on top of the thing you are interacting with. In this simple case of talking to a villager, you just press \"Q\" for example.",
+"dialogue": "There are certain things in the town you can interact with. You can do that by pressing the button that is displayed on top of the thing you are interacting with. In this simple case of talking to a villager, you just press \"Q\".",
 "offset": Vector2(4520, 1280),
 "options": {
 0: {
@@ -133,11 +133,11 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 1
 },
 "1_18": {
-"dialogue": "Uhhhhh... What is your name then?",
+"dialogue": "Uhhhhh...What is your name then? (I hate this so much)",
 "offset": Vector2(-580, 860),
 "options": {
 0: {
@@ -146,7 +146,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 372),
+"size": Vector2(300, 433),
 "speaker": 1
 },
 "1_2": {
@@ -163,7 +163,7 @@ nodes = {
 "speaker": 1
 },
 "1_3": {
-"dialogue": "Remind me your name again?",
+"dialogue": "Sigh...Remind me your name again?",
 "offset": Vector2(680, -120),
 "options": {
 0: {
@@ -194,8 +194,7 @@ nodes = {
 "speaker": 1
 },
 "1_5": {
-"dialogue": "Okay buddy, this is the town you’ll be selling Toadable to.
-Before I let you go and start selling, I just have one question for you.",
+"dialogue": "Okay buddy, this is the town you’ll be selling Toadable to as you can see here. Before I let you go and start selling, I just have one question for you.",
 "offset": Vector2(-280, 380),
 "options": {
 0: {
@@ -209,7 +208,7 @@ Before I let you go and start selling, I just have one question for you.",
 },
 "1_6": {
 "dialogue": "Do you know what’s happening here?",
-"offset": Vector2(580, 380),
+"offset": Vector2(560, 380),
 "options": {
 0: {
 "condition": {},
@@ -226,7 +225,7 @@ Before I let you go and start selling, I just have one question for you.",
 "speaker": 1
 },
 "1_7": {
-"dialogue": "For starters, the well in their town has been broken and neglected for sometime now",
+"dialogue": "For starters, the well in their town has been broken and neglected for sometime now...",
 "offset": Vector2(920, 880),
 "options": {
 0: {
@@ -239,7 +238,7 @@ Before I let you go and start selling, I just have one question for you.",
 "speaker": 1
 },
 "1_8": {
-"dialogue": "Which made them use the water from their river",
+"dialogue": "Which made them use the water from their river...",
 "offset": Vector2(1280, 880),
 "options": {
 0: {
@@ -252,7 +251,7 @@ Before I let you go and start selling, I just have one question for you.",
 "speaker": 1
 },
 "1_9": {
-"dialogue": "Which also happens to be contaminated with lead and is also very polluted and yada yada yada",
+"dialogue": "Which also happens to be contaminated with lead and is also very polluted and [wave amp=50.0 freq=5.0 connected=1]yada yada yada...[/wave]",
 "offset": Vector2(1660, 880),
 "options": {
 0: {

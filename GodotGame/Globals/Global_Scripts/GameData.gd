@@ -49,6 +49,10 @@ var itemDialogue = [
 	{
 		"Name": "WaterBottle",
 		"Value": 0
+	},
+	{
+		"Name": "TinCans",
+		"Value": 0
 	}
 ]
 

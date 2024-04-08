@@ -51,6 +51,7 @@ func _on_yes_pressed():
 	GameData.itemDialogue[0]["Value"] = 0
 	GameData.itemDialogue[1]["Value"] = 0
 	GameData.itemDialogue[2]["Value"] = 0
+	GameData.itemDialogue[3]["Value"] = 0
 		
 	#Reset take items and spawn again on the next day
 	GameData.get_item_posX = null

@@ -24,34 +24,79 @@ var lines = []
 var credits = [
 	[
 		"A game by the Sandboa Team"
-	],[
-		"Programming",
-		"Programmer Name",
-		"Programmer Name 2"
-	],[
-		"Art",
-		"Artist Name"
-	],[
-		"Music",
-		"Musician Name"
-	],[
-		"Sound Effects",
-		"SFX Name"
-	],[
+	],
+	[
+		"Game Producer",
+		"Francis T."
+	],
+	[
+		"Associate Producer",
+		"John T."
+	],
+	[
+		"Programming Team",
+		"Francis T.",
+		"John T.",
+		"Nick B.",
+		"Thien"
+	],
+	[
+		"Music Producer",
+		"John T."
+	],
+	[
+		"Sound Producer",
+		"Nick B."
+	],
+	[
+		"Art Producers / Designer",
+		"Michelle",
+		"Bev",
+		"John T.",
+		"Francis T.",
+	],
+	[
+		"Writers",
+		"Ben",
+		"Zack",
+		"John T.",
+	],
+	[
 		"Testers",
-		"Name 1",
-		"Name 2",
-		"Name 3"
-	],[
+		"TBD"
+	],
+	[
+		"Special thanks",
+		"TBD",
+	],
+	[
+		"Music OSTs",
+		"Afternoon Tadpole",
+		"Croak of the Fireflies",
+		"Woodsy Labyrinth"
+	],
+	[
 		"Tools used",
 		"Developed with Godot Engine",
 		"https://godotengine.org/license",
-	],[
-		"Special thanks",
-		"My parents",
-		"My friends",
-		"My pet rabbit"
-	]
+		"",
+		"Sound produced using jsfxr",
+		"https://sfxr.me/",
+		"",
+		"Art developed using:",
+		"Pixelorama",
+		"https://orama-interactive.itch.io/pixelorama",
+		"Procreate",
+		"https://procreate.com/"
+	],
+	[
+		"Asset used from itch.io",
+		"UI and Icons by Crusenho",
+		"https://creativecommons.org/licenses/by/4.0/",
+		"",
+		"World Assets by Cup Nooble (Assets modified for this game)",
+		"(https://cupnooble.itch.io/)",
+	],
 ]
 
 
@@ -116,9 +161,12 @@ func add_line():
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
-		finish()
 	if event.is_action_pressed("ui_down") and !event.is_echo():
 		speed_up = true
 	if event.is_action_released("ui_down") and !event.is_echo():
 		speed_up = false
+
+
+func _on_back_main_pressed():
+	SoundControl.is_playing_sound("button")
+	SceneTransition.change_scene("res://Main Menu Scene/MainMenu.tscn")

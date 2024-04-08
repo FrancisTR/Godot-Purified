@@ -49,8 +49,9 @@ func remove_from_inventory(item, amount):
 
 
 ################DIALOGUE################
+	
 var character_list = load("res://Dialogues/CharacterList.tres")
-const char_dict = {
+var char_dict = {
 	"Main": 0,
 	"Talia": 1,
 	"Danny": 2,

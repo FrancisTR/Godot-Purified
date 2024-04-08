@@ -22,11 +22,6 @@ func _process(delta):
 	dialogue_box.variables["QWild"] = GameData.QWild
 	for i in range(len(GameData.villagersTalked)):
 		dialogue_box.variables[GameData.villagersTalked[i]["Name"]] = GameData.villagersTalked[i]["Talked"]
-	
-	#Items updating
-	#TODO: Add more if needed
-	dialogue_box.variables["Twigs"] = GameData.itemDialogue[0]["Value"]
-		
 
 	# Who is the player talking?
 	#TODO: Add more Dialogue

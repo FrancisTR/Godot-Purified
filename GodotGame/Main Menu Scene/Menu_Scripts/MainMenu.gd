@@ -54,11 +54,6 @@ func _ready():
 		}
 	]
 
-	# No buttons are selected until any arrow / tab is pressed.
-	# Note: hover is not very visible right now until you select something.
-	$InvisibleInputButton.grab_focus()
-	#$StartButton.grab_focus()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -75,9 +70,29 @@ func _on_start_button_pressed():
 	# If first time, go to tutorial
 	SoundControl.is_playing_sound("button")
 	if (GameData.visitTutorial == false):
-		SceneTransition.change_scene("res://Main Menu Scene/tutorial.tscn")
+		TextTransition.set_to_chained_timed(
+			[
+				"It is your first day at work.",
+				"You then enter the building, waiting for further instructions.",
+				"Then, an employee named Talia approaches..."
+			],
+			"res://Main Menu Scene/tutorial.tscn",
+			3,
+			""
+		)
+		SceneTransition.change_scene("res://Globals/text_transition.tscn")
 	else:
-		SceneTransition.change_scene("res://Main Menu Scene/EnterName.tscn")
+		TextTransition.set_to_chained_timed(
+			[
+				"It is your first day at work. (Knowing you know that it is not)",
+				"You then enter the building, knowing exactly what to do.",
+				"But first, they ask you for your name..."
+			],
+			"res://Main Menu Scene/EnterName.tscn",
+			3,
+			""
+		)
+		SceneTransition.change_scene("res://Globals/text_transition.tscn")
 
 
 func _on_option_button_pressed():

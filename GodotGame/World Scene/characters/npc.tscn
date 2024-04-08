@@ -170,4 +170,5 @@ texture = ExtResource("9_ilu2c")
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="dialogue_ended" from="FixedDialoguePosition/DialogueBox" to="." method="_on_dialogue_box_dialogue_ended"]
+[connection signal="dialogue_proceeded" from="FixedDialoguePosition/DialogueBox" to="." method="_on_dialogue_box_dialogue_proceeded"]
 [connection signal="dialogue_signal" from="FixedDialoguePosition/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]

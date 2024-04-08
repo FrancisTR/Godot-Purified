@@ -13,7 +13,6 @@ func _ready():
 			""
 		)
 	SceneTransition.change_scene("res://Globals/text_transition.tscn")
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

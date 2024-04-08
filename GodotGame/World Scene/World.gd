@@ -11,7 +11,7 @@ var signal_method = ""
 
 #TODO: Add cord for all NPCs
 var npc_positions = {
-	'day1':[Vector2(2721, -234), Vector2(1919, 508), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
+	'day1':[Vector2(2721, -234), Vector2(1919, 508), Vector2(1332, -81), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
 	'day2':[Vector2(108, -353), Vector2(497, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
 	'day3':[Vector2(48, 406), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
 	
@@ -51,9 +51,7 @@ func _process(delta):
 	#TODO: Add theme song based on the day
 	if GameData.day <= 2:
 		SoundControl.is_playing_theme("main")
-	elif GameData.day == 3:
-		SoundControl.is_playing_theme("croak")
-	else:
+	elif GameData.day >= 3:
 		SoundControl.is_playing_theme("wild")
 
 
