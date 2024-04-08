@@ -30,62 +30,62 @@ starts = {
 nodes = {
 "0_1": {
 "link": &"1_1",
-"offset": Vector2(-160, -4580),
+"offset": Vector2(-220, -5880),
 "start_id": "Denial"
 },
 "0_10": {
 "link": &"1_10",
-"offset": Vector2(-160, -2260),
+"offset": Vector2(-260, -3260),
 "start_id": "Anger2"
 },
 "0_11": {
 "link": &"1_11",
-"offset": Vector2(-160, -1720),
+"offset": Vector2(-260, -2720),
 "start_id": "Anger3"
 },
 "0_12": {
-"link": &"1_12",
-"offset": Vector2(-440, -180),
+"link": &"5_11",
+"offset": Vector2(-780, -1340),
 "start_id": "Bargin2"
 },
 "0_13": {
 "link": &"1_13",
-"offset": Vector2(-400, 380),
+"offset": Vector2(-760, -500),
 "start_id": "Bargin3"
 },
 "0_14": {
 "link": &"1_14",
-"offset": Vector2(-160, 1620),
+"offset": Vector2(-540, 1320),
 "start_id": "Depress2"
 },
 "0_15": {
 "link": &"1_15",
-"offset": Vector2(-160, 2140),
+"offset": Vector2(-500, 1860),
 "start_id": "Depress3"
 },
 "0_16": {
 "link": &"1_16",
-"offset": Vector2(-180, 3280),
+"offset": Vector2(-220, 3520),
 "start_id": "Accept2"
 },
 "0_17": {
-"link": &"1_17",
-"offset": Vector2(-180, 4260),
+"link": &"5_15",
+"offset": Vector2(-780, 4100),
 "start_id": "Accept3"
 },
 "0_18": {
-"link": &"5_11",
-"offset": Vector2(-620, 5780),
+"link": &"1_18",
+"offset": Vector2(-160, 6300),
 "start_id": "Croak2"
 },
 "0_19": {
 "link": &"1_19",
-"offset": Vector2(-60, 9780),
+"offset": Vector2(-20, 8880),
 "start_id": "OldMan4"
 },
 "0_2": {
 "link": &"1_2",
-"offset": Vector2(-180, -2800),
+"offset": Vector2(-280, -3780),
 "start_id": "Anger"
 },
 "0_20": {
@@ -94,18 +94,18 @@ nodes = {
 "start_id": "OldMan2"
 },
 "0_21": {
-"link": &"5_13",
-"offset": Vector2(-580, 8420),
+"link": &"1_21",
+"offset": Vector2(-140, 8320),
 "start_id": "OldMan3"
 },
 "0_3": {
 "link": &"1_3",
-"offset": Vector2(-200, -720),
+"offset": Vector2(-300, -1940),
 "start_id": "Bargin"
 },
 "0_4": {
 "link": &"1_4",
-"offset": Vector2(-160, 1120),
+"offset": Vector2(-540, 780),
 "start_id": "Depress"
 },
 "0_5": {
@@ -115,7 +115,7 @@ nodes = {
 },
 "0_6": {
 "link": &"1_6",
-"offset": Vector2(-60, 5080),
+"offset": Vector2(-180, 5780),
 "start_id": "Croak"
 },
 "0_7": {
@@ -125,17 +125,17 @@ nodes = {
 },
 "0_8": {
 "link": &"1_8",
-"offset": Vector2(-160, -4060),
+"offset": Vector2(-220, -5320),
 "start_id": "Denial2"
 },
 "0_9": {
 "link": &"1_9",
-"offset": Vector2(-180, -3540),
+"offset": Vector2(-220, -4800),
 "start_id": "Denial3"
 },
 "1_1": {
 "dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
-"offset": Vector2(220, -4580),
+"offset": Vector2(160, -5880),
 "options": {
 0: {
 "condition": {},
@@ -144,11 +144,11 @@ nodes = {
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_10": {
 "dialogue": "Well hello again. I know you didn’t want any Toadable yesterday, but now it’s on sale, so I thought that might change your mind.",
-"offset": Vector2(220, -2260),
+"offset": Vector2(120, -3260),
 "options": {
 0: {
 "condition": {},
@@ -157,7 +157,7 @@ nodes = {
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_100": {
 "dialogue": "Well, no. But it works well and they would get a lot out of it!",
@@ -170,7 +170,7 @@ nodes = {
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_101": {
 "dialogue": "…",
@@ -196,11 +196,11 @@ nodes = {
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_103": {
 "dialogue": "As long as you’re still offerin’ it at a discount, I’ll buy it.",
-"offset": Vector2(560, -3540),
+"offset": Vector2(520, -4800),
 "options": {
 0: {
 "condition": {},
@@ -214,7 +214,7 @@ nodes = {
 "1_104": {
 "dialogue": "Alrighty. You know the drill!
 It was a pleasure doing business with you. Good day and goodbye!",
-"offset": Vector2(920, -3540),
+"offset": Vector2(880, -4800),
 "options": {
 0: {
 "condition": {},
@@ -223,11 +223,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_105": {
 "dialogue": "I can’t talk right now! I’ve gotta get to the hospital!",
-"offset": Vector2(300, 380),
+"offset": Vector2(-60, -500),
 "options": {
 0: {
 "condition": {},
@@ -240,7 +240,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_106": {
 "dialogue": "Wait, what?!",
-"offset": Vector2(900, 380),
+"offset": Vector2(540, -500),
 "options": {
 0: {
 "condition": {},
@@ -249,11 +249,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_107": {
 "dialogue": "Sure. It worked pretty well.",
-"offset": Vector2(560, 4300),
+"offset": Vector2(520, 4100),
 "options": {
 0: {
 "condition": {},
@@ -266,16 +266,16 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_108": {
 "dialogue": "Alrighty. You know the drill! It was a pleasure doing business with you. Good day and goodbye!",
-"offset": Vector2(920, 4300),
+"offset": Vector2(880, 4100),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_123",
 "text": ""
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_109": {
 "dialogue": "Have you talked to anyone here without trying to sell that to them?",
@@ -287,12 +287,12 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 432.999),
 "speaker": 8
 },
 "1_11": {
 "dialogue": "(I said I wouldn’t come back here today, and I’m nothing if not truthful)",
-"offset": Vector2(220, -1720),
+"offset": Vector2(120, -2720),
 "options": {
 0: {
 "condition": {},
@@ -301,7 +301,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_110": {
 "dialogue": "Well, no. But it works well and they would get a lot out of it!",
@@ -313,8 +313,8 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 431),
-"speaker": ""
+"size": Vector2(300, 430.999),
+"speaker": 0
 },
 "1_111": {
 "dialogue": "…",
@@ -326,7 +326,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 432.999),
 "speaker": 8
 },
 "1_112": {
@@ -335,16 +335,16 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "options": {
 0: {
 "condition": {},
-"link": &"1_117",
+"link": "END",
 "text": ""
 }
 },
-"size": Vector2(300, 431),
-"speaker": ""
+"size": Vector2(300, 430.999),
+"speaker": 0
 },
 "1_113": {
 "dialogue": "Sure! I will get you your water bottle. I'll be back!",
-"offset": Vector2(2920, 5600),
+"offset": Vector2(5580, -1340),
 "options": {
 0: {
 "condition": {},
@@ -353,11 +353,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_114": {
-"dialogue": "Wait! Before you go, can you get me a water bottle? I need another storage of water since this product is working for me.",
-"offset": Vector2(2460, 5620),
+"dialogue": "Wait! Before you go, can you get me a water bottle? I don't have a container and I am going to use this product for me and my son, Croak.",
+"offset": Vector2(5240, -1340),
 "options": {
 0: {
 "condition": {},
@@ -366,11 +366,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 433),
-"speaker": 7
+"speaker": 4
 },
 "1_115": {
-"dialogue": "Thanks mister for the Water bottle!",
-"offset": Vector2(900, 6080),
+"dialogue": "Thanks for the Water bottle!",
+"offset": Vector2(1240, -840),
 "options": {
 0: {
 "condition": {},
@@ -379,11 +379,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 433),
-"speaker": 7
+"speaker": 4
 },
 "1_116": {
 "dialogue": "...",
-"offset": Vector2(900, 6520),
+"offset": Vector2(920, -720),
 "options": {
 0: {
 "condition": {},
@@ -392,11 +392,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 433),
-"speaker": 7
+"speaker": 4
 },
 "1_117": {
 "dialogue": "Wait. Before you go, I have some favors for you to learn to make at least an impact without selling me these scams.",
-"offset": Vector2(2280, 8320),
+"offset": Vector2(-3320, 8480),
 "options": {
 0: {
 "condition": {},
@@ -404,12 +404,12 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 432.999),
 "speaker": 8
 },
 "1_118": {
 "dialogue": "Get me 3 pieces of rocks in the wilderness. I need those rocks to set up a camp fire I am planning at the end of the day.",
-"offset": Vector2(2760, 8300),
+"offset": Vector2(-2840, 8460),
 "options": {
 0: {
 "condition": {},
@@ -417,12 +417,12 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 432.999),
 "speaker": 8
 },
 "1_119": {
 "dialogue": "Can you get them for me?",
-"offset": Vector2(3220, 8300),
+"offset": Vector2(-2380, 8460),
 "options": {
 0: {
 "condition": {},
@@ -430,12 +430,12 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 432.999),
 "speaker": 8
 },
 "1_12": {
 "dialogue": "Hello again. Remember when you asked about that 1% discount?",
-"offset": Vector2(-120, -180),
+"offset": Vector2(100, -1340),
 "options": {
 0: {
 "condition": {},
@@ -444,11 +444,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431.001),
-"speaker": ""
+"speaker": 0
 },
 "1_120": {
 "dialogue": "Uh. Sure. I'll be back.",
-"offset": Vector2(3660, 8300),
+"offset": Vector2(-1940, 8460),
 "options": {
 0: {
 "condition": {},
@@ -456,12 +456,12 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 431),
+"size": Vector2(300, 430.999),
 "speaker": ""
 },
 "1_121": {
 "dialogue": "Ah yes. The rocks. Thank you for getting them for me!",
-"offset": Vector2(871.167, 8806.95),
+"offset": Vector2(-2800, 8960),
 "options": {
 0: {
 "condition": {},
@@ -469,12 +469,12 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 432.999),
 "speaker": 8
 },
 "1_122": {
 "dialogue": "No rocks for me? What a shame...",
-"offset": Vector2(880, 9240),
+"offset": Vector2(-2800, 9400),
 "options": {
 0: {
 "condition": {},
@@ -482,12 +482,77 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 432.999),
 "speaker": 8
+},
+"1_123": {
+"dialogue": "I almost forgot. I really appriciate about giving me some Twigs couple days ago. I was wondering if you can give me a couple of Tin Cans.",
+"offset": Vector2(1240, 4100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_124",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 6
+},
+"1_124": {
+"dialogue": "I am trying to make a boiling stand since I have heard that someone made a boiling stand using materials in the wilderness. Can you get them for me?",
+"offset": Vector2(1600, 4100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_125",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 6
+},
+"1_125": {
+"dialogue": "Sure! I can get those Tin Cans for you! I'll be back again!",
+"offset": Vector2(1980, 4100),
+"options": {
+0: {
+"condition": {},
+"link": &"4_9",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 0
+},
+"1_126": {
+"dialogue": "Ay thanks for the Tin Cans! I can now make a boiling pot now!",
+"offset": Vector2(680, 4600),
+"options": {
+0: {
+"condition": {},
+"link": &"3_5",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 6
+},
+"1_127": {
+"dialogue": "...",
+"offset": Vector2(680, 5040),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 6
 },
 "1_13": {
 "dialogue": "Hello again, would you like to buy so-",
-"offset": Vector2(-60, 380),
+"offset": Vector2(-420, -500),
 "options": {
 0: {
 "condition": {},
@@ -496,11 +561,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431.001),
-"speaker": ""
+"speaker": 0
 },
 "1_14": {
 "dialogue": "Hello again. Would you like to buy Toadable? I know you weren’t interested yesterday, but since it’s on sale, maybe you would change yo-",
-"offset": Vector2(220, 1620),
+"offset": Vector2(-160, 1320),
 "options": {
 0: {
 "condition": {},
@@ -509,11 +574,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_15": {
 "dialogue": "(I said I wouldn’t come back here today, and I’m nothing if not truthful)",
-"offset": Vector2(220, 2140),
+"offset": Vector2(-160, 1860),
 "options": {
 0: {
 "condition": {},
@@ -522,11 +587,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431.001),
-"speaker": ""
+"speaker": 0
 },
 "1_16": {
 "dialogue": "Hello again. Would you like to buy some more Toadable? I know you were so willing to buy it before, and it’s still on sale!",
-"offset": Vector2(240, 3500),
+"offset": Vector2(160, 3580),
 "options": {
 0: {
 "condition": {},
@@ -535,11 +600,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431.001),
-"speaker": ""
+"speaker": 0
 },
 "1_17": {
 "dialogue": "Hello again. Would you like to buy some more Toadable? I know you were so willing to buy it before, and it’s still on sale!",
-"offset": Vector2(200, 4260),
+"offset": Vector2(160, 4100),
 "options": {
 0: {
 "condition": {},
@@ -548,11 +613,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_18": {
 "dialogue": "Hey kiddo. How’d the Toadable treat you?",
-"offset": Vector2(320, 5600),
+"offset": Vector2(320, 6300),
 "options": {
 0: {
 "condition": {},
@@ -561,11 +626,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431.001),
-"speaker": ""
+"speaker": 0
 },
 "1_19": {
 "dialogue": "",
-"offset": Vector2(360, 9780),
+"offset": Vector2(320, 8880),
 "options": {
 0: {
 "condition": {},
@@ -573,12 +638,12 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 431),
-"speaker": ""
+"size": Vector2(300, 430.999),
+"speaker": 0
 },
 "1_2": {
 "dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
-"offset": Vector2(220, -2800),
+"offset": Vector2(120, -3780),
 "options": {
 0: {
 "condition": {},
@@ -587,7 +652,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_20": {
 "dialogue": "Are you sure you won’t want to buy any Toable?",
@@ -600,7 +665,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_21": {
 "dialogue": "Are you sure you won’t want to buy any Toable?",
@@ -612,12 +677,12 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 431),
-"speaker": ""
+"size": Vector2(300, 430.999),
+"speaker": 0
 },
 "1_22": {
 "dialogue": "What are you talkin’ about? There’s nothin’ wrong with my water, and I don’t like you actin’ like there is. I don’t need what you’re sellin’, so you better look somewhere else.",
-"offset": Vector2(600, -4580),
+"offset": Vector2(540, -5880),
 "options": {
 0: {
 "condition": {},
@@ -630,7 +695,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_23": {
 "dialogue": "Sounds like you’ve made up your mind. I’ll be back tomorrow in case it changes, but until then, good day and goodbye!",
-"offset": Vector2(980, -4580),
+"offset": Vector2(920, -5880),
 "options": {
 0: {
 "condition": {},
@@ -639,11 +704,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_24": {
 "dialogue": "How dare you? How dare you! You come strolling in here just to make a profit of the back of other people’s problems! You disgust me, I hope you know that.",
-"offset": Vector2(600, -2800),
+"offset": Vector2(500, -3780),
 "options": {
 0: {
 "condition": {},
@@ -656,7 +721,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_25": {
 "dialogue": "That’s a lot of anger pointed at someone here to fix the problem. Sure, I also want to make some profit on the side, but who wouldn’t? Also, you didn’t answer my question. Do you want to buy any Toadable",
-"offset": Vector2(980, -2800),
+"offset": Vector2(880, -3780),
 "options": {
 0: {
 "condition": {},
@@ -665,11 +730,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_26": {
 "dialogue": "Not with how pricey you’re selling for. Come back when your price is lower or don’t come back at all. I know which one I’d prefer.",
-"offset": Vector2(1340, -2800),
+"offset": Vector2(1240, -3780),
 "options": {
 0: {
 "condition": {},
@@ -682,7 +747,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_27": {
 "dialogue": "Well, I look forward to checking in on you again tomorrow, maybe you’ll be willing to buy then. Good day and goodbye!",
-"offset": Vector2(1720, -2800),
+"offset": Vector2(1620, -3780),
 "options": {
 0: {
 "condition": {},
@@ -691,11 +756,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300.002, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_28": {
 "dialogue": "What about for 50% off?",
-"offset": Vector2(640, -720),
+"offset": Vector2(540, -1940),
 "options": {
 0: {
 "condition": {},
@@ -708,7 +773,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_29": {
 "dialogue": "I can’t make a profit at that price.",
-"offset": Vector2(1020, -720),
+"offset": Vector2(920, -1940),
 "options": {
 0: {
 "condition": {},
@@ -717,11 +782,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_3": {
 "dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
-"offset": Vector2(220, -720),
+"offset": Vector2(120, -1940),
 "options": {
 0: {
 "condition": {},
@@ -730,11 +795,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300.001, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_30": {
 "dialogue": " What about 30% off?",
-"offset": Vector2(1400, -720),
+"offset": Vector2(1300, -1940),
 "options": {
 0: {
 "condition": {},
@@ -747,7 +812,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_31": {
 "dialogue": "I can’t make a profit at that price.",
-"offset": Vector2(1800, -720),
+"offset": Vector2(1700, -1940),
 "options": {
 0: {
 "condition": {},
@@ -756,11 +821,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_32": {
 "dialogue": "What about 25% off?",
-"offset": Vector2(2160, -720),
+"offset": Vector2(2040, -1940),
 "options": {
 0: {
 "condition": {},
@@ -773,7 +838,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_33": {
 "dialogue": "I can’t make a profit at that price.",
-"offset": Vector2(2520, -720),
+"offset": Vector2(2400, -1940),
 "options": {
 0: {
 "condition": {},
@@ -782,11 +847,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_34": {
 "dialogue": "What about 10% off?",
-"offset": Vector2(2880, -720),
+"offset": Vector2(2760, -1940),
 "options": {
 0: {
 "condition": {},
@@ -799,7 +864,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_35": {
 "dialogue": "I can’t make a profit at that price.",
-"offset": Vector2(3240, -720),
+"offset": Vector2(3120, -1940),
 "options": {
 0: {
 "condition": {},
@@ -808,11 +873,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300.001, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_36": {
 "dialogue": "What about 1% off?",
-"offset": Vector2(3600, -720),
+"offset": Vector2(3480, -1940),
 "options": {
 0: {
 "condition": {},
@@ -825,7 +890,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_37": {
 "dialogue": "I’ll get back to you on that",
-"offset": Vector2(3960, -720),
+"offset": Vector2(3840, -1940),
 "options": {
 0: {
 "condition": {},
@@ -834,11 +899,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300.002, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_38": {
 "dialogue": "Okay.",
-"offset": Vector2(4320, -720),
+"offset": Vector2(4200, -1940),
 "options": {
 0: {
 "condition": {},
@@ -851,7 +916,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_39": {
 "dialogue": "No.",
-"offset": Vector2(600, 1120),
+"offset": Vector2(220, 780),
 "options": {
 0: {
 "condition": {},
@@ -864,7 +929,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_4": {
 "dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
-"offset": Vector2(220, 1120),
+"offset": Vector2(-160, 780),
 "options": {
 0: {
 "condition": {},
@@ -873,11 +938,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431.001),
-"speaker": ""
+"speaker": 0
 },
 "1_40": {
 "dialogue": "Are you sure?  I can assure you that Toadable does a lot. It will make the water safer for drinking, for cleaning, for bathing, and for any other use you could possibly want. As long as you use the right ratio of Toadable to water when mixing the two, the world becomes your oyster. Does that spark your interest?",
-"offset": Vector2(980, 1120),
+"offset": Vector2(600, 780),
 "options": {
 0: {
 "condition": {},
@@ -886,11 +951,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431.001),
-"speaker": ""
+"speaker": 0
 },
 "1_41": {
 "dialogue": "Please leave.",
-"offset": Vector2(1340, 1120),
+"offset": Vector2(960, 780),
 "options": {
 0: {
 "condition": {},
@@ -903,7 +968,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_42": {
 "dialogue": "Okay then. I’ll be back tomorrow. Good day and goodbye!",
-"offset": Vector2(1700, 1100),
+"offset": Vector2(1320, 760),
 "options": {
 0: {
 "condition": {},
@@ -912,7 +977,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431.001),
-"speaker": ""
+"speaker": 0
 },
 "1_43": {
 "dialogue": "Sure.",
@@ -938,7 +1003,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_45": {
 "dialogue": "It was a pleasure doing business with you. Good day and goodbye!",
@@ -951,7 +1016,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_46": {
 "dialogue": "Hey, while you’re here, could you go out to the woods and get me some sticks. I’ve been planning to get some for fire but I haven’t had the chance yet.",
@@ -977,11 +1042,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431.001),
-"speaker": ""
+"speaker": 0
 },
 "1_48": {
 "dialogue": "My parents told me not to talk to strangers.",
-"offset": Vector2(720, 5080),
+"offset": Vector2(660, 5780),
 "options": {
 0: {
 "condition": {},
@@ -994,7 +1059,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_49": {
 "dialogue": "That’s okay, I already talked to your dad, so I’m not a stranger.",
-"offset": Vector2(1577.05, 5065.75),
+"offset": Vector2(1520, 5760),
 "options": {
 0: {
 "condition": {},
@@ -1003,7 +1068,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300.001, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_5": {
 "dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
@@ -1016,11 +1081,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_50": {
 "dialogue": "Okay. Hey, what’s that?",
-"offset": Vector2(1940, 5060),
+"offset": Vector2(1880, 5760),
 "options": {
 0: {
 "condition": {},
@@ -1033,7 +1098,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_51": {
 "dialogue": "Well, it’s Pure-fi’s patented Toadable. It’s guaranteed to fix your water right up! It’s worth 83 Rana and 52 Sapo",
-"offset": Vector2(2320, 5060),
+"offset": Vector2(2300, 5760),
 "options": {
 0: {
 "condition": {},
@@ -1042,11 +1107,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_52": {
 "dialogue": "Daddy doesn’t give me that much of an allowance. I’ve only got, um… 10 Rana and 2 Sapo.",
-"offset": Vector2(2680, 5040),
+"offset": Vector2(2640, 5760),
 "options": {
 0: {
 "condition": {},
@@ -1054,12 +1119,12 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(390.999, 433.002),
+"size": Vector2(390.999, 433.001),
 "speaker": 7
 },
 "1_53": {
 "dialogue": "…Well… I could give you a small sample of Toadable for that much. How does that sound?",
-"offset": Vector2(3040, 5040),
+"offset": Vector2(3080, 5760),
 "options": {
 0: {
 "condition": {},
@@ -1067,12 +1132,12 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 431.002),
-"speaker": ""
+"size": Vector2(300, 431.001),
+"speaker": 0
 },
 "1_54": {
 "dialogue": "Sure!",
-"offset": Vector2(3382.44, 5029.52),
+"offset": Vector2(3440, 5740),
 "options": {
 0: {
 "condition": {},
@@ -1107,7 +1172,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_57": {
 "dialogue": "…",
@@ -1133,11 +1198,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_59": {
 "dialogue": "Hey thanks for the sticks man!",
-"offset": Vector2(1820, 3140),
+"offset": Vector2(3080, 3100),
 "options": {
 0: {
 "condition": {},
@@ -1150,7 +1215,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_6": {
 "dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
-"offset": Vector2(320, 5080),
+"offset": Vector2(320, 5780),
 "options": {
 0: {
 "condition": {},
@@ -1159,11 +1224,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_60": {
 "dialogue": "...",
-"offset": Vector2(1660, 3680),
+"offset": Vector2(2320, 3260),
 "options": {
 0: {
 "condition": {},
@@ -1176,7 +1241,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_61": {
 "dialogue": "Sure. It worked pretty well.",
-"offset": Vector2(600, 3760),
+"offset": Vector2(580, 3580),
 "options": {
 0: {
 "condition": {},
@@ -1189,7 +1254,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_62": {
 "dialogue": "Everyone else thinks that there is a problem with the water, and all of them want a way to fix that. Toadable can be that fix, and it’s on a discount right now. Now it’s only 82.68 Rana.",
-"offset": Vector2(580, -4060),
+"offset": Vector2(520, -5320),
 "options": {
 0: {
 "condition": {},
@@ -1198,11 +1263,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300.001, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_63": {
 "dialogue": "If you buy it now, you can sell it for a higher price later, once Pure-fi stops offering a discount. That way, you can make yourself some extra money.",
-"offset": Vector2(980, -4060),
+"offset": Vector2(920, -5320),
 "options": {
 0: {
 "condition": {},
@@ -1211,11 +1276,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_64": {
 "dialogue": "How does that sound?",
-"offset": Vector2(1380, -4060),
+"offset": Vector2(1320, -5320),
 "options": {
 0: {
 "condition": {},
@@ -1224,11 +1289,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_65": {
 "dialogue": "I still think they’re all wrong, but I do like the idea of undersellin’ you. How much can I buy today?",
-"offset": Vector2(1760, -4060),
+"offset": Vector2(1700, -5320),
 "options": {
 0: {
 "condition": {},
@@ -1241,7 +1306,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_66": {
 "dialogue": "Just 2 per day.",
-"offset": Vector2(2100, -4060),
+"offset": Vector2(2040, -5320),
 "options": {
 0: {
 "condition": {},
@@ -1250,11 +1315,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300.001, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_67": {
 "dialogue": "Works for me.",
-"offset": Vector2(2460, -4060),
+"offset": Vector2(2400, -5320),
 "options": {
 0: {
 "condition": {},
@@ -1267,7 +1332,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_68": {
 "dialogue": "Okay, great. Sign here and give me your money, then I’ll give you that Toadable!",
-"offset": Vector2(2820, -4060),
+"offset": Vector2(2760, -5320),
 "options": {
 0: {
 "condition": {},
@@ -1276,11 +1341,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300.001, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_69": {
 "dialogue": "It was a pleasure doing business with you. Good day and goodbye!",
-"offset": Vector2(3180, -4060),
+"offset": Vector2(3120, -5320),
 "options": {
 0: {
 "condition": {},
@@ -1289,7 +1354,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300.001, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_7": {
 "dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
@@ -1302,11 +1367,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_70": {
 "dialogue": "Oh yay, you lowered the price by what?! Just a percent? I’m sure that’s so helpful to all the people suffering because of Pure-fi. Get out of my face!",
-"offset": Vector2(560, -2260),
+"offset": Vector2(460, -3260),
 "options": {
 0: {
 "condition": {},
@@ -1319,7 +1384,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_71": {
 "dialogue": "But you said to come back when the price was lower!",
-"offset": Vector2(920, -2260),
+"offset": Vector2(820, -3260),
 "options": {
 0: {
 "condition": {},
@@ -1328,11 +1393,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_72": {
 "dialogue": "I also said I preferred you not come back at all! Go away!",
-"offset": Vector2(1260, -2260),
+"offset": Vector2(1160, -3260),
 "options": {
 0: {
 "condition": {},
@@ -1345,7 +1410,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_73": {
 "dialogue": "Okay, I won’t come back tomorrow. Good day and goodbye.",
-"offset": Vector2(1600, -2260),
+"offset": Vector2(1500, -3260),
 "options": {
 0: {
 "condition": {},
@@ -1354,11 +1419,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_74": {
 "dialogue": "Well, I’m finally back to tell you that Pure-fi can afford to sell it to you for that price today! How does that sound?",
-"offset": Vector2(240, -180),
+"offset": Vector2(460, -1340),
 "options": {
 0: {
 "condition": {},
@@ -1367,11 +1432,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_75": {
 "dialogue": "What about for 50% off?",
-"offset": Vector2(640, -180),
+"offset": Vector2(860, -1340),
 "options": {
 0: {
 "condition": {},
@@ -1384,7 +1449,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_76": {
 "dialogue": "I can’t make a profit at that price.",
-"offset": Vector2(1020, -180),
+"offset": Vector2(1240, -1340),
 "options": {
 0: {
 "condition": {},
@@ -1393,11 +1458,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_77": {
 "dialogue": " What about 30% off?",
-"offset": Vector2(1400, -180),
+"offset": Vector2(1620, -1340),
 "options": {
 0: {
 "condition": {},
@@ -1410,7 +1475,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_78": {
 "dialogue": "I can’t make a profit at that price.",
-"offset": Vector2(1800, -180),
+"offset": Vector2(1980, -1340),
 "options": {
 0: {
 "condition": {},
@@ -1419,11 +1484,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_79": {
 "dialogue": "What about 25% off?",
-"offset": Vector2(2160, -180),
+"offset": Vector2(2340, -1340),
 "options": {
 0: {
 "condition": {},
@@ -1436,7 +1501,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_8": {
 "dialogue": "Well hello again. I know you don’t want any Toadable for yourself, but I have a pitch for you.",
-"offset": Vector2(220, -4060),
+"offset": Vector2(160, -5320),
 "options": {
 0: {
 "condition": {},
@@ -1445,11 +1510,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_80": {
 "dialogue": "I can’t make a profit at that price.",
-"offset": Vector2(2520, -180),
+"offset": Vector2(2700, -1340),
 "options": {
 0: {
 "condition": {},
@@ -1458,11 +1523,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_81": {
 "dialogue": "What about 10% off?",
-"offset": Vector2(2880, -180),
+"offset": Vector2(3060, -1340),
 "options": {
 0: {
 "condition": {},
@@ -1475,7 +1540,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_82": {
 "dialogue": "I can’t make a profit at that price.",
-"offset": Vector2(3240, -180),
+"offset": Vector2(3420, -1340),
 "options": {
 0: {
 "condition": {},
@@ -1484,11 +1549,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300.001, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_83": {
 "dialogue": "So just the 1% discount?",
-"offset": Vector2(3600, -180),
+"offset": Vector2(3780, -1340),
 "options": {
 0: {
 "condition": {},
@@ -1501,7 +1566,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_84": {
 "dialogue": "Just the 1% discount.",
-"offset": Vector2(3960, -180),
+"offset": Vector2(4120, -1340),
 "options": {
 0: {
 "condition": {},
@@ -1510,11 +1575,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300.001, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_85": {
 "dialogue": "Where do I sign?",
-"offset": Vector2(4320, -180),
+"offset": Vector2(4480, -1340),
 "options": {
 0: {
 "condition": {},
@@ -1527,20 +1592,20 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_86": {
 "dialogue": "Okay, great. Sign here and give me your money, then I’ll give you that Toadable!",
-"offset": Vector2(4680, -180),
+"offset": Vector2(4840, -1340),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_114",
 "text": ""
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_87": {
 "dialogue": "No.",
-"offset": Vector2(580, 1640),
+"offset": Vector2(200, 1340),
 "options": {
 0: {
 "condition": {},
@@ -1553,7 +1618,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_88": {
 "dialogue": "…Are you sure?",
-"offset": Vector2(960, 1640),
+"offset": Vector2(580, 1340),
 "options": {
 0: {
 "condition": {},
@@ -1562,11 +1627,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300.001, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_89": {
 "dialogue": "Please leave.",
-"offset": Vector2(1340, 1640),
+"offset": Vector2(960, 1340),
 "options": {
 0: {
 "condition": {},
@@ -1579,7 +1644,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_9": {
 "dialogue": "Hello again. We are still offering the discount if you want to keep buying Toadable to undersell us later.",
-"offset": Vector2(220, -3540),
+"offset": Vector2(180, -4800),
 "options": {
 0: {
 "condition": {},
@@ -1588,11 +1653,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_90": {
 "dialogue": "Are you ever going to change your mind?",
-"offset": Vector2(1700, 1640),
+"offset": Vector2(1320, 1340),
 "options": {
 0: {
 "condition": {},
@@ -1601,11 +1666,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_91": {
 "dialogue": "Probably not.",
-"offset": Vector2(2060, 1640),
+"offset": Vector2(1680, 1340),
 "options": {
 0: {
 "condition": {},
@@ -1618,7 +1683,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_92": {
 "dialogue": "Okay. I won’t be back tomorrow! Good day and goodbye.",
-"offset": Vector2(2420, 1640),
+"offset": Vector2(2040, 1340),
 "options": {
 0: {
 "condition": {},
@@ -1627,11 +1692,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_93": {
 "dialogue": "Alrighty. You know the drill! It was a pleasure doing business with you. Good day and goodbye!",
-"offset": Vector2(1240, 3780),
+"offset": Vector2(1260, 3580),
 "options": {
 0: {
 "condition": {},
@@ -1640,11 +1705,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_94": {
 "dialogue": "I think I used a little too much, because I don’t feel too good.",
-"offset": Vector2(680, 5600),
+"offset": Vector2(680, 6300),
 "options": {
 0: {
 "condition": {},
@@ -1657,7 +1722,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_95": {
 "dialogue": "Or maybe you were using too little. It’s all about mixing the right amount in. How about this. I’ll give you the right amount for free.",
-"offset": Vector2(1020, 5600),
+"offset": Vector2(1020, 6300),
 "options": {
 0: {
 "condition": {},
@@ -1666,11 +1731,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_96": {
 "dialogue": "All you’ve gotta do is follow the instructions on the label and you should be fine.",
-"offset": Vector2(1380, 5600),
+"offset": Vector2(1380, 6300),
 "options": {
 0: {
 "condition": {},
@@ -1679,11 +1744,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_97": {
 "dialogue": "Thanks mister!",
-"offset": Vector2(1720, 5600),
+"offset": Vector2(1740, 6300),
 "options": {
 0: {
 "condition": {},
@@ -1696,16 +1761,16 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_98": {
 "dialogue": "No problem kid. Have fun!",
-"offset": Vector2(2060, 5600),
+"offset": Vector2(2080, 6300),
 "options": {
 0: {
 "condition": {},
-"link": &"1_114",
+"link": "END",
 "text": ""
 }
 },
 "size": Vector2(300, 431),
-"speaker": ""
+"speaker": 0
 },
 "1_99": {
 "dialogue": "Have you talked to anyone here without trying to sell that to them?",
@@ -1722,30 +1787,42 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "3_1": {
 "link": &"1_106",
-"offset": Vector2(640, 380),
+"offset": Vector2(280, -500),
 "signalValue": "BarryRun"
 },
 "3_2": {
 "link": "END",
-"offset": Vector2(2580, 3180),
+"offset": Vector2(3700, 3160),
 "signalValue": "MainComplete"
 },
 "3_3": {
 "link": "END",
-"offset": Vector2(1340, 6140),
+"offset": Vector2(1680, -780),
 "signalValue": "MainComplete"
 },
 "3_4": {
 "link": "END",
-"offset": Vector2(1460, 8880),
+"offset": Vector2(-2220, 9040),
+"signalValue": "MainComplete"
+},
+"3_5": {
+"link": "END",
+"offset": Vector2(1100, 4680),
 "signalValue": "MainComplete"
 },
 "4_1": {
 "link": "END",
-"offset": Vector2(4680, -720),
+"offset": Vector2(4560, -1940),
 "type": 0,
 "value": "true",
 "variable": "Bargin"
+},
+"4_10": {
+"link": "END",
+"offset": Vector2(1380, 4680),
+"type": 0,
+"value": "",
+"variable": "{{TinCans}}"
 },
 "4_2": {
 "link": "END",
@@ -1756,45 +1833,52 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "4_3": {
 "link": "END",
-"offset": Vector2(3840, 5040),
+"offset": Vector2(3880, 5760),
 "type": 0,
 "value": "true",
 "variable": "Profit?"
 },
 "4_4": {
 "link": "END",
-"offset": Vector2(2880, 3340),
+"offset": Vector2(3960, 3160),
 "type": 0,
 "value": "0",
 "variable": "Twigs"
 },
 "4_5": {
 "link": "END",
-"offset": Vector2(3360, 5600),
+"offset": Vector2(5940, -1340),
 "type": 0,
 "value": "true",
 "variable": "QMain"
 },
 "4_6": {
 "link": "END",
-"offset": Vector2(1380, 6300),
+"offset": Vector2(1740, -660),
 "type": 0,
 "value": "0",
 "variable": "WaterBottle"
 },
 "4_7": {
 "link": "END",
-"offset": Vector2(4100, 8340),
+"offset": Vector2(-1500, 8500),
 "type": 0,
 "value": "true",
 "variable": "QMain"
 },
 "4_8": {
 "link": "END",
-"offset": Vector2(1480, 9060),
+"offset": Vector2(-2200, 9220),
 "type": 0,
 "value": "0",
 "variable": "Rocks"
+},
+"4_9": {
+"link": "END",
+"offset": Vector2(2340, 4100),
+"type": 0,
+"value": "true",
+"variable": "QMain"
 },
 "5_1": {
 "false": &"1_45",
@@ -1806,15 +1890,15 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "5_10": {
 "false": &"1_116",
-"offset": Vector2(300, 6140),
+"offset": Vector2(80, -820),
 "operator": 4,
 "true": &"1_115",
 "value1": "{{WaterBottle}}",
 "value2": "1"
 },
 "5_11": {
-"false": &"1_18",
-"offset": Vector2(-220, 5720),
+"false": &"1_12",
+"offset": Vector2(-420, -1340),
 "operator": 0,
 "true": &"5_10",
 "value1": "{{QMain}}",
@@ -1829,20 +1913,36 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "value2": "true"
 },
 "5_13": {
-"false": &"1_21",
-"offset": Vector2(-200, 8420),
+"false": "END",
+"offset": Vector2(-1500, 8220),
 "operator": 0,
-"true": &"5_14",
+"true": "END",
 "value1": "{{QMain}}",
 "value2": "true"
 },
 "5_14": {
 "false": &"1_122",
-"offset": Vector2(320, 8860),
+"offset": Vector2(-3360, 9020),
 "operator": 4,
 "true": &"1_121",
 "value1": "{{Rocks}}",
 "value2": "3"
+},
+"5_15": {
+"false": &"1_17",
+"offset": Vector2(-420, 4100),
+"operator": 0,
+"true": &"5_16",
+"value1": "{{QMain}}",
+"value2": "true"
+},
+"5_16": {
+"false": &"1_127",
+"offset": Vector2(140, 4640),
+"operator": 4,
+"true": &"1_126",
+"value1": "{{TinCans}}",
+"value2": "2"
 },
 "5_2": {
 "false": &"1_45",
@@ -1894,7 +1994,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "5_8": {
 "false": "END",
-"offset": Vector2(1100, 5060),
+"offset": Vector2(1080, 5780),
 "operator": 0,
 "true": &"1_49",
 "value1": "{{Bargin}}",
@@ -1954,6 +2054,10 @@ variables = {
 "type": 2,
 "value": 0.0
 },
+"TinCans": {
+"type": 2,
+"value": 0.0
+},
 "Twigs": {
 "type": 2,
 "value": 0.0
@@ -1964,5 +2068,5 @@ variables = {
 }
 }
 comments = Array[String]([])
-strays = Array[String](["4_1", "4_4", "4_6", "4_8"])
+strays = Array[String](["1_121", "3_4", "1_122", "1_117", "1_119", "1_120", "4_7", "4_1", "4_8", "4_6", "4_4", "4_10", "1_118", "5_13", "5_14"])
 characters = "res://Dialogues/CharacterList.tres"

@@ -123,13 +123,23 @@ offset_bottom = 13.125
 texture = ExtResource("4_wkuso")
 expand_mode = 1
 
+[node name="ItemNeeded" type="Label" parent="TODOlist/ItemR"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -21.25
+offset_top = 17.375
+offset_right = 121.75
+offset_bottom = 33.375
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+
 [node name="ItemR2" type="Label" parent="TODOlist"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 45.0
-offset_top = 181.0
+offset_top = 220.0
 offset_right = 167.0
-offset_bottom = 198.0
+offset_bottom = 237.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
 text = "???"
@@ -142,6 +152,16 @@ offset_right = -3.625
 offset_bottom = 13.125
 texture = ExtResource("4_wkuso")
 expand_mode = 1
+
+[node name="ItemNeeded2" type="Label" parent="TODOlist/ItemR2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -21.25
+offset_top = 16.875
+offset_right = 121.75
+offset_bottom = 32.875
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
 
 [node name="Items" type="Node2D" parent="."]
 

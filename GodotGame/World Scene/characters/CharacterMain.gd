@@ -10,7 +10,7 @@ var inventory_opened = false
 var map_opened = false
 var last_recorded_inventory_amount:Dictionary
 
-const SPEED = 300.0
+const SPEED = 169.0
 
 func _ready():
 	$Camera2D.make_current()
@@ -123,6 +123,8 @@ func _physics_process(delta):
 			$"Inventory Layer/Inventory".draw_items(GameData.inventory)
 		elif Input.is_action_just_pressed("Back"):
 			get_tree().change_scene_to_file("res://Main Menu Scene/Options.tscn")
+		
+		velocity = velocity.normalized() * SPEED
 		move_and_slide()
 	else:
 		velocity.x = 0

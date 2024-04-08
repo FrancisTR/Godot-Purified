@@ -1,12 +1,14 @@
-[gd_scene load_steps=26 format=3 uid="uid://c4dhom44jopn2"]
+[gd_scene load_steps=28 format=3 uid="uid://c4dhom44jopn2"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/MainMenu.gd" id="1_m2j1f"]
 [ext_resource type="Texture2D" uid="uid://c7qq0rsxbi34h" path="res://Assets/Custom/Terrain/murky_water.png" id="2_woi1u"]
 [ext_resource type="Texture2D" uid="uid://cbid64fvoqhpa" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a1.png" id="3_1l2m6"]
 [ext_resource type="Texture2D" uid="uid://b3vhgylwtw1xu" path="res://Assets/MainMenuTitle.png" id="3_myful"]
 [ext_resource type="Texture2D" uid="uid://upcjq487h48j" path="res://Assets/Custom/Items/BoilingPot.png" id="4_a8gck"]
+[ext_resource type="Texture2D" uid="uid://cjejwnyoxhj4t" path="res://Assets/Custom/Items/WaterBottle.png" id="5_f5q6v"]
 [ext_resource type="Texture2D" uid="uid://cf370ycp56cnk" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a1.png" id="5_sefst"]
 [ext_resource type="Texture2D" uid="uid://betian48tiv5j" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a2.png" id="6_ast7a"]
+[ext_resource type="Texture2D" uid="uid://ccm17ho8pvdka" path="res://Assets/Custom/Items/TinCan.png" id="6_sqdha"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="8_mma8u"]
 [ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="9_6oqwn"]
 
@@ -87,37 +89,45 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -320.0
-offset_top = 51.0
-offset_right = -1.0
-offset_bottom = 139.0
+offset_left = -528.0
+offset_top = 39.0
+offset_right = -209.0
+offset_bottom = 127.0
 grow_horizontal = 2
-scale = Vector2(2, 2)
+scale = Vector2(1.8, 1.8)
 texture = ExtResource("3_myful")
 
 [node name="Item" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 554.0
-offset_top = 207.0
-offset_right = 804.0
-offset_bottom = 457.0
+offset_left = 515.0
+offset_top = 219.0
+offset_right = 765.0
+offset_bottom = 469.0
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_a8gck")
 expand_mode = 1
 
-[node name="InvisibleInputButton" type="Button" parent="."]
+[node name="Item2" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = -2016.0
-offset_top = -1581.0
-offset_right = -2008.0
-offset_bottom = -1573.0
-focus_neighbor_left = NodePath("../StartButton")
-focus_neighbor_top = NodePath("../StartButton")
-focus_neighbor_right = NodePath("../StartButton")
-focus_neighbor_bottom = NodePath("../StartButton")
-focus_next = NodePath("../StartButton")
-focus_previous = NodePath("../StartButton")
+offset_left = 834.0
+offset_top = 302.0
+offset_right = 874.0
+offset_bottom = 342.0
+rotation = -2.27002
+scale = Vector2(5, 5)
+texture = ExtResource("5_f5q6v")
+
+[node name="Item3" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 983.0
+offset_top = 393.0
+offset_right = 1023.0
+offset_bottom = 433.0
+scale = Vector2(4, 4)
+texture = ExtResource("6_sqdha")
 
 [node name="StartButton" type="Button" parent="."]
 texture_filter = 1

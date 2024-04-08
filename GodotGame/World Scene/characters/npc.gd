@@ -8,7 +8,6 @@ var moving_speed = 200
 var moving = false
 
 
-
 var enterBody = false
 
 var NPCname = null
@@ -18,16 +17,13 @@ func _ready():
 	NPCname = null
 	set_process_input(true)
 	
-	#TODO: Barry gone if he was gone before
-	if (GameData.barryDespawned == true):
-		$"../Bargin".queue_free()
 	
 func go_pos(delta):
 	if moving:
 		$"../Bargin".global_position = $"../Bargin".global_position.move_toward(BarryDestination, delta*moving_speed)
 	if $"../Bargin".global_position == BarryDestination:
 		moving = false
-		$"../Bargin".queue_free()
+		$"../Bargin".position = Vector2(999999999, 999999999)
 		GameData.charLock = false
 		GameData.barryDespawned = true
 
@@ -35,6 +31,15 @@ func go_pos(delta):
 
 # TODO: Map more ID's for dialogue for more days
 func _process(delta):
+	
+	#TODO: Barry gone if he was gone before
+	if (GameData.barryDespawned == true):
+		$"../Bargin".position = Vector2(999999999, 999999999)
+
+	#Appear the game username in dialogue (Only Appears in NPC interaction)
+	Utils.character_list.characters[0].name = GameData.username
+	
+	
 	#Set the variables of the people that already talked to
 	#This prevents a reset if the player visited the wilderness and comes back
 	dialogue_box.variables["QMain"] = GameData.QMain
@@ -48,7 +53,8 @@ func _process(delta):
 	dialogue_box.variables["Twigs"] = GameData.itemDialogue[0]["Value"]
 	dialogue_box.variables["Rocks"] = GameData.itemDialogue[1]["Value"]
 	dialogue_box.variables["WaterBottle"] = GameData.itemDialogue[2]["Value"]
-		
+	dialogue_box.variables["TinCans"] = GameData.itemDialogue[3]["Value"]
+	
 	# Get the day for the appropriate dialogue
 	if GameData.day == 1:
 		# Who is the player talking to?
@@ -109,6 +115,8 @@ func _process(delta):
 		if not dialogue_box.running:
 			GameData.charLock = true
 			GameData.current_ui = "dialogue"
+			
+			
 			#Run the loop and check true that we talked to that villager
 			# This is for the requirement to leave the Day
 			dialogue_box.variables[NPCname] = true
@@ -179,12 +187,19 @@ func _on_dialogue_box_dialogue_ended():
 	
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
+	
 	SoundControl.is_playing_sound("button")
+	
+	#TODO Fix cases where the username is the same as the NPCs
 	if $FixedDialoguePosition/DialogueBox.speaker.text != "":
-		var idx = Utils.char_dict[str($FixedDialoguePosition/DialogueBox.speaker.text)]
+		var idx
+		if Utils.char_dict.keys().find(str($FixedDialoguePosition/DialogueBox.speaker.text)) != -1:
+			idx = Utils.char_dict[str($FixedDialoguePosition/DialogueBox.speaker.text)]
+		else:
+			#Its the main character
+			idx = Utils.char_dict["Main"]
 		$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
-
-
+	
 func _on_dialogue_box_dialogue_signal(value):
 	if value == "BarryRun":
 		moving = true
@@ -200,5 +215,5 @@ func _on_dialogue_box_dialogue_signal(value):
 			elif GameData.day == 2:
 				Utils.remove_from_inventory("WaterBottle", 1)
 			elif GameData.day == 3:
-				Utils.remove_from_inventory("Rock", 3)
+				Utils.remove_from_inventory("TinCan", 3)
 			GameData.NPCgiveNoMore = true

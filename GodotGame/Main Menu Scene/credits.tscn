@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://2vxriurgfcvm"]
+[gd_scene load_steps=8 format=3 uid="uid://2vxriurgfcvm"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Credits.gd" id="1_gd7d2"]
+[ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_ybfc2"]
+[ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="3_kfxe5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xobb7"]
+texture = ExtResource("2_ybfc2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mhl5q"]
+texture = ExtResource("2_ybfc2")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_acikf"]
+texture = ExtResource("3_kfxe5")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uw4bs"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -34,3 +49,39 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="BackMain" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -159.0
+offset_top = -156.0
+offset_right = -19.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_xobb7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mhl5q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_acikf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uw4bs")
+text = "Skip"
+
+[connection signal="pressed" from="BackMain" to="." method="_on_back_main_pressed"]

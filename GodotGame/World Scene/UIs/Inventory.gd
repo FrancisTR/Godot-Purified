@@ -33,25 +33,31 @@ func _process(delta):
 		
 		#Add to the list based on the requirements
 		if (GameData.QMain == true):
-			$TODOlist/ItemR.text = "6 Twigs"
+			$TODOlist/ItemR.text = "Request from Antonio"
+			$TODOlist/ItemR/ItemNeeded.text = "Need 6 Twigs"
 		if (GameData.QWild == true):
-			$TODOlist/ItemR2.text = "WaterBottle: Need "+str(GameData.inventory_requirement["WaterBottle"])
+			$TODOlist/ItemR2.text = "Request from the Kids"
+			$TODOlist/ItemR2/ItemNeeded2.text = "Create "+str(GameData.inventory_requirement["WaterBottle"])+" Water Bottle"
 	elif GameData.day == 2:
 		GameData.inventory_requirement = {"BoilingPot": "1"}
 		
 		#Add to the list based on the requirements
 		if (GameData.QMain == true):
-			$TODOlist/ItemR.text = "1 Water Bottle"
+			$TODOlist/ItemR.text = "Request from Barry"
+			$TODOlist/ItemR/ItemNeeded.text = "Need 1 Water Bottle"
 		if (GameData.QWild == true):
-			$TODOlist/ItemR2.text = "BoilingPot: Need "+str(GameData.inventory_requirement["BoilingPot"])
+			$TODOlist/ItemR2.text = "Request from the Kids"
+			$TODOlist/ItemR2/ItemNeeded2.text = "Create "+str(GameData.inventory_requirement["BoilingPot"])+" Boiling Pot"
 	elif GameData.day == 3:
 		GameData.inventory_requirement = {"WaterFilter": "1"}
 		
 		#Add to the list based on the requirements
 		if (GameData.QMain == true):
-			$TODOlist/ItemR.text = "3 Rocks"
+			$TODOlist/ItemR.text = "Request from Antonio"
+			$TODOlist/ItemR/ItemNeeded.text = "Need 3 Tin Cans"
 		if (GameData.QWild == true):
-			$TODOlist/ItemR2.text = "WaterFilter: Need "+str(GameData.inventory_requirement["WaterFilter"])
+			$TODOlist/ItemR2.text = "Request from the Kids"
+			$TODOlist/ItemR2/ItemNeeded2.text = "Need "+str(GameData.inventory_requirement["WaterFilter"])+" Water Filter"
 
 
 

@@ -8,6 +8,9 @@ func _ready():
 		if TextTransitionData.enable_timer:
 			$Timer.wait_time = TextTransitionData.duration
 			$Timer.start()
+			
+	SoundControl.stop_playing()
+	
 
 func prepped(nodes):
 	for node in nodes:
