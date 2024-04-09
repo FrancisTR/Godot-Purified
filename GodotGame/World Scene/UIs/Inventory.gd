@@ -37,7 +37,7 @@ func _process(delta):
 			$TODOlist/ItemR/ItemNeeded.text = "Need 6 Twigs"
 		if (GameData.QWild == true):
 			$TODOlist/ItemR2.text = "Request from the Kids"
-			$TODOlist/ItemR2/ItemNeeded2.text = "Create "+str(GameData.inventory_requirement["WaterBottle"])+" Water Bottle"
+			$TODOlist/ItemR2/ItemNeeded2.text = "Need "+str(GameData.inventory_requirement["WaterBottle"])+" Water Bottle"
 	elif GameData.day == 2:
 		GameData.inventory_requirement = {"BoilingPot": "1"}
 		

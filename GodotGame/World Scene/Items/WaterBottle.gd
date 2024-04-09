@@ -28,6 +28,10 @@ func _on_body_entered(body):
 		# Twig for dialogue
 		GameData.itemDialogue[2]["Value"] = GameData.itemDialogue[2]["Value"] + 1
 		
+		#Unique if this is picked up on day 1
+		if GameData.day == 1: #First quest
+			GameData.questComplete["Wild"] = true
+		
 		queue_free()
 		Utils.add_to_inventory("WaterBottle", 1)
 		getTexture()

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dg2w5uxjqg6e7" path="res://Assets/UISprites/UI_Flat_Cross_Large.png" id="4_wkuso"]
 
 [node name="Inventory" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -22,6 +23,7 @@ scale = Vector2(1.6, 1.6)
 script = ExtResource("1_bxwgv")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = -211.25
 offset_top = -170.0
@@ -35,6 +37,7 @@ layout_mode = 2
 texture = ExtResource("1_v31nw")
 
 [node name="TODOlist" type="Control" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 0
 offset_left = -428.125
