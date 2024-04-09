@@ -763,9 +763,9 @@ texture_filter = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -222.0
+offset_left = -227.0
 offset_top = 25.0
-offset_right = -82.0
+offset_right = -87.0
 offset_bottom = 102.0
 grow_horizontal = 0
 scale = Vector2(1.5, 1.5)
@@ -830,6 +830,9 @@ position = Vector2(1919, 508)
 
 [node name="Bargin" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(1332, -81)
+
+[node name="DialogueBox" parent="NPCs/Bargin/FixedDialoguePosition" index="2"]
+visible = false
 
 [node name="Marker2D" parent="NPCs/Bargin/NPCActions/BarryDestination" index="0"]
 position = Vector2(1441, -504)

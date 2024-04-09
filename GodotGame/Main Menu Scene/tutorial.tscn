@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cv86rq1ed4u3"]
+[gd_scene load_steps=22 format=3 uid="uid://cv86rq1ed4u3"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Tutorial.gd" id="1_68151"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_i2pyw"]
@@ -63,6 +63,19 @@ script = ExtResource("4_akm0h")
 [sub_resource type="RichTextEffect" id="RichTextEffect_uc7ri"]
 script = ExtResource("5_aeqdw")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n3t53"]
+texture = ExtResource("2_i2pyw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ap3as"]
+texture = ExtResource("2_i2pyw")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43lnx"]
+texture = ExtResource("3_q13l2")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_or10c"]
+
 [node name="Tutorial" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -101,10 +114,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -500.0
-offset_top = -231.0
-offset_right = 500.0
-offset_bottom = -29.0
+offset_left = -476.0
+offset_top = -275.0
+offset_right = 477.0
+offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_na2ws")
@@ -114,6 +127,33 @@ dialogue_data = ExtResource("3_tu0uu")
 start_id = "Tutorial"
 hide_portrait = true
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a5mn1"), SubResource("RichTextEffect_uc7ri")])
+
+[node name="Voice" type="Button" parent="Dialogue"]
+z_index = 999
+texture_filter = 1
+offset_left = 101.0
+offset_top = 544.0
+offset_right = 171.0
+offset_bottom = 614.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_n3t53")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ap3as")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_43lnx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_or10c")
+text = "🔊"
 
 [node name="NPCexample" type="TextureRect" parent="."]
 visible = false
@@ -155,5 +195,6 @@ visible = false
 
 [connection signal="dialogue_proceeded" from="Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_proceeded"]
 [connection signal="dialogue_signal" from="Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]
+[connection signal="pressed" from="Dialogue/Voice" to="." method="_on_voice_pressed"]
 
 [editable path="Controls"]

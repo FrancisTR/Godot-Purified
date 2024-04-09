@@ -35,11 +35,14 @@ func _process(delta):
 	#TODO: Barry gone if he was gone before
 	if (GameData.barryDespawned == true):
 		$"../Bargin".position = Vector2(999999999, 999999999)
+	
 
 	#Appear the game username in dialogue (Only Appears in NPC interaction)
 	Utils.character_list.characters[0].name = GameData.username
-	
-	
+	if (dialogue_box.running):
+		if ($FixedDialoguePosition/DialogueBox.speaker.text == GameData.username):
+			$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[0].image
+
 	#Set the variables of the people that already talked to
 	#This prevents a reset if the player visited the wilderness and comes back
 	dialogue_box.variables["QMain"] = GameData.QMain
@@ -128,13 +131,19 @@ func _process(delta):
 				if GameData.villagersTalked[i]["Name"] == NPCname:
 					GameData.villagersTalked[i]["Talked"] = true
 			
+			$FixedDialoguePosition/AnimationPlayer.play("Dialogue_popup")
 			dialogue_box.start()
+			
+			$FixedDialoguePosition/DialogueOpacity.visible = true
 			print(dialogue_box)
 	elif not dialogue_box.running and enterBody == true:
 		GameData.charLock = false
 		if GameData.current_ui == "dialogue":
 			GameData.current_ui = ""
-
+			$FixedDialoguePosition/DialogueOpacity.visible = false
+			$FixedDialoguePosition/CharacterIMG.texture = null
+			$FixedDialoguePosition/Voice.visible = false
+			
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
 		$PressForDialogue.visible = true
@@ -187,6 +196,7 @@ func _on_dialogue_box_dialogue_ended():
 	
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
+	#TODO: Stop the voice recording if node proceeds
 	
 	SoundControl.is_playing_sound("button")
 	
@@ -217,3 +227,13 @@ func _on_dialogue_box_dialogue_signal(value):
 			elif GameData.day == 3:
 				Utils.remove_from_inventory("TinCan", 3)
 			GameData.NPCgiveNoMore = true
+
+
+func _on_animation_player_animation_finished(anim_name):
+	$FixedDialoguePosition/Voice.visible = true
+	pass # Replace with function body.
+
+
+func _on_voice_pressed():
+	print("Play Voice Recording")
+	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://er7rlhv6rpvh"]
+[gd_scene load_steps=22 format=3 uid="uid://er7rlhv6rpvh"]
 
 [ext_resource type="Script" path="res://World Scene/characters/Kidsnpc.gd" id="1_o8im2"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_11oe8"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="7_m0hip"]
 [ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="8_t4rsh"]
 [ext_resource type="Texture2D" uid="uid://dw04cpaod6bun" path="res://Assets/Custom/temp_frog_icon.png" id="9_br5nv"]
+[ext_resource type="Texture2D" uid="uid://dyqj26prpkdqw" path="res://Assets/UISprites/UI_Flat_Frame_02_Lite.png" id="9_ubs7h"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxqgd"]
 texture = ExtResource("2_11oe8")
@@ -80,6 +81,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bc547"]
 size = Vector2(34, 37)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e5vda"]
+texture = ExtResource("9_ubs7h")
+
 [node name="KidsNPC" type="Area2D"]
 z_index = 101
 texture_filter = 1
@@ -137,9 +141,11 @@ visible = false
 z_index = 100
 texture_filter = 1
 offset_left = -18.0
-offset_top = -44.0
+offset_top = -46.0
 offset_right = 10.0
-offset_bottom = -21.0
+offset_bottom = -20.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_e5vda")
 text = "Q"
 horizontal_alignment = 1
 
