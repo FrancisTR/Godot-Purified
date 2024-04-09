@@ -79,6 +79,7 @@ func get_all_actions() -> Array[String]:
 
 func get_keymap_name(action_name: String) -> String:
 	var tmp = InputMap.action_get_events(action_name)[0].as_text()
+	
 	tmp = tmp.split(" ")
 	var text_tmp: String
 	#if tmp[-1] == "(Physical)":

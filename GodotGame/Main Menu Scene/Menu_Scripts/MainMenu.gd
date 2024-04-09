@@ -1,4 +1,4 @@
-extends Control # Originally Node2D; probably will conflict
+extends Control
 
 
 ## Called when the node enters the scene tree for the first time.
@@ -58,7 +58,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	SoundControl.is_playing_theme("main")
-	pass
 
 
 func _on_exit_button_pressed():
@@ -69,6 +68,7 @@ func _on_exit_button_pressed():
 func _on_start_button_pressed():
 	# If first time, go to tutorial
 	SoundControl.is_playing_sound("button")
+	
 	if (GameData.visitTutorial == false):
 		TextTransition.set_to_chained_timed(
 			[
