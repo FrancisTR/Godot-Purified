@@ -16,7 +16,7 @@ var PressForDialogue_was_opened = false
 func _ready():
 	NPCname = null
 	set_process_input(true)
-	
+	$PressForDialogue.text = InputMap.action_get_events("StartDialogue")[0].as_text()
 	
 func go_pos(delta):
 	if moving:

@@ -34,6 +34,8 @@ func _ready():
 	$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
 	#SceneTransition.manual_fade.connect(go_to_next_day)
 	$UI/Day.text = "Day " + str(GameData.day)
+	#$NPCs/PressForDialogue.text = "s"
+	#$NPC/PressForDialogue.text = "s"
 	for i in range(0, len(npcs)):
 		var day = GameData.day
 		if GameData.day > 10:
