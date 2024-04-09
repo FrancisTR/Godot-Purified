@@ -6,6 +6,7 @@ extends CanvasLayer
 func _ready():
 	#line_edit.grab_focus()
 	$BackButton.grab_focus()
+	
 	if GameData.username != "":
 		$background.texture = load("res://Assets/UISprites/UI_Flat_Slot_01_Unavailable.png")
 	else:
