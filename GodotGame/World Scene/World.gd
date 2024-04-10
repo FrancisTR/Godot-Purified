@@ -151,12 +151,19 @@ func _on_open_map():
 	$Other/CharacterBody2D.show_map_icon()
 	$"Map/The Wilderness".show()
 	$"Map/Village Exit".show()
-	for i in range(0, len(npcs)):
-		npcs[i].show_map_icon()
+	#for i in range(0, len(npcs)):
+		#npcs[i].show_map_icon()
+	for npc in npcs:
+		npc.show_map_icon()
+		if not GameData.villagersTalked[GameData.villagersIndex[npc.name]].Talked:
+			npc.show_notif("exclamation")
 		
 func _on_close_map():
 	$Other/CharacterBody2D.hide_map_icon()
 	$"Map/The Wilderness".hide()
 	$"Map/Village Exit".hide()
-	for i in range(0, len(npcs)):
-		npcs[i].hide_map_icon()
+	for npc in npcs:
+		npc.hide_map_icon()
+		npc.hide_notif()
+	#for i in range(0, len(npcs)):
+		#npcs[i].hide_map_icon()
