@@ -8,7 +8,7 @@ signal close_map
 var isMoving = false
 var inventory_opened = false
 var map_opened = false
-var last_recorded_inventory_amount:Dictionary
+#var last_recorded_inventory_amount:Dictionary
 
 const SPEED = 169.0
 
@@ -22,11 +22,11 @@ var characterDirection = 0
 
 func _physics_process(delta):
 	#created so that it only draws items once each time
-	if last_recorded_inventory_amount != GameData.inventory_amount:
-		print("last_recorded_inventory_amount != GameData.inventory_amount")
-		last_recorded_inventory_amount = GameData.inventory_amount.duplicate()
-		$"Inventory Layer/Inventory".draw_items(GameData.inventory)
-		print("a-relinked")
+	#if last_recorded_inventory_amount != GameData.inventory_amount:
+		#print("last_recorded_inventory_amount != GameData.inventory_amount")
+		#last_recorded_inventory_amount = GameData.inventory_amount.duplicate()
+		#$"Inventory Layer/Inventory".draw_items(GameData.inventory)
+		#print("a-relinked")
 		
 	
 		#Animation
@@ -122,7 +122,10 @@ func _physics_process(delta):
 			print("pressed E")
 			$"Inventory Layer/Inventory".draw_items(GameData.inventory)
 		elif Input.is_action_just_pressed("Back"):
-			get_tree().change_scene_to_file("res://Main Menu Scene/Options.tscn")
+			if GameData.current_ui != "options" && GameData.current_ui != "":
+				return
+			Utils.go_to_option_menu(get_tree().current_scene.scene_file_path, self.position)
+			GameData.current_ui = "options"
 		
 		velocity = velocity.normalized() * SPEED
 		move_and_slide()
