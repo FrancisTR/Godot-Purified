@@ -18,7 +18,9 @@ var charLock = false
 var barryDespawned = false
 
 var current_ui = ""
-
+var current_scene = ""
+var save_position = false
+var player_position
 
 var visitTutorial = false
 var visitedWilderness = false

@@ -14,15 +14,19 @@ func _ready():
 
 func _process(delta):
 	SoundControl.is_playing_theme("main")
+	if Input.is_action_just_pressed("Back") && get_tree().current_scene == self:
+		_leave_options_menu()
 
 func _on_back_button_pressed():
 	SoundControl.is_playing_sound("button")
+	_leave_options_menu()
+		
+func _leave_options_menu():
 	if GameData.username != "":
-		SceneTransition.change_scene("res://World Scene/World.tscn")
+		Utils.return_to_current_scene()
 	else:
 		SceneTransition.change_scene("res://Main Menu Scene/MainMenu.tscn")
-	
-
+	GameData.current_ui = ""
 
 # Related script: VolumeOptions.gd
 

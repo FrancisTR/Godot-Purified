@@ -14,6 +14,9 @@ func _ready():
 	#TODO: Make inventory system into its own scene w/ graphics
 	$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
 	#SceneTransition.manual_fade.connect(go_to_next_day)
+	if GameData.save_position:
+		$Other/CharacterBody2D.position = GameData.player_position
+		GameData.save_position = false
 	$UI/Day.text = "Day " + str(GameData.day)
 	var day = GameData.day
 	if GameData.day > 10:
