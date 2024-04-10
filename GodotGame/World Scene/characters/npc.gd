@@ -13,6 +13,9 @@ var enterBody = false
 var NPCname = null
 var PressForDialogue_was_opened = false
 
+var exclamation = load("res://Assets/Custom/UI_Exclamation_Mark_Plate.png")
+var question = load("res://Assets/Custom/UI_Question_Mark_Plate.png")
+
 func _ready():
 	NPCname = null
 	set_process_input(true)
@@ -181,8 +184,15 @@ func hide_map_icon():
 		$PressForDialogue.show()
 		PressForDialogue_was_opened = false
 
+func show_notif(type):
+	if type == "question":
+		$Notif.texture = question
+	else:
+		$Notif.texture = exclamation
+	$Notif.show()
 
-
+func hide_notif():
+	$Notif.hide()
 
 func _on_dialogue_box_dialogue_ended():
 	

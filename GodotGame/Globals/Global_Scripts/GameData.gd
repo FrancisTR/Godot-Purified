@@ -58,6 +58,16 @@ var itemDialogue = [
 	}
 ]
 
+var villagersIndex = {
+	"Accept": 0,
+	"Anger": 1,
+	"Bargin": 2,
+	"Croak": 3,
+	"Denial": 4,
+	"Depress": 5,
+	"OldMan": 6,
+}
+
 var villagersTalked = [
 	{
 		"Name": "Accept",
