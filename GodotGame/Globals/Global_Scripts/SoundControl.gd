@@ -8,11 +8,6 @@ var dialogue_sound = preload("res://Sounds_and_Music/DialogueSound.wav")
 var pickupItem_sound = preload("res://Sounds_and_Music/pickupItem.wav")
 var crafted_sound = preload("res://Sounds_and_Music/Crafted_Achieve.wav")
 
-#Music and sound. We store the values
-#TODO: Not used atm
-var SfxMusic_fixed = false
-var SfxMusicVal = [100, 100]
-
 #This func is called in the _process
 func is_playing_theme(theme):
 	if (!$Background.is_playing()):

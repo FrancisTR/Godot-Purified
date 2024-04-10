@@ -8,7 +8,7 @@ signal close_map
 var isMoving = false
 var inventory_opened = false
 var map_opened = false
-var last_recorded_inventory_amount:Dictionary
+#var last_recorded_inventory_amount:Dictionary
 
 const SPEED = 169.0
 
@@ -22,11 +22,11 @@ var characterDirection = 0
 
 func _physics_process(delta):
 	#created so that it only draws items once each time
-	if last_recorded_inventory_amount != GameData.inventory_amount:
-		print("last_recorded_inventory_amount != GameData.inventory_amount")
-		last_recorded_inventory_amount = GameData.inventory_amount.duplicate()
-		$"Inventory Layer/Inventory".draw_items(GameData.inventory)
-		print("a-relinked")
+	#if last_recorded_inventory_amount != GameData.inventory_amount:
+		#print("last_recorded_inventory_amount != GameData.inventory_amount")
+		#last_recorded_inventory_amount = GameData.inventory_amount.duplicate()
+		#$"Inventory Layer/Inventory".draw_items(GameData.inventory)
+		#print("a-relinked")
 		
 	
 		#Animation
