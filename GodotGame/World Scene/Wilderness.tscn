@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cjie6scx7ovoa" path="res://World Scene/Transitions/to_village.tscn" id="11_fw73a"]
 [ext_resource type="PackedScene" uid="uid://0nmlup6yvr84" path="res://World Scene/UIs/crafting_table.tscn" id="12_hu71a"]
 [ext_resource type="PackedScene" uid="uid://dg42ftacgko3o" path="res://World Scene/Items/TinCan.tscn" id="14_hv5vl"]
-[ext_resource type="PackedScene" uid="uid://cllg5b804pc0j" path="res://World Scene/Items/Twig.tscn" id="15_38p05"]
+[ext_resource type="PackedScene" uid="uid://cllg5b804pc0j" path="res://World Scene/Items/twig.tscn" id="15_38p05"]
 [ext_resource type="PackedScene" uid="uid://b01hucoucf7fr" path="res://World Scene/Items/WaterBottle.tscn" id="17_kbm4u"]
 [ext_resource type="PackedScene" uid="uid://bnu20bxninf0u" path="res://World Scene/Items/Moss.tscn" id="18_anmg7"]
 [ext_resource type="PackedScene" uid="uid://diui2nk1yp3cq" path="res://World Scene/Items/rock.tscn" id="19_1h74x"]
