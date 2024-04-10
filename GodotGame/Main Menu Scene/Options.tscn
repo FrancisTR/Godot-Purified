@@ -543,7 +543,7 @@ offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
-text = "100
+text = "100%
 "
 
 [node name="SFXVolumeLabel" type="RichTextLabel" parent="SfxSlider"]
@@ -590,8 +590,7 @@ offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
-text = "100
-"
+text = "100%"
 
 [node name="SFXVolumeLabel" type="RichTextLabel" parent="MusicSlider"]
 texture_filter = 1
