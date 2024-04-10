@@ -1,18 +1,18 @@
-[gd_scene load_steps=22 format=3 uid="uid://er7rlhv6rpvh"]
+[gd_scene load_steps=29 format=3 uid="uid://dxg6ebn820xt1"]
 
-[ext_resource type="Script" path="res://World Scene/characters/Kidsnpc.gd" id="1_o8im2"]
-[ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_11oe8"]
-[ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="3_ayov3"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="4_ao48n"]
-[ext_resource type="Resource" uid="uid://cku6yalipw20o" path="res://Dialogues/Wilderness.tres" id="5_150bx"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="6_vc6yi"]
-[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="7_m0hip"]
-[ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="8_t4rsh"]
-[ext_resource type="Texture2D" uid="uid://dw04cpaod6bun" path="res://Assets/Custom/temp_frog_icon.png" id="9_br5nv"]
-[ext_resource type="Texture2D" uid="uid://dyqj26prpkdqw" path="res://Assets/UISprites/UI_Flat_Frame_02_Lite.png" id="9_ubs7h"]
+[ext_resource type="Script" path="res://World Scene/characters/Kidsnpc.gd" id="1_p5sut"]
+[ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_o6to7"]
+[ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="3_13xde"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="4_wunlb"]
+[ext_resource type="Resource" uid="uid://cku6yalipw20o" path="res://Dialogues/Wilderness.tres" id="5_qmyqf"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="6_em8tp"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="7_yxtd2"]
+[ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="8_7oq4u"]
+[ext_resource type="Texture2D" uid="uid://dyqj26prpkdqw" path="res://Assets/UISprites/UI_Flat_Frame_02_Lite.png" id="9_ce37l"]
+[ext_resource type="Texture2D" uid="uid://dw04cpaod6bun" path="res://Assets/Custom/temp_frog_icon.png" id="10_emek8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxqgd"]
-texture = ExtResource("2_11oe8")
+texture = ExtResource("2_o6to7")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
 texture_margin_right = 20.0
@@ -20,7 +20,7 @@ texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s7508"]
-texture = ExtResource("2_11oe8")
+texture = ExtResource("2_o6to7")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
 texture_margin_right = 20.0
@@ -28,7 +28,7 @@ texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m2aul"]
-texture = ExtResource("3_ayov3")
+texture = ExtResource("3_13xde")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
 texture_margin_right = 20.0
@@ -58,13 +58,74 @@ expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_66oxl"]
-script = ExtResource("6_vc6yi")
+script = ExtResource("6_em8tp")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_emjeb"]
-script = ExtResource("7_m0hip")
+script = ExtResource("7_yxtd2")
+
+[sub_resource type="Animation" id="Animation_whxkr"]
+resource_name = "Dialogue_popup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueBox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(100, 679), Vector2(100, 373)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogueBox:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jmis8"]
+resource_name = "Voice"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Voice:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cf31b"]
+_data = {
+"Dialogue_popup": SubResource("Animation_whxkr"),
+"Voice": SubResource("Animation_jmis8")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_50wid"]
+texture = ExtResource("2_o6to7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d32tf"]
+texture = ExtResource("2_o6to7")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_np7a1"]
+texture = ExtResource("3_13xde")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lj5br"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6cu33"]
-atlas = ExtResource("8_t4rsh")
+atlas = ExtResource("8_7oq4u")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bxftl"]
@@ -81,17 +142,27 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bc547"]
 size = Vector2(34, 37)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e5vda"]
-texture = ExtResource("9_ubs7h")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gxj27"]
+texture = ExtResource("9_ce37l")
 
 [node name="KidsNPC" type="Area2D"]
 z_index = 101
 texture_filter = 1
-script = ExtResource("1_o8im2")
+script = ExtResource("1_p5sut")
 
 [node name="FixedDialoguePosition" type="CanvasLayer" parent="."]
 
+[node name="DialogueOpacity" type="ColorRect" parent="FixedDialoguePosition"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.0862745)
+
 [node name="CharacterIMG" type="TextureRect" parent="FixedDialoguePosition"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -103,6 +174,7 @@ offset_right = -167.0
 offset_bottom = 348.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
 
 [node name="DialogueBox" type="Panel" parent="FixedDialoguePosition"]
 visible = false
@@ -114,18 +186,52 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -406.0
-offset_top = -197.0
-offset_right = 406.0
-offset_bottom = -19.0
+offset_left = -476.0
+offset_top = -275.0
+offset_right = 477.0
+offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_q0h0h")
 theme_override_styles/panel = SubResource("StyleBoxFlat_3d61p")
-script = ExtResource("4_ao48n")
-dialogue_data = ExtResource("5_150bx")
+script = ExtResource("4_wunlb")
+dialogue_data = ExtResource("5_qmyqf")
 hide_portrait = true
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_66oxl"), SubResource("RichTextEffect_emjeb")])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FixedDialoguePosition"]
+libraries = {
+"": SubResource("AnimationLibrary_cf31b")
+}
+speed_scale = 2.5
+
+[node name="Voice" type="Button" parent="FixedDialoguePosition"]
+visible = false
+z_index = 999
+texture_filter = 1
+offset_left = 101.0
+offset_top = 544.0
+offset_right = 171.0
+offset_bottom = 614.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_50wid")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d32tf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_np7a1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lj5br")
+text = "🔊"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -145,12 +251,15 @@ offset_top = -46.0
 offset_right = 10.0
 offset_bottom = -20.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_e5vda")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gxj27")
 text = "Q"
 horizontal_alignment = 1
 
 [node name="MapIcon" type="TextureRect" parent="."]
 visible = false
+z_index = 999
+y_sort_enabled = true
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -165,10 +274,18 @@ grow_vertical = 2
 scale = Vector2(4, 4)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("9_br5nv")
+texture = ExtResource("10_emek8")
+
+[node name="NPCActions" type="Node" parent="."]
+
+[node name="BarryDestination" type="Node" parent="NPCActions"]
+
+[node name="Marker2D" type="Marker2D" parent="NPCActions/BarryDestination"]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="dialogue_ended" from="FixedDialoguePosition/DialogueBox" to="." method="_on_dialogue_box_dialogue_ended"]
 [connection signal="dialogue_proceeded" from="FixedDialoguePosition/DialogueBox" to="." method="_on_dialogue_box_dialogue_proceeded"]
 [connection signal="dialogue_signal" from="FixedDialoguePosition/DialogueBox" to="." method="_on_dialogue_box_dialogue_signal"]
+[connection signal="animation_finished" from="FixedDialoguePosition/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="FixedDialoguePosition/Voice" to="." method="_on_voice_pressed"]

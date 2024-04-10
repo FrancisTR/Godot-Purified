@@ -5,25 +5,62 @@ extends Control
 func _ready():
 	
 	#Reset global values
-	GameData.day = 1
+	var day:int = 1
 
-	GameData.twigItem = 0
+	var username = ""
 
-	GameData.username = ""
+	var inventory:Array
 
-	GameData.charLock = false
+	var inventory_amount:Dictionary
 
+	#What is required to go to the next day
+	var inventory_requirement:Dictionary
 
-	GameData.visitedWilderness = false
+	var charLock = false
+	var barryDespawned = false
+
+	var current_ui = ""
+	var current_scene = ""
+	var save_position = false
+	var player_position
+
+	var visitTutorial = false
+	var visitedWilderness = false
 
 	#Spawn the item once in the wilderness. Prevents duplication
-	GameData.itemSpawnOnce = false
+	var itemSpawnOnce = false
 
 
 
+	#Dialogue related stuff
+	var QMain = false
+	var QWild = false
+	var madeProfit = false
+	var NPCgiveNoMore = false #Give items once and not dup
+	#Quest is finished
+	var questComplete = {"Main": false, "Wild": false}
 
+	#TODO Add more if needed to stack of the items needed for NPC
+	var itemDialogue = [
+		{
+			"Name": "Twigs",
+			"Value": 0
+		},
+		{
+			"Name": "Rocks",
+			"Value": 0
+		},
+		{
+			"Name": "WaterBottle",
+			"Value": 0
+		},
+		{
+			"Name": "TinCans",
+			"Value": 0
+		}
+	]
 
-	GameData.villagersTalked = [
+	var villagersTalked = [
 		{
 			"Name": "Accept",
 			"Talked": false

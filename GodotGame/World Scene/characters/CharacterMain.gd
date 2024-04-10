@@ -14,7 +14,6 @@ const SPEED = 169.0
 
 func _ready():
 	$Camera2D.make_current()
-	$Label.text = GameData.username
 
 # Character direction
 # 0 is up, 1 is down, 2 is right, 3 is left
@@ -151,10 +150,10 @@ func _on_footstep_audio_finished():
 
 func show_map_icon():
 	$MapIcon.show()
-	$Label.show()
+	#$Label.show()
 	$Sprite2D.hide()
 	
 func hide_map_icon():
 	$Sprite2D.show()
 	$MapIcon.hide()
-	$Label.hide()
+	#$Label.hide()

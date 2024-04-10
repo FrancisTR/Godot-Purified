@@ -30,6 +30,7 @@ func _on_body_entered(body):
 		
 		#Unique if this is picked up on day 1
 		if GameData.day == 1: #First quest
+			GameData.QWild = true
 			GameData.questComplete["Wild"] = true
 		
 		queue_free()

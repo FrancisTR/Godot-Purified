@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://0nmlup6yvr84"]
+[gd_scene load_steps=22 format=3 uid="uid://0nmlup6yvr84"]
 
 [ext_resource type="Script" path="res://World Scene/UIs/crafting_table.gd" id="1_763sv"]
 [ext_resource type="Texture2D" uid="uid://bui61mchuqel4" path="res://Assets/Custom/CraftingTable.png" id="2_k6jcn"]
@@ -28,6 +28,19 @@ modulate_color = Color(0.364706, 0.364706, 0.364706, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s5qrj"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tnsm5"]
+texture = ExtResource("4_jad3i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vhkt7"]
+texture = ExtResource("4_jad3i")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jfnfr"]
+texture = ExtResource("5_msu3t")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cqujx"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0j3ki"]
 texture = ExtResource("4_jad3i")
 
@@ -55,21 +68,51 @@ shape = SubResource("RectangleShape2D_gh0p5")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 90.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CraftingList" type="CanvasLayer" parent="UI"]
+visible = false
+
+[node name="ShowItemCrafted" type="TextureRect" parent="UI/CraftingList"]
+texture_filter = 1
+offset_left = 653.0
+offset_top = 135.0
+offset_right = 1053.0
+offset_bottom = 535.0
+texture = ExtResource("7_7d5de")
+expand_mode = 1
+
+[node name="ItemHint" type="TextureRect" parent="UI/CraftingList/ShowItemCrafted"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
 
 [node name="ItemList" type="TextureRect" parent="UI/CraftingList"]
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 374.0
-offset_top = 60.0
-offset_right = -375.0
-offset_bottom = -135.0
+offset_left = 102.0
+offset_top = 106.0
+offset_right = -647.0
+offset_bottom = -89.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_6q8d2")
@@ -245,16 +288,13 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 
 [node name="CraftButton" type="Button" parent="UI/CraftingList"]
 texture_filter = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -104.0
-offset_top = -245.0
-offset_right = 104.0
-offset_bottom = -155.0
-grow_horizontal = 2
+offset_left = 199.0
+offset_top = -195.0
+offset_right = 407.0
+offset_bottom = -105.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -278,10 +318,28 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_s5qrj")
 text = "Craft Item"
 
 [node name="XButton" type="Button" parent="UI/CraftingList"]
-offset_left = 715.0
-offset_top = 72.0
-offset_right = 760.0
-offset_bottom = 114.0
+offset_left = 433.0
+offset_top = 118.0
+offset_right = 478.0
+offset_bottom = 160.0
+scale = Vector2(1.2, 1.2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_tnsm5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vhkt7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jfnfr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cqujx")
 text = "X"
 
 [node name="CraftedItem" type="CanvasLayer" parent="UI"]
