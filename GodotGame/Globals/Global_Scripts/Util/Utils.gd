@@ -64,7 +64,7 @@ func add_to_inventory(item, amount):
 	print("AMOUNT", GameData.inventory_amount)
 
 func remove_from_inventory(item, amount):
-	if(GameData.inventory_amount.has(item)):
+	if GameData.inventory_amount.has(item):
 		if GameData.inventory_amount[str(item)] - amount <= 0:
 			#GameData.inventory_amount[str(item)] = 0
 			GameData.inventory_amount.erase(str(item))
