@@ -1,7 +1,7 @@
 extends Node
-var mainAndGameTheme = preload("res://Sounds_and_Music/OST/Afternoon Tadpole.mp3")
+var afternoonTheme = preload("res://Sounds_and_Music/OST/Afternoon Tadpole.mp3")
 var croakTheme = preload("res://Sounds_and_Music/OST/Croak of the Fireflies.mp3")
-var WildTheme = preload("res://Sounds_and_Music/OST/Woodsy Labyrinth.mp3")
+var WoodsyTheme = preload("res://Sounds_and_Music/OST/Woodsy Labyrinth.mp3")
 
 var button_sound = preload("res://Sounds_and_Music/ButtonClick.wav")
 var dialogue_sound = preload("res://Sounds_and_Music/DialogueSound.wav")
@@ -12,11 +12,11 @@ var crafted_sound = preload("res://Sounds_and_Music/Crafted_Achieve.wav")
 func is_playing_theme(theme):
 	if (!$Background.is_playing()):
 		if theme == "main":
-			$Background.stream = mainAndGameTheme
+			$Background.stream = WoodsyTheme
 		elif theme == "croak":
 			$Background.stream = croakTheme
-		elif theme == "wild":
-			$Background.stream = WildTheme
+		elif theme == "afternoon":
+			$Background.stream = afternoonTheme
 			
 		$Background.play()
 

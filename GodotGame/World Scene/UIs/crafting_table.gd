@@ -35,6 +35,7 @@ func _ready():
 		listKeys = craftingList.keys()
 		listValues = craftingList.values()
 		ItemOfTheDay = "BoilingPot"
+		$UI/CraftingList/ShowItemCrafted/ItemHint.texture = load("res://Assets/Custom/Items/BoilingPotHidden.png")
 		itemImage = load("res://Assets/Custom/Items/BoilingPot.png")
 		pass
 	elif GameData.day == 3:
@@ -42,6 +43,7 @@ func _ready():
 		listKeys = craftingList.keys()
 		listValues = craftingList.values()
 		ItemOfTheDay = "WaterFilter"
+		$UI/CraftingList/ShowItemCrafted/ItemHint.texture = load("res://Assets/Custom/Items/WaterFilterHidden.png")
 		itemImage = load("res://Assets/Custom/Items/WaterFilter.png")
 		pass
 		

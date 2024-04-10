@@ -48,7 +48,12 @@ func _on_dialogue_box_dialogue_signal(value):
 		
 	elif (value == "DialogueControl"):
 		$NPCexample.visible = true
+	
+	
+	elif (value == "Town"):
+		$Map.visible = true
 		
+	
 	elif (value == "Done"):
 		GameData.visitTutorial = true
 		
@@ -57,14 +62,17 @@ func _on_dialogue_box_dialogue_signal(value):
 				"You then enter the village, excited for the opportunity to make profit."
 			],
 			"res://World Scene/World.tscn",
-			3,
+			3.3,
 			""
 		)
 		SceneTransition.change_scene("res://Globals/text_transition.tscn")
 	else:
 		$Controls.visible = false
 		$NPCexample.visible = false
-	pass # Replace with function body.
+		$Map.visible = false
+
+
+
 
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
@@ -76,6 +84,12 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 		$CharacterIMG.texture = Utils.character_list.characters[idx].image
 
 
+
 func _on_voice_pressed():
 	print("Play Audio")
+	pass # Replace with function body.
+
+
+func _on_dialogue_box_dialogue_ended():
+	$Dialogue/Voice.visible = false
 	pass # Replace with function body.

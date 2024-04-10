@@ -11,17 +11,17 @@ starts = {
 nodes = {
 "0_1": {
 "link": &"1_1",
-"offset": Vector2(-620, -20),
+"offset": Vector2(-1040, -120),
 "start_id": "Tutorial"
 },
 "0_2": {
 "link": &"1_4",
-"offset": Vector2(-1440, 440),
+"offset": Vector2(-1560, 740),
 "start_id": "Tutorial2"
 },
 "1_1": {
-"dialogue": "Oh..Hello! (Sigh...another boring day)",
-"offset": Vector2(-80, -120),
+"dialogue": "Oh..hello....",
+"offset": Vector2(-560, -240),
 "options": {
 0: {
 "condition": {},
@@ -138,7 +138,7 @@ nodes = {
 },
 "1_18": {
 "dialogue": "Uhhhhh...What is your name then? (I hate this so much)",
-"offset": Vector2(-580, 860),
+"offset": Vector2(-800, 1160),
 "options": {
 0: {
 "condition": {},
@@ -151,7 +151,7 @@ nodes = {
 },
 "1_2": {
 "dialogue": "Welcome to your first day at work.",
-"offset": Vector2(293.076, -123.165),
+"offset": Vector2(-200, -240),
 "options": {
 0: {
 "condition": {},
@@ -163,8 +163,8 @@ nodes = {
 "speaker": 1
 },
 "1_3": {
-"dialogue": "Sigh...Remind me your name again?",
-"offset": Vector2(680, -120),
+"dialogue": "...Remind me your name again?",
+"offset": Vector2(180, -240),
 "options": {
 0: {
 "condition": {},
@@ -176,12 +176,12 @@ nodes = {
 "speaker": 1
 },
 "1_4": {
-"dialogue": "So, your name is...\"{{Player}}\". Is that correct?",
-"offset": Vector2(-1020, 440),
+"dialogue": "So, your name is...\"{{Player}}\". I would assume that is correct?",
+"offset": Vector2(-1200, 740),
 "options": {
 0: {
 "condition": {},
-"link": &"1_5",
+"link": &"3_7",
 "text": "Yes"
 },
 1: {
@@ -195,11 +195,11 @@ nodes = {
 },
 "1_5": {
 "dialogue": "Okay buddy, this is the town you’ll be selling Toadable to as you can see here. Before I let you go and start selling, I just have one question for you.",
-"offset": Vector2(-280, 380),
+"offset": Vector2(-480, 680),
 "options": {
 0: {
 "condition": {},
-"link": &"1_6",
+"link": &"3_8",
 "text": ""
 }
 },
@@ -208,7 +208,7 @@ nodes = {
 },
 "1_6": {
 "dialogue": "Do you know what’s happening here?",
-"offset": Vector2(560, 380),
+"offset": Vector2(480, 380),
 "options": {
 0: {
 "condition": {},
@@ -265,7 +265,7 @@ nodes = {
 },
 "3_1": {
 "link": "END",
-"offset": Vector2(1040, -120),
+"offset": Vector2(540, 220),
 "signalValue": "EnterName"
 },
 "3_2": {
@@ -291,6 +291,16 @@ nodes = {
 "3_6": {
 "link": &"1_17",
 "offset": Vector2(4840, 1800),
+"signalValue": "Negate"
+},
+"3_7": {
+"link": &"1_5",
+"offset": Vector2(-760, 660),
+"signalValue": "Town"
+},
+"3_8": {
+"link": &"1_6",
+"offset": Vector2(120, 1040),
 "signalValue": "Negate"
 }
 }

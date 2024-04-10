@@ -9,19 +9,32 @@ var NPCname = null
 
 var PressForDialogue_was_opened = false
 
+
 func _ready():
 	NPCname = null
 	set_process_input(true)
+	$PressForDialogue.text = InputMap.action_get_events("StartDialogue")[0].as_text()
 
 
 
 # TODO: Map more ID's for dialogue for more days
 func _process(delta):
+	
+	#Appear the game username in dialogue (Only Appears in NPC interaction)
+	Utils.character_list.characters[0].name = GameData.username
+	if (dialogue_box.running):
+		if ($FixedDialoguePosition/DialogueBox.speaker.text == GameData.username):
+			$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[0].image
+			
+			
 	#Set the variables of the people that already talked to
 	#This prevents a reset if the player visited the wilderness and comes back
 	dialogue_box.variables["QWild"] = GameData.QWild
+	dialogue_box.variables["Profit?"] = GameData.madeProfit
 	for i in range(len(GameData.villagersTalked)):
 		dialogue_box.variables[GameData.villagersTalked[i]["Name"]] = GameData.villagersTalked[i]["Talked"]
+
+
 
 	# Who is the player talking?
 	#TODO: Add more Dialogue
@@ -54,12 +67,21 @@ func _process(delta):
 			
 			print(dialogue_box.variables)
 			
+			$FixedDialoguePosition/AnimationPlayer.play("Dialogue_popup")
 			dialogue_box.start()
+			$FixedDialoguePosition/CharacterIMG.visible = true
+			$FixedDialoguePosition/DialogueOpacity.visible = true
 			print(dialogue_box)
 	elif not dialogue_box.running and enterBody == true:
 		GameData.charLock = false
 		if GameData.current_ui == "dialogue":
 			GameData.current_ui = ""
+			$FixedDialoguePosition/DialogueOpacity.visible = false
+			$FixedDialoguePosition/CharacterIMG.texture = null
+			$FixedDialoguePosition/Voice.visible = false
+			$FixedDialoguePosition/CharacterIMG.visible = false
+
+
 
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
@@ -69,6 +91,9 @@ func _on_body_entered(body):
 	else:
 		NPCname = null
 		dialogue_box.start_id = ""
+
+
+
 
 
 func _on_body_exited(body):
@@ -82,6 +107,10 @@ func _on_body_exited(body):
 			GameData.charLock = false
 			dialogue_box.stop()
 		dialogue_box.start_id = ""
+		
+		
+		
+		
 		
 func show_map_icon():
 	$MapIcon.show()
@@ -106,17 +135,35 @@ func _on_dialogue_box_dialogue_ended():
 	#Quest stuff for the Main World
 	if (dialogue_box.variables["QWild"] == true):
 		GameData.QWild = true
-	pass # Replace with function body.
+	if (dialogue_box.variables["Profit?"] == true):
+		GameData.madeProfit = true
 	
 	
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
 	SoundControl.is_playing_sound("button")
+	
+	#TODO Fix cases where the username is the same as the NPCs
 	if $FixedDialoguePosition/DialogueBox.speaker.text != "":
-		var idx = Utils.char_dict[str($FixedDialoguePosition/DialogueBox.speaker.text)]
+		var idx
+		if Utils.char_dict.keys().find(str($FixedDialoguePosition/DialogueBox.speaker.text)) != -1:
+			idx = Utils.char_dict[str($FixedDialoguePosition/DialogueBox.speaker.text)]
+		else:
+			#Its the main character
+			idx = Utils.char_dict["Main"]
 		$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
+
 
 
 func _on_dialogue_box_dialogue_signal(value):
 	if value == "WildComplete":
 		GameData.questComplete["Wild"] = true
+
+
+func _on_animation_player_animation_finished(anim_name):
+	$FixedDialoguePosition/Voice.visible = true
+	pass # Replace with function body.
+
+func _on_voice_pressed():
+	print("Play Voice Recording")
+	pass # Replace with function body.
