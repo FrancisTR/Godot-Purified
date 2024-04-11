@@ -5,7 +5,7 @@ var day:int = 1
 
 var twigItem = 0
 
-var username = ""
+var username = "Francis"
 
 var inventory:Array
 
@@ -57,6 +57,8 @@ var itemDialogue = [
 		"Value": 0
 	}
 ]
+
+var QVillager = ""
 
 var villagersIndex = {
 	"Accept": 0,

@@ -155,8 +155,11 @@ func _on_open_map():
 		#npcs[i].show_map_icon()
 	for npc in npcs:
 		npc.show_map_icon()
+		print(npc.name, " vs ", GameData.QVillager)
 		if not GameData.villagersTalked[GameData.villagersIndex[npc.name]].Talked:
 			npc.show_notif("exclamation")
+		elif npc.name == GameData.QVillager and not GameData.questComplete["Main"]:
+			npc.show_notif("question")
 		
 func _on_close_map():
 	$Other/CharacterBody2D.hide_map_icon()
