@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://caurrpk58l40x"]
+[gd_scene load_steps=40 format=3 uid="uid://caurrpk58l40x"]
 
 [ext_resource type="Script" path="res://World Scene/Wilderness.gd" id="1_4k4yr"]
 [ext_resource type="PackedScene" uid="uid://crmshmhby6akr" path="res://World Scene/characters/CharacterMain.tscn" id="2_2eck0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cgwe5cdxpul0y" path="res://Assets/Custom/Terrain/Dirt_Path.png" id="3_yfla3"]
 [ext_resource type="Texture2D" uid="uid://bqwl7ha67y8uv" path="res://Assets/Tilesets/Fences.png" id="4_qjxmy"]
 [ext_resource type="Texture2D" uid="uid://ogkyr3wqmadc" path="res://Assets/Custom/Terrain/House.png" id="6_k1p8h"]
+[ext_resource type="Texture2D" uid="uid://ijxyc7rwq6y1" path="res://Assets/Custom/Terrain/Tree.png" id="7_86jxp"]
 [ext_resource type="Texture2D" uid="uid://cwunwkiyvw3yl" path="res://Assets/Objects/Basic_Grass_Biom_things.png" id="7_ye6fi"]
 [ext_resource type="Texture2D" uid="uid://c7qq0rsxbi34h" path="res://Assets/Custom/Terrain/murky_water.png" id="8_fr3f4"]
 [ext_resource type="Texture2D" uid="uid://buj8denvaa0cg" path="res://Assets/Objects/Wood_Bridge.png" id="9_ufycb"]
@@ -409,6 +410,101 @@ texture = ExtResource("6_k1p8h")
 6:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:4/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nu8y"]
+texture = ExtResource("7_86jxp")
+1:0/0 = 0
+1:0/0/z_index = 888
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/z_index = 888
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/z_index = 888
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/z_index = 888
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0 = 0
+5:0/0/z_index = 888
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0 = 0
+6:0/0/z_index = 888
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/z_index = 888
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/z_index = 888
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/z_index = 888
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/z_index = 888
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/z_index = 888
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0 = 0
+5:1/0/z_index = 888
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+6:1/0 = 0
+6:1/0/z_index = 888
+6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:1/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/z_index = 888
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -4.24264, -3.49134, -3.71231, 2.69584, 2.2981, 3.84489, 8, 8, 8, 8, 1.76777, 8, -0.795495)
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.552, -4.33103, -8, -4.24264, -8, 8, -0.662912, 8, -0.839689, 2.47487, -1.98874, -0.176777)
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.40816, -4.59619, 8, -8, 8, -2.74004, 8, 8, 0.309359, 8, 5.25911, 2.91682)
+5:2/0 = 0
+5:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:2/0/physics_layer_0/angular_velocity = 0.0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 1.72357, -8, -0.574524, -2.56326, 2.87262, 8, -8, 8)
+6:2/0 = 0
+6:2/0/z_index = 888
+6:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:2/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.13779, -8, 8, -8, 8, -4.875, -0.22097, -4.77297)
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.0441952, -8, -8, -8, -8, -4.875, 3.0494, -5.03814)
+4:3/0 = 0
+4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:3/0/physics_layer_0/angular_velocity = 0.0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.397747, -8, 8, -8, 8, -4.68458, -2.87262, -5.03814)
+5:3/0 = 0
+5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:3/0/physics_layer_0/angular_velocity = 0.0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3.31456, -8, 6.23138, -4.94975, -8, -4.86136)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gs5dw"]
 texture = ExtResource("7_ye6fi")
 0:0/0 = 0
@@ -539,6 +635,7 @@ texture = ExtResource("7_ye6fi")
 4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:4/0/physics_layer_0/angular_velocity = 0.0
 5:4/0 = 0
+5:4/0/z_index = -1
 5:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:4/0/physics_layer_0/angular_velocity = 0.0
 6:4/0 = 0
@@ -843,6 +940,7 @@ sources/4 = SubResource("TileSetAtlasSource_a7bfx")
 sources/5 = SubResource("TileSetAtlasSource_gfvmq")
 sources/6 = SubResource("TileSetAtlasSource_sra5n")
 sources/1 = SubResource("TileSetAtlasSource_0u3kl")
+sources/2 = SubResource("TileSetAtlasSource_4nu8y")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ja1gu"]
 texture = ExtResource("11_ns2vr")

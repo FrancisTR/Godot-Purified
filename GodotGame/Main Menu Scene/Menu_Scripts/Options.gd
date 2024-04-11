@@ -13,7 +13,16 @@ func _ready():
 		$background.texture = load("res://Assets/Custom/Terrain/murky_water.png")
 
 func _process(delta):
-	SoundControl.is_playing_theme("main")
+	
+	#TODO: Add theme song based on the day
+	if (GameData.username == ""):
+		SoundControl.is_playing_theme("main")
+	elif GameData.day <= 2:
+		SoundControl.is_playing_theme("afternoon")
+	elif GameData.day >= 3:
+		SoundControl.is_playing_theme("main")
+	
+	
 	if Input.is_action_just_pressed("Back") && get_tree().current_scene == self:
 		_leave_options_menu()
 
