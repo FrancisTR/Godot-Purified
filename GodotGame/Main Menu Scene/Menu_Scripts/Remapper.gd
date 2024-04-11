@@ -78,16 +78,19 @@ func get_all_actions() -> Array[String]:
 	return arr
 
 func get_keymap_name(action_name: String) -> String:
-	var tmp = InputMap.action_get_events(action_name)[0].as_text()
+	var tmp = InputMap.action_get_events(action_name)[0].as_text().split(" ")
 	
-	tmp = tmp.split(" ")
 	var text_tmp: String
-	#if tmp[-1] == "(Physical)":
-	for word in tmp:
-		#print(word)
-		if word != "(Physical)":
-			text_tmp = text_tmp + word
-		else:
-			text_tmp = text_tmp + "*"
-			
-	return " " + text_tmp + " "
+	var last_word: String
+	var last_i: int = tmp.size() - 1
+	
+	if tmp[last_i] == "(Physical)":
+		#tmp[last_i] = ""
+		tmp = tmp[0]
+	else:
+		#tmp[last_i] = tmp[last_i] + "*"
+		tmp = tmp[0] + "*"
+	
+	print(tmp)
+	#return " " + " ".join(tmp) + " "
+	return " " + tmp + " "
