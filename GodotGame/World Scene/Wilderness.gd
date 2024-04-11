@@ -82,8 +82,10 @@ func _on_test_dec_1():
 
 
 func _on_open_map():
-	$"UI/Map Camera".make_current()
+	$"Map/Map Camera".make_current()
 	$Other/CharacterBody2D.show_map_icon()
+	$"Map/Wilderness Exit".show()
 
 func _on_close_map():
 	$Other/CharacterBody2D.hide_map_icon()
+	$"Map/Wilderness Exit".hide()

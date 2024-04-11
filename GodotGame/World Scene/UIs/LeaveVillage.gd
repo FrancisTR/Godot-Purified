@@ -12,6 +12,7 @@ func _on_yes_pressed():
 	emit_signal("leave_village")
 	print("y")
 	
+	GameData.QVillager = ""
 	GameData.charLock = false
 	if GameData.inventory_amount.keys().find("Twig") != -1:
 		Utils.remove_from_inventory("Twig", int(GameData.inventory_amount["Twig"]))
