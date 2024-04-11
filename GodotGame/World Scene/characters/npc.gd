@@ -42,7 +42,7 @@ func _process(delta):
 
 	#Appear the game username in dialogue (Only Appears in NPC interaction)
 	Utils.character_list.characters[0].name = GameData.username
-	if (dialogue_box.running):
+	if dialogue_box.running:
 		if ($FixedDialoguePosition/DialogueBox.speaker.text == GameData.username):
 			$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[0].image
 
@@ -197,8 +197,9 @@ func hide_notif():
 func _on_dialogue_box_dialogue_ended():
 	
 	#Quest stuff for the Main World
-	if (dialogue_box.variables["QMain"] == true):
+	if (dialogue_box.variables["QMain"] == true and GameData.QVillager == ""):
 		GameData.QMain = true
+		GameData.QVillager = NPCname
 	if (dialogue_box.variables["Profit?"] == true):
 		GameData.madeProfit = true
 	pass # Replace with function body.
