@@ -61,7 +61,7 @@ func _process(delta):
 			GameData.QWild = true
 			GameData.charLock = true
 			GameData.current_ui = "dialogue"
-
+			$PressForDialogue.visible = false
 			
 			#GameData.QWild = dialogue_box.variables["QWild"]
 			
@@ -80,7 +80,7 @@ func _process(delta):
 			$FixedDialoguePosition/CharacterIMG.texture = null
 			$FixedDialoguePosition/Voice.visible = false
 			$FixedDialoguePosition/CharacterIMG.visible = false
-
+			$PressForDialogue.visible = true
 
 
 func _on_body_entered(body):
