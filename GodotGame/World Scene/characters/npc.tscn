@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://decpyxnu3oocl"]
+[gd_scene load_steps=30 format=3 uid="uid://decpyxnu3oocl"]
 
 [ext_resource type="Script" path="res://World Scene/characters/npc.gd" id="1_7ll4o"]
 [ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="1_we8v3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_hejlf"]
 [ext_resource type="Texture2D" uid="uid://dw04cpaod6bun" path="res://Assets/Custom/temp_frog_icon.png" id="9_ilu2c"]
 [ext_resource type="Texture2D" uid="uid://dyqj26prpkdqw" path="res://Assets/UISprites/UI_Flat_Frame_02_Lite.png" id="9_og4hm"]
+[ext_resource type="Texture2D" uid="uid://d1rasp64hd3m" path="res://Assets/Custom/UI_Exclamation_Mark_Plate.png" id="11_pkqqv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxqgd"]
 texture = ExtResource("2_ln8m6")
@@ -275,6 +276,14 @@ scale = Vector2(4, 4)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("9_ilu2c")
+
+[node name="Notif" type="TextureRect" parent="."]
+visible = false
+z_index = 1000
+offset_left = 35.0
+offset_top = -143.0
+offset_right = 178.0
+texture = ExtResource("11_pkqqv")
 
 [node name="NPCActions" type="Node" parent="."]
 

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ynpgm70xqibo"]
+
+[ext_resource type="Texture2D" uid="uid://dwqhnymadamjk" path="res://Assets/Custom/Wells.png" id="1_du8ea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ntgb"]
+size = Vector2(70, 40)
+
+[node name="Well" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_du8ea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_8ntgb")

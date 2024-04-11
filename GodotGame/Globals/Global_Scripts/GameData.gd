@@ -1,11 +1,11 @@
 extends Node
 
 
-var day:int = 1
+var day:int = 3
 
 var twigItem = 0
 
-var username = ""
+var username = "Francis"
 
 var inventory:Array
 
@@ -57,6 +57,18 @@ var itemDialogue = [
 		"Value": 0
 	}
 ]
+
+var QVillager = ""
+
+var villagersIndex = {
+	"Accept": 0,
+	"Anger": 1,
+	"Bargin": 2,
+	"Croak": 3,
+	"Denial": 4,
+	"Depress": 5,
+	"OldMan": 6,
+}
 
 var villagersTalked = [
 	{

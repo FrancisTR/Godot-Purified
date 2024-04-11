@@ -1,12 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://0nmlup6yvr84"]
+[gd_scene load_steps=25 format=3 uid="uid://0nmlup6yvr84"]
 
 [ext_resource type="Script" path="res://World Scene/UIs/crafting_table.gd" id="1_763sv"]
 [ext_resource type="Texture2D" uid="uid://bui61mchuqel4" path="res://Assets/Custom/CraftingTable.png" id="2_k6jcn"]
 [ext_resource type="Texture2D" uid="uid://dv22rv7vcdnkm" path="res://Assets/UISprites/UI_Flat_Textfield_02.png" id="3_6q8d2"]
+[ext_resource type="Texture2D" uid="uid://b7klxre80lgk2" path="res://Assets/Custom/UI_Question_Mark.png" id="4_47j4m"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="4_jad3i"]
 [ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="5_msu3t"]
 [ext_resource type="Texture2D" uid="uid://doqwj8g710weo" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a2.png" id="6_2bae6"]
 [ext_resource type="Texture2D" uid="uid://dp5pq4xti0m4g" path="res://Assets/UISprites/UI_Flat_Slot_01_Selected.png" id="7_7d5de"]
+[ext_resource type="Texture2D" uid="uid://dyqj26prpkdqw" path="res://Assets/UISprites/UI_Flat_Frame_02_Lite.png" id="9_pvc45"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh0p5"]
 size = Vector2(32, 30)
@@ -54,6 +56,9 @@ modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_noqy8"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4eox"]
+texture = ExtResource("9_pvc45")
+
 [node name="CraftingTable" type="Area2D"]
 script = ExtResource("1_763sv")
 
@@ -77,7 +82,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CraftingList" type="CanvasLayer" parent="UI"]
-visible = false
 
 [node name="ShowItemCrafted" type="TextureRect" parent="UI/CraftingList"]
 texture_filter = 1
@@ -102,6 +106,24 @@ offset_right = 150.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
+
+[node name="QuestionMark" type="TextureRect" parent="UI/CraftingList/ShowItemCrafted"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = -313.0
+offset_right = -18.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("4_47j4m")
 expand_mode = 1
 
 [node name="ItemList" type="TextureRect" parent="UI/CraftingList"]
@@ -445,11 +467,13 @@ texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_top = -41.0
-offset_right = 20.0
+offset_left = -14.0
+offset_top = -44.0
+offset_right = 14.0
 offset_bottom = -18.0
 grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_t4eox")
 text = "Q"
 horizontal_alignment = 1
 

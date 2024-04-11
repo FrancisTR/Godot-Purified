@@ -13,6 +13,9 @@ var enterBody = false
 var NPCname = null
 var PressForDialogue_was_opened = false
 
+var exclamation = load("res://Assets/Custom/UI_Exclamation_Mark_Plate.png")
+var question = load("res://Assets/Custom/UI_Question_Mark_Plate.png")
+
 func _ready():
 	NPCname = null
 	set_process_input(true)
@@ -21,12 +24,15 @@ func _ready():
 func go_pos(delta):
 	if moving:
 		$"../Bargin".global_position = $"../Bargin".global_position.move_toward(BarryDestination, delta*moving_speed)
+		$"../Bargin/FixedDialoguePosition/Voice".visible = false
+		#Hide all character img
+		$"../Bargin/FixedDialoguePosition/CharacterIMG".visible = false
+		
 	if $"../Bargin".global_position == BarryDestination:
 		moving = false
 		$"../Bargin".position = Vector2(999999999, 999999999)
 		GameData.charLock = false
 		GameData.barryDespawned = true
-
 
 
 # TODO: Map more ID's for dialogue for more days
@@ -39,7 +45,7 @@ func _process(delta):
 
 	#Appear the game username in dialogue (Only Appears in NPC interaction)
 	Utils.character_list.characters[0].name = GameData.username
-	if (dialogue_box.running):
+	if dialogue_box.running:
 		if ($FixedDialoguePosition/DialogueBox.speaker.text == GameData.username):
 			$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[0].image
 
@@ -118,7 +124,7 @@ func _process(delta):
 		if not dialogue_box.running:
 			GameData.charLock = true
 			GameData.current_ui = "dialogue"
-			
+			$PressForDialogue.visible = false
 			
 			#Run the loop and check true that we talked to that villager
 			# This is for the requirement to leave the Day
@@ -143,6 +149,7 @@ func _process(delta):
 			$FixedDialoguePosition/DialogueOpacity.visible = false
 			$FixedDialoguePosition/CharacterIMG.texture = null
 			$FixedDialoguePosition/Voice.visible = false
+			$PressForDialogue.visible = true
 			
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
@@ -181,14 +188,22 @@ func hide_map_icon():
 		$PressForDialogue.show()
 		PressForDialogue_was_opened = false
 
+func show_notif(type):
+	if type == "question":
+		$Notif.texture = question
+	else:
+		$Notif.texture = exclamation
+	$Notif.show()
 
-
+func hide_notif():
+	$Notif.hide()
 
 func _on_dialogue_box_dialogue_ended():
 	
 	#Quest stuff for the Main World
-	if (dialogue_box.variables["QMain"] == true):
+	if (dialogue_box.variables["QMain"] == true and GameData.QVillager == ""):
 		GameData.QMain = true
+		GameData.QVillager = NPCname
 	if (dialogue_box.variables["Profit?"] == true):
 		GameData.madeProfit = true
 	pass # Replace with function body.

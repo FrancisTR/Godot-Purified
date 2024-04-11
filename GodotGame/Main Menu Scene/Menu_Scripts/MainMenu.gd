@@ -5,43 +5,43 @@ extends Control
 func _ready():
 	
 	#Reset global values
-	var day:int = 1
+	GameData.day = 1
 
-	var username = ""
+	GameData.username = ""
 
-	var inventory:Array
+	GameData.inventory = []
 
-	var inventory_amount:Dictionary
+	GameData.inventory_amount = {}
 
 	#What is required to go to the next day
-	var inventory_requirement:Dictionary
+	GameData.inventory_requirement = {}
 
-	var charLock = false
-	var barryDespawned = false
+	GameData.charLock = false
+	GameData.barryDespawned = false
 
-	var current_ui = ""
-	var current_scene = ""
-	var save_position = false
-	var player_position
+	GameData.current_ui = ""
+	GameData.current_scene = ""
+	GameData.save_position = false
+	GameData.player_position
 
-	var visitTutorial = false
-	var visitedWilderness = false
+	GameData.visitTutorial = false
+	GameData.visitedWilderness = false
 
 	#Spawn the item once in the wilderness. Prevents duplication
-	var itemSpawnOnce = false
+	GameData.itemSpawnOnce = false
 
 
 
 	#Dialogue related stuff
-	var QMain = false
-	var QWild = false
-	var madeProfit = false
-	var NPCgiveNoMore = false #Give items once and not dup
+	GameData.QMain = false
+	GameData.QWild = false
+	GameData.madeProfit = false
+	GameData.NPCgiveNoMore = false #Give items once and not dup
 	#Quest is finished
-	var questComplete = {"Main": false, "Wild": false}
-
+	GameData.questComplete = {"Main": false, "Wild": false}
+	GameData.QVillager = ""
 	#TODO Add more if needed to stack of the items needed for NPC
-	var itemDialogue = [
+	GameData.itemDialogue = [
 		{
 			"Name": "Twigs",
 			"Value": 0
@@ -60,7 +60,7 @@ func _ready():
 		}
 	]
 
-	var villagersTalked = [
+	GameData.villagersTalked = [
 		{
 			"Name": "Accept",
 			"Talked": false
@@ -111,7 +111,7 @@ func _on_start_button_pressed():
 			[
 				"It is your first day at work.",
 				"You then enter the building, waiting for further instructions.",
-				"Then, an employee named Talia approaches..."
+				"Then, an employee approaches you..."
 			],
 			"res://Main Menu Scene/tutorial.tscn",
 			3,
