@@ -87,7 +87,10 @@ var credits = [
 		"Pixelorama",
 		"https://orama-interactive.itch.io/pixelorama",
 		"Procreate",
-		"https://procreate.com/"
+		"https://procreate.com/",
+		"",
+		"Music produced using Flat.io",
+		"",
 	],
 	[
 		"Asset used from itch.io",
@@ -96,6 +99,9 @@ var credits = [
 		"",
 		"World Assets by Cup Nooble (Assets modified for this game)",
 		"(https://cupnooble.itch.io/)",
+		"",
+		"World Assets by CraftPix.net (Assets modified for this game)",
+		"(https://craftpix.net/freebies/free-swamp-game-tileset-pixel-art/)",
 	],
 ]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://caurrpk58l40x"]
+[gd_scene load_steps=40 format=3 uid="uid://caurrpk58l40x"]
 
 [ext_resource type="Script" path="res://World Scene/Wilderness.gd" id="1_4k4yr"]
 [ext_resource type="PackedScene" uid="uid://crmshmhby6akr" path="res://World Scene/characters/CharacterMain.tscn" id="2_2eck0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cgwe5cdxpul0y" path="res://Assets/Custom/Terrain/Dirt_Path.png" id="3_yfla3"]
 [ext_resource type="Texture2D" uid="uid://bqwl7ha67y8uv" path="res://Assets/Tilesets/Fences.png" id="4_qjxmy"]
 [ext_resource type="Texture2D" uid="uid://ogkyr3wqmadc" path="res://Assets/Custom/Terrain/House.png" id="6_k1p8h"]
+[ext_resource type="Texture2D" uid="uid://ijxyc7rwq6y1" path="res://Assets/Custom/Terrain/Tree.png" id="7_86jxp"]
 [ext_resource type="Texture2D" uid="uid://cwunwkiyvw3yl" path="res://Assets/Objects/Basic_Grass_Biom_things.png" id="7_ye6fi"]
 [ext_resource type="Texture2D" uid="uid://c7qq0rsxbi34h" path="res://Assets/Custom/Terrain/murky_water.png" id="8_fr3f4"]
 [ext_resource type="Texture2D" uid="uid://buj8denvaa0cg" path="res://Assets/Objects/Wood_Bridge.png" id="9_ufycb"]
@@ -14,9 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://dp38t71roepqi" path="res://Assets/Custom/Terrain/Hills.png" id="10_crg72"]
 [ext_resource type="Texture2D" uid="uid://edjul52uedvi" path="res://Assets/UISprites/UI_Flat_Banner_01_Downward.png" id="10_jk0aj"]
 [ext_resource type="PackedScene" uid="uid://cjie6scx7ovoa" path="res://World Scene/Transitions/to_village.tscn" id="11_fw73a"]
+[ext_resource type="Texture2D" uid="uid://cvu5fwe10f7hh" path="res://Assets/UISprites/UI_Flat_Banner_02_Downward.png" id="11_ns2vr"]
 [ext_resource type="PackedScene" uid="uid://0nmlup6yvr84" path="res://World Scene/UIs/crafting_table.tscn" id="12_hu71a"]
 [ext_resource type="PackedScene" uid="uid://dg42ftacgko3o" path="res://World Scene/Items/TinCan.tscn" id="14_hv5vl"]
-[ext_resource type="PackedScene" uid="uid://cllg5b804pc0j" path="res://World Scene/Items/Twig.tscn" id="15_38p05"]
+[ext_resource type="PackedScene" uid="uid://cllg5b804pc0j" path="res://World Scene/Items/twig.tscn" id="15_38p05"]
 [ext_resource type="PackedScene" uid="uid://b01hucoucf7fr" path="res://World Scene/Items/WaterBottle.tscn" id="17_kbm4u"]
 [ext_resource type="PackedScene" uid="uid://bnu20bxninf0u" path="res://World Scene/Items/Moss.tscn" id="18_anmg7"]
 [ext_resource type="PackedScene" uid="uid://diui2nk1yp3cq" path="res://World Scene/Items/rock.tscn" id="19_1h74x"]
@@ -408,6 +410,101 @@ texture = ExtResource("6_k1p8h")
 6:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:4/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nu8y"]
+texture = ExtResource("7_86jxp")
+1:0/0 = 0
+1:0/0/z_index = 888
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/z_index = 888
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/z_index = 888
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/z_index = 888
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0 = 0
+5:0/0/z_index = 888
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0 = 0
+6:0/0/z_index = 888
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/z_index = 888
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/z_index = 888
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/z_index = 888
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/z_index = 888
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/z_index = 888
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0 = 0
+5:1/0/z_index = 888
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+6:1/0 = 0
+6:1/0/z_index = 888
+6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:1/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/z_index = 888
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -4.24264, -3.49134, -3.71231, 2.69584, 2.2981, 3.84489, 8, 8, 8, 8, 1.76777, 8, -0.795495)
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.552, -4.33103, -8, -4.24264, -8, 8, -0.662912, 8, -0.839689, 2.47487, -1.98874, -0.176777)
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(6.40816, -4.59619, 8, -8, 8, -2.74004, 8, 8, 0.309359, 8, 5.25911, 2.91682)
+5:2/0 = 0
+5:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:2/0/physics_layer_0/angular_velocity = 0.0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 1.72357, -8, -0.574524, -2.56326, 2.87262, 8, -8, 8)
+6:2/0 = 0
+6:2/0/z_index = 888
+6:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:2/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.13779, -8, 8, -8, 8, -4.875, -0.22097, -4.77297)
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.0441952, -8, -8, -8, -8, -4.875, 3.0494, -5.03814)
+4:3/0 = 0
+4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:3/0/physics_layer_0/angular_velocity = 0.0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.397747, -8, 8, -8, 8, -4.68458, -2.87262, -5.03814)
+5:3/0 = 0
+5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:3/0/physics_layer_0/angular_velocity = 0.0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3.31456, -8, 6.23138, -4.94975, -8, -4.86136)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gs5dw"]
 texture = ExtResource("7_ye6fi")
 0:0/0 = 0
@@ -538,6 +635,7 @@ texture = ExtResource("7_ye6fi")
 4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:4/0/physics_layer_0/angular_velocity = 0.0
 5:4/0 = 0
+5:4/0/z_index = -1
 5:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:4/0/physics_layer_0/angular_velocity = 0.0
 6:4/0 = 0
@@ -842,6 +940,10 @@ sources/4 = SubResource("TileSetAtlasSource_a7bfx")
 sources/5 = SubResource("TileSetAtlasSource_gfvmq")
 sources/6 = SubResource("TileSetAtlasSource_sra5n")
 sources/1 = SubResource("TileSetAtlasSource_0u3kl")
+sources/2 = SubResource("TileSetAtlasSource_4nu8y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ja1gu"]
+texture = ExtResource("11_ns2vr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_32qm1"]
 texture = ExtResource("10_jk0aj")
@@ -881,11 +983,34 @@ layer_1/tile_data = PackedInt32Array(-720875, 65539, 0, -655339, 65539, 1, -7208
 layer_2/name = "Roof.5"
 layer_2/tile_data = PackedInt32Array(-917486, 5, 0, -851950, 5, 1, -786414, 5, 1, -720878, 5, 1, -655342, 5, 2, -655351, 131077, 0, -655346, 262149, 0, -655347, 196613, 0, -655348, 196613, 0, -655349, 196613, 0, -655350, 196613, 0, 786420, 131077, 0, 786425, 262149, 0, 786424, 196613, 0, 786423, 196613, 0, 786422, 196613, 0, 786421, 196613, 0, 2097142, 196613, 0, 2097143, 196613, 0, 2097144, 196613, 0, 2097145, 196613, 0, 2097141, 131077, 0, 2097146, 262149, 0, -65499, 196613, 0, -65498, 196613, 0, -65500, 131077, 0, -65497, 262149, 0)
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="Map" type="Node" parent="."]
 
-[node name="Map Camera" type="Camera2D" parent="UI"]
+[node name="Map Camera" type="Camera2D" parent="Map"]
 position = Vector2(845, 416)
 zoom = Vector2(0.255, 0.255)
+
+[node name="Wilderness Exit" type="Label" parent="Map"]
+visible = false
+z_index = 998
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -785.0
+offset_top = -852.0
+offset_right = -530.0
+offset_bottom = -775.0
+grow_horizontal = 0
+scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(0.239216, 0.533333, 0.713726, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_ja1gu")
+text = "Wilderness Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Day" type="Label" parent="UI"]
 texture_filter = 1
