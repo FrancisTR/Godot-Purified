@@ -26,6 +26,7 @@ func _ready():
 
 	GameData.visitTutorial = false
 	GameData.visitedWilderness = false
+	GameData.talkToKid = false
 
 	#Spawn the item once in the wilderness. Prevents duplication
 	GameData.itemSpawnOnce = false
@@ -94,7 +95,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	SoundControl.is_playing_theme("main")
+	SoundControl.is_playing_theme("afternoon")
 
 
 func _on_exit_button_pressed():

@@ -2,7 +2,7 @@ extends Node2D
 
 var signal_method = ""
 
-@export var NumTwigs: int = 0
+#@export var NumTwigs: int = 0
 
 
 
@@ -12,7 +12,7 @@ var signal_method = ""
 func _ready():
 	GameData.visitedWilderness = true
 	#TODO: Make inventory system into its own scene w/ graphics
-	$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
+	#$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
 	#SceneTransition.manual_fade.connect(go_to_next_day)
 	if GameData.save_position:
 		$Other/CharacterBody2D.position = GameData.player_position
@@ -26,6 +26,11 @@ func _ready():
 	
 	#TODO add item spawns
 	inst(GameData.itemSpawns)
+	
+	#TODO: Spawn a water bottle if it is day 1 and true
+	if GameData.day == 1 and GameData.talkToKid == true:
+		#Spawn special water bottle
+		pass
 
 
 func _process(delta):

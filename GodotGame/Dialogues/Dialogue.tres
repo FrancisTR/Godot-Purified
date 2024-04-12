@@ -186,7 +186,7 @@ nodes = {
 "speaker": 8
 },
 "1_102": {
-"dialogue": "Still no then. Good day and goodbye",
+"dialogue": "Still no then. Good day and goodbye.",
 "offset": Vector2(1920, 7740),
 "options": {
 0: {
@@ -330,7 +330,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "speaker": 8
 },
 "1_112": {
-"dialogue": "Still no then. Good day and goodby...",
+"dialogue": "Still no then. Good day and goodbye.",
 "offset": Vector2(1900, 8320),
 "options": {
 0: {
@@ -1747,7 +1747,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "speaker": 0
 },
 "1_97": {
-"dialogue": "Thanks mister!",
+"dialogue": "Thanks a lot!",
 "offset": Vector2(1740, 6300),
 "options": {
 0: {

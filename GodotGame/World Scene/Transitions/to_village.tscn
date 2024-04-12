@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cjie6scx7ovoa"]
+[gd_scene load_steps=21 format=3 uid="uid://cjie6scx7ovoa"]
 
 [ext_resource type="Script" path="res://World Scene/Transitions/to_village.gd" id="1_fbexn"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_4245u"]
@@ -66,6 +66,19 @@ script = ExtResource("4_ybmjb")
 [sub_resource type="RichTextEffect" id="RichTextEffect_emjeb"]
 script = ExtResource("5_qpkj5")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k7vsb"]
+texture = ExtResource("2_ydqbd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hud1h"]
+texture = ExtResource("2_ydqbd")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btt3t"]
+texture = ExtResource("3_mjyng")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_68x6n"]
+
 [node name="ToVillage" type="StaticBody2D"]
 script = ExtResource("1_fbexn")
 
@@ -78,16 +91,18 @@ shape = SubResource("RectangleShape2D_ulbkt")
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_pqafc")
 
-[node name="Dialogue" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="Dialogue" type="Node" parent="."]
 
 [node name="Dialogue" type="CanvasLayer" parent="Dialogue"]
 
+[node name="CharacterIMG" type="TextureRect" parent="Dialogue/Dialogue"]
+offset_left = 42.0
+offset_top = 114.0
+offset_right = 310.0
+offset_bottom = 666.0
+expand_mode = 1
+
 [node name="DialogueBox" type="Panel" parent="Dialogue/Dialogue"]
-visible = false
 z_index = 101
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
@@ -106,7 +121,38 @@ theme = SubResource("Theme_ijf1c")
 theme_override_styles/panel = SubResource("StyleBoxFlat_j8bif")
 script = ExtResource("2_4245u")
 dialogue_data = ExtResource("3_16syn")
+hide_portrait = true
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_66oxl"), SubResource("RichTextEffect_emjeb")])
 
+[node name="Voice" type="Button" parent="Dialogue/Dialogue"]
+visible = false
+z_index = 999
+texture_filter = 1
+offset_left = 168.0
+offset_top = 561.0
+offset_right = 238.0
+offset_bottom = 631.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_k7vsb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hud1h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btt3t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_68x6n")
+text = "🔊"
+
 [connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]
+[connection signal="dialogue_ended" from="Dialogue/Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_ended"]
 [connection signal="dialogue_proceeded" from="Dialogue/Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_proceeded"]
+[connection signal="pressed" from="Dialogue/Dialogue/Voice" to="." method="_on_voice_pressed"]

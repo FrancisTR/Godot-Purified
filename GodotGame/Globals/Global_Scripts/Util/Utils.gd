@@ -23,7 +23,10 @@ var char_dict = {
 	"Antonio": 6,
 	"Croak": 7,
 	"Old Man Tommy": 8,
-	"Kids": 9
+	"Rano": 9,
+	"Ribbit": 10,
+	"Hop": 11,
+	"Leap": 12
 }
 #############^^^DIALOGUE^^^#############
 

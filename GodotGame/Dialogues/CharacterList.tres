@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterList" load_steps=15 format=3 uid="uid://bksin52k7pe8u"]
+[gd_resource type="Resource" script_class="CharacterList" load_steps=18 format=3 uid="uid://bksin52k7pe8u"]
 
 [ext_resource type="Texture2D" uid="uid://byvrjpafcmkks" path="res://icon.svg" id="1_1qrg4"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="1_2cgx6"]
@@ -61,10 +61,28 @@ color = Color(1, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_ubiec"]
 script = ExtResource("1_p0fqg")
-name = "Kids"
+name = "Rano"
 image = ExtResource("2_e6ut6")
-color = Color(1, 1, 1, 1)
+color = Color(1, 0.0901961, 0.0666667, 1)
+
+[sub_resource type="Resource" id="Resource_7kjnv"]
+script = ExtResource("1_p0fqg")
+name = "Ribbit"
+image = ExtResource("2_e6ut6")
+color = Color(0.811765, 0, 0.811765, 1)
+
+[sub_resource type="Resource" id="Resource_jsre7"]
+script = ExtResource("1_p0fqg")
+name = "Hop"
+image = ExtResource("2_e6ut6")
+color = Color(0.984314, 0, 0.509804, 1)
+
+[sub_resource type="Resource" id="Resource_eq73d"]
+script = ExtResource("1_p0fqg")
+name = "Leap"
+image = ExtResource("2_e6ut6")
+color = Color(0.913725, 0.458824, 0, 1)
 
 [resource]
 script = ExtResource("1_2cgx6")
-characters = Array[ExtResource("1_p0fqg")]([SubResource("Resource_d68ut"), SubResource("Resource_1b4a2"), SubResource("Resource_umkq6"), SubResource("Resource_01wqa"), SubResource("Resource_lt2hy"), SubResource("Resource_0h6xi"), SubResource("Resource_evr13"), SubResource("Resource_2dvo0"), SubResource("Resource_ixiiq"), SubResource("Resource_ubiec")])
+characters = Array[ExtResource("1_p0fqg")]([SubResource("Resource_d68ut"), SubResource("Resource_1b4a2"), SubResource("Resource_umkq6"), SubResource("Resource_01wqa"), SubResource("Resource_lt2hy"), SubResource("Resource_0h6xi"), SubResource("Resource_evr13"), SubResource("Resource_2dvo0"), SubResource("Resource_ixiiq"), SubResource("Resource_ubiec"), SubResource("Resource_7kjnv"), SubResource("Resource_jsre7"), SubResource("Resource_eq73d")])

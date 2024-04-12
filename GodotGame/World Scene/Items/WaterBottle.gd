@@ -29,10 +29,12 @@ func _on_body_entered(body):
 		GameData.itemDialogue[2]["Value"] = GameData.itemDialogue[2]["Value"] + 1
 		
 		#Unique if this is picked up on day 1
-		if GameData.day == 1: #First quest
-			GameData.QWild = true
+		#TODO Remove Code for special wataer bottle
+		if GameData.day == 1 and GameData.talkToKid == true: #First quest
 			GameData.questComplete["Wild"] = true
-		
+			$"../KidsNPC/FixedDialoguePosition/DialogueBox".start("ChildrenComplete")
+			GameData.charLock = true
+			
 		queue_free()
 		Utils.add_to_inventory("WaterBottle", 1)
 		getTexture()

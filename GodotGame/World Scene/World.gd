@@ -28,7 +28,7 @@ var npc_positions = {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if GameData.visitedWilderness:
-		$Other/CharacterBody2D.position = Vector2(866, 1125)
+		$Other/CharacterBody2D.position = Vector2(863, 1270)
 		GameData.visitedWilderness = false
 	if GameData.save_position:
 		$Other/CharacterBody2D.position = GameData.player_position

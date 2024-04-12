@@ -1,11 +1,11 @@
 extends Node
 
 
-var day:int = 3
+var day:int = 1
 
 var twigItem = 0
 
-var username = "Francis"
+var username = ""
 
 var inventory:Array
 
@@ -24,6 +24,7 @@ var player_position
 
 var visitTutorial = false
 var visitedWilderness = false
+var talkToKid = false
 
 #Spawn the item once in the wilderness. Prevents duplication
 var itemSpawnOnce = false
@@ -68,6 +69,11 @@ var villagersIndex = {
 	"Denial": 4,
 	"Depress": 5,
 	"OldMan": 6,
+	
+	"Rano": 7,
+	"Ribbit": 8,
+	"Hop": 9,
+	"Leap": 10,
 }
 
 var villagersTalked = [

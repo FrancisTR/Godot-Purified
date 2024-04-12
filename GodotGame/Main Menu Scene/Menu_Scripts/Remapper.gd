@@ -23,6 +23,7 @@ func _toggled(button_exists):
 	set_process_unhandled_input(button_exists)
 	if button_exists:
 		toggle_disabled_other_buttons()
+		$"../../BackButton".disabled = true
 		release_focus()
 		text = "???"
 		SoundControl.is_playing_sound("button")
@@ -54,6 +55,7 @@ func _unhandled_input(e):
 
 		grab_focus()
 		update_text()
+		$"../../BackButton".disabled = false
 
 
 func update_text():
@@ -99,5 +101,5 @@ func toggle_disabled_other_buttons():
 	
 	#print("will be ", is_disabled)
 	for child in remap_children:
-		if child.name != name:
-			child.disabled = is_disabled
+		#if child.name != name:
+		child.disabled = is_disabled
