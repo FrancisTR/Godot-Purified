@@ -16,7 +16,7 @@ func _process(delta):
 	
 	#TODO: Add theme song based on the day
 	if (GameData.username == ""):
-		SoundControl.is_playing_theme("main")
+		SoundControl.is_playing_theme("afternoon")
 	elif GameData.day <= 2:
 		SoundControl.is_playing_theme("afternoon")
 	elif GameData.day >= 3:

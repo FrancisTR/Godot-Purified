@@ -31,7 +31,7 @@ nodes = {
 },
 "0_4": {
 "link": &"1_4",
-"offset": Vector2(120, -680),
+"offset": Vector2(960, -1560),
 "start_id": "Error"
 },
 "0_5": {
@@ -50,8 +50,86 @@ nodes = {
 "start_id": "ChildrenComplete3"
 },
 "1_1": {
-"dialogue": "Hey please don't go. Water Bottle",
+"dialogue": "Halt! You have trespassed on the territory of the Leaping Lagoon Explorers!",
 "offset": Vector2(540, -280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(708.715, 460.158),
+"speaker": 9
+},
+"1_10": {
+"dialogue": "Who is this guy anyway?",
+"offset": Vector2(2740, -280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": Vector2(565.455, 390),
+"speaker": 10
+},
+"1_11": {
+"dialogue": "They’re here to sell our folks their water-fixing product!",
+"offset": Vector2(3380, -280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
+"text": ""
+}
+},
+"size": Vector2(658.182, 372),
+"speaker": 7
+},
+"1_12": {
+"dialogue": "Ooh… Does it work well?",
+"offset": Vector2(4080, -280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": ""
+}
+},
+"size": Vector2(709.091, 372),
+"speaker": 11
+},
+"1_13": {
+"dialogue": "You bet it does!",
+"offset": Vector2(4860, -280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_14",
+"text": ""
+}
+},
+"size": Vector2(641.818, 391.818),
+"speaker": 0
+},
+"1_14": {
+"dialogue": "Well anyway, as a penalty for taking our resources, you must complete our challenge.",
+"offset": Vector2(5580, -280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_15",
+"text": ""
+}
+},
+"size": Vector2(550.909, 372),
+"speaker": 9
+},
+"1_15": {
+"dialogue": "There are many water bottles scattered around this forest, but only a few have a unique design, go and find us at least one.",
+"offset": Vector2(6180, -280),
 "options": {
 0: {
 "condition": {},
@@ -59,7 +137,46 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(708.715, 460.158),
+"size": Vector2(300, 372),
+"speaker": 9
+},
+"1_16": {
+"dialogue": "Pfft, please! I could’ve find those wayy faster!",
+"offset": Vector2(1180, 240),
+"options": {
+0: {
+"condition": {},
+"link": &"1_17",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 12
+},
+"1_17": {
+"dialogue": "Well done salesperson!",
+"offset": Vector2(1600, 240),
+"options": {
+0: {
+"condition": {},
+"link": &"1_18",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 7
+},
+"1_18": {
+"dialogue": "Now that you’ve completed the task, you’re free to leave. You can keep whatever you found too.",
+"offset": Vector2(2000, 240),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
 "speaker": 9
 },
 "1_2": {
@@ -89,8 +206,8 @@ nodes = {
 "speaker": 9
 },
 "1_4": {
-"dialogue": "Hmm. Maybe I should explore the Wilderness a bit more...",
-"offset": Vector2(500, -820),
+"dialogue": "Hey! We won’t let you pass until you complete the challenge.",
+"offset": Vector2(520, -1220),
 "options": {
 0: {
 "condition": {},
@@ -99,15 +216,15 @@ nodes = {
 }
 },
 "size": Vector2(1109.92, 452.645),
-"speaker": ""
+"speaker": 9
 },
 "1_5": {
-"dialogue": "You found the bottle!",
+"dialogue": "Wow, I’m impressed! You’ve managed to find them.",
 "offset": Vector2(540, 240),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_16",
 "text": ""
 }
 },
@@ -124,7 +241,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(884, 550),
+"size": Vector2(884, 549.999),
 "speaker": 9
 },
 "1_7": {
@@ -139,6 +256,32 @@ nodes = {
 },
 "size": Vector2(1040, 433),
 "speaker": 9
+},
+"1_8": {
+"dialogue": "You took our resources and therefore you need to pay the price.",
+"offset": Vector2(1340, -280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(560, 428.364),
+"speaker": 12
+},
+"1_9": {
+"dialogue": "Woah woah woah now, it’s not that serious. I’m just helping someone out.",
+"offset": Vector2(2000, -280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": ""
+}
+},
+"size": Vector2(632.727, 422.727),
+"speaker": 0
 }
 }
 variables = {}

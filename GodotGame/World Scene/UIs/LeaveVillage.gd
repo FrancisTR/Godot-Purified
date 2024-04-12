@@ -66,6 +66,7 @@ func _on_yes_pressed():
 	
 	GameData.madeProfit = false
 	GameData.barryDespawned = false
+	GameData.talkToKid = false
 
 
 

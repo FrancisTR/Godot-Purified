@@ -1,0 +1,154 @@
+[gd_scene load_steps=19 format=3 uid="uid://cxw38yvb03qw1"]
+
+[ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="1_tj65g"]
+[ext_resource type="Script" path="res://World Scene/kids_scene.gd" id="1_wqrpp"]
+[ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="2_ullnm"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="3_o0bcj"]
+[ext_resource type="Resource" uid="uid://cku6yalipw20o" path="res://Dialogues/Wilderness.tres" id="4_5j8ex"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="5_xgbur"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="6_5yw0g"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70tgp"]
+texture = ExtResource("1_tj65g")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0, 0.45098, 0.345098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vdbo4"]
+texture = ExtResource("1_tj65g")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0, 0.45098, 0.345098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wpafn"]
+texture = ExtResource("2_ullnm")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0, 0.45098, 0.345098, 1)
+
+[sub_resource type="Theme" id="Theme_nkib2"]
+Button/styles/hover = SubResource("StyleBoxTexture_70tgp")
+Button/styles/normal = SubResource("StyleBoxTexture_vdbo4")
+Button/styles/pressed = SubResource("StyleBoxTexture_wpafn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_woc5x"]
+bg_color = Color(0, 0.305882, 0.313726, 0.921569)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.113725, 0.541176, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_a5mn1"]
+script = ExtResource("5_xgbur")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_uc7ri"]
+script = ExtResource("6_5yw0g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_215r8"]
+texture = ExtResource("1_tj65g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_daxlo"]
+texture = ExtResource("1_tj65g")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ojqh"]
+texture = ExtResource("2_ullnm")
+modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nbc4h"]
+
+[node name="KidsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wqrpp")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CharacterIMG" type="TextureRect" parent="."]
+offset_left = 42.0
+offset_top = 114.0
+offset_right = 310.0
+offset_bottom = 666.0
+expand_mode = 1
+
+[node name="Dialogue" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" type="Panel" parent="Dialogue"]
+texture_filter = 1
+custom_minimum_size = Vector2(256, 128)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -476.0
+offset_top = -237.0
+offset_right = 477.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_nkib2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_woc5x")
+script = ExtResource("3_o0bcj")
+dialogue_data = ExtResource("4_5j8ex")
+start_id = "Tutorial"
+hide_portrait = true
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a5mn1"), SubResource("RichTextEffect_uc7ri")])
+
+[node name="Voice" type="Button" parent="Dialogue"]
+z_index = 999
+texture_filter = 1
+offset_left = 101.0
+offset_top = 544.0
+offset_right = 171.0
+offset_bottom = 614.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_215r8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_daxlo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8ojqh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nbc4h")
+text = "🔊"
+
+[connection signal="dialogue_ended" from="Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_ended"]
+[connection signal="dialogue_proceeded" from="Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_proceeded"]
+[connection signal="pressed" from="Dialogue/Voice" to="." method="_on_voice_pressed"]

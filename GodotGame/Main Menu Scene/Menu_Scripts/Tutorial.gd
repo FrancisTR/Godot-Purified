@@ -20,7 +20,7 @@ func _ready():
 #var testDic = {"Talia": 2}
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	SoundControl.is_playing_theme("main")
+	SoundControl.is_playing_theme("afternoon")
 	pass
 
 

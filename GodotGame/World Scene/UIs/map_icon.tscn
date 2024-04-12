@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://jqdeepmtyqey"]
 
 [node name="Icon" type="TextureRect"]
+z_index = 1000
+y_sort_enabled = true
