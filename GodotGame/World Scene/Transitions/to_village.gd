@@ -2,10 +2,6 @@ extends StaticBody2D
 
 @onready var dialogue_box = $Dialogue/Dialogue/DialogueBox
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -89,7 +85,6 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 
 func _on_voice_pressed():
 	print("Play Audio")
-	pass # Replace with function body.
 
 
 func _on_dialogue_box_dialogue_ended():
@@ -101,4 +96,3 @@ func _on_dialogue_box_dialogue_signal(value):
 	if value == "Leave":
 		GameData.leaveVillageQuest = true
 		SceneTransition.change_scene("res://World Scene/World.tscn")
-	pass # Replace with function body.

@@ -32,7 +32,6 @@ func _on_yes_pressed():
 	if GameData.inventory_amount.keys().find("WaterBottle") != -1:
 		Utils.remove_from_inventory("WaterBottle", int(GameData.inventory_amount["WaterBottle"]))
 	
-	GameData.itemSpawnOnce = false #Spawn the items again on the next day
 	
 	#Reset villagers talked
 	for i in range(len(GameData.villagersTalked)):

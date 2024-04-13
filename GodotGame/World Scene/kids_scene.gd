@@ -4,6 +4,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#TODO: Remove the one below in final
+	$Dialogue/Voice.visible = false
 	#TODO Add more days?
 	if not dialogue_box.running:
 		if GameData.day == 1:
@@ -12,14 +14,17 @@ func _ready():
 			dialogue_box.start("Children2")
 		elif GameData.day == 3:
 			dialogue_box.start("Children3")
-	pass
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+#TODO: Add theme?
 func _process(delta):
-	
+	#Appear the game username in dialogue (Only Appears in NPC interaction)
+	Utils.character_list.characters[0].name = GameData.username
+	if dialogue_box.running:
+		if ($Dialogue/DialogueBox.speaker.text == GameData.username):
+			$CharacterIMG.texture = Utils.character_list.characters[0].image
 	#SoundControl.is_playing_theme("afternoon")
-	pass
 
 
 func _on_dialogue_box_dialogue_proceeded(node_type):
@@ -28,14 +33,17 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 	
 	SoundControl.is_playing_sound("button")
 	if $Dialogue/DialogueBox.speaker.text != "":
-		var idx = Utils.char_dict[str($Dialogue/DialogueBox.speaker.text)]
+		var idx
+		if Utils.char_dict.keys().find(str($Dialogue/DialogueBox.speaker.text)) != -1:
+			idx = Utils.char_dict[str($Dialogue/DialogueBox.speaker.text)]
+		else:
+			#Its the main character
+			idx = Utils.char_dict["Main"]
 		$CharacterIMG.texture = Utils.character_list.characters[idx].image
-
 
 
 func _on_voice_pressed():
 	print("Play Audio")
-	pass # Replace with function body.
 
 
 func _on_dialogue_box_dialogue_ended():

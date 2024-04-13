@@ -1,11 +1,5 @@
 extends Control
 
-
-
-func _ready():
-	pass
-
-
 func _process(delta):
 	# Constantly update the variables live
 	var countTalked = 0
@@ -58,7 +52,7 @@ func _process(delta):
 			$TODOlist/ItemR/ItemNeeded.text = "Need 3 Tin Cans"
 		if (GameData.QWild == true):
 			$TODOlist/ItemR2.text = "Request from the Kids"
-			$TODOlist/ItemR2/ItemNeeded2.text = "Need "+str(GameData.inventory_requirement["WaterFilter"])+" Water Filter"
+			$TODOlist/ItemR2/ItemNeeded2.text = "Create "+str(GameData.inventory_requirement["WaterFilter"])+" Water Filter"
 
 
 

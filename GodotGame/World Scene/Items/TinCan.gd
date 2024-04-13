@@ -2,20 +2,11 @@ extends Area2D
 
 signal PickedUp
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
 		SoundControl.is_playing_sound("pickup")
-		print("Player has picked up a Pot")
+		print("Player has picked up a Tin can")
 		PickedUp.emit()
 		
 		#Before removal, we get its position and notify the master item

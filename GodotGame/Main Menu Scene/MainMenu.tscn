@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://c4dhom44jopn2"]
+[gd_scene load_steps=33 format=3 uid="uid://c4dhom44jopn2"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/MainMenu.gd" id="1_m2j1f"]
+[ext_resource type="Shader" path="res://Main Menu Scene/Menu_Scripts/MainMenu.gdshader" id="2_8nhj8"]
 [ext_resource type="Texture2D" uid="uid://c7qq0rsxbi34h" path="res://Assets/Custom/Terrain/murky_water.png" id="2_woi1u"]
 [ext_resource type="Texture2D" uid="uid://cbid64fvoqhpa" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a1.png" id="3_1l2m6"]
 [ext_resource type="Texture2D" uid="uid://b3vhgylwtw1xu" path="res://Assets/MainMenuTitle.png" id="3_myful"]
@@ -10,7 +11,19 @@
 [ext_resource type="Texture2D" uid="uid://betian48tiv5j" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a2.png" id="6_ast7a"]
 [ext_resource type="Texture2D" uid="uid://ccm17ho8pvdka" path="res://Assets/Custom/Items/TinCan.png" id="6_sqdha"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="8_mma8u"]
+[ext_resource type="Texture2D" uid="uid://cv7ro4482d0rx" path="res://Assets/Custom/Items/Rock.png" id="8_qpv7g"]
 [ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="9_6oqwn"]
+
+[sub_resource type="Gradient" id="Gradient_71jkj"]
+colors = PackedColorArray(0.964706, 0.592157, 0, 1, 0, 0.239216, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uihur"]
+gradient = SubResource("Gradient_71jkj")
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0r2iq"]
+shader = ExtResource("2_8nhj8")
+shader_parameter/gradient = SubResource("GradientTexture2D_uihur")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6dia3"]
 texture = ExtResource("3_1l2m6")
@@ -75,6 +88,7 @@ script = ExtResource("1_m2j1f")
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_0r2iq")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,45 +111,176 @@ grow_horizontal = 2
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("3_myful")
 
-[node name="Item" type="TextureRect" parent="."]
+[node name="ImageDecoration" type="Node" parent="."]
+
+[node name="BoilingPot" type="TextureRect" parent="ImageDecoration"]
 texture_filter = 1
-layout_mode = 0
 offset_left = 515.0
-offset_top = 219.0
+offset_top = 273.0
 offset_right = 765.0
-offset_bottom = 469.0
+offset_bottom = 523.0
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_a8gck")
 expand_mode = 1
 
-[node name="Item2" type="TextureRect" parent="."]
+[node name="Bottle" type="TextureRect" parent="ImageDecoration"]
 texture_filter = 1
-layout_mode = 0
-offset_left = 834.0
-offset_top = 302.0
-offset_right = 874.0
-offset_bottom = 342.0
+offset_left = 822.0
+offset_top = 354.0
+offset_right = 862.0
+offset_bottom = 394.0
 rotation = -2.27002
 scale = Vector2(5, 5)
 texture = ExtResource("5_f5q6v")
 
-[node name="Item3" type="TextureRect" parent="."]
+[node name="Can" type="TextureRect" parent="ImageDecoration"]
 texture_filter = 1
-layout_mode = 0
-offset_left = 983.0
-offset_top = 393.0
-offset_right = 1023.0
-offset_bottom = 433.0
+offset_left = 380.0
+offset_top = 481.0
+offset_right = 420.0
+offset_bottom = 521.0
 scale = Vector2(4, 4)
 texture = ExtResource("6_sqdha")
 
+[node name="Rocks" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = -34.0
+offset_top = 572.0
+offset_right = 116.0
+offset_bottom = 722.0
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
+[node name="Rocks2" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = 491.0
+offset_top = 558.0
+offset_right = 641.0
+offset_bottom = 708.0
+rotation = 0.199117
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
+[node name="Rocks3" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = 259.0
+offset_top = 581.0
+offset_right = 409.0
+offset_bottom = 731.0
+rotation = -0.0868021
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
+[node name="Rocks4" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = 740.0
+offset_top = 582.0
+offset_right = 890.0
+offset_bottom = 732.0
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
+[node name="Rocks5" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = 73.0
+offset_top = 576.0
+offset_right = 223.0
+offset_bottom = 726.0
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
+[node name="Rocks6" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = 170.0
+offset_top = 578.0
+offset_right = 320.0
+offset_bottom = 728.0
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
+[node name="Rocks7" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = 386.0
+offset_top = 582.0
+offset_right = 536.0
+offset_bottom = 732.0
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
+[node name="Rocks8" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = 589.0
+offset_top = 566.0
+offset_right = 739.0
+offset_bottom = 716.0
+rotation = 0.246605
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
+[node name="Rocks9" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = 660.0
+offset_top = 587.0
+offset_right = 810.0
+offset_bottom = 737.0
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
+[node name="Rocks10" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = 838.0
+offset_top = 585.0
+offset_right = 988.0
+offset_bottom = 735.0
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
+[node name="Rocks11" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = 937.0
+offset_top = 578.0
+offset_right = 1087.0
+offset_bottom = 728.0
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
+[node name="Rocks12" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = 1035.0
+offset_top = 578.0
+offset_right = 1185.0
+offset_bottom = 728.0
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
+[node name="Rocks13" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = 397.0
+offset_top = 515.0
+offset_right = 547.0
+offset_bottom = 665.0
+rotation = 0.309337
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
+[node name="Rocks14" type="TextureRect" parent="ImageDecoration"]
+texture_filter = 1
+offset_left = 802.0
+offset_top = 580.0
+offset_right = 952.0
+offset_bottom = 730.0
+rotation = -0.439963
+texture = ExtResource("8_qpv7g")
+expand_mode = 1
+
 [node name="StartButton" type="Button" parent="."]
+z_index = 1
 texture_filter = 1
 layout_mode = 2
 offset_left = 34.0
-offset_top = 313.0
+offset_top = 273.0
 offset_right = 254.0
-offset_bottom = 372.0
+offset_bottom = 332.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
@@ -152,12 +297,13 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_8ia78")
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="."]
+z_index = 1
 texture_filter = 1
 layout_mode = 2
 offset_left = 34.0
-offset_top = 412.0
+offset_top = 372.0
 offset_right = 254.0
-offset_bottom = 471.0
+offset_bottom = 431.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
@@ -172,12 +318,13 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_bd86a")
 text = "Options"
 
 [node name="ExitButton" type="Button" parent="."]
+z_index = 1
 texture_filter = 1
 layout_mode = 2
 offset_left = 34.0
-offset_top = 511.0
+offset_top = 471.0
 offset_right = 254.0
-offset_bottom = 570.0
+offset_bottom = 530.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
@@ -202,9 +349,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -159.0
-offset_top = -156.0
+offset_top = -241.0
 offset_right = -19.0
-offset_bottom = -16.0
+offset_bottom = -101.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)

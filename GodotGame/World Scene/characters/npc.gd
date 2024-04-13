@@ -27,6 +27,7 @@ func go_pos(delta):
 		$"../Bargin/FixedDialoguePosition/Voice".visible = false
 		#Hide all character img
 		$"../Bargin/FixedDialoguePosition/CharacterIMG".visible = false
+		$FixedDialoguePosition/DialogueOpacity.visible = false
 		
 	if $"../Bargin".global_position == BarryDestination:
 		moving = false
@@ -38,7 +39,7 @@ func go_pos(delta):
 # TODO: Map more ID's for dialogue for more days
 func _process(delta):
 	
-	#TODO: Barry gone if he was gone before
+	#Barry gone if he was gone before. This is for Day 3 only
 	if (GameData.barryDespawned == true):
 		$"../Bargin".position = Vector2(999999999, 999999999)
 	
@@ -64,7 +65,7 @@ func _process(delta):
 	dialogue_box.variables["WaterBottle"] = GameData.itemDialogue[2]["Value"]
 	dialogue_box.variables["TinCans"] = GameData.itemDialogue[3]["Value"]
 	
-	# Get the day for the appropriate dialogue
+	#TODO: Get the day for the appropriate dialogue
 	if GameData.day == 1:
 		# Who is the player talking to?
 		if NPCname == "Denial":
@@ -245,10 +246,9 @@ func _on_dialogue_box_dialogue_signal(value):
 
 
 func _on_animation_player_animation_finished(anim_name):
-	$FixedDialoguePosition/Voice.visible = true
-	pass # Replace with function body.
+	#TODO: back to true for final
+	$FixedDialoguePosition/Voice.visible = false
 
 
 func _on_voice_pressed():
 	print("Play Voice Recording")
-	pass # Replace with function body.

@@ -1,14 +1,29 @@
-[gd_scene load_steps=42 format=3 uid="uid://bq46ncf7jihje"]
+[gd_scene load_steps=50 format=3 uid="uid://bq46ncf7jihje"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Options.gd" id="1_pejof"]
+[ext_resource type="Shader" path="res://Main Menu Scene/Menu_Scripts/MainMenu.gdshader" id="2_418bt"]
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/RemapperInUse.gd" id="2_fsr86"]
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/VolumeOptions.gd" id="2_jtr8r"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="3_6mq0h"]
+[ext_resource type="Texture2D" uid="uid://edjul52uedvi" path="res://Assets/UISprites/UI_Flat_Banner_01_Downward.png" id="3_huva4"]
 [ext_resource type="Texture2D" uid="uid://cbid64fvoqhpa" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a1.png" id="3_q1kxr"]
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Remapper.gd" id="3_sdtpu"]
 [ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="5_sapnn"]
 [ext_resource type="Texture2D" uid="uid://betian48tiv5j" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a2.png" id="5_se5ao"]
 [ext_resource type="Texture2D" uid="uid://cf370ycp56cnk" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a1.png" id="6_o2yyx"]
+
+[sub_resource type="Gradient" id="Gradient_ksmle"]
+colors = PackedColorArray(0.760784, 0.580392, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pdpee"]
+gradient = SubResource("Gradient_ksmle")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uxrat"]
+shader = ExtResource("2_418bt")
+shader_parameter/gradient = SubResource("GradientTexture2D_pdpee")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ikhn"]
+texture = ExtResource("3_huva4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ln6wp"]
 texture = ExtResource("3_6mq0h")
@@ -143,6 +158,14 @@ modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gafpo"]
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0cres"]
+color = Color(0.913725, 0.4, 0, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_myaiv"]
+color = Color(0.913725, 0.4, 0, 1)
+thickness = 6
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ovysx"]
 texture = ExtResource("3_q1kxr")
 
@@ -161,18 +184,27 @@ script = ExtResource("1_pejof")
 
 [node name="background" type="TextureRect" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_uxrat")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="OptionsTitle" type="RichTextLabel" parent="."]
+[node name="OptionsTitle" type="Label" parent="."]
 texture_filter = 1
-offset_right = 215.0
-offset_bottom = 83.0
-theme_override_font_sizes/normal_font_size = 55
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 261.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxTexture_0ikhn")
 text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HotkeyLabel" type="RichTextLabel" parent="."]
 texture_filter = 1
@@ -182,9 +214,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -510.0
-offset_top = -192.0
+offset_top = -158.0
 offset_right = -257.0
-offset_bottom = -137.0
+offset_bottom = -103.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
@@ -524,6 +556,7 @@ offset_bottom = 433.0
 focus_neighbor_bottom = NodePath("../MusicSlider")
 focus_next = NodePath("../MusicSlider")
 focus_previous = NodePath("../RemapContainer/BackButton")
+theme_override_styles/slider = SubResource("StyleBoxLine_0cres")
 value = 100.0
 script = ExtResource("2_jtr8r")
 bus_name = "sfx"
@@ -571,6 +604,7 @@ offset_bottom = 481.0
 focus_neighbor_top = NodePath("../SfxSlider")
 focus_next = NodePath("../BackButton")
 focus_previous = NodePath("../SfxSlider")
+theme_override_styles/slider = SubResource("StyleBoxLine_myaiv")
 value = 100.0
 script = ExtResource("2_jtr8r")
 bus_name = "music"

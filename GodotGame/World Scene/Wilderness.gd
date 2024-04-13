@@ -2,11 +2,6 @@ extends Node2D
 
 var signal_method = ""
 
-#@export var NumTwigs: int = 0
-
-
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,10 +19,12 @@ func _ready():
 
 
 	#Water bottle
-	if (GameData.talkToKid == true and GameData.leaveVillageQuest == false):
+	if (GameData.day == 1 and GameData.talkToKid == true and GameData.leaveVillageQuest == false):
 		var instance = preload("res://World Scene/Items/WaterBottleSpecial.tscn").instantiate()
 		instance.position = Vector2(-1127, -617)
 		add_child(instance)
+		$KidsNPC.visible = true
+	if (GameData.talkToKid == true and GameData.leaveVillageQuest == false):
 		$KidsNPC.visible = true
 	else:
 		$KidsNPC.visible = false
@@ -35,11 +32,6 @@ func _ready():
 
 	#TODO add item spawns
 	inst(GameData.itemSpawns)
-	
-	#TODO: Spawn a water bottle if it is day 1 and true
-	if GameData.day == 1 and GameData.talkToKid == true:
-		#Spawn special water bottle
-		pass
 
 
 func _process(delta):

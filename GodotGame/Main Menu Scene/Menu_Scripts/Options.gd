@@ -29,7 +29,8 @@ func _process(delta):
 func _on_back_button_pressed():
 	SoundControl.is_playing_sound("button")
 	_leave_options_menu()
-		
+
+
 func _leave_options_menu():
 	if GameData.username != "":
 		Utils.return_to_current_scene()
@@ -38,7 +39,3 @@ func _leave_options_menu():
 	GameData.current_ui = ""
 
 # Related script: VolumeOptions.gd
-
-
-func _on_left_map_button_pressed():
-	pass # Replace with function body.
