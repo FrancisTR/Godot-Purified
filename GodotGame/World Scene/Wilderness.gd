@@ -21,9 +21,18 @@ func _ready():
 	var day = GameData.day
 	if GameData.day > 10:
 		day = 10
-		
-		
-	
+
+
+	#Water bottle
+	if (GameData.talkToKid == true and GameData.leaveVillageQuest == false):
+		var instance = preload("res://World Scene/Items/WaterBottleSpecial.tscn").instantiate()
+		instance.position = Vector2(-1127, -617)
+		add_child(instance)
+		$KidsNPC.visible = true
+	else:
+		$KidsNPC.visible = false
+
+
 	#TODO add item spawns
 	inst(GameData.itemSpawns)
 	

@@ -15,7 +15,7 @@ func _process(delta):
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
 		SoundControl.is_playing_sound("pickup")
-		print("Player has picked up a Water Bottle")
+		print("Player has picked up a Water Bottle Special")
 		#$TwigSprite.hide()
 		PickedUp.emit()
 		
@@ -25,19 +25,17 @@ func _on_body_entered(body):
 		GameData.get_item_posX = $".".position.x
 		GameData.get_item_posY = $".".position.y
 		
-		# Twig for dialogue
-		GameData.itemDialogue[2]["Value"] = GameData.itemDialogue[2]["Value"] + 1
-		
 		#Unique if this is picked up on day 1
 		#TODO Remove Code for special wataer bottle
 		#if GameData.day == 1 and GameData.talkToKid == true: #First quest
 			#GameData.questComplete["Wild"] = true
 			#$"../KidsNPC/FixedDialoguePosition/DialogueBox".start("ChildrenComplete")
 			#GameData.charLock = true
+		GameData.questComplete["Wild"] = true
 			
 		queue_free()
-		Utils.add_to_inventory("WaterBottle", 1)
+		Utils.add_to_inventory("WaterBottleSpecial", 1)
 		getTexture()
 			
 func getTexture():
-	return $WaterBottleSprite.sprite_frames.get_frame_texture("default", 0)
+	return $WaterBottleSpecialSprite.sprite_frames.get_frame_texture("default", 0)

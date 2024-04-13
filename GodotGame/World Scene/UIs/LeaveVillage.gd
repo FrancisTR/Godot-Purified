@@ -32,17 +32,12 @@ func _on_yes_pressed():
 	if GameData.inventory_amount.keys().find("WaterBottle") != -1:
 		Utils.remove_from_inventory("WaterBottle", int(GameData.inventory_amount["WaterBottle"]))
 	
-	#if GameData.inventory_amount.keys().find("BoilingPot") != -1:
-		#Utils.remove_from_inventory("BoilingPot", int(GameData.inventory_amount["BoilingPot"]))
-	#
-	#if GameData.inventory_amount.keys().find("WaterFilter") != -1:
-		#Utils.remove_from_inventory("WaterFilter", int(GameData.inventory_amount["WaterFilter"]))
-	
 	GameData.itemSpawnOnce = false #Spawn the items again on the next day
 	
 	#Reset villagers talked
 	for i in range(len(GameData.villagersTalked)):
 		GameData.villagersTalked[i]["Talked"] = false
+
 	GameData.QMain = false
 	GameData.QWild = false
 	GameData.questComplete = {"Main": false, "Wild": false}
@@ -67,6 +62,7 @@ func _on_yes_pressed():
 	GameData.madeProfit = false
 	GameData.barryDespawned = false
 	GameData.talkToKid = false
+	GameData.leaveVillageQuest = false
 
 
 

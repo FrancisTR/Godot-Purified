@@ -25,11 +25,12 @@ func _process(delta):
 	if (GameData.questComplete["Wild"] == true):
 		$TODOlist/ItemR2/CheckMark2.texture = load("res://Assets/UISprites/UI_Flat_Checkmark_Large.png")
 	
+
 	# Show in the UI of the item
 	#TODO: Add more requirements for each day and mae QMain and QWild
 	#Todo list shown in the inventory
 	if GameData.day == 1:
-		GameData.inventory_requirement = {"WaterBottle": "1"}
+		GameData.inventory_requirement = {"WaterBottleSpecial": "1"}
 		
 		#Add to the list based on the requirements
 		if (GameData.QMain == true):
@@ -37,7 +38,7 @@ func _process(delta):
 			$TODOlist/ItemR/ItemNeeded.text = "Need 6 Twigs"
 		if (GameData.QWild == true):
 			$TODOlist/ItemR2.text = "Request from the Kids"
-			$TODOlist/ItemR2/ItemNeeded2.text = "Need "+str(GameData.inventory_requirement["WaterBottle"])+" Water Bottle"
+			$TODOlist/ItemR2/ItemNeeded2.text = str(GameData.inventory_requirement["WaterBottleSpecial"])+" Special Water Bottle"
 	elif GameData.day == 2:
 		GameData.inventory_requirement = {"BoilingPot": "1"}
 		

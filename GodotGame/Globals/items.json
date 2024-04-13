@@ -5,9 +5,10 @@
 		"Sand": 3,
 		"Moss": 4,
 		"TinCan": 5,
-		"WaterBottle": 6,
-		"BoilingPot": 7,
-		"WaterFilter": 8
+		"WaterBottleSpecial": 6,
+		"WaterBottle": 7,
+		"BoilingPot": 8,
+		"WaterFilter": 9
 	},
 	{
 		"name":"Twig",
@@ -37,6 +38,12 @@
 		"name":"TinCan",
 		"description": "This is a TinCan",
 		"texture": "res://Assets/Custom/Items/TinCan.png",
+		"cropped":"no"
+	},
+	{
+		"name":"WaterBottleSpecial",
+		"description": "This is a Special Water bottle",
+		"texture": 	"res://Assets/Custom/Items/WaterBottleSpecial.png",
 		"cropped":"no"
 	},
 	{
