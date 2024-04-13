@@ -30,9 +30,9 @@ func _process(delta):
 	#Set the variables of the people that already talked to
 	#This prevents a reset if the player visited the wilderness and comes back
 	dialogue_box.variables["QWild"] = GameData.QWild
-	dialogue_box.variables["Profit?"] = GameData.madeProfit
-	for i in range(len(GameData.villagersTalked)):
-		dialogue_box.variables[GameData.villagersTalked[i]["Name"]] = GameData.villagersTalked[i]["Talked"]
+	#dialogue_box.variables["Profit?"] = GameData.madeProfit
+	#for i in range(len(GameData.villagersTalked)):
+		#dialogue_box.variables[GameData.villagersTalked[i]["Name"]] = GameData.villagersTalked[i]["Talked"]
 
 
 
@@ -40,17 +40,17 @@ func _process(delta):
 	#TODO: Add more Dialogue
 	if GameData.day == 1:
 		dialogue_box.start_id = "Children"
-		if GameData.day == 1 and GameData.inventory_amount.keys().find("WaterBottle") != -1: #Quest Complete
+		if GameData.inventory_amount.keys().find("WaterBottleSpecial") != -1: #Quest Complete
 			dialogue_box.start_id = "ChildrenComplete"
 	
 	elif GameData.day == 2:
 		dialogue_box.start_id = "Children2"
-		if GameData.day == 2 and GameData.inventory_amount.keys().find("BoilingPot") != -1: #Quest Complete
+		if GameData.inventory_amount.keys().find("BoilingPot") != -1: #Quest Complete
 			dialogue_box.start_id = "ChildrenComplete2"
 	
 	elif GameData.day == 3:
 		dialogue_box.start_id = "Children3"
-		if GameData.day == 3 and GameData.inventory_amount.keys().find("WaterFilter") != -1: #Quest Complete
+		if GameData.inventory_amount.keys().find("WaterFilter") != -1: #Quest Complete
 			dialogue_box.start_id = "ChildrenComplete3"
 	
 	
@@ -83,6 +83,7 @@ func _process(delta):
 			$PressForDialogue.visible = true
 
 
+#Not used
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
 		$PressForDialogue.visible = true
@@ -95,7 +96,7 @@ func _on_body_entered(body):
 
 
 
-
+#Not used
 func _on_body_exited(body):
 	if (body.name == "CharacterBody2D"):
 		print("Player has left")
@@ -135,8 +136,8 @@ func _on_dialogue_box_dialogue_ended():
 	#Quest stuff for the Main World
 	if (dialogue_box.variables["QWild"] == true):
 		GameData.QWild = true
-	if (dialogue_box.variables["Profit?"] == true):
-		GameData.madeProfit = true
+	#if (dialogue_box.variables["Profit?"] == true):
+		#GameData.madeProfit = true
 	
 	
 func _on_dialogue_box_dialogue_proceeded(node_type):
@@ -161,9 +162,8 @@ func _on_dialogue_box_dialogue_signal(value):
 
 
 func _on_animation_player_animation_finished(anim_name):
-	$FixedDialoguePosition/Voice.visible = true
-	pass # Replace with function body.
+	#TODO change it to true in final
+	$FixedDialoguePosition/Voice.visible = false
 
 func _on_voice_pressed():
 	print("Play Voice Recording")
-	pass # Replace with function body.

@@ -49,3 +49,4 @@ func _on_button_pressed():
 func _on_line_edit_text_changed(new_text):
 	SoundControl.is_playing_sound("dialogue")
 	$Error.visible = false
+	profanityWord = false

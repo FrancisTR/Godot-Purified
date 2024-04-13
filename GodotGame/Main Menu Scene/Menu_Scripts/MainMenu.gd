@@ -28,8 +28,8 @@ func _ready():
 	GameData.visitedWilderness = false
 	GameData.talkToKid = false
 
-	#Spawn the item once in the wilderness. Prevents duplication
-	GameData.itemSpawnOnce = false
+
+	GameData.leaveVillageQuest = false
 
 
 

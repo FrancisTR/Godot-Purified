@@ -14,7 +14,10 @@ func _init():
 func _ready():
 	set_process_unhandled_input(false)
 	update_text()
-	$HintLabel.text = action
+	if action == "StartDialogue":
+		$HintLabel.text = "Interaction"
+	else:
+		$HintLabel.text = action
 	#actions.append(action)
 
 func _toggled(button_exists):

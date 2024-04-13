@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://d24xfapo2kkt"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/NameCharacter.gd" id="1_x2q4l"]
-[ext_resource type="Texture2D" uid="uid://e02ocjjjfcme" path="res://Assets/UISprites/UI_Flat_Slot_01_Unavailable.png" id="2_oqgcq"]
+[ext_resource type="Texture2D" uid="uid://dp5pq4xti0m4g" path="res://Assets/UISprites/UI_Flat_Slot_01_Selected.png" id="2_1rkhh"]
 [ext_resource type="Texture2D" uid="uid://hubmkn40vva2" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_01a3.png" id="3_5s3mr"]
 [ext_resource type="Texture2D" uid="uid://dpa04pin008ur" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_01a1.png" id="4_31vgs"]
 
@@ -37,7 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_oqgcq")
+texture = ExtResource("2_1rkhh")
 
 [node name="Error" type="Label" parent="."]
 visible = false

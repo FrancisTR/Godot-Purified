@@ -13,8 +13,3 @@ func _ready():
 			""
 		)
 	SceneTransition.change_scene("res://Globals/text_transition.tscn")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

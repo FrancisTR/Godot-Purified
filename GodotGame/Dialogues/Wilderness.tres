@@ -111,7 +111,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(641.818, 433),
+"size": Vector2(641.817, 433),
 "speaker": 0
 },
 "1_14": {
@@ -237,7 +237,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"3_3",
 "text": ""
 }
 },
@@ -250,7 +250,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"3_4",
 "text": ""
 }
 },
@@ -292,6 +292,16 @@ nodes = {
 "link": &"1_15",
 "offset": Vector2(6200, -200),
 "signalValue": "Item"
+},
+"3_3": {
+"link": "END",
+"offset": Vector2(1766, 1799),
+"signalValue": "Leave"
+},
+"3_4": {
+"link": "END",
+"offset": Vector2(1940, 3360),
+"signalValue": "Leave"
 }
 }
 variables = {}

@@ -138,7 +138,7 @@ nodes = {
 },
 "1_18": {
 "dialogue": "Uhhhhh...What is your name then? (I hate this so much)",
-"offset": Vector2(-800, 1160),
+"offset": Vector2(-800, 1240),
 "options": {
 0: {
 "condition": {},

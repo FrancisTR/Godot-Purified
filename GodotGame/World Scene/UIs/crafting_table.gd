@@ -2,7 +2,7 @@ extends Node2D
 
 var enterBody = false
 
-# Called when the node enters the scene tree for the first time.
+
 var craftingList:Dictionary
 var ItemOfTheDay
 var itemImage
@@ -27,9 +27,11 @@ var itemImage
 var listKeys
 var listValues
 
-#TODO Add crafting recipes
+
 func _ready():
 	$UI/CraftingList.visible = false
+	
+	#TODO Add crafting recipes
 	if GameData.day == 2:
 		craftingList = {"Twig": 6, "TinCan": 1}
 		listKeys = craftingList.keys()
@@ -37,7 +39,7 @@ func _ready():
 		ItemOfTheDay = "BoilingPot"
 		$UI/CraftingList/ShowItemCrafted/ItemHint.texture = load("res://Assets/Custom/Items/BoilingPotHidden.png")
 		itemImage = load("res://Assets/Custom/Items/BoilingPot.png")
-		pass
+
 	elif GameData.day == 3:
 		craftingList = {"WaterBottle": 1, "Sand": 2, "Rock": 2, "Moss": 2}
 		listKeys = craftingList.keys()
@@ -45,12 +47,13 @@ func _ready():
 		ItemOfTheDay = "WaterFilter"
 		$UI/CraftingList/ShowItemCrafted/ItemHint.texture = load("res://Assets/Custom/Items/WaterFilterHidden.png")
 		itemImage = load("res://Assets/Custom/Items/WaterFilter.png")
-		pass
+
 		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if (GameData.day != 1):
 		#TODO: (in case) List of items needed in UI
 		for i in range(0, len(craftingList)):
@@ -63,7 +66,7 @@ func _process(delta):
 				listTextNumber[i].text = "0/" + str(listValues[i])
 			
 			
-			#add textures
+			#add textures for the player to see on the list
 			if listKeys[i] == "Twig":
 				listTextImg[i].texture = load("res://Assets/Custom/Items/Twig.png")
 			elif listKeys[i] == "TinCan":
@@ -93,6 +96,8 @@ func _process(delta):
 		listKeys = craftingList.keys()
 		listValues = craftingList.values()
 		var count = 0
+		
+		#See if there are enough items to craft. If so, show craft button
 		for i in range(0, len(listKeys)):
 			if (GameData.inventory_amount.keys().find(listKeys[i]) != -1):
 				if GameData.inventory_amount[listKeys[i]] >= craftingList[listKeys[i]]:
@@ -104,13 +109,14 @@ func _process(delta):
 			$UI/CraftingList/CraftButton.disabled = true
 		
 
+
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
 		print("Entered crafting")
 		$PressInteraction.visible = true
 		$UI/CraftingList.visible = false
 		enterBody = true
-	pass # Replace with function body.
+
 
 
 func _on_body_exited(body):
@@ -120,7 +126,7 @@ func _on_body_exited(body):
 		enterBody = false
 		print("Exit crafting")
 		GameData.current_ui = ""
-	pass # Replace with function body.
+
 
 
 func _on_craft_button_pressed():
@@ -146,7 +152,6 @@ func _on_okay_button_pressed():
 	GameData.charLock = false
 	GameData.current_ui = ""
 	SoundControl.is_playing_sound("button")
-	pass # Replace with function body.
 
 
 func _on_x_button_pressed():
@@ -155,4 +160,3 @@ func _on_x_button_pressed():
 	$PressInteraction.visible = true
 	GameData.current_ui = ""
 	SoundControl.is_playing_sound("button")
-	pass # Replace with function body.

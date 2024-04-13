@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Tutorial.gd" id="1_68151"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_i2pyw"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_jkygy"]
-[ext_resource type="Texture2D" uid="uid://e02ocjjjfcme" path="res://Assets/UISprites/UI_Flat_Slot_01_Unavailable.png" id="2_ypyo4"]
+[ext_resource type="Texture2D" uid="uid://dp5pq4xti0m4g" path="res://Assets/UISprites/UI_Flat_Slot_01_Selected.png" id="2_k7iqa"]
 [ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="3_q13l2"]
 [ext_resource type="Resource" uid="uid://dwec833wachoy" path="res://Dialogues/Tutorial.tres" id="3_tu0uu"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_akm0h"]
@@ -94,7 +94,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ypyo4")
+texture = ExtResource("2_k7iqa")
 
 [node name="CharacterIMG" type="TextureRect" parent="."]
 layout_mode = 0
@@ -130,6 +130,7 @@ hide_portrait = true
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a5mn1"), SubResource("RichTextEffect_uc7ri")])
 
 [node name="Voice" type="Button" parent="Dialogue"]
+visible = false
 z_index = 999
 texture_filter = 1
 offset_left = 101.0

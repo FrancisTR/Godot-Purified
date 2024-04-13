@@ -117,6 +117,7 @@ expand_mode = 1
 [node name="Dialogue" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" type="Panel" parent="Dialogue"]
+visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
 anchors_preset = 7
@@ -139,6 +140,7 @@ hide_portrait = true
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a5mn1"), SubResource("RichTextEffect_uc7ri")])
 
 [node name="Voice" type="Button" parent="Dialogue"]
+visible = false
 z_index = 999
 texture_filter = 1
 offset_left = 101.0

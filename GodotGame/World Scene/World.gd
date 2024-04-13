@@ -1,13 +1,11 @@
 extends Node2D
 
-#TODO: Set NPC positions
 @onready var npcs = [$NPCs/Denial, $NPCs/Anger, $NPCs/Bargin,
 					$NPCs/Depress, $NPCs/Accept, $NPCs/Croak, $NPCs/OldMan]
 
-
 var signal_method = ""
 
-@export var NumTwigs: int = 0
+#@export var NumTwigs: int = 0
 
 #TODO: Add cord for all NPCs
 var npc_positions = {
@@ -33,8 +31,9 @@ func _ready():
 	if GameData.save_position:
 		$Other/CharacterBody2D.position = GameData.player_position
 		GameData.save_position = false
+		
 	#TODO: Make inventory system into its own scene w/ graphics
-	$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
+	#$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
 	#SceneTransition.manual_fade.connect(go_to_next_day)
 	$UI/Day.text = "Day " + str(GameData.day)
 	#$NPCs/PressForDialogue.text = "s"
@@ -44,7 +43,7 @@ func _ready():
 		if GameData.day > 10:
 			day = 10
 		
-		# Commented out for now
+		# Set position
 		npcs[i].position = npc_positions[('day'+str(day))][i]
 		print(npcs[i], "is set to", npc_positions[('day'+str(day))][i])
 
@@ -52,7 +51,6 @@ func _ready():
 
 # Theme songs
 func _process(delta):
-	
 	#TODO: Add theme song based on the day
 	if GameData.day <= 2:
 		SoundControl.is_playing_theme("afternoon")
@@ -72,9 +70,9 @@ func _on_open_leave_menu():
 	$UI/LeaveVillage/QuotaError.hide()
 	$UI/LeaveVillage/ColorRect.hide()
 	
+	
 	#TODO: Add more days' restriction
 	#If the quota is not met, show a UI error message
-	
 	#Check to see if the player has talked to everyone
 	var TalkedToVillagersCount = 0
 	for i in range (len(GameData.villagersTalked)):
