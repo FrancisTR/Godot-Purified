@@ -72,7 +72,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(565.455, 390),
+"size": Vector2(565.455, 433),
 "speaker": 10
 },
 "1_11": {
@@ -85,7 +85,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(658.182, 372),
+"size": Vector2(658.182, 433),
 "speaker": 7
 },
 "1_12": {
@@ -98,7 +98,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(709.091, 372),
+"size": Vector2(709.091, 433),
 "speaker": 11
 },
 "1_13": {
@@ -111,7 +111,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(641.818, 391.818),
+"size": Vector2(641.818, 433),
 "speaker": 0
 },
 "1_14": {
@@ -120,16 +120,16 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_15",
+"link": &"3_2",
 "text": ""
 }
 },
-"size": Vector2(550.909, 372),
+"size": Vector2(550.909, 433),
 "speaker": 9
 },
 "1_15": {
 "dialogue": "There are many water bottles scattered around this forest, but only a few have a unique design, go and find us at least one.",
-"offset": Vector2(6180, -280),
+"offset": Vector2(6480, -280),
 "options": {
 0: {
 "condition": {},
@@ -137,7 +137,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 372),
+"size": Vector2(300, 433),
 "speaker": 9
 },
 "1_16": {
@@ -150,7 +150,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 372),
+"size": Vector2(300, 433),
 "speaker": 12
 },
 "1_17": {
@@ -163,7 +163,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 372),
+"size": Vector2(300, 433),
 "speaker": 7
 },
 "1_18": {
@@ -172,11 +172,11 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"3_1",
 "text": ""
 }
 },
-"size": Vector2(300, 372),
+"size": Vector2(300, 433),
 "speaker": 9
 },
 "1_2": {
@@ -267,7 +267,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(560, 428.364),
+"size": Vector2(560, 433),
 "speaker": 12
 },
 "1_9": {
@@ -280,8 +280,18 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(632.727, 422.727),
+"size": Vector2(632.727, 433),
 "speaker": 0
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(2348.02, 283.315),
+"signalValue": "Leave"
+},
+"3_2": {
+"link": &"1_15",
+"offset": Vector2(6200, -200),
+"signalValue": "Item"
 }
 }
 variables = {}

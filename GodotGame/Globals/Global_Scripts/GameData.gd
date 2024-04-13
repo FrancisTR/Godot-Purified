@@ -26,8 +26,8 @@ var visitTutorial = false
 var visitedWilderness = false
 var talkToKid = false
 
-#Spawn the item once in the wilderness. Prevents duplication
-var itemSpawnOnce = false
+
+var leaveVillageQuest = false
 
 
 

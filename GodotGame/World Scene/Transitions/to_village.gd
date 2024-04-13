@@ -2,7 +2,6 @@ extends StaticBody2D
 
 @onready var dialogue_box = $Dialogue/Dialogue/DialogueBox
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -15,7 +14,8 @@ func _process(delta):
 	else:
 		$Dialogue/Dialogue/CharacterIMG.visible = true
 		$Dialogue/Dialogue/Voice.visible = true
-	pass
+	
+		
 
 
 
@@ -68,7 +68,10 @@ func _on_teleport_body_entered(body):
 				dialogue_box.start("Error")
 		else:
 			#All requirements met
-			SceneTransition.change_scene("res://World Scene/World.tscn")
+			if GameData.questComplete["Wild"] == true and GameData.leaveVillageQuest == false:
+				dialogue_box.start("ChildrenComplete")
+			else:
+				SceneTransition.change_scene("res://World Scene/World.tscn")
 
 
 func _on_dialogue_box_dialogue_proceeded(node_type):
@@ -92,3 +95,10 @@ func _on_voice_pressed():
 func _on_dialogue_box_dialogue_ended():
 	$Dialogue/Dialogue/Voice.visible = false
 	$Dialogue/Dialogue/CharacterIMG.visible = false
+
+
+func _on_dialogue_box_dialogue_signal(value):
+	if value == "Leave":
+		GameData.leaveVillageQuest = true
+		SceneTransition.change_scene("res://World Scene/World.tscn")
+	pass # Replace with function body.

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://3x2shnlrfuiy"]
+
+[ext_resource type="Script" path="res://World Scene/Items/WaterBottleSpecial.gd" id="1_axk8x"]
+[ext_resource type="Texture2D" uid="uid://dsuqdcls077ih" path="res://Assets/Custom/Items/WaterBottleSpecial.png" id="2_m5lri"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vukrq"]
+size = Vector2(10, 17.8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5gstm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m5lri")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WaterBottleSpecial" type="Area2D"]
+z_index = 1
+script = ExtResource("1_axk8x")
+
+[node name="WaterBottleSpecialCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(2.38419e-07, -0.250001)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_vukrq")
+
+[node name="WaterBottleSpecialSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.98023e-06, 0)
+scale = Vector2(1.5, 1.65)
+sprite_frames = SubResource("SpriteFrames_5gstm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

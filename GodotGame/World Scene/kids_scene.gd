@@ -41,5 +41,14 @@ func _on_voice_pressed():
 func _on_dialogue_box_dialogue_ended():
 	$Dialogue/Voice.visible = false
 	$CharacterIMG.visible = false
+	$ShowItemRequest.visible = false
 	#Go to wilderness
 	SceneTransition.change_scene("res://World Scene/Wilderness.tscn")
+
+
+func _on_dialogue_box_dialogue_signal(value):
+	if value == "Item":
+		#TODO: Add more item to show?
+		if GameData.day == 1:
+			$ShowItemRequest.texture = load("res://Assets/Custom/Items/WaterBottleSpecial.png")
+		$ShowItemRequest.visible = true

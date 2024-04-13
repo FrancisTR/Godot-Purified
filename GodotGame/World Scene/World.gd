@@ -83,7 +83,7 @@ func _on_open_leave_menu():
 	print(TalkedToVillagersCount)
 
 
-	if ((GameData.inventory_amount.keys().find("WaterBottle") == -1 or TalkedToVillagersCount != 7 or GameData.questComplete["Main"] == false or GameData.questComplete["Wild"] == false) and GameData.day == 1):
+	if ((GameData.inventory_amount.keys().find("WaterBottleSpecial") == -1 or TalkedToVillagersCount != 7 or GameData.questComplete["Main"] == false or GameData.questComplete["Wild"] == false) and GameData.day == 1):
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
 	elif ((GameData.inventory_amount.keys().find("BoilingPot") == -1 or TalkedToVillagersCount != 7 or GameData.questComplete["Main"] == false or GameData.questComplete["Wild"] == false) and GameData.day == 2):

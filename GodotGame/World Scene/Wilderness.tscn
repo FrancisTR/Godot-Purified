@@ -1256,7 +1256,8 @@ position = Vector2(2661, -527)
 position = Vector2(2552, 564)
 
 [node name="KidsNPC" parent="." instance=ExtResource("21_e2yvs")]
-position = Vector2(1229, -447)
+visible = false
+position = Vector2(897, -911)
 
 [node name="Sand11" parent="." instance=ExtResource("20_jl3ry")]
 position = Vector2(-661, -577)
