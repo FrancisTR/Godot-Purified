@@ -28,7 +28,7 @@ func go_pos(delta):
 		#Hide all character img
 		$"../Bargin/FixedDialoguePosition/CharacterIMG".visible = false
 		$FixedDialoguePosition/DialogueOpacity.visible = false
-		
+		$"../Bargin/Sprite2D".animation = "Barry_Running"
 	if $"../Bargin".global_position == BarryDestination:
 		moving = false
 		$"../Bargin".position = Vector2(999999999, 999999999)
