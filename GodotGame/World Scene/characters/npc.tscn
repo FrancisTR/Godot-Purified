@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://decpyxnu3oocl"]
+[gd_scene load_steps=35 format=3 uid="uid://decpyxnu3oocl"]
 
 [ext_resource type="Script" path="res://World Scene/characters/npc.gd" id="1_7ll4o"]
 [ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="1_we8v3"]
@@ -8,8 +8,11 @@
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_1oy2a"]
 [ext_resource type="Resource" uid="uid://2d0hvs0mqxeq" path="res://Dialogues/Dialogue.tres" id="4_pn0gs"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_hejlf"]
+[ext_resource type="Texture2D" uid="uid://d2fnbceys5gli" path="res://Assets/Custom/Sprites/Barry.png" id="8_k6djr"]
+[ext_resource type="Texture2D" uid="uid://dqf358j6pwkju" path="res://Assets/Custom/Sprites/Barry_Sprite_Sheet.png" id="9_bflum"]
 [ext_resource type="Texture2D" uid="uid://dw04cpaod6bun" path="res://Assets/Custom/temp_frog_icon.png" id="9_ilu2c"]
 [ext_resource type="Texture2D" uid="uid://dyqj26prpkdqw" path="res://Assets/UISprites/UI_Flat_Frame_02_Lite.png" id="9_og4hm"]
+[ext_resource type="Texture2D" uid="uid://dmr7ercxgsg81" path="res://Assets/Custom/Sprites/Barry Sad.png" id="10_e8okq"]
 [ext_resource type="Texture2D" uid="uid://d1rasp64hd3m" path="res://Assets/Custom/UI_Exclamation_Mark_Plate.png" id="11_pkqqv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxqgd"]
@@ -125,12 +128,47 @@ modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lj5br"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_c630w"]
+atlas = ExtResource("9_bflum")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nce4"]
+atlas = ExtResource("9_bflum")
+region = Rect2(144, 0, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6cu33"]
 atlas = ExtResource("1_we8v3")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bxftl"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_k6djr")
+}],
+"loop": true,
+"name": &"Barry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c630w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nce4")
+}],
+"loop": true,
+"name": &"Barry_Running",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_e8okq")
+}],
+"loop": true,
+"name": &"Barry_Sad",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6cu33")
@@ -141,7 +179,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bc547"]
-size = Vector2(34, 37)
+size = Vector2(34, 42)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gxj27"]
 texture = ExtResource("9_og4hm")
@@ -236,21 +274,22 @@ text = "🔊"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bxftl")
+animation = &"Barry_Running"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, -0.5)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_bc547")
 
 [node name="PressForDialogue" type="Label" parent="."]
 visible = false
 z_index = 100
 texture_filter = 1
-offset_left = -18.0
-offset_top = -46.0
-offset_right = 10.0
-offset_bottom = -20.0
+offset_left = -14.0
+offset_top = -51.0
+offset_right = 14.0
+offset_bottom = -25.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_gxj27")
 text = "Q"

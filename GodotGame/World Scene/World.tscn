@@ -1012,6 +1012,10 @@ position = Vector2(1715, 514)
 [node name="Bargin" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(1332, -81)
 
+[node name="Sprite2D" parent="NPCs/Bargin" index="1"]
+animation = &"Barry"
+autoplay = "Barry"
+
 [node name="Marker2D" parent="NPCs/Bargin/NPCActions/BarryDestination" index="0"]
 position = Vector2(193, -339)
 
@@ -1034,4 +1038,10 @@ position = Vector2(-212, 168)
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]
 [connection signal="leave_village" from="UI/LeaveVillage" to="." method="_on_leave_village"]
 
+[editable path="NPCs/Denial"]
+[editable path="NPCs/Anger"]
 [editable path="NPCs/Bargin"]
+[editable path="NPCs/Depress"]
+[editable path="NPCs/Accept"]
+[editable path="NPCs/Croak"]
+[editable path="NPCs/OldMan"]
