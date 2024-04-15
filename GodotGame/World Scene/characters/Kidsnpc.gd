@@ -14,7 +14,8 @@ func _ready():
 	NPCname = null
 	set_process_input(true)
 	$PressForDialogue.text = InputMap.action_get_events("StartDialogue")[0].as_text()
-
+	if (GameData.day == 3):
+		$Sprite2D.animation = "Day3Sad"
 
 
 # TODO: Map more ID's for dialogue for more days
@@ -132,7 +133,7 @@ func hide_map_icon():
 
 
 func _on_dialogue_box_dialogue_ended():
-	
+	$FixedDialoguePosition/CharacterIMG.visible = false
 	#Quest stuff for the Main World
 	if (dialogue_box.variables["QWild"] == true):
 		GameData.QWild = true

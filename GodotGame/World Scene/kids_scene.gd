@@ -59,4 +59,8 @@ func _on_dialogue_box_dialogue_signal(value):
 		#TODO: Add more item to show?
 		if GameData.day == 1:
 			$ShowItemRequest.texture = load("res://Assets/Custom/Items/WaterBottleSpecial.png")
+		elif GameData.day == 2:
+			$ShowItemRequest.texture = load("res://Assets/Custom/CraftingTable.png")
 		$ShowItemRequest.visible = true
+	else:
+		$ShowItemRequest.visible = false

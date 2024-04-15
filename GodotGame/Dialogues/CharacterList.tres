@@ -1,15 +1,20 @@
-[gd_resource type="Resource" script_class="CharacterList" load_steps=19 format=3 uid="uid://bksin52k7pe8u"]
+[gd_resource type="Resource" script_class="CharacterList" load_steps=24 format=3 uid="uid://bksin52k7pe8u"]
 
-[ext_resource type="Texture2D" uid="uid://byvrjpafcmkks" path="res://icon.svg" id="1_1qrg4"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="1_2cgx6"]
+[ext_resource type="Texture2D" uid="uid://blea0dsendh8f" path="res://Assets/Custom/Sprites/Leap_Sad.png" id="1_8vcds"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_p0fqg"]
 [ext_resource type="Texture2D" uid="uid://ctdifh6jdv82p" path="res://Assets/profile0.png" id="2_e6ut6"]
 [ext_resource type="Texture2D" uid="uid://d2fnbceys5gli" path="res://Assets/Custom/Sprites/Barry.png" id="4_17g0i"]
+[ext_resource type="Texture2D" uid="uid://cdrpnr6p77usy" path="res://Assets/Custom/Sprites/Croak.png" id="5_6rik2"]
+[ext_resource type="Texture2D" uid="uid://cd5a0quy0s3kv" path="res://Assets/Custom/Sprites/Rano.png" id="6_bgjav"]
+[ext_resource type="Texture2D" uid="uid://dj4mk1sc8olny" path="res://Assets/Custom/Sprites/Ribbit.png" id="7_gshb6"]
+[ext_resource type="Texture2D" uid="uid://50l0bglac124" path="res://Assets/Custom/Sprites/Hop.png" id="8_wanih"]
+[ext_resource type="Texture2D" uid="uid://3l6628awkgb" path="res://Assets/Custom/Sprites/Leap.png" id="9_vwcai"]
 
 [sub_resource type="Resource" id="Resource_d68ut"]
 script = ExtResource("1_p0fqg")
 name = "Main"
-image = ExtResource("1_1qrg4")
+image = ExtResource("1_8vcds")
 color = Color(1, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_1b4a2"]
@@ -51,7 +56,7 @@ color = Color(1, 1, 1, 1)
 [sub_resource type="Resource" id="Resource_2dvo0"]
 script = ExtResource("1_p0fqg")
 name = "Croak"
-image = ExtResource("2_e6ut6")
+image = ExtResource("5_6rik2")
 color = Color(1, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_ixiiq"]
@@ -63,25 +68,25 @@ color = Color(1, 1, 1, 1)
 [sub_resource type="Resource" id="Resource_ubiec"]
 script = ExtResource("1_p0fqg")
 name = "Rano"
-image = ExtResource("2_e6ut6")
+image = ExtResource("6_bgjav")
 color = Color(1, 0.0901961, 0.0666667, 1)
 
 [sub_resource type="Resource" id="Resource_7kjnv"]
 script = ExtResource("1_p0fqg")
 name = "Ribbit"
-image = ExtResource("2_e6ut6")
+image = ExtResource("7_gshb6")
 color = Color(0.811765, 0, 0.811765, 1)
 
 [sub_resource type="Resource" id="Resource_jsre7"]
 script = ExtResource("1_p0fqg")
 name = "Hop"
-image = ExtResource("2_e6ut6")
+image = ExtResource("8_wanih")
 color = Color(0.984314, 0, 0.509804, 1)
 
 [sub_resource type="Resource" id="Resource_eq73d"]
 script = ExtResource("1_p0fqg")
 name = "Leap"
-image = ExtResource("2_e6ut6")
+image = ExtResource("9_vwcai")
 color = Color(0.913725, 0.458824, 0, 1)
 
 [resource]

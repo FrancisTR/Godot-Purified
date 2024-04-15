@@ -92,4 +92,5 @@ func _on_voice_pressed():
 
 func _on_dialogue_box_dialogue_ended():
 	$Dialogue/Voice.visible = false
+	$CharacterIMG.visible = false
 	pass # Replace with function body.

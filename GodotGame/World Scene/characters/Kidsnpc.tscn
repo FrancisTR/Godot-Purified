@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dxg6ebn820xt1"]
+[gd_scene load_steps=30 format=3 uid="uid://dxg6ebn820xt1"]
 
 [ext_resource type="Script" path="res://World Scene/characters/Kidsnpc.gd" id="1_p5sut"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_o6to7"]
@@ -7,7 +7,8 @@
 [ext_resource type="Resource" uid="uid://cku6yalipw20o" path="res://Dialogues/Wilderness.tres" id="5_qmyqf"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="6_em8tp"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="7_yxtd2"]
-[ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="8_7oq4u"]
+[ext_resource type="Texture2D" uid="uid://caxl5hn4q77p0" path="res://Assets/Custom/Sprites/LLE_3.png" id="8_lpego"]
+[ext_resource type="Texture2D" uid="uid://cu1adewyhpbwa" path="res://Assets/Custom/Sprites/LLE_1-2.png" id="8_rhqp1"]
 [ext_resource type="Texture2D" uid="uid://dyqj26prpkdqw" path="res://Assets/UISprites/UI_Flat_Frame_02_Lite.png" id="9_ce37l"]
 [ext_resource type="Texture2D" uid="uid://dw04cpaod6bun" path="res://Assets/Custom/temp_frog_icon.png" id="10_emek8"]
 
@@ -41,7 +42,7 @@ Button/styles/normal = SubResource("StyleBoxTexture_s7508")
 Button/styles/pressed = SubResource("StyleBoxTexture_m2aul")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d61p"]
-bg_color = Color(0, 0.305882, 0.313726, 0.890196)
+bg_color = Color(0, 0.305882, 0.313726, 1)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -124,15 +125,23 @@ modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lj5br"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6cu33"]
-atlas = ExtResource("8_7oq4u")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rflpx"]
+atlas = ExtResource("8_rhqp1")
+region = Rect2(0, 0, 61, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bxftl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6cu33")
+"texture": ExtResource("8_lpego")
+}],
+"loop": true,
+"name": &"Day3Sad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rflpx")
 }],
 "loop": true,
 "name": &"default",
@@ -140,7 +149,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bc547"]
-size = Vector2(34, 37)
+size = Vector2(142, 62)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gxj27"]
 texture = ExtResource("9_ce37l")
@@ -168,10 +177,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -442.0
-offset_top = -173.0
-offset_right = -167.0
-offset_bottom = 348.0
+offset_left = -455.0
+offset_top = -324.0
+offset_right = -180.0
+offset_bottom = 197.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
@@ -235,11 +244,11 @@ text = "🔊"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(3, 3)
+scale = Vector2(2.3, 2.3)
 sprite_frames = SubResource("SpriteFrames_bxftl")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, -0.5)
 shape = SubResource("RectangleShape2D_bc547")
 
 [node name="PressForDialogue" type="Label" parent="."]

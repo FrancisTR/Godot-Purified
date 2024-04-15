@@ -38,7 +38,7 @@ Button/styles/normal = SubResource("StyleBoxTexture_vdbo4")
 Button/styles/pressed = SubResource("StyleBoxTexture_wpafn")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_woc5x"]
-bg_color = Color(0, 0.305882, 0.313726, 0.921569)
+bg_color = Color(0, 0.305882, 0.313726, 1)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -108,10 +108,9 @@ expand_mode = 1
 
 [node name="CharacterIMG" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 114.0
-offset_right = 310.0
-offset_bottom = 666.0
+offset_left = 121.0
+offset_right = 389.0
+offset_bottom = 552.0
 expand_mode = 1
 
 [node name="Dialogue" type="CanvasLayer" parent="."]

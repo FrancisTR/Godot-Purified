@@ -24,7 +24,7 @@ func _ready():
 	GameData.save_position = false
 	GameData.player_position
 
-	GameData.visitTutorial = false
+
 	GameData.visitedWilderness = false
 	GameData.talkToKid = false
 
