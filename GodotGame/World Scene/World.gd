@@ -4,13 +4,14 @@ extends Node2D
 					$NPCs/Depress, $NPCs/Accept, $NPCs/Croak, $NPCs/OldMan]
 
 var signal_method = ""
+var stopMusic = false
 
 #@export var NumTwigs: int = 0
 
 #TODO: Add cord for all NPCs
 var npc_positions = {
 	'day1':[Vector2(2721, -234), Vector2(1715, 514), Vector2(1332, -81), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
-	'day2':[Vector2(108, -353), Vector2(497, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
+	'day2':[Vector2(108, -353), Vector2(497, 201), Vector2(731, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
 	'day3':[Vector2(48, 406), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
 	
 	#DLC
@@ -52,10 +53,11 @@ func _ready():
 # Theme songs
 func _process(delta):
 	#TODO: Add theme song based on the day
-	if GameData.day <= 2:
-		SoundControl.is_playing_theme("afternoon")
-	elif GameData.day >= 3:
-		SoundControl.is_playing_theme("main")
+	if (stopMusic == false):
+		if GameData.day <= 2:
+			SoundControl.is_playing_theme("afternoon")
+		elif GameData.day >= 3:
+			SoundControl.is_playing_theme("main")
 
 
 
@@ -123,6 +125,8 @@ func _on_test_dec_1():
 
 
 func _on_leave_village():
+	stopMusic = true
+	SoundControl.stop_playing()
 	#TODO: 3 days for MVP. 10 for full game
 	if GameData.day < 3:
 		SoundControl.stop_playing()

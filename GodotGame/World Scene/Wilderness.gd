@@ -21,8 +21,15 @@ func _ready():
 	#Water bottle
 	if (GameData.day == 1 and GameData.talkToKid == true and GameData.leaveVillageQuest == false):
 		var instance = preload("res://World Scene/Items/WaterBottleSpecial.tscn").instantiate()
+		var instance2 = preload("res://World Scene/Items/WaterBottleSpecial.tscn").instantiate()
+		var instance3 = preload("res://World Scene/Items/WaterBottleSpecial.tscn").instantiate()
 		instance.position = Vector2(-1127, -617)
+		instance2.position = Vector2(2310, -327)
+		instance3.position = Vector2(-221, 1314)
+		
 		add_child(instance)
+		add_child(instance2)
+		add_child(instance3)
 		$KidsNPC.visible = true
 	if (GameData.talkToKid == true and GameData.leaveVillageQuest == false):
 		$KidsNPC.visible = true

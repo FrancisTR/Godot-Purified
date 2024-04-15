@@ -1082,7 +1082,6 @@ texture_filter = 1
 position = Vector2(887, -743)
 
 [node name="KidsNPC" parent="." instance=ExtResource("21_e2yvs")]
-visible = false
 position = Vector2(889, -922)
 
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
