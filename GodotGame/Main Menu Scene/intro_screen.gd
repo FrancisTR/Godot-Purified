@@ -9,7 +9,7 @@ func _ready():
 				""
 			],
 			"res://Main Menu Scene/MainMenu.tscn",
-			2.8,
+			2,
 			""
 		)
 	SceneTransition.change_scene("res://Globals/text_transition.tscn")

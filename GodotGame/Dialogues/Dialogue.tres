@@ -482,11 +482,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 433.001),
 "speaker": 8
 },
 "1_123": {
-"dialogue": "I almost forgot. I really appriciate about giving me some Twigs couple days ago. I was wondering if you can give me a couple of Tin Cans.",
+"dialogue": "I almost forgot. I really appreciate you giving me the Twigs the other day. I was wondering if you can give me a couple of Tin Cans.",
 "offset": Vector2(1240, 4100),
 "options": {
 0: {

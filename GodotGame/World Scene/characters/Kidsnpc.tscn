@@ -149,7 +149,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bc547"]
-size = Vector2(142, 62)
+size = Vector2(112, 46)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gxj27"]
 texture = ExtResource("9_ce37l")
@@ -244,7 +244,7 @@ text = "🔊"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(2.3, 2.3)
+scale = Vector2(1.8, 1.8)
 sprite_frames = SubResource("SpriteFrames_bxftl")
 autoplay = "default"
 

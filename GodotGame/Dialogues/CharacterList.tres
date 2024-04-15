@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CharacterList" load_steps=24 format=3 uid="uid://bksin52k7pe8u"]
 
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="1_2cgx6"]
-[ext_resource type="Texture2D" uid="uid://blea0dsendh8f" path="res://Assets/Custom/Sprites/Leap_Sad.png" id="1_8vcds"]
+[ext_resource type="Texture2D" uid="uid://cuidqfb00toq7" path="res://Assets/Custom/Sprites/MC.png" id="1_jnr02"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_p0fqg"]
 [ext_resource type="Texture2D" uid="uid://ctdifh6jdv82p" path="res://Assets/profile0.png" id="2_e6ut6"]
 [ext_resource type="Texture2D" uid="uid://d2fnbceys5gli" path="res://Assets/Custom/Sprites/Barry.png" id="4_17g0i"]
@@ -14,7 +14,7 @@
 [sub_resource type="Resource" id="Resource_d68ut"]
 script = ExtResource("1_p0fqg")
 name = "Main"
-image = ExtResource("1_8vcds")
+image = ExtResource("1_jnr02")
 color = Color(1, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_1b4a2"]
@@ -57,7 +57,7 @@ color = Color(1, 1, 1, 1)
 script = ExtResource("1_p0fqg")
 name = "Croak"
 image = ExtResource("5_6rik2")
-color = Color(1, 1, 1, 1)
+color = Color(0, 0.447059, 0.796078, 1)
 
 [sub_resource type="Resource" id="Resource_ixiiq"]
 script = ExtResource("1_p0fqg")
