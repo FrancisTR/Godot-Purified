@@ -124,7 +124,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(550.909, 433),
+"size": Vector2(550.91, 433),
 "speaker": 9
 },
 "1_15": {
@@ -179,22 +179,204 @@ nodes = {
 "size": Vector2(300, 433),
 "speaker": 9
 },
+"1_19": {
+"dialogue": "Oh, its you again...",
+"offset": Vector2(1720, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_20",
+"text": ""
+}
+},
+"size": Vector2(598, 526),
+"speaker": 9
+},
 "1_2": {
-"dialogue": "Hey please don't go. Make me a pot",
+"dialogue": "Halt! You have trespassed on the territory of the Leaping Lagoon Explorers!",
 "offset": Vector2(760, 1140),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_19",
 "text": ""
 }
 },
 "size": Vector2(851.465, 527.776),
 "speaker": 9
 },
+"1_20": {
+"dialogue": "Hi Salesperson...cough cough...",
+"offset": Vector2(2400, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_21",
+"text": ""
+}
+},
+"size": Vector2(604, 568),
+"speaker": 7
+},
+"1_21": {
+"dialogue": "Croak, I think you used it too much...",
+"offset": Vector2(3080, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_22",
+"text": ""
+}
+},
+"size": Vector2(546, 510),
+"speaker": 11
+},
+"1_22": {
+"dialogue": "No i'm fine...cough...",
+"offset": Vector2(3720, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_23",
+"text": ""
+}
+},
+"size": Vector2(658, 518),
+"speaker": 7
+},
+"1_23": {
+"dialogue": "No way the salesperson came back.",
+"offset": Vector2(4420, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_24",
+"text": ""
+}
+},
+"size": Vector2(648, 488),
+"speaker": 12
+},
+"1_24": {
+"dialogue": "I mean you can punish him again if you want.",
+"offset": Vector2(5120, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_25",
+"text": ""
+}
+},
+"size": Vector2(512, 454),
+"speaker": 10
+},
+"1_25": {
+"dialogue": "Makes sense to me. We need to teach the salesperson a lesson to not stealing our stuff.",
+"offset": Vector2(5700, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_26",
+"text": ""
+}
+},
+"size": Vector2(546, 476),
+"speaker": 12
+},
+"1_26": {
+"dialogue": "Well Leap, what do you have in mind?",
+"offset": Vector2(6320, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_27",
+"text": ""
+}
+},
+"size": Vector2(676, 510),
+"speaker": 9
+},
+"1_27": {
+"dialogue": "I do want to see the salesperson make something.",
+"offset": Vector2(7040, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_28",
+"text": ""
+}
+},
+"size": Vector2(609.091, 484.727),
+"speaker": 12
+},
+"1_28": {
+"dialogue": "Wait wait, how am I suppose to make stuff?",
+"offset": Vector2(7700, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"3_5",
+"text": ""
+}
+},
+"size": Vector2(545.454, 519.273),
+"speaker": 0
+},
+"1_29": {
+"dialogue": "You could use our crafting table. It looks like this and it is near the entrance. Just go up to it and I can provide a list of things you need to make.",
+"offset": Vector2(8620, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"3_6",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 12
+},
 "1_3": {
-"dialogue": "Make me a Water filter pls.",
+"dialogue": "Halt...You have trespassed on the territory of the Leaping Lago...",
 "offset": Vector2(800, 2800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_36",
+"text": ""
+}
+},
+"size": Vector2(726, 462),
+"speaker": 9
+},
+"1_30": {
+"dialogue": "Speaking of which, what do you want the salesperson to make anyway.",
+"offset": Vector2(9200, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_31",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 9
+},
+"1_31": {
+"dialogue": "Hmmm, how about a Boiling Pot...",
+"offset": Vector2(9580, 1140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_32",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 12
+},
+"1_32": {
+"dialogue": "Sounds great. Salesperson, go up to the crafting table and we will provide you a list of items you need to make a boiling pot. Once you make it, come back to us.",
+"offset": Vector2(9940, 1140),
 "options": {
 0: {
 "condition": {},
@@ -202,8 +384,99 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(726, 462),
+"size": Vector2(300, 372),
 "speaker": 9
+},
+"1_33": {
+"dialogue": "No leaping way you just made that.",
+"offset": Vector2(1820, 1800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_34",
+"text": ""
+}
+},
+"size": Vector2(658, 532),
+"speaker": 12
+},
+"1_34": {
+"dialogue": "Nice job Salesperson!...cough cough",
+"offset": Vector2(2540, 1800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_35",
+"text": ""
+}
+},
+"size": Vector2(782, 546),
+"speaker": 7
+},
+"1_35": {
+"dialogue": "Now that you’ve completed the task...again, you’re free to leave. You can keep whatever you found too.",
+"offset": Vector2(3380, 1800),
+"options": {
+0: {
+"condition": {},
+"link": &"3_3",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 9
+},
+"1_36": {
+"dialogue": "Oh it's you again...",
+"offset": Vector2(1580, 2800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_37",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 9
+},
+"1_37": {
+"dialogue": "Yep it's me.",
+"offset": Vector2(1960, 2800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_38",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 0
+},
+"1_38": {
+"dialogue": "By the way, where's Croak?",
+"offset": Vector2(2320, 2800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_39",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 0
+},
+"1_39": {
+"dialogue": "He's currently sick. But I am sure he will come back.",
+"offset": Vector2(2660, 2800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_40",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 11
 },
 "1_4": {
 "dialogue": "Hey! We won’t let you pass until you complete the challenge.",
@@ -218,8 +491,99 @@ nodes = {
 "size": Vector2(1109.92, 452.645),
 "speaker": 9
 },
+"1_40": {
+"dialogue": "I'm not sure. He seems very sick to the point where he is at a hospital right now...",
+"offset": Vector2(3020, 2800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_41",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 10
+},
+"1_41": {
+"dialogue": "Either way, you all know that you will be better if you go to a hospital.",
+"offset": Vector2(3360, 2800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_42",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 11
+},
+"1_42": {
+"dialogue": "Anyway, I guess you know the drill salesperson.",
+"offset": Vector2(3720, 2800),
+"options": {
+0: {
+"condition": {},
+"link": &"1_43",
+"text": ""
+}
+},
+"size": Vector2(498, 410),
+"speaker": 12
+},
+"1_43": {
+"dialogue": "Just like yesterday, where you created a Boiling Pot, make us a Water Filter.",
+"offset": Vector2(4300, 2800),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 12
+},
+"1_44": {
+"dialogue": "This looks so cool!",
+"offset": Vector2(1947.08, 3393.36),
+"options": {
+0: {
+"condition": {},
+"link": &"1_45",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 11
+},
+"1_45": {
+"dialogue": "Pff...whatever.",
+"offset": Vector2(2320, 3400),
+"options": {
+0: {
+"condition": {},
+"link": &"1_46",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 12
+},
+"1_46": {
+"dialogue": "Well you know the drill. You completed the task so you’re free to leave. You can keep whatever you found too as well.",
+"offset": Vector2(2720, 3380),
+"options": {
+0: {
+"condition": {},
+"link": &"3_4",
+"text": ""
+}
+},
+"size": Vector2(300, 372),
+"speaker": 9
+},
 "1_5": {
-"dialogue": "Wow, I’m impressed! You’ve managed to find them.",
+"dialogue": "Wow, I’m impressed! You’ve managed to find it.",
 "offset": Vector2(540, 240),
 "options": {
 0: {
@@ -232,12 +596,12 @@ nodes = {
 "speaker": 9
 },
 "1_6": {
-"dialogue": "Yay Pot.",
+"dialogue": "Wow, I am impress...",
 "offset": Vector2(800, 1800),
 "options": {
 0: {
 "condition": {},
-"link": &"3_3",
+"link": &"1_33",
 "text": ""
 }
 },
@@ -245,12 +609,12 @@ nodes = {
 "speaker": 9
 },
 "1_7": {
-"dialogue": "No way Water filter",
+"dialogue": "No way you created a water filter.",
 "offset": Vector2(800, 3360),
 "options": {
 0: {
 "condition": {},
-"link": &"3_4",
+"link": &"1_44",
 "text": ""
 }
 },
@@ -295,13 +659,23 @@ nodes = {
 },
 "3_3": {
 "link": "END",
-"offset": Vector2(1766, 1799),
+"offset": Vector2(3760, 1820),
 "signalValue": "Leave"
 },
 "3_4": {
 "link": "END",
-"offset": Vector2(1940, 3360),
+"offset": Vector2(3120, 3380),
 "signalValue": "Leave"
+},
+"3_5": {
+"link": &"1_29",
+"offset": Vector2(8320, 1140),
+"signalValue": "Item"
+},
+"3_6": {
+"link": &"1_30",
+"offset": Vector2(8960, 1620),
+"signalValue": "Negate"
 }
 }
 variables = {}

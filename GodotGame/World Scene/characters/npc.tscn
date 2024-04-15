@@ -45,7 +45,7 @@ Button/styles/normal = SubResource("StyleBoxTexture_s7508")
 Button/styles/pressed = SubResource("StyleBoxTexture_m2aul")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d61p"]
-bg_color = Color(0, 0.305882, 0.313726, 0.890196)
+bg_color = Color(0, 0.305882, 0.313726, 1)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -206,10 +206,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -442.0
-offset_top = -173.0
-offset_right = -167.0
-offset_bottom = 348.0
+offset_left = -455.0
+offset_top = -324.0
+offset_right = -180.0
+offset_bottom = 197.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1

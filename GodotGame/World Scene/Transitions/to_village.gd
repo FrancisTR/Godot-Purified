@@ -9,7 +9,8 @@ func _process(delta):
 		GameData.charLock = false
 	else:
 		$Dialogue/Dialogue/CharacterIMG.visible = true
-		$Dialogue/Dialogue/Voice.visible = true
+		#TODO: Switch to true for final
+		$Dialogue/Dialogue/Voice.visible = false
 	
 		
 
@@ -64,8 +65,14 @@ func _on_teleport_body_entered(body):
 				dialogue_box.start("Error")
 		else:
 			#All requirements met
+			#TODO: Add more days
 			if GameData.questComplete["Wild"] == true and GameData.leaveVillageQuest == false:
-				dialogue_box.start("ChildrenComplete")
+				if (GameData.day == 1):
+					dialogue_box.start("ChildrenComplete")
+				elif (GameData.day == 2):
+					dialogue_box.start("ChildrenComplete2")
+				elif (GameData.day == 3):
+					dialogue_box.start("ChildrenComplete3")
 			else:
 				SceneTransition.change_scene("res://World Scene/World.tscn")
 
