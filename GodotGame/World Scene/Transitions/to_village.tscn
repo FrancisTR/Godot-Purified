@@ -14,7 +14,7 @@ size = Vector2(566, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqafc"]
 size = Vector2(566, 16)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13tsd"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wjlnd"]
 texture = ExtResource("2_ydqbd")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -22,7 +22,7 @@ texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0fxht"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j88io"]
 texture = ExtResource("2_ydqbd")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -30,7 +30,7 @@ texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1x7d4"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ev5n"]
 texture = ExtResource("3_mjyng")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -38,12 +38,12 @@ texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
-[sub_resource type="Theme" id="Theme_ijf1c"]
-Button/styles/hover = SubResource("StyleBoxTexture_13tsd")
-Button/styles/normal = SubResource("StyleBoxTexture_0fxht")
-Button/styles/pressed = SubResource("StyleBoxTexture_1x7d4")
+[sub_resource type="Theme" id="Theme_dll47"]
+Button/styles/hover = SubResource("StyleBoxTexture_wjlnd")
+Button/styles/normal = SubResource("StyleBoxTexture_j88io")
+Button/styles/pressed = SubResource("StyleBoxTexture_3ev5n")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8bif"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kfgb"]
 bg_color = Color(0, 0.305882, 0.313726, 1)
 border_width_left = 10
 border_width_top = 10
@@ -60,10 +60,10 @@ expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_66oxl"]
+[sub_resource type="RichTextEffect" id="RichTextEffect_xj6sr"]
 script = ExtResource("4_ybmjb")
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_emjeb"]
+[sub_resource type="RichTextEffect" id="RichTextEffect_w4h7m"]
 script = ExtResource("5_qpkj5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k7vsb"]
@@ -95,34 +95,27 @@ shape = SubResource("RectangleShape2D_pqafc")
 
 [node name="Dialogue" type="CanvasLayer" parent="Dialogue"]
 
+[node name="DialogueBox" type="Panel" parent="Dialogue/Dialogue"]
+z_index = 101
+texture_filter = 1
+custom_minimum_size = Vector2(256, 128)
+offset_left = 100.0
+offset_top = 373.0
+offset_right = 1053.0
+offset_bottom = 612.0
+theme = SubResource("Theme_dll47")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7kfgb")
+script = ExtResource("2_4245u")
+dialogue_data = ExtResource("3_16syn")
+hide_portrait = true
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_xj6sr"), SubResource("RichTextEffect_w4h7m")])
+
 [node name="CharacterIMG" type="TextureRect" parent="Dialogue/Dialogue"]
+texture_filter = 1
 offset_left = 121.0
 offset_right = 396.0
 offset_bottom = 521.0
 expand_mode = 1
-
-[node name="DialogueBox" type="Panel" parent="Dialogue/Dialogue"]
-visible = false
-z_index = 101
-texture_filter = 1
-custom_minimum_size = Vector2(256, 128)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -476.0
-offset_top = 49.0
-offset_right = 477.0
-offset_bottom = 288.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_ijf1c")
-theme_override_styles/panel = SubResource("StyleBoxFlat_j8bif")
-script = ExtResource("2_4245u")
-dialogue_data = ExtResource("3_16syn")
-hide_portrait = true
-custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_66oxl"), SubResource("RichTextEffect_emjeb")])
 
 [node name="Voice" type="Button" parent="Dialogue/Dialogue"]
 visible = false

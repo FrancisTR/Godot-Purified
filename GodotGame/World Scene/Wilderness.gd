@@ -35,9 +35,18 @@ func _ready():
 		$KidsNPC.visible = true
 	else:
 		$KidsNPC.visible = false
+	
+	
+	#Spawn crafting table after day 2+
+	if GameData.day >= 2 and GameData.talkToKid == true and GameData.questComplete["Wild"] == false:
+		$Other/CraftingTable.position = Vector2(833, -802)
+		$Other/CraftingTable.visible = true
+	else:
+		$Other/CraftingTable.position = Vector2(999999999, 999999999)
+		$Other/CraftingTable.visible = false
 
 
-	#TODO add item spawns
+	#add item spawns
 	inst(GameData.itemSpawns)
 
 

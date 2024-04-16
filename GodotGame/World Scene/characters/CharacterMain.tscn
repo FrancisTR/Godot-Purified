@@ -151,6 +151,8 @@ animations = [{
 size = Vector2(28, 23)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 300
+texture_filter = 1
 script = ExtResource("1_cyksq")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

@@ -6,6 +6,7 @@ func _ready():
 	
 	#Reset global values
 	GameData.day = 1
+	
 
 	GameData.username = ""
 
@@ -22,8 +23,6 @@ func _ready():
 	GameData.current_ui = ""
 	GameData.current_scene = ""
 	GameData.save_position = false
-	GameData.player_position
-
 
 	GameData.visitedWilderness = false
 	GameData.talkToKid = false
@@ -40,7 +39,7 @@ func _ready():
 	GameData.NPCgiveNoMore = false #Give items once and not dup
 	#Quest is finished
 	GameData.questComplete = {"Main": false, "Wild": false}
-	GameData.QVillager = ""
+
 	#TODO Add more if needed to stack of the items needed for NPC
 	GameData.itemDialogue = [
 		{
@@ -60,6 +59,23 @@ func _ready():
 			"Value": 0
 		}
 	]
+
+	GameData.QVillager = ""
+
+	GameData.villagersIndex = {
+		"Accept": 0,
+		"Anger": 1,
+		"Bargin": 2,
+		"Croak": 3,
+		"Denial": 4,
+		"Depress": 5,
+		"OldMan": 6,
+		
+		"Rano": 7,
+		"Ribbit": 8,
+		"Hop": 9,
+		"Leap": 10,
+	}
 
 	GameData.villagersTalked = [
 		{
@@ -93,6 +109,10 @@ func _ready():
 	]
 
 
+	GameData.get_item_posX = null
+	GameData.get_item_posY = null
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	SoundControl.is_playing_theme("afternoon")
@@ -111,7 +131,7 @@ func _on_start_button_pressed():
 		TextTransition.set_to_chained_timed(
 			[
 				"It is your first day at work.",
-				"You then enter the building, waiting for further instructions.",
+				"You enter the building, waiting for further instructions.",
 				"Then, an employee approaches you..."
 			],
 			"res://Main Menu Scene/tutorial.tscn",
@@ -123,7 +143,7 @@ func _on_start_button_pressed():
 		TextTransition.set_to_chained_timed(
 			[
 				"It is your first day at work. (Knowing you know that it is not)",
-				"You then enter the building, knowing exactly what to do.",
+				"You enter the building, knowing exactly what to do.",
 				"But first, they ask you for your name..."
 			],
 			"res://Main Menu Scene/EnterName.tscn",

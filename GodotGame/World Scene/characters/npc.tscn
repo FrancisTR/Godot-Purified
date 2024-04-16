@@ -1,21 +1,26 @@
-[gd_scene load_steps=35 format=3 uid="uid://decpyxnu3oocl"]
+[gd_scene load_steps=40 format=3 uid="uid://decpyxnu3oocl"]
 
 [ext_resource type="Script" path="res://World Scene/characters/npc.gd" id="1_7ll4o"]
-[ext_resource type="Texture2D" uid="uid://dmhn7gwdebshp" path="res://Assets/Characters/Free Chicken Sprites.png" id="1_we8v3"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_kithy"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_ln8m6"]
 [ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="3_vf4oi"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_1oy2a"]
 [ext_resource type="Resource" uid="uid://2d0hvs0mqxeq" path="res://Dialogues/Dialogue.tres" id="4_pn0gs"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_hejlf"]
+[ext_resource type="Texture2D" uid="uid://bna313s5hn76v" path="res://Assets/Custom/Sprites/Angelica.png" id="8_86348"]
 [ext_resource type="Texture2D" uid="uid://d2fnbceys5gli" path="res://Assets/Custom/Sprites/Barry.png" id="8_k6djr"]
 [ext_resource type="Texture2D" uid="uid://dqf358j6pwkju" path="res://Assets/Custom/Sprites/Barry_Sprite_Sheet.png" id="9_bflum"]
 [ext_resource type="Texture2D" uid="uid://dw04cpaod6bun" path="res://Assets/Custom/temp_frog_icon.png" id="9_ilu2c"]
 [ext_resource type="Texture2D" uid="uid://dyqj26prpkdqw" path="res://Assets/UISprites/UI_Flat_Frame_02_Lite.png" id="9_og4hm"]
+[ext_resource type="Texture2D" uid="uid://b7wkhk0eulw37" path="res://Assets/Custom/Sprites/Antonio.png" id="9_xo7qe"]
 [ext_resource type="Texture2D" uid="uid://dmr7ercxgsg81" path="res://Assets/Custom/Sprites/Barry Sad.png" id="10_e8okq"]
 [ext_resource type="Texture2D" uid="uid://d1rasp64hd3m" path="res://Assets/Custom/UI_Exclamation_Mark_Plate.png" id="11_pkqqv"]
+[ext_resource type="Texture2D" uid="uid://cdrpnr6p77usy" path="res://Assets/Custom/Sprites/Croak.png" id="13_cy7qx"]
+[ext_resource type="Texture2D" uid="uid://djx5rl7iobm8m" path="res://Assets/Custom/Sprites/Danny.png" id="14_046bs"]
+[ext_resource type="Texture2D" uid="uid://borcws4ydxocc" path="res://Assets/Custom/Sprites/Derick.png" id="15_o5dh2"]
+[ext_resource type="Texture2D" uid="uid://cfxvp151wo3uq" path="res://Assets/Custom/Sprites/Old_Man.png" id="16_ee48p"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxqgd"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqe2e"]
 texture = ExtResource("2_ln8m6")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -23,7 +28,7 @@ texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s7508"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5prp6"]
 texture = ExtResource("2_ln8m6")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -31,7 +36,7 @@ texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m2aul"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0g45f"]
 texture = ExtResource("3_vf4oi")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -40,9 +45,9 @@ texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
 [sub_resource type="Theme" id="Theme_q0h0h"]
-Button/styles/hover = SubResource("StyleBoxTexture_dxqgd")
-Button/styles/normal = SubResource("StyleBoxTexture_s7508")
-Button/styles/pressed = SubResource("StyleBoxTexture_m2aul")
+Button/styles/hover = SubResource("StyleBoxTexture_dqe2e")
+Button/styles/normal = SubResource("StyleBoxTexture_5prp6")
+Button/styles/pressed = SubResource("StyleBoxTexture_0g45f")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d61p"]
 bg_color = Color(0, 0.305882, 0.313726, 1)
@@ -93,6 +98,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CharacterIMG:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(121, 673), Vector2(121, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_jmis8"]
 resource_name = "Voice"
@@ -136,12 +153,24 @@ region = Rect2(96, 0, 48, 48)
 atlas = ExtResource("9_bflum")
 region = Rect2(144, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6cu33"]
-atlas = ExtResource("1_we8v3")
-region = Rect2(0, 0, 16, 16)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_bxftl"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_86348")
+}],
+"loop": true,
+"name": &"Angelica",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_xo7qe")
+}],
+"loop": true,
+"name": &"Antonio",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("8_k6djr")
@@ -171,10 +200,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6cu33")
+"texture": ExtResource("13_cy7qx")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Croak",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_046bs")
+}],
+"loop": true,
+"name": &"Danny",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_o5dh2")
+}],
+"loop": true,
+"name": &"Derick",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ee48p")
+}],
+"loop": true,
+"name": &"OldMan",
 "speed": 5.0
 }]
 
@@ -183,6 +236,9 @@ size = Vector2(34, 42)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gxj27"]
 texture = ExtResource("9_og4hm")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vnga"]
+size = Vector2(20, 21)
 
 [node name="NPC" type="Area2D"]
 z_index = 101
@@ -215,8 +271,6 @@ grow_vertical = 2
 expand_mode = 1
 
 [node name="DialogueBox" type="Panel" parent="FixedDialoguePosition"]
-visible = false
-self_modulate = Color(1, 1, 1, 0)
 z_index = 101
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
@@ -226,9 +280,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -476.0
-offset_top = 31.0
+offset_top = -275.0
 offset_right = 477.0
-offset_bottom = 270.0
+offset_bottom = -36.0001
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_q0h0h")
@@ -276,7 +330,7 @@ text = "🔊"
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bxftl")
-animation = &"Barry_Running"
+animation = &"OldMan"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -329,6 +383,12 @@ texture = ExtResource("11_pkqqv")
 [node name="BarryDestination" type="Node" parent="NPCActions"]
 
 [node name="Marker2D" type="Marker2D" parent="NPCActions/BarryDestination"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_2vnga")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
