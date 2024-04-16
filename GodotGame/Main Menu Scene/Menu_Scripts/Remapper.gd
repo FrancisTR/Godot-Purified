@@ -38,27 +38,29 @@ func _unhandled_input(e):
 	if not e is InputEventKey: 
 		return
 
-	if e.pressed: # Check key that was just pressed
-		for k in get_all_keymaps():
-			#print(k)
-			#print(e)
-			#print("---")
-			if e.keycode == k.keycode:
-				# Move below message to in game
-				print("Key is already used. Not setting new key.")
-				button_pressed = false
-				#toggle_disabled_other_buttons()
-				break
+	if not e.pressed: # Check key that was just pressed
+		return
 
-		if button_pressed:
-			button_pressed = false # toggle button pressed
-			InputMap.action_erase_events(action)
-			InputMap.action_add_event(action, e)
+	for k in get_all_keymaps():
+		#print(k)
+		#print(e)
+		#print("---")
+		if e.keycode == k.keycode:
+			# Move below message to in game
+			print("Key is already used. Not setting new key.")
+			button_pressed = false
 			#toggle_disabled_other_buttons()
+			break
 
-		grab_focus()
-		update_text()
-		$"../../BackButton".disabled = false
+	if button_pressed:
+		button_pressed = false # toggle button pressed
+		InputMap.action_erase_events(action)
+		InputMap.action_add_event(action, e)
+		#toggle_disabled_other_buttons()
+
+	grab_focus()
+	update_text()
+	$"../../BackButton".disabled = false
 
 
 func update_text():
