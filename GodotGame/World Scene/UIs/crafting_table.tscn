@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://0nmlup6yvr84"]
+[gd_scene load_steps=26 format=3 uid="uid://0nmlup6yvr84"]
 
 [ext_resource type="Script" path="res://World Scene/UIs/crafting_table.gd" id="1_763sv"]
 [ext_resource type="Texture2D" uid="uid://bui61mchuqel4" path="res://Assets/Custom/CraftingTable.png" id="2_k6jcn"]
@@ -12,6 +12,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh0p5"]
 size = Vector2(32, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1lxb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6rxi2"]
 texture = ExtResource("4_jad3i")
@@ -70,6 +72,12 @@ texture = ExtResource("2_k6jcn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gh0p5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_u1lxb")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

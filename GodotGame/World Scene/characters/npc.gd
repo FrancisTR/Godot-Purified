@@ -28,6 +28,7 @@ func go_pos(delta):
 		#Hide all character img
 		$"../Bargin/FixedDialoguePosition/CharacterIMG".visible = false
 		$FixedDialoguePosition/DialogueOpacity.visible = false
+		$"../Bargin/StaticBody2D/CollisionShape2D".disabled = true
 		$"../Bargin/Sprite2D".animation = "Barry_Running"
 	if $"../Bargin".global_position == BarryDestination:
 		moving = false
@@ -129,14 +130,28 @@ func _process(delta):
 			
 			#Run the loop and check true that we talked to that villager
 			# This is for the requirement to leave the Day
-			dialogue_box.variables[NPCname] = true
-			
-			#GameData.QWild = dialogue_box.variables["QWild"]
-			
-			print(dialogue_box.variables)
-			for i in range(len(GameData.villagersTalked)):
-				if GameData.villagersTalked[i]["Name"] == NPCname:
-					GameData.villagersTalked[i]["Talked"] = true
+			#Note that for Croak, you must talk to Barry.
+			if GameData.day == 1:
+				if NPCname == "Croak" and GameData.villagersTalked[2]["Talked"] == true:
+					dialogue_box.variables[NPCname] = true
+					print(dialogue_box.variables)
+					for i in range(len(GameData.villagersTalked)):
+						if GameData.villagersTalked[i]["Name"] == NPCname:
+							GameData.villagersTalked[i]["Talked"] = true
+				
+				elif NPCname != "Croak":
+					dialogue_box.variables[NPCname] = true
+					print(dialogue_box.variables)
+					for i in range(len(GameData.villagersTalked)):
+						if GameData.villagersTalked[i]["Name"] == NPCname:
+							GameData.villagersTalked[i]["Talked"] = true
+			else:
+				dialogue_box.variables[NPCname] = true
+				#GameData.QWild = dialogue_box.variables["QWild"]
+				print(dialogue_box.variables)
+				for i in range(len(GameData.villagersTalked)):
+					if GameData.villagersTalked[i]["Name"] == NPCname:
+						GameData.villagersTalked[i]["Talked"] = true
 			
 			$FixedDialoguePosition/AnimationPlayer.play("Dialogue_popup")
 			dialogue_box.start()

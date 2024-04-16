@@ -82,8 +82,6 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 	
 	#print($Dialogue/DialogueBox.speaker.text," addf")
 	#TODO Stop audio once we continue
-	
-	SoundControl.is_playing_sound("button")
 	if $Dialogue/Dialogue/DialogueBox.speaker.text != "":
 		var idx = Utils.char_dict[str($Dialogue/Dialogue/DialogueBox.speaker.text)]
 		$Dialogue/Dialogue/CharacterIMG.texture = Utils.character_list.characters[idx].image
