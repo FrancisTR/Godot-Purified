@@ -26,15 +26,12 @@ func _toggled(button_exists):
 	set_process_unhandled_input(button_exists)
 	if button_exists:
 		toggle_disabled_other_buttons()
-		$"../../BackButton".disabled = true
 		release_focus()
 		text = "???"
 		SoundControl.is_playing_sound("button")
 
 
 func _unhandled_input(e):
-	toggle_disabled_other_buttons()
-
 	if not e is InputEventKey: 
 		return
 
@@ -58,9 +55,9 @@ func _unhandled_input(e):
 		InputMap.action_add_event(action, e)
 		#toggle_disabled_other_buttons()
 
+	toggle_disabled_other_buttons()
 	grab_focus()
 	update_text()
-	$"../../BackButton".disabled = false
 
 
 func update_text():
@@ -103,6 +100,12 @@ func get_keymap_name(action_name: String) -> String:
 func toggle_disabled_other_buttons():
 	remap_container.button_in_use = not remap_container.button_in_use
 	var is_disabled = remap_container.button_in_use
+	
+	$"../../BackButton".disabled = is_disabled
+	$"../../SfxSlider".visible = not is_disabled
+	$"../../MusicSlider".visible = not is_disabled
+	# Below is an alternative to above to freeze the UI. For now at least, it doesn't gray it out like other parts of UI though.
+	#$"../../SfxSlider".editable = not is_disabled
 	
 	#print("will be ", is_disabled)
 	for child in remap_children:
