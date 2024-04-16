@@ -99,8 +99,8 @@ texture = ExtResource("2_k7iqa")
 [node name="CharacterIMG" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 121.0
-offset_right = 389.0
-offset_bottom = 552.0
+offset_right = 396.0
+offset_bottom = 521.0
 expand_mode = 1
 
 [node name="Dialogue" type="CanvasLayer" parent="."]
@@ -201,6 +201,9 @@ visible = false
 visible = false
 
 [node name="RemapContainer" parent="Controls" index="3"]
+offset_left = 69.0
+offset_top = 8.0
+offset_right = -2.0
 offset_bottom = -228.0
 
 [node name="SfxSlider" parent="Controls" index="4"]

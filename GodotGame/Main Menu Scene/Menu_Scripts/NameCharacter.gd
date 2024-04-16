@@ -25,7 +25,7 @@ func _on_button_pressed():
 		var forbidenName = file.get_line()
 
 
-		if line_edit.text == forbidenName:
+		if line_edit.text.to_upper() == forbidenName.to_upper():
 			$Error.text = "Error: You can't use that name."
 			$Error.visible = true
 			profanityWord = true
@@ -34,7 +34,10 @@ func _on_button_pressed():
 	
 	
 	if profanityWord == false:
-		if line_edit.text == "":
+		if line_edit.text == "Talia" or line_edit.text == "Danny" or line_edit.text == "Angelica" or line_edit.text == "Barry" or line_edit.text == "Derick" or line_edit.text == "Antonio" or line_edit.text == "Croak" or line_edit.text == "Old Man Tommy" or line_edit.text == "Rano" or line_edit.text == "Ribbit" or line_edit.text == "Hop" or line_edit.text == "Leap":
+			$Error.text = "Error: Name exist in the game."
+			$Error.visible = true
+		elif line_edit.text == "":
 			$Error.text = "Error: You must enter a valid name."
 			$Error.visible = true
 		else:
