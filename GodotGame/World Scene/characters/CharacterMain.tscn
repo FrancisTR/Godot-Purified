@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ghsool2pdp04" path="res://Assets/Custom/Sprites/MC_Sprite_Sheet.png" id="2_3sxfq"]
 [ext_resource type="AudioStream" uid="uid://5jxvmdhelg28" path="res://Assets/Sounds/Fantozzi-SandL1.ogg" id="3_ai8dy"]
 [ext_resource type="PackedScene" uid="uid://dyge3pmntuk1g" path="res://World Scene/UIs/Inventory.tscn" id="4_2u5re"]
-[ext_resource type="Texture2D" uid="uid://1yvco4rj8fh5" path="res://Assets/Custom/temp_mc_icon.png" id="5_0yiti"]
+[ext_resource type="Texture2D" uid="uid://c64de0u81kuwt" path="res://Assets/Custom/map icons/mc_icon.png" id="5_ugh86"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rxh0c"]
 atlas = ExtResource("2_3sxfq")
@@ -209,6 +209,6 @@ grow_vertical = 2
 scale = Vector2(4, 4)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("5_0yiti")
+texture = ExtResource("5_ugh86")
 
 [connection signal="finished" from="FootstepAudio" to="." method="_on_footstep_audio_finished"]
