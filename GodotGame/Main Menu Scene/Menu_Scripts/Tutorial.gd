@@ -21,6 +21,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	SoundControl.is_playing_theme("afternoon")
+	
+	#Dynamically change keys based on settings
+	#Interaction
+	#Inventory
+	#Options
+	dialogue_box.variables["Interaction"] = $Controls/RemapContainer/DialogueButton.text.replace("*", "")
+	dialogue_box.variables["Inventory"] = $Controls/RemapContainer/InventoryButton.text.replace("*", "")
+	dialogue_box.variables["Options"] = $Controls/RemapContainer/BackButton.text.replace("*", "")
 	pass
 
 
@@ -49,14 +57,19 @@ func _on_dialogue_box_dialogue_signal(value):
 	elif (value == "DialogueControl"):
 		$NPCexample.visible = true
 	
+	elif (value == "Quota"):
+		$Quota.visible = true
+		
+	elif (value == "Marks"):
+		$Marks.visible = true
 	
 	elif (value == "Town"):
 		$Map.visible = true
+		GameData.visitTutorial = true
 		
 	
 	elif (value == "Done"):
-		GameData.visitTutorial = true
-		
+		GameData.visitTutorial = false
 		TextTransition.set_to_chained_timed(
 			[
 				"You then enter the village, excited for the opportunity to make profit."
@@ -70,6 +83,8 @@ func _on_dialogue_box_dialogue_signal(value):
 		$Controls.visible = false
 		$NPCexample.visible = false
 		$Map.visible = false
+		$Quota.visible = false
+		$Marks.visible = false
 
 
 

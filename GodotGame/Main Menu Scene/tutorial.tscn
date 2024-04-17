@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cv86rq1ed4u3"]
+[gd_scene load_steps=26 format=3 uid="uid://cv86rq1ed4u3"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Tutorial.gd" id="1_68151"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_i2pyw"]
@@ -9,8 +9,11 @@
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_akm0h"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_aeqdw"]
 [ext_resource type="PackedScene" uid="uid://bq46ncf7jihje" path="res://Main Menu Scene/Options.tscn" id="7_co0o4"]
-[ext_resource type="Texture2D" uid="uid://mdva1pov8txg" path="res://Assets/TutorialPlaceholder.png" id="8_d4a6u"]
-[ext_resource type="Texture2D" uid="uid://br0atn2gp8ym6" path="res://Assets/Custom/MapTalia.png" id="10_64wot"]
+[ext_resource type="Texture2D" uid="uid://be2ouhnmbutur" path="res://Assets/Interaction.png" id="9_sfvio"]
+[ext_resource type="Texture2D" uid="uid://dbrssvnlq2wq2" path="res://Assets/PurifiedMap.png" id="10_qrioa"]
+[ext_resource type="Texture2D" uid="uid://iku6es31gff2" path="res://Assets/Quota.png" id="11_x6wln"]
+[ext_resource type="Texture2D" uid="uid://cav1wtxy350bc" path="res://Assets/Custom/UI_Question_Mark_Plate.png" id="12_g4ey8"]
+[ext_resource type="Texture2D" uid="uid://d1rasp64hd3m" path="res://Assets/Custom/UI_Exclamation_Mark_Plate.png" id="13_ne7hf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70tgp"]
 texture = ExtResource("2_i2pyw")
@@ -107,6 +110,7 @@ expand_mode = 1
 
 [node name="DialogueBox" type="Panel" parent="Dialogue"]
 visible = false
+z_index = 999
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
 anchors_preset = 7
@@ -114,10 +118,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -476.0
-offset_top = -237.0
-offset_right = 477.0
-offset_bottom = -37.0
+offset_left = -482.0
+offset_top = -235.0
+offset_right = 482.0
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_na2ws")
@@ -163,12 +167,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -84.0
-offset_top = 112.0
-offset_right = 85.0
-offset_bottom = 278.0
+offset_left = -147.0
+offset_top = 57.0
+offset_right = 148.0
+offset_bottom = 383.0
 grow_horizontal = 2
-texture = ExtResource("8_d4a6u")
+texture = ExtResource("9_sfvio")
 
 [node name="Map" type="TextureRect" parent="."]
 visible = false
@@ -179,13 +183,75 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
+offset_left = -170.0
 offset_top = -241.0
-offset_right = 200.0
+offset_right = 416.0
 offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_64wot")
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("10_qrioa")
+expand_mode = 3
+
+[node name="Quota" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 26.0
+offset_right = -87.9999
+offset_bottom = 82.6938
+grow_horizontal = 2
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("11_x6wln")
+expand_mode = 5
+
+[node name="Marks" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestionMark" type="TextureRect" parent="Marks"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -188.0
+offset_right = -63.0
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture = ExtResource("12_g4ey8")
+expand_mode = 1
+
+[node name="ExMark" type="TextureRect" parent="Marks"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -188.0
+offset_right = 57.0
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture = ExtResource("13_ne7hf")
 expand_mode = 1
 
 [node name="Controls" parent="." instance=ExtResource("7_co0o4")]

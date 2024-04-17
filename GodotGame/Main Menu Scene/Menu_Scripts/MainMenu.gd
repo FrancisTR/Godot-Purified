@@ -6,7 +6,7 @@ func _ready():
 	
 	#Reset global values
 	GameData.day = 1
-	
+	GameData.visitTutorial = false
 
 	GameData.username = ""
 

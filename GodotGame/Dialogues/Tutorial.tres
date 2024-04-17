@@ -59,8 +59,8 @@ nodes = {
 "speaker": 1
 },
 "1_12": {
-"dialogue": "That should be all, so good luck!",
-"offset": Vector2(5680, 1240),
+"dialogue": "That should be all. If you need to change any settings, press \"{{Options}}\". Good Luck!",
+"offset": Vector2(7000, 1260),
 "options": {
 0: {
 "condition": {},
@@ -98,7 +98,7 @@ nodes = {
 "speaker": 1
 },
 "1_15": {
-"dialogue": "Uhh… moving on.",
+"dialogue": "Uhh… moving on. This is important so pay attention.",
 "offset": Vector2(3920, 1280),
 "options": {
 0: {
@@ -111,12 +111,12 @@ nodes = {
 "speaker": 1
 },
 "1_16": {
-"dialogue": "There are certain things in the town you can interact with. You can do that by pressing the button that is displayed on top of the thing you are interacting with. In this simple case of talking to a villager, you just press \"Q\".",
+"dialogue": "There are certain things in the town you can interact with. You can do that by pressing \"{{Interaction}}\". Note that this will vary based on the key you chose for \"Interaction\".",
 "offset": Vector2(4520, 1280),
 "options": {
 0: {
 "condition": {},
-"link": &"3_6",
+"link": &"3_11",
 "text": ""
 }
 },
@@ -124,12 +124,14 @@ nodes = {
 "speaker": 1
 },
 "1_17": {
-"dialogue": "Lastly, if you ever get lost, press \"M\" to view a map of the place.",
-"offset": Vector2(5280, 1240),
+"dialogue": "Lastly, if you ever get lost, press \"M\" to view a map of the place. On the map, you will see icons next to the villagers.
+\"!\": You have not talk to that villager yet.
+\"?\": Someone gave you a request and it is pending. This icon appears after talking with them for the first time.",
+"offset": Vector2(6320, 1280),
 "options": {
 0: {
 "condition": {},
-"link": &"1_12",
+"link": &"3_10",
 "text": ""
 }
 },
@@ -149,6 +151,19 @@ nodes = {
 "size": Vector2(300, 433),
 "speaker": 1
 },
+"1_19": {
+"dialogue": "Remember, you are selling our products to these villagers so it is important that you talk to all of them before leaving the village. You can check to see your Daily Quota by pressing \"{{Inventory}}\". Note that this will vary based on the key you chose for \"Inventory\".",
+"offset": Vector2(5280, 1300),
+"options": {
+0: {
+"condition": {},
+"link": &"1_20",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
 "1_2": {
 "dialogue": "Welcome to your first day at work.",
 "offset": Vector2(-200, -240),
@@ -156,6 +171,19 @@ nodes = {
 0: {
 "condition": {},
 "link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 433),
+"speaker": 1
+},
+"1_20": {
+"dialogue": "In addition, there will be a couple of requests so do make sure to complete those before leaving. You will see a check mark instead of a red \"X\", indicating that you have complete that task.",
+"offset": Vector2(5660, 1300),
+"options": {
+0: {
+"condition": {},
+"link": &"3_12",
 "text": ""
 }
 },
@@ -268,6 +296,21 @@ nodes = {
 "offset": Vector2(540, 220),
 "signalValue": "EnterName"
 },
+"3_10": {
+"link": &"1_12",
+"offset": Vector2(6680, 1560),
+"signalValue": "Negate"
+},
+"3_11": {
+"link": &"3_9",
+"offset": Vector2(4911.06, 1568.97),
+"signalValue": "Negate"
+},
+"3_12": {
+"link": &"3_6",
+"offset": Vector2(6020, 1580),
+"signalValue": "Negate"
+},
 "3_2": {
 "link": &"1_14",
 "offset": Vector2(3140, 1280),
@@ -280,7 +323,7 @@ nodes = {
 },
 "3_4": {
 "link": "END",
-"offset": Vector2(6160, 1240),
+"offset": Vector2(7380, 1280),
 "signalValue": "Done"
 },
 "3_5": {
@@ -290,8 +333,8 @@ nodes = {
 },
 "3_6": {
 "link": &"1_17",
-"offset": Vector2(4840, 1800),
-"signalValue": "Negate"
+"offset": Vector2(6020, 1300),
+"signalValue": "Marks"
 },
 "3_7": {
 "link": &"1_5",
@@ -302,9 +345,26 @@ nodes = {
 "link": &"1_6",
 "offset": Vector2(120, 1040),
 "signalValue": "Negate"
+},
+"3_9": {
+"link": &"1_19",
+"offset": Vector2(4880, 1280),
+"signalValue": "Quota"
 }
 }
 variables = {
+"Interaction": {
+"type": 4,
+"value": ""
+},
+"Inventory": {
+"type": 4,
+"value": ""
+},
+"Options": {
+"type": 4,
+"value": ""
+},
 "Player": {
 "type": 4,
 "value": "???"
