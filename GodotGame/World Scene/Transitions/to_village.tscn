@@ -96,6 +96,7 @@ shape = SubResource("RectangleShape2D_pqafc")
 [node name="Dialogue" type="CanvasLayer" parent="Dialogue"]
 
 [node name="DialogueBox" type="Panel" parent="Dialogue/Dialogue"]
+visible = false
 z_index = 101
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)

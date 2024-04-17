@@ -662,4 +662,16 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_sknse")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6d00w")
 text = "Back"
 
+[node name="OpacityBlocker" type="ColorRect" parent="."]
+visible = false
+z_index = 999
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

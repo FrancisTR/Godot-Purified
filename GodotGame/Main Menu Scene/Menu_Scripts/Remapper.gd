@@ -29,6 +29,9 @@ func _toggled(button_exists):
 		release_focus()
 		text = "???"
 		SoundControl.is_playing_sound("button")
+		
+		if GameData.visitTutorial == true:
+			$"../../OpacityBlocker".visible = true
 
 
 func _unhandled_input(e):
@@ -58,6 +61,7 @@ func _unhandled_input(e):
 	toggle_disabled_other_buttons()
 	grab_focus()
 	update_text()
+	$"../../OpacityBlocker".visible = false
 
 
 func update_text():
@@ -102,8 +106,9 @@ func toggle_disabled_other_buttons():
 	var is_disabled = remap_container.button_in_use
 	
 	$"../../BackButton".disabled = is_disabled
-	$"../../SfxSlider".visible = not is_disabled
-	$"../../MusicSlider".visible = not is_disabled
+	if GameData.visitTutorial == false:
+		$"../../SfxSlider".visible = not is_disabled
+		$"../../MusicSlider".visible = not is_disabled
 	# Below is an alternative to above to freeze the UI. For now at least, it doesn't gray it out like other parts of UI though.
 	#$"../../SfxSlider".editable = not is_disabled
 	

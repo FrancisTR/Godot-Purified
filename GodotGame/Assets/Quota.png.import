@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mdva1pov8txg"
-path="res://.godot/imported/TutorialPlaceholder.png-bf1f81564d2e30ff9d0d98aea6c0de12.ctex"
+uid="uid://iku6es31gff2"
+path="res://.godot/imported/Quota.png-d61bfa034adfd0897aed15fe5e72c820.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TutorialPlaceholder.png"
-dest_files=["res://.godot/imported/TutorialPlaceholder.png-bf1f81564d2e30ff9d0d98aea6c0de12.ctex"]
+source_file="res://Assets/Quota.png"
+dest_files=["res://.godot/imported/Quota.png-d61bfa034adfd0897aed15fe5e72c820.ctex"]
 
 [params]
 

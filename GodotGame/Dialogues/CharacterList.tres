@@ -32,7 +32,7 @@ color = Color(1, 0.596078, 0.282353, 1)
 script = ExtResource("1_p0fqg")
 name = "Danny"
 image = ExtResource("4_0a2qj")
-color = Color(0.811765, 0.188235, 0, 1)
+color = Color(0.698039, 0.0862745, 0.247059, 1)
 
 [sub_resource type="Resource" id="Resource_01wqa"]
 script = ExtResource("1_p0fqg")
@@ -56,19 +56,19 @@ color = Color(0.745098, 0.517647, 1, 1)
 script = ExtResource("1_p0fqg")
 name = "Antonio"
 image = ExtResource("8_p5h0a")
-color = Color(0.619608, 0.423529, 0.211765, 1)
+color = Color(1, 0.921569, 0.427451, 1)
 
 [sub_resource type="Resource" id="Resource_2dvo0"]
 script = ExtResource("1_p0fqg")
 name = "Croak"
 image = ExtResource("5_6rik2")
-color = Color(0, 0.447059, 0.796078, 1)
+color = Color(0.219608, 0.611765, 1, 1)
 
 [sub_resource type="Resource" id="Resource_ixiiq"]
 script = ExtResource("1_p0fqg")
 name = "Old Man Tommy"
 image = ExtResource("10_3ktxo")
-color = Color(0.611765, 0.611765, 0.611765, 1)
+color = Color(0.721569, 0.862745, 0.721569, 1)
 
 [sub_resource type="Resource" id="Resource_ubiec"]
 script = ExtResource("1_p0fqg")
@@ -86,7 +86,7 @@ color = Color(0.811765, 0, 0.811765, 1)
 script = ExtResource("1_p0fqg")
 name = "Hop"
 image = ExtResource("8_wanih")
-color = Color(0.984314, 0, 0.509804, 1)
+color = Color(0.894118, 0.72549, 0.819608, 1)
 
 [sub_resource type="Resource" id="Resource_eq73d"]
 script = ExtResource("1_p0fqg")

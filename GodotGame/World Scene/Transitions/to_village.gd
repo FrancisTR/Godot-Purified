@@ -82,8 +82,14 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 	
 	#print($Dialogue/DialogueBox.speaker.text," addf")
 	#TODO Stop audio once we continue
+	#TODO Fix cases where the username is the same as the NPCs
 	if $Dialogue/Dialogue/DialogueBox.speaker.text != "":
-		var idx = Utils.char_dict[str($Dialogue/Dialogue/DialogueBox.speaker.text)]
+		var idx
+		if Utils.char_dict.keys().find(str($Dialogue/Dialogue/DialogueBox.speaker.text)) != -1:
+			idx = Utils.char_dict[str($Dialogue/Dialogue/DialogueBox.speaker.text)]
+		else:
+			#Its the main character
+			idx = Utils.char_dict["Main"]
 		$Dialogue/Dialogue/CharacterIMG.texture = Utils.character_list.characters[idx].image
 
 
