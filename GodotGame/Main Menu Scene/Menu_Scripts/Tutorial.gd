@@ -70,13 +70,10 @@ func _on_dialogue_box_dialogue_signal(value):
 	
 	elif (value == "Done"):
 		GameData.visitTutorial = false
-		TextTransition.set_to_chained_timed(
-			[
-				"You then enter the village, excited for the opportunity to make profit."
-			],
+		TextTransition.set_to_click(
+			"You then enter the village, excited for the opportunity to make profit.",
 			"res://World Scene/World.tscn",
-			3.3,
-			""
+			"Click To Continue"
 		)
 		SceneTransition.change_scene("res://Globals/text_transition.tscn")
 	else:
@@ -92,6 +89,8 @@ func _on_dialogue_box_dialogue_signal(value):
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
 	#TODO Stop audio once we continue
+	
+	dialogue_box.custom_effects[0].skip = true
 	
 	SoundControl.is_playing_sound("button")
 	if $Dialogue/DialogueBox.speaker.text != "":

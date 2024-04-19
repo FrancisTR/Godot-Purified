@@ -80,6 +80,9 @@ func _on_teleport_body_entered(body):
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	SoundControl.is_playing_sound("button")
 	
+	dialogue_box.custom_effects[0].skip = true
+	dialogue_box.show_options()
+	
 	#print($Dialogue/DialogueBox.speaker.text," addf")
 	#TODO Stop audio once we continue
 	#TODO Fix cases where the username is the same as the NPCs

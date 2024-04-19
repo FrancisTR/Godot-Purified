@@ -121,6 +121,12 @@ func _process(delta):
 	
 	
 	if Input.is_action_just_pressed("StartDialogue") and enterBody == true:
+		#Focus the button that is visible on dialogue
+		#for option in dialogue_box.options.get_children():
+			#if option.visible:
+				#print(true)
+				#option.grab_focus()
+				
 		if GameData.current_ui != "dialogue" && GameData.current_ui != "":
 			return
 		if not dialogue_box.running:
@@ -155,7 +161,7 @@ func _process(delta):
 			
 			$FixedDialoguePosition/AnimationPlayer.play("Dialogue_popup")
 			dialogue_box.start()
-			
+
 			$FixedDialoguePosition/DialogueOpacity.visible = true
 			print(dialogue_box)
 	elif not dialogue_box.running and enterBody == true:
@@ -229,6 +235,9 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
 	#TODO: Stop the voice recording if node proceeds
 	
+	dialogue_box.custom_effects[0].skip = true
+	dialogue_box.show_options()
+	
 	SoundControl.is_playing_sound("button")
 	
 	#TODO Fix cases where the username is the same as the NPCs
@@ -263,6 +272,7 @@ func _on_dialogue_box_dialogue_signal(value):
 func _on_animation_player_animation_finished(anim_name):
 	#TODO: back to true for final
 	$FixedDialoguePosition/Voice.visible = false
+	dialogue_box.show_options()
 
 
 func _on_voice_pressed():

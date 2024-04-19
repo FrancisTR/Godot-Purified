@@ -1118,7 +1118,6 @@ position = Vector2(862, -476)
 visible = false
 
 [node name="Sprite2D" parent="NPCs/Croak" index="1"]
-animation = &"Croak"
 autoplay = "Croak"
 
 [node name="MapIcon" parent="NPCs/Croak" index="4"]

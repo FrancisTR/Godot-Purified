@@ -128,17 +128,17 @@ func _on_start_button_pressed():
 	SoundControl.is_playing_sound("button")
 	
 	if (GameData.visitTutorial == false):
-		TextTransition.set_to_chained_timed(
+		TextTransition.set_to_chained_click(
 			[
 				"It is your first day at work.",
 				"You enter the building, waiting for further instructions.",
 				"Then, an employee approaches you..."
 			],
 			"res://Main Menu Scene/tutorial.tscn",
-			3,
-			""
+			"Click To Continue"
 		)
 		SceneTransition.change_scene("res://Globals/text_transition.tscn")
+	
 	else:
 		TextTransition.set_to_chained_timed(
 			[
