@@ -111,3 +111,26 @@ func _on_open_map():
 func _on_close_map():
 	$Other/CharacterBody2D.hide_map_icon()
 	$"Map/Wilderness Exit".hide()
+
+
+func _on_item_placer_pos_test():
+	print(get_local_mouse_position(), " <---")
+	var rock_scene = preload("res://World Scene/Items/rock.tscn")
+	var instance = rock_scene.instantiate()
+	#instance.position = Vector2(944.6924, -689.1538)
+	instance.position = get_local_mouse_position()
+	$PsuedoItems.add_child(instance)
+
+var dev_flag = false
+func _on_toggle_dev_tool():
+	$Other/CharacterBody2D.velocity = Vector2(0, 0)
+	if $"Item Placer/ItemPlacer".dev_mode:
+		if not dev_flag:
+			#dev_flag = true
+			$"Item Placer/ItemPlacer".set_camera_position($Other/CharacterBody2D.position)
+		$"Item Placer".show()
+		$PsuedoItems.show()
+	else:
+		$Other/CharacterBody2D.set_to_player_camera()
+		$"Item Placer".hide()
+		$PsuedoItems.hide()

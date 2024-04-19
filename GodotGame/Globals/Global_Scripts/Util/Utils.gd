@@ -11,6 +11,11 @@ func save_game():
 func load_game():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 
+var items_json
+func _ready():
+	items_json = get_JSON("res://Globals/items.json")
+	print("Utils.gd: jsons loaded")
+
 ################DIALOGUE################
 var character_list = load("res://Dialogues/CharacterList.tres")
 var char_dict = {
@@ -53,7 +58,7 @@ func get_JSON(file_path):
 	
 func get_item(item):
 	var json = get_JSON("res://Globals/items.json")
-	var index = json[0][item]
+	var index = items_json[0][item]
 	print(json[index])
 	return json[index]
 	

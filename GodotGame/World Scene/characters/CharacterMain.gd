@@ -47,7 +47,7 @@ func _physics_process(delta):
 	var directionX = Input.get_axis("Left", "Right")
 	var directionY = Input.get_axis("Up", "Down")
 	var nowMoving = false # c nowMoving
-	var canMove = not inventory_opened and not map_opened #and this and that and ... and etc.
+	var canMove = not inventory_opened and not map_opened and GameData.current_ui != "dev" #and this and that and ... and etc.
 	
 	if GameData.charLock == false:
 		if canMove:
@@ -157,3 +157,6 @@ func hide_map_icon():
 	$Sprite2D.show()
 	$MapIcon.hide()
 	#$Label.hide()
+
+func set_to_player_camera():
+	$Camera2D.make_current()
