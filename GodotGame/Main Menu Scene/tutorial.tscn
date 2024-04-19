@@ -101,9 +101,10 @@ texture = ExtResource("2_k7iqa")
 
 [node name="CharacterIMG" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 121.0
-offset_right = 396.0
-offset_bottom = 521.0
+offset_left = 239.0
+offset_top = 15.0
+offset_right = 514.0
+offset_bottom = 536.0
 expand_mode = 1
 
 [node name="Dialogue" type="CanvasLayer" parent="."]
@@ -118,10 +119,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -482.0
-offset_top = -235.0
-offset_right = 482.0
-offset_bottom = -35.0
+offset_left = -343.0
+offset_top = -262.0
+offset_right = 343.0
+offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_na2ws")
@@ -130,6 +131,7 @@ script = ExtResource("2_jkygy")
 dialogue_data = ExtResource("3_tu0uu")
 start_id = "Tutorial"
 hide_portrait = true
+skip_input_action = "ui_select"
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a5mn1"), SubResource("RichTextEffect_uc7ri")])
 
 [node name="Voice" type="Button" parent="Dialogue"]
@@ -167,10 +169,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -147.0
-offset_top = 57.0
-offset_right = 148.0
-offset_bottom = 383.0
+offset_left = -10.0
+offset_top = 43.0
+offset_right = 285.0
+offset_bottom = 369.0
 grow_horizontal = 2
 texture = ExtResource("9_sfvio")
 
@@ -183,9 +185,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -170.0
+offset_left = -354.0
 offset_top = -241.0
-offset_right = 416.0
+offset_right = 232.0
 offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -200,10 +202,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -128.0
+offset_left = -35.0
 offset_top = 26.0
-offset_right = -87.9999
-offset_bottom = 82.6938
+offset_right = 5.00012
+offset_bottom = 82.6939
 grow_horizontal = 2
 scale = Vector2(6.5, 6.5)
 texture = ExtResource("11_x6wln")
