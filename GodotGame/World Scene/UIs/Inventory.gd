@@ -1,13 +1,16 @@
 extends Control
 
 func _process(delta):
+	
 	# Constantly update the variables live
 	var countTalked = 0
 	for i in range(len(GameData.villagersTalked)):
 		if GameData.villagersTalked[i]["Talked"] == true:
 			countTalked = countTalked + 1
-	if (GameData.day >= 3):
+	if (GameData.day == 3):
 		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/6"
+	if (GameData.day == 4):
+		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/5"
 	else:
 		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/7"
 	
@@ -53,7 +56,14 @@ func _process(delta):
 		if (GameData.QWild == true):
 			$TODOlist/ItemR2.text = "Request from the Kids"
 			$TODOlist/ItemR2/ItemNeeded2.text = "Create "+str(GameData.inventory_requirement["WaterFilter"])+" Water Filter"
-
+	#TODO Commented out for now since inventory is in works
+	#elif GameData.day == 4:
+		##Add to the list based on the requirements
+		#$TODOlist/ItemR.text = ""
+		#$TODOlist/ItemR/ItemNeeded.text = ""
+#
+		#$TODOlist/ItemR2.text = ""
+		#$TODOlist/ItemR2/ItemNeeded2.text = ""
 
 
 
@@ -81,3 +91,21 @@ func _draw_item_instance(item):
 
 
 
+
+
+func _on_view_button_pressed():
+	SoundControl.is_playing_sound("button")
+	$HBoxContainer.visible = false
+	$TODOlist.visible = false
+	$Items.visible = false
+	$Amounts.visible = false
+	$ListUI.visible = true
+	
+
+func _on_exit_button_pressed():
+	SoundControl.is_playing_sound("button")
+	$HBoxContainer.visible = true
+	$TODOlist.visible = true
+	$Items.visible = true
+	$Amounts.visible = true
+	$ListUI.visible = false

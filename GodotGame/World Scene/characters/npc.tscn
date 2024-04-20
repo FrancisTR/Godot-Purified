@@ -271,6 +271,7 @@ grow_vertical = 2
 expand_mode = 1
 
 [node name="DialogueBox" type="Panel" parent="FixedDialoguePosition"]
+visible = false
 z_index = 101
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)

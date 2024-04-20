@@ -1,7 +1,7 @@
 extends Node
 
 
-var day:int = 1
+var day:int = 4
 
 var twigItem = 0
 
@@ -38,6 +38,7 @@ var madeProfit = false
 var NPCgiveNoMore = false #Give items once and not dup
 #Quest is finished
 var questComplete = {"Main": false, "Wild": false}
+var Discount = ""
 
 #TODO Add more if needed to stack of the items needed for NPC
 var itemDialogue = [

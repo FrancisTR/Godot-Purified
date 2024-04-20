@@ -55,6 +55,7 @@ func _process(delta):
 	#This prevents a reset if the player visited the wilderness and comes back
 	dialogue_box.variables["QMain"] = GameData.QMain
 	dialogue_box.variables["Profit?"] = GameData.madeProfit
+	dialogue_box.variables["Discount"] = GameData.Discount
 	for i in range(len(GameData.villagersTalked)):
 		dialogue_box.variables[GameData.villagersTalked[i]["Name"]] = GameData.villagersTalked[i]["Talked"]
 	
@@ -115,6 +116,29 @@ func _process(delta):
 			dialogue_box.start_id = "Croak3"
 		elif NPCname == "OldMan":
 			dialogue_box.start_id = "OldMan3"
+	elif GameData.day == 4:
+		# Who is the player talking to?
+		if NPCname == "Denial" and dialogue_box.variables["OldMan"] == true:
+			dialogue_box.start_id = "Denial4"
+		elif NPCname == "Anger" and dialogue_box.variables["OldMan"] == true:
+			dialogue_box.start_id = "Anger4"
+		elif NPCname == "Bargin" and dialogue_box.variables["OldMan"] == true:
+			dialogue_box.start_id = "Bargin4"
+		elif NPCname == "Depress" and dialogue_box.variables["OldMan"] == true:
+			dialogue_box.start_id = "Depress4"
+		elif NPCname == "Accept" and dialogue_box.variables["OldMan"] == true:
+			dialogue_box.start_id = "Accept4"
+		elif NPCname == "Croak" and dialogue_box.variables["OldMan"] == true:
+			dialogue_box.start_id = "Croak4"
+		elif NPCname == "OldMan":
+			dialogue_box.start_id = "OldMan4"
+		else:
+			dialogue_box.start_id = "Day4"
+			
+			
+			
+			
+		
 	if moving:
 		GameData.charLock = true
 		go_pos(delta) #For barry
@@ -134,6 +158,7 @@ func _process(delta):
 			GameData.current_ui = "dialogue"
 			$PressForDialogue.visible = false
 			
+			#TODO
 			#Run the loop and check true that we talked to that villager
 			# This is for the requirement to leave the Day
 			#Note that for Croak, you must talk to Barry.
@@ -148,6 +173,13 @@ func _process(delta):
 				elif NPCname != "Croak":
 					dialogue_box.variables[NPCname] = true
 					print(dialogue_box.variables)
+					for i in range(len(GameData.villagersTalked)):
+						if GameData.villagersTalked[i]["Name"] == NPCname:
+							GameData.villagersTalked[i]["Talked"] = true
+			elif GameData.day == 4:
+				#Talk to the old man first
+				if (dialogue_box.variables["OldMan"] == true or NPCname == "OldMan"):
+					dialogue_box.variables[NPCname] = true
 					for i in range(len(GameData.villagersTalked)):
 						if GameData.villagersTalked[i]["Name"] == NPCname:
 							GameData.villagersTalked[i]["Talked"] = true
@@ -222,12 +254,14 @@ func hide_notif():
 
 func _on_dialogue_box_dialogue_ended():
 	
-	#Quest stuff for the Main World
+	#TODO: Quest stuff for the Main World
 	if (dialogue_box.variables["QMain"] == true and GameData.QVillager == ""):
 		GameData.QMain = true
 		GameData.QVillager = NPCname
 	if (dialogue_box.variables["Profit?"] == true):
 		GameData.madeProfit = true
+	if (dialogue_box.variables["Discount"] != ""):
+		GameData.Discount = dialogue_box.variables["Discount"]
 	pass # Replace with function body.
 	
 	
