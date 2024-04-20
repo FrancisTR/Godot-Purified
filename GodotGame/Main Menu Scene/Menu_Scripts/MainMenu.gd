@@ -26,6 +26,7 @@ func _ready():
 
 	GameData.visitedWilderness = false
 	GameData.talkToKid = false
+	GameData.Discount = ""
 
 
 	GameData.leaveVillageQuest = false

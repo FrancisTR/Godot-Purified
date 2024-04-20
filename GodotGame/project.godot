@@ -26,6 +26,7 @@ SoundControl="*res://Globals/sound_control.tscn"
 
 [display]
 
+window/size/mode=2
 window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
@@ -37,6 +38,7 @@ enabled=PackedStringArray("res://addons/dialogue_nodes/plugin.cfg")
 [gui]
 
 theme/custom_font="res://BakbakOne-Regular.ttf"
+theme/default_font_antialiasing=2
 
 [importer_defaults]
 
@@ -92,3 +94,5 @@ Map={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+viewport/hdr_2d=true
+anti_aliasing/quality/use_taa=true

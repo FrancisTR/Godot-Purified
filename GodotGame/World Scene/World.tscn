@@ -1039,9 +1039,6 @@ offset_bottom = 633.0
 [node name="Denial" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(2721, -234)
 
-[node name="DialogueBox" parent="NPCs/Denial/FixedDialoguePosition" index="2"]
-visible = false
-
 [node name="Sprite2D" parent="NPCs/Denial" index="1"]
 animation = &"Danny"
 autoplay = "Danny"
@@ -1052,9 +1049,6 @@ texture = ExtResource("18_usbb1")
 [node name="Anger" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(1715, 514)
 
-[node name="DialogueBox" parent="NPCs/Anger/FixedDialoguePosition" index="2"]
-visible = false
-
 [node name="Sprite2D" parent="NPCs/Anger" index="1"]
 animation = &"Angelica"
 autoplay = "Angelica"
@@ -1064,9 +1058,6 @@ texture = ExtResource("19_jtihu")
 
 [node name="Bargin" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(1332, -81)
-
-[node name="DialogueBox" parent="NPCs/Bargin/FixedDialoguePosition" index="2"]
-visible = false
 
 [node name="Sprite2D" parent="NPCs/Bargin" index="1"]
 animation = &"Barry"
@@ -1080,9 +1071,6 @@ position = Vector2(282, -206)
 
 [node name="Depress" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(-483, -705)
-
-[node name="DialogueBox" parent="NPCs/Depress/FixedDialoguePosition" index="2"]
-visible = false
 
 [node name="Sprite2D" parent="NPCs/Depress" index="1"]
 animation = &"Derick"
@@ -1099,7 +1087,6 @@ offset_top = 349.0
 offset_bottom = 870.0
 
 [node name="DialogueBox" parent="NPCs/Accept/FixedDialoguePosition" index="2"]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_top = 31.0
 offset_bottom = 270.0
@@ -1114,9 +1101,6 @@ texture = ExtResource("22_1bejx")
 [node name="Croak" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(862, -476)
 
-[node name="DialogueBox" parent="NPCs/Croak/FixedDialoguePosition" index="2"]
-visible = false
-
 [node name="Sprite2D" parent="NPCs/Croak" index="1"]
 autoplay = "Croak"
 
@@ -1129,9 +1113,6 @@ debug_color = Color(0.898039, 0.227451, 0.545098, 0.419608)
 
 [node name="OldMan" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(-212, 168)
-
-[node name="DialogueBox" parent="NPCs/OldMan/FixedDialoguePosition" index="2"]
-visible = false
 
 [node name="Sprite2D" parent="NPCs/OldMan" index="1"]
 autoplay = "OldMan"

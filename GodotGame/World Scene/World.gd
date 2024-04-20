@@ -15,7 +15,8 @@ var npc_positions = {
 	'day3':[Vector2(48, 406), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
 	
 	#DLC
-	'day4':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	'day4':[Vector2(218, 206), Vector2(897, 201), Vector2(999999999, 99999999), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	
 	'day5':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
 	'day6':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
 	'day7':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
@@ -92,6 +93,9 @@ func _on_open_leave_menu():
 	
 	#TODO: After day 3 and beyond, you only need to talk to 6 villagers
 	elif ((GameData.inventory_amount.keys().find("WaterFilter") == -1 or TalkedToVillagersCount != 6 or GameData.questComplete["Main"] == false or GameData.questComplete["Wild"] == false) and GameData.day == 3):
+		$UI/LeaveVillage.show()
+		$UI/LeaveVillage/QuotaError.show()
+	elif (TalkedToVillagersCount != 5 and GameData.day == 4):
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
 	else:

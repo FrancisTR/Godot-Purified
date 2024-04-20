@@ -81,6 +81,7 @@ modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_or10c"]
 
 [node name="Tutorial" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
