@@ -57,25 +57,25 @@ modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0yg0"]
 texture = ExtResource("3_0umsk")
-expand_margin_left = 7.0
+expand_margin_left = 4.0
 expand_margin_top = 4.0
-expand_margin_right = 7.0
-expand_margin_bottom = 7.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ohko"]
 texture = ExtResource("3_0umsk")
-expand_margin_left = 7.0
+expand_margin_left = 4.0
 expand_margin_top = 4.0
-expand_margin_right = 7.0
-expand_margin_bottom = 7.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
 modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3fwte"]
 texture = ExtResource("4_red4t")
-expand_margin_left = 7.0
+expand_margin_left = 4.0
 expand_margin_top = 4.0
-expand_margin_right = 7.0
-expand_margin_bottom = 7.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
 modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_orjp5"]

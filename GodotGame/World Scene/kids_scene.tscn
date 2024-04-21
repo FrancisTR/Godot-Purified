@@ -141,13 +141,12 @@ skip_input_action = "ui_select"
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a5mn1"), SubResource("RichTextEffect_uc7ri")])
 
 [node name="Voice" type="Button" parent="Dialogue"]
-visible = false
 z_index = 999
 texture_filter = 1
-offset_left = 101.0
-offset_top = 544.0
-offset_right = 171.0
-offset_bottom = 614.0
+offset_left = 232.0
+offset_top = 543.0
+offset_right = 302.0
+offset_bottom = 613.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)

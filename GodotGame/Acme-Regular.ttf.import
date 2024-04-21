@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://61os1nak2m6r"
-path="res://.godot/imported/BakbakOne-Regular.ttf-23f8d1a0c0abdd12367c02cce95903da.fontdata"
+uid="uid://jo7ixvur71um"
+path="res://.godot/imported/Acme-Regular.ttf-446672d51582b48c81d3d751ee1c0c1b.fontdata"
 
 [deps]
 
-source_file="res://BakbakOne-Regular.ttf"
-dest_files=["res://.godot/imported/BakbakOne-Regular.ttf-23f8d1a0c0abdd12367c02cce95903da.fontdata"]
+source_file="res://Acme-Regular.ttf"
+dest_files=["res://.godot/imported/Acme-Regular.ttf-446672d51582b48c81d3d751ee1c0c1b.fontdata"]
 
 [params]
 

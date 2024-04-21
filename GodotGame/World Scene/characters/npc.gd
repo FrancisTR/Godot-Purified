@@ -21,6 +21,8 @@ func _ready():
 	set_process_input(true)
 	$PressForDialogue.text = InputMap.action_get_events("StartDialogue")[0].as_text()
 	
+	
+	
 func go_pos(delta):
 	if moving:
 		$"../Bargin".global_position = $"../Bargin".global_position.move_toward(BarryDestination, delta*moving_speed)
@@ -39,7 +41,7 @@ func go_pos(delta):
 
 # TODO: Map more ID's for dialogue for more days
 func _process(delta):
-	
+
 	#Barry gone if he was gone before. This is for Day 3 only
 	if (GameData.barryDespawned == true):
 		$"../Bargin".position = Vector2(999999999, 999999999)
@@ -128,14 +130,61 @@ func _process(delta):
 			dialogue_box.start_id = "Depress4"
 		elif NPCname == "Accept" and dialogue_box.variables["OldMan"] == true:
 			dialogue_box.start_id = "Accept4"
-		elif NPCname == "Croak" and dialogue_box.variables["OldMan"] == true:
-			dialogue_box.start_id = "Croak4"
 		elif NPCname == "OldMan":
 			dialogue_box.start_id = "OldMan4"
 		else:
 			dialogue_box.start_id = "Day4"
-			
-			
+	elif GameData.day == 5:
+		# Who is the player talking to?
+		if NPCname == "Denial":
+			dialogue_box.start_id = "Denial5"
+		elif NPCname == "Anger":
+			dialogue_box.start_id = "Anger5"
+		elif NPCname == "Bargin":
+			dialogue_box.start_id = "Bargin5"
+		elif NPCname == "Depress":
+			dialogue_box.start_id = "Depress5"
+		elif NPCname == "Accept":
+			dialogue_box.start_id = "Accept5"
+		elif NPCname == "OldMan":
+			var count = 0
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Talked"] == true:
+					count = count + 1
+			#We can talk to the old man if everyone has been talked to
+			print(count)
+			if count >= 5 and GameData.villagersTalked[6]["Talked"] == false:
+				dialogue_box.start_id = "OldMan5"
+			else:
+				dialogue_box.start_id = "Day5OldMan"
+	elif GameData.day == 6:
+		# Who is the player talking to?
+		if NPCname == "Denial":
+			dialogue_box.start_id = "Denial6"
+		elif NPCname == "Anger":
+			dialogue_box.start_id = "Anger6"
+		elif NPCname == "Bargin":
+			dialogue_box.start_id = "Bargin6"
+		elif NPCname == "Depress":
+			dialogue_box.start_id = "Depress6"
+		elif NPCname == "Accept":
+			dialogue_box.start_id = "Accept6"
+		elif NPCname == "OldMan":
+			dialogue_box.start_id = "OldMan6"
+	elif GameData.day == 7:
+		# Who is the player talking to?
+		if NPCname == "Denial":
+			dialogue_box.start_id = "Day7Negate"
+		elif NPCname == "Anger":
+			dialogue_box.start_id = "Day7Negate"
+		elif NPCname == "Bargin":
+			dialogue_box.start_id = "Day7Negate"
+		elif NPCname == "Depress":
+			dialogue_box.start_id = "Day7Negate"
+		elif NPCname == "Accept":
+			dialogue_box.start_id = "Day7Negate"
+		elif NPCname == "OldMan":
+			dialogue_box.start_id = "OldMan7"
 			
 			
 		
@@ -157,6 +206,7 @@ func _process(delta):
 			GameData.charLock = true
 			GameData.current_ui = "dialogue"
 			$PressForDialogue.visible = false
+			$FixedDialoguePosition/CharacterIMG.visible = true
 			
 			#TODO
 			#Run the loop and check true that we talked to that villager
@@ -183,6 +233,33 @@ func _process(delta):
 					for i in range(len(GameData.villagersTalked)):
 						if GameData.villagersTalked[i]["Name"] == NPCname:
 							GameData.villagersTalked[i]["Talked"] = true
+			
+			
+			elif GameData.day == 5:
+				var counts = 0
+				for i in range(len(GameData.villagersTalked)):
+					if GameData.villagersTalked[i]["Talked"] == true:
+						counts = counts + 1
+				#We can talk to the old man if everyone has been talked to
+				#Talk to the old man first
+				if (GameData.villagersTalked[6]["Talked"] == false and counts == 5):
+					dialogue_box.variables[NPCname] = true
+					for i in range(len(GameData.villagersTalked)):
+						if GameData.villagersTalked[i]["Name"] == NPCname:
+							GameData.villagersTalked[i]["Talked"] = true
+				elif (NPCname != "OldMan" and (GameData.villagersTalked[0]["Talked"] == false or GameData.villagersTalked[1]["Talked"] == false or GameData.villagersTalked[2]["Talked"] == false or GameData.villagersTalked[4]["Talked"] == false or GameData.villagersTalked[5]["Talked"] == false)):
+					dialogue_box.variables[NPCname] = true
+					for i in range(len(GameData.villagersTalked)):
+						if GameData.villagersTalked[i]["Name"] == NPCname:
+							GameData.villagersTalked[i]["Talked"] = true
+			elif GameData.day == 7:
+				#Talk to the old man only
+				if (NPCname == "OldMan"):
+					dialogue_box.variables[NPCname] = true
+					for i in range(len(GameData.villagersTalked)):
+						if GameData.villagersTalked[i]["Name"] == NPCname:
+							GameData.villagersTalked[i]["Talked"] = true
+			
 			else:
 				dialogue_box.variables[NPCname] = true
 				#GameData.QWild = dialogue_box.variables["QWild"]
@@ -196,14 +273,15 @@ func _process(delta):
 
 			$FixedDialoguePosition/DialogueOpacity.visible = true
 			print(dialogue_box)
-	elif not dialogue_box.running and enterBody == true:
+	elif (not dialogue_box.running and enterBody == true) or (not dialogue_box.running and dialogue_box.variables["Discount"] != ""):
 		GameData.charLock = false
 		if GameData.current_ui == "dialogue":
 			GameData.current_ui = ""
-			$FixedDialoguePosition/DialogueOpacity.visible = false
-			$FixedDialoguePosition/CharacterIMG.texture = null
-			$FixedDialoguePosition/Voice.visible = false
-			$PressForDialogue.visible = true
+		$FixedDialoguePosition/DialogueOpacity.visible = false
+		$FixedDialoguePosition/CharacterIMG.texture = null
+		$FixedDialoguePosition/CharacterIMG.visible = false
+		$FixedDialoguePosition/Voice.visible = false
+		$PressForDialogue.visible = true
 			
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
@@ -253,7 +331,7 @@ func hide_notif():
 	$Notif.hide()
 
 func _on_dialogue_box_dialogue_ended():
-	
+	$FixedDialoguePosition/CharacterIMG.visible = false
 	#TODO: Quest stuff for the Main World
 	if (dialogue_box.variables["QMain"] == true and GameData.QVillager == ""):
 		GameData.QMain = true
@@ -262,6 +340,7 @@ func _on_dialogue_box_dialogue_ended():
 		GameData.madeProfit = true
 	if (dialogue_box.variables["Discount"] != ""):
 		GameData.Discount = dialogue_box.variables["Discount"]
+	dialogue_box.start_id = ""
 	pass # Replace with function body.
 	
 	
@@ -287,7 +366,8 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 func _on_dialogue_box_dialogue_signal(value):
 	if value == "BarryRun":
 		moving = true
-		
+	if value == "PlayerRun":
+		moving = true
 		
 	if value == "MainComplete":
 		GameData.questComplete["Main"] = true
