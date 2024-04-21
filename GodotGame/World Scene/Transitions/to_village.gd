@@ -21,7 +21,7 @@ func _on_teleport_body_entered(body):
 		GameData.charLock = true
 		#TODO Add more days
 		#Show an error dialogue where the player did not craft/find
-		if GameData.day == 4:
+		if GameData.day >= 4:
 			SceneTransition.change_scene("res://World Scene/World.tscn")
 		elif (GameData.questComplete["Wild"] == false and GameData.inventory_amount.size() != 0 and GameData.day == 1):
 			GameData.QWild = true

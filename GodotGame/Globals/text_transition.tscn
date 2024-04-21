@@ -9,6 +9,7 @@ size = Vector2(1152, 647.5)
 script = ExtResource("1_biuib")
 
 [node name="Logo" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -155,10 +155,10 @@ anchor_right = 0.5
 offset_left = -149.5
 offset_top = 16.0
 offset_right = 150.5
-offset_bottom = 71.0
+offset_bottom = 82.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
 text = "Crafting List"
 horizontal_alignment = 1
 
