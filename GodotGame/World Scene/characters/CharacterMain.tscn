@@ -163,7 +163,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_u76tt")
 animation = &"Down"
 autoplay = "Down_Idle"
-frame_progress = 0.536338
+frame_progress = 0.222289
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -207,5 +207,9 @@ scale = Vector2(4, 4)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_ugh86")
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
 
 [connection signal="finished" from="FootstepAudio" to="." method="_on_footstep_audio_finished"]

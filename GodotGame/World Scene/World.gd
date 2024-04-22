@@ -29,6 +29,14 @@ var npc_positions = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GameData.charLock = false
+	
+	#TODO TESTING PURPOSES ONLY
+	if GameData.day == 7:
+		Utils.add_to_inventory("WaterBottleSpecial", 1)
+		Utils.add_to_inventory("BoilingPot", 1)
+		Utils.add_to_inventory("WaterFilter", 1)
+	
 	if GameData.visitedWilderness:
 		$Other/CharacterBody2D.position = Vector2(863, 1270)
 		GameData.visitedWilderness = false
