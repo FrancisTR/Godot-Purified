@@ -1,9 +1,15 @@
 extends Area2D
+signal leave_village
 
 @onready var dialogue_box = $FixedDialoguePosition/DialogueBox
 
 #For Barry
 @onready var BarryDestination = $NPCActions/BarryDestination/Marker2D.global_position
+#For player on Day 7
+@onready var PlayerDestination = $"../../Other/CharacterBody2D/Marker2D".global_position
+var specialLockDay7 = false #Only use this for Old man only
+var idxMovement = 0 #Use for movement on Day 7 Character
+
 var moving_speed = 200
 var moving = false
 
@@ -12,6 +18,7 @@ var enterBody = false
 
 var NPCname = null
 var PressForDialogue_was_opened = false
+var playerRuns = false
 
 var exclamation = load("res://Assets/Custom/UI_Exclamation_Mark_Plate.png")
 var question = load("res://Assets/Custom/UI_Question_Mark_Plate.png")
@@ -24,7 +31,7 @@ func _ready():
 	
 	
 func go_pos(delta):
-	if moving:
+	if moving and playerRuns == false: #Barry
 		$"../Bargin".global_position = $"../Bargin".global_position.move_toward(BarryDestination, delta*moving_speed)
 		$"../Bargin/FixedDialoguePosition/Voice".visible = false
 		#Hide all character img
@@ -32,11 +39,112 @@ func go_pos(delta):
 		$FixedDialoguePosition/DialogueOpacity.visible = false
 		$"../Bargin/StaticBody2D/CollisionShape2D".disabled = true
 		$"../Bargin/Sprite2D".animation = "Barry_Running"
-	if $"../Bargin".global_position == BarryDestination:
+	elif moving and playerRuns == true: #Player
+		$"../../Other/CharacterBody2D".global_position = $"../../Other/CharacterBody2D".global_position.move_toward(PlayerDestination, delta*moving_speed)
+		$"../OldMan/FixedDialoguePosition/Voice".visible = false
+		#Hide all character img (TODO Depends on who ends the call)
+		$"../OldMan/FixedDialoguePosition/DialogueOpacity".visible = false
+		$FixedDialoguePosition/DialogueOpacity.visible = false
+		$"../../Other/CharacterBody2D/CollisionShape2D".disabled = true
+		
+		if (idxMovement == 0):
+			$"../../Other/CharacterBody2D/Sprite2D".animation = "Right"
+		else:
+			$"../../Other/CharacterBody2D/Sprite2D".animation = "Down"
+	
+	
+	if $"../Bargin".global_position == BarryDestination and playerRuns == false:
 		moving = false
 		$"../Bargin".position = Vector2(999999999, 999999999)
 		GameData.charLock = false
 		GameData.barryDespawned = true
+	
+	#If we reach the destination, move on to the next day
+	#TODO Reset must be consistent with the leave village UI
+	if $"../../Other/CharacterBody2D".global_position == PlayerDestination and playerRuns == true:
+		print("Done")
+		#Move to the second Marker
+		idxMovement = 1
+		PlayerDestination = $"../../Other/CharacterBody2D/Marker2D2".global_position
+		$"../../Other/CharacterBody2D".global_position = $"../../Other/CharacterBody2D".global_position.move_toward($"../../Other/CharacterBody2D/Marker2D2".global_position, delta*moving_speed)
+		
+		
+		emit_signal("leave_village")
+		GameData.QVillager = ""
+		#GameData.charLock = false
+		if GameData.inventory_amount.keys().find("Twig") != -1:
+			Utils.remove_from_inventory("Twig", int(GameData.inventory_amount["Twig"]))
+		
+		if GameData.inventory_amount.keys().find("Rock") != -1:
+			Utils.remove_from_inventory("Rock", int(GameData.inventory_amount["Rock"]))
+		
+		if GameData.inventory_amount.keys().find("Sand") != -1:
+			Utils.remove_from_inventory("Sand", int(GameData.inventory_amount["Sand"]))
+		
+		if GameData.inventory_amount.keys().find("Moss") != -1:
+			Utils.remove_from_inventory("Moss", int(GameData.inventory_amount["Moss"]))
+		
+		if GameData.inventory_amount.keys().find("TinCan") != -1:
+			Utils.remove_from_inventory("TinCan", int(GameData.inventory_amount["TinCan"]))
+		
+		if GameData.inventory_amount.keys().find("WaterBottle") != -1:
+			Utils.remove_from_inventory("WaterBottle", int(GameData.inventory_amount["WaterBottle"]))
+		
+		
+		#Reset villagers talked
+		for i in range(len(GameData.villagersTalked)):
+			GameData.villagersTalked[i]["Talked"] = false
+
+		GameData.QMain = false
+		GameData.QWild = false
+		GameData.questComplete = {"Main": false, "Wild": false}
+		GameData.NPCgiveNoMore = false
+		
+		#TODO: Add more when needed
+		GameData.itemDialogue[0]["Value"] = 0
+		GameData.itemDialogue[1]["Value"] = 0
+		GameData.itemDialogue[2]["Value"] = 0
+		GameData.itemDialogue[3]["Value"] = 0
+			
+		#Reset take items and spawn again on the next day
+		GameData.get_item_posX = null
+		GameData.get_item_posY = null
+		for i in range(len(GameData.itemSpawns)):
+			GameData.itemSpawns[i]["Taken"] = false
+		
+		
+		
+		GameData.visitedWilderness == false
+		
+		GameData.madeProfit = false
+		GameData.barryDespawned = false
+		GameData.talkToKid = false
+		GameData.leaveVillageQuest = false
+		
+		
+		
+		#TO Day 8 we go
+		SoundControl.stop_playing()
+
+		TextTransition.set_to_click(
+			"You leave the village and come back the next day",
+			"res://World Scene/World.tscn",
+			"Click To Continue"
+		)
+		SceneTransition.change_scene("res://Globals/text_transition.tscn")
+		if (GameData.day != 8): #Prevent the loop
+			increase_day(1)
+		
+func increase_day(amount):
+	if(GameData.day+amount > 0):
+		GameData.day += amount	
+		
+		
+		
+		
+		
+		
+		
 
 
 # TODO: Map more ID's for dialogue for more days
@@ -193,7 +301,7 @@ func _process(delta):
 		go_pos(delta) #For barry
 	
 	
-	if Input.is_action_just_pressed("StartDialogue") and enterBody == true:
+	if Input.is_action_just_pressed("StartDialogue") and enterBody == true and specialLockDay7 == false:
 		#Focus the button that is visible on dialogue
 		#for option in dialogue_box.options.get_children():
 			#if option.visible:
@@ -341,7 +449,25 @@ func _on_dialogue_box_dialogue_ended():
 	if (dialogue_box.variables["Discount"] != ""):
 		GameData.Discount = dialogue_box.variables["Discount"]
 	dialogue_box.start_id = ""
-	pass # Replace with function body.
+	
+	#This should be the ONLY case since the old man is the only person you are talking to
+	if (NPCname == "OldMan" and GameData.day == 7 and GameData.inventory_amount.size() != 0):
+		if (GameData.inventory_amount.keys().find("WaterBottleSpecial") != -1 or GameData.inventory_amount.keys().find("BoilingPot") != -1 or GameData.inventory_amount.keys().find("WaterFilter") != -1):
+			print("Activate Union Hanger")
+			specialLockDay7 = true
+			$PressForDialogue.visible = false
+			#Draw the items to display on screen
+			#We allow the user to click on the item to learn more
+			$NPCActions/OldManInventory/InventoryDialogue.draw_items(GameData.inventory)
+			$NPCActions/OldManInventory.visible = true
+	elif (NPCname == "OldMan" and GameData.day == 7 and moving == false):
+		#Continue with the dialogue
+		dialogue_box.start("OldMan7Finish")
+		GameData.charLock = true
+		GameData.current_ui = "dialogue"
+		$PressForDialogue.visible = false
+		$FixedDialoguePosition/CharacterIMG.visible = true
+
 	
 	
 func _on_dialogue_box_dialogue_proceeded(node_type):
@@ -368,6 +494,7 @@ func _on_dialogue_box_dialogue_signal(value):
 		moving = true
 	if value == "PlayerRun":
 		moving = true
+		playerRuns = true
 		
 	if value == "MainComplete":
 		GameData.questComplete["Main"] = true

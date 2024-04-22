@@ -1,0 +1,761 @@
+[gd_scene load_steps=5 format=3 uid="uid://caur4c8x7r8ll"]
+
+[ext_resource type="Script" path="res://World Scene/UIs/InventoryDialogue.gd" id="1_5ou37"]
+[ext_resource type="Texture2D" uid="uid://cosqqv8nuavny" path="res://Assets/Custom/Suitcase.png" id="2_votc2"]
+[ext_resource type="Texture2D" uid="uid://2mvvco20ojh5" path="res://Assets/UISprites/UI_Flat_Select_01a2.png" id="7_birag"]
+[ext_resource type="Texture2D" uid="uid://ckuh0yllyblxa" path="res://Assets/UISprites/UI_Flat_Select_01a1.png" id="8_ik1ed"]
+
+[node name="InventoryDialogue" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.6, 1.6)
+script = ExtResource("1_5ou37")
+
+[node name="InventoryOpacity" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -360.0
+offset_top = -203.0
+offset_right = 361.0
+offset_bottom = 203.0
+color = Color(0, 0, 0, 0.25098)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.625
+offset_top = -169.375
+offset_right = 211.375
+offset_bottom = 169.625
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0.843137)
+layout_mode = 2
+texture = ExtResource("2_votc2")
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="slot0" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -149.0
+offset_top = -55.0
+offset_right = 435.0
+offset_bottom = 331.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot0" type="TextureButton" parent="Items/slot0"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5885.0
+offset_bottom = 2646.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName0" type="Label" parent="Items/slot0"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 586.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot1" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -89.0
+offset_top = -55.0
+offset_right = 495.0
+offset_bottom = 331.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot1" type="TextureButton" parent="Items/slot1"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5886.0
+offset_bottom = 2644.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName1" type="Label" parent="Items/slot1"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot2" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -29.0
+offset_top = -55.0
+offset_right = 555.0
+offset_bottom = 331.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot2" type="TextureButton" parent="Items/slot2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5880.0
+offset_bottom = 2644.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName2" type="Label" parent="Items/slot2"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot3" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = 31.0
+offset_top = -55.0
+offset_right = 618.0
+offset_bottom = 334.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot3" type="TextureButton" parent="Items/slot3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5876.0
+offset_bottom = 2646.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName3" type="Label" parent="Items/slot3"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot4" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = 91.0
+offset_top = -55.0
+offset_right = 675.0
+offset_bottom = 331.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot4" type="TextureButton" parent="Items/slot4"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5880.0
+offset_bottom = 2646.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName4" type="Label" parent="Items/slot4"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot5" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -149.0
+offset_top = 5.0
+offset_right = 435.0
+offset_bottom = 388.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot5" type="TextureButton" parent="Items/slot5"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5880.0
+offset_bottom = 2644.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName5" type="Label" parent="Items/slot5"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot6" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -89.0
+offset_top = 5.0
+offset_right = 495.0
+offset_bottom = 391.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot6" type="TextureButton" parent="Items/slot6"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5876.0
+offset_bottom = 2644.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName6" type="Label" parent="Items/slot6"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot7" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -29.0
+offset_top = 5.0
+offset_right = 555.0
+offset_bottom = 391.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot7" type="TextureButton" parent="Items/slot7"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5876.0
+offset_bottom = 2644.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName7" type="Label" parent="Items/slot7"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot8" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = 31.0
+offset_top = 5.0
+offset_right = 615.0
+offset_bottom = 391.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot8" type="TextureButton" parent="Items/slot8"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5880.0
+offset_bottom = 2644.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName8" type="Label" parent="Items/slot8"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot9" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = 91.0
+offset_top = 5.0
+offset_right = 675.0
+offset_bottom = 391.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot9" type="TextureButton" parent="Items/slot9"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5880.0
+offset_bottom = 2644.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName9" type="Label" parent="Items/slot9"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot10" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -149.0
+offset_top = 65.0
+offset_right = 435.0
+offset_bottom = 451.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot10" type="TextureButton" parent="Items/slot10"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5880.0
+offset_bottom = 2644.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName10" type="Label" parent="Items/slot10"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot11" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -89.0
+offset_top = 65.0
+offset_right = 495.0
+offset_bottom = 451.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot11" type="TextureButton" parent="Items/slot11"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5880.0
+offset_bottom = 2644.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName11" type="Label" parent="Items/slot11"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot12" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = -29.0
+offset_top = 65.0
+offset_right = 555.0
+offset_bottom = 451.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot12" type="TextureButton" parent="Items/slot12"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5881.0
+offset_bottom = 2644.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName12" type="Label" parent="Items/slot12"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot13" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = 31.0
+offset_top = 65.0
+offset_right = 618.0
+offset_bottom = 451.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot13" type="TextureButton" parent="Items/slot13"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5880.0
+offset_bottom = 2644.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName13" type="Label" parent="Items/slot13"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="slot14" type="TextureRect" parent="Items"]
+texture_filter = 1
+offset_left = 91.0
+offset_top = 65.0
+offset_right = 675.0
+offset_bottom = 451.0
+scale = Vector2(0.0989064, 0.147303)
+expand_mode = 1
+
+[node name="slot14" type="TextureButton" parent="Items/slot14"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 5880.0
+offset_bottom = 2644.0
+scale = Vector2(0.0989064, 0.147303)
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
+stretch_mode = 0
+
+[node name="ItemName14" type="Label" parent="Items/slot14"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 584.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 140
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Amounts" type="Node2D" parent="."]
+
+[node name="slot0" type="Label" parent="Amounts"]
+offset_left = -149.375
+offset_top = -56.875
+offset_right = -94.375
+offset_bottom = 3.12501
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot1" type="Label" parent="Amounts"]
+offset_left = -89.375
+offset_top = -56.875
+offset_right = -34.375
+offset_bottom = 3.12501
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot2" type="Label" parent="Amounts"]
+offset_left = -28.75
+offset_top = -56.875
+offset_right = 26.25
+offset_bottom = 3.12501
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot3" type="Label" parent="Amounts"]
+offset_left = 31.25
+offset_top = -56.875
+offset_right = 86.25
+offset_bottom = 3.12501
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot4" type="Label" parent="Amounts"]
+offset_left = 90.625
+offset_top = -56.875
+offset_right = 145.625
+offset_bottom = 3.12501
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot5" type="Label" parent="Amounts"]
+offset_left = -149.375
+offset_top = 3.12501
+offset_right = -94.375
+offset_bottom = 63.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot6" type="Label" parent="Amounts"]
+offset_left = -89.375
+offset_top = 3.12501
+offset_right = -34.375
+offset_bottom = 63.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot7" type="Label" parent="Amounts"]
+offset_left = -28.75
+offset_top = 3.12501
+offset_right = 26.25
+offset_bottom = 63.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot8" type="Label" parent="Amounts"]
+offset_left = 31.25
+offset_top = 3.12501
+offset_right = 86.25
+offset_bottom = 63.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot9" type="Label" parent="Amounts"]
+offset_left = 90.625
+offset_top = 3.12501
+offset_right = 145.625
+offset_bottom = 63.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot10" type="Label" parent="Amounts"]
+offset_left = -149.375
+offset_top = 63.125
+offset_right = -94.375
+offset_bottom = 123.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot11" type="Label" parent="Amounts"]
+offset_left = -89.375
+offset_top = 63.125
+offset_right = -34.375
+offset_bottom = 123.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot12" type="Label" parent="Amounts"]
+offset_left = -28.75
+offset_top = 63.125
+offset_right = 26.25
+offset_bottom = 123.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot13" type="Label" parent="Amounts"]
+offset_left = 31.25
+offset_top = 63.125
+offset_right = 86.25
+offset_bottom = 123.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="slot14" type="Label" parent="Amounts"]
+offset_left = 90.625
+offset_top = 63.125
+offset_right = 145.625
+offset_bottom = 123.125
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="mouse_entered" from="Items/slot0/slot0" to="." method="_on_slot_0_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot0/slot0" to="." method="_on_slot_0_mouse_exited"]
+[connection signal="pressed" from="Items/slot0/slot0" to="." method="_on_slot_0_pressed"]
+[connection signal="mouse_entered" from="Items/slot1/slot1" to="." method="_on_slot_1_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot1/slot1" to="." method="_on_slot_1_mouse_exited"]
+[connection signal="pressed" from="Items/slot1/slot1" to="." method="_on_slot_1_pressed"]
+[connection signal="mouse_entered" from="Items/slot2/slot2" to="." method="_on_slot_2_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot2/slot2" to="." method="_on_slot_2_mouse_exited"]
+[connection signal="pressed" from="Items/slot2/slot2" to="." method="_on_slot_2_pressed"]
+[connection signal="mouse_entered" from="Items/slot3/slot3" to="." method="_on_slot_3_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot3/slot3" to="." method="_on_slot_3_mouse_exited"]
+[connection signal="mouse_entered" from="Items/slot4/slot4" to="." method="_on_slot_4_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot4/slot4" to="." method="_on_slot_4_mouse_exited"]
+[connection signal="mouse_entered" from="Items/slot5/slot5" to="." method="_on_slot_5_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot5/slot5" to="." method="_on_slot_5_mouse_exited"]
+[connection signal="mouse_entered" from="Items/slot6/slot6" to="." method="_on_slot_6_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot6/slot6" to="." method="_on_slot_6_mouse_exited"]
+[connection signal="mouse_entered" from="Items/slot7/slot7" to="." method="_on_slot_7_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot7/slot7" to="." method="_on_slot_7_mouse_exited"]
+[connection signal="mouse_entered" from="Items/slot8/slot8" to="." method="_on_slot_8_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot8/slot8" to="." method="_on_slot_8_mouse_exited"]
+[connection signal="mouse_entered" from="Items/slot9/slot9" to="." method="_on_slot_9_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot9/slot9" to="." method="_on_slot_9_mouse_exited"]
+[connection signal="mouse_entered" from="Items/slot10/slot10" to="." method="_on_slot_10_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot10/slot10" to="." method="_on_slot_10_mouse_exited"]
+[connection signal="mouse_entered" from="Items/slot11/slot11" to="." method="_on_slot_11_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot11/slot11" to="." method="_on_slot_11_mouse_exited"]
+[connection signal="mouse_entered" from="Items/slot12/slot12" to="." method="_on_slot_12_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot12/slot12" to="." method="_on_slot_12_mouse_exited"]
+[connection signal="mouse_entered" from="Items/slot13/slot13" to="." method="_on_slot_13_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot13/slot13" to="." method="_on_slot_13_mouse_exited"]
+[connection signal="mouse_entered" from="Items/slot14/slot14" to="." method="_on_slot_14_mouse_entered"]
+[connection signal="mouse_exited" from="Items/slot14/slot14" to="." method="_on_slot_14_mouse_exited"]
