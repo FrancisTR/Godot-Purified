@@ -1,7 +1,31 @@
 extends Control
 
+@onready var InventoryRequest = [
+	$ListUI/ItemR, 
+	$ListUI/ItemR2, 
+	$ListUI/ItemR3, 
+	$ListUI/ItemR4, 
+	$ListUI/ItemR5, 
+	$ListUI/ItemR6
+]
 
+@onready var InventoryCheckMark = [
+	$ListUI/ItemR/CheckMark,
+	$ListUI/ItemR2/CheckMark,
+	$ListUI/ItemR3/CheckMark,
+	$ListUI/ItemR4/CheckMark,
+	$ListUI/ItemR5/CheckMark,
+	$ListUI/ItemR6/CheckMark
+]
 
+@onready var InventoryAmount = [
+	$ListUI/ItemR/ItemNeeded, 
+	$ListUI/ItemR2/ItemNeeded, 
+	$ListUI/ItemR3/ItemNeeded, 
+	$ListUI/ItemR4/ItemNeeded, 
+	$ListUI/ItemR5/ItemNeeded, 
+	$ListUI/ItemR6/ItemNeeded
+]
 
 
 func _process(delta):
@@ -20,16 +44,22 @@ func _process(delta):
 	#$Items/slot12/ItemName12.visible = false
 	#$Items/slot13/ItemName13.visible = false
 	#$Items/slot14/ItemName14.visible = false
+	#GameData.QMain[NPCname] = true
 	# Constantly update the variables live
 	var countTalked = 0
 	for i in range(len(GameData.villagersTalked)):
 		if GameData.villagersTalked[i]["Talked"] == true:
 			countTalked = countTalked + 1
+	
+	
 	#TODO Set things up in UI for specific days
 	$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/7"
 	if (GameData.day >= 1 and GameData.day <= 3):
-		$ListUI/ItemR.visible = true
-		$ListUI/ItemR2.visible = true
+		#$ListUI/ItemR.visible = true
+		#$ListUI/ItemR2.visible = true
+		for i in range(2):
+			InventoryRequest[i].visible = true
+		
 	if (GameData.day == 3 or GameData.day == 5 or GameData.day == 6):
 		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/6"
 	if (GameData.day == 4):
@@ -37,15 +67,8 @@ func _process(delta):
 	if (GameData.day == 7):
 		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/1"
 	
-	#Add a checkmark next to the request if fufilled
-	#questComplete = {"Main": false, "Wild": false}
-	#TODO make it more dynamic
-	if (GameData.questComplete["Main"] == true):
-		$ListUI/ItemR/CheckMark.texture = load("res://Assets/UISprites/UI_Flat_Checkmark_Large.png")
-	if (GameData.questComplete["Wild"] == true):
-		$ListUI/ItemR2/CheckMark.texture = load("res://Assets/UISprites/UI_Flat_Checkmark_Large.png")
 	
-
+	
 	# Show in the UI of the item
 	#TODO: Add more requirements for each day and mae QMain and QWild
 	#Todo list shown in the inventory
@@ -53,36 +76,87 @@ func _process(delta):
 		GameData.inventory_requirement = {"WaterBottleSpecial": "1"}
 		
 		#Add to the list based on the requirements
-		if (GameData.QMain == true):
-			$ListUI/ItemR.text = "Request from Antonio"
-			$ListUI/ItemR/ItemNeeded.text = "Need 6 Twigs"
+		#GameData.QMain[NPCname] = true
+		if (GameData.QMain.keys().find("Accept") != -1):
+			for i in range(len(InventoryRequest)):
+				if (InventoryRequest[i].visible == true):
+					InventoryRequest[i].text = "Request from Antonio"
+					InventoryAmount[i].text = "Need 6 Twigs"
+					GameData.QMainLocationIdx["Accept"] = i
+					break
 		if (GameData.QWild == true):
-			$ListUI/ItemR2.text = "Request from the Kids"
-			$ListUI/ItemR2/ItemNeeded.text = str(GameData.inventory_requirement["WaterBottleSpecial"])+" Special Water Bottle"
+			for i in range(len(InventoryRequest)):
+				if (InventoryRequest[i].visible == true):
+					InventoryRequest[i].text = "Request from the Kids"
+					InventoryAmount[i].text = str(GameData.inventory_requirement["WaterBottleSpecial"])+" Special Water Bottle"
+					GameData.QMainLocationIdx["Request from the Kids"] = i
+					break
+	
 	
 	elif GameData.day == 2:
 		GameData.inventory_requirement = {"BoilingPot": "1"}
 		
 		#Add to the list based on the requirements
-		if (GameData.QMain == true):
-			$ListUI/ItemR.text = "Request from Barry"
-			$ListUI/ItemR/ItemNeeded.text = "Need 1 Water Bottle"
+		if (GameData.QMain.keys().find("Bargin") != -1):
+			#$ListUI/ItemR.text = "Request from Barry"
+			#$ListUI/ItemR/ItemNeeded.text = "Need 1 Water Bottle"
+			for i in range(len(InventoryRequest)):
+				if (InventoryRequest[i].visible == true):
+					InventoryRequest[i].text = "Request from Barry"
+					InventoryAmount[i].text = "Need 1 Water Bottle"
+					GameData.QMainLocationIdx["Bargin"] = i
+					break
 		if (GameData.QWild == true):
-			$ListUI/ItemR2.text = "Request from the Kids"
-			$ListUI/ItemR2/ItemNeeded.text = "Create "+str(GameData.inventory_requirement["BoilingPot"])+" Boiling Pot"
+			for i in range(len(InventoryRequest)):
+				if (InventoryRequest[i].visible == true):
+					InventoryRequest[i].text = "Request from the Kids"
+					InventoryAmount[i].text = "Create "+str(GameData.inventory_requirement["BoilingPot"])+" Boiling Pot"
+					GameData.QMainLocationIdx["Request from the Kids"] = i
+					break
 	
 	elif GameData.day == 3:
 		GameData.inventory_requirement = {"WaterFilter": "1"}
 		#Add to the list based on the requirements
-		if (GameData.QMain == true):
-			$ListUI/ItemR.text = "Request from Antonio"
-			$ListUI/ItemR/ItemNeeded.text = "Need 3 Tin Cans"
+		if (GameData.QMain.keys().find("Accept") != -1):
+			#$ListUI/ItemR.text = "Request from Antonio"
+			#$ListUI/ItemR/ItemNeeded.text = "Need 3 Tin Cans"
+			for i in range(len(InventoryRequest)):
+				if (InventoryRequest[i].visible == true):
+					InventoryRequest[i].text = "Request from Antonio"
+					InventoryAmount[i].text = "Need 3 Tin Cans"
+					GameData.QMainLocationIdx["Accept"] = i
+					break
+		
 		if (GameData.QWild == true):
-			$ListUI/ItemR2.text = "Request from the Kids"
-			$ListUI/ItemR2/ItemNeeded.text = "Create "+str(GameData.inventory_requirement["WaterFilter"])+" Water Filter"
+			for i in range(len(InventoryRequest)):
+				if (InventoryRequest[i].visible == true):
+					InventoryRequest[i].text = "Request from the Kids"
+					InventoryAmount[i].text = "Create "+str(GameData.inventory_requirement["WaterFilter"])+" Water Filter"
+					GameData.QMainLocationIdx["Request from the Kids"] = i
+					break
 
-
-
+		
+	#Add a checkmark next to the request if fufilled
+	#questComplete = {"Main": false, "Wild": false}
+	#TODO make it more dynamic
+	#if (GameData.questComplete["Main"] == true):
+		#$ListUI/ItemR/CheckMark.texture = load("res://Assets/UISprites/UI_Flat_Checkmark_Large.png")
+	if (GameData.QMain.size() != 0):
+		print(GameData.QMain.keys())
+		for i in GameData.QMain.keys():
+			print(GameData.Qmain[0])
+			#if GameData.Qmain[str(i)] == true:
+				#print(true)
+				#for j in range(len(InventoryCheckMark)):
+					#if j == GameData.QMainLocationIdx[i]:
+						#InventoryCheckMark[j].texture = load("res://Assets/UISprites/UI_Flat_Checkmark_Large.png")
+				
+			
+	#GameData.QMain[NPCname] = true
+	if (GameData.questComplete["Wild"] == true):
+		for i in (len(InventoryCheckMark)):
+			if GameData.QMainLocationIdx["Request from the Kids"] == i:
+				InventoryCheckMark[i].texture = load("res://Assets/UISprites/UI_Flat_Checkmark_Large.png")
 
 
 

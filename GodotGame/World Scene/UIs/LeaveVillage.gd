@@ -37,7 +37,9 @@ func _on_yes_pressed():
 	for i in range(len(GameData.villagersTalked)):
 		GameData.villagersTalked[i]["Talked"] = false
 
-	GameData.QMain = false
+	GameData.QMain = {}
+	GameData.QMainLocationIdx = {}
+	
 	GameData.QWild = false
 	GameData.questComplete = {"Main": false, "Wild": false}
 	GameData.NPCgiveNoMore = false

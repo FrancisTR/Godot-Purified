@@ -5,6 +5,12 @@ extends CanvasLayer
 ## Called when the node enters the scene tree for the first time.
 func _ready():
 	#line_edit.grab_focus()
+	#TODO TESTING PURPOSES ONLY
+	#if GameData.day == 7:
+		#Utils.add_to_inventory("WaterBottleSpecial", 1)
+		#Utils.add_to_inventory("BoilingPot", 1)
+		#Utils.add_to_inventory("WaterFilter", 1)
+	
 	$BackButton.grab_focus()
 	
 	if GameData.username != "":

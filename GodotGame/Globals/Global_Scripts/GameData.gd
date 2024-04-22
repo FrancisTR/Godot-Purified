@@ -1,7 +1,7 @@
 extends Node
 
 
-var day:int = 7
+var day:int = 1
 
 var twigItem = 0
 
@@ -32,8 +32,10 @@ var leaveVillageQuest = false
 
 
 #Dialogue related stuff
-var QMain = false
+
+var QMain = {}
 var QWild = false
+var QMainLocationIdx = {}
 var madeProfit = false
 var NPCgiveNoMore = false #Give items once and not dup
 #Quest is finished
