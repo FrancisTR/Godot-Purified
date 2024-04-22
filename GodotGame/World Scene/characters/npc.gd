@@ -95,7 +95,7 @@ func go_pos(delta):
 		for i in range(len(GameData.villagersTalked)):
 			GameData.villagersTalked[i]["Talked"] = false
 
-		GameData.QMain = false
+		GameData.QMain = {}
 		GameData.QWild = false
 		GameData.questComplete = {"Main": false, "Wild": false}
 		GameData.NPCgiveNoMore = false
@@ -154,7 +154,6 @@ func _process(delta):
 	if (GameData.barryDespawned == true):
 		$"../Bargin".position = Vector2(999999999, 999999999)
 	
-
 	#Appear the game username in dialogue (Only Appears in NPC interaction)
 	Utils.character_list.characters[0].name = GameData.username
 	if dialogue_box.running:
@@ -163,7 +162,13 @@ func _process(delta):
 
 	#Set the variables of the people that already talked to
 	#This prevents a reset if the player visited the wilderness and comes back
-	dialogue_box.variables["QMain"] = GameData.QMain
+
+
+	#TODO: If all the requests has been listed, we then save the Qmain
+	if GameData.day >= 3 and GameData.QMain.values().size() == 1:
+		dialogue_box.variables["QMain"] = GameData.QMain
+	
+	
 	dialogue_box.variables["Profit?"] = GameData.madeProfit
 	dialogue_box.variables["Discount"] = GameData.Discount
 	for i in range(len(GameData.villagersTalked)):
@@ -381,7 +386,8 @@ func _process(delta):
 
 			$FixedDialoguePosition/DialogueOpacity.visible = true
 			print(dialogue_box)
-	elif (not dialogue_box.running and enterBody == true) or (not dialogue_box.running and dialogue_box.variables["Discount"] != ""):
+	elif (not dialogue_box.running and enterBody == true):
+		#or (not dialogue_box.running and dialogue_box.variables["Discount"] != ""
 		GameData.charLock = false
 		if GameData.current_ui == "dialogue":
 			GameData.current_ui = ""
@@ -389,7 +395,7 @@ func _process(delta):
 		$FixedDialoguePosition/CharacterIMG.texture = null
 		$FixedDialoguePosition/CharacterIMG.visible = false
 		$FixedDialoguePosition/Voice.visible = false
-		$PressForDialogue.visible = true
+			#$PressForDialogue.visible = true
 			
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
@@ -442,12 +448,15 @@ func _on_dialogue_box_dialogue_ended():
 	$FixedDialoguePosition/CharacterIMG.visible = false
 	#TODO: Quest stuff for the Main World
 	if (dialogue_box.variables["QMain"] == true and GameData.QVillager == ""):
-		GameData.QMain = true
+		
+		if GameData.QMain.keys().find(NPCname) == -1:
+			GameData.QMain[NPCname] = false 
 		GameData.QVillager = NPCname
 	if (dialogue_box.variables["Profit?"] == true):
 		GameData.madeProfit = true
 	if (dialogue_box.variables["Discount"] != ""):
 		GameData.Discount = dialogue_box.variables["Discount"]
+	$PressForDialogue.visible = true
 	dialogue_box.start_id = ""
 	
 	#This should be the ONLY case since the old man is the only person you are talking to
@@ -497,7 +506,14 @@ func _on_dialogue_box_dialogue_signal(value):
 		playerRuns = true
 		
 	if value == "MainComplete":
-		GameData.questComplete["Main"] = true
+		#GameData.questComplete["Main"] = true
+		GameData.QMain[NPCname] = true
+		
+		var npcComplete = GameData.QMain.values()
+		if not npcComplete.has(false):
+			#All request has been fufill
+			GameData.questComplete["Main"] = true
+		
 		#Remove the items since we gave them
 		#TODO: Add more days
 		if GameData.NPCgiveNoMore == false:
