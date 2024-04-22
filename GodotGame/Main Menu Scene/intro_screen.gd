@@ -13,3 +13,4 @@ func _ready():
 			""
 		)
 	SceneTransition.change_scene("res://Globals/text_transition.tscn")
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
