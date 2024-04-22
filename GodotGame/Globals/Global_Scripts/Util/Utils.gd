@@ -12,8 +12,12 @@ func load_game():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 
 var items_json
+var static_items_json
+var non_static_items_json
 func _ready():
 	items_json = get_JSON("res://Globals/items.json")
+	static_items_json = get_JSON("res://Globals/static_items.json")
+	non_static_items_json = get_JSON("res://Globals/non_static_items.json")
 	print("Utils.gd: jsons loaded")
 
 ################DIALOGUE################
@@ -49,13 +53,13 @@ func return_to_current_scene():
 #############^^^OPTIONS MENU^^^#############
 
 
-################INVENTORY################
 func get_JSON(file_path):
 	var json_as_text = FileAccess.get_file_as_string(file_path)
 	var json_as_dict = JSON.parse_string(json_as_text)
 	return json_as_dict
 	
 	
+################INVENTORY################
 func get_item(item):
 	var json = get_JSON("res://Globals/items.json")
 	var index = items_json[0][item]

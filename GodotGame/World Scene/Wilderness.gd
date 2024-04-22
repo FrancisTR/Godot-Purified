@@ -114,13 +114,42 @@ func _on_close_map():
 
 
 func _on_item_placer_pos_test():
-	print(get_local_mouse_position(), " <---")
-	var rock_scene = preload("res://World Scene/Items/rock.tscn")
-	var instance = rock_scene.instantiate()
+	if $PsuedoItems.get_child_count()==0:
+		make_psuedo_instance()
+	else:
+		var W = false
+		for child in $PsuedoItems.get_children():
+			#print(child.name, "vs", $"Item Placer/ItemPlacer".current_pseudo)
+			if child.name == $"Item Placer/ItemPlacer".current_pseudo:
+				child.position = get_local_mouse_position()
+				W = true
+				return
+		if not W:
+			#print("made it again no way")
+			make_psuedo_instance()
+			#print($PsuedoItems.get_children())
+			#ACTUALLY MAKE IT OR IT DOESNT WORK
+func make_psuedo_instance():
+	var current_pseudo = $"Item Placer/ItemPlacer".current_pseudo
+	var scene = $"Item Placer/ItemPlacer".pseudo_scenes[current_pseudo.split("$")[0]]
+	var instance = scene.instantiate()
 	#instance.position = Vector2(944.6924, -689.1538)
 	instance.position = get_local_mouse_position()
+	instance.name = current_pseudo
+	instance.modulate = Color(1,1,2)
 	$PsuedoItems.add_child(instance)
+	#print(instance.name)
+	#print($PsuedoItems.get_children())
+	#print("made child")
 
+func _on_item_placer_send_to_shadow_realm():
+	for child in $PsuedoItems.get_children():
+		if child.name == $"Item Placer/ItemPlacer".current_pseudo:
+			child.position = get_local_mouse_position()
+			child.position = Vector2(-9999, -9999)
+			return
+
+				
 var dev_flag = false
 func _on_toggle_dev_tool():
 	$Other/CharacterBody2D.velocity = Vector2(0, 0)

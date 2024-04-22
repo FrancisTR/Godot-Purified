@@ -1,0 +1,382 @@
+[
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -810,
+                "posY": -626
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -749,
+                "posY": -566
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -661,
+                "posY": -577
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -539,
+                "posY": -582
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -428,
+                "posY": -550
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -336,
+                "posY": -574
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -324,
+                "posY": -126
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -381,
+                "posY": -71
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -480,
+                "posY": -89
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -519,
+                "posY": 20
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -519,
+                "posY": 106
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -832,
+                "posY": 555
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -923,
+                "posY": 601
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -981,
+                "posY": 648
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -1000,
+                "posY": 710
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -868,
+                "posY": 786
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -431,
+                "posY": 1139
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -378,
+                "posY": 1197
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -374,
+                "posY": 1260
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": -436,
+                "posY": 1304
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": 1124,
+                "posY": 1321
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": 1253,
+                "posY": 1336
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": 1394,
+                "posY": 1284
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": 1427,
+                "posY": 1235
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "sand",
+        "Position": [
+            {
+                "posX": 1514,
+                "posY": 1180
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "Moss",
+        "Position": [
+            {
+                "posX": 1009,
+                "posY": -461
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "Moss",
+        "Position": [
+            {
+                "posX": 399,
+                "posY": -227
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "Moss",
+        "Position": [
+            {
+                "posX": -306,
+                "posY": 303
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "Moss",
+        "Position": [
+            {
+                "posX": -309,
+                "posY": 500
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "Moss",
+        "Position": [
+            {
+                "posX": -164,
+                "posY": 1090
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "Moss",
+        "Position": [
+            {
+                "posX": -167,
+                "posY": 1219
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "Moss",
+        "Position": [
+            {
+                "posX": 1738,
+                "posY": 471
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "Moss",
+        "Position": [
+            {
+                "posX": 1653,
+                "posY": 873
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "Moss",
+        "Position": [
+            {
+                "posX": 1553,
+                "posY": 982
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "Moss",
+        "Position": [
+            {
+                "posX": 1088,
+                "posY": 1240
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "Moss",
+        "Position": [
+            {
+                "posX": -148,
+                "posY": -588
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "Moss",
+        "Position": [
+            {
+                "posX": 686,
+                "posY": -662
+            }
+        ],
+        "Taken": false
+    },
+    {
+        "Item": "Moss",
+        "Position": [
+            {
+                "posX": 1115,
+                "posY": -641
+            }
+        ],
+        "Taken": false
+    }
+]

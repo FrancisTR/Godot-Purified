@@ -1,57 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cg3b56oecuhh6"]
+[gd_scene load_steps=3 format=3 uid="uid://cg3b56oecuhh6"]
 
 [ext_resource type="Script" path="res://World Scene/UIs/item_placer.gd" id="1_te0dq"]
+[ext_resource type="Texture2D" uid="uid://ckuh0yllyblxa" path="res://Assets/UISprites/UI_Flat_Select_01a1.png" id="2_giv6v"]
 
 [node name="ItemPlacer" type="Node2D"]
 script = ExtResource("1_te0dq")
 
 [node name="Gray Background" type="ColorRect" parent="."]
+z_index = -1
 offset_left = 2.0
 offset_top = 103.0
 offset_right = 313.0
 offset_bottom = 486.0
 color = Color(0.286275, 0.301961, 0.341176, 1)
-
-[node name="Add New" type="Node2D" parent="."]
-
-[node name="Add Label" type="Label" parent="Add New"]
-offset_left = 100.0
-offset_top = 118.0
-offset_right = 232.0
-offset_bottom = 160.0
-theme_override_font_sizes/font_size = 30
-text = "Add New"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Add Check Button" type="CheckButton" parent="Add New"]
-offset_left = 1.0
-offset_top = 109.0
-offset_right = 45.0
-offset_bottom = 142.0
-scale = Vector2(1.99464, 2.00622)
-focus_mode = 0
-button_pressed = true
-
-[node name="Modify" type="Node2D" parent="."]
-
-[node name="Modify Check Button" type="CheckButton" parent="Modify"]
-offset_left = 1.0
-offset_top = 168.0
-offset_right = 45.0
-offset_bottom = 201.0
-scale = Vector2(1.99464, 2.00622)
-focus_mode = 0
-
-[node name="Modify Label" type="Label" parent="Modify"]
-offset_left = 101.0
-offset_top = 176.0
-offset_right = 209.0
-offset_bottom = 218.0
-theme_override_font_sizes/font_size = 30
-text = "Modify "
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Modify UI" type="Node2D" parent="."]
 
@@ -60,6 +21,7 @@ vertical_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Blue Background" type="ColorRect" parent="."]
+z_index = -2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -73,11 +35,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0980392, 0.65098, 1, 0.556863)
 
-[node name="Edit Mode Label" type="Label" parent="."]
-offset_left = 463.0
-offset_top = 34.0
-offset_right = 691.0
-offset_bottom = 76.0
+[node name="Edit Mode Label" type="Label" parent="Blue Background"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 9.0
+offset_right = 281.0
+offset_bottom = 51.0
 theme_override_colors/font_color = Color(1, 1, 1, 0.784314)
 theme_override_colors/font_outline_color = Color(0, 0, 0.403922, 0.784314)
 theme_override_constants/outline_size = 8
@@ -86,5 +49,105 @@ text = "EDIT MODE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Add New/Add Check Button" to="." method="_on_add_check_button_pressed"]
-[connection signal="pressed" from="Modify/Modify Check Button" to="." method="_on_modify_check_button_pressed"]
+[node name="Save" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 419.0
+offset_right = 144.0
+offset_bottom = 479.0
+text = "Save"
+
+[node name="Day Input" type="SpinBox" parent="."]
+offset_left = 211.0
+offset_top = 127.0
+offset_right = 308.0
+offset_bottom = 186.0
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+
+[node name="item_id" type="SpinBox" parent="."]
+offset_left = 15.0
+offset_top = 217.0
+offset_right = 112.0
+offset_bottom = 298.0
+max_value = 24.0
+
+[node name="Day" type="Label" parent="."]
+offset_left = 168.0
+offset_top = 145.0
+offset_right = 201.0
+offset_bottom = 194.0
+text = "Day
+ "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="X" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 323.0
+offset_right = 40.0
+offset_bottom = 346.0
+text = "X:"
+horizontal_alignment = 1
+
+[node name="Y" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 373.0
+offset_right = 40.0
+offset_bottom = 396.0
+text = "Y:"
+horizontal_alignment = 1
+
+[node name="X input" type="LineEdit" parent="."]
+offset_left = 48.0
+offset_top = 373.0
+offset_right = 130.0
+offset_bottom = 404.0
+
+[node name="Y input" type="LineEdit" parent="."]
+offset_left = 48.0
+offset_top = 323.0
+offset_right = 130.0
+offset_bottom = 354.0
+
+[node name="Go" type="Button" parent="."]
+offset_left = 153.0
+offset_top = 232.0
+offset_right = 229.0
+offset_bottom = 281.0
+text = "Go"
+
+[node name="Item" type="OptionButton" parent="."]
+offset_left = 15.0
+offset_top = 127.0
+offset_right = 153.0
+offset_bottom = 186.0
+
+[node name="Hide" type="Button" parent="."]
+offset_left = 168.0
+offset_top = 368.0
+offset_right = 277.0
+offset_bottom = 408.0
+text = "Hide"
+
+[node name="Focus Button" type="CheckButton" parent="."]
+offset_left = 168.0
+offset_top = 419.0
+offset_right = 212.0
+offset_bottom = 443.0
+scale = Vector2(2.5, 2.5)
+button_pressed = true
+
+[node name="Focus" type="TextureRect" parent="."]
+offset_left = 559.0
+offset_top = 308.0
+offset_right = 591.0
+offset_bottom = 340.0
+texture = ExtResource("2_giv6v")
+
+[node name="Cursor" type="Node2D" parent="."]
+
+[connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Go" to="." method="_on_go_pressed"]
+[connection signal="pressed" from="Hide" to="." method="_on_hide_pressed"]
+[connection signal="pressed" from="Focus Button" to="." method="_on_focus_button_pressed"]
