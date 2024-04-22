@@ -121,6 +121,7 @@ offset_bottom = 536.0
 expand_mode = 1
 
 [node name="Voice" type="Button" parent="Dialogue/Dialogue"]
+visible = false
 z_index = 999
 texture_filter = 1
 offset_left = 232.0

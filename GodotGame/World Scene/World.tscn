@@ -876,6 +876,16 @@ script = ExtResource("1_1qbtd")
 y_sort_enabled = true
 position = Vector2(172, 303)
 
+[node name="Sprite2D" parent="Other/CharacterBody2D" index="0"]
+animation = &"Right"
+frame_progress = 0.0
+
+[node name="Marker2D2" parent="Other/CharacterBody2D" index="6"]
+position = Vector2(-179, 329)
+
+[node name="Marker2D" parent="Other/CharacterBody2D" index="7"]
+position = Vector2(-50, -8)
+
 [node name="door" parent="Other" instance=ExtResource("12_qfqc7")]
 z_index = 100
 position = Vector2(-200, 825)
@@ -1127,10 +1137,18 @@ texture = ExtResource("24_d3etb")
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]
 [connection signal="leave_village" from="UI/LeaveVillage" to="." method="_on_leave_village"]
 
+[editable path="Other/CharacterBody2D"]
 [editable path="NPCs/Denial"]
+[editable path="NPCs/Denial/NPCActions/OldManInventory/InventoryDialogue"]
 [editable path="NPCs/Anger"]
+[editable path="NPCs/Anger/NPCActions/OldManInventory/InventoryDialogue"]
 [editable path="NPCs/Bargin"]
+[editable path="NPCs/Bargin/NPCActions/OldManInventory/InventoryDialogue"]
 [editable path="NPCs/Depress"]
+[editable path="NPCs/Depress/NPCActions/OldManInventory/InventoryDialogue"]
 [editable path="NPCs/Accept"]
+[editable path="NPCs/Accept/NPCActions/OldManInventory/InventoryDialogue"]
 [editable path="NPCs/Croak"]
+[editable path="NPCs/Croak/NPCActions/OldManInventory/InventoryDialogue"]
 [editable path="NPCs/OldMan"]
+[editable path="NPCs/OldMan/NPCActions/OldManInventory/InventoryDialogue"]
