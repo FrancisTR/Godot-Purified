@@ -1097,7 +1097,6 @@ offset_top = 349.0
 offset_bottom = 870.0
 
 [node name="DialogueBox" parent="NPCs/Accept/FixedDialoguePosition" index="2"]
-self_modulate = Color(1, 1, 1, 0)
 offset_top = 31.0
 offset_bottom = 270.0
 
@@ -1138,6 +1137,7 @@ texture = ExtResource("24_d3etb")
 [connection signal="leave_village" from="UI/LeaveVillage" to="." method="_on_leave_village"]
 
 [editable path="Other/CharacterBody2D"]
+[editable path="Other/CharacterBody2D/Inventory Layer/Inventory"]
 [editable path="NPCs/Denial"]
 [editable path="NPCs/Denial/NPCActions/OldManInventory/InventoryDialogue"]
 [editable path="NPCs/Anger"]
