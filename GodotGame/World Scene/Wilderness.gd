@@ -173,11 +173,24 @@ func make_pseudo_instance():
 	#print($PseudoItems.get_children())
 	#print("made child")
 
-func _on_item_placer_send_to_shadow_realm():
+func _on_send_to_shadow_realm():
 	for child in $PseudoItems.get_children():
 		if child.name == $"Item Placer/ItemPlacer".current_pseudo:
 			#child.position = get_local_mouse_position()
 			child.position = Vector2(-9999, -9999)
+			return
+
+func _on_reset_pressed():
+	for child in $PseudoItems.get_children():
+		if child.name == $"Item Placer/ItemPlacer".current_pseudo:
+			var item_index = int(child.name.split("$")[0])
+			var item_id = int(child.name.split("$")[1])
+			var day = int(child.name.split("$")[2])
+			var offset = 14 * item_index
+			Utils.non_static_items_json
+			var x = Utils.non_static_items_json[item_id+offset].Position[day-1].posX
+			var y = Utils.non_static_items_json[item_id+offset].Position[day-1].posY
+			child.position = Vector2(x, y)
 			return
 
 				

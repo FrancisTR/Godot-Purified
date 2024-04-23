@@ -3,6 +3,7 @@ extends Node2D
 signal pos_test
 signal toggle_dev_tool
 signal send_to_shadow_realm
+signal reset_pressed
 
 var tin_can_scene = preload("res://World Scene/Items/TinCan.tscn")
 var bottle_scene = preload("res://World Scene/Items/WaterBottle.tscn")
@@ -116,7 +117,16 @@ func set_camera_position(position):
 	#file.store_string("tttttttttttttttt\n")
 
 func _on_save_pressed():
-	pass # Replace with function body.
+	$"Are you sure GUI".show()
+	
+
+func _on_yes_pressed():
+	save_all()
+
+func _on_no_pressed():
+	$"Are you sure GUI".hide()
+
+func save_all():
 	for item in GameData.pseudo_items:
 		var item_index = int(item.name.split("$")[0])
 		var item_id = int(item.name.split("$")[1])
@@ -198,5 +208,11 @@ func _on_go_pressed():
 
 
 func _on_hide_pressed():
-	#send_to_shadow_realm.emit()
-	print($"Edit Day".value)
+	send_to_shadow_realm.emit()
+	#print($"Edit Day".value)
+
+
+func _on_reset_pressed():
+	reset_pressed.emit()
+	#GameData.pseudo_items.append(instance)
+

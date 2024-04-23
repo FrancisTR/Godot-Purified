@@ -1,22 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg3b56oecuhh6"]
+[gd_scene load_steps=5 format=3 uid="uid://cg3b56oecuhh6"]
 
 [ext_resource type="Script" path="res://World Scene/UIs/item_placer.gd" id="1_te0dq"]
 [ext_resource type="Texture2D" uid="uid://ckuh0yllyblxa" path="res://Assets/UISprites/UI_Flat_Select_01a1.png" id="2_giv6v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfo7g"]
+bg_color = Color(0, 0.721569, 0.0117647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57uiw"]
+bg_color = Color(0.74902, 0, 0, 1)
 
 [node name="ItemPlacer" type="Node2D"]
 script = ExtResource("1_te0dq")
 
 [node name="Gray Background" type="ColorRect" parent="."]
 z_index = -1
-offset_left = 2.0
-offset_top = 103.0
-offset_right = 313.0
-offset_bottom = 486.0
+offset_top = 49.0
+offset_right = 311.0
+offset_bottom = 432.0
 color = Color(0.286275, 0.301961, 0.341176, 1)
-
-[node name="Modify UI" type="Node2D" parent="."]
-
-[node name="Add New UI" type="Node2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -49,86 +50,6 @@ text = "EDIT MODE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Save" type="Button" parent="."]
-offset_left = 15.0
-offset_top = 419.0
-offset_right = 144.0
-offset_bottom = 479.0
-text = "Save All"
-
-[node name="Day Input" type="SpinBox" parent="."]
-offset_left = 183.0
-offset_top = 127.0
-offset_right = 290.0
-offset_bottom = 186.0
-min_value = 1.0
-max_value = 10.0
-value = 1.0
-prefix = "Day"
-
-[node name="item_id" type="SpinBox" parent="."]
-offset_left = 15.0
-offset_top = 217.0
-offset_right = 112.0
-offset_bottom = 298.0
-max_value = 24.0
-
-[node name="X" type="Label" parent="."]
-offset_left = 15.0
-offset_top = 323.0
-offset_right = 40.0
-offset_bottom = 346.0
-text = "X:"
-horizontal_alignment = 1
-
-[node name="Y" type="Label" parent="."]
-offset_left = 15.0
-offset_top = 375.0
-offset_right = 40.0
-offset_bottom = 398.0
-text = "Y:"
-horizontal_alignment = 1
-
-[node name="X input" type="LineEdit" parent="."]
-offset_left = 46.0
-offset_top = 323.0
-offset_right = 128.0
-offset_bottom = 354.0
-
-[node name="Y input" type="LineEdit" parent="."]
-offset_left = 46.0
-offset_top = 368.0
-offset_right = 128.0
-offset_bottom = 399.0
-
-[node name="Go" type="Button" parent="."]
-offset_left = 153.0
-offset_top = 232.0
-offset_right = 229.0
-offset_bottom = 281.0
-text = "Go"
-
-[node name="Item" type="OptionButton" parent="."]
-offset_left = 15.0
-offset_top = 127.0
-offset_right = 153.0
-offset_bottom = 186.0
-
-[node name="Hide" type="Button" parent="."]
-offset_left = 168.0
-offset_top = 368.0
-offset_right = 277.0
-offset_bottom = 408.0
-text = "Hide"
-
-[node name="Focus Button" type="CheckButton" parent="."]
-offset_left = 168.0
-offset_top = 419.0
-offset_right = 212.0
-offset_bottom = 443.0
-scale = Vector2(2.5, 2.5)
-button_pressed = true
-
 [node name="Focus" type="TextureRect" parent="."]
 offset_left = 559.0
 offset_top = 308.0
@@ -138,24 +59,122 @@ texture = ExtResource("2_giv6v")
 
 [node name="Cursor" type="Node2D" parent="."]
 
+[node name="Are you sure GUI" type="ColorRect" parent="."]
+visible = false
+offset_top = 461.0
+offset_right = 311.0
+offset_bottom = 625.0
+color = Color(0.286275, 0.301961, 0.341176, 1)
+
+[node name="Yes" type="Button" parent="Are you sure GUI"]
+offset_left = 25.0
+offset_top = 87.0
+offset_right = 130.0
+offset_bottom = 153.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_rfo7g")
+text = "Ya"
+
+[node name="No" type="Button" parent="Are you sure GUI"]
+offset_left = 181.0
+offset_top = 87.0
+offset_right = 286.0
+offset_bottom = 153.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_57uiw")
+text = "Oopsie"
+
+[node name="Are you sure label" type="Label" parent="Are you sure GUI"]
+offset_right = 311.0
+offset_bottom = 76.0
+text = "Are you sure you want to save?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Modify UI" type="Node2D" parent="."]
+position = Vector2(-2, -54)
+
+[node name="Add New UI" type="Node2D" parent="."]
+position = Vector2(-2, -54)
+
+[node name="Save" type="Button" parent="."]
+offset_left = 13.0
+offset_top = 365.0
+offset_right = 142.0
+offset_bottom = 425.0
+text = "Save All"
+
+[node name="Day Input" type="SpinBox" parent="."]
+offset_left = 181.0
+offset_top = 73.0
+offset_right = 288.0
+offset_bottom = 132.0
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+prefix = "Day"
+
+[node name="item_id" type="SpinBox" parent="."]
+offset_left = 13.0
+offset_top = 163.0
+offset_right = 110.0
+offset_bottom = 244.0
+max_value = 24.0
+
+[node name="Go" type="Button" parent="."]
+offset_left = 151.0
+offset_top = 178.0
+offset_right = 227.0
+offset_bottom = 227.0
+text = "Go"
+
+[node name="Item" type="OptionButton" parent="."]
+offset_left = 13.0
+offset_top = 73.0
+offset_right = 151.0
+offset_bottom = 132.0
+
+[node name="Hide" type="Button" parent="."]
+offset_left = 166.0
+offset_top = 314.0
+offset_right = 275.0
+offset_bottom = 350.0
+text = "Hide"
+
+[node name="Focus Button" type="CheckButton" parent="."]
+offset_left = 166.0
+offset_top = 365.0
+offset_right = 210.0
+offset_bottom = 389.0
+scale = Vector2(2.5, 2.5)
+button_pressed = true
+
 [node name="Edit Day Label" type="Label" parent="."]
-offset_left = 153.0
-offset_top = 318.0
-offset_right = 217.0
-offset_bottom = 341.0
+offset_left = 25.0
+offset_top = 267.0
+offset_right = 89.0
+offset_bottom = 290.0
 text = "Editing:"
 
 [node name="Edit Day" type="SpinBox" parent="."]
-offset_left = 217.0
-offset_top = 308.0
-offset_right = 300.063
-offset_bottom = 355.0
+offset_left = 104.0
+offset_top = 254.0
+offset_right = 201.0
+offset_bottom = 301.0
 min_value = 1.0
 max_value = 10.0
 value = 1.0
 prefix = "Day "
 
+[node name="Reset" type="Button" parent="."]
+offset_left = 13.0
+offset_top = 314.0
+offset_right = 142.0
+offset_bottom = 350.0
+text = "Reset One"
+
+[connection signal="pressed" from="Are you sure GUI/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Are you sure GUI/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Go" to="." method="_on_go_pressed"]
 [connection signal="pressed" from="Hide" to="." method="_on_hide_pressed"]
 [connection signal="pressed" from="Focus Button" to="." method="_on_focus_button_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
