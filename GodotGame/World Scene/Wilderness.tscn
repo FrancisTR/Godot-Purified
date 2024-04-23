@@ -1090,7 +1090,7 @@ position = Vector2(887, -743)
 [node name="KidsNPC" parent="." instance=ExtResource("21_e2yvs")]
 position = Vector2(889, -922)
 
-[node name="PsuedoItems" type="Node2D" parent="."]
+[node name="PseudoItems" type="Node2D" parent="."]
 visible = false
 
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]

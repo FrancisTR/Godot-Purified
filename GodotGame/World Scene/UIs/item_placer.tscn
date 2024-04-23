@@ -54,16 +54,17 @@ offset_left = 15.0
 offset_top = 419.0
 offset_right = 144.0
 offset_bottom = 479.0
-text = "Save"
+text = "Save All"
 
 [node name="Day Input" type="SpinBox" parent="."]
-offset_left = 211.0
+offset_left = 183.0
 offset_top = 127.0
-offset_right = 308.0
+offset_right = 290.0
 offset_bottom = 186.0
 min_value = 1.0
 max_value = 10.0
 value = 1.0
+prefix = "Day"
 
 [node name="item_id" type="SpinBox" parent="."]
 offset_left = 15.0
@@ -71,16 +72,6 @@ offset_top = 217.0
 offset_right = 112.0
 offset_bottom = 298.0
 max_value = 24.0
-
-[node name="Day" type="Label" parent="."]
-offset_left = 168.0
-offset_top = 145.0
-offset_right = 201.0
-offset_bottom = 194.0
-text = "Day
- "
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="X" type="Label" parent="."]
 offset_left = 15.0
@@ -92,23 +83,23 @@ horizontal_alignment = 1
 
 [node name="Y" type="Label" parent="."]
 offset_left = 15.0
-offset_top = 373.0
+offset_top = 375.0
 offset_right = 40.0
-offset_bottom = 396.0
+offset_bottom = 398.0
 text = "Y:"
 horizontal_alignment = 1
 
 [node name="X input" type="LineEdit" parent="."]
-offset_left = 48.0
-offset_top = 373.0
-offset_right = 130.0
-offset_bottom = 404.0
+offset_left = 46.0
+offset_top = 323.0
+offset_right = 128.0
+offset_bottom = 354.0
 
 [node name="Y input" type="LineEdit" parent="."]
-offset_left = 48.0
-offset_top = 323.0
-offset_right = 130.0
-offset_bottom = 354.0
+offset_left = 46.0
+offset_top = 368.0
+offset_right = 128.0
+offset_bottom = 399.0
 
 [node name="Go" type="Button" parent="."]
 offset_left = 153.0
@@ -146,6 +137,23 @@ offset_bottom = 340.0
 texture = ExtResource("2_giv6v")
 
 [node name="Cursor" type="Node2D" parent="."]
+
+[node name="Edit Day Label" type="Label" parent="."]
+offset_left = 153.0
+offset_top = 318.0
+offset_right = 217.0
+offset_bottom = 341.0
+text = "Editing:"
+
+[node name="Edit Day" type="SpinBox" parent="."]
+offset_left = 217.0
+offset_top = 308.0
+offset_right = 300.063
+offset_bottom = 355.0
+min_value = 1.0
+max_value = 10.0
+value = 1.0
+prefix = "Day "
 
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Go" to="." method="_on_go_pressed"]

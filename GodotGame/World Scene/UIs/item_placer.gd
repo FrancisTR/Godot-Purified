@@ -4,7 +4,6 @@ signal pos_test
 signal toggle_dev_tool
 signal send_to_shadow_realm
 
-#var name = {0:"Tin Can", 1: "Bottle", 2: "Rock", 3: "Twig"}
 var tin_can_scene = preload("res://World Scene/Items/TinCan.tscn")
 var bottle_scene = preload("res://World Scene/Items/WaterBottle.tscn")
 var rock_scene = preload("res://World Scene/Items/rock.tscn")
@@ -17,12 +16,13 @@ var zoom_min = 3
 var mode = "add"
 var non_static_temp = []
 var current_pseudo = ""
-var pseudo_scenes = {
-	"Tin Can": tin_can_scene,
-	"Bottle": bottle_scene,
-	"Rock": rock_scene,
-	"Twig": twig_scene
-}
+#var pseudo_scenes = {
+	#"Tin Can": tin_can_scene,
+	#"Bottle": bottle_scene,
+	#"Rock": rock_scene,
+	#"Twig": twig_scene
+#}
+var pseudo_scenes = [tin_can_scene, bottle_scene, rock_scene, twig_scene]
 
 
 #NOTE: If you want to remove this in the future you must remove:
@@ -30,13 +30,13 @@ var pseudo_scenes = {
 #		 - _on_toggle_dev_tool in wilderness.gd
 #		 - ' and GameData.current_ui != "dev" ' in ChacterMain.gd
 #		 - Item Placer nodes in wilderness.tscn
-#		 - PsuedoItems node in wilderness.tscn
+#		 - PseudoItems node in wilderness.tscn
 func _ready():
 	$Item.add_item("Tin Can")
 	$Item.add_item("Bottle")
 	$Item.add_item("Rock")
 	$Item.add_item("Twig")
-	var scene = pseudo_scenes['Rock']
+	var scene = pseudo_scenes[0]
 	var instance = scene.instantiate()
 	$Cursor.add_child(instance)
 	non_static_temp = create_temp_non_static_items()
@@ -53,9 +53,12 @@ func _input(event):
 		else:
 			GameData.current_ui = ""
 		toggle_dev_tool.emit()
+		
 	if dev_mode:
 		if event is InputEventMouseButton:
 			if event.button_index == MouseButton.MOUSE_BUTTON_LEFT and not event.pressed:
+				$"Day Input".get_line_edit().release_focus()
+				$"Edit Day".get_line_edit().release_focus()
 				print(get_local_mouse_position())
 				if get_local_mouse_position().x > 315:
 					pos_test.emit()
@@ -69,11 +72,10 @@ func _input(event):
 			$Camera2D.zoom.y = clamp($Camera2D.zoom.y, zoom_max, zoom_min)
 
 func _process(delta):
-	var name = {0:"Tin Can", 1: "Bottle", 2: "Rock", 3: "Twig"}
-	current_pseudo = name[$Item.selected]+"$"+str($item_id.value)+"$"+str($"Day Input".value)
+	current_pseudo = str($Item.selected)+"$"+str($item_id.value)+"$"+str($"Edit Day".value)
 	if $Cursor.get_child_count() == 1 and $Cursor.get_child(0).name != current_pseudo:
 		$Cursor.remove_child($Cursor.get_child(0))
-		var scene = pseudo_scenes[current_pseudo.split("$")[0]]
+		var scene = pseudo_scenes[int(current_pseudo.split("$")[0])]
 		var instance = scene.instantiate()
 		instance.name = current_pseudo
 		instance.modulate = Color(0.5,1,0.5)
@@ -115,6 +117,18 @@ func set_camera_position(position):
 
 func _on_save_pressed():
 	pass # Replace with function body.
+	for item in GameData.pseudo_items:
+		var item_index = int(item.name.split("$")[0])
+		var item_id = int(item.name.split("$")[1])
+		var day = int(item.name.split("$")[2])
+		var offset = 14 * item_index
+		Utils.non_static_items_json[item_id+offset].Position[day-1].posX = item.position.x
+		Utils.non_static_items_json[item_id+offset].Position[day-1].posY = item.position.y
+	
+	var test = "res://Globals/test.json"
+	var file = FileAccess.open(test, FileAccess.WRITE)
+	file.store_line(JSON.stringify(Utils.non_static_items_json))
+	
 	
 func create_temp_non_static_items():
 	var newJSON = []
@@ -174,13 +188,7 @@ func _on_focus_button_pressed():
 
 
 func _on_go_pressed():
-	var offset = 0
-	if $Item.selected == 1:
-		offset = 14
-	if $Item.selected == 2:
-		offset = 14*2
-	if $Item.selected == 3:
-		offset = 14*3
+	var offset = 14*$Item.selected
 	var x = Utils.non_static_items_json[$item_id.value+offset].Position[$"Day Input".value-1].posX
 	var y = Utils.non_static_items_json[$item_id.value+offset].Position[$"Day Input".value-1].posY
 	if x == -9999 and y == -9999:
@@ -190,4 +198,5 @@ func _on_go_pressed():
 
 
 func _on_hide_pressed():
-	send_to_shadow_realm.emit()
+	#send_to_shadow_realm.emit()
+	print($"Edit Day".value)

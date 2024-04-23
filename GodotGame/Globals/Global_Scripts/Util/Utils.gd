@@ -17,7 +17,8 @@ var non_static_items_json
 func _ready():
 	items_json = get_JSON("res://Globals/items.json")
 	static_items_json = get_JSON("res://Globals/static_items.json")
-	non_static_items_json = get_JSON("res://Globals/non_static_items.json")
+	#non_static_items_json = get_JSON("res://Globals/non_static_items.json")
+	non_static_items_json = get_JSON("res://Globals/test.json")
 	print("Utils.gd: jsons loaded")
 
 ################DIALOGUE################
