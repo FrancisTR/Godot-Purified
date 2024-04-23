@@ -220,7 +220,8 @@ offset_bottom = -103.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
-text = "Key shortcuts: "
+bbcode_enabled = true
+text = "[center]Key shortcuts: "
 
 [node name="RemapContainer" type="Control" parent="."]
 texture_filter = 1
@@ -455,13 +456,60 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
-[node name="BackButton" type="Button" parent="RemapContainer"]
+[node name="MapButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
 offset_left = 800.0
 offset_top = 280.0
 offset_right = 1022.0
 offset_bottom = 370.0
+scale = Vector2(1.1, 1.1)
+focus_neighbor_bottom = NodePath("../../SfxSlider")
+focus_next = NodePath("../../SfxSlider")
+focus_previous = NodePath("../DownMapButton")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_ritaw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iexoi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7safo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3hxp0")
+text = "M"
+script = ExtResource("3_sdtpu")
+action = "Map"
+
+[node name="HintLabel" type="Label" parent="RemapContainer/MapButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 13.6363
+offset_top = 6.36364
+offset_right = -7.36366
+offset_bottom = 29.3636
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "..."
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="RemapContainer"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 453.0
+offset_top = 304.0
+offset_right = 607.0
+offset_bottom = 372.0
 scale = Vector2(1.1, 1.1)
 focus_neighbor_bottom = NodePath("../../SfxSlider")
 focus_next = NodePath("../../SfxSlider")
@@ -555,7 +603,7 @@ offset_right = 813.0
 offset_bottom = 433.0
 focus_neighbor_bottom = NodePath("../MusicSlider")
 focus_next = NodePath("../MusicSlider")
-focus_previous = NodePath("../RemapContainer/BackButton")
+focus_previous = NodePath("../RemapContainer/MapButton")
 theme_override_styles/slider = SubResource("StyleBoxLine_0cres")
 value = 100.0
 script = ExtResource("2_jtr8r")
@@ -587,14 +635,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -455.0
+offset_left = -467.0
 offset_top = -29.0
-offset_right = -240.0
+offset_right = -252.0
 offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
-text = "SFX Volume:"
+bbcode_enabled = true
+text = "[right]SFX Volume:"
 
 [node name="MusicSlider" type="HSlider" parent="."]
 offset_left = 337.0
@@ -634,14 +683,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -493.0
+offset_left = -505.0
 offset_top = -29.0
-offset_right = -240.0
+offset_right = -252.0
 offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
-text = "Music Volume:"
+bbcode_enabled = true
+text = "[right]Music Volume:"
 
 [node name="BackButton" type="Button" parent="."]
 texture_filter = 1
