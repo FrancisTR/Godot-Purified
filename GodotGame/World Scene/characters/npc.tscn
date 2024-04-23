@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://decpyxnu3oocl"]
+[gd_scene load_steps=42 format=3 uid="uid://decpyxnu3oocl"]
 
 [ext_resource type="Script" path="res://World Scene/characters/npc.gd" id="1_7ll4o"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_kithy"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://djx5rl7iobm8m" path="res://Assets/Custom/Sprites/Danny.png" id="14_046bs"]
 [ext_resource type="Texture2D" uid="uid://borcws4ydxocc" path="res://Assets/Custom/Sprites/Derick.png" id="15_o5dh2"]
 [ext_resource type="Texture2D" uid="uid://cfxvp151wo3uq" path="res://Assets/Custom/Sprites/Old_Man.png" id="16_ee48p"]
+[ext_resource type="Texture2D" uid="uid://dve4o0brcsyp" path="res://Assets/Custom/Sprites/Talia.png" id="17_10a58"]
 [ext_resource type="PackedScene" uid="uid://caur4c8x7r8ll" path="res://World Scene/UIs/InventoryDialogue.tscn" id="20_wi7a5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqe2e"]
@@ -230,6 +231,14 @@ animations = [{
 "loop": true,
 "name": &"OldMan",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_10a58")
+}],
+"loop": true,
+"name": &"Talia",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bc547"]
@@ -265,15 +274,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -337.0
-offset_top = -309.0
+offset_top = 431.0
 offset_right = -62.0
-offset_bottom = 212.0
+offset_bottom = 952.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
 [node name="DialogueBox" type="Panel" parent="FixedDialoguePosition"]
 visible = false
+self_modulate = Color(1, 1, 1, 0)
 z_index = 101
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
@@ -283,9 +293,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -343.0
-offset_top = -262.0
+offset_top = 52.0
 offset_right = 343.0
-offset_bottom = -36.0
+offset_bottom = 278.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_q0h0h")
@@ -334,7 +344,7 @@ text = "🔊"
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bxftl")
-animation = &"Croak"
+animation = &"Talia"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
