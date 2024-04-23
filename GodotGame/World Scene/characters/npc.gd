@@ -29,7 +29,6 @@ func _ready():
 	$PressForDialogue.text = InputMap.action_get_events("StartDialogue")[0].as_text()
 	
 	
-	
 func go_pos(delta):
 	if moving and playerRuns == false: #Barry
 		$"../Bargin".global_position = $"../Bargin".global_position.move_toward(BarryDestination, delta*moving_speed)
@@ -165,8 +164,9 @@ func _process(delta):
 
 
 	#TODO: If all the requests has been listed, we then save the Qmain
-	if GameData.day >= 3 and GameData.QMain.values().size() == 1:
-		dialogue_box.variables["QMain"] = GameData.QMain
+	if GameData.QMain.values().size() >= 1:
+		#Note that multiple requests is handled by the dialogue itself
+		dialogue_box.variables["QMain"] = true
 	
 	
 	dialogue_box.variables["Profit?"] = GameData.madeProfit
@@ -183,7 +183,9 @@ func _process(delta):
 	dialogue_box.variables["TinCans"] = GameData.itemDialogue[3]["Value"]
 	
 	#TODO: Get the day for the appropriate dialogue
-	if GameData.day == 1:
+	if GameData.visitTutorial == true:
+		dialogue_box.start_id = "TaliaTutorial"
+	elif GameData.day == 1:
 		# Who is the player talking to?
 		if NPCname == "Denial":
 			dialogue_box.start_id = "Denial"
@@ -325,7 +327,7 @@ func _process(delta):
 			#Run the loop and check true that we talked to that villager
 			# This is for the requirement to leave the Day
 			#Note that for Croak, you must talk to Barry.
-			if GameData.day == 1:
+			if GameData.day == 1 and GameData.visitTutorial == false:
 				if NPCname == "Croak" and GameData.villagersTalked[2]["Talked"] == true:
 					dialogue_box.variables[NPCname] = true
 					print(dialogue_box.variables)
@@ -374,6 +376,7 @@ func _process(delta):
 							GameData.villagersTalked[i]["Talked"] = true
 			
 			else:
+				print(NPCname)
 				dialogue_box.variables[NPCname] = true
 				#GameData.QWild = dialogue_box.variables["QWild"]
 				print(dialogue_box.variables)
@@ -395,7 +398,7 @@ func _process(delta):
 		$FixedDialoguePosition/CharacterIMG.texture = null
 		$FixedDialoguePosition/CharacterIMG.visible = false
 		$FixedDialoguePosition/Voice.visible = false
-			#$PressForDialogue.visible = true
+		#$PressForDialogue.visible = true
 			
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
@@ -476,7 +479,7 @@ func _on_dialogue_box_dialogue_ended():
 		GameData.current_ui = "dialogue"
 		$PressForDialogue.visible = false
 		$FixedDialoguePosition/CharacterIMG.visible = true
-
+	
 	
 	
 func _on_dialogue_box_dialogue_proceeded(node_type):
@@ -517,13 +520,155 @@ func _on_dialogue_box_dialogue_signal(value):
 		#Remove the items since we gave them
 		#TODO: Add more days
 		if GameData.NPCgiveNoMore == false:
-			if GameData.day == 1:
+			if GameData.day == 1 and GameData.visitTutorial == true:
+				Utils.remove_from_inventory("Rock", 1)
+			elif GameData.day == 1:
 				Utils.remove_from_inventory("Twig", 6)
 			elif GameData.day == 2:
-				Utils.remove_from_inventory("WaterBottle", 1)
+				Utils.remove_from_inventory("Rock", 4)
 			elif GameData.day == 3:
 				Utils.remove_from_inventory("TinCan", 3)
 			GameData.NPCgiveNoMore = true
+			
+	if value == "TutorialEnded":
+		TextTransition.set_to_click(
+				"You then enter the village, excited for the opportunity to make profit.",
+				"res://World Scene/World.tscn",
+				"Click To Continue"
+		)
+		SceneTransition.change_scene("res://Globals/text_transition.tscn")
+		GameData.day = 1
+
+		GameData.inventory = []
+
+		GameData.inventory_amount = {}
+
+		#What is required to go to the next day
+		GameData.inventory_requirement = {}
+
+		GameData.charLock = false
+		GameData.barryDespawned = false
+
+		GameData.current_ui = ""
+		GameData.current_scene = ""
+		GameData.save_position = false
+		GameData.player_position
+
+		GameData.visitTutorial = false
+		GameData.visitedWilderness = false
+		GameData.talkToKid = false
+
+
+		GameData.leaveVillageQuest = false
+
+
+
+		#Dialogue related stuff
+
+		GameData.QMain = {}
+		GameData.QWild = false
+		GameData.QMainLocationIdx = {}
+		GameData.madeProfit = false
+		GameData.NPCgiveNoMore = false #Give items once and not dup
+		#Quest is finished
+		GameData.questComplete = {"Main": false, "Wild": false}
+		GameData.Discount = ""
+
+		#TODO Add more if needed to stack of the items needed for NPC
+		GameData.itemDialogue = [
+			{
+				"Name": "Twigs",
+				"Value": 0
+			},
+			{
+				"Name": "Rocks",
+				"Value": 0
+			},
+			{
+				"Name": "WaterBottle",
+				"Value": 0
+			},
+			{
+				"Name": "TinCans",
+				"Value": 0
+			}
+		]
+
+		GameData.QVillager = ""
+
+		GameData.villagersIndex = {
+			"Accept": 0,
+			"Anger": 1,
+			"Bargin": 2,
+			"Croak": 3,
+			"Denial": 4,
+			"Depress": 5,
+			"OldMan": 6,
+				
+			"Rano": 7,
+			"Ribbit": 8,
+			"Hop": 9,
+			"Leap": 10,
+		}
+
+		GameData.villagersTalked = [
+			{
+				"Name": "Accept",
+				"Talked": false
+			},
+			{
+				"Name": "Anger",
+				"Talked": false
+			},
+			{
+				"Name": "Bargin",
+				"Talked": false
+			},
+			{
+				"Name": "Croak",
+				"Talked": false
+			},
+			{
+				"Name": "Denial",
+				"Talked": false
+			},
+			{
+				"Name": "Depress",
+				"Talked": false
+			},
+			{
+				"Name": "OldMan",
+				"Talked": false
+			},
+			{
+				"Name": "Talia",
+				"Talked": false
+			},
+		]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 func _on_animation_player_animation_finished(anim_name):

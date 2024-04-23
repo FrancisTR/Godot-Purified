@@ -213,3 +213,5 @@ texture = ExtResource("5_ugh86")
 [node name="Marker2D" type="Marker2D" parent="."]
 
 [connection signal="finished" from="FootstepAudio" to="." method="_on_footstep_audio_finished"]
+
+[editable path="Inventory Layer/Inventory"]

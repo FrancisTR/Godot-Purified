@@ -15,6 +15,7 @@ func _on_body_entered(body):
 		GameData.get_item_posX = $".".position.x
 		GameData.get_item_posY = $".".position.y
 		
+		GameData.itemDialogue[1]["Value"] = GameData.itemDialogue[1]["Value"] + 1
 		
 		queue_free()
 		Utils.add_to_inventory("Rock", 1)

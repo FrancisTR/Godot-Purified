@@ -22,7 +22,9 @@ var npc_positions = {
 	'day6':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
 	
 	'day7':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	
 	'day8':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	
 	'day9':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
 	'day10':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)]
 	}
@@ -101,7 +103,7 @@ func _on_open_leave_menu():
 	elif (TalkedToVillagersCount != 5 and GameData.day == 4):
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
-	elif (TalkedToVillagersCount != 6 and (GameData.day == 5 or GameData.day == 6)):
+	elif (TalkedToVillagersCount != 6 and (GameData.day == 5 or GameData.day == 6 or GameData.day == 8)):
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
 	elif (TalkedToVillagersCount != 1 and (GameData.day == 7)):

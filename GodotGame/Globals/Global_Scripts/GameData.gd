@@ -1,7 +1,7 @@
 extends Node
 
 
-var day:int = 1
+var day:int = 2
 
 var twigItem = 0
 
@@ -72,11 +72,12 @@ var villagersIndex = {
 	"Denial": 4,
 	"Depress": 5,
 	"OldMan": 6,
+	"Talia": 7,
 	
-	"Rano": 7,
-	"Ribbit": 8,
-	"Hop": 9,
-	"Leap": 10,
+	"Rano": 8,
+	"Ribbit": 9,
+	"Hop": 10,
+	"Leap": 11
 }
 
 var villagersTalked = [
@@ -106,6 +107,10 @@ var villagersTalked = [
 	},
 	{
 		"Name": "OldMan",
+		"Talked": false
+	},
+	{
+		"Name": "Talia",
 		"Talked": false
 	}
 ]
