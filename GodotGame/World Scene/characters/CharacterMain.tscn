@@ -187,8 +187,10 @@ visible = false
 
 [node name="Inventory" parent="Inventory Layer" instance=ExtResource("4_2u5re")]
 
-[node name="MapIcon" type="TextureRect" parent="."]
+[node name="MapIcon" type="Node2D" parent="."]
 visible = false
+
+[node name="MapIconImage" type="TextureRect" parent="MapIcon"]
 z_index = 999
 y_sort_enabled = true
 texture_filter = 1
@@ -197,16 +199,44 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -80.0
-offset_right = -40.0
-offset_bottom = -40.0
+offset_left = -99.0
+offset_top = -100.0
+offset_right = -59.0
+offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(4, 4)
+scale = Vector2(5, 5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_ugh86")
+
+
+[node name="Outline" type="TextureRect" parent="MapIcon"]
+modulate = Color(100, 100, 100, 1)
+z_index = 998
+y_sort_enabled = true
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -113.0
+offset_right = -64.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.2, 5.2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_ugh86")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="finished" from="FootstepAudio" to="." method="_on_footstep_audio_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [node name="Marker2D2" type="Marker2D" parent="."]
 
@@ -215,3 +245,4 @@ texture = ExtResource("5_ugh86")
 [connection signal="finished" from="FootstepAudio" to="." method="_on_footstep_audio_finished"]
 
 [editable path="Inventory Layer/Inventory"]
+

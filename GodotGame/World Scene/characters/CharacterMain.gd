@@ -47,7 +47,7 @@ func _physics_process(delta):
 	var directionX = Input.get_axis("Left", "Right")
 	var directionY = Input.get_axis("Up", "Down")
 	var nowMoving = false # c nowMoving
-	var canMove = not inventory_opened and not map_opened #and this and that and ... and etc.
+	var canMove = not inventory_opened and not map_opened and GameData.current_ui != "dev" #and this and that and ... and etc.
 	
 	if GameData.charLock == false:
 		if canMove:
@@ -145,14 +145,30 @@ func _on_footstep_audio_finished():
 		
 
 func show_map_icon():
+	$Timer.start()
 	$MapIcon.show()
 	#$Label.show()
 	$Sprite2D.hide()
 	
 func hide_map_icon():
+	$Timer.stop()
 	$Sprite2D.show()
 	$MapIcon.hide()
 	#$Label.hide()
+
+
+func set_to_player_camera():
+	$Camera2D.make_current()
+
+
+func _on_timer_timeout():
+	if $MapIcon/MapIconImage.visible:
+		$MapIcon/MapIconImage.hide()
+		$MapIcon/Outline.hide()
+	else:
+		$MapIcon/MapIconImage.show()
+		$MapIcon/Outline.show()
+	$Timer.start()
 
 func _close_map():
 	map_opened = false
@@ -166,3 +182,4 @@ func _close_inventory():
 	GameData.current_ui = ""
 	print("inventory_close")
 	$"Inventory Layer".hide()
+

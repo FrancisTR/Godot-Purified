@@ -29,7 +29,7 @@ var talkToKid = false
 
 var leaveVillageQuest = false
 
-
+var pseudo_items = []
 
 #Dialogue related stuff
 
