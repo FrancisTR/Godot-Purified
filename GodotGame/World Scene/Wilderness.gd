@@ -90,14 +90,18 @@ func inst(items):
 			add_child(instance)
 
 func inst_json(item_json):
+	var count = 0
 	for item in item_json:
 		var instance = scenes[item.Item].instantiate()
 		var index = GameData.day-1
 		if item.Item == "sand" or item.Item == "Moss":
 			index = 0
-		instance.position = Vector2(item.Position[index].posX, item.Position[index].posY)
-		add_child(instance)
-
+		if item.Position[index].posX != -9999 and item.Position[index].posY != -9999:
+			count+=1
+			instance.position = Vector2(item.Position[index].posX, item.Position[index].posY)
+			add_child(instance)
+	print("spawned in ", count, " items")
+	
 func increase_day(amount):
 	if(GameData.day+amount > 0):
 		GameData.day += amount

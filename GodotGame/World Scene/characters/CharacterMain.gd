@@ -149,14 +149,26 @@ func _on_footstep_audio_finished():
 		
 
 func show_map_icon():
+	$Timer.start()
 	$MapIcon.show()
 	#$Label.show()
 	$Sprite2D.hide()
 	
 func hide_map_icon():
+	$Timer.stop()
 	$Sprite2D.show()
 	$MapIcon.hide()
 	#$Label.hide()
 
 func set_to_player_camera():
 	$Camera2D.make_current()
+
+
+func _on_timer_timeout():
+	if $MapIcon/MapIconImage.visible:
+		$MapIcon/MapIconImage.hide()
+		$MapIcon/Outline.hide()
+	else:
+		$MapIcon/MapIconImage.show()
+		$MapIcon/Outline.show()
+	$Timer.start()

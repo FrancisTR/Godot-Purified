@@ -86,7 +86,8 @@ func _process(delta):
 			$Cursor.get_child(0).modulate = Color(0.5, 1, 0.5)
 		else:
 			$Cursor.get_child(0).modulate = Color(1, 0.5, 0.5)
-	$Cursor.get_child(0).position = get_local_mouse_position()
+	if $Cursor.get_child_count() == 1:
+		$Cursor.get_child(0).position = get_local_mouse_position()
 	
 	if $Item.selected == 3:
 		$item_id.max_value = 24

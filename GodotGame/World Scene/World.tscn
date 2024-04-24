@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b2fo6lc5k06cg"]
+[gd_scene load_steps=42 format=3 uid="uid://b2fo6lc5k06cg"]
 
 [ext_resource type="Script" path="res://World Scene/World.gd" id="1_1qbtd"]
 [ext_resource type="Texture2D" uid="uid://cxm7wh81tjegk" path="res://Assets/Custom/Terrain/Grass.png" id="5_b2c28"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://d4dl2wtcwcl7e" path="res://Assets/Custom/map icons/antonio_icon.png" id="22_1bejx"]
 [ext_resource type="Texture2D" uid="uid://bcxdkscsn4ffr" path="res://Assets/Custom/map icons/croak_icon.png" id="23_ro6sg"]
 [ext_resource type="Texture2D" uid="uid://4ixlk0227hq6" path="res://Assets/Custom/map icons/old_man_icon.png" id="24_d3etb"]
+[ext_resource type="Texture2D" uid="uid://ecab5yn5o57g" path="res://Assets/Custom/map icons/outline_croak_icon.png" id="24_go7so"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tuguc"]
 texture = ExtResource("5_ekcdo")
@@ -1039,56 +1040,50 @@ offset_bottom = 633.0
 [node name="Denial" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(2721, -234)
 
-[node name="DialogueBox" parent="NPCs/Denial/FixedDialoguePosition" index="2"]
-visible = false
-
 [node name="Sprite2D" parent="NPCs/Denial" index="1"]
 animation = &"Danny"
 autoplay = "Danny"
 
-[node name="MapIcon" parent="NPCs/Denial" index="4"]
+[node name="MapIconImg" parent="NPCs/Denial/MapIcon" index="1"]
 texture = ExtResource("18_usbb1")
 
 [node name="Anger" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(1715, 514)
 
-[node name="DialogueBox" parent="NPCs/Anger/FixedDialoguePosition" index="2"]
-visible = false
-
 [node name="Sprite2D" parent="NPCs/Anger" index="1"]
 animation = &"Angelica"
 autoplay = "Angelica"
 
-[node name="MapIcon" parent="NPCs/Anger" index="4"]
+[node name="MapIconImg" parent="NPCs/Anger/MapIcon" index="1"]
 texture = ExtResource("19_jtihu")
 
 [node name="Bargin" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(1332, -81)
 
-[node name="DialogueBox" parent="NPCs/Bargin/FixedDialoguePosition" index="2"]
-visible = false
-
 [node name="Sprite2D" parent="NPCs/Bargin" index="1"]
 animation = &"Barry"
 autoplay = "Barry"
 
-[node name="MapIcon" parent="NPCs/Bargin" index="4"]
-texture = ExtResource("20_g6qbj")
-
 [node name="Marker2D" parent="NPCs/Bargin/NPCActions/BarryDestination" index="0"]
 position = Vector2(282, -206)
 
+[node name="Outline" parent="NPCs/Bargin/MapIcon" index="0"]
+offset_left = -104.0
+offset_top = -111.0
+offset_right = -63.0
+offset_bottom = -68.0
+
+[node name="MapIconImg" parent="NPCs/Bargin/MapIcon" index="1"]
+texture = ExtResource("20_g6qbj")
+
 [node name="Depress" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(-483, -705)
-
-[node name="DialogueBox" parent="NPCs/Depress/FixedDialoguePosition" index="2"]
-visible = false
 
 [node name="Sprite2D" parent="NPCs/Depress" index="1"]
 animation = &"Derick"
 autoplay = "Derick"
 
-[node name="MapIcon" parent="NPCs/Depress" index="4"]
+[node name="MapIconImg" parent="NPCs/Depress/MapIcon" index="1"]
 texture = ExtResource("21_lt74b")
 
 [node name="Accept" parent="NPCs" instance=ExtResource("11_omtwb")]
@@ -1099,7 +1094,6 @@ offset_top = 349.0
 offset_bottom = 870.0
 
 [node name="DialogueBox" parent="NPCs/Accept/FixedDialoguePosition" index="2"]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_top = 31.0
 offset_bottom = 270.0
@@ -1108,36 +1102,36 @@ offset_bottom = 270.0
 animation = &"Antonio"
 autoplay = "Antonio"
 
-[node name="MapIcon" parent="NPCs/Accept" index="4"]
+[node name="MapIconImg" parent="NPCs/Accept/MapIcon" index="1"]
 texture = ExtResource("22_1bejx")
 
 [node name="Croak" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(862, -476)
 
-[node name="DialogueBox" parent="NPCs/Croak/FixedDialoguePosition" index="2"]
-visible = false
-
 [node name="Sprite2D" parent="NPCs/Croak" index="1"]
 animation = &"Croak"
 autoplay = "Croak"
-
-[node name="MapIcon" parent="NPCs/Croak" index="4"]
-texture = ExtResource("23_ro6sg")
 
 [node name="CollisionShape2D" parent="NPCs/Croak/StaticBody2D" index="0"]
 position = Vector2(0, 10.5)
 debug_color = Color(0.898039, 0.227451, 0.545098, 0.419608)
 
+[node name="Outline" parent="NPCs/Croak/MapIcon" index="0"]
+texture = ExtResource("24_go7so")
+
+[node name="MapIconImg" parent="NPCs/Croak/MapIcon" index="1"]
+texture = ExtResource("23_ro6sg")
+
 [node name="OldMan" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(-212, 168)
 
-[node name="DialogueBox" parent="NPCs/OldMan/FixedDialoguePosition" index="2"]
-visible = false
+[node name="DialogueOpacity" parent="NPCs/OldMan/FixedDialoguePosition" index="0"]
+color = Color(0, 0, 0, 0.0862745)
 
 [node name="Sprite2D" parent="NPCs/OldMan" index="1"]
 autoplay = "OldMan"
 
-[node name="MapIcon" parent="NPCs/OldMan" index="4"]
+[node name="MapIconImg" parent="NPCs/OldMan/MapIcon" index="1"]
 texture = ExtResource("24_d3etb")
 
 [connection signal="close_map" from="Other/CharacterBody2D" to="." method="_on_close_map"]
