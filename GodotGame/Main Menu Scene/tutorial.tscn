@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cv86rq1ed4u3"]
+[gd_scene load_steps=24 format=3 uid="uid://cv86rq1ed4u3"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Tutorial.gd" id="1_68151"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_i2pyw"]
@@ -8,9 +8,8 @@
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_akm0h"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_aeqdw"]
 [ext_resource type="PackedScene" uid="uid://bq46ncf7jihje" path="res://Main Menu Scene/Options.tscn" id="7_co0o4"]
-[ext_resource type="Texture2D" uid="uid://be2ouhnmbutur" path="res://Assets/Interaction.png" id="9_sfvio"]
+[ext_resource type="Texture2D" uid="uid://cdrnfh6t760r" path="res://Assets/UISprites/UI_Flat_Banner_02_Upward.png" id="8_hodja"]
 [ext_resource type="Texture2D" uid="uid://dbrssvnlq2wq2" path="res://Assets/PurifiedMap.png" id="10_qrioa"]
-[ext_resource type="Texture2D" uid="uid://iku6es31gff2" path="res://Assets/Quota.png" id="11_x6wln"]
 [ext_resource type="Texture2D" uid="uid://cav1wtxy350bc" path="res://Assets/Custom/UI_Question_Mark_Plate.png" id="12_g4ey8"]
 [ext_resource type="Texture2D" uid="uid://d1rasp64hd3m" path="res://Assets/Custom/UI_Exclamation_Mark_Plate.png" id="13_ne7hf"]
 
@@ -110,7 +109,6 @@ expand_mode = 1
 [node name="Dialogue" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" type="Panel" parent="Dialogue"]
-visible = false
 z_index = 999
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
@@ -160,19 +158,31 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_43lnx")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_or10c")
 text = "🔊"
 
-[node name="NPCexample" type="TextureRect" parent="."]
+[node name="Name" type="TextureRect" parent="."]
 visible = false
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -10.0
+offset_left = -117.0
 offset_top = 43.0
-offset_right = 285.0
+offset_right = 618.0
 offset_bottom = 369.0
 grow_horizontal = 2
-texture = ExtResource("9_sfvio")
+texture = ExtResource("8_hodja")
+
+[node name="RichTextLabel" type="Label" parent="Name"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 138.0
+offset_top = 61.0
+offset_right = 635.0
+offset_bottom = 214.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Map" type="TextureRect" parent="."]
 visible = false
@@ -192,22 +202,6 @@ grow_vertical = 2
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("10_qrioa")
 expand_mode = 3
-
-[node name="Quota" type="TextureRect" parent="."]
-visible = false
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -35.0
-offset_top = 26.0
-offset_right = 5.00012
-offset_bottom = 82.6939
-grow_horizontal = 2
-scale = Vector2(6.5, 6.5)
-texture = ExtResource("11_x6wln")
-expand_mode = 5
 
 [node name="Marks" type="Control" parent="."]
 visible = false
@@ -267,10 +261,14 @@ visible = false
 visible = false
 
 [node name="RemapContainer" parent="Controls" index="3"]
-offset_left = 69.0
-offset_top = 8.0
-offset_right = -2.0
-offset_bottom = -228.0
+offset_left = 99.0
+offset_top = -10.0
+offset_right = 28.0
+offset_bottom = -246.0
+
+[node name="BackButton" parent="Controls/RemapContainer" index="6"]
+offset_top = 274.0
+offset_bottom = 342.0
 
 [node name="SfxSlider" parent="Controls" index="4"]
 visible = false

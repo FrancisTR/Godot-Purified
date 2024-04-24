@@ -10,7 +10,6 @@ func _ready():
 func _process(delta):
 	#TODO: Add theme song based on the day
 	SoundControl.is_playing_theme("afternoon")
-	#TODO: Testing
 
 func _on_open_map():
 	$"Map/Map Camera".make_current()

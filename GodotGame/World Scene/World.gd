@@ -90,23 +90,36 @@ func _on_open_leave_menu():
 
 
 	if ((GameData.inventory_amount.keys().find("WaterBottleSpecial") == -1 or TalkedToVillagersCount != 7 or GameData.questComplete["Main"] == false or GameData.questComplete["Wild"] == false) and GameData.day == 1):
+		
+		print(GameData.inventory_amount.keys().find("WaterBottleSpecial"))
+		print(GameData.questComplete["Main"])
+		print(GameData.questComplete["Wild"])
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
 	elif ((GameData.inventory_amount.keys().find("BoilingPot") == -1 or TalkedToVillagersCount != 7 or GameData.questComplete["Main"] == false or GameData.questComplete["Wild"] == false) and GameData.day == 2):
+		print("a")
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
 	
 	#TODO: After day 3 and beyond, you only need to talk to 6 villagers
 	elif ((GameData.inventory_amount.keys().find("WaterFilter") == -1 or TalkedToVillagersCount != 6 or GameData.questComplete["Main"] == false or GameData.questComplete["Wild"] == false) and GameData.day == 3):
+		print("b")
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
 	elif (TalkedToVillagersCount != 5 and GameData.day == 4):
+		print("c")
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
-	elif (TalkedToVillagersCount != 6 and (GameData.day == 5 or GameData.day == 6 or GameData.day == 8)):
+	elif (TalkedToVillagersCount != 6 and (GameData.day == 5 or GameData.day == 6)):
+		print("d")
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
 	elif (TalkedToVillagersCount != 1 and (GameData.day == 7)):
+		print("e")
+		$UI/LeaveVillage.show()
+		$UI/LeaveVillage/QuotaError.show()
+	elif ((TalkedToVillagersCount != 6 or GameData.questComplete["Main"] == false) and GameData.day == 8):
+		print("f")
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
 	else:
@@ -185,8 +198,9 @@ func _on_open_map():
 		print(npc.name, " vs ", GameData.QVillager)
 		if not GameData.villagersTalked[GameData.villagersIndex[npc.name]].Talked:
 			npc.show_notif("exclamation")
-		elif npc.name == GameData.QVillager and not GameData.questComplete["Main"]:
-			npc.show_notif("question")
+		elif GameData.QMain.keys().find(npc.name) != -1:
+			if npc.name == GameData.QVillager[str(npc.name)] and GameData.QMain[npc.name] == false:
+				npc.show_notif("question")
 		
 func _on_close_map():
 	$Other/CharacterBody2D.hide_map_icon()

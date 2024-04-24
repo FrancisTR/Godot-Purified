@@ -15,8 +15,8 @@ nodes = {
 "start_id": "Tutorial"
 },
 "0_2": {
-"link": &"1_4",
-"offset": Vector2(-1560, 740),
+"link": &"3_3",
+"offset": Vector2(-1920, 740),
 "start_id": "Tutorial2"
 },
 "1_1": {
@@ -64,7 +64,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"3_4",
+"link": "END",
 "text": ""
 }
 },
@@ -98,12 +98,12 @@ nodes = {
 "speaker": 1
 },
 "1_15": {
-"dialogue": "Uhh… moving on. This is important so pay attention.",
+"dialogue": "Alright. Now it is time for your training. Please walk towards me for further instructions.",
 "offset": Vector2(3920, 1280),
 "options": {
 0: {
 "condition": {},
-"link": &"3_3",
+"link": &"3_4",
 "text": ""
 }
 },
@@ -112,11 +112,11 @@ nodes = {
 },
 "1_16": {
 "dialogue": "There are certain things in the town you can interact with. You can do that by pressing \"{{Interaction}}\". Note that this will vary based on the key you chose for \"Interaction\".",
-"offset": Vector2(4520, 1280),
+"offset": Vector2(5320, 1880),
 "options": {
 0: {
 "condition": {},
-"link": &"3_11",
+"link": "END",
 "text": ""
 }
 },
@@ -153,7 +153,7 @@ nodes = {
 },
 "1_19": {
 "dialogue": "Remember, you are selling our products to these villagers so it is important that you talk to all of them before leaving the village. You can check to see your Daily Quota by pressing \"{{Inventory}}\". Note that this will vary based on the key you chose for \"Inventory\".",
-"offset": Vector2(5280, 1300),
+"offset": Vector2(6080, 1900),
 "options": {
 0: {
 "condition": {},
@@ -179,7 +179,7 @@ nodes = {
 },
 "1_20": {
 "dialogue": "In addition, there will be a couple of requests so do make sure to complete those before leaving. You will see a check mark instead of a red \"X\", indicating that you have complete that task.",
-"offset": Vector2(5660, 1300),
+"offset": Vector2(6460, 1900),
 "options": {
 0: {
 "condition": {},
@@ -204,12 +204,12 @@ nodes = {
 "speaker": 1
 },
 "1_4": {
-"dialogue": "So, your name is...\"{{Player}}\". I would assume that is correct?",
-"offset": Vector2(-1200, 740),
+"dialogue": "So, I would assume this is your name as shown above. I would assume that is correct?",
+"offset": Vector2(-1260, 740),
 "options": {
 0: {
 "condition": {},
-"link": &"3_7",
+"link": &"3_11",
 "text": "Yes"
 },
 1: {
@@ -235,7 +235,7 @@ nodes = {
 "speaker": 1
 },
 "1_6": {
-"dialogue": "Do you know what’s happening here?",
+"dialogue": "Do you know what’s happening in this town?",
 "offset": Vector2(480, 380),
 "options": {
 0: {
@@ -302,8 +302,8 @@ nodes = {
 "signalValue": "Negate"
 },
 "3_11": {
-"link": &"3_9",
-"offset": Vector2(4911.06, 1568.97),
+"link": &"3_7",
+"offset": Vector2(-900, 940),
 "signalValue": "Negate"
 },
 "3_12": {
@@ -317,13 +317,13 @@ nodes = {
 "signalValue": "ShowControls"
 },
 "3_3": {
-"link": &"1_16",
-"offset": Vector2(4260, 1280),
-"signalValue": "DialogueControl"
+"link": &"1_4",
+"offset": Vector2(-1560, 860),
+"signalValue": "ShowName"
 },
 "3_4": {
 "link": "END",
-"offset": Vector2(7380, 1280),
+"offset": Vector2(4360, 1280),
 "signalValue": "Done"
 },
 "3_5": {
@@ -348,7 +348,7 @@ nodes = {
 },
 "3_9": {
 "link": &"1_19",
-"offset": Vector2(4880, 1280),
+"offset": Vector2(5680, 1880),
 "signalValue": "Quota"
 }
 }
@@ -367,9 +367,9 @@ variables = {
 },
 "Player": {
 "type": 4,
-"value": "???"
+"value": ""
 }
 }
 comments = Array[String]([])
-strays = Array[String]([])
+strays = Array[String](["3_9", "1_19", "1_20", "3_12", "3_6", "1_17", "3_10", "1_12", "1_16"])
 characters = "res://Dialogues/CharacterList.tres"
