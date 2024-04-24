@@ -41,6 +41,9 @@ func _ready():
 	if GameData.day >= 2 and GameData.talkToKid == true and GameData.questComplete["Wild"] == false:
 		$Other/CraftingTable.position = Vector2(833, -802)
 		$Other/CraftingTable.visible = true
+	elif GameData.day == 8:
+		$Other/CraftingTable.position = Vector2(833, -802)
+		$Other/CraftingTable.visible = true
 	else:
 		$Other/CraftingTable.position = Vector2(999999999, 999999999)
 		$Other/CraftingTable.visible = false

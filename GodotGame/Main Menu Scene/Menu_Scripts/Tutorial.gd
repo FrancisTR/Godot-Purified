@@ -8,6 +8,7 @@ var text = load("res://Dialogues/CharacterList.tres")
 func _ready():
 	
 	dialogue_box.variables["Player"] = GameData.username
+	$Name/RichTextLabel.text = GameData.username
 	
 	dialogue_box.dialogue_data = load("res://Dialogues/Tutorial.tres")
 	if (not dialogue_box.running):
@@ -28,6 +29,7 @@ func _ready():
 #var testDic = {"Talia": 2}
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if GameData.day <= 2:
 			SoundControl.is_playing_theme("afternoon")
 	elif GameData.day >= 3:
@@ -65,33 +67,27 @@ func _on_dialogue_box_dialogue_signal(value):
 	elif (value == "ShowControls"):
 		$Controls.visible = true
 		
-	elif (value == "DialogueControl"):
-		$NPCexample.visible = true
-	
-	elif (value == "Quota"):
-		$Quota.visible = true
+	elif (value == "ShowName"):
+		$Name.visible = true
 		
 	elif (value == "Marks"):
 		$Marks.visible = true
 	
 	elif (value == "Town"):
 		$Map.visible = true
-		GameData.visitTutorial = true
 		
 	
 	elif (value == "Done"):
-		GameData.visitTutorial = false
 		TextTransition.set_to_click(
-			"You then enter the village, excited for the opportunity to make profit.",
-			"res://World Scene/World.tscn",
+			"You then follow Talia outside.",
+			"res://Main Menu Scene/tutorial_2.tscn",
 			"Click To Continue"
 		)
 		SceneTransition.change_scene("res://Globals/text_transition.tscn")
 	else:
 		$Controls.visible = false
-		$NPCexample.visible = false
+		$Name.visible = false
 		$Map.visible = false
-		$Quota.visible = false
 		$Marks.visible = false
 
 
@@ -100,7 +96,6 @@ func _on_dialogue_box_dialogue_signal(value):
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
 	#TODO Stop audio once we continue
-	
 	dialogue_box.custom_effects[0].skip = true
 	dialogue_box.show_options()
 	

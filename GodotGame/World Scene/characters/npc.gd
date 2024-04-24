@@ -69,7 +69,7 @@ func go_pos(delta):
 		
 		
 		emit_signal("leave_village")
-		GameData.QVillager = ""
+		GameData.QVillager = {}
 		#GameData.charLock = false
 		if GameData.inventory_amount.keys().find("Twig") != -1:
 			Utils.remove_from_inventory("Twig", int(GameData.inventory_amount["Twig"]))
@@ -164,9 +164,9 @@ func _process(delta):
 
 
 	#TODO: If all the requests has been listed, we then save the Qmain
-	if GameData.QMain.values().size() >= 1:
-		#Note that multiple requests is handled by the dialogue itself
-		dialogue_box.variables["QMain"] = true
+	#if GameData.QMain.values().size() >= 1:
+		##Note that multiple requests is handled by the dialogue itself
+		#dialogue_box.variables["QMain"] = true
 	
 	
 	dialogue_box.variables["Profit?"] = GameData.madeProfit
@@ -181,6 +181,7 @@ func _process(delta):
 	dialogue_box.variables["Rocks"] = GameData.itemDialogue[1]["Value"]
 	dialogue_box.variables["WaterBottle"] = GameData.itemDialogue[2]["Value"]
 	dialogue_box.variables["TinCans"] = GameData.itemDialogue[3]["Value"]
+	dialogue_box.variables["WaterFilter"] = GameData.itemDialogue[4]["Value"]
 	
 	#TODO: Get the day for the appropriate dialogue
 	if GameData.visitTutorial == true:
@@ -300,6 +301,20 @@ func _process(delta):
 			dialogue_box.start_id = "Day7Negate"
 		elif NPCname == "OldMan":
 			dialogue_box.start_id = "OldMan7"
+	elif GameData.day == 8:
+		# Who is the player talking to?
+		if NPCname == "Denial":
+			dialogue_box.start_id = "Denial8"
+		elif NPCname == "Anger":
+			dialogue_box.start_id = "Anger8"
+		elif NPCname == "Bargin":
+			dialogue_box.start_id = "Bargin8"
+		elif NPCname == "Depress":
+			dialogue_box.start_id = "Depress8"
+		elif NPCname == "Accept":
+			dialogue_box.start_id = "Accept8"
+		elif NPCname == "OldMan":
+			dialogue_box.start_id = "OldMan8"
 			
 			
 		
@@ -323,66 +338,6 @@ func _process(delta):
 			$PressForDialogue.visible = false
 			$FixedDialoguePosition/CharacterIMG.visible = true
 			
-			#TODO
-			#Run the loop and check true that we talked to that villager
-			# This is for the requirement to leave the Day
-			#Note that for Croak, you must talk to Barry.
-			if GameData.day == 1 and GameData.visitTutorial == false:
-				if NPCname == "Croak" and GameData.villagersTalked[2]["Talked"] == true:
-					dialogue_box.variables[NPCname] = true
-					print(dialogue_box.variables)
-					for i in range(len(GameData.villagersTalked)):
-						if GameData.villagersTalked[i]["Name"] == NPCname:
-							GameData.villagersTalked[i]["Talked"] = true
-				
-				elif NPCname != "Croak":
-					dialogue_box.variables[NPCname] = true
-					print(dialogue_box.variables)
-					for i in range(len(GameData.villagersTalked)):
-						if GameData.villagersTalked[i]["Name"] == NPCname:
-							GameData.villagersTalked[i]["Talked"] = true
-			elif GameData.day == 4:
-				#Talk to the old man first
-				if (dialogue_box.variables["OldMan"] == true or NPCname == "OldMan"):
-					dialogue_box.variables[NPCname] = true
-					for i in range(len(GameData.villagersTalked)):
-						if GameData.villagersTalked[i]["Name"] == NPCname:
-							GameData.villagersTalked[i]["Talked"] = true
-			
-			
-			elif GameData.day == 5:
-				var counts = 0
-				for i in range(len(GameData.villagersTalked)):
-					if GameData.villagersTalked[i]["Talked"] == true:
-						counts = counts + 1
-				#We can talk to the old man if everyone has been talked to
-				#Talk to the old man first
-				if (GameData.villagersTalked[6]["Talked"] == false and counts == 5):
-					dialogue_box.variables[NPCname] = true
-					for i in range(len(GameData.villagersTalked)):
-						if GameData.villagersTalked[i]["Name"] == NPCname:
-							GameData.villagersTalked[i]["Talked"] = true
-				elif (NPCname != "OldMan" and (GameData.villagersTalked[0]["Talked"] == false or GameData.villagersTalked[1]["Talked"] == false or GameData.villagersTalked[2]["Talked"] == false or GameData.villagersTalked[4]["Talked"] == false or GameData.villagersTalked[5]["Talked"] == false)):
-					dialogue_box.variables[NPCname] = true
-					for i in range(len(GameData.villagersTalked)):
-						if GameData.villagersTalked[i]["Name"] == NPCname:
-							GameData.villagersTalked[i]["Talked"] = true
-			elif GameData.day == 7:
-				#Talk to the old man only
-				if (NPCname == "OldMan"):
-					dialogue_box.variables[NPCname] = true
-					for i in range(len(GameData.villagersTalked)):
-						if GameData.villagersTalked[i]["Name"] == NPCname:
-							GameData.villagersTalked[i]["Talked"] = true
-			
-			else:
-				print(NPCname)
-				dialogue_box.variables[NPCname] = true
-				#GameData.QWild = dialogue_box.variables["QWild"]
-				print(dialogue_box.variables)
-				for i in range(len(GameData.villagersTalked)):
-					if GameData.villagersTalked[i]["Name"] == NPCname:
-						GameData.villagersTalked[i]["Talked"] = true
 			
 			$FixedDialoguePosition/AnimationPlayer.play("Dialogue_popup")
 			dialogue_box.start()
@@ -449,12 +404,81 @@ func hide_notif():
 
 func _on_dialogue_box_dialogue_ended():
 	$FixedDialoguePosition/CharacterIMG.visible = false
-	#TODO: Quest stuff for the Main World
-	if (dialogue_box.variables["QMain"] == true and GameData.QVillager == ""):
+	
+	#TODO
+	#Run the loop and check true that we talked to that villager
+	# This is for the requirement to leave the Day
+	#Note that for Croak, you must talk to Barry.
+	if GameData.day == 1 and GameData.visitTutorial == false:
+		if NPCname == "Croak" and GameData.villagersTalked[2]["Talked"] == true:
+			dialogue_box.variables[NPCname] = true
+			print(dialogue_box.variables)
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
 		
+		elif NPCname != "Croak":
+			dialogue_box.variables[NPCname] = true
+			print(dialogue_box.variables)
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
+	elif GameData.day == 4:
+		#Talk to the old man first
+		if (dialogue_box.variables["OldMan"] == true or NPCname == "OldMan"):
+			dialogue_box.variables[NPCname] = true
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
+	
+	
+	elif GameData.day == 5:
+		var counts = 0
+		for i in range(len(GameData.villagersTalked)):
+			if GameData.villagersTalked[i]["Talked"] == true:
+				counts = counts + 1
+		#We can talk to the old man if everyone has been talked to
+		#Talk to the old man first
+		if (GameData.villagersTalked[6]["Talked"] == false and counts == 5):
+			dialogue_box.variables[NPCname] = true
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
+		elif (NPCname != "OldMan" and (GameData.villagersTalked[0]["Talked"] == false or GameData.villagersTalked[1]["Talked"] == false or GameData.villagersTalked[2]["Talked"] == false or GameData.villagersTalked[4]["Talked"] == false or GameData.villagersTalked[5]["Talked"] == false)):
+			dialogue_box.variables[NPCname] = true
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
+	elif GameData.day == 7:
+		#Talk to the old man only
+		if (NPCname == "OldMan"):
+			dialogue_box.variables[NPCname] = true
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
+	
+	else:
+		print(NPCname)
+		dialogue_box.variables[NPCname] = true
+		#GameData.QWild = dialogue_box.variables["QWild"]
+		print(dialogue_box.variables)
+		for i in range(len(GameData.villagersTalked)):
+			if GameData.villagersTalked[i]["Name"] == NPCname:
+				GameData.villagersTalked[i]["Talked"] = true
+	
+	
+	
+	
+	
+	
+	
+	#TODO: Quest stuff for the Main World
+	#GameData.inventory_amount.keys().find("WaterBottle") != -1
+	if (dialogue_box.variables["QMain"] == true and GameData.QVillager.keys().find(NPCname) == -1):
+		dialogue_box.variables["QMain"] = false
 		if GameData.QMain.keys().find(NPCname) == -1:
 			GameData.QMain[NPCname] = false 
-		GameData.QVillager = NPCname
+		GameData.QVillager[NPCname] = NPCname
 	if (dialogue_box.variables["Profit?"] == true):
 		GameData.madeProfit = true
 	if (dialogue_box.variables["Discount"] != ""):
@@ -510,26 +534,39 @@ func _on_dialogue_box_dialogue_signal(value):
 		
 	if value == "MainComplete":
 		#GameData.questComplete["Main"] = true
-		GameData.QMain[NPCname] = true
-		
-		var npcComplete = GameData.QMain.values()
-		if not npcComplete.has(false):
-			#All request has been fufill
-			GameData.questComplete["Main"] = true
 		
 		#Remove the items since we gave them
 		#TODO: Add more days
 		if GameData.NPCgiveNoMore == false:
 			if GameData.day == 1 and GameData.visitTutorial == true:
 				Utils.remove_from_inventory("Rock", 1)
+				GameData.NPCgiveNoMore = true
 			elif GameData.day == 1:
 				Utils.remove_from_inventory("Twig", 6)
+				GameData.NPCgiveNoMore = true
 			elif GameData.day == 2:
 				Utils.remove_from_inventory("Rock", 4)
+				GameData.NPCgiveNoMore = true
 			elif GameData.day == 3:
 				Utils.remove_from_inventory("TinCan", 3)
-			GameData.NPCgiveNoMore = true
-			
+				GameData.NPCgiveNoMore = true
+			elif GameData.day == 8:
+				if NPCname == "Bargin" and GameData.QMain["Bargin"] == false:
+					Utils.remove_from_inventory("WaterBottle", 5)
+				if NPCname == "Anger" and GameData.QMain["Anger"] == false:
+					Utils.remove_from_inventory("WaterFilter", 2)
+				if NPCname == "Denial" and GameData.QMain["Denial"] == false:
+					Utils.remove_from_inventory("WaterBottle", 1)
+			GameData.QMain[NPCname] = true
+		
+		var npcComplete = GameData.QMain.values()
+		if not npcComplete.has(false):
+			#All request has been fufill
+			GameData.questComplete["Main"] = true
+		
+
+
+
 	if value == "TutorialEnded":
 		TextTransition.set_to_click(
 				"You then enter the village, excited for the opportunity to make profit.",
@@ -554,7 +591,7 @@ func _on_dialogue_box_dialogue_signal(value):
 		GameData.save_position = false
 		GameData.player_position
 
-		GameData.visitTutorial = false
+		GameData.visitTutorial = false #TODO: Questionable for now
 		GameData.visitedWilderness = false
 		GameData.talkToKid = false
 
@@ -594,7 +631,7 @@ func _on_dialogue_box_dialogue_signal(value):
 			}
 		]
 
-		GameData.QVillager = ""
+		GameData.QVillager = {}
 
 		GameData.villagersIndex = {
 			"Accept": 0,
@@ -604,11 +641,12 @@ func _on_dialogue_box_dialogue_signal(value):
 			"Denial": 4,
 			"Depress": 5,
 			"OldMan": 6,
-				
-			"Rano": 7,
-			"Ribbit": 8,
-			"Hop": 9,
-			"Leap": 10,
+			"Talia": 7,
+			
+			"Rano": 8,
+			"Ribbit": 9,
+			"Hop": 10,
+			"Leap": 11
 		}
 
 		GameData.villagersTalked = [
@@ -643,7 +681,7 @@ func _on_dialogue_box_dialogue_signal(value):
 			{
 				"Name": "Talia",
 				"Talked": false
-			},
+			}
 		]
 
 
