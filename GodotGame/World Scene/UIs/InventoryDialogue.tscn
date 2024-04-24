@@ -1,28 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dyge3pmntuk1g"]
+[gd_scene load_steps=5 format=3 uid="uid://caur4c8x7r8ll"]
 
-[ext_resource type="Script" path="res://World Scene/UIs/Inventory.gd" id="1_bxwgv"]
-[ext_resource type="Texture2D" uid="uid://cosqqv8nuavny" path="res://Assets/Custom/Suitcase.png" id="1_v31nw"]
-[ext_resource type="Texture2D" uid="uid://dv22rv7vcdnkm" path="res://Assets/UISprites/UI_Flat_Textfield_02.png" id="3_j4byf"]
-[ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="4_uytmo"]
-[ext_resource type="Texture2D" uid="uid://dg2w5uxjqg6e7" path="res://Assets/UISprites/UI_Flat_Cross_Large.png" id="4_wkuso"]
-[ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="5_te84r"]
-[ext_resource type="Texture2D" uid="uid://2mvvco20ojh5" path="res://Assets/UISprites/UI_Flat_Select_01a2.png" id="7_i62cv"]
-[ext_resource type="Texture2D" uid="uid://ckuh0yllyblxa" path="res://Assets/UISprites/UI_Flat_Select_01a1.png" id="8_kpm0g"]
+[ext_resource type="Script" path="res://World Scene/UIs/InventoryDialogue.gd" id="1_5ou37"]
+[ext_resource type="Texture2D" uid="uid://cosqqv8nuavny" path="res://Assets/Custom/Suitcase.png" id="2_votc2"]
+[ext_resource type="Texture2D" uid="uid://2mvvco20ojh5" path="res://Assets/UISprites/UI_Flat_Select_01a2.png" id="7_birag"]
+[ext_resource type="Texture2D" uid="uid://ckuh0yllyblxa" path="res://Assets/UISprites/UI_Flat_Select_01a1.png" id="8_ik1ed"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qb0f0"]
-texture = ExtResource("4_uytmo")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ygvkm"]
-texture = ExtResource("4_uytmo")
-modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0t20"]
-texture = ExtResource("5_te84r")
-modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ndb2o"]
-
-[node name="Inventory" type="Control"]
+[node name="InventoryDialogue" type="Control"]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 8
@@ -30,354 +13,39 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 208.0
-offset_top = 12.0
-offset_right = 208.0
-offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.6, 1.6)
-script = ExtResource("1_bxwgv")
+script = ExtResource("1_5ou37")
+
+[node name="InventoryOpacity" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -360.0
+offset_top = -203.0
+offset_right = 361.0
+offset_bottom = 203.0
+color = Color(0, 0, 0, 0.25098)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 texture_filter = 1
-layout_mode = 0
-offset_left = -211.25
-offset_top = -170.0
-offset_right = 210.75
-offset_bottom = 169.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.625
+offset_top = -169.375
+offset_right = 211.375
+offset_bottom = 169.625
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 modulate = Color(1, 1, 1, 0.843137)
 layout_mode = 2
-texture = ExtResource("1_v31nw")
-
-[node name="TODOlist" type="Control" parent="."]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 0
-offset_left = -428.125
-offset_top = -151.875
-offset_right = -237.125
-offset_bottom = 124.125
-
-[node name="ListBackground" type="TextureRect" parent="TODOlist"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_j4byf")
-
-[node name="Label" type="Label" parent="TODOlist"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -75.5
-offset_top = 20.0
-offset_right = 76.5
-offset_bottom = 43.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "----Daily Quota----"
-horizontal_alignment = 1
-
-[node name="Villagers" type="Label" parent="TODOlist"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 23.0
-offset_top = 59.0
-offset_right = 150.0
-offset_bottom = 82.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Talk to Villagers:"
-
-[node name="VillagersText" type="RichTextLabel" parent="TODOlist/Villagers"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 128.0
-offset_right = 179.0
-offset_bottom = 25.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "1/7"
-
-[node name="CraftedItems" type="Label" parent="TODOlist"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -95.5
-offset_top = -1.75
-offset_right = 95.5
-offset_bottom = 21.25
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "----Requests----"
-horizontal_alignment = 1
-
-[node name="ViewButton" type="Button" parent="TODOlist"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -72.5
-offset_top = 19.0
-offset_right = 71.5
-offset_bottom = 99.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_qb0f0")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ygvkm")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_u0t20")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ndb2o")
-text = "View Requests"
-
-[node name="ListUI" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-offset_left = -490.0
-offset_top = -210.0
-offset_right = 230.0
-offset_bottom = 195.0
-
-[node name="Requests" type="TextureRect" parent="ListUI"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -180.0
-offset_top = -180.0
-offset_right = -140.0
-offset_bottom = -140.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(9, 9)
-texture = ExtResource("3_j4byf")
-expand_mode = 1
-
-[node name="ExitButton" type="Button" parent="ListUI"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 128.75
-offset_top = -175.0
-offset_right = 168.75
-offset_bottom = -135.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_qb0f0")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ygvkm")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_u0t20")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ndb2o")
-text = "Exit"
-
-[node name="ItemR" type="Label" parent="ListUI"]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 225.0
-offset_top = 61.25
-offset_right = 347.0
-offset_bottom = 79.25
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "???"
-
-[node name="CheckMark" type="TextureRect" parent="ListUI/ItemR"]
-layout_mode = 0
-offset_left = -20.625
-offset_top = -3.87501
-offset_right = -3.625
-offset_bottom = 13.125
-texture = ExtResource("4_wkuso")
-expand_mode = 1
-
-[node name="ItemNeeded" type="Label" parent="ListUI/ItemR"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 156.875
-offset_top = -0.625016
-offset_right = 268.875
-offset_bottom = 17.375
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-
-[node name="ItemR2" type="Label" parent="ListUI"]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 225.0
-offset_top = 111.875
-offset_right = 347.0
-offset_bottom = 129.875
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "???"
-
-[node name="CheckMark" type="TextureRect" parent="ListUI/ItemR2"]
-layout_mode = 0
-offset_left = -20.625
-offset_top = -3.87501
-offset_right = -3.625
-offset_bottom = 13.125
-texture = ExtResource("4_wkuso")
-expand_mode = 1
-
-[node name="ItemNeeded" type="Label" parent="ListUI/ItemR2"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 156.875
-offset_right = 268.875
-offset_bottom = 18.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-
-[node name="ItemR3" type="Label" parent="ListUI"]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 225.0
-offset_top = 162.5
-offset_right = 347.0
-offset_bottom = 180.5
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "???"
-
-[node name="CheckMark" type="TextureRect" parent="ListUI/ItemR3"]
-layout_mode = 0
-offset_left = -20.625
-offset_top = -3.87501
-offset_right = -3.625
-offset_bottom = 13.125
-texture = ExtResource("4_wkuso")
-expand_mode = 1
-
-[node name="ItemNeeded" type="Label" parent="ListUI/ItemR3"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 156.875
-offset_right = 268.875
-offset_bottom = 18.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-
-[node name="ItemR4" type="Label" parent="ListUI"]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 225.0
-offset_top = 213.125
-offset_right = 347.0
-offset_bottom = 231.125
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "???"
-
-[node name="CheckMark" type="TextureRect" parent="ListUI/ItemR4"]
-layout_mode = 0
-offset_left = -20.625
-offset_top = -3.87501
-offset_right = -3.625
-offset_bottom = 13.125
-texture = ExtResource("4_wkuso")
-expand_mode = 1
-
-[node name="ItemNeeded" type="Label" parent="ListUI/ItemR4"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 156.875
-offset_right = 268.875
-offset_bottom = 18.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-
-[node name="ItemR5" type="Label" parent="ListUI"]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 225.0
-offset_top = 263.75
-offset_right = 347.0
-offset_bottom = 281.75
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "???"
-
-[node name="CheckMark" type="TextureRect" parent="ListUI/ItemR5"]
-layout_mode = 0
-offset_left = -20.625
-offset_top = -3.87501
-offset_right = -3.625
-offset_bottom = 13.125
-texture = ExtResource("4_wkuso")
-expand_mode = 1
-
-[node name="ItemNeeded" type="Label" parent="ListUI/ItemR5"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 156.875
-offset_right = 268.875
-offset_bottom = 18.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-
-[node name="ItemR6" type="Label" parent="ListUI"]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 225.0
-offset_top = 314.375
-offset_right = 347.0
-offset_bottom = 332.375
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "???"
-
-[node name="CheckMark" type="TextureRect" parent="ListUI/ItemR6"]
-layout_mode = 0
-offset_left = -20.625
-offset_top = -3.87501
-offset_right = -3.625
-offset_bottom = 13.125
-texture = ExtResource("4_wkuso")
-expand_mode = 1
-
-[node name="ItemNeeded" type="Label" parent="ListUI/ItemR6"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 156.875
-offset_right = 268.875
-offset_bottom = 18.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+texture = ExtResource("2_votc2")
 
 [node name="Items" type="Node2D" parent="."]
 
@@ -398,8 +66,8 @@ offset_top = -4.0
 offset_right = 5885.0
 offset_bottom = 2646.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName0" type="Label" parent="Items/slot0"]
@@ -432,8 +100,8 @@ offset_top = -4.0
 offset_right = 5886.0
 offset_bottom = 2644.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName1" type="Label" parent="Items/slot1"]
@@ -466,8 +134,8 @@ offset_top = -4.0
 offset_right = 5880.0
 offset_bottom = 2644.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName2" type="Label" parent="Items/slot2"]
@@ -500,8 +168,8 @@ offset_top = -4.0
 offset_right = 5876.0
 offset_bottom = 2646.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName3" type="Label" parent="Items/slot3"]
@@ -534,8 +202,8 @@ offset_top = -4.0
 offset_right = 5880.0
 offset_bottom = 2646.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName4" type="Label" parent="Items/slot4"]
@@ -568,8 +236,8 @@ offset_top = -4.0
 offset_right = 5880.0
 offset_bottom = 2644.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName5" type="Label" parent="Items/slot5"]
@@ -602,8 +270,8 @@ offset_top = -4.0
 offset_right = 5876.0
 offset_bottom = 2644.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName6" type="Label" parent="Items/slot6"]
@@ -636,8 +304,8 @@ offset_top = -4.0
 offset_right = 5876.0
 offset_bottom = 2644.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName7" type="Label" parent="Items/slot7"]
@@ -670,8 +338,8 @@ offset_top = -4.0
 offset_right = 5880.0
 offset_bottom = 2644.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName8" type="Label" parent="Items/slot8"]
@@ -704,8 +372,8 @@ offset_top = -4.0
 offset_right = 5880.0
 offset_bottom = 2644.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName9" type="Label" parent="Items/slot9"]
@@ -738,8 +406,8 @@ offset_top = -4.0
 offset_right = 5880.0
 offset_bottom = 2644.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName10" type="Label" parent="Items/slot10"]
@@ -772,8 +440,8 @@ offset_top = -4.0
 offset_right = 5880.0
 offset_bottom = 2644.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName11" type="Label" parent="Items/slot11"]
@@ -806,8 +474,8 @@ offset_top = -4.0
 offset_right = 5881.0
 offset_bottom = 2644.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName12" type="Label" parent="Items/slot12"]
@@ -840,8 +508,8 @@ offset_top = -4.0
 offset_right = 5880.0
 offset_bottom = 2644.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName13" type="Label" parent="Items/slot13"]
@@ -874,8 +542,8 @@ offset_top = -4.0
 offset_right = 5880.0
 offset_bottom = 2644.0
 scale = Vector2(0.0989064, 0.147303)
-texture_pressed = ExtResource("7_i62cv")
-texture_hover = ExtResource("8_kpm0g")
+texture_pressed = ExtResource("7_birag")
+texture_hover = ExtResource("8_ik1ed")
 stretch_mode = 0
 
 [node name="ItemName14" type="Label" parent="Items/slot14"]
@@ -1058,14 +726,15 @@ theme_override_constants/outline_size = 4
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[connection signal="pressed" from="TODOlist/ViewButton" to="." method="_on_view_button_pressed"]
-[connection signal="pressed" from="ListUI/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="mouse_entered" from="Items/slot0/slot0" to="." method="_on_slot_0_mouse_entered"]
 [connection signal="mouse_exited" from="Items/slot0/slot0" to="." method="_on_slot_0_mouse_exited"]
+[connection signal="pressed" from="Items/slot0/slot0" to="." method="_on_slot_0_pressed"]
 [connection signal="mouse_entered" from="Items/slot1/slot1" to="." method="_on_slot_1_mouse_entered"]
 [connection signal="mouse_exited" from="Items/slot1/slot1" to="." method="_on_slot_1_mouse_exited"]
+[connection signal="pressed" from="Items/slot1/slot1" to="." method="_on_slot_1_pressed"]
 [connection signal="mouse_entered" from="Items/slot2/slot2" to="." method="_on_slot_2_mouse_entered"]
 [connection signal="mouse_exited" from="Items/slot2/slot2" to="." method="_on_slot_2_mouse_exited"]
+[connection signal="pressed" from="Items/slot2/slot2" to="." method="_on_slot_2_pressed"]
 [connection signal="mouse_entered" from="Items/slot3/slot3" to="." method="_on_slot_3_mouse_entered"]
 [connection signal="mouse_exited" from="Items/slot3/slot3" to="." method="_on_slot_3_mouse_exited"]
 [connection signal="mouse_entered" from="Items/slot4/slot4" to="." method="_on_slot_4_mouse_entered"]

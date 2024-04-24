@@ -32,6 +32,9 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 	#TODO Stop audio once we continue
 	
 	SoundControl.is_playing_sound("button")
+	dialogue_box.custom_effects[0].skip = true
+	dialogue_box.show_options()
+	
 	if $Dialogue/DialogueBox.speaker.text != "":
 		var idx
 		if Utils.char_dict.keys().find(str($Dialogue/DialogueBox.speaker.text)) != -1:

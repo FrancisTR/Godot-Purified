@@ -1,11 +1,11 @@
 extends Node
 
 
-var day:int = 1
+var day:int = 2
 
 var twigItem = 0
 
-var username = ""
+var username = "l"
 
 var inventory:Array
 
@@ -32,12 +32,15 @@ var leaveVillageQuest = false
 var pseudo_items = []
 
 #Dialogue related stuff
-var QMain = false
+
+var QMain = {}
 var QWild = false
+var QMainLocationIdx = {}
 var madeProfit = false
 var NPCgiveNoMore = false #Give items once and not dup
 #Quest is finished
 var questComplete = {"Main": false, "Wild": false}
+var Discount = ""
 
 #TODO Add more if needed to stack of the items needed for NPC
 var itemDialogue = [
@@ -69,11 +72,12 @@ var villagersIndex = {
 	"Denial": 4,
 	"Depress": 5,
 	"OldMan": 6,
+	"Talia": 7,
 	
-	"Rano": 7,
-	"Ribbit": 8,
-	"Hop": 9,
-	"Leap": 10,
+	"Rano": 8,
+	"Ribbit": 9,
+	"Hop": 10,
+	"Leap": 11
 }
 
 var villagersTalked = [
@@ -103,6 +107,10 @@ var villagersTalked = [
 	},
 	{
 		"Name": "OldMan",
+		"Talked": false
+	},
+	{
+		"Name": "Talia",
 		"Talked": false
 	}
 ]

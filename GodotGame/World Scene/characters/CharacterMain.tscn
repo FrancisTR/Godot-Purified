@@ -163,7 +163,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_u76tt")
 animation = &"Down"
 autoplay = "Down_Idle"
-frame_progress = 0.536338
+frame_progress = 0.222289
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -172,11 +172,8 @@ position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_iirhq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-texture_filter = 1
 zoom = Vector2(1.3, 1.3)
-position_smoothing_enabled = true
 position_smoothing_speed = 3.0
-rotation_smoothing_enabled = true
 rotation_smoothing_speed = 3.0
 
 [node name="FootstepAudio" type="AudioStreamPlayer" parent="."]
@@ -213,6 +210,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_ugh86")
 
+
 [node name="Outline" type="TextureRect" parent="MapIcon"]
 modulate = Color(100, 100, 100, 1)
 z_index = 998
@@ -239,3 +237,12 @@ wait_time = 0.5
 
 [connection signal="finished" from="FootstepAudio" to="." method="_on_footstep_audio_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="finished" from="FootstepAudio" to="." method="_on_footstep_audio_finished"]
+
+[editable path="Inventory Layer/Inventory"]
+

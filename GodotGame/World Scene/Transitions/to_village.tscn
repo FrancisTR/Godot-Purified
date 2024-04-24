@@ -100,32 +100,34 @@ visible = false
 z_index = 101
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
-offset_left = 100.0
-offset_top = 373.0
-offset_right = 1053.0
+offset_left = 233.0
+offset_top = 386.0
+offset_right = 919.0
 offset_bottom = 612.0
 theme = SubResource("Theme_dll47")
 theme_override_styles/panel = SubResource("StyleBoxFlat_7kfgb")
 script = ExtResource("2_4245u")
 dialogue_data = ExtResource("3_16syn")
 hide_portrait = true
+skip_input_action = "ui_select"
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_xj6sr"), SubResource("RichTextEffect_w4h7m")])
 
 [node name="CharacterIMG" type="TextureRect" parent="Dialogue/Dialogue"]
 texture_filter = 1
-offset_left = 121.0
-offset_right = 396.0
-offset_bottom = 521.0
+offset_left = 239.0
+offset_top = 15.0
+offset_right = 514.0
+offset_bottom = 536.0
 expand_mode = 1
 
 [node name="Voice" type="Button" parent="Dialogue/Dialogue"]
 visible = false
 z_index = 999
 texture_filter = 1
-offset_left = 168.0
-offset_top = 561.0
-offset_right = 238.0
-offset_bottom = 631.0
+offset_left = 232.0
+offset_top = 543.0
+offset_right = 302.0
+offset_bottom = 613.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)

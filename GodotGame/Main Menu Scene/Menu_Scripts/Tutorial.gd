@@ -6,11 +6,19 @@ extends Control
 var text = load("res://Dialogues/CharacterList.tres")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	dialogue_box.variables["Player"] = GameData.username
+	
+	dialogue_box.dialogue_data = load("res://Dialogues/Tutorial.tres")
 	if (not dialogue_box.running):
 		if GameData.username == "":
+			dialogue_box.start_id = "Tutorial"
 			dialogue_box.start()
-		else:
+		elif GameData.day == 7:
+			dialogue_box.dialogue_data = load("res://Dialogues/Dialogue.tres")
+			dialogue_box.start_id = "Talia7"
+			dialogue_box.start()
+		elif (GameData.username != ""):
 			dialogue_box.start_id = "Tutorial2"
 			dialogue_box.start()
 
@@ -20,7 +28,10 @@ func _ready():
 #var testDic = {"Talia": 2}
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	SoundControl.is_playing_theme("afternoon")
+	if GameData.day <= 2:
+			SoundControl.is_playing_theme("afternoon")
+	elif GameData.day >= 3:
+		SoundControl.is_playing_theme("main")
 	
 	#Dynamically change keys based on settings
 	#Interaction
@@ -70,13 +81,10 @@ func _on_dialogue_box_dialogue_signal(value):
 	
 	elif (value == "Done"):
 		GameData.visitTutorial = false
-		TextTransition.set_to_chained_timed(
-			[
-				"You then enter the village, excited for the opportunity to make profit."
-			],
+		TextTransition.set_to_click(
+			"You then enter the village, excited for the opportunity to make profit.",
 			"res://World Scene/World.tscn",
-			3.3,
-			""
+			"Click To Continue"
 		)
 		SceneTransition.change_scene("res://Globals/text_transition.tscn")
 	else:
@@ -93,9 +101,17 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
 	#TODO Stop audio once we continue
 	
+	dialogue_box.custom_effects[0].skip = true
+	dialogue_box.show_options()
+	
 	SoundControl.is_playing_sound("button")
 	if $Dialogue/DialogueBox.speaker.text != "":
-		var idx = Utils.char_dict[str($Dialogue/DialogueBox.speaker.text)]
+		var idx
+		if Utils.char_dict.keys().find(str($Dialogue/DialogueBox.speaker.text)) != -1:
+			idx = Utils.char_dict[str($Dialogue/DialogueBox.speaker.text)]
+		else:
+			#Its the main character
+			idx = Utils.char_dict["Main"]
 		$CharacterIMG.texture = Utils.character_list.characters[idx].image
 
 
@@ -108,4 +124,12 @@ func _on_voice_pressed():
 func _on_dialogue_box_dialogue_ended():
 	$Dialogue/Voice.visible = false
 	$CharacterIMG.visible = false
+	if GameData.day == 7:
+		GameData.visitTutorial = false
+		TextTransition.set_to_click(
+			"You then enter the village...",
+			"res://World Scene/World.tscn",
+			"Click To Continue"
+		)
+		SceneTransition.change_scene("res://Globals/text_transition.tscn")
 	pass # Replace with function body.

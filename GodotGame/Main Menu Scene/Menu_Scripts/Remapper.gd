@@ -42,8 +42,8 @@ func _unhandled_input(e):
 		return
 
 	for k in get_all_keymaps():
-		#print(k)
-		#print(e)
+		#print(k.keycode)
+		#print(e.keycode)
 		#print("---")
 		if e.keycode == k.keycode:
 			# Move below message to in game
@@ -92,13 +92,12 @@ func get_all_actions() -> Array[String]:
 
 func get_keymap_name(action_name: String) -> String:
 	var tmp = InputMap.action_get_events(action_name)[0].as_text().split(" ")
-	
+
 	if tmp.size() > 1:
 		tmp = tmp[0]
 	else:
 		tmp = tmp[0] + "*"
-	
-	print(tmp)
+
 	return " " + tmp + " "
 
 func toggle_disabled_other_buttons():

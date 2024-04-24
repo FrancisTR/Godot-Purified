@@ -21,7 +21,9 @@ func _on_teleport_body_entered(body):
 		GameData.charLock = true
 		#TODO Add more days
 		#Show an error dialogue where the player did not craft/find
-		if (GameData.questComplete["Wild"] == false and GameData.inventory_amount.size() != 0 and GameData.day == 1):
+		if GameData.day >= 4:
+			SceneTransition.change_scene("res://World Scene/World.tscn")
+		elif (GameData.questComplete["Wild"] == false and GameData.inventory_amount.size() != 0 and GameData.day == 1):
 			GameData.QWild = true
 			if (GameData.talkToKid == false):
 				TextTransition.set_to_click(
@@ -79,6 +81,9 @@ func _on_teleport_body_entered(body):
 
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	SoundControl.is_playing_sound("button")
+	
+	dialogue_box.custom_effects[0].skip = true
+	dialogue_box.show_options()
 	
 	#print($Dialogue/DialogueBox.speaker.text," addf")
 	#TODO Stop audio once we continue

@@ -108,9 +108,10 @@ expand_mode = 1
 
 [node name="CharacterIMG" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 121.0
-offset_right = 389.0
-offset_bottom = 552.0
+offset_left = 239.0
+offset_top = 15.0
+offset_right = 514.0
+offset_bottom = 536.0
 expand_mode = 1
 
 [node name="Dialogue" type="CanvasLayer" parent="."]
@@ -124,10 +125,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -476.0
-offset_top = -237.0
-offset_right = 477.0
-offset_bottom = -37.0
+offset_left = -343.0
+offset_top = -262.0
+offset_right = 343.0
+offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_nkib2")
@@ -136,16 +137,16 @@ script = ExtResource("3_o0bcj")
 dialogue_data = ExtResource("4_5j8ex")
 start_id = "Tutorial"
 hide_portrait = true
+skip_input_action = "ui_select"
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a5mn1"), SubResource("RichTextEffect_uc7ri")])
 
 [node name="Voice" type="Button" parent="Dialogue"]
-visible = false
 z_index = 999
 texture_filter = 1
-offset_left = 101.0
-offset_top = 544.0
-offset_right = 171.0
-offset_bottom = 614.0
+offset_left = 232.0
+offset_top = 543.0
+offset_right = 302.0
+offset_bottom = 613.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)

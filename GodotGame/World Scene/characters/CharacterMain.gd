@@ -94,15 +94,9 @@ func _physics_process(delta):
 				print("map_open")
 				GameData.current_ui = "map"
 			else:
-				map_opened = false
-				GameData.current_ui = ""
-				close_map.emit()
-				$Camera2D.make_current()
-				print("map_close")
-				
-				
+				_close_map()
 			
-				
+			
 		if Input.is_action_just_pressed("Inventory"):
 			if GameData.current_ui != "inventory" && GameData.current_ui != "":
 				return
@@ -114,17 +108,19 @@ func _physics_process(delta):
 				$"Inventory Layer".show()
 				GameData.current_ui = "inventory"
 			else:
-				inventory_opened = false
-				GameData.current_ui = ""
-				print("inventory_close")
-				$"Inventory Layer".hide()
+				_close_inventory()
 			print("pressed E")
 			$"Inventory Layer/Inventory".draw_items(GameData.inventory)
 		elif Input.is_action_just_pressed("Back"):
-			if GameData.current_ui != "options" && GameData.current_ui != "":
-				return
-			Utils.go_to_option_menu(get_tree().current_scene.scene_file_path, self.position)
-			GameData.current_ui = "options"
+			var current_ui = GameData.current_ui
+			
+			if current_ui == "map":
+				_close_map()
+			elif current_ui == "inventory":
+				_close_inventory()
+			elif current_ui == "options" || current_ui == "":
+				Utils.go_to_option_menu(get_tree().current_scene.scene_file_path, self.position)
+				GameData.current_ui = "options"
 		
 		velocity = velocity.normalized() * SPEED
 		move_and_slide()
@@ -160,6 +156,7 @@ func hide_map_icon():
 	$MapIcon.hide()
 	#$Label.hide()
 
+
 func set_to_player_camera():
 	$Camera2D.make_current()
 
@@ -172,3 +169,17 @@ func _on_timer_timeout():
 		$MapIcon/MapIconImage.show()
 		$MapIcon/Outline.show()
 	$Timer.start()
+
+func _close_map():
+	map_opened = false
+	GameData.current_ui = ""
+	close_map.emit()
+	$Camera2D.make_current()
+	print("map_close")
+
+func _close_inventory():
+	inventory_opened = false
+	GameData.current_ui = ""
+	print("inventory_close")
+	$"Inventory Layer".hide()
+
