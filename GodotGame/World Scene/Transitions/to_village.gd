@@ -9,8 +9,8 @@ func _process(delta):
 		GameData.charLock = false
 	else:
 		$Dialogue/Dialogue/CharacterIMG.visible = true
-		#TODO: Switch to true for final
-		$Dialogue/Dialogue/Voice.visible = false
+		
+		$Dialogue/Dialogue/Voice.visible = true
 	
 		
 

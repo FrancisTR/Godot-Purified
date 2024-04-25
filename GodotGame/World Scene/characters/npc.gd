@@ -26,7 +26,7 @@ var question = load("res://Assets/Custom/UI_Question_Mark_Plate.png")
 func _ready():
 	NPCname = null
 	set_process_input(true)
-	$PressForDialogue.text = InputMap.action_get_events("StartDialogue")[0].as_text()
+	$PressForDialogue.text = InputMap.action_get_events("Interaction")[0].as_text()
 	
 	
 func go_pos(delta):
@@ -323,7 +323,7 @@ func _process(delta):
 		go_pos(delta) #For barry
 	
 	
-	if Input.is_action_just_pressed("StartDialogue") and enterBody == true and specialLockDay7 == false:
+	if Input.is_action_just_pressed("Interaction") and enterBody == true and specialLockDay7 == false:
 		#Focus the button that is visible on dialogue
 		#for option in dialogue_box.options.get_children():
 			#if option.visible:
@@ -538,10 +538,7 @@ func _on_dialogue_box_dialogue_signal(value):
 		#Remove the items since we gave them
 		#TODO: Add more days
 		if GameData.NPCgiveNoMore == false:
-			if GameData.day == 1 and GameData.visitTutorial == true:
-				Utils.remove_from_inventory("Rock", 1)
-				GameData.NPCgiveNoMore = true
-			elif GameData.day == 1:
+			if GameData.day == 1:
 				Utils.remove_from_inventory("Twig", 6)
 				GameData.NPCgiveNoMore = true
 			elif GameData.day == 2:
@@ -568,12 +565,16 @@ func _on_dialogue_box_dialogue_signal(value):
 
 
 	if value == "TutorialEnded":
+		Utils.remove_from_inventory("Rock", 1)
+		GameData.QMain[NPCname] = true
+		GameData.questComplete["Main"] = true
 		TextTransition.set_to_click(
 				"You then enter the village, excited for the opportunity to make profit.",
 				"res://World Scene/World.tscn",
 				"Click To Continue"
 		)
 		SceneTransition.change_scene("res://Globals/text_transition.tscn")
+
 		GameData.day = 1
 
 		GameData.inventory = []
@@ -591,7 +592,7 @@ func _on_dialogue_box_dialogue_signal(value):
 		GameData.save_position = false
 		GameData.player_position
 
-		GameData.visitTutorial = false #TODO: Questionable for now
+		GameData.visitTutorial = false
 		GameData.visitedWilderness = false
 		GameData.talkToKid = false
 
@@ -627,6 +628,10 @@ func _on_dialogue_box_dialogue_signal(value):
 			},
 			{
 				"Name": "TinCans",
+				"Value": 0
+			},
+			{
+				"Name": "WaterFilter",
 				"Value": 0
 			}
 		]
@@ -710,8 +715,7 @@ func _on_dialogue_box_dialogue_signal(value):
 
 
 func _on_animation_player_animation_finished(anim_name):
-	#TODO: back to true for final
-	$FixedDialoguePosition/Voice.visible = false
+	$FixedDialoguePosition/Voice.visible = true
 	dialogue_box.show_options()
 
 

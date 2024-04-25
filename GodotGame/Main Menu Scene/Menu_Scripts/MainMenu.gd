@@ -6,8 +6,7 @@ func _ready():
 	
 	#Reset global values
 	GameData.day = 1
-	GameData.visitTutorial = false
-
+	
 	GameData.username = ""
 
 	GameData.inventory = []
@@ -23,10 +22,11 @@ func _ready():
 	GameData.current_ui = ""
 	GameData.current_scene = ""
 	GameData.save_position = false
+	GameData.player_position
 
+	GameData.visitTutorial = false
 	GameData.visitedWilderness = false
 	GameData.talkToKid = false
-	GameData.Discount = ""
 
 
 	GameData.leaveVillageQuest = false
@@ -34,12 +34,15 @@ func _ready():
 
 
 	#Dialogue related stuff
-	GameData.QMain = false
+
+	GameData.QMain = {}
 	GameData.QWild = false
+	GameData.QMainLocationIdx = {}
 	GameData.madeProfit = false
 	GameData.NPCgiveNoMore = false #Give items once and not dup
 	#Quest is finished
 	GameData.questComplete = {"Main": false, "Wild": false}
+	GameData.Discount = ""
 
 	#TODO Add more if needed to stack of the items needed for NPC
 	GameData.itemDialogue = [
@@ -58,10 +61,14 @@ func _ready():
 		{
 			"Name": "TinCans",
 			"Value": 0
+		},
+		{
+			"Name": "WaterFilter",
+			"Value": 0
 		}
 	]
 
-	GameData.QVillager = ""
+	GameData.QVillager = {}
 
 	GameData.villagersIndex = {
 		"Accept": 0,
@@ -71,11 +78,12 @@ func _ready():
 		"Denial": 4,
 		"Depress": 5,
 		"OldMan": 6,
+		"Talia": 7,
 		
-		"Rano": 7,
-		"Ribbit": 8,
-		"Hop": 9,
-		"Leap": 10,
+		"Rano": 8,
+		"Ribbit": 9,
+		"Hop": 10,
+		"Leap": 11
 	}
 
 	GameData.villagersTalked = [
@@ -106,9 +114,12 @@ func _ready():
 		{
 			"Name": "OldMan",
 			"Talked": false
+		},
+		{
+			"Name": "Talia",
+			"Talked": false
 		}
 	]
-
 
 	GameData.get_item_posX = null
 	GameData.get_item_posY = null

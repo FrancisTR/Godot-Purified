@@ -4,8 +4,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#TODO: Remove the one below in final
-	$Dialogue/Voice.visible = false
 	#TODO Add more days?
 	if not dialogue_box.running:
 		if GameData.day == 1:

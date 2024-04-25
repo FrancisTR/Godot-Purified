@@ -31,6 +31,7 @@ var npc_positions = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GameData.villagersTalked[7]["Talked"] = false #Dark ruler no more on Talia
 	GameData.charLock = false
 	
 	if GameData.visitedWilderness:

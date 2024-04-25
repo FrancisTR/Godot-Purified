@@ -126,7 +126,7 @@ clear_button_enabled = true
 caret_blink = true
 caret_blink_interval = 0.34
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+[node name="RichTextLabel" type="Label" parent="TextureRect"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -140,8 +140,10 @@ offset_right = 178.0
 offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/font_size = 40
 text = "Enter your username"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
 [connection signal="text_changed" from="TextureRect/LineEdit" to="." method="_on_line_edit_text_changed"]

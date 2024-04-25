@@ -409,11 +409,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 586.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot1" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -443,11 +442,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot2" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -477,11 +475,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -4.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 174.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot3" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -511,11 +508,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot4" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -545,11 +541,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot5" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -579,11 +574,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot6" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -613,11 +607,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot7" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -647,11 +640,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot8" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -681,11 +673,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot9" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -715,11 +706,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot10" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -749,11 +739,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot11" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -783,11 +772,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot12" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -817,11 +805,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot13" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -851,11 +838,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="slot14" type="TextureRect" parent="Items"]
 texture_filter = 1
@@ -885,11 +871,10 @@ layout_mode = 0
 offset_left = 3.0
 offset_top = -8.0
 offset_right = 584.0
-offset_bottom = 386.0
+offset_bottom = 170.0
 theme_override_font_sizes/font_size = 140
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="Amounts" type="Node2D" parent="."]
 
