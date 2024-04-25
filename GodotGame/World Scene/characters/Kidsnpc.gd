@@ -13,7 +13,7 @@ var PressForDialogue_was_opened = false
 func _ready():
 	NPCname = null
 	set_process_input(true)
-	$PressForDialogue.text = InputMap.action_get_events("StartDialogue")[0].as_text()
+	$PressForDialogue.text = InputMap.action_get_events("Interaction")[0].as_text()
 	if (GameData.day == 3):
 		$Sprite2D.animation = "Day3Sad"
 
@@ -55,7 +55,7 @@ func _process(delta):
 			dialogue_box.start_id = "ChildrenComplete3"
 	
 	
-	if (Input.is_action_just_pressed("StartDialogue") and enterBody == true):
+	if (Input.is_action_just_pressed("Interaction") and enterBody == true):
 		if GameData.current_ui != "dialogue" && GameData.current_ui != "":
 			return
 		if not dialogue_box.running:
@@ -163,8 +163,7 @@ func _on_dialogue_box_dialogue_signal(value):
 
 
 func _on_animation_player_animation_finished(anim_name):
-	#TODO change it to true in final
-	$FixedDialoguePosition/Voice.visible = false
+	$FixedDialoguePosition/Voice.visible = true
 
 func _on_voice_pressed():
 	print("Play Voice Recording")

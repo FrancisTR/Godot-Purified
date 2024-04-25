@@ -85,7 +85,7 @@ func _process(delta):
 		
 		
 		
-	if Input.is_action_just_pressed("StartDialogue") and enterBody == true:	
+	if Input.is_action_just_pressed("Interaction") and enterBody == true:	
 		if GameData.current_ui != "Crafting" && GameData.current_ui != "":
 			return
 		GameData.charLock = true

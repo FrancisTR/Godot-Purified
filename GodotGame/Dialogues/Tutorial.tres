@@ -20,12 +20,12 @@ nodes = {
 "start_id": "Tutorial2"
 },
 "1_1": {
-"dialogue": "Oh..hello....",
+"dialogue": "Oh... hello. Welcome to your first day at work.",
 "offset": Vector2(-560, -240),
 "options": {
 0: {
 "condition": {},
-"link": &"1_2",
+"link": &"1_3",
 "text": ""
 }
 },
@@ -46,12 +46,12 @@ nodes = {
 "speaker": 1
 },
 "1_11": {
-"dialogue": "Alright, let’s begin your training.",
+"dialogue": "Alright, let’s begin your training. Follow me.",
 "offset": Vector2(2420, 520),
 "options": {
 0: {
 "condition": {},
-"link": &"1_13",
+"link": &"3_4",
 "text": ""
 }
 },
@@ -73,11 +73,11 @@ nodes = {
 },
 "1_13": {
 "dialogue": "Give me a moment really quick...",
-"offset": Vector2(2760, 1280),
+"offset": Vector2(6860, 1860),
 "options": {
 0: {
 "condition": {},
-"link": &"3_2",
+"link": "END",
 "text": ""
 }
 },
@@ -86,33 +86,33 @@ nodes = {
 },
 "1_14": {
 "dialogue": "Based on your resume, you prefer these controls. Feel free to change them right now if you’d like. Otherwise, you can always change them later.",
-"offset": Vector2(3400, 1280),
+"offset": Vector2(7460, 1860),
 "options": {
 0: {
 "condition": {},
-"link": &"3_5",
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.002, 433),
+"speaker": 1
+},
+"1_15": {
+"dialogue": "Alright. Now it is time for your training. Please walk towards me for further instructions.",
+"offset": Vector2(7980, 1860),
+"options": {
+0: {
+"condition": {},
+"link": "END",
 "text": ""
 }
 },
 "size": Vector2(300.001, 433),
 "speaker": 1
 },
-"1_15": {
-"dialogue": "Alright. Now it is time for your training. Please walk towards me for further instructions.",
-"offset": Vector2(3920, 1280),
-"options": {
-0: {
-"condition": {},
-"link": &"3_4",
-"text": ""
-}
-},
-"size": Vector2(300, 433),
-"speaker": 1
-},
 "1_16": {
 "dialogue": "There are certain things in the town you can interact with. You can do that by pressing \"{{Interaction}}\". Note that this will vary based on the key you chose for \"Interaction\".",
-"offset": Vector2(5320, 1880),
+"offset": Vector2(5300, 2020),
 "options": {
 0: {
 "condition": {},
@@ -131,7 +131,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"3_10",
+"link": "END",
 "text": ""
 }
 },
@@ -139,7 +139,7 @@ nodes = {
 "speaker": 1
 },
 "1_18": {
-"dialogue": "Uhhhhh...What is your name then? (I hate this so much)",
+"dialogue": "Uhhh okay... What is your name then? (I hate this so much)",
 "offset": Vector2(-800, 1240),
 "options": {
 0: {
@@ -157,20 +157,20 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_20",
+"link": "END",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 1
 },
 "1_2": {
 "dialogue": "Welcome to your first day at work.",
-"offset": Vector2(-200, -240),
+"offset": Vector2(-1980, -300),
 "options": {
 0: {
 "condition": {},
-"link": &"1_3",
+"link": "END",
 "text": ""
 }
 },
@@ -183,16 +183,16 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"3_12",
+"link": "END",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 1
 },
 "1_3": {
 "dialogue": "...Remind me your name again?",
-"offset": Vector2(180, -240),
+"offset": Vector2(-40, -240),
 "options": {
 0: {
 "condition": {},
@@ -204,7 +204,7 @@ nodes = {
 "speaker": 1
 },
 "1_4": {
-"dialogue": "So, I would assume this is your name as shown above. I would assume that is correct?",
+"dialogue": "So, this is your name as shown above. I assume this is correct?",
 "offset": Vector2(-1260, 740),
 "options": {
 0: {
@@ -215,7 +215,7 @@ nodes = {
 1: {
 "condition": {},
 "link": &"1_18",
-"text": "Wait a Minute..."
+"text": "Actually, no..."
 }
 },
 "size": Vector2(300, 494),
@@ -293,11 +293,11 @@ nodes = {
 },
 "3_1": {
 "link": "END",
-"offset": Vector2(540, 220),
+"offset": Vector2(480, 180),
 "signalValue": "EnterName"
 },
 "3_10": {
-"link": &"1_12",
+"link": "END",
 "offset": Vector2(6680, 1560),
 "signalValue": "Negate"
 },
@@ -307,13 +307,13 @@ nodes = {
 "signalValue": "Negate"
 },
 "3_12": {
-"link": &"3_6",
+"link": "END",
 "offset": Vector2(6020, 1580),
 "signalValue": "Negate"
 },
 "3_2": {
-"link": &"1_14",
-"offset": Vector2(3140, 1280),
+"link": "END",
+"offset": Vector2(7200, 1860),
 "signalValue": "ShowControls"
 },
 "3_3": {
@@ -323,16 +323,16 @@ nodes = {
 },
 "3_4": {
 "link": "END",
-"offset": Vector2(4360, 1280),
+"offset": Vector2(2880, 640),
 "signalValue": "Done"
 },
 "3_5": {
-"link": &"1_15",
-"offset": Vector2(3700, 1780),
+"link": "END",
+"offset": Vector2(7760, 2360),
 "signalValue": "Negate"
 },
 "3_6": {
-"link": &"1_17",
+"link": "END",
 "offset": Vector2(6020, 1300),
 "signalValue": "Marks"
 },
@@ -347,7 +347,7 @@ nodes = {
 "signalValue": "Negate"
 },
 "3_9": {
-"link": &"1_19",
+"link": "END",
 "offset": Vector2(5680, 1880),
 "signalValue": "Quota"
 }
@@ -371,5 +371,5 @@ variables = {
 }
 }
 comments = Array[String]([])
-strays = Array[String](["3_9", "1_19", "1_20", "3_12", "3_6", "1_17", "3_10", "1_12", "1_16"])
+strays = Array[String](["3_2", "1_14", "3_5", "3_9", "1_19", "1_20", "3_12", "3_6", "1_17", "3_10", "1_12", "1_2", "1_16", "1_13", "1_15"])
 characters = "res://Dialogues/CharacterList.tres"

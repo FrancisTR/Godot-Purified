@@ -109,6 +109,7 @@ expand_mode = 1
 [node name="Dialogue" type="CanvasLayer" parent="."]
 
 [node name="DialogueBox" type="Panel" parent="Dialogue"]
+visible = false
 z_index = 999
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)

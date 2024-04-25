@@ -39,7 +39,7 @@ func _process(delta):
 	#Interaction
 	#Inventory
 	#Options
-	dialogue_box.variables["Interaction"] = $Controls/RemapContainer/DialogueButton.text.replace("*", "")
+	dialogue_box.variables["Interaction"] = $Controls/RemapContainer/InteractionButton.text.replace("*", "")
 	dialogue_box.variables["Inventory"] = $Controls/RemapContainer/InventoryButton.text.replace("*", "")
 	dialogue_box.variables["Options"] = $Controls/RemapContainer/BackButton.text.replace("*", "")
 	pass
