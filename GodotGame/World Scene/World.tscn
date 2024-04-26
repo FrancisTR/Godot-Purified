@@ -1,10 +1,11 @@
-[gd_scene load_steps=41 format=3 uid="uid://b2fo6lc5k06cg"]
+[gd_scene load_steps=42 format=3 uid="uid://b2fo6lc5k06cg"]
 
 [ext_resource type="Script" path="res://World Scene/World.gd" id="1_1qbtd"]
 [ext_resource type="Texture2D" uid="uid://cxm7wh81tjegk" path="res://Assets/Custom/Terrain/Grass.png" id="5_b2c28"]
 [ext_resource type="PackedScene" uid="uid://ynpgm70xqibo" path="res://World Scene/well.tscn" id="5_b6naa"]
 [ext_resource type="Texture2D" uid="uid://cvu5fwe10f7hh" path="res://Assets/UISprites/UI_Flat_Banner_02_Downward.png" id="5_ekcdo"]
 [ext_resource type="Texture2D" uid="uid://cgwe5cdxpul0y" path="res://Assets/Custom/Terrain/Dirt_Path.png" id="6_74scq"]
+[ext_resource type="PackedScene" uid="uid://0nmlup6yvr84" path="res://World Scene/UIs/crafting_table.tscn" id="6_kp1hu"]
 [ext_resource type="Texture2D" uid="uid://ogkyr3wqmadc" path="res://Assets/Custom/Terrain/House.png" id="7_3dl6f"]
 [ext_resource type="PackedScene" uid="uid://crmshmhby6akr" path="res://World Scene/characters/CharacterMain.tscn" id="8_7n4r7"]
 [ext_resource type="Texture2D" uid="uid://cwunwkiyvw3yl" path="res://Assets/Objects/Basic_Grass_Biom_things.png" id="8_c0eme"]
@@ -898,6 +899,10 @@ position = Vector2(867, 1388)
 [node name="Well" parent="Other" instance=ExtResource("5_b6naa")]
 position = Vector2(1708, 24)
 
+[node name="CraftingTablePRIME" parent="Other" instance=ExtResource("6_kp1hu")]
+z_index = 1
+position = Vector2(-245, 214)
+
 [node name="Map" type="Node" parent="."]
 
 [node name="Map Camera" type="Camera2D" parent="Map"]
@@ -1138,6 +1143,7 @@ texture = ExtResource("24_d3etb")
 
 [editable path="Other/CharacterBody2D"]
 [editable path="Other/CharacterBody2D/Inventory Layer/Inventory"]
+[editable path="Other/CraftingTablePRIME"]
 [editable path="NPCs/Denial"]
 [editable path="NPCs/Denial/NPCActions/OldManInventory/InventoryDialogue"]
 [editable path="NPCs/Anger"]
