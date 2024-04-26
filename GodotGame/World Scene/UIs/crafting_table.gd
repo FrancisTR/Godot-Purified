@@ -39,6 +39,15 @@ func _ready():
 		ItemOfTheDay = "BoilingPot"
 		$UI/CraftingList/ShowItemCrafted/ItemHint.texture = load("res://Assets/Custom/Items/BoilingPotHidden.png")
 		itemImage = load("res://Assets/Custom/Items/BoilingPot.png")
+	
+	#TODO: Have an image of Reverse Osmosis
+	elif GameData.day == 7:
+		craftingList = {"WaterBottle": 2, "Sand": 3, "Moss": 3, "Rock": 2}
+		listKeys = craftingList.keys()
+		listValues = craftingList.values()
+		ItemOfTheDay = "ReverseOsmosis"
+		$UI/CraftingList/ShowItemCrafted/ItemHint.texture = load("res://Assets/Custom/Items/BoilingPotHidden.png")
+		itemImage = load("res://Assets/Custom/Items/BoilingPot.png")
 
 	elif GameData.day == 3 or GameData.day == 8:
 		craftingList = {"WaterBottle": 1, "Sand": 2, "Rock": 2, "Moss": 2}
@@ -86,6 +95,9 @@ func _process(delta):
 		
 		
 	if Input.is_action_just_pressed("Interaction") and enterBody == true:	
+		#if (self.name == "CraftingTablePRIME"):
+			#print("Dark ruler no more")
+			#return
 		if GameData.current_ui != "Crafting" && GameData.current_ui != "":
 			return
 		GameData.charLock = true
@@ -155,9 +167,13 @@ func _on_craft_button_pressed():
 
 func _on_okay_button_pressed():
 	$UI/CraftedItem.visible = false
-	GameData.charLock = false
-	GameData.current_ui = ""
 	SoundControl.is_playing_sound("button")
+	if ItemOfTheDay == "ReverseOsmosis" and GameData.day == 7:
+		$FixedDialoguePosition/DialogueBox.start("OldMan7FinishRO")
+		GameData.current_ui = "dialogue"
+	else:
+		GameData.charLock = false
+		GameData.current_ui = ""
 
 
 func _on_x_button_pressed():

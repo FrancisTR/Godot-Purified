@@ -315,6 +315,34 @@ func _process(delta):
 			dialogue_box.start_id = "Accept8"
 		elif NPCname == "OldMan":
 			dialogue_box.start_id = "OldMan8"
+	elif GameData.day == 9:
+		# Who is the player talking to?
+		if NPCname == "Denial":
+			dialogue_box.start_id = "Denial9"
+		elif NPCname == "Anger":
+			dialogue_box.start_id = "Anger9"
+		elif NPCname == "Bargin":
+			dialogue_box.start_id = "Bargin9"
+		elif NPCname == "Depress":
+			dialogue_box.start_id = "Depress9"
+		elif NPCname == "Accept":
+			dialogue_box.start_id = "Accept9"
+		elif NPCname == "OldMan":
+			dialogue_box.start_id = "OldMan9"
+	elif GameData.day == 10:
+		# Who is the player talking to?
+		if NPCname == "Denial":
+			dialogue_box.start_id = "Denial10"
+		elif NPCname == "Anger":
+			dialogue_box.start_id = "Anger10"
+		elif NPCname == "Bargin":
+			dialogue_box.start_id = "Bargin10"
+		elif NPCname == "Depress":
+			dialogue_box.start_id = "Depress10"
+		elif NPCname == "Accept":
+			dialogue_box.start_id = "Accept10"
+		elif NPCname == "OldMan":
+			dialogue_box.start_id = "OldMan10"
 			
 			
 		
@@ -496,14 +524,14 @@ func _on_dialogue_box_dialogue_ended():
 			#We allow the user to click on the item to learn more
 			$NPCActions/OldManInventory/InventoryDialogue.draw_items(GameData.inventory)
 			$NPCActions/OldManInventory.visible = true
+			$FixedDialoguePosition/Voice.visible = true
 	elif (NPCname == "OldMan" and GameData.day == 7 and moving == false):
 		#Continue with the dialogue
 		dialogue_box.start("OldMan7Finish")
 		GameData.charLock = true
-		GameData.current_ui = "dialogue"
 		$PressForDialogue.visible = false
 		$FixedDialoguePosition/CharacterIMG.visible = true
-	
+		$FixedDialoguePosition/Voice.visible = true
 	
 	
 func _on_dialogue_box_dialogue_proceeded(node_type):
@@ -546,6 +574,12 @@ func _on_dialogue_box_dialogue_signal(value):
 				GameData.NPCgiveNoMore = true
 			elif GameData.day == 3:
 				Utils.remove_from_inventory("TinCan", 3)
+				GameData.NPCgiveNoMore = true
+			elif GameData.day == 9:
+				Utils.remove_from_inventory("TinCan", 6)
+				GameData.NPCgiveNoMore = true
+			elif GameData.day == 10:
+				Utils.remove_from_inventory("Twig", 10)
 				GameData.NPCgiveNoMore = true
 			elif GameData.day == 8:
 				if NPCname == "Bargin" and GameData.QMain["Bargin"] == false:

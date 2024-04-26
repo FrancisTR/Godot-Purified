@@ -119,7 +119,7 @@ func _on_open_leave_menu():
 		print("e")
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
-	elif ((TalkedToVillagersCount != 6 or GameData.questComplete["Main"] == false) and GameData.day == 8):
+	elif ((TalkedToVillagersCount != 6 or GameData.questComplete["Main"] == false) and (GameData.day == 8 or GameData.day == 9 or GameData.day == 10)):
 		print("f")
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
