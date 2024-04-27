@@ -878,8 +878,7 @@ y_sort_enabled = true
 position = Vector2(172, 303)
 
 [node name="Sprite2D" parent="Other/CharacterBody2D" index="0"]
-animation = &"Right"
-frame_progress = 0.0
+frame_progress = 0.785208
 
 [node name="Marker2D2" parent="Other/CharacterBody2D" index="6"]
 position = Vector2(-179, 329)

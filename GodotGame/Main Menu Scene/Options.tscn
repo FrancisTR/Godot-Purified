@@ -506,10 +506,10 @@ autowrap_mode = 2
 [node name="BackButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
-offset_left = 453.0
-offset_top = 291.0
-offset_right = 607.0
-offset_bottom = 375.0
+offset_left = 569.0
+offset_top = 281.0
+offset_right = 723.0
+offset_bottom = 365.0
 scale = Vector2(1.1, 1.1)
 focus_neighbor_bottom = NodePath("../../SfxSlider")
 focus_next = NodePath("../../SfxSlider")
@@ -583,6 +583,52 @@ script = ExtResource("3_sdtpu")
 action = "Interaction"
 
 [node name="HintLabel" type="Label" parent="RemapContainer/InteractionButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 13.6363
+offset_top = 6.36364
+offset_right = -7.36366
+offset_bottom = 29.3636
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "..."
+autowrap_mode = 2
+
+[node name="SprintButton" type="Button" parent="RemapContainer"]
+texture_filter = 1
+offset_left = 337.0
+offset_top = 281.0
+offset_right = 491.0
+offset_bottom = 365.0
+scale = Vector2(1.1, 1.1)
+focus_neighbor_bottom = NodePath("../../SfxSlider")
+focus_next = NodePath("../../SfxSlider")
+focus_previous = NodePath("../DownMapButton")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_ritaw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iexoi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7safo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3hxp0")
+text = "Shift"
+script = ExtResource("3_sdtpu")
+action = "Sprint"
+
+[node name="HintLabel" type="Label" parent="RemapContainer/SprintButton"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 10

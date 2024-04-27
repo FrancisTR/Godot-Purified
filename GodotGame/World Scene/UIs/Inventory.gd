@@ -195,11 +195,11 @@ func _process(delta):
 			for i in range(len(InventoryRequest)):
 				if (GameData.QMainLocationIdx.keys().find("OldMan") != -1 and InventoryRequest[i].text == "Request from OldMan"):
 					InventoryRequest[GameData.QMainLocationIdx["OldMan"]].text = "Request from OldMan"
-					InventoryAmount[GameData.QMainLocationIdx["OldMan"]].text = "Create an improved Water Filter"
+					InventoryAmount[GameData.QMainLocationIdx["OldMan"]].text = "Create an improved filter"
 					break
 				elif (InventoryRequest[i].visible == true and InventoryRequest[i].text == "???"):
 					InventoryRequest[i].text = "Request from OldMan"
-					InventoryAmount[i].text = "Create an improved Water Filter"
+					InventoryAmount[i].text = "Create an improved filter"
 					GameData.QMainLocationIdx["OldMan"] = i
 					break
 	

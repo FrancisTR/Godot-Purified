@@ -10,7 +10,7 @@ var inventory_opened = false
 var map_opened = false
 #var last_recorded_inventory_amount:Dictionary
 
-const SPEED = 169.0
+var SPEED = 140.0
 
 func _ready():
 	$Camera2D.make_current()
@@ -50,6 +50,16 @@ func _physics_process(delta):
 	var canMove = not inventory_opened and not map_opened #and this and that and ... and etc.
 	
 	if GameData.charLock == false:
+		if Input.is_action_pressed("Sprint"):
+			SPEED = 200
+			if ($Camera2D.zoom.x >= 1.3 and $Camera2D.zoom.x >= 1.3):
+				$Camera2D.zoom.x = $Camera2D.zoom.x - .010
+				$Camera2D.zoom.y = $Camera2D.zoom.y - .010
+		else:
+			SPEED = 140.0
+			if ($Camera2D.zoom.x <= 1.4 and $Camera2D.zoom.x <= 1.4):
+				$Camera2D.zoom.x = $Camera2D.zoom.x + .010
+				$Camera2D.zoom.y = $Camera2D.zoom.y + .010
 		if canMove:
 			if directionX:
 				velocity.x = directionX * SPEED
