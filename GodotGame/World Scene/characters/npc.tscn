@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dve4o0brcsyp" path="res://Assets/Custom/Sprites/Talia.png" id="17_10a58"]
 [ext_resource type="PackedScene" uid="uid://caur4c8x7r8ll" path="res://World Scene/UIs/InventoryDialogue.tscn" id="20_wi7a5"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqe2e"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_anu2d"]
 texture = ExtResource("2_ln8m6")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -30,7 +30,7 @@ texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5prp6"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1uh4l"]
 texture = ExtResource("2_ln8m6")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -38,7 +38,7 @@ texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0g45f"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sp2nr"]
 texture = ExtResource("3_vf4oi")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -47,9 +47,9 @@ texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
 [sub_resource type="Theme" id="Theme_q0h0h"]
-Button/styles/hover = SubResource("StyleBoxTexture_dqe2e")
-Button/styles/normal = SubResource("StyleBoxTexture_5prp6")
-Button/styles/pressed = SubResource("StyleBoxTexture_0g45f")
+Button/styles/hover = SubResource("StyleBoxTexture_anu2d")
+Button/styles/normal = SubResource("StyleBoxTexture_1uh4l")
+Button/styles/pressed = SubResource("StyleBoxTexture_sp2nr")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d61p"]
 bg_color = Color(0, 0.305882, 0.313726, 1)

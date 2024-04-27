@@ -7,7 +7,6 @@ signal leave_village
 @onready var BarryDestination = $NPCActions/BarryDestination/Marker2D.global_position
 #For player on Day 7
 @onready var PlayerDestination = $"../../Other/CharacterBody2D/Marker2D".global_position
-var specialLockDay7 = false #Only use this for Old man only
 var idxMovement = 0 #Use for movement on Day 7 Character
 
 var moving_speed = 200
@@ -22,6 +21,10 @@ var playerRuns = false
 
 var exclamation = load("res://Assets/Custom/UI_Exclamation_Mark_Plate.png")
 var question = load("res://Assets/Custom/UI_Question_Mark_Plate.png")
+
+#For the old man on day 7
+#This is a temp lock
+var oldManTempLock = false
 
 func _ready():
 	NPCname = null
@@ -42,6 +45,7 @@ func go_pos(delta):
 		$"../../Other/CharacterBody2D".global_position = $"../../Other/CharacterBody2D".global_position.move_toward(PlayerDestination, delta*moving_speed)
 		$"../OldMan/FixedDialoguePosition/Voice".visible = false
 		#Hide all character img (TODO Depends on who ends the call)
+		$"../OldMan/FixedDialoguePosition/CharacterIMG".visible = false
 		$"../OldMan/FixedDialoguePosition/DialogueOpacity".visible = false
 		$FixedDialoguePosition/DialogueOpacity.visible = false
 		$"../../Other/CharacterBody2D/CollisionShape2D".disabled = true
@@ -300,7 +304,10 @@ func _process(delta):
 		elif NPCname == "Accept":
 			dialogue_box.start_id = "Day7Negate"
 		elif NPCname == "OldMan":
-			dialogue_box.start_id = "OldMan7"
+			if GameData.inventory_amount.keys().find("ReverseOsmosis") == -1:
+				dialogue_box.start_id = "OldMan7"
+			else:
+				dialogue_box.start_id = "OldMan7FinishRO"
 	elif GameData.day == 8:
 		# Who is the player talking to?
 		if NPCname == "Denial":
@@ -351,7 +358,7 @@ func _process(delta):
 		go_pos(delta) #For barry
 	
 	
-	if Input.is_action_just_pressed("Interaction") and enterBody == true and specialLockDay7 == false:
+	if Input.is_action_just_pressed("Interaction") and enterBody == true:
 		#Focus the button that is visible on dialogue
 		#for option in dialogue_box.options.get_children():
 			#if option.visible:
@@ -369,7 +376,7 @@ func _process(delta):
 			
 			$FixedDialoguePosition/AnimationPlayer.play("Dialogue_popup")
 			dialogue_box.start()
-
+			print("Begin")
 			$FixedDialoguePosition/DialogueOpacity.visible = true
 			print(dialogue_box)
 	elif (not dialogue_box.running and enterBody == true):
@@ -485,6 +492,13 @@ func _on_dialogue_box_dialogue_ended():
 				if GameData.villagersTalked[i]["Name"] == NPCname:
 					GameData.villagersTalked[i]["Talked"] = true
 	
+	
+	elif GameData.day == 10:
+		if (NPCname != "OldMan"):
+			dialogue_box.variables[NPCname] = true
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
 	else:
 		print(NPCname)
 		dialogue_box.variables[NPCname] = true
@@ -518,20 +532,21 @@ func _on_dialogue_box_dialogue_ended():
 	if (NPCname == "OldMan" and GameData.day == 7 and GameData.inventory_amount.size() != 0):
 		if (GameData.inventory_amount.keys().find("WaterBottleSpecial") != -1 or GameData.inventory_amount.keys().find("BoilingPot") != -1 or GameData.inventory_amount.keys().find("WaterFilter") != -1):
 			print("Activate Union Hanger")
-			specialLockDay7 = true
 			$PressForDialogue.visible = false
 			#Draw the items to display on screen
 			#We allow the user to click on the item to learn more
 			$NPCActions/OldManInventory/InventoryDialogue.draw_items(GameData.inventory)
 			$NPCActions/OldManInventory.visible = true
 			$FixedDialoguePosition/Voice.visible = true
-	elif (NPCname == "OldMan" and GameData.day == 7 and moving == false):
+	elif (NPCname == "OldMan" and GameData.day == 7 and oldManTempLock == false):
 		#Continue with the dialogue
 		dialogue_box.start("OldMan7Finish")
 		GameData.charLock = true
+		GameData.current_ui = "dialogue"
 		$PressForDialogue.visible = false
 		$FixedDialoguePosition/CharacterIMG.visible = true
 		$FixedDialoguePosition/Voice.visible = true
+		oldManTempLock = true #This can be reset, but should not affect anything
 	
 	
 func _on_dialogue_box_dialogue_proceeded(node_type):
@@ -755,3 +770,4 @@ func _on_animation_player_animation_finished(anim_name):
 
 func _on_voice_pressed():
 	print("Play Voice Recording")
+	dialogue_box.show_options()

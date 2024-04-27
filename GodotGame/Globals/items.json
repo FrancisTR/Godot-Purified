@@ -8,7 +8,8 @@
 		"WaterBottleSpecial": 6,
 		"WaterBottle": 7,
 		"BoilingPot": 8,
-		"WaterFilter": 9
+		"WaterFilter": 9,
+		"ReverseOsmosis": 10
 	},
 	{
 		"name":"Twig",
@@ -63,5 +64,11 @@
 		"description": "This is a WaterFilter",
 		"texture": "res://Assets/Custom/Items/WaterFilter.png",
 		"cropped":"no"
-	}
+	},
+	{
+		"name":"ReverseOsmosis",
+		"description": "This is a Reverse Osmosis",
+		"texture": "res://Assets/Custom/Items/WaterFilter.png",
+		"cropped":"no"
+	},
 ]
