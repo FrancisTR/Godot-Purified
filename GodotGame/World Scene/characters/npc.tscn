@@ -344,7 +344,7 @@ text = "🔊"
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bxftl")
-animation = &"Talia"
+animation = &"Croak"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -408,6 +408,8 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_2vnga")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

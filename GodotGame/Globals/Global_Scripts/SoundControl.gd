@@ -8,6 +8,7 @@ var dialogue_sound = preload("res://Sounds_and_Music/DialogueSound.wav")
 var pickupItem_sound = preload("res://Sounds_and_Music/pickupItem.wav")
 var crafted_sound = preload("res://Sounds_and_Music/Crafted_Achieve.wav")
 
+
 #This func is called in the _process
 func is_playing_theme(theme):
 	if (!$Background.is_playing()):
@@ -35,3 +36,21 @@ func is_playing_sound(theme):
 		$Sound.stream = crafted_sound
 		
 	$Sound.play()
+
+
+
+#Dialogue functions
+func play_audio(dialogue, start, end):
+	$Timer.wait_time = end-start
+	$DialogueAudio.stream = load(dialogue)
+	$DialogueAudio.play(start)
+	$Timer.start()
+
+#func get_time(minutes, seconds):
+	#return (minutes*60)+seconds
+
+func _on_timer_timeout():
+	$DialogueAudio.stop()
+
+func dialogue_audio_stop():
+	$DialogueAudio.stop()

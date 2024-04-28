@@ -946,6 +946,9 @@ texture = ExtResource("10_jk0aj")
 y_sort_enabled = true
 script = ExtResource("1_4k4yr")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.529412, 0.298039, 1, 1)
+
 [node name="TileMaps" type="Node" parent="."]
 
 [node name="GrassTile" type="TileMap" parent="TileMaps"]

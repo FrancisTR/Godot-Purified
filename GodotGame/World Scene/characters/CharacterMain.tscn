@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://crmshmhby6akr"]
+[gd_scene load_steps=23 format=3 uid="uid://crmshmhby6akr"]
 
 [ext_resource type="Script" path="res://World Scene/characters/CharacterMain.gd" id="1_cyksq"]
 [ext_resource type="Texture2D" uid="uid://ghsool2pdp04" path="res://Assets/Custom/Sprites/MC_Sprite_Sheet.png" id="2_3sxfq"]
 [ext_resource type="AudioStream" uid="uid://5jxvmdhelg28" path="res://Assets/Sounds/Fantozzi-SandL1.ogg" id="3_ai8dy"]
 [ext_resource type="PackedScene" uid="uid://dyge3pmntuk1g" path="res://World Scene/UIs/Inventory.tscn" id="4_2u5re"]
 [ext_resource type="Texture2D" uid="uid://c64de0u81kuwt" path="res://Assets/Custom/map icons/mc_icon.png" id="5_ugh86"]
+[ext_resource type="Texture2D" uid="uid://bpl17gwn3b6ye" path="res://Assets/Custom/Light.png" id="6_dhoas"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rxh0c"]
 atlas = ExtResource("2_3sxfq")
@@ -211,6 +212,18 @@ texture = ExtResource("5_ugh86")
 [node name="Marker2D2" type="Marker2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="ShadowRealm" type="PointLight2D" parent="."]
+z_index = 21
+texture_filter = 1
+position = Vector2(0, -1)
+scale = Vector2(3, 3)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("6_dhoas")
+texture_scale = 0.5
 
 [connection signal="finished" from="FootstepAudio" to="." method="_on_footstep_audio_finished"]
 

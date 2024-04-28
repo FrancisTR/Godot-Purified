@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnu20bxninf0u"]
+[gd_scene load_steps=6 format=3 uid="uid://bnu20bxninf0u"]
 
 [ext_resource type="Script" path="res://World Scene/Items/Moss.gd" id="1_l21ve"]
 [ext_resource type="Texture2D" uid="uid://cu2ut1xv0sa0l" path="res://Assets/Custom/Items/Moss.png" id="2_kw7u5"]
+[ext_resource type="Texture2D" uid="uid://bpl17gwn3b6ye" path="res://Assets/Custom/Light.png" id="3_xv4ds"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vukrq"]
 size = Vector2(16, 16)
@@ -30,5 +31,18 @@ shape = SubResource("RectangleShape2D_vukrq")
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_5gstm")
+
+[node name="ShadowRealm" type="PointLight2D" parent="."]
+z_index = 21
+texture_filter = 1
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
+color = Color(1, 0.760784, 0.584314, 1)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("3_xv4ds")
+texture_scale = 0.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

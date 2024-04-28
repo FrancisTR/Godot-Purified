@@ -26,6 +26,88 @@ var question = load("res://Assets/Custom/UI_Question_Mark_Plate.png")
 #This is a temp lock
 var oldManTempLock = false
 
+
+
+#Access the voices. Can activate Start, End, and Name
+#TODO adds voices
+#var dialogue_voices = [
+	##Days 1
+	#{	
+		##All Characters
+		#"Denial": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#],
+		#"Anger": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#],
+		#"Bargin": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#],
+		#"Depress": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#],
+		#"Accept": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#],
+		#"Croak": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#],
+		#"OldMan": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#]
+	#
+	#}
+#]
+#var dialogue_voiceSpecific
+#
+#var audioList = {
+	#"Main": "res://Sounds_and_Music/OST/Croak of the Fireflies.mp3",
+	#"Denial": "Test",
+	#"Anger": "Test",
+	#"Bargin": "Test",
+	#"Depress": "Test",
+	#"Accept": "Test",
+	#"Croak": "Test",
+	#"OldMan": "res://Sounds_and_Music/OST/Woodsy Labyrinth.mp3"
+#}
+#var load_audio
+#var audioCount = 0
+	
+
+
+
+
+
+
+
 func _ready():
 	NPCname = null
 	set_process_input(true)
@@ -438,6 +520,7 @@ func hide_notif():
 	$Notif.hide()
 
 func _on_dialogue_box_dialogue_ended():
+	#audioCount = 0 #Reset audio index
 	$FixedDialoguePosition/CharacterIMG.visible = false
 	
 	#TODO
@@ -553,6 +636,12 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
 	#TODO: Stop the voice recording if node proceeds
 	
+	#TODO: Set up the dialogue voices
+	SoundControl.dialogue_audio_stop() #Stop the audio if next dialogue
+	#if (audioCount < len(dialogue_voices[GameData.day - 1][NPCname])):
+		#dialogue_voiceSpecific = dialogue_voices[GameData.day - 1][NPCname][audioCount]
+	#audioCount += 1
+	
 	dialogue_box.custom_effects[0].skip = true
 	dialogue_box.show_options()
 	
@@ -567,7 +656,12 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 			#Its the main character
 			idx = Utils.char_dict["Main"]
 		$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
-	
+
+
+
+
+
+
 func _on_dialogue_box_dialogue_signal(value):
 	if value == "BarryRun":
 		moving = true
@@ -575,6 +669,20 @@ func _on_dialogue_box_dialogue_signal(value):
 		moving = true
 		playerRuns = true
 		
+	#Game completion (Day 10 Ending)
+	if value == "FinishGame":
+		TextTransition.set_to_chained_click(
+			[
+				"The.",
+				"End."
+			],
+			"res://Main Menu Scene/intro_screen.tscn",
+			"Click To Continue"
+		)
+		SceneTransition.change_scene("res://Globals/text_transition.tscn")
+	
+	
+	
 	if value == "MainComplete":
 		#GameData.questComplete["Main"] = true
 		
@@ -764,10 +872,14 @@ func _on_dialogue_box_dialogue_signal(value):
 
 
 func _on_animation_player_animation_finished(anim_name):
-	$FixedDialoguePosition/Voice.visible = true
+	if $FixedDialoguePosition/DialogueBox.speaker.text != "":
+		$FixedDialoguePosition/Voice.visible = true
 	dialogue_box.show_options()
 
 
 func _on_voice_pressed():
 	print("Play Voice Recording")
+	#var CharacterVoice = audioList[dialogue_voiceSpecific["Name"]]
+	##TODO: PLay audio
+	#SoundControl.play_audio(CharacterVoice, dialogue_voiceSpecific["Start"], dialogue_voiceSpecific["End"]) # Node, string, int, int
 	dialogue_box.show_options()
