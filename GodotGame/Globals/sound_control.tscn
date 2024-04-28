@@ -12,3 +12,10 @@ bus = &"music"
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 max_distance = 9.22337e+18
 bus = &"sfx"
+
+[node name="DialogueAudio" type="AudioStreamPlayer2D" parent="."]
+bus = &"sfx"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

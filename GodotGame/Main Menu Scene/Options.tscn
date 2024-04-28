@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bq46ncf7jihje"]
+[gd_scene load_steps=51 format=3 uid="uid://bq46ncf7jihje"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Options.gd" id="1_pejof"]
 [ext_resource type="Shader" path="res://Main Menu Scene/Menu_Scripts/MainMenu.gdshader" id="2_418bt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://edjul52uedvi" path="res://Assets/UISprites/UI_Flat_Banner_01_Downward.png" id="3_huva4"]
 [ext_resource type="Texture2D" uid="uid://cbid64fvoqhpa" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a1.png" id="3_q1kxr"]
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Remapper.gd" id="3_sdtpu"]
+[ext_resource type="Texture2D" uid="uid://bpl17gwn3b6ye" path="res://Assets/Custom/Light.png" id="4_62aal"]
 [ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="5_sapnn"]
 [ext_resource type="Texture2D" uid="uid://betian48tiv5j" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a2.png" id="5_se5ao"]
 [ext_resource type="Texture2D" uid="uid://cf370ycp56cnk" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a1.png" id="6_o2yyx"]
@@ -179,12 +180,22 @@ modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6d00w"]
 
-[node name="EnterOptions" type="CanvasLayer"]
+[node name="EnterOptions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_pejof")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.65098, 0.545098, 1, 1)
 
 [node name="background" type="TextureRect" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_uxrat")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -193,6 +204,7 @@ grow_vertical = 2
 
 [node name="OptionsTitle" type="Label" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 7.0
 offset_top = 8.0
 offset_right = 261.0
@@ -206,17 +218,30 @@ text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ShadowRealm" type="PointLight2D" parent="OptionsTitle"]
+z_index = 21
+texture_filter = 1
+position = Vector2(127, 57.5)
+scale = Vector2(1.40625, 0.507812)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("4_62aal")
+texture_scale = 0.5
+
 [node name="HotkeyLabel" type="RichTextLabel" parent="."]
 texture_filter = 1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -510.0
-offset_top = -158.0
-offset_right = -257.0
-offset_bottom = -103.0
+offset_left = -496.0
+offset_top = -147.0
+offset_right = -243.0
+offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
@@ -225,7 +250,7 @@ text = "[center]Key shortcuts: "
 
 [node name="RemapContainer" type="Control" parent="."]
 texture_filter = 1
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -279,6 +304,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
+[node name="ShadowRealm" type="PointLight2D" parent="RemapContainer/LeftMapButton"]
+z_index = 21
+texture_filter = 1
+position = Vector2(60, 40)
+scale = Vector2(0.9375, 0.734375)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("4_62aal")
+texture_scale = 0.5
+
 [node name="UpMapButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
@@ -322,6 +359,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
+[node name="ShadowRealm" type="PointLight2D" parent="RemapContainer/UpMapButton"]
+z_index = 21
+texture_filter = 1
+position = Vector2(60, 40)
+scale = Vector2(0.9375, 0.734375)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("4_62aal")
+texture_scale = 0.5
+
 [node name="DownMapButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
@@ -364,6 +413,18 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
+
+[node name="ShadowRealm" type="PointLight2D" parent="RemapContainer/DownMapButton"]
+z_index = 21
+texture_filter = 1
+position = Vector2(60, 40)
+scale = Vector2(0.9375, 0.734375)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("4_62aal")
+texture_scale = 0.5
 
 [node name="RightMapButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
@@ -410,6 +471,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
+[node name="ShadowRealm" type="PointLight2D" parent="RemapContainer/RightMapButton"]
+z_index = 21
+texture_filter = 1
+position = Vector2(60, 40)
+scale = Vector2(0.9375, 0.734375)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("4_62aal")
+texture_scale = 0.5
+
 [node name="InventoryButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
@@ -455,6 +528,18 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
+
+[node name="ShadowRealm" type="PointLight2D" parent="RemapContainer/InventoryButton"]
+z_index = 21
+texture_filter = 1
+position = Vector2(111.364, 46.5)
+scale = Vector2(1.74006, 0.835938)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("4_62aal")
+texture_scale = 0.5
 
 [node name="MapButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
@@ -503,6 +588,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
+[node name="ShadowRealm" type="PointLight2D" parent="RemapContainer/MapButton"]
+z_index = 21
+texture_filter = 1
+position = Vector2(111.364, 46.5)
+scale = Vector2(1.74006, 0.835938)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("4_62aal")
+texture_scale = 0.5
+
 [node name="BackButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
@@ -550,6 +647,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
+[node name="ShadowRealm" type="PointLight2D" parent="RemapContainer/BackButton"]
+z_index = 21
+texture_filter = 1
+position = Vector2(76.8182, 43.7727)
+scale = Vector2(1.20028, 0.793324)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("4_62aal")
+texture_scale = 0.5
+
 [node name="InteractionButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
@@ -596,8 +705,21 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
+[node name="ShadowRealm" type="PointLight2D" parent="RemapContainer/InteractionButton"]
+z_index = 21
+texture_filter = 1
+position = Vector2(111.364, 46.5)
+scale = Vector2(1.74006, 0.835938)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("4_62aal")
+texture_scale = 0.5
+
 [node name="SprintButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 337.0
 offset_top = 281.0
 offset_right = 491.0
@@ -642,7 +764,20 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
+[node name="ShadowRealm" type="PointLight2D" parent="RemapContainer/SprintButton"]
+z_index = 21
+texture_filter = 1
+position = Vector2(76.8182, 43.7727)
+scale = Vector2(1.20028, 0.793324)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("4_62aal")
+texture_scale = 0.5
+
 [node name="SfxSlider" type="HSlider" parent="."]
+layout_mode = 0
 offset_left = 337.0
 offset_top = 417.0
 offset_right = 813.0
@@ -692,6 +827,7 @@ bbcode_enabled = true
 text = "[right]SFX Volume:"
 
 [node name="MusicSlider" type="HSlider" parent="."]
+layout_mode = 0
 offset_left = 337.0
 offset_top = 465.0
 offset_right = 813.0
@@ -741,6 +877,7 @@ text = "[right]Music Volume:"
 
 [node name="BackButton" type="Button" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 34.0
 offset_top = 511.0
 offset_right = 254.0
@@ -759,10 +896,23 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_sknse")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6d00w")
 text = "Back"
 
+[node name="ShadowRealm" type="PointLight2D" parent="BackButton"]
+z_index = 21
+texture_filter = 1
+position = Vector2(110, 29.6667)
+scale = Vector2(1.71875, 0.463541)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("4_62aal")
+texture_scale = 0.5
+
 [node name="OpacityBlocker" type="ColorRect" parent="."]
 visible = false
 z_index = 999
 texture_filter = 1
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

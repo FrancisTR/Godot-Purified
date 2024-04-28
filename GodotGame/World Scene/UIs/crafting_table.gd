@@ -62,7 +62,7 @@ func _process(delta):
 		$UI/CraftingList/ShowItemCrafted/ItemHint.texture = load("res://Assets/Custom/Items/BoilingPotHidden.png")
 		itemImage = load("res://Assets/Custom/Items/BoilingPot.png")
 	
-	if (GameData.day == 7 and GameData.villagersTalked[6]["Talked"] == false):
+	if ((GameData.day == 7 and GameData.villagersTalked[6]["Talked"] == false) or GameData.day == 10):
 		$UI/CraftingList/CraftButton.visible = false
 	elif (GameData.day != 1):
 		$UI/CraftingList/CraftButton.visible = true

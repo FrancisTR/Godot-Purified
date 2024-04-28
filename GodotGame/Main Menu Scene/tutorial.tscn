@@ -88,6 +88,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_68151")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.65098, 0.545098, 1, 1)
+
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 1

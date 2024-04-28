@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @onready var line_edit = get_node("TextureRect/LineEdit")
 
