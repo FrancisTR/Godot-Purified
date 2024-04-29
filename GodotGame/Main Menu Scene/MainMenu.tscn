@@ -88,7 +88,7 @@ grow_vertical = 2
 script = ExtResource("1_m2j1f")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.65098, 0.545098, 1, 1)
+color = Color(0.815686, 0.776471, 1, 1)
 
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
@@ -114,18 +114,6 @@ offset_bottom = 127.0
 grow_horizontal = 2
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("3_myful")
-
-[node name="ShadowRealm" type="PointLight2D" parent="Title"]
-z_index = 21
-texture_filter = 1
-position = Vector2(158.611, 43.6111)
-scale = Vector2(2.38281, 0.568576)
-energy = 0.5
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 3.0
-texture = ExtResource("12_yoial")
-texture_scale = 0.5
 
 [node name="ImageDecoration" type="Node" parent="."]
 
@@ -325,18 +313,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_a6ue1")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8ia78")
 text = "Start"
 
-[node name="ShadowRealm" type="PointLight2D" parent="StartButton"]
-z_index = 21
-texture_filter = 1
-position = Vector2(110, 29.6667)
-scale = Vector2(1.71875, 0.463542)
-energy = 0.5
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 3.0
-texture = ExtResource("12_yoial")
-texture_scale = 0.5
-
 [node name="OptionsButton" type="Button" parent="."]
 z_index = 1
 texture_filter = 1
@@ -358,18 +334,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_aw0um")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_52t2r")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_bd86a")
 text = "Options"
-
-[node name="ShadowRealm" type="PointLight2D" parent="OptionsButton"]
-z_index = 21
-texture_filter = 1
-position = Vector2(110, 29.6667)
-scale = Vector2(1.71875, 0.463542)
-energy = 0.5
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 3.0
-texture = ExtResource("12_yoial")
-texture_scale = 0.5
 
 [node name="ExitButton" type="Button" parent="."]
 z_index = 1
@@ -394,18 +358,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_2vmox")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_d6qdx")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ooflk")
 text = "Exit"
-
-[node name="ShadowRealm" type="PointLight2D" parent="ExitButton"]
-z_index = 21
-texture_filter = 1
-position = Vector2(110, 29.6667)
-scale = Vector2(1.71875, 0.463542)
-energy = 0.5
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 3.0
-texture = ExtResource("12_yoial")
-texture_scale = 0.5
 
 [node name="Credits" type="Button" parent="."]
 texture_filter = 1
@@ -440,18 +392,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_w0tir")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_aagvr")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_sshcd")
 text = "Credits"
-
-[node name="ShadowRealm" type="PointLight2D" parent="Credits"]
-z_index = 21
-texture_filter = 1
-position = Vector2(70, 72)
-scale = Vector2(1.09375, 1.0625)
-energy = 0.5
-shadow_enabled = true
-shadow_filter = 1
-shadow_filter_smooth = 3.0
-texture = ExtResource("12_yoial")
-texture_scale = 0.5
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_option_button_pressed"]

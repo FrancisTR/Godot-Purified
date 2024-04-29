@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://decpyxnu3oocl"]
+[gd_scene load_steps=44 format=3 uid="uid://decpyxnu3oocl"]
 
 [ext_resource type="Script" path="res://World Scene/characters/npc.gd" id="1_7ll4o"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_kithy"]
@@ -19,8 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://djx5rl7iobm8m" path="res://Assets/Custom/Sprites/Danny.png" id="14_046bs"]
 [ext_resource type="Texture2D" uid="uid://borcws4ydxocc" path="res://Assets/Custom/Sprites/Derick.png" id="15_o5dh2"]
 [ext_resource type="Texture2D" uid="uid://cfxvp151wo3uq" path="res://Assets/Custom/Sprites/Old_Man.png" id="16_ee48p"]
-[ext_resource type="Texture2D" uid="uid://dve4o0brcsyp" path="res://Assets/Custom/Sprites/Talia.png" id="17_10a58"]
+[ext_resource type="Texture2D" uid="uid://b20ka352pbpa6" path="res://Assets/Custom/Sprites/Talia.png" id="17_10a58"]
 [ext_resource type="PackedScene" uid="uid://caur4c8x7r8ll" path="res://World Scene/UIs/InventoryDialogue.tscn" id="20_wi7a5"]
+[ext_resource type="Texture2D" uid="uid://bpl17gwn3b6ye" path="res://Assets/Custom/Light.png" id="22_d1aun"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_anu2d"]
 texture = ExtResource("2_ln8m6")
@@ -155,6 +156,10 @@ region = Rect2(96, 0, 48, 48)
 atlas = ExtResource("9_bflum")
 region = Rect2(144, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlqs2"]
+atlas = ExtResource("17_10a58")
+region = Rect2(0, 0, 16, 25)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bxftl"]
 animations = [{
 "frames": [{
@@ -234,7 +239,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("17_10a58")
+"texture": SubResource("AtlasTexture_wlqs2")
 }],
 "loop": true,
 "name": &"Talia",
@@ -344,7 +349,7 @@ text = "🔊"
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bxftl")
-animation = &"Croak"
+animation = &"Talia"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -409,7 +414,17 @@ visible = false
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_2vnga")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+[node name="ShadowRealm" type="PointLight2D" parent="."]
+z_index = 21
+texture_filter = 1
+position = Vector2(0, -1)
+scale = Vector2(1.5, 1.5)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("22_d1aun")
+texture_scale = 0.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

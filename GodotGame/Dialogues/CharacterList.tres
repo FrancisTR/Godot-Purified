@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="1_2cgx6"]
 [ext_resource type="Texture2D" uid="uid://cuidqfb00toq7" path="res://Assets/Custom/Sprites/MC.png" id="1_jnr02"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_p0fqg"]
-[ext_resource type="Texture2D" uid="uid://dve4o0brcsyp" path="res://Assets/Custom/Sprites/Talia.png" id="3_ofust"]
+[ext_resource type="Texture2D" uid="uid://b20ka352pbpa6" path="res://Assets/Custom/Sprites/Talia.png" id="3_ofust"]
 [ext_resource type="Texture2D" uid="uid://djx5rl7iobm8m" path="res://Assets/Custom/Sprites/Danny.png" id="4_0a2qj"]
 [ext_resource type="Texture2D" uid="uid://d2fnbceys5gli" path="res://Assets/Custom/Sprites/Barry.png" id="4_17g0i"]
 [ext_resource type="Texture2D" uid="uid://cdrpnr6p77usy" path="res://Assets/Custom/Sprites/Croak.png" id="5_6rik2"]

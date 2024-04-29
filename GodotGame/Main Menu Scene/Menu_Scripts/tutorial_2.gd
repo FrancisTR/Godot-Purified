@@ -16,6 +16,7 @@ func _ready():
 	$DisplayControls/Movement/Down/Label.text = $DisplayControls/OptionsHidden/RemapContainer/DownMapButton.text.replace("*", "")
 	$DisplayControls/Movement/Left/Label.text = $DisplayControls/OptionsHidden/RemapContainer/LeftMapButton.text.replace("*", "")
 	$DisplayControls/Movement/Right/Label.text = $DisplayControls/OptionsHidden/RemapContainer/RightMapButton.text.replace("*", "")
+	$DisplayControls/Movement/Shift/Label.text = $DisplayControls/OptionsHidden/RemapContainer/SprintButton.text.replace("*", "")
 	
 	#Map
 	$DisplayControls/Map/MapKey/Label.text = $DisplayControls/OptionsHidden/RemapContainer/MapButton.text.replace("*", "")
