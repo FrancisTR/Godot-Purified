@@ -88,15 +88,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_68151")
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.65098, 0.545098, 1, 1)
-
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -444.0
+offset_bottom = 428.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_k7iqa")
@@ -254,17 +253,18 @@ expand_mode = 1
 
 [node name="Controls" parent="." instance=ExtResource("7_co0o4")]
 visible = false
+layout_mode = 1
 
-[node name="background" parent="Controls" index="0"]
+[node name="background" parent="Controls" index="1"]
 visible = false
 
-[node name="OptionsTitle" parent="Controls" index="1"]
+[node name="OptionsTitle" parent="Controls" index="2"]
 visible = false
 
-[node name="HotkeyLabel" parent="Controls" index="2"]
+[node name="HotkeyLabel" parent="Controls" index="3"]
 visible = false
 
-[node name="RemapContainer" parent="Controls" index="3"]
+[node name="RemapContainer" parent="Controls" index="4"]
 offset_left = 99.0
 offset_top = -10.0
 offset_right = 28.0
@@ -274,13 +274,13 @@ offset_bottom = -246.0
 offset_top = 274.0
 offset_bottom = 342.0
 
-[node name="SfxSlider" parent="Controls" index="4"]
+[node name="SfxSlider" parent="Controls" index="5"]
 visible = false
 
-[node name="MusicSlider" parent="Controls" index="5"]
+[node name="MusicSlider" parent="Controls" index="6"]
 visible = false
 
-[node name="BackButton" parent="Controls" index="6"]
+[node name="BackButton" parent="Controls" index="7"]
 visible = false
 
 [connection signal="dialogue_ended" from="Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_ended"]

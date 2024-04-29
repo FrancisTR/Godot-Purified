@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b20ka352pbpa6"
-path="res://.godot/imported/Talia.png-6775a3cb999bb1ff5cb35cb6d4292419.ctex"
+uid="uid://d2av3w2reug1r"
+path="res://.godot/imported/Bush.png-f0e83d71ab308739b9e2ec30817ec8c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Custom/Sprites/Talia.png"
-dest_files=["res://.godot/imported/Talia.png-6775a3cb999bb1ff5cb35cb6d4292419.ctex"]
+source_file="res://Assets/Custom/Terrain/Bush.png"
+dest_files=["res://.godot/imported/Bush.png-f0e83d71ab308739b9e2ec30817ec8c7.ctex"]
 
 [params]
 
