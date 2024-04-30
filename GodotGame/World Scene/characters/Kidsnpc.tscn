@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dxg6ebn820xt1"]
+[gd_scene load_steps=31 format=3 uid="uid://dxg6ebn820xt1"]
 
 [ext_resource type="Script" path="res://World Scene/characters/Kidsnpc.gd" id="1_p5sut"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_o6to7"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cu1adewyhpbwa" path="res://Assets/Custom/Sprites/LLE_1-2.png" id="8_rhqp1"]
 [ext_resource type="Texture2D" uid="uid://dyqj26prpkdqw" path="res://Assets/UISprites/UI_Flat_Frame_02_Lite.png" id="9_ce37l"]
 [ext_resource type="Texture2D" uid="uid://dw04cpaod6bun" path="res://Assets/Custom/temp_frog_icon.png" id="10_emek8"]
+[ext_resource type="Texture2D" uid="uid://d0rtr7ojbum5p" path="res://Assets/Custom/Shadow.png" id="11_di1u7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxqgd"]
 texture = ExtResource("2_o6to7")
@@ -243,12 +244,14 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_lj5br")
 text = "🔊"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 texture_filter = 1
 scale = Vector2(1.8, 1.8)
 sprite_frames = SubResource("SpriteFrames_bxftl")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
 shape = SubResource("RectangleShape2D_bc547")
 
 [node name="PressForDialogue" type="Label" parent="."]
@@ -263,6 +266,14 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_gxj27")
 text = "Q"
 horizontal_alignment = 1
+
+[node name="Shadow" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = -64.0
+offset_top = 2.0
+offset_right = 64.0
+offset_bottom = 34.0
+texture = ExtResource("11_di1u7")
 
 [node name="MapIcon" type="TextureRect" parent="."]
 visible = false

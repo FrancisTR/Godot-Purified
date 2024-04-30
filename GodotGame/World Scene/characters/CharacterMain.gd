@@ -51,7 +51,7 @@ func _physics_process(delta):
 	
 	if GameData.charLock == false:
 		if Input.is_action_pressed("Sprint"):
-			SPEED = 200
+			SPEED = 240
 			if ($Camera2D.zoom.x >= 1.3 and $Camera2D.zoom.x >= 1.3):
 				$Camera2D.zoom.x = $Camera2D.zoom.x - .010
 				$Camera2D.zoom.y = $Camera2D.zoom.y - .010

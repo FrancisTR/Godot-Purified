@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://diui2nk1yp3cq"]
+[gd_scene load_steps=7 format=3 uid="uid://diui2nk1yp3cq"]
 
 [ext_resource type="Script" path="res://World Scene/Items/rock.gd" id="1_xjxqt"]
 [ext_resource type="Texture2D" uid="uid://cv7ro4482d0rx" path="res://Assets/Custom/Items/Rock.png" id="2_bj4pa"]
 [ext_resource type="Texture2D" uid="uid://bpl17gwn3b6ye" path="res://Assets/Custom/Light.png" id="3_b3dos"]
+[ext_resource type="Texture2D" uid="uid://d0rtr7ojbum5p" path="res://Assets/Custom/Shadow.png" id="4_tngcg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vukrq"]
 size = Vector2(7.33333, 5)
@@ -23,11 +24,13 @@ z_index = 1
 script = ExtResource("1_xjxqt")
 
 [node name="RockCollisionShape" type="CollisionShape2D" parent="."]
+z_index = 1
 position = Vector2(-2.38419e-07, 1.5)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_vukrq")
 
 [node name="RockSprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_5gstm")
@@ -44,5 +47,13 @@ shadow_filter = 1
 shadow_filter_smooth = 3.0
 texture = ExtResource("3_b3dos")
 texture_scale = 0.5
+
+[node name="Shadow" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = -15.0
+offset_top = -3.0
+offset_right = 15.0
+offset_bottom = 15.0
+texture = ExtResource("4_tngcg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

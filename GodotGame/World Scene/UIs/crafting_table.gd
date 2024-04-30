@@ -1,6 +1,7 @@
 extends Node2D
 
 var enterBody = false
+var CTtype = "" # Two different crafting tables
 
 
 var craftingList:Dictionary
@@ -29,6 +30,7 @@ var listValues
 
 
 func _ready():
+	$PressInteraction.text = InputMap.action_get_events("Interaction")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
 	$UI/CraftingList.visible = false
 	
 	#TODO Add crafting recipes
@@ -59,8 +61,8 @@ func _process(delta):
 		listKeys = craftingList.keys()
 		listValues = craftingList.values()
 		ItemOfTheDay = "ReverseOsmosis"
-		$UI/CraftingList/ShowItemCrafted/ItemHint.texture = load("res://Assets/Custom/Items/BoilingPotHidden.png")
-		itemImage = load("res://Assets/Custom/Items/BoilingPot.png")
+		#$UI/CraftingList/ShowItemCrafted/ItemHint.texture = load("res://Assets/Custom/Items/BoilingPotHidden.png")
+		itemImage = load("res://Assets/Custom/Items/RO.png")
 	
 	if ((GameData.day == 7 and GameData.villagersTalked[6]["Talked"] == false) or GameData.day == 10):
 		$UI/CraftingList/CraftButton.visible = false
@@ -103,25 +105,33 @@ func _process(delta):
 			return
 		GameData.charLock = true
 		GameData.current_ui = "Crafting"
-		$UI/CraftingList.visible = true
-		$PressInteraction.visible = false
-		#Enable the crafting button if met
-		listKeys = craftingList.keys()
-		listValues = craftingList.values()
-		var count = 0
 		
-		#See if there are enough items to craft. If so, show craft button
-		for i in range(0, len(listKeys)):
-			if (GameData.inventory_amount.keys().find(listKeys[i]) != -1):
-				if GameData.inventory_amount[listKeys[i]] >= craftingList[listKeys[i]]:
-					count = count + 1
-			
-		if count == len(listKeys):
-			$UI/CraftingList/CraftButton.disabled = false
+		
+		#If it is the old man crafting bench, prompt to not use it until it is the right time
+		if CTtype == "CraftingTablePRIME" and GameData.day != 7:
+			$UI/OldMan.visible = true
+			$PressInteraction.visible = false
 		else:
-			$UI/CraftingList/CraftButton.disabled = true
-		
-
+			$UI/CraftingList.visible = true
+			$PressInteraction.visible = false
+			#Enable the crafting button if met
+			listKeys = craftingList.keys()
+			listValues = craftingList.values()
+			var count = 0
+			
+			#See if there are enough items to craft. If so, show craft button
+			for i in range(0, len(listKeys)):
+				if (GameData.inventory_amount.keys().find(listKeys[i]) != -1):
+					if GameData.inventory_amount[listKeys[i]] >= craftingList[listKeys[i]]:
+						count = count + 1
+				
+			if count == len(listKeys):
+				$UI/CraftingList/CraftButton.disabled = false
+			else:
+				$UI/CraftingList/CraftButton.disabled = true
+			
+			
+			
 
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
@@ -129,6 +139,7 @@ func _on_body_entered(body):
 		$PressInteraction.visible = true
 		$UI/CraftingList.visible = false
 		enterBody = true
+		CTtype = self.name
 
 
 
@@ -136,6 +147,7 @@ func _on_body_exited(body):
 	if (body.name == "CharacterBody2D"):
 		$PressInteraction.visible = false
 		$UI/CraftingList.visible = false
+		$UI/OldMan.visible = false
 		enterBody = false
 		print("Exit crafting")
 		GameData.current_ui = ""
@@ -168,6 +180,7 @@ func _on_craft_button_pressed():
 
 func _on_okay_button_pressed():
 	$UI/CraftedItem.visible = false
+	$UI/OldMan.visible = false
 	SoundControl.is_playing_sound("button")
 	GameData.charLock = false
 	GameData.current_ui = ""

@@ -897,243 +897,353 @@ shadow_filter_smooth = 3.0
 texture = ExtResource("9_k1gro")
 texture_scale = 0.5
 
-[node name="Bush" type="Sprite2D" parent="Other"]
+[node name="Bush2" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(-67, -388)
+texture_filter = 1
+offset_left = -499.0
+offset_top = -610.0
+offset_right = -435.0
+offset_bottom = -546.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush2" type="Sprite2D" parent="Other"]
+[node name="Bush3" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(-312, -365)
+texture_filter = 1
+offset_left = -186.0
+offset_top = -554.0
+offset_right = -122.0
+offset_bottom = -490.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush3" type="Sprite2D" parent="Other"]
+[node name="Bush4" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(68, -345)
+texture_filter = 1
+offset_left = 77.0
+offset_top = -519.0
+offset_right = 141.0
+offset_bottom = -455.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush4" type="Sprite2D" parent="Other"]
+[node name="Bush5" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(355, -362)
+texture_filter = 1
+offset_left = 357.0
+offset_top = -579.0
+offset_right = 421.0
+offset_bottom = -515.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush5" type="Sprite2D" parent="Other"]
+[node name="Bush7" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(614, -399)
+texture_filter = 1
+offset_left = 615.0
+offset_top = -511.0
+offset_right = 679.0
+offset_bottom = -447.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush6" type="Sprite2D" parent="Other"]
+[node name="Bush8" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(881, -399)
+texture_filter = 1
+offset_left = 800.0
+offset_top = -330.0
+offset_right = 864.0
+offset_bottom = -266.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush7" type="Sprite2D" parent="Other"]
+[node name="Bush9" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(877, -345)
+texture_filter = 1
+offset_left = 794.0
+offset_top = -158.0
+offset_right = 858.0
+offset_bottom = -94.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush8" type="Sprite2D" parent="Other"]
+[node name="Bush11" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(1055, -168)
+texture_filter = 1
+offset_left = 791.0
+offset_top = 30.0
+offset_right = 855.0
+offset_bottom = 94.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush9" type="Sprite2D" parent="Other"]
+[node name="Bush12" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(1056, 8)
+texture_filter = 1
+offset_left = 789.0
+offset_top = 207.0
+offset_right = 853.0
+offset_bottom = 271.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush10" type="Sprite2D" parent="Other"]
+[node name="Bush13" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(1186, -100)
+texture_filter = 1
+offset_left = 783.0
+offset_top = 395.0
+offset_right = 847.0
+offset_bottom = 459.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush11" type="Sprite2D" parent="Other"]
+[node name="Bush14" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(1053, 196)
+texture_filter = 1
+offset_left = 452.0
+offset_top = 519.0
+offset_right = 516.0
+offset_bottom = 583.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush12" type="Sprite2D" parent="Other"]
+[node name="Bush15" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(1051, 373)
+texture_filter = 1
+offset_left = 198.0
+offset_top = 517.0
+offset_right = 262.0
+offset_bottom = 581.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush13" type="Sprite2D" parent="Other"]
+[node name="Bush18" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(1045, 561)
+texture_filter = 1
+offset_left = 1002.0
+offset_top = 373.0
+offset_right = 1066.0
+offset_bottom = 437.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush14" type="Sprite2D" parent="Other"]
+[node name="Bush19" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(762, 694)
+texture_filter = 1
+offset_left = 1012.0
+offset_top = 98.0
+offset_right = 1076.0
+offset_bottom = 162.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush15" type="Sprite2D" parent="Other"]
+[node name="Bush20" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(455, 691)
+texture_filter = 1
+offset_left = 899.0
+offset_top = -590.0
+offset_right = 963.0
+offset_bottom = -526.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush16" type="Sprite2D" parent="Other"]
+[node name="Bush21" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(650, 745)
+texture_filter = 1
+offset_left = 1058.0
+offset_top = -397.0
+offset_right = 1122.0
+offset_bottom = -333.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush17" type="Sprite2D" parent="Other"]
+[node name="Bush41" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(972, 798)
+texture_filter = 1
+offset_left = 1032.0
+offset_top = -168.0
+offset_right = 1096.0
+offset_bottom = -104.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush18" type="Sprite2D" parent="Other"]
+[node name="Bush22" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(1170, 503)
+texture_filter = 1
+offset_left = -727.0
+offset_top = -313.0
+offset_right = -663.0
+offset_bottom = -249.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush19" type="Sprite2D" parent="Other"]
+[node name="Bush23" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(1188, 290)
+texture_filter = 1
+offset_left = -763.0
+offset_top = -92.0
+offset_right = -699.0
+offset_bottom = -28.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush20" type="Sprite2D" parent="Other"]
+[node name="Bush24" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(1177, 82)
+texture_filter = 1
+offset_left = -452.0
+offset_top = 20.0
+offset_right = -388.0
+offset_bottom = 84.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush21" type="Sprite2D" parent="Other"]
+[node name="Bush25" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(1144, -331)
+texture_filter = 1
+offset_left = -731.0
+offset_top = 162.0
+offset_right = -667.0
+offset_bottom = 226.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush22" type="Sprite2D" parent="Other"]
+[node name="Bush26" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(-465, -147)
+texture_filter = 1
+offset_left = -467.0
+offset_top = -437.0
+offset_right = -403.0
+offset_bottom = -373.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush23" type="Sprite2D" parent="Other"]
+[node name="Bush27" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(-501, 74)
+texture_filter = 1
+offset_left = -429.0
+offset_top = 238.0
+offset_right = -365.0
+offset_bottom = 302.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush24" type="Sprite2D" parent="Other"]
+[node name="Bush29" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(-295, 212)
+texture_filter = 1
+offset_left = -427.0
+offset_top = 402.0
+offset_right = -363.0
+offset_bottom = 466.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush25" type="Sprite2D" parent="Other"]
+[node name="Bush30" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(-167, 210)
+texture_filter = 1
+offset_left = -723.0
+offset_top = 364.0
+offset_right = -659.0
+offset_bottom = 428.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush26" type="Sprite2D" parent="Other"]
+[node name="Bush31" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(-205, -271)
+texture_filter = 1
+offset_left = -429.0
+offset_top = 599.0
+offset_right = -365.0
+offset_bottom = 663.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush27" type="Sprite2D" parent="Other"]
+[node name="Bush32" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(-167, 404)
+texture_filter = 1
+offset_left = -714.0
+offset_top = 587.0
+offset_right = -650.0
+offset_bottom = 651.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush28" type="Sprite2D" parent="Other"]
+[node name="Bush33" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(-399, 318)
+texture_filter = 1
+offset_left = -242.0
+offset_top = 809.0
+offset_right = -178.0
+offset_bottom = 873.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush29" type="Sprite2D" parent="Other"]
+[node name="Bush34" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(-175, 580)
+texture_filter = 1
+offset_left = -32.0
+offset_top = 802.0
+offset_right = 32.0
+offset_bottom = 866.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush30" type="Sprite2D" parent="Other"]
+[node name="Bush35" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(-405, 533)
+texture_filter = 1
+offset_left = 179.0
+offset_top = 701.0
+offset_right = 243.0
+offset_bottom = 765.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush31" type="Sprite2D" parent="Other"]
+[node name="Bush36" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(-167, 763)
+texture_filter = 1
+offset_left = -457.0
+offset_top = 819.0
+offset_right = -393.0
+offset_bottom = 883.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush32" type="Sprite2D" parent="Other"]
+[node name="Bush37" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(-396, 748)
+texture_filter = 1
+offset_left = -697.0
+offset_top = 821.0
+offset_right = -633.0
+offset_bottom = 885.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush33" type="Sprite2D" parent="Other"]
+[node name="Bush38" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(20, 975)
+texture_filter = 1
+offset_left = 424.0
+offset_top = 784.0
+offset_right = 488.0
+offset_bottom = 848.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush34" type="Sprite2D" parent="Other"]
+[node name="Bush39" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(230, 968)
+texture_filter = 1
+offset_left = 691.0
+offset_top = 654.0
+offset_right = 755.0
+offset_bottom = 718.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
-[node name="Bush35" type="Sprite2D" parent="Other"]
+[node name="Bush40" type="TextureRect" parent="Other"]
 z_index = 4
-position = Vector2(441, 867)
-scale = Vector2(8.12109, 5.58984)
-texture = ExtResource("9_w4ugj")
-
-[node name="Bush36" type="Sprite2D" parent="Other"]
-z_index = 4
-position = Vector2(-230, 990)
-scale = Vector2(8.12109, 5.58984)
-texture = ExtResource("9_w4ugj")
-
-[node name="Bush37" type="Sprite2D" parent="Other"]
-z_index = 4
-position = Vector2(-420, 987)
-scale = Vector2(8.12109, 5.58984)
-texture = ExtResource("9_w4ugj")
-
-[node name="Bush38" type="Sprite2D" parent="Other"]
-z_index = 4
-position = Vector2(686, 950)
-scale = Vector2(8.12109, 5.58984)
-texture = ExtResource("9_w4ugj")
-
-[node name="Bush39" type="Sprite2D" parent="Other"]
-z_index = 4
-position = Vector2(974, 961)
-scale = Vector2(8.12109, 5.58984)
-texture = ExtResource("9_w4ugj")
-
-[node name="Bush40" type="Sprite2D" parent="Other"]
-z_index = 4
-position = Vector2(1215, 771)
+texture_filter = 1
+offset_left = 974.0
+offset_top = 611.0
+offset_right = 1038.0
+offset_bottom = 675.0
 scale = Vector2(8.12109, 5.58984)
 texture = ExtResource("9_w4ugj")
 
@@ -1181,6 +1291,12 @@ scale = Vector2(0.7, 0.7)
 
 [node name="CollisionShape2D" parent="NPC/Talia/StaticBody2D" index="0"]
 scale = Vector2(0.7, 0.7)
+
+[node name="Shadow" parent="NPC/Talia" index="9"]
+offset_left = -14.2857
+offset_top = 22.8572
+offset_right = 13.7143
+offset_bottom = 38.8572
 
 [node name="Rock" parent="." instance=ExtResource("11_bpfea")]
 position = Vector2(142, 643)
@@ -1305,6 +1421,18 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 100.0
 offset_bottom = 55.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ToRun" type="Label" parent="DisplayControls/Movement"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 321.0
+offset_top = 24.0
+offset_right = 469.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 30
+text = "Hold to Run!"
 horizontal_alignment = 1
 vertical_alignment = 1
 

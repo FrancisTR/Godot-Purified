@@ -193,6 +193,7 @@ func _on_open_map():
 	$"Map/Village Exit".show()
 	#for i in range(0, len(npcs)):
 		#npcs[i].show_map_icon()
+		
 	#TODO Edit based on the day's dialogue
 	for npc in npcs:
 		npc.show_map_icon()
