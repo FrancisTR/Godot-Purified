@@ -1,6 +1,20 @@
 extends Node2D
 
 var signal_method = ""
+var tin_can_scene = preload("res://World Scene/Items/TinCan.tscn")
+var bottle_scene = preload("res://World Scene/Items/WaterBottle.tscn")
+var rock_scene = preload("res://World Scene/Items/rock.tscn")
+var twig_scene = preload("res://World Scene/Items/twig.tscn")
+var sand_scene = preload("res://World Scene/Items/sand.tscn")
+var moss_scene = preload("res://World Scene/Items/Moss.tscn")
+var scenes = {
+	"TinCan": tin_can_scene,
+	"WaterBottle": bottle_scene,
+	"rock": rock_scene,
+	"twig": twig_scene,
+	"sand": sand_scene,
+	"Moss": moss_scene
+}
 
 
 # Called when the node enters the scene tree for the first time.
@@ -50,7 +64,9 @@ func _ready():
 
 
 	#add item spawns
-	inst(GameData.itemSpawns)
+	#inst(GameData.itemSpawns)
+	inst_json(Utils.static_items_json)
+	inst_json(Utils.non_static_items_json)
 
 
 func _process(delta):
@@ -75,9 +91,20 @@ func inst(items):
 			var instance = items[i]["Item"].instantiate()
 			instance.position = Vector2(items[i]["posX"], items[i]["posY"])
 			add_child(instance)
-		
-	
 
+func inst_json(item_json):
+	var count = 0
+	for item in item_json:
+		var instance = scenes[item.Item].instantiate()
+		var index = GameData.day-1
+		if item.Item == "sand" or item.Item == "Moss":
+			index = 0
+		if item.Position[index].posX != -9999 and item.Position[index].posY != -9999:
+			count+=1
+			instance.position = Vector2(item.Position[index].posX, item.Position[index].posY)
+			add_child(instance)
+	print("spawned in ", count, " items")
+	
 func increase_day(amount):
 	if(GameData.day+amount > 0):
 		GameData.day += amount
@@ -114,3 +141,76 @@ func _on_open_map():
 func _on_close_map():
 	$Other/CharacterBody2D.hide_map_icon()
 	$"Map/Wilderness Exit".hide()
+
+
+func _on_item_placer_pos_test():
+	if $PseudoItems.get_child_count()==0:
+		make_pseudo_instance()
+	else:
+		var W = false
+		for child in $PseudoItems.get_children():
+			#print(child.name, "vs", $"Item Placer/ItemPlacer".current_pseudo)
+			if child.name == $"Item Placer/ItemPlacer".current_pseudo:
+				child.position = get_local_mouse_position().floor()
+				var pseudo_item = GameData.pseudo_items[GameData.pseudo_items.find(child)]
+				print("this you? ", pseudo_item, " at ", GameData.pseudo_items.find(child))
+				pseudo_item.position = get_local_mouse_position().floor()
+				print("Moved ", child, " to ", pseudo_item.position)
+				W = true
+				return
+		if not W:
+			#print("made it again no way")
+			make_pseudo_instance()
+			#print($PseudoItems.get_children())
+			#ACTUALLY MAKE IT OR IT DOESNT WORK
+func make_pseudo_instance():
+	var current_pseudo = $"Item Placer/ItemPlacer".current_pseudo
+	var scene = $"Item Placer/ItemPlacer".pseudo_scenes[int(current_pseudo.split("$")[0])]
+	var instance = scene.instantiate()
+	#instance.position = Vector2(944.6924, -689.1538)
+	instance.position = get_local_mouse_position().floor()
+	instance.name = current_pseudo
+	instance.modulate = Color(0,1,1,0.5)
+	#GameData.pseudo_items.get()
+	$PseudoItems.add_child(instance)
+	#print(GameData.pseudo_items.find(instance))
+	print($PseudoItems.get_child($PseudoItems.get_children().find(instance)), " kkkkk ", instance)
+	GameData.pseudo_items.append(instance)
+	#print(instance.name)
+	#print($PseudoItems.get_children())
+	#print("made child")
+
+func _on_send_to_shadow_realm():
+	for child in $PseudoItems.get_children():
+		if child.name == $"Item Placer/ItemPlacer".current_pseudo:
+			#child.position = get_local_mouse_position()
+			child.position = Vector2(-9999, -9999)
+			return
+
+func _on_reset_pressed():
+	for child in $PseudoItems.get_children():
+		if child.name == $"Item Placer/ItemPlacer".current_pseudo:
+			var item_index = int(child.name.split("$")[0])
+			var item_id = int(child.name.split("$")[1])
+			var day = int(child.name.split("$")[2])
+			var offset = 14 * item_index
+			Utils.non_static_items_json
+			var x = Utils.non_static_items_json[item_id+offset].Position[day-1].posX
+			var y = Utils.non_static_items_json[item_id+offset].Position[day-1].posY
+			child.position = Vector2(x, y)
+			return
+
+				
+var dev_flag = false
+func _on_toggle_dev_tool():
+	$Other/CharacterBody2D.velocity = Vector2(0, 0)
+	if $"Item Placer/ItemPlacer".dev_mode:
+		if not dev_flag:
+			#dev_flag = true
+			$"Item Placer/ItemPlacer".set_camera_position($Other/CharacterBody2D.position)
+		$"Item Placer".show()
+		$PseudoItems.show()
+	else:
+		$Other/CharacterBody2D.set_to_player_camera()
+		$"Item Placer".hide()
+		$PseudoItems.hide()

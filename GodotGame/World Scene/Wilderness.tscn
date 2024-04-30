@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://caurrpk58l40x"]
+[gd_scene load_steps=35 format=3 uid="uid://caurrpk58l40x"]
 
 [ext_resource type="Script" path="res://World Scene/Wilderness.gd" id="1_4k4yr"]
 [ext_resource type="PackedScene" uid="uid://crmshmhby6akr" path="res://World Scene/characters/CharacterMain.tscn" id="2_2eck0"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c6hwlxo0donf6" path="res://Assets/Custom/Terrain/Fence.png" id="11_ma0v7"]
 [ext_resource type="Texture2D" uid="uid://cvu5fwe10f7hh" path="res://Assets/UISprites/UI_Flat_Banner_02_Downward.png" id="11_ns2vr"]
 [ext_resource type="PackedScene" uid="uid://0nmlup6yvr84" path="res://World Scene/UIs/crafting_table.tscn" id="12_hu71a"]
+[ext_resource type="PackedScene" uid="uid://cg3b56oecuhh6" path="res://World Scene/UIs/item_placer.tscn" id="19_oi3mi"]
 [ext_resource type="PackedScene" uid="uid://dxg6ebn820xt1" path="res://World Scene/characters/Kidsnpc.tscn" id="21_e2yvs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5djji"]
@@ -1053,6 +1054,12 @@ offset_top = 552.0
 offset_right = 180.0
 offset_bottom = 633.0
 
+[node name="Item Placer" type="CanvasLayer" parent="."]
+layer = 4
+visible = false
+
+[node name="ItemPlacer" parent="Item Placer" instance=ExtResource("19_oi3mi")]
+
 [node name="Other" type="Node" parent="."]
 
 [node name="ToVillage" parent="Other" instance=ExtResource("11_fw73a")]
@@ -1068,9 +1075,16 @@ position = Vector2(887, -743)
 [node name="KidsNPC" parent="." instance=ExtResource("21_e2yvs")]
 position = Vector2(889, -922)
 
+[node name="PseudoItems" type="Node2D" parent="."]
+visible = false
+
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]
 [connection signal="leave_village" from="UI/LeaveVillage" to="." method="_on_leave_village"]
+[connection signal="pos_test" from="Item Placer/ItemPlacer" to="." method="_on_item_placer_pos_test"]
+[connection signal="reset_pressed" from="Item Placer/ItemPlacer" to="." method="_on_reset_pressed"]
+[connection signal="send_to_shadow_realm" from="Item Placer/ItemPlacer" to="." method="_on_send_to_shadow_realm"]
+[connection signal="toggle_dev_tool" from="Item Placer/ItemPlacer" to="." method="_on_toggle_dev_tool"]
 [connection signal="close_map" from="Other/CharacterBody2D" to="." method="_on_close_map"]
 [connection signal="open_map" from="Other/CharacterBody2D" to="." method="_on_open_map"]
 
