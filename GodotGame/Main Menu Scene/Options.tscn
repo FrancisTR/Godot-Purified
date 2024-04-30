@@ -179,12 +179,22 @@ modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6d00w"]
 
-[node name="EnterOptions" type="CanvasLayer"]
+[node name="EnterOptions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_pejof")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.815686, 0.776471, 1, 1)
 
 [node name="background" type="TextureRect" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_uxrat")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -193,6 +203,7 @@ grow_vertical = 2
 
 [node name="OptionsTitle" type="Label" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 7.0
 offset_top = 8.0
 offset_right = 261.0
@@ -208,15 +219,16 @@ vertical_alignment = 1
 
 [node name="HotkeyLabel" type="RichTextLabel" parent="."]
 texture_filter = 1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -510.0
-offset_top = -158.0
-offset_right = -257.0
-offset_bottom = -103.0
+offset_left = -496.0
+offset_top = -147.0
+offset_right = -243.0
+offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 35
@@ -225,7 +237,7 @@ text = "[center]Key shortcuts: "
 
 [node name="RemapContainer" type="Control" parent="."]
 texture_filter = 1
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -506,10 +518,10 @@ autowrap_mode = 2
 [node name="BackButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
-offset_left = 453.0
-offset_top = 304.0
-offset_right = 607.0
-offset_bottom = 372.0
+offset_left = 569.0
+offset_top = 281.0
+offset_right = 723.0
+offset_bottom = 365.0
 scale = Vector2(1.1, 1.1)
 focus_neighbor_bottom = NodePath("../../SfxSlider")
 focus_next = NodePath("../../SfxSlider")
@@ -550,7 +562,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "..."
 autowrap_mode = 2
 
-[node name="DialogueButton" type="Button" parent="RemapContainer"]
+[node name="InteractionButton" type="Button" parent="RemapContainer"]
 texture_filter = 1
 layout_mode = 2
 offset_left = 800.0
@@ -580,9 +592,56 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_outdn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_gafpo")
 text = "Q"
 script = ExtResource("3_sdtpu")
-action = "StartDialogue"
+action = "Interaction"
 
-[node name="HintLabel" type="Label" parent="RemapContainer/DialogueButton"]
+[node name="HintLabel" type="Label" parent="RemapContainer/InteractionButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 13.6363
+offset_top = 6.36364
+offset_right = -7.36366
+offset_bottom = 29.3636
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "..."
+autowrap_mode = 2
+
+[node name="SprintButton" type="Button" parent="RemapContainer"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 337.0
+offset_top = 281.0
+offset_right = 491.0
+offset_bottom = 365.0
+scale = Vector2(1.1, 1.1)
+focus_neighbor_bottom = NodePath("../../SfxSlider")
+focus_next = NodePath("../../SfxSlider")
+focus_previous = NodePath("../DownMapButton")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_ritaw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iexoi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7safo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3hxp0")
+text = "Shift"
+script = ExtResource("3_sdtpu")
+action = "Sprint"
+
+[node name="HintLabel" type="Label" parent="RemapContainer/SprintButton"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 10
@@ -597,6 +656,7 @@ text = "..."
 autowrap_mode = 2
 
 [node name="SfxSlider" type="HSlider" parent="."]
+layout_mode = 0
 offset_left = 337.0
 offset_top = 417.0
 offset_right = 813.0
@@ -646,6 +706,7 @@ bbcode_enabled = true
 text = "[right]SFX Volume:"
 
 [node name="MusicSlider" type="HSlider" parent="."]
+layout_mode = 0
 offset_left = 337.0
 offset_top = 465.0
 offset_right = 813.0
@@ -695,6 +756,7 @@ text = "[right]Music Volume:"
 
 [node name="BackButton" type="Button" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 34.0
 offset_top = 511.0
 offset_right = 254.0
@@ -717,6 +779,7 @@ text = "Back"
 visible = false
 z_index = 999
 texture_filter = 1
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

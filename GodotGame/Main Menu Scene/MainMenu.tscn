@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c4dhom44jopn2"]
+[gd_scene load_steps=34 format=3 uid="uid://c4dhom44jopn2"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/MainMenu.gd" id="1_m2j1f"]
 [ext_resource type="Shader" path="res://Main Menu Scene/Menu_Scripts/MainMenu.gdshader" id="2_8nhj8"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="8_mma8u"]
 [ext_resource type="Texture2D" uid="uid://cv7ro4482d0rx" path="res://Assets/Custom/Items/Rock.png" id="8_qpv7g"]
 [ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="9_6oqwn"]
+[ext_resource type="Texture2D" uid="uid://bpl17gwn3b6ye" path="res://Assets/Custom/Light.png" id="12_yoial"]
 
 [sub_resource type="Gradient" id="Gradient_71jkj"]
 colors = PackedColorArray(0.964706, 0.592157, 0, 1, 0, 0.239216, 0, 1)
@@ -86,6 +87,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m2j1f")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.815686, 0.776471, 1, 1)
+
 [node name="Background" type="TextureRect" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_0r2iq")
@@ -122,6 +126,18 @@ offset_bottom = 523.0
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_a8gck")
 expand_mode = 1
+
+[node name="ShadowRealm" type="PointLight2D" parent="ImageDecoration/BoilingPot"]
+z_index = 21
+texture_filter = 1
+position = Vector2(124.667, 191.333)
+scale = Vector2(3, 3.686)
+color = Color(0.952941, 0.364706, 0, 1)
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("12_yoial")
+texture_scale = 0.5
 
 [node name="Bottle" type="TextureRect" parent="ImageDecoration"]
 texture_filter = 1

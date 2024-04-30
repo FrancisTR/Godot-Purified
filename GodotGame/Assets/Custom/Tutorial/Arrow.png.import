@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b20ka352pbpa6"
-path="res://.godot/imported/Talia.png-6775a3cb999bb1ff5cb35cb6d4292419.ctex"
+uid="uid://ya0djldgn61a"
+path="res://.godot/imported/Arrow.png-cf0e3482d097b9b9a0fb058d91be9f3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Custom/Sprites/Talia.png"
-dest_files=["res://.godot/imported/Talia.png-6775a3cb999bb1ff5cb35cb6d4292419.ctex"]
+source_file="res://Assets/Custom/Tutorial/Arrow.png"
+dest_files=["res://.godot/imported/Arrow.png-cf0e3482d097b9b9a0fb058d91be9f3d.ctex"]
 
 [params]
 

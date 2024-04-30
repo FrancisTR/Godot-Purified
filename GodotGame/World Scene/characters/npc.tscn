@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://decpyxnu3oocl"]
+[gd_scene load_steps=44 format=3 uid="uid://decpyxnu3oocl"]
 
 [ext_resource type="Script" path="res://World Scene/characters/npc.gd" id="1_7ll4o"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_kithy"]
@@ -19,10 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://djx5rl7iobm8m" path="res://Assets/Custom/Sprites/Danny.png" id="14_046bs"]
 [ext_resource type="Texture2D" uid="uid://borcws4ydxocc" path="res://Assets/Custom/Sprites/Derick.png" id="15_o5dh2"]
 [ext_resource type="Texture2D" uid="uid://cfxvp151wo3uq" path="res://Assets/Custom/Sprites/Old_Man.png" id="16_ee48p"]
-[ext_resource type="Texture2D" uid="uid://dve4o0brcsyp" path="res://Assets/Custom/Sprites/Talia.png" id="17_10a58"]
+[ext_resource type="Texture2D" uid="uid://b20ka352pbpa6" path="res://Assets/Custom/Sprites/Talia.png" id="17_10a58"]
 [ext_resource type="PackedScene" uid="uid://caur4c8x7r8ll" path="res://World Scene/UIs/InventoryDialogue.tscn" id="20_wi7a5"]
+[ext_resource type="Texture2D" uid="uid://bpl17gwn3b6ye" path="res://Assets/Custom/Light.png" id="22_d1aun"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqe2e"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_anu2d"]
 texture = ExtResource("2_ln8m6")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -30,7 +31,7 @@ texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5prp6"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1uh4l"]
 texture = ExtResource("2_ln8m6")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -38,7 +39,7 @@ texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0g45f"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sp2nr"]
 texture = ExtResource("3_vf4oi")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -47,9 +48,9 @@ texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
 [sub_resource type="Theme" id="Theme_q0h0h"]
-Button/styles/hover = SubResource("StyleBoxTexture_dqe2e")
-Button/styles/normal = SubResource("StyleBoxTexture_5prp6")
-Button/styles/pressed = SubResource("StyleBoxTexture_0g45f")
+Button/styles/hover = SubResource("StyleBoxTexture_anu2d")
+Button/styles/normal = SubResource("StyleBoxTexture_1uh4l")
+Button/styles/pressed = SubResource("StyleBoxTexture_sp2nr")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d61p"]
 bg_color = Color(0, 0.305882, 0.313726, 1)
@@ -155,6 +156,10 @@ region = Rect2(96, 0, 48, 48)
 atlas = ExtResource("9_bflum")
 region = Rect2(144, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlqs2"]
+atlas = ExtResource("17_10a58")
+region = Rect2(0, 0, 16, 25)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bxftl"]
 animations = [{
 "frames": [{
@@ -234,7 +239,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("17_10a58")
+"texture": SubResource("AtlasTexture_wlqs2")
 }],
 "loop": true,
 "name": &"Talia",
@@ -390,50 +395,18 @@ visible = false
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_2vnga")
 
-[node name="MapIcon" type="Node2D" parent="."]
-visible = false
 
-[node name="Outline" type="TextureRect" parent="MapIcon"]
-modulate = Color(100, 100, 100, 1)
-z_index = 999
-y_sort_enabled = true
+[node name="ShadowRealm" type="PointLight2D" parent="."]
+z_index = 21
 texture_filter = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -102.0
-offset_top = -108.0
-offset_right = -62.0
-offset_bottom = -66.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(5.2, 5.2)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("9_ilu2c")
-
-[node name="MapIconImg" type="TextureRect" parent="MapIcon"]
-z_index = 999
-y_sort_enabled = true
-texture_filter = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -98.0
-offset_top = -98.0
-offset_right = -58.0
-offset_bottom = -58.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(5, 5)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("9_ilu2c")
-metadata/_edit_lock_ = true
+position = Vector2(0, -1)
+scale = Vector2(1.5, 1.5)
+energy = 0.5
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("22_d1aun")
+texture_scale = 0.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

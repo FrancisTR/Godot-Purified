@@ -22,7 +22,7 @@ modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 LineEdit/colors/font_color = Color(1, 1, 1, 1)
 LineEdit/colors/font_outline_color = Color(0, 0.517647, 0.188235, 1)
 LineEdit/colors/font_placeholder_color = Color(0, 0.984314, 0.584314, 0.6)
-LineEdit/colors/font_selected_color = Color(0, 0.584314, 0.494118, 1)
+LineEdit/colors/font_selected_color = Color(0, 0.584314, 0.494118, 0.184314)
 LineEdit/colors/selection_color = Color(0, 0.584314, 0.494118, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ojnl"]
@@ -35,6 +35,8 @@ texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -271.0
+offset_bottom = 312.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_1rkhh")
@@ -121,12 +123,12 @@ grow_vertical = 2
 theme = SubResource("Theme_17mn5")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1ojnl")
 placeholder_text = "Enter Name"
-max_length = 30
+max_length = 20
 clear_button_enabled = true
 caret_blink = true
 caret_blink_interval = 0.34
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+[node name="RichTextLabel" type="Label" parent="TextureRect"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -140,8 +142,10 @@ offset_right = 178.0
 offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/font_size = 40
 text = "Enter your username"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
 [connection signal="text_changed" from="TextureRect/LineEdit" to="." method="_on_line_edit_text_changed"]

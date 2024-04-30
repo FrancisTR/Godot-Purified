@@ -7,7 +7,6 @@ signal leave_village
 @onready var BarryDestination = $NPCActions/BarryDestination/Marker2D.global_position
 #For player on Day 7
 @onready var PlayerDestination = $"../../Other/CharacterBody2D/Marker2D".global_position
-var specialLockDay7 = false #Only use this for Old man only
 var idxMovement = 0 #Use for movement on Day 7 Character
 
 var moving_speed = 200
@@ -23,10 +22,96 @@ var playerRuns = false
 var exclamation = load("res://Assets/Custom/UI_Exclamation_Mark_Plate.png")
 var question = load("res://Assets/Custom/UI_Question_Mark_Plate.png")
 
+#For the old man on day 7
+#This is a temp lock
+var oldManTempLock = false
+
+
+
+#Access the voices. Can activate Start, End, and Name
+#TODO adds voices
+#var dialogue_voices = [
+	##Days 1
+	#{	
+		##All Characters
+		#"Denial": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#],
+		#"Anger": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#],
+		#"Bargin": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#],
+		#"Depress": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#],
+		#"Accept": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#],
+		#"Croak": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#],
+		#"OldMan": [
+			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 7},
+		#]
+	#
+	#}
+#]
+#var dialogue_voiceSpecific
+#
+#var audioList = {
+	#"Main": "res://Sounds_and_Music/OST/Croak of the Fireflies.mp3",
+	#"Denial": "Test",
+	#"Anger": "Test",
+	#"Bargin": "Test",
+	#"Depress": "Test",
+	#"Accept": "Test",
+	#"Croak": "Test",
+	#"OldMan": "res://Sounds_and_Music/OST/Woodsy Labyrinth.mp3"
+#}
+#var load_audio
+#var audioCount = 0
+	
+
+
+
+
+
+
+
 func _ready():
 	NPCname = null
 	set_process_input(true)
-	$PressForDialogue.text = InputMap.action_get_events("StartDialogue")[0].as_text()
+	$PressForDialogue.text = InputMap.action_get_events("Interaction")[0].as_text()
 	
 	
 func go_pos(delta):
@@ -42,6 +127,7 @@ func go_pos(delta):
 		$"../../Other/CharacterBody2D".global_position = $"../../Other/CharacterBody2D".global_position.move_toward(PlayerDestination, delta*moving_speed)
 		$"../OldMan/FixedDialoguePosition/Voice".visible = false
 		#Hide all character img (TODO Depends on who ends the call)
+		$"../OldMan/FixedDialoguePosition/CharacterIMG".visible = false
 		$"../OldMan/FixedDialoguePosition/DialogueOpacity".visible = false
 		$FixedDialoguePosition/DialogueOpacity.visible = false
 		$"../../Other/CharacterBody2D/CollisionShape2D".disabled = true
@@ -69,7 +155,7 @@ func go_pos(delta):
 		
 		
 		emit_signal("leave_village")
-		GameData.QVillager = ""
+		GameData.QVillager = {}
 		#GameData.charLock = false
 		if GameData.inventory_amount.keys().find("Twig") != -1:
 			Utils.remove_from_inventory("Twig", int(GameData.inventory_amount["Twig"]))
@@ -164,9 +250,9 @@ func _process(delta):
 
 
 	#TODO: If all the requests has been listed, we then save the Qmain
-	if GameData.QMain.values().size() >= 1:
-		#Note that multiple requests is handled by the dialogue itself
-		dialogue_box.variables["QMain"] = true
+	#if GameData.QMain.values().size() >= 1:
+		##Note that multiple requests is handled by the dialogue itself
+		#dialogue_box.variables["QMain"] = true
 	
 	
 	dialogue_box.variables["Profit?"] = GameData.madeProfit
@@ -181,6 +267,7 @@ func _process(delta):
 	dialogue_box.variables["Rocks"] = GameData.itemDialogue[1]["Value"]
 	dialogue_box.variables["WaterBottle"] = GameData.itemDialogue[2]["Value"]
 	dialogue_box.variables["TinCans"] = GameData.itemDialogue[3]["Value"]
+	dialogue_box.variables["WaterFilter"] = GameData.itemDialogue[4]["Value"]
 	
 	#TODO: Get the day for the appropriate dialogue
 	if GameData.visitTutorial == true:
@@ -299,7 +386,52 @@ func _process(delta):
 		elif NPCname == "Accept":
 			dialogue_box.start_id = "Day7Negate"
 		elif NPCname == "OldMan":
-			dialogue_box.start_id = "OldMan7"
+			if GameData.inventory_amount.keys().find("ReverseOsmosis") == -1:
+				dialogue_box.start_id = "OldMan7"
+			else:
+				dialogue_box.start_id = "OldMan7FinishRO"
+	elif GameData.day == 8:
+		# Who is the player talking to?
+		if NPCname == "Denial":
+			dialogue_box.start_id = "Denial8"
+		elif NPCname == "Anger":
+			dialogue_box.start_id = "Anger8"
+		elif NPCname == "Bargin":
+			dialogue_box.start_id = "Bargin8"
+		elif NPCname == "Depress":
+			dialogue_box.start_id = "Depress8"
+		elif NPCname == "Accept":
+			dialogue_box.start_id = "Accept8"
+		elif NPCname == "OldMan":
+			dialogue_box.start_id = "OldMan8"
+	elif GameData.day == 9:
+		# Who is the player talking to?
+		if NPCname == "Denial":
+			dialogue_box.start_id = "Denial9"
+		elif NPCname == "Anger":
+			dialogue_box.start_id = "Anger9"
+		elif NPCname == "Bargin":
+			dialogue_box.start_id = "Bargin9"
+		elif NPCname == "Depress":
+			dialogue_box.start_id = "Depress9"
+		elif NPCname == "Accept":
+			dialogue_box.start_id = "Accept9"
+		elif NPCname == "OldMan":
+			dialogue_box.start_id = "OldMan9"
+	elif GameData.day == 10:
+		# Who is the player talking to?
+		if NPCname == "Denial":
+			dialogue_box.start_id = "Denial10"
+		elif NPCname == "Anger":
+			dialogue_box.start_id = "Anger10"
+		elif NPCname == "Bargin":
+			dialogue_box.start_id = "Bargin10"
+		elif NPCname == "Depress":
+			dialogue_box.start_id = "Depress10"
+		elif NPCname == "Accept":
+			dialogue_box.start_id = "Accept10"
+		elif NPCname == "OldMan":
+			dialogue_box.start_id = "OldMan10"
 			
 			
 		
@@ -308,7 +440,7 @@ func _process(delta):
 		go_pos(delta) #For barry
 	
 	
-	if Input.is_action_just_pressed("StartDialogue") and enterBody == true and specialLockDay7 == false:
+	if Input.is_action_just_pressed("Interaction") and enterBody == true:
 		#Focus the button that is visible on dialogue
 		#for option in dialogue_box.options.get_children():
 			#if option.visible:
@@ -323,70 +455,10 @@ func _process(delta):
 			$PressForDialogue.visible = false
 			$FixedDialoguePosition/CharacterIMG.visible = true
 			
-			#TODO
-			#Run the loop and check true that we talked to that villager
-			# This is for the requirement to leave the Day
-			#Note that for Croak, you must talk to Barry.
-			if GameData.day == 1 and GameData.visitTutorial == false:
-				if NPCname == "Croak" and GameData.villagersTalked[2]["Talked"] == true:
-					dialogue_box.variables[NPCname] = true
-					print(dialogue_box.variables)
-					for i in range(len(GameData.villagersTalked)):
-						if GameData.villagersTalked[i]["Name"] == NPCname:
-							GameData.villagersTalked[i]["Talked"] = true
-				
-				elif NPCname != "Croak":
-					dialogue_box.variables[NPCname] = true
-					print(dialogue_box.variables)
-					for i in range(len(GameData.villagersTalked)):
-						if GameData.villagersTalked[i]["Name"] == NPCname:
-							GameData.villagersTalked[i]["Talked"] = true
-			elif GameData.day == 4:
-				#Talk to the old man first
-				if (dialogue_box.variables["OldMan"] == true or NPCname == "OldMan"):
-					dialogue_box.variables[NPCname] = true
-					for i in range(len(GameData.villagersTalked)):
-						if GameData.villagersTalked[i]["Name"] == NPCname:
-							GameData.villagersTalked[i]["Talked"] = true
-			
-			
-			elif GameData.day == 5:
-				var counts = 0
-				for i in range(len(GameData.villagersTalked)):
-					if GameData.villagersTalked[i]["Talked"] == true:
-						counts = counts + 1
-				#We can talk to the old man if everyone has been talked to
-				#Talk to the old man first
-				if (GameData.villagersTalked[6]["Talked"] == false and counts == 5):
-					dialogue_box.variables[NPCname] = true
-					for i in range(len(GameData.villagersTalked)):
-						if GameData.villagersTalked[i]["Name"] == NPCname:
-							GameData.villagersTalked[i]["Talked"] = true
-				elif (NPCname != "OldMan" and (GameData.villagersTalked[0]["Talked"] == false or GameData.villagersTalked[1]["Talked"] == false or GameData.villagersTalked[2]["Talked"] == false or GameData.villagersTalked[4]["Talked"] == false or GameData.villagersTalked[5]["Talked"] == false)):
-					dialogue_box.variables[NPCname] = true
-					for i in range(len(GameData.villagersTalked)):
-						if GameData.villagersTalked[i]["Name"] == NPCname:
-							GameData.villagersTalked[i]["Talked"] = true
-			elif GameData.day == 7:
-				#Talk to the old man only
-				if (NPCname == "OldMan"):
-					dialogue_box.variables[NPCname] = true
-					for i in range(len(GameData.villagersTalked)):
-						if GameData.villagersTalked[i]["Name"] == NPCname:
-							GameData.villagersTalked[i]["Talked"] = true
-			
-			else:
-				print(NPCname)
-				dialogue_box.variables[NPCname] = true
-				#GameData.QWild = dialogue_box.variables["QWild"]
-				print(dialogue_box.variables)
-				for i in range(len(GameData.villagersTalked)):
-					if GameData.villagersTalked[i]["Name"] == NPCname:
-						GameData.villagersTalked[i]["Talked"] = true
 			
 			$FixedDialoguePosition/AnimationPlayer.play("Dialogue_popup")
 			dialogue_box.start()
-
+			print("Begin")
 			$FixedDialoguePosition/DialogueOpacity.visible = true
 			print(dialogue_box)
 	elif (not dialogue_box.running and enterBody == true):
@@ -448,13 +520,90 @@ func hide_notif():
 	$Notif.hide()
 
 func _on_dialogue_box_dialogue_ended():
+	#audioCount = 0 #Reset audio index
 	$FixedDialoguePosition/CharacterIMG.visible = false
-	#TODO: Quest stuff for the Main World
-	if (dialogue_box.variables["QMain"] == true and GameData.QVillager == ""):
+	
+	#TODO
+	#Run the loop and check true that we talked to that villager
+	# This is for the requirement to leave the Day
+	#Note that for Croak, you must talk to Barry.
+	if GameData.day == 1 and GameData.visitTutorial == false:
+		if NPCname == "Croak" and GameData.villagersTalked[2]["Talked"] == true:
+			dialogue_box.variables[NPCname] = true
+			print(dialogue_box.variables)
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
 		
+		elif NPCname != "Croak":
+			dialogue_box.variables[NPCname] = true
+			print(dialogue_box.variables)
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
+	elif GameData.day == 4:
+		#Talk to the old man first
+		if (dialogue_box.variables["OldMan"] == true or NPCname == "OldMan"):
+			dialogue_box.variables[NPCname] = true
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
+	
+	
+	elif GameData.day == 5:
+		var counts = 0
+		for i in range(len(GameData.villagersTalked)):
+			if GameData.villagersTalked[i]["Talked"] == true:
+				counts = counts + 1
+		#We can talk to the old man if everyone has been talked to
+		#Talk to the old man first
+		if (GameData.villagersTalked[6]["Talked"] == false and counts == 5):
+			dialogue_box.variables[NPCname] = true
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
+		elif (NPCname != "OldMan" and (GameData.villagersTalked[0]["Talked"] == false or GameData.villagersTalked[1]["Talked"] == false or GameData.villagersTalked[2]["Talked"] == false or GameData.villagersTalked[4]["Talked"] == false or GameData.villagersTalked[5]["Talked"] == false)):
+			dialogue_box.variables[NPCname] = true
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
+	elif GameData.day == 7:
+		#Talk to the old man only
+		if (NPCname == "OldMan"):
+			dialogue_box.variables[NPCname] = true
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
+	
+	
+	elif GameData.day == 10:
+		if (NPCname != "OldMan"):
+			dialogue_box.variables[NPCname] = true
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
+	else:
+		print(NPCname)
+		dialogue_box.variables[NPCname] = true
+		#GameData.QWild = dialogue_box.variables["QWild"]
+		print(dialogue_box.variables)
+		for i in range(len(GameData.villagersTalked)):
+			if GameData.villagersTalked[i]["Name"] == NPCname:
+				GameData.villagersTalked[i]["Talked"] = true
+	
+	
+	
+	
+	
+	
+	
+	#TODO: Quest stuff for the Main World
+	#GameData.inventory_amount.keys().find("WaterBottle") != -1
+	if (dialogue_box.variables["QMain"] == true and GameData.QVillager.keys().find(NPCname) == -1):
+		dialogue_box.variables["QMain"] = false
 		if GameData.QMain.keys().find(NPCname) == -1:
 			GameData.QMain[NPCname] = false 
-		GameData.QVillager = NPCname
+		GameData.QVillager[NPCname] = NPCname
 	if (dialogue_box.variables["Profit?"] == true):
 		GameData.madeProfit = true
 	if (dialogue_box.variables["Discount"] != ""):
@@ -466,25 +615,32 @@ func _on_dialogue_box_dialogue_ended():
 	if (NPCname == "OldMan" and GameData.day == 7 and GameData.inventory_amount.size() != 0):
 		if (GameData.inventory_amount.keys().find("WaterBottleSpecial") != -1 or GameData.inventory_amount.keys().find("BoilingPot") != -1 or GameData.inventory_amount.keys().find("WaterFilter") != -1):
 			print("Activate Union Hanger")
-			specialLockDay7 = true
 			$PressForDialogue.visible = false
 			#Draw the items to display on screen
 			#We allow the user to click on the item to learn more
 			$NPCActions/OldManInventory/InventoryDialogue.draw_items(GameData.inventory)
 			$NPCActions/OldManInventory.visible = true
-	elif (NPCname == "OldMan" and GameData.day == 7 and moving == false):
+			$FixedDialoguePosition/Voice.visible = true
+	elif (NPCname == "OldMan" and GameData.day == 7 and oldManTempLock == false):
 		#Continue with the dialogue
 		dialogue_box.start("OldMan7Finish")
 		GameData.charLock = true
 		GameData.current_ui = "dialogue"
 		$PressForDialogue.visible = false
 		$FixedDialoguePosition/CharacterIMG.visible = true
-	
+		$FixedDialoguePosition/Voice.visible = true
+		oldManTempLock = true #This can be reset, but should not affect anything
 	
 	
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
 	#TODO: Stop the voice recording if node proceeds
+	
+	#TODO: Set up the dialogue voices
+	SoundControl.dialogue_audio_stop() #Stop the audio if next dialogue
+	#if (audioCount < len(dialogue_voices[GameData.day - 1][NPCname])):
+		#dialogue_voiceSpecific = dialogue_voices[GameData.day - 1][NPCname][audioCount]
+	#audioCount += 1
 	
 	dialogue_box.custom_effects[0].skip = true
 	dialogue_box.show_options()
@@ -500,7 +656,12 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 			#Its the main character
 			idx = Utils.char_dict["Main"]
 		$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
-	
+
+
+
+
+
+
 func _on_dialogue_box_dialogue_signal(value):
 	if value == "BarryRun":
 		moving = true
@@ -508,35 +669,69 @@ func _on_dialogue_box_dialogue_signal(value):
 		moving = true
 		playerRuns = true
 		
+	#Game completion (Day 10 Ending)
+	if value == "FinishGame":
+		TextTransition.set_to_chained_click(
+			[
+				"The.",
+				"End."
+			],
+			"res://Main Menu Scene/intro_screen.tscn",
+			"Click To Continue"
+		)
+		SceneTransition.change_scene("res://Globals/text_transition.tscn")
+	
+	
+	
 	if value == "MainComplete":
 		#GameData.questComplete["Main"] = true
-		GameData.QMain[NPCname] = true
+		
+		#Remove the items since we gave them
+		#TODO: Add more days
+		if GameData.NPCgiveNoMore == false:
+			if GameData.day == 1:
+				Utils.remove_from_inventory("Twig", 6)
+				GameData.NPCgiveNoMore = true
+			elif GameData.day == 2:
+				Utils.remove_from_inventory("Rock", 4)
+				GameData.NPCgiveNoMore = true
+			elif GameData.day == 3:
+				Utils.remove_from_inventory("TinCan", 3)
+				GameData.NPCgiveNoMore = true
+			elif GameData.day == 9:
+				Utils.remove_from_inventory("TinCan", 6)
+				GameData.NPCgiveNoMore = true
+			elif GameData.day == 10:
+				Utils.remove_from_inventory("Twig", 10)
+				GameData.NPCgiveNoMore = true
+			elif GameData.day == 8:
+				if NPCname == "Bargin" and GameData.QMain["Bargin"] == false:
+					Utils.remove_from_inventory("WaterBottle", 5)
+				if NPCname == "Anger" and GameData.QMain["Anger"] == false:
+					Utils.remove_from_inventory("WaterFilter", 2)
+				if NPCname == "Denial" and GameData.QMain["Denial"] == false:
+					Utils.remove_from_inventory("WaterBottle", 1)
+			GameData.QMain[NPCname] = true
 		
 		var npcComplete = GameData.QMain.values()
 		if not npcComplete.has(false):
 			#All request has been fufill
 			GameData.questComplete["Main"] = true
 		
-		#Remove the items since we gave them
-		#TODO: Add more days
-		if GameData.NPCgiveNoMore == false:
-			if GameData.day == 1 and GameData.visitTutorial == true:
-				Utils.remove_from_inventory("Rock", 1)
-			elif GameData.day == 1:
-				Utils.remove_from_inventory("Twig", 6)
-			elif GameData.day == 2:
-				Utils.remove_from_inventory("Rock", 4)
-			elif GameData.day == 3:
-				Utils.remove_from_inventory("TinCan", 3)
-			GameData.NPCgiveNoMore = true
-			
+
+
+
 	if value == "TutorialEnded":
+		Utils.remove_from_inventory("Rock", 1)
+		GameData.QMain[NPCname] = true
+		GameData.questComplete["Main"] = true
 		TextTransition.set_to_click(
 				"You then enter the village, excited for the opportunity to make profit.",
 				"res://World Scene/World.tscn",
 				"Click To Continue"
 		)
 		SceneTransition.change_scene("res://Globals/text_transition.tscn")
+
 		GameData.day = 1
 
 		GameData.inventory = []
@@ -591,10 +786,14 @@ func _on_dialogue_box_dialogue_signal(value):
 			{
 				"Name": "TinCans",
 				"Value": 0
+			},
+			{
+				"Name": "WaterFilter",
+				"Value": 0
 			}
 		]
 
-		GameData.QVillager = ""
+		GameData.QVillager = {}
 
 		GameData.villagersIndex = {
 			"Accept": 0,
@@ -604,11 +803,12 @@ func _on_dialogue_box_dialogue_signal(value):
 			"Denial": 4,
 			"Depress": 5,
 			"OldMan": 6,
-				
-			"Rano": 7,
-			"Ribbit": 8,
-			"Hop": 9,
-			"Leap": 10,
+			"Talia": 7,
+			
+			"Rano": 8,
+			"Ribbit": 9,
+			"Hop": 10,
+			"Leap": 11
 		}
 
 		GameData.villagersTalked = [
@@ -643,7 +843,7 @@ func _on_dialogue_box_dialogue_signal(value):
 			{
 				"Name": "Talia",
 				"Talked": false
-			},
+			}
 		]
 
 
@@ -672,10 +872,14 @@ func _on_dialogue_box_dialogue_signal(value):
 
 
 func _on_animation_player_animation_finished(anim_name):
-	#TODO: back to true for final
-	$FixedDialoguePosition/Voice.visible = false
+	if $FixedDialoguePosition/DialogueBox.speaker.text != "":
+		$FixedDialoguePosition/Voice.visible = true
 	dialogue_box.show_options()
 
 
 func _on_voice_pressed():
 	print("Play Voice Recording")
+	#var CharacterVoice = audioList[dialogue_voiceSpecific["Name"]]
+	##TODO: PLay audio
+	#SoundControl.play_audio(CharacterVoice, dialogue_voiceSpecific["Start"], dialogue_voiceSpecific["End"]) # Node, string, int, int
+	dialogue_box.show_options()

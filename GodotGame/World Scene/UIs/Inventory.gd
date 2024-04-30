@@ -70,11 +70,15 @@ func _process(delta):
 	if (GameData.day == 4):
 		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/5"
 	if (GameData.day == 7):
+		InventoryRequest[0].visible = true
 		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/1"
 	if GameData.day == 8:
-		for i in range(len(InventoryRequest)):
+		for i in range(3):
 			InventoryRequest[i].visible = true
-	
+		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/6"
+	if GameData.day == 9 or GameData.day == 10:
+		InventoryRequest[0].visible = true
+		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/6"
 	
 	# Show in the UI of the item
 	#TODO: Add more requirements for each day and mae QMain and QWild
@@ -100,7 +104,7 @@ func _process(delta):
 		#GameData.QMain[NPCname] = true
 		if (GameData.QMain.keys().find("Accept") != -1):
 			for i in range(len(InventoryRequest)):
-				if (GameData.QMainLocationIdx.keys().find("Accept") != -1):
+				if (GameData.QMainLocationIdx.keys().find("Accept") != -1 and InventoryRequest[i].text == "Request from Antonio"):
 					InventoryRequest[GameData.QMainLocationIdx["Accept"]].text = "Request from Antonio"
 					InventoryAmount[GameData.QMainLocationIdx["Accept"]].text = "Need 6 Twigs"
 					break
@@ -111,7 +115,7 @@ func _process(delta):
 					break
 		if (GameData.QWild == true):
 			for i in range(len(InventoryRequest)):
-				if (GameData.QMainLocationIdx.keys().find("Request from the Kids") != -1):
+				if (GameData.QMainLocationIdx.keys().find("Request from the Kids") != -1 and InventoryRequest[i].text == "Request from the Kids"):
 					InventoryRequest[GameData.QMainLocationIdx["Request from the Kids"]].text = "Request from the Kids"
 					InventoryAmount[GameData.QMainLocationIdx["Request from the Kids"]].text = str(GameData.inventory_requirement["WaterBottleSpecial"])+" Special Water Bottle"
 					break
@@ -130,7 +134,7 @@ func _process(delta):
 			#$ListUI/ItemR.text = "Request from Barry"
 			#$ListUI/ItemR/ItemNeeded.text = "Need 1 Water Bottle"
 			for i in range(len(InventoryRequest)):
-				if (GameData.QMainLocationIdx.keys().find("Bargin") != -1):
+				if (GameData.QMainLocationIdx.keys().find("Bargin") != -1 and InventoryRequest[i].text == "Request from Barry"):
 					InventoryRequest[GameData.QMainLocationIdx["Bargin"]].text = "Request from Barry"
 					InventoryAmount[GameData.QMainLocationIdx["Bargin"]].text = "Need 4 rocks"
 					break
@@ -141,7 +145,7 @@ func _process(delta):
 					break
 		if (GameData.QWild == true):
 			for i in range(len(InventoryRequest)):
-				if (GameData.QMainLocationIdx.keys().find("Request from the Kids") != -1):
+				if (GameData.QMainLocationIdx.keys().find("Request from the Kids") != -1 and InventoryRequest[i].text == "Request from the Kids"):
 					InventoryRequest[GameData.QMainLocationIdx["Request from the Kids"]].text = "Request from the Kids"
 					InventoryAmount[GameData.QMainLocationIdx["Request from the Kids"]].text = "Create "+str(GameData.inventory_requirement["BoilingPot"])+" Boiling Pot"
 					break
@@ -158,7 +162,7 @@ func _process(delta):
 			#$ListUI/ItemR.text = "Request from Antonio"
 			#$ListUI/ItemR/ItemNeeded.text = "Need 3 Tin Cans"
 			for i in range(len(InventoryRequest)):
-				if (GameData.QMainLocationIdx.keys().find("Accept") != -1):
+				if (GameData.QMainLocationIdx.keys().find("Accept") != -1 and InventoryRequest[i].text == "Request from Antonio"):
 					InventoryRequest[GameData.QMainLocationIdx["Accept"]].text = "Request from Antonio"
 					InventoryAmount[GameData.QMainLocationIdx["Accept"]].text = "Need 3 Tin Cans"
 					break
@@ -170,7 +174,7 @@ func _process(delta):
 		
 		if (GameData.QWild == true):
 			for i in range(len(InventoryRequest)):
-				if (GameData.QMainLocationIdx.keys().find("Request from the Kids") != -1):
+				if (GameData.QMainLocationIdx.keys().find("Request from the Kids") != -1 and InventoryRequest[i].text == "Request from the Kids"):
 					InventoryRequest[GameData.QMainLocationIdx["Request from the Kids"]].text = "Request from the Kids"
 					InventoryAmount[GameData.QMainLocationIdx["Request from the Kids"]].text = "Create "+str(GameData.inventory_requirement["WaterFilter"])+" Water Filter"
 					break
@@ -179,8 +183,119 @@ func _process(delta):
 					InventoryAmount[i].text = "Create "+str(GameData.inventory_requirement["WaterFilter"])+" Water Filter"
 					GameData.QMainLocationIdx["Request from the Kids"] = i
 					break
-
+	
+	
+	
+	
+	elif GameData.day == 7:
+		#Add to the list based on the requirements
+		if (GameData.QMain.keys().find("OldMan") != -1):
+			#$ListUI/ItemR.text = "Request from Antonio"
+			#$ListUI/ItemR/ItemNeeded.text = "Need 3 Tin Cans"
+			for i in range(len(InventoryRequest)):
+				if (GameData.QMainLocationIdx.keys().find("OldMan") != -1 and InventoryRequest[i].text == "Request from OldMan"):
+					InventoryRequest[GameData.QMainLocationIdx["OldMan"]].text = "Request from OldMan"
+					InventoryAmount[GameData.QMainLocationIdx["OldMan"]].text = "Create an improved filter"
+					break
+				elif (InventoryRequest[i].visible == true and InventoryRequest[i].text == "???"):
+					InventoryRequest[i].text = "Request from OldMan"
+					InventoryAmount[i].text = "Create an improved filter"
+					GameData.QMainLocationIdx["OldMan"] = i
+					break
+	
+	
+	
+	
+	
+	
+	
+	
+	elif GameData.day == 8:
+		#Add to the list based on the requirements
+		if (GameData.QMain.keys().find("Bargin") != -1):
+			#$ListUI/ItemR.text = "Request from Antonio"
+			#$ListUI/ItemR/ItemNeeded.text = "Need 3 Tin Cans"
+			for i in range(len(InventoryRequest)):
+				if (GameData.QMainLocationIdx.keys().find("Bargin") != -1 and InventoryRequest[i].text == "Request from Barry"):
+					InventoryRequest[GameData.QMainLocationIdx["Bargin"]].text = "Request from Barry"
+					InventoryAmount[GameData.QMainLocationIdx["Bargin"]].text = "Need 5 Water Bottles"
+					break
+				elif (InventoryRequest[i].visible == true and InventoryRequest[i].text == "???"):
+					InventoryRequest[i].text = "Request from Barry"
+					InventoryAmount[i].text = "Need 5 Water Bottles"
+					GameData.QMainLocationIdx["Bargin"] = i
+					break
+								
+		if (GameData.QMain.keys().find("Anger") != -1):
+			#$ListUI/ItemR.text = "Request from Antonio"
+			#$ListUI/ItemR/ItemNeeded.text = "Need 3 Tin Cans"
+			for i in range(len(InventoryRequest)):
+				if (GameData.QMainLocationIdx.keys().find("Anger") != -1 and InventoryRequest[i].text == "Request from Angelica"):
+					InventoryRequest[GameData.QMainLocationIdx["Anger"]].text = "Request from Angelica"
+					InventoryAmount[GameData.QMainLocationIdx["Anger"]].text = "Need 2 Water Filters"
+					break
+				elif (InventoryRequest[i].visible == true and InventoryRequest[i].text == "???"):
+					InventoryRequest[i].text = "Request from Angelica"
+					InventoryAmount[i].text = "Need 2 Water Filters"
+					GameData.QMainLocationIdx["Anger"] = i
+					break
 		
+		
+		
+		if (GameData.QMain.keys().find("Denial") != -1):
+			#$ListUI/ItemR.text = "Request from Antonio"
+			#$ListUI/ItemR/ItemNeeded.text = "Need 3 Tin Cans"
+			for i in range(len(InventoryRequest)):
+				if (GameData.QMainLocationIdx.keys().find("Denial") != -1 and InventoryRequest[i].text == "Request from Danny"):
+					InventoryRequest[GameData.QMainLocationIdx["Denial"]].text = "Request from Danny"
+					InventoryAmount[GameData.QMainLocationIdx["Denial"]].text = "Need 1 Water Bottle"
+					break
+				elif (InventoryRequest[i].visible == true and InventoryRequest[i].text == "???"):
+					InventoryRequest[i].text = "Request from Danny"
+					InventoryAmount[i].text = "Need 1 Water Bottle"
+					GameData.QMainLocationIdx["Denial"] = i
+					break
+	
+	
+	
+	
+	elif GameData.day == 9:
+		#Add to the list based on the requirements
+		if (GameData.QMain.keys().find("Bargin") != -1):
+			#$ListUI/ItemR.text = "Request from Antonio"
+			#$ListUI/ItemR/ItemNeeded.text = "Need 3 Tin Cans"
+			for i in range(len(InventoryRequest)):
+				if (GameData.QMainLocationIdx.keys().find("Bargin") != -1 and InventoryRequest[i].text == "Request from Barry"):
+					InventoryRequest[GameData.QMainLocationIdx["Bargin"]].text = "Request from Barry"
+					InventoryAmount[GameData.QMainLocationIdx["Bargin"]].text = "Collect 6 Tin Cans"
+					break
+				elif (InventoryRequest[i].visible == true and InventoryRequest[i].text == "???"):
+					InventoryRequest[i].text = "Request from Barry"
+					InventoryAmount[i].text = "Collect 6 Tin Cans"
+					GameData.QMainLocationIdx["Bargin"] = i
+					break
+	
+	
+	
+	elif GameData.day == 10:
+		#Add to the list based on the requirements
+		if (GameData.QMain.keys().find("Anger") != -1):
+			#$ListUI/ItemR.text = "Request from Antonio"
+			#$ListUI/ItemR/ItemNeeded.text = "Need 3 Tin Cans"
+			for i in range(len(InventoryRequest)):
+				if (GameData.QMainLocationIdx.keys().find("Anger") != -1 and InventoryRequest[i].text == "Request from Angelica"):
+					InventoryRequest[GameData.QMainLocationIdx["Anger"]].text = "Request from Angelica"
+					InventoryAmount[GameData.QMainLocationIdx["Anger"]].text = "Need 10 Twigs"
+					break
+				elif (InventoryRequest[i].visible == true and InventoryRequest[i].text == "???"):
+					InventoryRequest[i].text = "Request from Angelica"
+					InventoryAmount[i].text = "Need 10 Twigs"
+					GameData.QMainLocationIdx["Anger"] = i
+					break
+	
+	
+	
+	
 	#Add a checkmark next to the request if fufilled
 	#questComplete = {"Main": false, "Wild": false}
 	#TODO make it more dynamic

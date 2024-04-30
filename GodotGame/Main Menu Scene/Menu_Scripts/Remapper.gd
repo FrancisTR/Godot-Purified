@@ -14,10 +14,7 @@ func _init():
 func _ready():
 	set_process_unhandled_input(false)
 	update_text()
-	if action == "StartDialogue":
-		$HintLabel.text = "Interaction"
-	else:
-		$HintLabel.text = action
+	$HintLabel.text = action
 	#actions.append(action)
 
 func _toggled(button_exists):
@@ -42,10 +39,12 @@ func _unhandled_input(e):
 		return
 
 	for k in get_all_keymaps():
-		#print(k.keycode)
-		#print(e.keycode)
 		#print("---")
-		if e.keycode == k.keycode:
+		#print(k)
+		#print(e)
+		#print(str(k.keycode)+" vs. "+str(e.keycode)+" -> "+str(e.keycode == k.keycode))
+		#print("---")
+		if e.keycode == k.keycode or e.physical_keycode == k.physical_keycode or e.keycode == k.physical_keycode or e.physical_keycode == k.keycode:
 			# Move below message to in game
 			print("Key is already used. Not setting new key.")
 			button_pressed = false
@@ -90,6 +89,8 @@ func get_all_actions() -> Array[String]:
 
 	return arr
 
+
+
 func get_keymap_name(action_name: String) -> String:
 	var tmp = InputMap.action_get_events(action_name)[0].as_text().split(" ")
 
@@ -99,6 +100,8 @@ func get_keymap_name(action_name: String) -> String:
 		tmp = tmp[0] + "*"
 
 	return " " + tmp + " "
+
+
 
 func toggle_disabled_other_buttons():
 	remap_container.button_in_use = not remap_container.button_in_use

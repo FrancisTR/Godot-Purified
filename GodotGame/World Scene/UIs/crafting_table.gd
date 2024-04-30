@@ -40,7 +40,7 @@ func _ready():
 		$UI/CraftingList/ShowItemCrafted/ItemHint.texture = load("res://Assets/Custom/Items/BoilingPotHidden.png")
 		itemImage = load("res://Assets/Custom/Items/BoilingPot.png")
 
-	elif GameData.day == 3:
+	elif GameData.day == 3 or GameData.day == 8:
 		craftingList = {"WaterBottle": 1, "Sand": 2, "Rock": 2, "Moss": 2}
 		listKeys = craftingList.keys()
 		listValues = craftingList.values()
@@ -53,8 +53,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#TODO: Have an image of Reverse Osmosis
+	if GameData.day == 7 and GameData.villagersTalked[6]["Talked"] == true:
+		craftingList = {"WaterBottle": 2, "Sand": 3, "Moss": 3, "Rock": 2}
+		listKeys = craftingList.keys()
+		listValues = craftingList.values()
+		ItemOfTheDay = "ReverseOsmosis"
+		$UI/CraftingList/ShowItemCrafted/ItemHint.texture = load("res://Assets/Custom/Items/BoilingPotHidden.png")
+		itemImage = load("res://Assets/Custom/Items/BoilingPot.png")
 	
-	if (GameData.day != 1):
+	if ((GameData.day == 7 and GameData.villagersTalked[6]["Talked"] == false) or GameData.day == 10):
+		$UI/CraftingList/CraftButton.visible = false
+	elif (GameData.day != 1):
+		$UI/CraftingList/CraftButton.visible = true
 		#TODO: (in case) List of items needed in UI
 		for i in range(0, len(craftingList)):
 			listText[i].text = str(listKeys[i])
@@ -79,13 +90,15 @@ func _process(delta):
 				listTextImg[i].texture = load("res://Assets/Custom/Items/Rock.png")
 			elif listKeys[i] == "Moss":
 				listTextImg[i].texture = load("res://Assets/Custom/Items/Moss.png")
-				
 	else:
 		$UI/CraftingList/CraftButton.visible = false
 		
 		
 		
-	if Input.is_action_just_pressed("StartDialogue") and enterBody == true:	
+	if Input.is_action_just_pressed("Interaction") and enterBody == true:	
+		#if (self.name == "CraftingTablePRIME"):
+			#print("Dark ruler no more")
+			#return
 		if GameData.current_ui != "Crafting" && GameData.current_ui != "":
 			return
 		GameData.charLock = true
@@ -132,7 +145,13 @@ func _on_body_exited(body):
 func _on_craft_button_pressed():
 		SoundControl.is_playing_sound("crafted")
 		print("Crafted!")
-		GameData.questComplete["Wild"] = true
+		# For Day 8 Only	
+		if ItemOfTheDay == "WaterFilter":
+			GameData.itemDialogue[4]["Value"] = GameData.itemDialogue[4]["Value"] + 1
+		
+		if GameData.day <= 3:
+			GameData.questComplete["Wild"] = true
+		
 		for i in range(0, len(listKeys)):
 			Utils.remove_from_inventory(str(listKeys[i]), int(craftingList[listKeys[i]]))
 		Utils.add_to_inventory(str(ItemOfTheDay), 1)
@@ -149,9 +168,9 @@ func _on_craft_button_pressed():
 
 func _on_okay_button_pressed():
 	$UI/CraftedItem.visible = false
+	SoundControl.is_playing_sound("button")
 	GameData.charLock = false
 	GameData.current_ui = ""
-	SoundControl.is_playing_sound("button")
 
 
 func _on_x_button_pressed():

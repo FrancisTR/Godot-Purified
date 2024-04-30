@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b20ka352pbpa6"
-path="res://.godot/imported/Talia.png-6775a3cb999bb1ff5cb35cb6d4292419.ctex"
+uid="uid://de2mjfnnuacbv"
+path="res://.godot/imported/Bubble.png-3858703789ea6ff97eb0d04801d9f647.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Custom/Sprites/Talia.png"
-dest_files=["res://.godot/imported/Talia.png-6775a3cb999bb1ff5cb35cb6d4292419.ctex"]
+source_file="res://Assets/Custom/Tutorial/Bubble.png"
+dest_files=["res://.godot/imported/Bubble.png-3858703789ea6ff97eb0d04801d9f647.ctex"]
 
 [params]
 

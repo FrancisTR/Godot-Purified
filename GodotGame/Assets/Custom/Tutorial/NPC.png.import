@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b20ka352pbpa6"
-path="res://.godot/imported/Talia.png-6775a3cb999bb1ff5cb35cb6d4292419.ctex"
+uid="uid://wche1hdwl8oq"
+path="res://.godot/imported/NPC.png-376e7bd51dd3d77ade4ced447289401c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Custom/Sprites/Talia.png"
-dest_files=["res://.godot/imported/Talia.png-6775a3cb999bb1ff5cb35cb6d4292419.ctex"]
+source_file="res://Assets/Custom/Tutorial/NPC.png"
+dest_files=["res://.godot/imported/NPC.png-376e7bd51dd3d77ade4ced447289401c.ctex"]
 
 [params]
 

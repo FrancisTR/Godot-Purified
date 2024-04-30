@@ -32,9 +32,9 @@ func _on_button_pressed():
 		index += 1
 	
 	
-	
+	var npcNames = ["talia", "danny", "angelica", "barry", "derick", "antonio", "croak", "old man tommy", "rano", "ribbit", "hop", "leap"]
 	if profanityWord == false:
-		if line_edit.text == "Talia" or line_edit.text == "Danny" or line_edit.text == "Angelica" or line_edit.text == "Barry" or line_edit.text == "Derick" or line_edit.text == "Antonio" or line_edit.text == "Croak" or line_edit.text == "Old Man Tommy" or line_edit.text == "Rano" or line_edit.text == "Ribbit" or line_edit.text == "Hop" or line_edit.text == "Leap":
+		if line_edit.text.to_lower() in npcNames:
 			$Error.text = "Error: Name exist in the game."
 			$Error.visible = true
 		elif line_edit.text == "":
