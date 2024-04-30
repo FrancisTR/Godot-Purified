@@ -68,7 +68,7 @@
 	{
 		"name":"ReverseOsmosis",
 		"description": "This is a Reverse Osmosis",
-		"texture": "res://Assets/Custom/Items/WaterFilter.png",
+		"texture": 	"res://Assets/Custom/Items/RO.png",
 		"cropped":"no"
 	},
 ]

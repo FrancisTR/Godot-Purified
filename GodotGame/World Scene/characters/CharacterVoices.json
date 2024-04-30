@@ -1,0 +1,184 @@
+[
+	
+	{	
+		"Talia": [
+			{"Name": "Talia", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "Talia", "Start": 9, "End": 12, "Vol": 0},
+			{"Name": "Talia", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "Talia", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "Talia", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "Talia", "Start": 9, "End": 12, "Vol": 0},
+			{"Name": "Talia", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "Talia", "Start": 5, "End": 7, "Vol": 0},
+		],
+		
+		"Denial": [
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "", "Start": 9, "End": 12, "Vol": 0},
+		],
+		
+		"Anger": [
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "", "Start": 9, "End": 12, "Vol": 0},
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+		],
+		
+		"Bargin": [
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "", "Start": 9, "End": 12, "Vol": 0},
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "", "Start": 9, "End": 12, "Vol": 0},
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "", "Start": 9, "End": 12, "Vol": 0},
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "", "Start": 9, "End": 12, "Vol": 0},
+		],
+		"Depress": [
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "", "Start": 9, "End": 12, "Vol": 0},
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+		],
+		"Accept": [
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "", "Start": 9, "End": 12, "Vol": 0},
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "", "Start": 9, "End": 12, "Vol": 0},
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+		],
+		"Croak": [
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "", "Start": 9, "End": 12, "Vol": 0},
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "", "Start": 9, "End": 12, "Vol": 0},
+			{"Name": "", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "", "Start": 5, "End": 7, "Vol": 0},
+		],
+		"OldMan": [
+			{"Name": "Main", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "OldMan", "Start": 5, "End": 7, "Vol": 0},
+			{"Name": "Main", "Start": 9, "End": 12, "Vol": 0},
+			{"Name": "OldMan", "Start": 1, "End": 3, "Vol": 0},
+			{"Name": "Main", "Start": 5, "End": 7, "Vol": 0},
+		]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	{	
+		"Talia": [
+			{"Name": "Talia", "Start": 5, "End": 7},
+			{"Name": "Talia", "Start": 9, "End": 12},
+			{"Name": "Talia", "Start": 1, "End": 3},
+			{"Name": "Talia", "Start": 5, "End": 7},
+			{"Name": "Talia", "Start": 5, "End": 7},
+			{"Name": "Talia", "Start": 9, "End": 12},
+			{"Name": "Talia", "Start": 1, "End": 3},
+			{"Name": "Talia", "Start": 5, "End": 7},
+		],
+		
+		"Denial": [
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+			{"Name": "", "Start": 9, "End": 12},
+		],
+		
+		"Anger": [
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+			{"Name": "", "Start": 9, "End": 12},
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+		],
+		
+		"Bargin": [
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+			{"Name": "", "Start": 9, "End": 12},
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+			{"Name": "", "Start": 9, "End": 12},
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+			{"Name": "", "Start": 9, "End": 12},
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+			{"Name": "", "Start": 9, "End": 12},
+		],
+		"Depress": [
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+			{"Name": "", "Start": 9, "End": 12},
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+		],
+		"Accept": [
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+			{"Name": "", "Start": 9, "End": 12},
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+			{"Name": "", "Start": 9, "End": 12},
+			{"Name": "", "Start": 1, "End": 3},
+		],
+		"Croak": [
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+			{"Name": "", "Start": 9, "End": 12},
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+			{"Name": "", "Start": 9, "End": 12},
+			{"Name": "", "Start": 1, "End": 3},
+			{"Name": "", "Start": 5, "End": 7},
+		],
+		"OldMan": [
+			{"Name": "Main", "Start": 1, "End": 3},
+			{"Name": "OldMan", "Start": 5, "End": 7},
+			{"Name": "Main", "Start": 9, "End": 12},
+			{"Name": "OldMan", "Start": 1, "End": 3},
+			{"Name": "Main", "Start": 5, "End": 7},
+		]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+]

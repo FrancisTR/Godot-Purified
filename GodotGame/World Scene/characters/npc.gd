@@ -63,11 +63,14 @@ var oldManTempLock = false
 			#{"Name": "Main", "Start": 5, "End": 7},
 		#],
 		#"Accept": [
-			#{"Name": "Main", "Start": 1, "End": 3},
+			#{"Name": "Main", "Start": 5, "End": 6},
 			#{"Name": "OldMan", "Start": 5, "End": 7},
 			#{"Name": "Main", "Start": 9, "End": 12},
-			#{"Name": "OldMan", "Start": 1, "End": 3},
+			#{"Name": "OldMan", "Start": 5, "End": 6},
 			#{"Name": "Main", "Start": 5, "End": 7},
+			#{"Name": "Main", "Start": 9, "End": 12},
+			#{"Name": "OldMan", "Start": 1, "End": 2},
+			#{"Name": "Main", "Start": 12, "End": 13},
 		#],
 		#"Croak": [
 			#{"Name": "Main", "Start": 1, "End": 3},
@@ -94,7 +97,7 @@ var oldManTempLock = false
 	#"Anger": "Test",
 	#"Bargin": "Test",
 	#"Depress": "Test",
-	#"Accept": "Test",
+	#"Accept": "res://Sounds_and_Music/OST/Croak of the Fireflies.mp3",
 	#"Croak": "Test",
 	#"OldMan": "res://Sounds_and_Music/OST/Woodsy Labyrinth.mp3"
 #}
@@ -111,8 +114,7 @@ var oldManTempLock = false
 func _ready():
 	NPCname = null
 	set_process_input(true)
-	$PressForDialogue.text = InputMap.action_get_events("Interaction")[0].as_text()
-	
+	$PressForDialogue.text = InputMap.action_get_events("Interaction")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
 	
 func go_pos(delta):
 	if moving and playerRuns == false: #Barry
@@ -134,8 +136,10 @@ func go_pos(delta):
 		
 		if (idxMovement == 0):
 			$"../../Other/CharacterBody2D/Sprite2D".animation = "Right"
+			$"../../Other/CharacterBody2D/Sprite2D".play("Right")
 		else:
 			$"../../Other/CharacterBody2D/Sprite2D".animation = "Down"
+			$"../../Other/CharacterBody2D/Sprite2D".play("Down")
 	
 	
 	if $"../Bargin".global_position == BarryDestination and playerRuns == false:
@@ -493,7 +497,12 @@ func _on_body_exited(body):
 			GameData.charLock = false
 			dialogue_box.stop()
 		dialogue_box.start_id = ""
-		
+
+
+
+
+
+
 func show_map_icon():
 	$MapIcon.show()
 	$Sprite2D.hide()
@@ -518,6 +527,11 @@ func show_notif(type):
 
 func hide_notif():
 	$Notif.hide()
+
+
+
+
+
 
 func _on_dialogue_box_dialogue_ended():
 	#audioCount = 0 #Reset audio index
@@ -630,7 +644,7 @@ func _on_dialogue_box_dialogue_ended():
 		$FixedDialoguePosition/CharacterIMG.visible = true
 		$FixedDialoguePosition/Voice.visible = true
 		oldManTempLock = true #This can be reset, but should not affect anything
-	
+	#audioCount = 0
 	
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
@@ -638,6 +652,8 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 	
 	#TODO: Set up the dialogue voices
 	SoundControl.dialogue_audio_stop() #Stop the audio if next dialogue
+	#print(audioCount)
+	print(node_type)
 	#if (audioCount < len(dialogue_voices[GameData.day - 1][NPCname])):
 		#dialogue_voiceSpecific = dialogue_voices[GameData.day - 1][NPCname][audioCount]
 	#audioCount += 1
@@ -684,6 +700,7 @@ func _on_dialogue_box_dialogue_signal(value):
 	
 	
 	if value == "MainComplete":
+		#audioCount = len(dialogue_voices[GameData.day - 1][NPCname]) - 1
 		#GameData.questComplete["Main"] = true
 		
 		#Remove the items since we gave them

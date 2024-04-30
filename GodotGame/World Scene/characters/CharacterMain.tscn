@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://crmshmhby6akr"]
+[gd_scene load_steps=24 format=3 uid="uid://crmshmhby6akr"]
 
 [ext_resource type="Script" path="res://World Scene/characters/CharacterMain.gd" id="1_cyksq"]
 [ext_resource type="Texture2D" uid="uid://ghsool2pdp04" path="res://Assets/Custom/Sprites/MC_Sprite_Sheet.png" id="2_3sxfq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dyge3pmntuk1g" path="res://World Scene/UIs/Inventory.tscn" id="4_2u5re"]
 [ext_resource type="Texture2D" uid="uid://c64de0u81kuwt" path="res://Assets/Custom/map icons/mc_icon.png" id="5_ugh86"]
 [ext_resource type="Texture2D" uid="uid://bpl17gwn3b6ye" path="res://Assets/Custom/Light.png" id="6_dhoas"]
+[ext_resource type="Texture2D" uid="uid://d0rtr7ojbum5p" path="res://Assets/Custom/Shadow.png" id="7_43qi3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rxh0c"]
 atlas = ExtResource("2_3sxfq")
@@ -191,19 +192,11 @@ visible = false
 [node name="MapIcon" type="TextureRect" parent="."]
 visible = false
 z_index = 999
-y_sort_enabled = true
 texture_filter = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -80.0
 offset_top = -80.0
 offset_right = -40.0
 offset_bottom = -40.0
-grow_horizontal = 2
-grow_vertical = 2
 scale = Vector2(4, 4)
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -224,6 +217,14 @@ shadow_filter = 1
 shadow_filter_smooth = 3.0
 texture = ExtResource("6_dhoas")
 texture_scale = 0.5
+
+[node name="Shadow" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = -12.0
+offset_top = 9.0
+offset_right = 12.0
+offset_bottom = 25.0
+texture = ExtResource("7_43qi3")
 
 [connection signal="finished" from="FootstepAudio" to="." method="_on_footstep_audio_finished"]
 
