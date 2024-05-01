@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://0nmlup6yvr84"]
+[gd_scene load_steps=30 format=3 uid="uid://0nmlup6yvr84"]
 
 [ext_resource type="Script" path="res://World Scene/UIs/crafting_table.gd" id="1_763sv"]
 [ext_resource type="Texture2D" uid="uid://bui61mchuqel4" path="res://Assets/Custom/CraftingTable.png" id="2_k6jcn"]
@@ -9,12 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://doqwj8g710weo" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a2.png" id="6_2bae6"]
 [ext_resource type="Texture2D" uid="uid://dp5pq4xti0m4g" path="res://Assets/UISprites/UI_Flat_Slot_01_Selected.png" id="7_7d5de"]
 [ext_resource type="Texture2D" uid="uid://dyqj26prpkdqw" path="res://Assets/UISprites/UI_Flat_Frame_02_Lite.png" id="9_pvc45"]
+[ext_resource type="Texture2D" uid="uid://e02ocjjjfcme" path="res://Assets/UISprites/UI_Flat_Slot_01_Unavailable.png" id="9_x8qcn"]
+[ext_resource type="Texture2D" uid="uid://bbkxh6t74aat3" path="res://Assets/Custom/WellsBroken.png" id="10_coffm"]
 [ext_resource type="Texture2D" uid="uid://bpl17gwn3b6ye" path="res://Assets/Custom/Light.png" id="10_ymldh"]
+[ext_resource type="Texture2D" uid="uid://dwqhnymadamjk" path="res://Assets/Custom/Wells.png" id="11_4o7lx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh0p5"]
-size = Vector2(32, 30)
+size = Vector2(66, 66)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1lxb"]
+size = Vector2(120, 120)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6rxi2"]
 texture = ExtResource("4_jad3i")
@@ -154,15 +158,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -149.5
-offset_top = 16.0
-offset_right = 150.5
-offset_bottom = 82.0
+offset_left = -136.5
+offset_top = 15.0
+offset_right = 773.5
+offset_bottom = 230.0
 grow_horizontal = 2
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 169
 text = "Crafting List"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ItemBox" type="Control" parent="UI/CraftingList/ItemList"]
 anchors_preset = 0
@@ -324,12 +330,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -375.0
-offset_top = 126.0
-offset_right = -167.0
-offset_bottom = 216.0
+offset_left = -356.0
+offset_top = 112.0
+offset_right = 181.0
+offset_bottom = 482.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -343,7 +350,7 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxTexture_6rxi2")
 theme_override_styles/hover = SubResource("StyleBoxTexture_2tuo2")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2xftd")
@@ -357,13 +364,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -142.0
-offset_top = -209.0
-offset_right = -97.0
-offset_bottom = -167.0
+offset_left = -135.0
+offset_top = -212.0
+offset_right = 34.0
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.2, 1.2)
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -377,6 +384,7 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxTexture_tnsm5")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vhkt7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jfnfr")
@@ -407,14 +415,16 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -154.0
-offset_top = 29.0
-offset_right = 155.0
-offset_bottom = 96.0
+offset_left = -208.0
+offset_top = 32.0
+offset_right = 1179.0
+offset_bottom = 172.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 40
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 155
 text = "You have made"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ItemName" type="Label" parent="UI/CraftedItem/ColorRect"]
 texture_filter = 1
@@ -423,11 +433,13 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -187.5
-offset_bottom = -138.5
+offset_top = -185.0
+offset_right = 1111.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 35
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 140
 text = "Something"
 horizontal_alignment = 1
 
@@ -454,12 +466,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.0
-offset_top = 134.0
-offset_right = 116.0
-offset_bottom = 230.0
+offset_left = -113.0
+offset_top = 131.0
+offset_right = 637.0
+offset_bottom = 461.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -473,7 +486,7 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 169
 theme_override_styles/normal = SubResource("StyleBoxTexture_0j3ki")
 theme_override_styles/hover = SubResource("StyleBoxTexture_b1cy3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jntyi")
@@ -503,13 +516,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -108.0
-offset_top = 20.5
-offset_right = 110.0
-offset_bottom = 59.5
+offset_left = -166.5
+offset_top = 15.0
+offset_right = 945.5
+offset_bottom = 168.0
 grow_horizontal = 2
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 120
 text = "Note from Tommy"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -522,14 +536,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -134.5
-offset_top = -14.5
-offset_right = 134.5
-offset_bottom = 14.5
+offset_left = -165.0
+offset_top = -48.0
+offset_right = 950.0
+offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 69
 text = "Do not touch my crafting table!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -541,12 +556,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.0
-offset_top = 51.0
-offset_right = 116.0
-offset_bottom = 147.0
+offset_left = -72.0
+offset_top = 56.0
+offset_right = 405.0
+offset_bottom = 339.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -560,12 +576,230 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxTexture_0j3ki")
 theme_override_styles/hover = SubResource("StyleBoxTexture_b1cy3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jntyi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_noqy8")
-text = "Okay"
+text = "Okay "
+
+[node name="BrokenWell" type="CanvasLayer" parent="UI"]
+visible = false
+
+[node name="Paper" type="TextureRect" parent="UI/BrokenWell"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.5
+offset_top = -177.5
+offset_right = 177.5
+offset_bottom = 177.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_x8qcn")
+
+[node name="Note" type="Label" parent="UI/BrokenWell/Paper"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.5
+offset_top = 15.0
+offset_right = 945.5
+offset_bottom = 168.0
+grow_horizontal = 2
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "Well Status"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="UI/BrokenWell/Paper"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = 27.5
+offset_right = 755.5
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 69
+text = "Broken"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/BrokenWell/Paper"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -121.0
+offset_right = 75.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_coffm")
+
+[node name="OkayButton" type="Button" parent="UI/BrokenWell"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = 56.0
+offset_right = 405.0
+offset_bottom = 339.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxTexture_0j3ki")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b1cy3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jntyi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_noqy8")
+text = "Okay "
+
+[node name="Well" type="CanvasLayer" parent="UI"]
+visible = false
+
+[node name="Paper" type="TextureRect" parent="UI/Well"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.5
+offset_top = -177.5
+offset_right = 177.5
+offset_bottom = 177.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_x8qcn")
+
+[node name="Note" type="Label" parent="UI/Well/Paper"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.5
+offset_top = 15.0
+offset_right = 945.5
+offset_bottom = 168.0
+grow_horizontal = 2
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "Well Status"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="UI/Well/Paper"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = 27.5
+offset_right = 755.5
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 69
+text = "Fixed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/Well/Paper"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -121.0
+offset_right = 75.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_4o7lx")
+
+[node name="OkayButton" type="Button" parent="UI/Well"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = 56.0
+offset_right = 405.0
+offset_bottom = 339.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxTexture_0j3ki")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b1cy3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jntyi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_noqy8")
+text = "Okay "
 
 [node name="PressInteraction" type="Label" parent="."]
 visible = false
@@ -601,3 +835,5 @@ texture_scale = 0.5
 [connection signal="pressed" from="UI/CraftingList/XButton" to="." method="_on_x_button_pressed"]
 [connection signal="pressed" from="UI/CraftedItem/OkayButton" to="." method="_on_okay_button_pressed"]
 [connection signal="pressed" from="UI/OldMan/OkayButton" to="." method="_on_okay_button_pressed"]
+[connection signal="pressed" from="UI/BrokenWell/OkayButton" to="." method="_on_okay_button_pressed"]
+[connection signal="pressed" from="UI/Well/OkayButton" to="." method="_on_okay_button_pressed"]

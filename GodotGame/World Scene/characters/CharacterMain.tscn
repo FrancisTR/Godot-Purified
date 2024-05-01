@@ -189,6 +189,36 @@ visible = false
 
 [node name="Inventory" parent="Inventory Layer" instance=ExtResource("4_2u5re")]
 
+[node name="ItemR2" parent="Inventory Layer/Inventory/ListUI" index="3"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 122.0
+offset_bottom = 64.0
+
+[node name="ItemR3" parent="Inventory Layer/Inventory/ListUI" index="4"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 122.0
+offset_bottom = 64.0
+
+[node name="ItemR4" parent="Inventory Layer/Inventory/ListUI" index="5"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 122.0
+offset_bottom = 64.0
+
+[node name="ItemR5" parent="Inventory Layer/Inventory/ListUI" index="6"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 122.0
+offset_bottom = 64.0
+
+[node name="ItemR6" parent="Inventory Layer/Inventory/ListUI" index="7"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 122.0
+offset_bottom = 64.0
+
 [node name="MapIcon" type="TextureRect" parent="."]
 visible = false
 z_index = 999
