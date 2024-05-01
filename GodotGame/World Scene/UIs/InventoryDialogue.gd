@@ -55,12 +55,13 @@ func _on_slot_0_pressed():
 	#Assume this is a WaterBottleSpecial
 	if (GameData.inventory_amount.keys().find(str($Items/slot0/ItemName0.text)) != -1):
 		$"../../../FixedDialoguePosition/DialogueBox".start("OldMan"+str($Items/slot0/ItemName0.text))
-		Utils.remove_from_inventory(str($Items/slot0/ItemName0.text), 1)
+		Utils.remove_from_inventory(str($Items/slot0/ItemName0.text), 999)
 		GameData.charLock = true
 		GameData.current_ui = "dialogue"
 		$"../../../PressForDialogue".visible = false
 		$"../../../FixedDialoguePosition/CharacterIMG".visible = true
 		$"../../../FixedDialoguePosition/DialogueOpacity".visible = true
+		$"../../../FixedDialoguePosition/Voice".visible = true
 		$"..".visible = false
 	pass # Replace with function body.
 
@@ -73,12 +74,13 @@ func _on_slot_1_pressed():
 	#Assume this is a BoilingPot
 	if (GameData.inventory_amount.keys().find(str($Items/slot1/ItemName1.text)) != -1):
 		$"../../../FixedDialoguePosition/DialogueBox".start("OldMan"+str($Items/slot1/ItemName1.text))
-		Utils.remove_from_inventory(str($Items/slot1/ItemName1.text), 1)
+		Utils.remove_from_inventory(str($Items/slot1/ItemName1.text), 999)
 		GameData.charLock = true
 		GameData.current_ui = "dialogue"
 		$"../../../PressForDialogue".visible = false
 		$"../../../FixedDialoguePosition/CharacterIMG".visible = true
 		$"../../../FixedDialoguePosition/DialogueOpacity".visible = true
+		$"../../../FixedDialoguePosition/Voice".visible = true
 		$"..".visible = false
 	pass # Replace with function body.
 
@@ -91,12 +93,13 @@ func _on_slot_2_pressed():
 	#Assume this is a WaterFilter
 	if (GameData.inventory_amount.keys().find(str($Items/slot2/ItemName2.text)) != -1):
 		$"../../../FixedDialoguePosition/DialogueBox".start("OldMan"+str($Items/slot2/ItemName2.text))
-		Utils.remove_from_inventory(str($Items/slot2/ItemName2.text), 1)
+		Utils.remove_from_inventory(str($Items/slot2/ItemName2.text), 999)
 		GameData.charLock = true
 		GameData.current_ui = "dialogue"
 		$"../../../PressForDialogue".visible = false
 		$"../../../FixedDialoguePosition/CharacterIMG".visible = true
 		$"../../../FixedDialoguePosition/DialogueOpacity".visible = true
+		$"../../../FixedDialoguePosition/Voice".visible = true
 		$"..".visible = false
 	pass # Replace with function body.
 

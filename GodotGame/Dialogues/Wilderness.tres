@@ -358,7 +358,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 9
 },
 "1_31": {
@@ -371,7 +371,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 9
 },
 "1_32": {
@@ -566,7 +566,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 11
 },
 "1_46": {

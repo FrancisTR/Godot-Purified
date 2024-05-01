@@ -921,7 +921,7 @@ sources/8 = SubResource("TileSetAtlasSource_p85s8")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ja1gu"]
 texture = ExtResource("11_ns2vr")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_32qm1"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bgxs6"]
 texture = ExtResource("10_jk0aj")
 
 [node name="Wilderness" type="Node2D"]
@@ -929,7 +929,6 @@ y_sort_enabled = true
 script = ExtResource("1_4k4yr")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.533333, 0.313726, 1, 1)
 
 [node name="TileMaps" type="Node" parent="."]
@@ -997,17 +996,17 @@ texture_filter = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -227.0
-offset_top = 25.0
-offset_right = -87.0
-offset_bottom = 102.0
+offset_left = -242.0
+offset_top = 15.0
+offset_right = 508.0
+offset_bottom = 515.0
 grow_horizontal = 0
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0.239216, 0.533333, 0.713726, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxTexture_32qm1")
-text = "Test"
+theme_override_font_sizes/font_size = 121
+theme_override_styles/normal = SubResource("StyleBoxTexture_bgxs6")
+text = "Day 10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1043,8 +1042,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
 pivot_offset = Vector2(58, -28)
 
 [node name="Inventory" type="RichTextLabel" parent="UI"]

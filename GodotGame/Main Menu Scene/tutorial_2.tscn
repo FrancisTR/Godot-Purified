@@ -1265,7 +1265,7 @@ scale = Vector2(0.7, 0.7)
 start_id = "TaliaTutorial"
 
 [node name="Sprite2D" parent="NPC/Talia" index="1"]
-scale = Vector2(2.8, 2.8)
+scale = Vector2(2.6, 2.6)
 autoplay = "Talia"
 
 [node name="CollisionShape2D" parent="NPC/Talia" index="2"]

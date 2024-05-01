@@ -75,35 +75,37 @@ texture = ExtResource("3_j4byf")
 [node name="Label" type="Label" parent="TODOlist"]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -75.5
-offset_top = 20.0
-offset_right = 76.5
-offset_bottom = 43.0
-grow_horizontal = 2
+offset_left = 23.75
+offset_top = 18.75
+offset_right = 502.75
+offset_bottom = 107.75
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 69
 text = "----Daily Quota----"
 horizontal_alignment = 1
 
 [node name="Villagers" type="Label" parent="TODOlist"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 23.0
-offset_top = 59.0
-offset_right = 150.0
-offset_bottom = 82.0
+offset_left = 23.75
+offset_top = 60.0
+offset_right = 415.75
+offset_bottom = 137.0
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
 text = "Talk to Villagers:"
 
 [node name="VillagersText" type="RichTextLabel" parent="TODOlist/Villagers"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 128.0
-offset_right = 179.0
-offset_bottom = 25.0
+offset_left = 418.75
+offset_top = 6.24999
+offset_right = 513.75
+offset_bottom = 77.25
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 55
 text = "1/7"
 
 [node name="CraftedItems" type="Label" parent="TODOlist"]
@@ -114,13 +116,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -95.5
-offset_top = -1.75
-offset_right = 95.5
-offset_bottom = 21.25
+offset_left = -57.5
+offset_top = -8.0
+offset_right = 324.5
+offset_bottom = 77.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 66
 text = "----Requests----"
 horizontal_alignment = 1
 
@@ -132,16 +136,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -72.5
+offset_left = -71.5
 offset_top = 19.0
-offset_right = 71.5
-offset_bottom = 99.0
+offset_right = 406.5
+offset_bottom = 271.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxTexture_qb0f0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ygvkm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_u0t20")
@@ -182,16 +188,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 133.125
-offset_top = -173.75
-offset_right = 168.125
-offset_bottom = -138.75
+offset_left = 135.0
+offset_top = -175.625
+offset_right = 250.0
+offset_bottom = -60.625
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxTexture_qb0f0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ygvkm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_u0t20")
@@ -199,185 +207,213 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ndb2o")
 text = "Exit"
 
 [node name="ItemR" type="Label" parent="ListUI"]
-visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 225.0
-offset_top = 61.25
-offset_right = 347.0
-offset_bottom = 79.25
+anchor_left = 0.3125
+anchor_top = 0.146605
+anchor_right = 0.363333
+anchor_bottom = 0.194012
+offset_right = 85.4
+offset_bottom = 44.8
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 50
 text = "???"
+metadata/_edit_use_anchors_ = true
 
 [node name="CheckMark" type="TextureRect" parent="ListUI/ItemR"]
 layout_mode = 0
-offset_left = -20.625
-offset_top = -3.87501
-offset_right = -3.625
-offset_bottom = 13.125
+offset_left = -68.75
+offset_top = -2.08333
+offset_right = 0.249992
+offset_bottom = 66.9167
 texture = ExtResource("4_wkuso")
 expand_mode = 1
 
 [node name="ItemNeeded" type="Label" parent="ListUI/ItemR"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 156.875
-offset_top = -0.625016
-offset_right = 268.875
-offset_bottom = 17.375
+offset_left = 560.0
+offset_top = 6.0
+offset_right = 899.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 45
 
 [node name="ItemR2" type="Label" parent="ListUI"]
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 225.0
-offset_top = 111.875
-offset_right = 347.0
-offset_bottom = 129.875
+anchor_left = 0.3125
+anchor_top = 0.271605
+anchor_right = 0.363333
+anchor_bottom = 0.319012
+offset_right = 85.4
+offset_bottom = 44.8
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 50
 text = "???"
+metadata/_edit_use_anchors_ = true
 
 [node name="CheckMark" type="TextureRect" parent="ListUI/ItemR2"]
 layout_mode = 0
-offset_left = -20.625
-offset_top = -3.87501
-offset_right = -3.625
-offset_bottom = 13.125
+offset_left = -68.75
+offset_top = -2.08333
+offset_right = 0.249992
+offset_bottom = 66.9167
 texture = ExtResource("4_wkuso")
 expand_mode = 1
 
 [node name="ItemNeeded" type="Label" parent="ListUI/ItemR2"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 156.875
-offset_right = 268.875
-offset_bottom = 18.0
+offset_left = 560.0
+offset_top = 6.0
+offset_right = 899.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 45
 
 [node name="ItemR3" type="Label" parent="ListUI"]
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 225.0
-offset_top = 162.5
-offset_right = 347.0
-offset_bottom = 180.5
+anchor_left = 0.3125
+anchor_top = 0.398148
+anchor_right = 0.363333
+anchor_bottom = 0.445556
+offset_right = 85.4
+offset_bottom = 44.8
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 50
 text = "???"
+metadata/_edit_use_anchors_ = true
 
 [node name="CheckMark" type="TextureRect" parent="ListUI/ItemR3"]
 layout_mode = 0
-offset_left = -20.625
-offset_top = -3.87501
-offset_right = -3.625
-offset_bottom = 13.125
+offset_left = -68.75
+offset_top = -2.08333
+offset_right = 0.249992
+offset_bottom = 66.9167
 texture = ExtResource("4_wkuso")
 expand_mode = 1
 
 [node name="ItemNeeded" type="Label" parent="ListUI/ItemR3"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 156.875
-offset_right = 268.875
-offset_bottom = 18.0
+offset_left = 560.0
+offset_top = 6.0
+offset_right = 899.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 45
 
 [node name="ItemR4" type="Label" parent="ListUI"]
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 225.0
-offset_top = 213.125
-offset_right = 347.0
-offset_bottom = 231.125
+anchor_left = 0.3125
+anchor_top = 0.520062
+anchor_right = 0.363333
+anchor_bottom = 0.567469
+offset_right = 85.4
+offset_bottom = 44.8
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 50
 text = "???"
+metadata/_edit_use_anchors_ = true
 
 [node name="CheckMark" type="TextureRect" parent="ListUI/ItemR4"]
 layout_mode = 0
-offset_left = -20.625
-offset_top = -3.87501
-offset_right = -3.625
-offset_bottom = 13.125
+offset_left = -68.75
+offset_top = -2.08333
+offset_right = 0.249992
+offset_bottom = 66.9167
 texture = ExtResource("4_wkuso")
 expand_mode = 1
 
 [node name="ItemNeeded" type="Label" parent="ListUI/ItemR4"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 156.875
-offset_right = 268.875
-offset_bottom = 18.0
+offset_left = 560.0
+offset_top = 6.0
+offset_right = 899.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 45
 
 [node name="ItemR5" type="Label" parent="ListUI"]
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 225.0
-offset_top = 263.75
-offset_right = 347.0
-offset_bottom = 281.75
+anchor_left = 0.3125
+anchor_top = 0.646605
+anchor_right = 0.363333
+anchor_bottom = 0.694012
+offset_right = 85.4
+offset_bottom = 44.8
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 50
 text = "???"
+metadata/_edit_use_anchors_ = true
 
 [node name="CheckMark" type="TextureRect" parent="ListUI/ItemR5"]
 layout_mode = 0
-offset_left = -20.625
-offset_top = -3.87501
-offset_right = -3.625
-offset_bottom = 13.125
+offset_left = -68.75
+offset_top = -2.08333
+offset_right = 0.249992
+offset_bottom = 66.9167
 texture = ExtResource("4_wkuso")
 expand_mode = 1
 
 [node name="ItemNeeded" type="Label" parent="ListUI/ItemR5"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 156.875
-offset_right = 268.875
-offset_bottom = 18.0
+offset_left = 560.0
+offset_top = 6.0
+offset_right = 899.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 45
 
 [node name="ItemR6" type="Label" parent="ListUI"]
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 225.0
-offset_top = 314.375
-offset_right = 347.0
-offset_bottom = 332.375
+anchor_left = 0.3125
+anchor_top = 0.773148
+anchor_right = 0.363333
+anchor_bottom = 0.820556
+offset_right = 85.4
+offset_bottom = 44.8
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 50
 text = "???"
+metadata/_edit_use_anchors_ = true
 
 [node name="CheckMark" type="TextureRect" parent="ListUI/ItemR6"]
 layout_mode = 0
-offset_left = -20.625
-offset_top = -3.87501
-offset_right = -3.625
-offset_bottom = 13.125
+offset_left = -68.75
+offset_top = -2.08333
+offset_right = 0.249992
+offset_bottom = 66.9167
 texture = ExtResource("4_wkuso")
 expand_mode = 1
 
 [node name="ItemNeeded" type="Label" parent="ListUI/ItemR6"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 156.875
-offset_right = 268.875
-offset_bottom = 18.0
+offset_left = 560.0
+offset_top = 6.0
+offset_right = 899.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 45
 
 [node name="Items" type="Node2D" parent="."]
 

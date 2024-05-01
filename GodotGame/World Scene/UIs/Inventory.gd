@@ -29,22 +29,7 @@ extends Control
 
 
 func _process(delta):
-	#$Items/slot0/ItemName0.visible = false
-	#$Items/slot1/ItemName1.visible = false
-	#$Items/slot2/ItemName2.visible = false
-	#$Items/slot3/ItemName3.visible = false
-	#$Items/slot4/ItemName4.visible = false
-	#$Items/slot5/ItemName5.visible = false
-	#$Items/slot6/ItemName6.visible = false
-	#$Items/slot7/ItemName7.visible = false
-	#$Items/slot8/ItemName8.visible = false
-	#$Items/slot9/ItemName9.visible = false
-	#$Items/slot10/ItemName10.visible = false
-	#$Items/slot11/ItemName11.visible = false
-	#$Items/slot12/ItemName12.visible = false
-	#$Items/slot13/ItemName13.visible = false
-	#$Items/slot14/ItemName14.visible = false
-	#GameData.QMain[NPCname] = true
+	
 	# Constantly update the variables live
 	var countTalked = 0
 	for i in range(len(GameData.villagersTalked)):
@@ -73,7 +58,7 @@ func _process(delta):
 		InventoryRequest[0].visible = true
 		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/1"
 	if GameData.day == 8:
-		for i in range(3):
+		for i in range(4):
 			InventoryRequest[i].visible = true
 		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/6"
 	if GameData.day == 9 or GameData.day == 10:
@@ -225,6 +210,22 @@ func _process(delta):
 					InventoryAmount[i].text = "Need 5 Water Bottles"
 					GameData.QMainLocationIdx["Bargin"] = i
 					break
+					
+					
+		if (GameData.QMain.keys().find("Accept") != -1):
+			#$ListUI/ItemR.text = "Request from Antonio"
+			#$ListUI/ItemR/ItemNeeded.text = "Need 3 Tin Cans"
+			for i in range(len(InventoryRequest)):
+				if (GameData.QMainLocationIdx.keys().find("Accept") != -1 and InventoryRequest[i].text == "Request from Antonio"):
+					InventoryRequest[GameData.QMainLocationIdx["Accept"]].text = "Request from Antonio"
+					InventoryAmount[GameData.QMainLocationIdx["Accept"]].text = "Rebuild the Well"
+					break
+				elif (InventoryRequest[i].visible == true and InventoryRequest[i].text == "???"):
+					InventoryRequest[i].text = "Request from Antonio"
+					InventoryAmount[i].text = "Rebuild the Well"
+					GameData.QMainLocationIdx["Accept"] = i
+					break		
+		
 								
 		if (GameData.QMain.keys().find("Anger") != -1):
 			#$ListUI/ItemR.text = "Request from Antonio"

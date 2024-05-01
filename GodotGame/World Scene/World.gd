@@ -10,23 +10,23 @@ var stopMusic = false
 
 #TODO: Add cord for all NPCs
 var npc_positions = {
-	'day1':[Vector2(2721, -234), Vector2(1715, 514), Vector2(1332, -81), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
-	'day2':[Vector2(108, -353), Vector2(497, 201), Vector2(731, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-212, 168)],
-	'day3':[Vector2(48, 406), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	'day1':[Vector2(2721, -234), Vector2(1715, 514), Vector2(1332, -81), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-219, 100)],
+	'day2':[Vector2(108, -353), Vector2(497, 201), Vector2(731, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-219, 100)],
+	'day3':[Vector2(48, 406), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-219, 100)],
 	
 	#DLC
-	'day4':[Vector2(218, 206), Vector2(897, 201), Vector2(999999999, 99999999), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	'day4':[Vector2(218, 206), Vector2(897, 201), Vector2(999999999, 99999999), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-219, 100)],
 	
-	'day5':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	'day5':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-219, 100)],
 	
-	'day6':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	'day6':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-219, 100)],
 	
-	'day7':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	'day7':[Vector2(318, 106), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-219, 100)],
 	
-	'day8':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
+	'day8':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-219, 100)],
 	
-	'day9':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)],
-	'day10':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-212, 168)]
+	'day9':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-219, 100)],
+	'day10':[Vector2(218, 206), Vector2(897, 201), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-219, 100)]
 	}
 
 # Called when the node enters the scene tree for the first time.
@@ -126,7 +126,7 @@ func _on_open_leave_menu():
 	else:
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/ColorRect.show()
-		$UI/LeaveVillage/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Yes.grab_focus()
+		$UI/LeaveVillage/ColorRect/Yes.grab_focus()
 	GameData.charLock = true
 
 #**********TEST BUTTONS***********#
@@ -157,19 +157,34 @@ func _on_leave_village():
 	stopMusic = true
 	SoundControl.stop_playing()
 	#TODO: 3 days for MVP. 10 for full game
-	if GameData.day == 6: #Entering Day 7...
+	if GameData.day > 6:
+		SoundControl.stop_playing()
 		TextTransition.set_to_chained_click(
 			[
-				"You leave the village and come back the next day.",
-				"However, before you start to work, Talia approaches you..."
+				"You left the village and dumped all the items at home, except for some items.",
+				"On the next day, you enter the village."
+			],
+			"res://World Scene/World.tscn",
+			"Click To Continue"
+		)
+	elif GameData.day == 6: #Entering Day 7...
+		SoundControl.stop_playing()
+		TextTransition.set_to_chained_click(
+			[
+				"You left the village and went back to your company.",
+				"However, Talia approaches you..."
 			],
 			"res://Main Menu Scene/tutorial.tscn",
 			"Click To Continue"
 		)
-	elif GameData.day < 3:
+	elif GameData.day < 6:
 		SoundControl.stop_playing()
-		TextTransition.set_to_click(
-			"You leave the village and come back the next day",
+		TextTransition.set_to_chained_click(
+			[
+				"You left the village and went back to your company.",
+				"You dumped all the junk you have found, except for some items.",
+				"On the next day, you enter the village."
+			],
 			"res://World Scene/World.tscn",
 			"Click To Continue"
 		)

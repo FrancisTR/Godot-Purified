@@ -1,8 +1,7 @@
-[gd_scene load_steps=55 format=3 uid="uid://b2fo6lc5k06cg"]
+[gd_scene load_steps=60 format=3 uid="uid://b2fo6lc5k06cg"]
 
 [ext_resource type="Script" path="res://World Scene/World.gd" id="1_1qbtd"]
 [ext_resource type="Texture2D" uid="uid://cxm7wh81tjegk" path="res://Assets/Custom/Terrain/Grass.png" id="5_b2c28"]
-[ext_resource type="PackedScene" uid="uid://ynpgm70xqibo" path="res://World Scene/well.tscn" id="5_b6naa"]
 [ext_resource type="Texture2D" uid="uid://cvu5fwe10f7hh" path="res://Assets/UISprites/UI_Flat_Banner_02_Downward.png" id="5_ekcdo"]
 [ext_resource type="Texture2D" uid="uid://cgwe5cdxpul0y" path="res://Assets/Custom/Terrain/Dirt_Path.png" id="6_74scq"]
 [ext_resource type="PackedScene" uid="uid://0nmlup6yvr84" path="res://World Scene/UIs/crafting_table.tscn" id="6_kp1hu"]
@@ -21,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://d4dp18egphxnv" path="res://Assets/Custom/Terrain/Trees.png" id="17_gw46k"]
 [ext_resource type="Texture2D" uid="uid://c0s4uevooioh6" path="res://Assets/Custom/map icons/danny_icon.png" id="18_usbb1"]
 [ext_resource type="Texture2D" uid="uid://cios6db786skv" path="res://Assets/Custom/map icons/angelica_icon.png" id="19_jtihu"]
+[ext_resource type="Texture2D" uid="uid://wrx3ar3ec3mq" path="res://Assets/Custom/Tutorial/Keys.png" id="19_mha7t"]
+[ext_resource type="Script" path="res://World Scene/Controls.gd" id="19_o7tsp"]
 [ext_resource type="Texture2D" uid="uid://benqd5tcf1uho" path="res://Assets/Custom/map icons/barry_icon.png" id="20_g6qbj"]
 [ext_resource type="Texture2D" uid="uid://b7ktldr0sixca" path="res://Assets/Custom/map icons/derick_icon.png" id="21_lt74b"]
 [ext_resource type="Texture2D" uid="uid://d4dl2wtcwcl7e" path="res://Assets/Custom/map icons/antonio_icon.png" id="22_1bejx"]
@@ -214,6 +215,18 @@ polygon = PackedVector2Array(-2.95312, -8, -8, -8, -8, 8, -2.98438, 8)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1uys6"]
 polygon = PackedVector2Array(-2.95312, -8, -8, -8, -8, 8, -2.98438, 8)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kxl3c"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cvsnk"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bs6wf"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wfy75"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_m30lc"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mblp4"]
@@ -230,6 +243,7 @@ texture = ExtResource("7_3dl6f")
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
 3:0/0/z_index = -1
+3:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_kxl3c")
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
 4:0/0 = 0
@@ -262,6 +276,7 @@ texture = ExtResource("7_3dl6f")
 2:1/0/physics_layer_0/angular_velocity = 0.0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.96875, -8, -8, -8, -8, 8, -2.96875, 8)
 3:1/0 = 0
+3:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_cvsnk")
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -293,6 +308,7 @@ texture = ExtResource("7_3dl6f")
 2:2/0/physics_layer_0/angular_velocity = 0.0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.96875, -8, -8, -8, -8, 8, -2.96875, 8)
 3:2/0 = 0
+3:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_bs6wf")
 3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:2/0/physics_layer_0/angular_velocity = 0.0
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -327,6 +343,7 @@ texture = ExtResource("7_3dl6f")
 2:3/0/physics_layer_0/angular_velocity = 0.0
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.96875, -8, -8, -8, -8, 8, -2.96875, 8)
 3:3/0 = 0
+3:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_wfy75")
 3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:3/0/physics_layer_0/angular_velocity = 0.0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -915,12 +932,23 @@ rotation = 0.748665
 z_index = 1
 position = Vector2(867, 1388)
 
-[node name="Well" parent="Other" instance=ExtResource("5_b6naa")]
-position = Vector2(1708, 24)
-
 [node name="CraftingTablePRIME" parent="Other" instance=ExtResource("6_kp1hu")]
 z_index = 1
-position = Vector2(-425, 260)
+position = Vector2(-245, 220)
+
+[node name="Well" parent="Other" instance=ExtResource("6_kp1hu")]
+z_index = 1
+position = Vector2(1717, 26)
+
+[node name="Sprite2D" parent="Other/Well" index="0"]
+scale = Vector2(4, 3.75)
+texture = ExtResource("14_5t6iu")
+
+[node name="CollisionShape2D" parent="Other/Well" index="1"]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" parent="Other/Well/StaticBody2D" index="0"]
+position = Vector2(2, 0)
 
 [node name="Map" type="Node" parent="."]
 
@@ -1011,17 +1039,17 @@ texture_filter = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -227.0
-offset_top = 25.0
-offset_right = -87.0
-offset_bottom = 102.0
+offset_left = -242.0
+offset_top = 15.0
+offset_right = 508.0
+offset_bottom = 515.0
 grow_horizontal = 0
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0.239216, 0.533333, 0.713726, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 121
 theme_override_styles/normal = SubResource("StyleBoxTexture_ard7t")
-text = "Test"
+text = "Day 10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1057,8 +1085,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
 pivot_offset = Vector2(58, -28)
 
 [node name="Inventory" type="RichTextLabel" parent="UI"]
@@ -1067,6 +1093,205 @@ offset_left = 27.0
 offset_top = 552.0
 offset_right = 180.0
 offset_bottom = 633.0
+
+[node name="Controls" type="CanvasLayer" parent="UI"]
+visible = false
+script = ExtResource("19_o7tsp")
+
+[node name="ControlLabel" type="Label" parent="UI/Controls"]
+texture_filter = 1
+offset_top = 505.0
+offset_right = 1520.0
+offset_bottom = 632.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 100
+text = "Movement"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Top" type="TextureRect" parent="UI/Controls"]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -105.0
+offset_right = 350.0
+offset_bottom = 245.0
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("19_mha7t")
+
+[node name="Label" type="Label" parent="UI/Controls/Top"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1167.0
+offset_bottom = 1167.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 300
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left" type="TextureRect" parent="UI/Controls"]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 117.0
+offset_top = -105.0
+offset_right = 467.0
+offset_bottom = 245.0
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("19_mha7t")
+
+[node name="Label" type="Label" parent="UI/Controls/Left"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1167.0
+offset_bottom = 1167.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 300
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mid" type="TextureRect" parent="UI/Controls"]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 234.0
+offset_top = -105.0
+offset_right = 584.0
+offset_bottom = 245.0
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("19_mha7t")
+
+[node name="Label" type="Label" parent="UI/Controls/Mid"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1167.0
+offset_bottom = 1167.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 300
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="TextureRect" parent="UI/Controls"]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 351.0
+offset_top = -105.0
+offset_right = 701.0
+offset_bottom = 245.0
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("19_mha7t")
+
+[node name="Label" type="Label" parent="UI/Controls/Right"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1167.0
+offset_bottom = 1167.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 300
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprint" type="TextureRect" parent="UI/Controls"]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 504.0
+offset_top = -105.0
+offset_right = 1117.0
+offset_bottom = 245.0
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("19_mha7t")
+
+[node name="Label" type="Label" parent="UI/Controls/Sprint"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1167.0
+offset_bottom = 1167.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 300
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MapLabel" type="Label" parent="UI/Controls"]
+texture_filter = 1
+offset_left = 1047.0
+offset_top = 505.0
+offset_right = 1397.0
+offset_bottom = 632.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 100
+text = "Map"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Map" type="TextureRect" parent="UI/Controls"]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1047.0
+offset_top = -105.0
+offset_right = 1397.0
+offset_bottom = 245.0
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("19_mha7t")
+
+[node name="Label" type="Label" parent="UI/Controls/Map"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1167.0
+offset_bottom = 1167.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 300
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InventoryLabel" type="Label" parent="UI/Controls"]
+texture_filter = 1
+offset_left = 924.0
+offset_top = 505.0
+offset_right = 1316.0
+offset_bottom = 632.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 100
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Inventory" type="TextureRect" parent="UI/Controls"]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 930.0
+offset_top = -105.0
+offset_right = 1280.0
+offset_bottom = 245.0
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("19_mha7t")
+
+[node name="Label" type="Label" parent="UI/Controls/Inventory"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1167.0
+offset_bottom = 1167.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 300
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NPCs" type="Node" parent="."]
 
@@ -1145,7 +1370,7 @@ position = Vector2(0, 10.5)
 debug_color = Color(0.898039, 0.227451, 0.545098, 0.419608)
 
 [node name="OldMan" parent="NPCs" instance=ExtResource("11_omtwb")]
-position = Vector2(-212, 168)
+position = Vector2(-219, 100)
 
 [node name="Sprite2D" parent="NPCs/OldMan" index="1"]
 animation = &"OldMan"
@@ -1251,6 +1476,7 @@ texture_scale = 0.5
 [editable path="Other/CharacterBody2D"]
 [editable path="Other/CharacterBody2D/Inventory Layer/Inventory"]
 [editable path="Other/CraftingTablePRIME"]
+[editable path="Other/Well"]
 [editable path="NPCs/Denial"]
 [editable path="NPCs/Denial/NPCActions/OldManInventory/InventoryDialogue"]
 [editable path="NPCs/Anger"]

@@ -115,6 +115,8 @@ func _ready():
 	NPCname = null
 	set_process_input(true)
 	$PressForDialogue.text = InputMap.action_get_events("Interaction")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
+	if GameData.day == 3:
+		$"../Bargin/Sprite2D".animation = "Barry_Sad"
 	
 func go_pos(delta):
 	if moving and playerRuns == false: #Barry
@@ -272,6 +274,7 @@ func _process(delta):
 	dialogue_box.variables["WaterBottle"] = GameData.itemDialogue[2]["Value"]
 	dialogue_box.variables["TinCans"] = GameData.itemDialogue[3]["Value"]
 	dialogue_box.variables["WaterFilter"] = GameData.itemDialogue[4]["Value"]
+	dialogue_box.variables["Well"] = GameData.well
 	
 	#TODO: Get the day for the appropriate dialogue
 	if GameData.visitTutorial == true:
@@ -444,7 +447,7 @@ func _process(delta):
 		go_pos(delta) #For barry
 	
 	
-	if Input.is_action_just_pressed("Interaction") and enterBody == true:
+	if Input.is_action_just_pressed("Interaction") and enterBody == true and moving == false:
 		#Focus the button that is visible on dialogue
 		#for option in dialogue_box.options.get_children():
 			#if option.visible:

@@ -7,83 +7,51 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_md5mi"]
 texture = ExtResource("3_0umsk")
-expand_margin_left = 1.0
-expand_margin_top = 4.0
-expand_margin_right = 1.0
-expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_icgys"]
 texture = ExtResource("3_0umsk")
-expand_margin_left = 1.0
-expand_margin_top = 4.0
-expand_margin_right = 1.0
-expand_margin_bottom = 4.0
 modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_17pup"]
 texture = ExtResource("4_red4t")
-expand_margin_left = 1.0
-expand_margin_top = 4.0
-expand_margin_right = 1.0
-expand_margin_bottom = 4.0
 modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f73tn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qo5hp"]
 texture = ExtResource("3_0umsk")
-expand_margin_left = 1.0
-expand_margin_top = 4.0
-expand_margin_right = 1.0
-expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ggau"]
 texture = ExtResource("3_0umsk")
-expand_margin_left = 1.0
-expand_margin_top = 4.0
-expand_margin_right = 1.0
-expand_margin_bottom = 4.0
 modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rfi1r"]
 texture = ExtResource("4_red4t")
-expand_margin_left = 1.0
-expand_margin_top = 4.0
-expand_margin_right = 1.0
-expand_margin_bottom = 4.0
 modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7o68m"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0yg0"]
 texture = ExtResource("3_0umsk")
-expand_margin_left = 4.0
-expand_margin_top = 4.0
-expand_margin_right = 4.0
-expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ohko"]
 texture = ExtResource("3_0umsk")
-expand_margin_left = 4.0
-expand_margin_top = 4.0
-expand_margin_right = 4.0
-expand_margin_bottom = 4.0
 modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3fwte"]
 texture = ExtResource("4_red4t")
-expand_margin_left = 4.0
-expand_margin_top = 4.0
-expand_margin_right = 4.0
-expand_margin_bottom = 4.0
 modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_orjp5"]
 
 [node name="LeaveVillageMenu" type="Control"]
+texture_filter = 1
 layout_mode = 3
-anchors_preset = 0
-size_flags_horizontal = 4
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_hp0bo")
 
 [node name="ColorRect" type="TextureRect" parent="."]
@@ -104,7 +72,7 @@ grow_vertical = 2
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_8r7ji")
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+[node name="Leave Village?" type="Label" parent="ColorRect"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -112,33 +80,35 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -134.5
-offset_top = -26.0
-offset_right = 134.5
-offset_bottom = 45.0
+offset_left = -134.3
+offset_top = -34.0
+offset_right = 762.7
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
-texture_filter = 1
-layout_mode = 2
-
-[node name="Leave Village?" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
 text = "Do you want to leave this village?"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Yes" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Yes" type="Button" parent="ColorRect"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.1
+offset_top = -8.0
+offset_right = 98.9
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
 focus_neighbor_left = NodePath("../No")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -153,16 +123,29 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxTexture_md5mi")
 theme_override_styles/hover = SubResource("StyleBoxTexture_icgys")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_17pup")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_f73tn")
 text = "Yes"
 
-[node name="No" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="No" type="Button" parent="ColorRect"]
 texture_filter = 1
 custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 6.10001
+offset_top = -8.0
+offset_right = 156.1
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
 focus_neighbor_right = NodePath("../Yes")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -177,6 +160,7 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxTexture_qo5hp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_5ggau")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_rfi1r")
@@ -187,41 +171,48 @@ text = "No
 [node name="QuotaError" type="TextureRect" parent="."]
 visible = false
 texture_filter = 1
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -360.0
 offset_top = -115.0
-offset_right = -73.0
-offset_bottom = -19.0
-scale = Vector2(2.5, 2.5)
+offset_right = 358.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_8r7ji")
 
-[node name="MarginContainer" type="MarginContainer" parent="QuotaError"]
+[node name="Quota" type="Label" parent="QuotaError"]
 texture_filter = 1
-layout_mode = 0
-offset_left = 9.0
-offset_top = 22.0
-offset_right = 278.0
-offset_bottom = 93.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="QuotaError/MarginContainer"]
-texture_filter = 1
-layout_mode = 2
-
-[node name="Quota" type="Label" parent="QuotaError/MarginContainer/VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
+layout_mode = 1
+offset_top = 42.0
+offset_right = 2393.0
+offset_bottom = 246.0
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 160
 text = "You have not meet your quota."
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="QuotaError/MarginContainer/VBoxContainer"]
+[node name="Okay" type="Button" parent="QuotaError"]
 texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="Okay" type="Button" parent="QuotaError/MarginContainer/VBoxContainer/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -20.0
+offset_right = 340.0
+offset_bottom = 380.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -235,12 +226,13 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 130
 theme_override_styles/normal = SubResource("StyleBoxTexture_n0yg0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_2ohko")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_3fwte")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_orjp5")
 text = "Okay"
 
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/HBoxContainer/No" to="." method="_on_no_pressed"]
-[connection signal="pressed" from="QuotaError/MarginContainer/VBoxContainer/HBoxContainer/Okay" to="." method="_on_okay_pressed"]
+[connection signal="pressed" from="ColorRect/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="ColorRect/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="QuotaError/Okay" to="." method="_on_okay_pressed"]

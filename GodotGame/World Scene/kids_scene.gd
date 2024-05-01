@@ -45,6 +45,7 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 
 func _on_voice_pressed():
 	print("Play Audio")
+	dialogue_box.show_options()
 
 
 func _on_dialogue_box_dialogue_ended():
