@@ -1,7 +1,20 @@
 extends Node2D
 
 var signal_method = ""
-
+var tin_can_scene = preload("res://World Scene/Items/TinCan.tscn")
+var bottle_scene = preload("res://World Scene/Items/WaterBottle.tscn")
+var rock_scene = preload("res://World Scene/Items/rock.tscn")
+var twig_scene = preload("res://World Scene/Items/twig.tscn")
+var sand_scene = preload("res://World Scene/Items/sand.tscn")
+var moss_scene = preload("res://World Scene/Items/Moss.tscn")
+var scenes = {
+	"TinCan": tin_can_scene,
+	"WaterBottle": bottle_scene,
+	"rock": rock_scene,
+	"twig": twig_scene,
+	"sand": sand_scene,
+	"Moss": moss_scene
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,14 +63,22 @@ func _ready():
 
 
 	#add item spawns
-	inst(GameData.itemSpawns)
+	#inst(GameData.itemSpawns)
+	inst_json(Utils.static_items_json)
+	inst_json(Utils.non_static_items_json)
 
 
 func _process(delta):
 	#Keep constant track of the items being remove in the wild
-	for i in range(len(GameData.itemSpawns)):
-		if (GameData.get_item_posX == GameData.itemSpawns[i]["posX"] and GameData.get_item_posY == GameData.itemSpawns[i]["posY"]):
-			GameData.itemSpawns[i]["Taken"] = true
+	#for i in range(len(GameData.itemSpawns)):
+		#if (GameData.get_item_posX == GameData.itemSpawns[i]["posX"] and GameData.get_item_posY == GameData.itemSpawns[i]["posY"]):
+			#GameData.itemSpawns[i]["Taken"] = true
+	for item in Utils.non_static_items_json:
+		var index = GameData.day-1
+		var x_same = GameData.get_item_posX == item.Position[index].posX
+		var y_same = GameData.get_item_posY == item.Position[index].posY
+		if x_same and y_same:
+			item.Taken = true
 	
 	#TODO: Add theme song based on the day
 	if GameData.day <= 2:
@@ -75,8 +96,20 @@ func inst(items):
 			var instance = items[i]["Item"].instantiate()
 			instance.position = Vector2(items[i]["posX"], items[i]["posY"])
 			add_child(instance)
-		
-	
+
+func inst_json(item_json):
+	var count = 0
+	for item in item_json:
+		var instance = scenes[item.Item].instantiate()
+		var index = GameData.day-1
+		if item.Item == "sand" or item.Item == "Moss":
+			index = 0
+		var in_valid_place = item.Position[index].posX != -9999 and item.Position[index].posY != -9999
+		if in_valid_place and not item.Taken:
+			count+=1
+			instance.position = Vector2(item.Position[index].posX, item.Position[index].posY)
+			add_child(instance)
+	print("spawned in ", count, " items")
 
 func increase_day(amount):
 	if(GameData.day+amount > 0):

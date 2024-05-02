@@ -116,6 +116,8 @@ func _ready():
 	set_process_input(true)
 	$PressForDialogue.text = InputMap.action_get_events("Interaction")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
 	if GameData.day == 3:
+		if $"../Bargin/Sprite2D" == null:
+			return
 		$"../Bargin/Sprite2D".animation = "Barry_Sad"
 	
 func go_pos(delta):
