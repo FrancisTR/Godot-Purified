@@ -912,7 +912,7 @@ color = Color(0.533333, 0.313726, 1, 1)
 
 [node name="CharacterBody2D" parent="Other" instance=ExtResource("8_7n4r7")]
 y_sort_enabled = true
-position = Vector2(172, 303)
+position = Vector2(-5, 700)
 
 [node name="Sprite2D" parent="Other/CharacterBody2D" index="0"]
 frame_progress = 0.785208
@@ -934,7 +934,10 @@ position = Vector2(867, 1388)
 
 [node name="CraftingTablePRIME" parent="Other" instance=ExtResource("6_kp1hu")]
 z_index = 1
-position = Vector2(-245, 220)
+position = Vector2(-242, 220)
+
+[node name="CollisionShape2D" parent="Other/CraftingTablePRIME/StaticBody2D" index="0"]
+position = Vector2(0, -0.5)
 
 [node name="Well" parent="Other" instance=ExtResource("6_kp1hu")]
 z_index = 1

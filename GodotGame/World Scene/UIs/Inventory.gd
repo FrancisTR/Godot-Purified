@@ -50,7 +50,9 @@ func _process(delta):
 			InventoryRequest[0].visible = true
 			$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/1"
 		
-	if (GameData.day == 3 or GameData.day == 5 or GameData.day == 6):
+	if (GameData.day == 3):
+		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/4"
+	if (GameData.day == 5 or GameData.day == 6):
 		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/6"
 	if (GameData.day == 4):
 		$TODOlist/Villagers/VillagersText.text = str(countTalked)+"/5"

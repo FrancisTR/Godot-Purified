@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://decpyxnu3oocl"]
+[gd_scene load_steps=49 format=3 uid="uid://decpyxnu3oocl"]
 
 [ext_resource type="Script" path="res://World Scene/characters/npc.gd" id="1_7ll4o"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_kithy"]
@@ -19,7 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://djx5rl7iobm8m" path="res://Assets/Custom/Sprites/Danny.png" id="14_046bs"]
 [ext_resource type="Texture2D" uid="uid://borcws4ydxocc" path="res://Assets/Custom/Sprites/Derick.png" id="15_o5dh2"]
 [ext_resource type="Texture2D" uid="uid://cfxvp151wo3uq" path="res://Assets/Custom/Sprites/Old_Man.png" id="16_ee48p"]
+[ext_resource type="Texture2D" uid="uid://dflwjoawwuern" path="res://Assets/Custom/Sprites/Hop_Sad.png" id="16_jpr7p"]
+[ext_resource type="Texture2D" uid="uid://blea0dsendh8f" path="res://Assets/Custom/Sprites/Leap_Sad.png" id="17_5jcl2"]
 [ext_resource type="Texture2D" uid="uid://b20ka352pbpa6" path="res://Assets/Custom/Sprites/Talia.png" id="17_10a58"]
+[ext_resource type="Texture2D" uid="uid://32gsflmykho3" path="res://Assets/Custom/Sprites/Rano_Sad.png" id="19_mt8cy"]
+[ext_resource type="Texture2D" uid="uid://budj7rqvw50e3" path="res://Assets/Custom/Sprites/Ribbit_Sad.png" id="20_061ni"]
 [ext_resource type="PackedScene" uid="uid://caur4c8x7r8ll" path="res://World Scene/UIs/InventoryDialogue.tscn" id="20_wi7a5"]
 [ext_resource type="Texture2D" uid="uid://bpl17gwn3b6ye" path="res://Assets/Custom/Light.png" id="22_d1aun"]
 [ext_resource type="Texture2D" uid="uid://d0rtr7ojbum5p" path="res://Assets/Custom/Shadow.png" id="23_8ov4e"]
@@ -232,10 +236,42 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("16_jpr7p")
+}],
+"loop": true,
+"name": &"Hop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_5jcl2")
+}],
+"loop": true,
+"name": &"Leap",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("16_ee48p")
 }],
 "loop": true,
 "name": &"OldMan",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_mt8cy")
+}],
+"loop": true,
+"name": &"Rano",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_061ni")
+}],
+"loop": true,
+"name": &"Ribbit",
 "speed": 5.0
 }, {
 "frames": [{
@@ -351,7 +387,7 @@ z_index = 1
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bxftl")
-animation = &"Talia"
+animation = &"Ribbit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -431,9 +467,9 @@ texture_scale = 0.5
 
 [node name="Shadow" type="TextureRect" parent="."]
 texture_filter = 1
-offset_left = -12.0
+offset_left = -14.0
 offset_top = 13.0
-offset_right = 12.0
+offset_right = 14.0
 offset_bottom = 29.0
 texture = ExtResource("23_8ov4e")
 
