@@ -1,11 +1,10 @@
 extends CanvasLayer
 
 func _ready():
-	if prepped([$TextContent, $Instructions, $Timer, $Logo]):
+	if prepped([$TextContent, $Instructions, $Timer]):
 		$TextContent.text = TextTransitionData.text
 		$Instructions.text = TextTransitionData.instructions
 		$Timer.wait_time = TextTransitionData.duration
-		$Logo.visible = TextTransitionData.showLogo
 		if TextTransitionData.enable_timer:
 			$Timer.wait_time = TextTransitionData.duration
 			$Timer.start()
