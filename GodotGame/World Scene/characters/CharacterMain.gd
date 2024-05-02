@@ -8,6 +8,7 @@ signal close_map
 var isMoving = false
 var inventory_opened = false
 var map_opened = false
+var blink_state = true
 #var last_recorded_inventory_amount:Dictionary
 
 var SPEED = 140.0
@@ -20,6 +21,8 @@ func _ready():
 var characterDirection = 0
 
 func _physics_process(delta):
+	if map_opened:
+		$MapIcon.visible = blink_state
 	#created so that it only draws items once each time
 	#if last_recorded_inventory_amount != GameData.inventory_amount:
 		#print("last_recorded_inventory_amount != GameData.inventory_amount")
@@ -158,11 +161,13 @@ func show_map_icon():
 	$MapIcon.show()
 	#$Label.show()
 	$Sprite2D.hide()
+	$Timer.start()
 	
 func hide_map_icon():
 	$Sprite2D.show()
 	$MapIcon.hide()
 	#$Label.hide()
+	$Timer.stop()
 
 func _close_map():
 	map_opened = false
@@ -176,3 +181,8 @@ func _close_inventory():
 	GameData.current_ui = ""
 	print("inventory_close")
 	$"Inventory Layer".hide()
+
+
+func _on_timeout():
+	blink_state = !blink_state
+	$Timer.start()

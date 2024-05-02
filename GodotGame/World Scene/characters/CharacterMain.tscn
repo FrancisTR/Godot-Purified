@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://crmshmhby6akr"]
+[gd_scene load_steps=25 format=3 uid="uid://crmshmhby6akr"]
 
 [ext_resource type="Script" path="res://World Scene/characters/CharacterMain.gd" id="1_cyksq"]
 [ext_resource type="Texture2D" uid="uid://ghsool2pdp04" path="res://Assets/Custom/Sprites/MC_Sprite_Sheet.png" id="2_3sxfq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c64de0u81kuwt" path="res://Assets/Custom/map icons/mc_icon.png" id="5_ugh86"]
 [ext_resource type="Texture2D" uid="uid://bpl17gwn3b6ye" path="res://Assets/Custom/Light.png" id="6_dhoas"]
 [ext_resource type="Texture2D" uid="uid://d0rtr7ojbum5p" path="res://Assets/Custom/Shadow.png" id="7_43qi3"]
+[ext_resource type="Texture2D" uid="uid://dw04cpaod6bun" path="res://Assets/Custom/temp_frog_icon.png" id="8_qh6nt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rxh0c"]
 atlas = ExtResource("2_3sxfq")
@@ -209,19 +210,6 @@ offset_bottom = 64.0
 offset_right = 122.0
 offset_bottom = 64.0
 
-[node name="MapIcon" type="TextureRect" parent="."]
-visible = false
-z_index = 999
-texture_filter = 1
-offset_left = -80.0
-offset_top = -80.0
-offset_right = -40.0
-offset_bottom = -40.0
-scale = Vector2(4, 4)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("5_ugh86")
-
 [node name="Marker2D2" type="Marker2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -246,6 +234,34 @@ offset_right = 12.0
 offset_bottom = 25.0
 texture = ExtResource("7_43qi3")
 
+[node name="MapIcon" type="Node2D" parent="."]
+visible = false
+
+[node name="MapImage" type="TextureRect" parent="MapIcon"]
+z_index = 999
+texture_filter = 1
+offset_left = -80.0
+offset_top = -80.0
+offset_right = -40.0
+offset_bottom = -40.0
+scale = Vector2(4, 4)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_ugh86")
+
+[node name="Outline" type="TextureRect" parent="MapIcon"]
+modulate = Color(100, 100, 100, 1)
+offset_left = -86.0
+offset_top = -86.0
+offset_right = -44.0
+offset_bottom = -44.0
+scale = Vector2(4.1, 4.1)
+texture = ExtResource("8_qh6nt")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="finished" from="FootstepAudio" to="." method="_on_footstep_audio_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]
 
 [editable path="Inventory Layer/Inventory"]
