@@ -11,6 +11,7 @@ starts = {
 "ChildrenComplete": &"0_5",
 "ChildrenComplete2": &"0_6",
 "ChildrenComplete3": &"0_7",
+"Day7TalktoOldMan": &"0_8",
 "Error": &"0_4"
 }
 nodes = {
@@ -48,6 +49,11 @@ nodes = {
 "link": &"1_7",
 "offset": Vector2(260, 3420),
 "start_id": "ChildrenComplete3"
+},
+"0_8": {
+"link": &"1_47",
+"offset": Vector2(807.328, -2269.51),
+"start_id": "Day7TalktoOldMan"
 },
 "1_1": {
 "dialogue": "Halt! You have trespassed on the territory of the Leaping Lagoon Explorers!",
@@ -111,7 +117,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(641.815, 433),
+"size": Vector2(641.814, 433),
 "speaker": 0
 },
 "1_14": {
@@ -124,7 +130,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(550.91, 433),
+"size": Vector2(550.911, 433),
 "speaker": 9
 },
 "1_15": {
@@ -293,7 +299,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(675.999, 510),
+"size": Vector2(676, 510),
 "speaker": 7
 },
 "1_27": {
@@ -319,7 +325,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(545.455, 519.273),
+"size": Vector2(545.454, 519.273),
 "speaker": 9
 },
 "1_29": {
@@ -358,7 +364,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433),
 "speaker": 9
 },
 "1_31": {
@@ -371,7 +377,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433),
 "speaker": 9
 },
 "1_32": {
@@ -566,7 +572,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433),
 "speaker": 11
 },
 "1_46": {
@@ -581,6 +587,19 @@ nodes = {
 },
 "size": Vector2(300, 433),
 "speaker": 12
+},
+"1_47": {
+"dialogue": "(I should talk to Old Man Tommy first)",
+"offset": Vector2(820, -2120),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 370),
+"speaker": ""
 },
 "1_5": {
 "dialogue": "Wow, I’m impressed! You’ve managed to find it.",

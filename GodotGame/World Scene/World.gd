@@ -103,7 +103,7 @@ func _on_open_leave_menu():
 		$UI/LeaveVillage/QuotaError.show()
 	
 	#TODO: After day 3 and beyond, you only need to talk to 6 villagers
-	elif ((GameData.inventory_amount.keys().find("WaterFilter") == -1 or TalkedToVillagersCount != 6 or GameData.questComplete["Main"] == false or GameData.questComplete["Wild"] == false) and GameData.day == 3):
+	elif ((GameData.inventory_amount.keys().find("WaterFilter") == -1 or TalkedToVillagersCount != 4 or GameData.questComplete["Main"] == false or GameData.questComplete["Wild"] == false) and GameData.day == 3):
 		print("b")
 		$UI/LeaveVillage.show()
 		$UI/LeaveVillage/QuotaError.show()
@@ -213,11 +213,26 @@ func _on_open_map():
 	for npc in npcs:
 		npc.show_map_icon()
 		print(npc.name, " vs ", GameData.QVillager)
-		if not GameData.villagersTalked[GameData.villagersIndex[npc.name]].Talked:
-			npc.show_notif("exclamation")
-		elif GameData.QMain.keys().find(npc.name) != -1:
-			if npc.name == GameData.QVillager[str(npc.name)] and GameData.QMain[npc.name] == false:
-				npc.show_notif("question")
+		if GameData.day < 3:
+			if not GameData.villagersTalked[GameData.villagersIndex[npc.name]].Talked:
+				npc.show_notif("exclamation")
+			elif GameData.QMain.keys().find(npc.name) != -1:
+				if npc.name == GameData.QVillager[str(npc.name)] and GameData.QMain[npc.name] == false:
+					npc.show_notif("question")
+		
+		elif GameData.day == 3 and (npc.name != "Anger" and npc.name != "Depress"):
+			if not GameData.villagersTalked[GameData.villagersIndex[npc.name]].Talked:
+				npc.show_notif("exclamation")
+			elif GameData.QMain.keys().find(npc.name) != -1:
+				if npc.name == GameData.QVillager[str(npc.name)] and GameData.QMain[npc.name] == false:
+					npc.show_notif("question")
+		
+		elif GameData.day == 7 and (npc.name == "OldMan"):
+			if not GameData.villagersTalked[GameData.villagersIndex[npc.name]].Talked:
+				npc.show_notif("exclamation")
+			elif GameData.QMain.keys().find(npc.name) != -1:
+				if npc.name == GameData.QVillager[str(npc.name)] and GameData.QMain[npc.name] == false:
+					npc.show_notif("question")
 		
 func _on_close_map():
 	$Other/CharacterBody2D.hide_map_icon()

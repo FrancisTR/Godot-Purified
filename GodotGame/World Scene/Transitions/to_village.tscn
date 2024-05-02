@@ -14,7 +14,7 @@ size = Vector2(566, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqafc"]
 size = Vector2(566, 16)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wjlnd"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gbrca"]
 texture = ExtResource("2_ydqbd")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -22,7 +22,7 @@ texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j88io"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l10c4"]
 texture = ExtResource("2_ydqbd")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -30,7 +30,7 @@ texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ev5n"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4vc6"]
 texture = ExtResource("3_mjyng")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
@@ -39,9 +39,9 @@ texture_margin_bottom = 20.0
 modulate_color = Color(0, 0.45098, 0.345098, 1)
 
 [sub_resource type="Theme" id="Theme_dll47"]
-Button/styles/hover = SubResource("StyleBoxTexture_wjlnd")
-Button/styles/normal = SubResource("StyleBoxTexture_j88io")
-Button/styles/pressed = SubResource("StyleBoxTexture_3ev5n")
+Button/styles/hover = SubResource("StyleBoxTexture_gbrca")
+Button/styles/normal = SubResource("StyleBoxTexture_l10c4")
+Button/styles/pressed = SubResource("StyleBoxTexture_j4vc6")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kfgb"]
 bg_color = Color(0, 0.305882, 0.313726, 1)
@@ -113,6 +113,7 @@ skip_input_action = "ui_select"
 custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_xj6sr"), SubResource("RichTextEffect_w4h7m")])
 
 [node name="CharacterIMG" type="TextureRect" parent="Dialogue/Dialogue"]
+visible = false
 texture_filter = 1
 offset_left = 239.0
 offset_top = 15.0

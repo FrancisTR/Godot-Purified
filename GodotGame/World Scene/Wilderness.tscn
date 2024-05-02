@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://caurrpk58l40x"]
+[gd_scene load_steps=35 format=3 uid="uid://caurrpk58l40x"]
 
 [ext_resource type="Script" path="res://World Scene/Wilderness.gd" id="1_4k4yr"]
 [ext_resource type="PackedScene" uid="uid://crmshmhby6akr" path="res://World Scene/characters/CharacterMain.tscn" id="2_2eck0"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c6hwlxo0donf6" path="res://Assets/Custom/Terrain/Fence.png" id="11_ma0v7"]
 [ext_resource type="Texture2D" uid="uid://cvu5fwe10f7hh" path="res://Assets/UISprites/UI_Flat_Banner_02_Downward.png" id="11_ns2vr"]
 [ext_resource type="PackedScene" uid="uid://0nmlup6yvr84" path="res://World Scene/UIs/crafting_table.tscn" id="12_hu71a"]
+[ext_resource type="PackedScene" uid="uid://decpyxnu3oocl" path="res://World Scene/characters/npc.tscn" id="19_82jgc"]
 [ext_resource type="PackedScene" uid="uid://dxg6ebn820xt1" path="res://World Scene/characters/Kidsnpc.tscn" id="21_e2yvs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5djji"]
@@ -1060,11 +1061,51 @@ position = Vector2(891, -876)
 position = Vector2(724, -937)
 
 [node name="CharacterBody2D" parent="Other" instance=ExtResource("2_2eck0")]
-z_index = 1
 position = Vector2(887, -743)
 
 [node name="KidsNPC" parent="." instance=ExtResource("21_e2yvs")]
 position = Vector2(889, -922)
+
+[node name="IndividualNPCs" type="Node" parent="."]
+
+[node name="Rano" parent="IndividualNPCs" instance=ExtResource("19_82jgc")]
+position = Vector2(452, -514)
+
+[node name="DialogueBox" parent="IndividualNPCs/Rano/FixedDialoguePosition" index="2"]
+start_id = "LeapNoMore"
+
+[node name="Sprite2D" parent="IndividualNPCs/Rano" index="1"]
+animation = &"Rano"
+autoplay = "Rano"
+
+[node name="Leap" parent="IndividualNPCs" instance=ExtResource("19_82jgc")]
+position = Vector2(367, -510)
+
+[node name="DialogueBox" parent="IndividualNPCs/Leap/FixedDialoguePosition" index="2"]
+start_id = "LeapNoMore"
+
+[node name="Sprite2D" parent="IndividualNPCs/Leap" index="1"]
+animation = &"Leap"
+autoplay = "Leap"
+
+[node name="Hop" parent="IndividualNPCs" instance=ExtResource("19_82jgc")]
+position = Vector2(280, -508)
+
+[node name="DialogueBox" parent="IndividualNPCs/Hop/FixedDialoguePosition" index="2"]
+start_id = "LeapNoMore"
+
+[node name="Sprite2D" parent="IndividualNPCs/Hop" index="1"]
+animation = &"Hop"
+autoplay = "Hop"
+
+[node name="Ribbit" parent="IndividualNPCs" instance=ExtResource("19_82jgc")]
+position = Vector2(181, -507)
+
+[node name="DialogueBox" parent="IndividualNPCs/Ribbit/FixedDialoguePosition" index="2"]
+start_id = "LeapNoMore"
+
+[node name="Sprite2D" parent="IndividualNPCs/Ribbit" index="1"]
+autoplay = "Ribbit"
 
 [connection signal="pressed" from="UI/+1 Day [TEST]" to="." method="_on_test_inc_1"]
 [connection signal="pressed" from="UI/-1 Day [TEST]" to="." method="_on_test_dec_1"]
@@ -1074,3 +1115,11 @@ position = Vector2(889, -922)
 
 [editable path="Other/CraftingTable"]
 [editable path="KidsNPC"]
+[editable path="IndividualNPCs/Rano"]
+[editable path="IndividualNPCs/Rano/NPCActions/OldManInventory/InventoryDialogue"]
+[editable path="IndividualNPCs/Leap"]
+[editable path="IndividualNPCs/Leap/NPCActions/OldManInventory/InventoryDialogue"]
+[editable path="IndividualNPCs/Hop"]
+[editable path="IndividualNPCs/Hop/NPCActions/OldManInventory/InventoryDialogue"]
+[editable path="IndividualNPCs/Ribbit"]
+[editable path="IndividualNPCs/Ribbit/NPCActions/OldManInventory/InventoryDialogue"]

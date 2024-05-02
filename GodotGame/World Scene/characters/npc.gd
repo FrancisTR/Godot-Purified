@@ -277,6 +277,10 @@ func _process(delta):
 	dialogue_box.variables["Well"] = GameData.well
 	
 	#TODO: Get the day for the appropriate dialogue
+	#General for the kids since it is consistent
+	if NPCname == "Rano" or NPCname == "Leap" or NPCname == "Hop" or NPCname == "Ribbit":
+		dialogue_box.start_id = "LeapNoMore"
+		
 	if GameData.visitTutorial == true:
 		dialogue_box.start_id = "TaliaTutorial"
 	elif GameData.day == 1:
@@ -558,6 +562,16 @@ func _on_dialogue_box_dialogue_ended():
 			for i in range(len(GameData.villagersTalked)):
 				if GameData.villagersTalked[i]["Name"] == NPCname:
 					GameData.villagersTalked[i]["Talked"] = true
+	
+	
+	elif GameData.day == 3:
+		if (NPCname != "Anger" and NPCname != "Depress"):
+			dialogue_box.variables[NPCname] = true
+			for i in range(len(GameData.villagersTalked)):
+				if GameData.villagersTalked[i]["Name"] == NPCname:
+					GameData.villagersTalked[i]["Talked"] = true
+	
+	
 	elif GameData.day == 4:
 		#Talk to the old man first
 		if (dialogue_box.variables["OldMan"] == true or NPCname == "OldMan"):

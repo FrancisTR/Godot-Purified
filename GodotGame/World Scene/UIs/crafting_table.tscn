@@ -15,10 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://dwqhnymadamjk" path="res://Assets/Custom/Wells.png" id="11_4o7lx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh0p5"]
-size = Vector2(66, 66)
+size = Vector2(60, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1lxb"]
-size = Vector2(120, 120)
+size = Vector2(88, 104)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6rxi2"]
 texture = ExtResource("4_jad3i")

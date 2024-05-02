@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcjc6w7kmje4r"]
+[gd_scene load_steps=17 format=3 uid="uid://dcjc6w7kmje4r"]
 
 [ext_resource type="Script" path="res://World Scene/Transitions/ToWilderness.gd" id="1_8f0n2"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/dialogueBox.gd" id="2_e218g"]
+[ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_vqwou"]
+[ext_resource type="Texture2D" uid="uid://c7a7s1w74cayf" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a1.png" id="3_bk2b8"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="4_l05k2"]
+[ext_resource type="Resource" uid="uid://cku6yalipw20o" path="res://Dialogues/Wilderness.tres" id="5_buxh6"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="5_ldby2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ulbkt"]
@@ -11,10 +14,56 @@ size = Vector2(325, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqafc"]
 size = Vector2(326, 15)
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_a7g14"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wjlnd"]
+texture = ExtResource("2_vqwou")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0, 0.45098, 0.345098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j88io"]
+texture = ExtResource("2_vqwou")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0, 0.45098, 0.345098, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ev5n"]
+texture = ExtResource("3_bk2b8")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+modulate_color = Color(0, 0.45098, 0.345098, 1)
+
+[sub_resource type="Theme" id="Theme_flwaj"]
+Button/styles/hover = SubResource("StyleBoxTexture_wjlnd")
+Button/styles/normal = SubResource("StyleBoxTexture_j88io")
+Button/styles/pressed = SubResource("StyleBoxTexture_3ev5n")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i12ll"]
+bg_color = Color(0, 0.305882, 0.313726, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.113725, 0.541176, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_xj6sr"]
 script = ExtResource("4_l05k2")
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_0a1o2"]
+[sub_resource type="RichTextEffect" id="RichTextEffect_w4h7m"]
 script = ExtResource("5_ldby2")
 
 [node name="ToWilderness" type="StaticBody2D"]
@@ -29,20 +78,36 @@ shape = SubResource("RectangleShape2D_ulbkt")
 position = Vector2(0, -9.5)
 shape = SubResource("RectangleShape2D_pqafc")
 
-[node name="Dialogue" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+[node name="Dialogue" type="Node" parent="."]
 
 [node name="Dialogue" type="CanvasLayer" parent="Dialogue"]
 
 [node name="DialogueBox" type="Panel" parent="Dialogue/Dialogue"]
 visible = false
+z_index = 101
+texture_filter = 1
 custom_minimum_size = Vector2(256, 128)
-offset_right = 256.0
-offset_bottom = 128.0
+offset_left = 233.0
+offset_top = 386.0
+offset_right = 919.0
+offset_bottom = 612.0
+theme = SubResource("Theme_flwaj")
+theme_override_styles/panel = SubResource("StyleBoxFlat_i12ll")
 script = ExtResource("2_e218g")
-custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_a7g14"), SubResource("RichTextEffect_0a1o2")])
+dialogue_data = ExtResource("5_buxh6")
+hide_portrait = true
+skip_input_action = "ui_select"
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_xj6sr"), SubResource("RichTextEffect_w4h7m")])
+
+[node name="CharacterIMG" type="TextureRect" parent="Dialogue/Dialogue"]
+visible = false
+texture_filter = 1
+offset_left = 239.0
+offset_top = 15.0
+offset_right = 514.0
+offset_bottom = 536.0
+expand_mode = 1
 
 [connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]
+[connection signal="dialogue_ended" from="Dialogue/Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_ended"]
+[connection signal="dialogue_proceeded" from="Dialogue/Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_proceeded"]
