@@ -1,53 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8pnygcokw57x"]
+[gd_scene load_steps=3 format=3 uid="uid://b8pnygcokw57x"]
 
 [ext_resource type="Script" path="res://Globals/Global_Scripts/text_transition.gd" id="1_biuib"]
-[ext_resource type="Texture2D" uid="uid://c7ljiuqehkiji" path="res://Assets/sandboa.png" id="2_vti2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1eky"]
 size = Vector2(1152, 647.5)
 
 [node name="text_transition" type="CanvasLayer"]
 script = ExtResource("1_biuib")
-
-[node name="Logo" type="CanvasLayer" parent="."]
-layer = 2
-
-[node name="TextureRect" type="TextureRect" parent="Logo"]
-z_index = 1
-texture_filter = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -175.0
-offset_top = -261.0
-offset_right = -125.0
-offset_bottom = -211.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(7, 7)
-texture = ExtResource("2_vti2n")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="Logo"]
-z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -204.0
-offset_top = 88.0
-offset_right = 1158.0
-offset_bottom = 348.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.3, 0.3)
-theme_override_font_sizes/font_size = 190
-text = "SandBoa Team"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
