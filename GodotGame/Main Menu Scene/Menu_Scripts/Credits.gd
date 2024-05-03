@@ -1,8 +1,8 @@
 extends Control
 
 #Credit: https://www.reddit.com/r/godot/comments/brg8z3/i_made_a_simple_credits_scene_to_share_with_you/
-const section_time = 4.0
-const line_time = .9
+const section_time = 2.0
+const line_time = .5
 const base_speed = 100
 const speed_up_multiplier = 5.0
 const title_color = Color.AQUAMARINE
@@ -23,31 +23,34 @@ var lines = []
 
 var credits = [
 	[
-		"A game by the Sandboa Team"
-	],
-	[
 		"Game Producer",
 		"Francis T."
 	],
+	
 	[
 		"Associate Producer",
 		"John T."
 	],
+	
 	[
 		"Programming Team",
 		"Francis T.",
 		"John T.",
 		"Nick B.",
-		"Thien"
+		"Thien N."
 	],
+	
 	[
 		"Music Producer",
 		"John T."
 	],
+	
 	[
 		"Sound Producer",
 		"Nick B."
 	],
+	
+	
 	[
 		"Art Producers / Designer",
 		"Michelle",
@@ -55,26 +58,49 @@ var credits = [
 		"John T.",
 		"Francis T.",
 	],
+	
 	[
 		"Writers",
 		"Ben",
-		"Zack",
+		"Zach",
 		"John T.",
 	],
+	
+	[
+		"Voice Director",
+		"Mike"
+	],
+	[
+		"Voice Actors",
+		"Main Character                         ???",
+		"Talia                                  ???",
+		"Danny                                  ???",
+		"Angelica                               ???",
+		"Barry                                  ???",
+		"Derek                                  ???",
+		"Antonio                                ???",
+		"Croak                                  ???",
+		"Old Man Tommy                          ???",
+		"Leaping Lagoon Explorers               ???",
+	],
+	
 	[
 		"Testers",
 		"TBD"
 	],
+	
 	[
-		"Special thanks",
-		"TBD",
+		"Special Thanks",
+		"Dr. Sky (Anderson Sky)",
 	],
+	
 	[
 		"Music OSTs",
 		"Afternoon Tadpole",
 		"Croak of the Fireflies",
 		"Woodsy Labyrinth"
 	],
+	
 	[
 		"Tools used",
 		"Developed with Godot Engine",
@@ -91,6 +117,8 @@ var credits = [
 		"",
 		"Music produced using Flat.io",
 		"",
+		"Fonts from 1001 Fonts",
+		"https://www.1001fonts.com/"
 	],
 	[
 		"Asset used from itch.io",
@@ -149,6 +177,9 @@ func finish():
 		# NOTE: This is called when the credits finish
 		# - Hook up your code to return to the relevant scene here, eg...
 		#get_tree().change_scene("res://scenes/MainMenu.tscn")
+		$Thankyou.visible = true
+		$AnimationPlayer.play("ThankYou")
+		await get_tree().create_timer(5).timeout
 		SceneTransition.change_scene("res://Main Menu Scene/MainMenu.tscn")
 
 func add_line():

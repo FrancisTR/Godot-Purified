@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://2vxriurgfcvm"]
+[gd_scene load_steps=11 format=3 uid="uid://2vxriurgfcvm"]
 
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/Credits.gd" id="1_gd7d2"]
 [ext_resource type="Texture2D" uid="uid://doiir868tc3od" path="res://Assets/UISprites/UI_Flat_Button_Small_Release_02a3.png" id="2_ybfc2"]
@@ -16,6 +16,43 @@ texture = ExtResource("3_kfxe5")
 modulate_color = Color(0.85098, 0.85098, 0.85098, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uw4bs"]
+
+[sub_resource type="Animation" id="Animation_s26y6"]
+resource_name = "ThankYou"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Thankyou:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_spc0f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Thankyou:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c7igu"]
+_data = {
+"RESET": SubResource("Animation_spc0f"),
+"ThankYou": SubResource("Animation_s26y6")
+}
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -58,12 +95,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -159.0
-offset_top = -156.0
-offset_right = -19.0
-offset_bottom = -16.0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 330.0
+offset_bottom = 330.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -77,11 +115,37 @@ theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 169
 theme_override_styles/normal = SubResource("StyleBoxTexture_xobb7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_mhl5q")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_acikf")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_uw4bs")
 text = "Skip"
+
+[node name="Thankyou" type="Label" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -82.0
+offset_right = 2304.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 300
+text = "Thanks for playing!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c7igu")
+}
 
 [connection signal="pressed" from="BackMain" to="." method="_on_back_main_pressed"]
