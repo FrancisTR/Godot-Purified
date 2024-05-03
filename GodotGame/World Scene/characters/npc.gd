@@ -102,7 +102,7 @@ var oldManTempLock = false
 	#"OldMan": "res://Sounds_and_Music/OST/Woodsy Labyrinth.mp3"
 #}
 #var load_audio
-#var audioCount = 0
+#var audioCount = -1
 	
 
 
@@ -543,7 +543,7 @@ func hide_notif():
 
 
 func _on_dialogue_box_dialogue_ended():
-	#audioCount = 0 #Reset audio index
+	#audioCount = -1 #Reset audio index
 	$FixedDialoguePosition/CharacterIMG.visible = false
 	
 	#TODO
@@ -672,10 +672,12 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 	#TODO: Set up the dialogue voices
 	SoundControl.dialogue_audio_stop() #Stop the audio if next dialogue
 	#print(audioCount)
-	print(node_type)
+	print("Dialogue Node: "+str(node_type))
+	#if str(node_type) == str(1):
+		#audioCount += 1
 	#if (audioCount < len(dialogue_voices[GameData.day - 1][NPCname])):
+		#print("Audio Count: "+str(audioCount))
 		#dialogue_voiceSpecific = dialogue_voices[GameData.day - 1][NPCname][audioCount]
-	#audioCount += 1
 	
 	dialogue_box.custom_effects[0].skip = true
 	dialogue_box.show_options()
