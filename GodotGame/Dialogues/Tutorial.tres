@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_hmqqi")
 starts = {
+"???": &"0_3",
 "Tutorial": &"0_1",
 "Tutorial2": &"0_2"
 }
@@ -18,6 +19,11 @@ nodes = {
 "link": &"3_3",
 "offset": Vector2(-1920, 740),
 "start_id": "Tutorial2"
+},
+"0_3": {
+"link": &"1_12",
+"offset": Vector2(6599.08, 1026.54),
+"start_id": "???"
 },
 "1_1": {
 "dialogue": "Oh... hello. Welcome to your first day at work.",
@@ -60,11 +66,11 @@ nodes = {
 },
 "1_12": {
 "dialogue": "That should be all. If you need to change any settings, press \"{{Options}}\". Good Luck!",
-"offset": Vector2(7000, 1260),
+"offset": Vector2(7080, 960),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_17",
 "text": ""
 }
 },
@@ -73,11 +79,11 @@ nodes = {
 },
 "1_13": {
 "dialogue": "Give me a moment really quick...",
-"offset": Vector2(6860, 1860),
+"offset": Vector2(7400, 1960),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_20",
 "text": ""
 }
 },
@@ -86,7 +92,33 @@ nodes = {
 },
 "1_14": {
 "dialogue": "Based on your resume, you prefer these controls. Feel free to change them right now if you’d like. Otherwise, you can always change them later.",
-"offset": Vector2(7460, 1860),
+"offset": Vector2(7480, 1400),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": ""
+}
+},
+"size": Vector2(300.002, 433),
+"speaker": 1
+},
+"1_15": {
+"dialogue": "Alright. Now it is time for your training. Please walk towards me for further instructions.",
+"offset": Vector2(7860, 1640),
+"options": {
+0: {
+"condition": {},
+"link": &"1_14",
+"text": ""
+}
+},
+"size": Vector2(300.001, 433),
+"speaker": 1
+},
+"1_16": {
+"dialogue": "There are certain things in the town you can interact with. You can do that by pressing \"{{Interaction}}\". Note that this will vary based on the key you chose for \"Interaction\".",
+"offset": Vector2(7900, 2820),
 "options": {
 0: {
 "condition": {},
@@ -97,41 +129,15 @@ nodes = {
 "size": Vector2(300.002, 433),
 "speaker": 1
 },
-"1_15": {
-"dialogue": "Alright. Now it is time for your training. Please walk towards me for further instructions.",
-"offset": Vector2(7980, 1860),
-"options": {
-0: {
-"condition": {},
-"link": "END",
-"text": ""
-}
-},
-"size": Vector2(300.001, 433),
-"speaker": 1
-},
-"1_16": {
-"dialogue": "There are certain things in the town you can interact with. You can do that by pressing \"{{Interaction}}\". Note that this will vary based on the key you chose for \"Interaction\".",
-"offset": Vector2(5300, 2020),
-"options": {
-0: {
-"condition": {},
-"link": "END",
-"text": ""
-}
-},
-"size": Vector2(300.001, 433),
-"speaker": 1
-},
 "1_17": {
 "dialogue": "Lastly, if you ever get lost, press \"M\" to view a map of the place. On the map, you will see icons next to the villagers.
 \"!\": You have not talk to that villager yet.
 \"?\": Someone gave you a request and it is pending. This icon appears after talking with them for the first time.",
-"offset": Vector2(6320, 1280),
+"offset": Vector2(7480, 720),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_2",
 "text": ""
 }
 },
@@ -140,7 +146,7 @@ nodes = {
 },
 "1_18": {
 "dialogue": "Uhhh okay... What is your name then? (I hate this so much)",
-"offset": Vector2(-800, 1240),
+"offset": Vector2(-680, 1240),
 "options": {
 0: {
 "condition": {},
@@ -153,11 +159,11 @@ nodes = {
 },
 "1_19": {
 "dialogue": "Remember, you are selling our products to these villagers so it is important that you talk to all of them before leaving the village. You can check to see your Daily Quota by pressing \"{{Inventory}}\". Note that this will vary based on the key you chose for \"Inventory\".",
-"offset": Vector2(6080, 1900),
+"offset": Vector2(7480, 2600),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_16",
 "text": ""
 }
 },
@@ -166,11 +172,11 @@ nodes = {
 },
 "1_2": {
 "dialogue": "Welcome to your first day at work.",
-"offset": Vector2(-1980, -300),
+"offset": Vector2(7940, 1080),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_15",
 "text": ""
 }
 },
@@ -179,11 +185,11 @@ nodes = {
 },
 "1_20": {
 "dialogue": "In addition, there will be a couple of requests so do make sure to complete those before leaving. You will see a check mark instead of a red \"X\", indicating that you have complete that task.",
-"offset": Vector2(6460, 1900),
+"offset": Vector2(7860, 2180),
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_19",
 "text": ""
 }
 },
@@ -214,7 +220,7 @@ nodes = {
 },
 1: {
 "condition": {},
-"link": &"1_18",
+"link": &"3_5",
 "text": "Actually, no..."
 }
 },
@@ -240,13 +246,13 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_11",
-"text": "Yes"
+"link": &"1_7",
+"text": "No"
 },
 1: {
 "condition": {},
-"link": &"1_7",
-"text": "No"
+"link": &"3_10",
+"text": "Yes"
 }
 },
 "size": Vector2(300, 494),
@@ -297,9 +303,9 @@ nodes = {
 "signalValue": "EnterName"
 },
 "3_10": {
-"link": "END",
-"offset": Vector2(6680, 1560),
-"signalValue": "Negate"
+"link": &"1_11",
+"offset": Vector2(1200, 540),
+"signalValue": "ContentSkip"
 },
 "3_11": {
 "link": &"3_7",
@@ -313,7 +319,7 @@ nodes = {
 },
 "3_2": {
 "link": "END",
-"offset": Vector2(7200, 1860),
+"offset": Vector2(-1560, 240),
 "signalValue": "ShowControls"
 },
 "3_3": {
@@ -327,9 +333,9 @@ nodes = {
 "signalValue": "Done"
 },
 "3_5": {
-"link": "END",
-"offset": Vector2(7760, 2360),
-"signalValue": "Negate"
+"link": &"1_18",
+"offset": Vector2(-960, 1320),
+"signalValue": "Rename"
 },
 "3_6": {
 "link": "END",
@@ -348,7 +354,7 @@ nodes = {
 },
 "3_9": {
 "link": "END",
-"offset": Vector2(5680, 1880),
+"offset": Vector2(6000, 1780),
 "signalValue": "Quota"
 }
 }
@@ -371,5 +377,5 @@ variables = {
 }
 }
 comments = Array[String]([])
-strays = Array[String](["3_2", "1_14", "3_5", "3_9", "1_19", "1_20", "3_12", "3_6", "1_17", "3_10", "1_12", "1_2", "1_16", "1_13", "1_15"])
+strays = Array[String](["3_12", "3_6", "3_9", "3_2"])
 characters = "res://Dialogues/CharacterList.tres"
