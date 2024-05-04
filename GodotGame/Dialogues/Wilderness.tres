@@ -31,28 +31,28 @@ nodes = {
 "start_id": "Children3"
 },
 "0_4": {
-"link": &"1_4",
+"link": &"3_8",
 "offset": Vector2(960, -1560),
 "start_id": "Error"
 },
 "0_5": {
-"link": &"1_5",
-"offset": Vector2(120, 260),
+"link": &"3_9",
+"offset": Vector2(-200, 260),
 "start_id": "ChildrenComplete"
 },
 "0_6": {
-"link": &"1_6",
-"offset": Vector2(220, 1840),
+"link": &"3_10",
+"offset": Vector2(40, 1820),
 "start_id": "ChildrenComplete2"
 },
 "0_7": {
-"link": &"1_7",
-"offset": Vector2(260, 3420),
+"link": &"3_11",
+"offset": Vector2(-60, 3400),
 "start_id": "ChildrenComplete3"
 },
 "0_8": {
-"link": &"1_47",
-"offset": Vector2(807.328, -2269.51),
+"link": &"3_7",
+"offset": Vector2(820, -2440),
 "start_id": "Day7TalktoOldMan"
 },
 "1_1": {
@@ -65,7 +65,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(708.715, 460.158),
+"size": Vector2(708.714, 460.158),
 "speaker": 9
 },
 "1_10": {
@@ -104,7 +104,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(709.091, 433),
+"size": Vector2(709.092, 433),
 "speaker": 11
 },
 "1_13": {
@@ -143,7 +143,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 9
 },
 "1_16": {
@@ -195,7 +195,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(598, 526),
+"size": Vector2(598.001, 526),
 "speaker": 12
 },
 "1_2": {
@@ -208,7 +208,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(851.465, 527.776),
+"size": Vector2(851.465, 527.775),
 "speaker": 9
 },
 "1_20": {
@@ -247,7 +247,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(658, 518),
+"size": Vector2(658.001, 518),
 "speaker": 0
 },
 "1_23": {
@@ -286,7 +286,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(545.999, 476),
+"size": Vector2(545.997, 476),
 "speaker": 10
 },
 "1_26": {
@@ -299,7 +299,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(676, 510),
+"size": Vector2(675.998, 510),
 "speaker": 7
 },
 "1_27": {
@@ -312,7 +312,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(609.09, 484.727),
+"size": Vector2(609.09, 484.726),
 "speaker": 9
 },
 "1_28": {
@@ -325,7 +325,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(545.454, 519.273),
+"size": Vector2(545.453, 519.273),
 "speaker": 9
 },
 "1_29": {
@@ -377,7 +377,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 9
 },
 "1_32": {
@@ -468,7 +468,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_39": {
@@ -559,7 +559,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 0
 },
 "1_45": {
@@ -572,7 +572,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 11
 },
 "1_46": {
@@ -598,7 +598,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": ""
 },
 "1_5": {
@@ -624,7 +624,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(884, 549.999),
+"size": Vector2(884, 550),
 "speaker": 11
 },
 "1_7": {
@@ -671,6 +671,16 @@ nodes = {
 "offset": Vector2(2348.02, 283.315),
 "signalValue": "Leave"
 },
+"3_10": {
+"link": &"1_6",
+"offset": Vector2(420, 1860),
+"signalValue": "CResponse2"
+},
+"3_11": {
+"link": &"1_7",
+"offset": Vector2(400, 3400),
+"signalValue": "CResponse3"
+},
 "3_2": {
 "link": &"1_15",
 "offset": Vector2(6200, -200),
@@ -695,6 +705,21 @@ nodes = {
 "link": &"1_24",
 "offset": Vector2(5420, 1320),
 "signalValue": "Negate"
+},
+"3_7": {
+"link": &"1_47",
+"offset": Vector2(840, -2280),
+"signalValue": "VoiceOff"
+},
+"3_8": {
+"link": &"1_4",
+"offset": Vector2(960, -1420),
+"signalValue": "EndIdx"
+},
+"3_9": {
+"link": &"1_5",
+"offset": Vector2(200, 260),
+"signalValue": "CResponse1"
 }
 }
 variables = {}

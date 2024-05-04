@@ -153,13 +153,13 @@ nodes = {
 "start_id": "OldMan3"
 },
 "0_22": {
-"link": &"1_122",
-"offset": Vector2(80, -27100),
+"link": &"5_36",
+"offset": Vector2(-840, -27120),
 "start_id": "Denial4"
 },
 "0_23": {
-"link": &"1_117",
-"offset": Vector2(80, -26660),
+"link": &"5_37",
+"offset": Vector2(-1060, -26660),
 "start_id": "Denial5"
 },
 "0_24": {
@@ -378,28 +378,28 @@ nodes = {
 "start_id": "Accept10"
 },
 "0_63": {
-"link": &"1_132",
-"offset": Vector2(420, -30780),
+"link": &"3_18",
+"offset": Vector2(280, -30780),
 "start_id": "Day4"
 },
 "0_64": {
-"link": &"1_148",
-"offset": Vector2(420, -30300),
+"link": &"3_19",
+"offset": Vector2(300, -30300),
 "start_id": "Day5"
 },
 "0_65": {
 "link": &"1_214",
-"offset": Vector2(400, -29700),
+"offset": Vector2(120, -29700),
 "start_id": "Talia7"
 },
 "0_66": {
-"link": &"1_224",
-"offset": Vector2(440, -31260),
+"link": &"3_17",
+"offset": Vector2(260, -31280),
 "start_id": "Day7Negate"
 },
 "0_67": {
-"link": &"1_261",
-"offset": Vector2(478.43, -31613.3),
+"link": &"3_16",
+"offset": Vector2(340, -31740),
 "start_id": "Day5OldMan"
 },
 "0_68": {
@@ -444,7 +444,7 @@ nodes = {
 },
 "0_75": {
 "link": &"1_365",
-"offset": Vector2(-34.486, -33702),
+"offset": Vector2(-160, -33820),
 "start_id": "LeapNoMore"
 },
 "0_8": {
@@ -536,8 +536,7 @@ nodes = {
 "speaker": 2
 },
 "1_104": {
-"dialogue": "Alrighty. You know the drill!
-It was a pleasure doing business with you. Good day and goodbye!",
+"dialogue": "Alrighty. You know the drill! It was a pleasure doing business with you. Good day and goodbye!",
 "offset": Vector2(1200, -27620),
 "options": {
 0: {
@@ -585,7 +584,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.002, 433),
+"size": Vector2(300.002, 432.999),
 "speaker": 6
 },
 "1_108": {
@@ -598,7 +597,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 0
 },
 "1_109": {
@@ -720,11 +719,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_117": {
 "dialogue": "Hello there, sorry about yesterday, I realized I hadn’t really gotten to know anyone here. I was wondering if you wanted to buy Toadable at a discount of {{Discount}}? Also, since I’m here, what’s the deal with this town?",
-"offset": Vector2(480, -26660),
+"offset": Vector2(260, -26640),
 "options": {
 0: {
 "condition": {},
-"link": &"1_149",
+"link": &"3_27",
 "text": ""
 }
 },
@@ -798,11 +797,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_122": {
 "dialogue": "HeythereIrealizedthatIhaven’tbeenasusefulasIcanbesonowI’mofferingToadableatadiscountof {{Discount}}. Wouldyouliketobuyitatthatprice?",
-"offset": Vector2(480, -27140),
+"offset": Vector2(340, -27140),
 "options": {
 0: {
 "condition": {},
-"link": &"1_140",
+"link": &"3_24",
 "text": ""
 }
 },
@@ -819,7 +818,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 6
 },
 "1_124": {
@@ -832,7 +831,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.002, 433),
+"size": Vector2(300.002, 432.999),
 "speaker": 6
 },
 "1_125": {
@@ -845,7 +844,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 0
 },
 "1_126": {
@@ -858,7 +857,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 433.002),
 "speaker": 6
 },
 "1_127": {
@@ -871,7 +870,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 433.002),
 "speaker": 6
 },
 "1_128": {
@@ -1063,7 +1062,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_140": {
 "dialogue": "That’s a mighty fine discount you’re offerin’. I’ll take it.",
-"offset": Vector2(940, -27140),
+"offset": Vector2(1100, -27140),
 "options": {
 0: {
 "condition": {},
@@ -1076,7 +1075,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_141": {
 "dialogue": "ThankyouforbuyingToadable.",
-"offset": Vector2(1260, -27140),
+"offset": Vector2(1420, -27140),
 "options": {
 0: {
 "condition": {},
@@ -1162,11 +1161,11 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433.008),
+"size": Vector2(300, 433.01),
 "speaker": 0
 },
 "1_148": {
-"dialogue": "I need to make up for this. Maybe selling Toadable at a lower price will help them. What discount should I sell Toadable for?",
+"dialogue": "(I need to make up for this. Maybe selling Toadable at a lower price will help them. What discount should I sell Toadable for?)",
 "offset": Vector2(760, -30300),
 "options": {
 0: {
@@ -1440,7 +1439,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.002, 433),
 "speaker": 4
 },
 "1_167": {
@@ -1492,7 +1491,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 432.999),
 "speaker": 0
 },
 "1_170": {
@@ -1635,7 +1634,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.006),
+"size": Vector2(300.001, 433.008),
 "speaker": 0
 },
 "1_180": {
@@ -1973,7 +1972,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.002),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_203": {
@@ -2038,7 +2037,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 432.999),
 "speaker": 0
 },
 "1_208": {
@@ -2051,7 +2050,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 432.999),
 "speaker": 6
 },
 "1_209": {
@@ -2064,7 +2063,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 6
 },
 "1_21": {
@@ -2090,7 +2089,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 432.999),
 "speaker": 6
 },
 "1_211": {
@@ -2103,7 +2102,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 0
 },
 "1_212": {
@@ -2116,7 +2115,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433.008),
+"size": Vector2(300, 433.012),
 "speaker": 0
 },
 "1_213": {
@@ -2129,12 +2128,12 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433.008),
+"size": Vector2(391, 433.012),
 "speaker": 8
 },
 "1_214": {
 "dialogue": " Hello! What can I do for-",
-"offset": Vector2(760, -29720),
+"offset": Vector2(520, -29720),
 "options": {
 0: {
 "condition": {},
@@ -2147,7 +2146,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_215": {
 "dialogue": "We’ve noticed a bit of a discrepancy between how much money you’ve been bringing in and how many Toadable you’ve been selling. Do you have an explanation for that?",
-"offset": Vector2(1120, -29720),
+"offset": Vector2(880, -29720),
 "options": {
 0: {
 "condition": {},
@@ -2156,7 +2155,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 1: {
 "condition": {},
-"link": &"1_219",
+"link": &"3_21",
 "text": "Lie to Talia"
 }
 },
@@ -2195,7 +2194,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "options": {
 0: {
 "condition": {},
-"link": &"1_223",
+"link": &"3_20",
 "text": ""
 }
 },
@@ -2277,7 +2276,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 1
 },
 "1_224": {
@@ -2291,7 +2290,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 }
 },
 "size": Vector2(300, 426),
-"speaker": -1
+"speaker": ""
 },
 "1_225": {
 "dialogue": "Hey, uh. Would it be alright if I asked you a question?",
@@ -2420,7 +2419,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433.006),
+"size": Vector2(391, 433),
 "speaker": 8
 },
 "1_234": {
@@ -2524,7 +2523,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_241": {
@@ -2537,7 +2536,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 433.001),
 "speaker": 4
 },
 "1_242": {
@@ -2706,7 +2705,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.004),
+"size": Vector2(300.001, 433.008),
 "speaker": 0
 },
 "1_254": {
@@ -2719,7 +2718,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300, 433.008),
 "speaker": 6
 },
 "1_255": {
@@ -2732,7 +2731,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300, 433.008),
 "speaker": 0
 },
 "1_256": {
@@ -2745,7 +2744,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300, 433.008),
 "speaker": 6
 },
 "1_257": {
@@ -2758,7 +2757,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300, 433.008),
 "speaker": 0
 },
 "1_258": {
@@ -2814,7 +2813,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "speaker": 0
 },
 "1_261": {
-"dialogue": "I should probably talk to everyone first before talking to Old Man Tommy.",
+"dialogue": "(I should probably talk to everyone first before talking to Old Man Tommy.)",
 "offset": Vector2(840.091, -31756.5),
 "options": {
 0: {
@@ -2836,7 +2835,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 433.002),
 "speaker": 8
 },
 "1_263": {
@@ -2862,7 +2861,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433.002),
+"size": Vector2(391, 433),
 "speaker": 8
 },
 "1_265": {
@@ -2875,7 +2874,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 433.002),
 "speaker": 8
 },
 "1_266": {
@@ -2888,7 +2887,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433.002),
+"size": Vector2(391, 433.004),
 "speaker": 8
 },
 "1_267": {
@@ -2940,7 +2939,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_270": {
@@ -2958,7 +2957,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_271": {
 "dialogue": "Come talk to me once you get that rock.",
-"offset": Vector2(1140, -32360),
+"offset": Vector2(1240, -32260),
 "options": {
 0: {
 "condition": {},
@@ -2984,7 +2983,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "1_273": {
 "dialogue": "...",
-"offset": Vector2(940, -24520),
+"offset": Vector2(720, -24520),
 "options": {
 0: {
 "condition": {},
@@ -3057,7 +3056,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 433.002),
 "speaker": 4
 },
 "1_279": {
@@ -3239,7 +3238,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 2
 },
 "1_291": {
@@ -3278,7 +3277,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.002, 433),
 "speaker": 0
 },
 "1_294": {
@@ -3330,7 +3329,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_298": {
@@ -3473,7 +3472,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 433.001),
 "speaker": 4
 },
 "1_307": {
@@ -3486,7 +3485,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.998),
 "speaker": 0
 },
 "1_308": {
@@ -3499,7 +3498,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.998),
 "speaker": 5
 },
 "1_309": {
@@ -3538,7 +3537,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 432.998),
 "speaker": 5
 },
 "1_311": {
@@ -3551,7 +3550,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.998),
 "speaker": 0
 },
 "1_312": {
@@ -3564,7 +3563,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.998),
 "speaker": 0
 },
 "1_313": {
@@ -3577,7 +3576,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 432.998),
 "speaker": 0
 },
 "1_314": {
@@ -3590,7 +3589,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.002, 432.998),
 "speaker": 0
 },
 "1_315": {
@@ -3603,7 +3602,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.998),
 "speaker": 5
 },
 "1_316": {
@@ -3616,7 +3615,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.998),
+"size": Vector2(300.001, 433.002),
 "speaker": 0
 },
 "1_317": {
@@ -3629,7 +3628,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 432.998),
+"size": Vector2(300, 433.002),
 "speaker": 0
 },
 "1_318": {
@@ -3642,7 +3641,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.998),
+"size": Vector2(300.001, 433.002),
 "speaker": 6
 },
 "1_319": {
@@ -3655,7 +3654,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 432.998),
+"size": Vector2(300, 433.002),
 "speaker": 0
 },
 "1_32": {
@@ -3681,7 +3680,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 432.998),
+"size": Vector2(300, 433.002),
 "speaker": 6
 },
 "1_321": {
@@ -3733,7 +3732,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433.002),
+"size": Vector2(391, 433),
 "speaker": 8
 },
 "1_325": {
@@ -3811,7 +3810,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_330": {
@@ -4032,7 +4031,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.997),
 "speaker": 0
 },
 "1_346": {
@@ -4045,7 +4044,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.997),
 "speaker": 5
 },
 "1_347": {
@@ -4058,7 +4057,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.997),
 "speaker": 0
 },
 "1_348": {
@@ -4071,7 +4070,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.997),
 "speaker": 5
 },
 "1_349": {
@@ -4228,7 +4227,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 432.998),
+"size": Vector2(300, 433.002),
 "speaker": 6
 },
 "1_36": {
@@ -4254,7 +4253,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 433.004),
 "speaker": 6
 },
 "1_361": {
@@ -4319,7 +4318,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 370),
+"size": Vector2(300, 431),
 "speaker": ""
 },
 "1_37": {
@@ -4358,7 +4357,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.002),
+"size": Vector2(300.001, 433.001),
 "speaker": 5
 },
 "1_4": {
@@ -4397,7 +4396,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.002),
+"size": Vector2(300.001, 433.001),
 "speaker": 5
 },
 "1_42": {
@@ -4423,7 +4422,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300, 433.009),
 "speaker": 6
 },
 "1_44": {
@@ -4475,7 +4474,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300.001, 433.004),
 "speaker": 0
 },
 "1_48": {
@@ -4488,7 +4487,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433.002),
+"size": Vector2(391, 433),
 "speaker": 7
 },
 "1_49": {
@@ -4501,7 +4500,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.002),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_5": {
@@ -4514,7 +4513,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.004),
+"size": Vector2(300.001, 433.009),
 "speaker": 0
 },
 "1_50": {
@@ -4527,7 +4526,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(390.999, 433.002),
+"size": Vector2(390.999, 433),
 "speaker": 7
 },
 "1_51": {
@@ -4540,7 +4539,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.002),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_52": {
@@ -4553,7 +4552,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391.001, 433.002),
+"size": Vector2(391, 433),
 "speaker": 7
 },
 "1_53": {
@@ -4566,7 +4565,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433.002),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_54": {
@@ -4592,7 +4591,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433.006),
+"size": Vector2(391, 433.005),
 "speaker": 8
 },
 "1_56": {
@@ -4605,7 +4604,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.006),
+"size": Vector2(300.001, 433.005),
 "speaker": 0
 },
 "1_57": {
@@ -4618,7 +4617,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 433.003),
 "speaker": 8
 },
 "1_58": {
@@ -4631,7 +4630,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 433.003),
 "speaker": 0
 },
 "1_59": {
@@ -4644,7 +4643,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 432.999),
 "speaker": 6
 },
 "1_6": {
@@ -4657,7 +4656,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.002),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_60": {
@@ -4748,7 +4747,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.002, 433),
 "speaker": 0
 },
 "1_67": {
@@ -4774,7 +4773,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.002, 433),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_69": {
@@ -4800,7 +4799,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.006),
+"size": Vector2(300.001, 433.005),
 "speaker": 0
 },
 "1_70": {
@@ -4839,7 +4838,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 3
 },
 "1_73": {
@@ -4930,7 +4929,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.002, 433),
+"size": Vector2(300.001, 433),
 "speaker": 4
 },
 "1_8": {
@@ -5021,7 +5020,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.002, 433),
 "speaker": 4
 },
 "1_86": {
@@ -5034,7 +5033,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_87": {
@@ -5151,7 +5150,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433.006),
+"size": Vector2(300, 433.008),
 "speaker": 7
 },
 "1_95": {
@@ -5164,7 +5163,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.006),
+"size": Vector2(300.001, 433.008),
 "speaker": 0
 },
 "1_96": {
@@ -5177,7 +5176,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433.006),
+"size": Vector2(300, 433.008),
 "speaker": 0
 },
 "1_97": {
@@ -5190,7 +5189,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.006),
+"size": Vector2(300.001, 433.008),
 "speaker": 7
 },
 "1_98": {
@@ -5203,7 +5202,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "text": ""
 }
 },
-"size": Vector2(300, 433.006),
+"size": Vector2(300, 433.008),
 "speaker": 0
 },
 "1_99": {
@@ -5221,10 +5220,10 @@ It was a pleasure doing business with you. Good day and goodbye!",
 },
 "2_1": {
 "comment": "Special Conditions",
-"offset": Vector2(100, -30780),
+"offset": Vector2(-120, -30780),
 "size": {
 "x": 274.0,
-"y": 582.0
+"y": 597.0
 }
 },
 "2_2": {
@@ -5232,7 +5231,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "offset": Vector2(-380, 7900),
 "size": {
 "x": 274.0,
-"y": 372.0
+"y": 387.0
 }
 },
 "3_1": {
@@ -5260,10 +5259,90 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "offset": Vector2(-1082.82, -793.495),
 "signalValue": "MainComplete"
 },
+"3_14": {
+"link": &"1_272",
+"offset": Vector2(1200, -32660),
+"signalValue": "EndIdx"
+},
+"3_15": {
+"link": &"1_271",
+"offset": Vector2(940, -32280),
+"signalValue": "TaliaNo"
+},
+"3_16": {
+"link": &"1_261",
+"offset": Vector2(580, -31580),
+"signalValue": "VoiceOff"
+},
+"3_17": {
+"link": &"1_224",
+"offset": Vector2(560, -31160),
+"signalValue": "VoiceOff"
+},
+"3_18": {
+"link": &"1_132",
+"offset": Vector2(500, -30620),
+"signalValue": "VoiceOff"
+},
+"3_19": {
+"link": &"1_148",
+"offset": Vector2(500, -30140),
+"signalValue": "VoiceOff"
+},
 "3_2": {
 "link": "END",
 "offset": Vector2(2360, -4440),
 "signalValue": "MainComplete"
+},
+"3_20": {
+"link": &"1_223",
+"offset": Vector2(2626.53, -29787.9),
+"signalValue": "EndIdx"
+},
+"3_21": {
+"link": &"1_219",
+"offset": Vector2(1260, -29300),
+"signalValue": "TaliaLie"
+},
+"3_22": {
+"link": &"1_122",
+"offset": Vector2(0, -27080),
+"signalValue": "Discount15%"
+},
+"3_23": {
+"link": &"1_122",
+"offset": Vector2(0, -26940),
+"signalValue": "Discount35%"
+},
+"3_24": {
+"link": &"1_140",
+"offset": Vector2(820, -27120),
+"signalValue": "RealignD1"
+},
+"3_25": {
+"link": &"1_117",
+"offset": Vector2(-5.63667, -26577.6),
+"signalValue": "Discount25%"
+},
+"3_26": {
+"link": &"1_117",
+"offset": Vector2(0, -26440),
+"signalValue": "Discount40%"
+},
+"3_27": {
+"link": &"1_149",
+"offset": Vector2(669.918, -26625.4),
+"signalValue": "RealignD2"
+},
+"3_28": {
+"link": &"5_20",
+"offset": Vector2(-80, -24980),
+"signalValue": "EndIdx"
+},
+"3_29": {
+"link": &"1_273",
+"offset": Vector2(420, -24460),
+"signalValue": "VoiceOff"
 },
 "3_3": {
 "link": "END",
@@ -5513,10 +5592,10 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "value2": "true"
 },
 "5_18": {
-"false": &"1_271",
-"offset": Vector2(768.565, -32702.6),
+"false": &"3_15",
+"offset": Vector2(600, -32620),
 "operator": 0,
-"true": &"1_272",
+"true": &"3_14",
 "value1": "{{Rocks}}",
 "value2": "1"
 },
@@ -5524,7 +5603,7 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "false": &"1_120",
 "offset": Vector2(-460, -25480),
 "operator": 0,
-"true": &"5_20",
+"true": &"3_28",
 "value1": "{{Denial}}",
 "value2": "true"
 },
@@ -5537,8 +5616,8 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "value2": "true"
 },
 "5_20": {
-"false": &"1_273",
-"offset": Vector2(440, -24580),
+"false": &"3_29",
+"offset": Vector2(200, -24820),
 "operator": 4,
 "true": &"1_274",
 "value1": "{{WaterBottle}}",
@@ -5671,6 +5750,22 @@ It was a pleasure doing business with you. Good day and goodbye!",
 "true": &"1_360",
 "value1": "{{Well}}",
 "value2": "true"
+},
+"5_36": {
+"false": &"3_23",
+"offset": Vector2(-460, -27100),
+"operator": 0,
+"true": &"3_22",
+"value1": "{{Discount}}",
+"value2": "15%"
+},
+"5_37": {
+"false": &"3_26",
+"offset": Vector2(-500, -26600),
+"operator": 0,
+"true": &"3_25",
+"value1": "{{Discount}}",
+"value2": "25%"
 },
 "5_4": {
 "false": &"1_45",
