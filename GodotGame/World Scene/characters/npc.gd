@@ -30,65 +30,784 @@ var oldManTempLock = false
 
 #Access the voices. Can activate Start, End, and Name
 #TODO adds voices
-#var dialogue_voices = [
-	##Days 1
-	#{	
-		##All Characters
-		#"Denial": [
-			#{"Name": "Main", "Start": 1, "End": 3},
-			#{"Name": "OldMan", "Start": 5, "End": 7},
-			#{"Name": "Main", "Start": 9, "End": 12},
-			#{"Name": "OldMan", "Start": 1, "End": 3},
-			#{"Name": "Main", "Start": 5, "End": 7},
-		#],
-		#"Anger": [
-			#{"Name": "Main", "Start": 1, "End": 3},
-			#{"Name": "OldMan", "Start": 5, "End": 7},
-			#{"Name": "Main", "Start": 9, "End": 12},
-			#{"Name": "OldMan", "Start": 1, "End": 3},
-			#{"Name": "Main", "Start": 5, "End": 7},
-		#],
-		#"Bargin": [
-			#{"Name": "Main", "Start": 1, "End": 3},
-			#{"Name": "OldMan", "Start": 5, "End": 7},
-			#{"Name": "Main", "Start": 9, "End": 12},
-			#{"Name": "OldMan", "Start": 1, "End": 3},
-			#{"Name": "Main", "Start": 5, "End": 7},
-		#],
-		#"Depress": [
-			#{"Name": "Main", "Start": 1, "End": 3},
-			#{"Name": "OldMan", "Start": 5, "End": 7},
-			#{"Name": "Main", "Start": 9, "End": 12},
-			#{"Name": "OldMan", "Start": 1, "End": 3},
-			#{"Name": "Main", "Start": 5, "End": 7},
-		#],
-		#"Accept": [
-			#{"Name": "Main", "Start": 5, "End": 6},
-			#{"Name": "OldMan", "Start": 5, "End": 7},
-			#{"Name": "Main", "Start": 9, "End": 12},
-			#{"Name": "OldMan", "Start": 5, "End": 6},
-			#{"Name": "Main", "Start": 5, "End": 7},
-			#{"Name": "Main", "Start": 9, "End": 12},
-			#{"Name": "OldMan", "Start": 1, "End": 2},
-			#{"Name": "Main", "Start": 12, "End": 13},
-		#],
-		#"Croak": [
-			#{"Name": "Main", "Start": 1, "End": 3},
-			#{"Name": "OldMan", "Start": 5, "End": 7},
-			#{"Name": "Main", "Start": 9, "End": 12},
-			#{"Name": "OldMan", "Start": 1, "End": 3},
-			#{"Name": "Main", "Start": 5, "End": 7},
-		#],
-		#"OldMan": [
-			#{"Name": "Main", "Start": 1, "End": 3},
-			#{"Name": "OldMan", "Start": 5, "End": 7},
-			#{"Name": "Main", "Start": 9, "End": 12},
-			#{"Name": "OldMan", "Start": 1, "End": 3},
-			#{"Name": "Main", "Start": 5, "End": 7},
-		#]
-	#
-	#}
-#]
+var dialogue_voices = [
+	
+	
+	# Days 1
+	{	
+		#All Characters
+		"Denial": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Anger": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Bargin": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Depress": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Accept": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Croak": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"OldMan": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	# Days 2
+	{	
+		#All Characters
+		"Denial": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Anger": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Bargin": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Depress": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Accept": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Croak": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"OldMan": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	# Days 3
+	{	
+		#All Characters
+		"Denial": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Anger": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Bargin": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Depress": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Accept": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"OldMan": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	# Days 4
+	{	
+		#All Characters
+		"Denial": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Anger": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Depress": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Accept": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"OldMan": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Rano": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Leap": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Hop": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Ribbit": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	# Days 5
+	{	
+		#All Characters
+		"Denial": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Anger": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Depress": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Accept": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Bargin": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"OldMan": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Rano": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Leap": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Hop": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Ribbit": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	# Days 6
+	{	
+		#All Characters
+		"Denial": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Anger": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Depress": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Accept": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Bargin": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"OldMan": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Rano": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Leap": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Hop": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Ribbit": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+	},
+	
+	
+	
+	
+	
+	
+	# Days 7
+	{	
+		#All Characters
+		"Denial": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Anger": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Depress": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Accept": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Bargin": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		
+		#TODO Lots of branches
+		"OldMan": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		
+		
+		"Rano": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Leap": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Hop": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Ribbit": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	# Days 8
+	{	
+		#All Characters
+		"Denial": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Anger": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Depress": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Accept": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Bargin": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"OldMan": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Rano": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Leap": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Hop": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Ribbit": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	# Days 9
+	{	
+		#All Characters
+		"Denial": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Anger": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Depress": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Accept": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Bargin": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"OldMan": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Rano": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Leap": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Hop": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Ribbit": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	# Days 10
+	{	
+		#All Characters
+		"Denial": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Anger": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Depress": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Accept": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Bargin": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"OldMan": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Rano": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Leap": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Hop": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+		"Ribbit": [
+			{"Name": "Main", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "5", "End": "7", "Emotion": "?"},
+			{"Name": "Main", "Start": "9", "End": "12", "Emotion": "?"},
+			{"Name": "OldMan", "Start": "1", "End": "3", "Emotion": "?"},
+			{"Name": "Main", "Start": "5", "End": "7", "Emotion": "?"},
+		],
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+]
 #var dialogue_voiceSpecific
 #
 #var audioList = {
@@ -101,9 +820,155 @@ var oldManTempLock = false
 	#"Croak": "Test",
 	#"OldMan": "res://Sounds_and_Music/OST/Woodsy Labyrinth.mp3"
 #}
+var emotionList = {
+	"Main": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	"Denial": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	"Anger": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	"Bargin": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	"Depress": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	"Accept": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	"Croak": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	"OldMan": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	
+	"Rano": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	"Leap": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	"Hop": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	"Ribbit": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+}
 #var load_audio
 #var audioCount = -1
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -116,9 +981,8 @@ func _ready():
 	set_process_input(true)
 	$PressForDialogue.text = InputMap.action_get_events("Interaction")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
 	if GameData.day == 3:
-		if $"../Bargin/Sprite2D" == null:
-			return
-		$"../Bargin/Sprite2D".animation = "Barry_Sad"
+		if $"../Bargin/Sprite2D" != null:
+			$"../Bargin/Sprite2D".animation = "Barry_Sad"
 	
 func go_pos(delta):
 	if moving and playerRuns == false: #Barry
@@ -244,7 +1108,7 @@ func increase_day(amount):
 func _process(delta):
 
 	#Barry gone if he was gone before. This is for Day 3 only
-	if (GameData.barryDespawned == true):
+	if (GameData.barryDespawned == true and $"../Bargin" != null):
 		$"../Bargin".position = Vector2(999999999, 999999999)
 	
 	#Appear the game username in dialogue (Only Appears in NPC interaction)
@@ -484,7 +1348,15 @@ func _process(delta):
 		$FixedDialoguePosition/CharacterIMG.visible = false
 		$FixedDialoguePosition/Voice.visible = false
 		#$PressForDialogue.visible = true
-			
+
+
+
+
+
+
+
+
+
 func _on_body_entered(body):
 	if (body.name == "CharacterBody2D"):
 		$PressForDialogue.visible = true
@@ -493,6 +1365,13 @@ func _on_body_entered(body):
 	else:
 		NPCname = null
 		dialogue_box.start_id = ""
+
+
+
+
+
+
+
 
 
 func _on_body_exited(body):
@@ -664,7 +1543,18 @@ func _on_dialogue_box_dialogue_ended():
 		$FixedDialoguePosition/Voice.visible = true
 		oldManTempLock = true #This can be reset, but should not affect anything
 	#audioCount = 0
-	
+
+
+
+
+
+
+
+
+
+
+
+
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
 	#TODO: Stop the voice recording if node proceeds
@@ -692,7 +1582,17 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 		else:
 			#Its the main character
 			idx = Utils.char_dict["Main"]
+		#var CharacterVoice = audioList[dialogue_voiceSpecific["Emotion"]]
+		#if (audioList[dialogue_voiceSpecific["Emotion"]] == ""):
+			#$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
+		#else: #Emotion
+			#$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
 		$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
+
+
+
+
+
 
 
 

@@ -93,13 +93,13 @@ nodes = {
 "start_id": "Anger2"
 },
 "0_11": {
-"link": &"1_11",
+"link": &"3_30",
 "offset": Vector2(80, -22020),
 "start_id": "Anger3"
 },
 "0_12": {
 "link": &"5_14",
-"offset": Vector2(-540, -16900),
+"offset": Vector2(-820, -16900),
 "start_id": "Bargin2"
 },
 "0_13": {
@@ -113,8 +113,8 @@ nodes = {
 "start_id": "Depress2"
 },
 "0_15": {
-"link": &"1_15",
-"offset": Vector2(-380, -9560),
+"link": &"3_49",
+"offset": Vector2(-660, -9560),
 "start_id": "Depress3"
 },
 "0_16": {
@@ -134,12 +134,12 @@ nodes = {
 },
 "0_19": {
 "link": &"5_13",
-"offset": Vector2(-1220, 3880),
+"offset": Vector2(-1740, 3880),
 "start_id": "OldMan4"
 },
 "0_2": {
 "link": &"1_2",
-"offset": Vector2(60, -22920),
+"offset": Vector2(-20, -23020),
 "start_id": "Anger"
 },
 "0_20": {
@@ -188,8 +188,8 @@ nodes = {
 "start_id": "Denial10"
 },
 "0_29": {
-"link": &"1_128",
-"offset": Vector2(80, -21540),
+"link": &"5_38",
+"offset": Vector2(-1220, -21580),
 "start_id": "Anger4"
 },
 "0_3": {
@@ -198,8 +198,8 @@ nodes = {
 "start_id": "Bargin"
 },
 "0_30": {
-"link": &"1_153",
-"offset": Vector2(80, -21120),
+"link": &"5_39",
+"offset": Vector2(-1240, -21120),
 "start_id": "Anger5"
 },
 "0_31": {
@@ -224,12 +224,12 @@ nodes = {
 },
 "0_35": {
 "link": &"5_26",
-"offset": Vector2(-1760, -18100),
+"offset": Vector2(-2340, -18100),
 "start_id": "Anger10"
 },
 "0_36": {
-"link": &"1_129",
-"offset": Vector2(-420, -15540),
+"link": &"3_43",
+"offset": Vector2(-600, -15540),
 "start_id": "Bargin4"
 },
 "0_37": {
@@ -259,7 +259,7 @@ nodes = {
 },
 "0_41": {
 "link": &"5_24",
-"offset": Vector2(-400, -12380),
+"offset": Vector2(-860, -12380),
 "start_id": "Bargin9"
 },
 "0_42": {
@@ -279,12 +279,12 @@ nodes = {
 },
 "0_45": {
 "link": &"5_28",
-"offset": Vector2(-860, 5560),
+"offset": Vector2(-1920, 5580),
 "start_id": "OldMan7"
 },
 "0_46": {
 "link": &"1_258",
-"offset": Vector2(-440, 8400),
+"offset": Vector2(-440, 8460),
 "start_id": "OldMan8"
 },
 "0_47": {
@@ -298,18 +298,18 @@ nodes = {
 "start_id": "OldMan10"
 },
 "0_49": {
-"link": &"1_130",
-"offset": Vector2(-400, -9020),
+"link": &"5_40",
+"offset": Vector2(-1560, -9060),
 "start_id": "Depress4"
 },
 "0_5": {
 "link": &"5_12",
-"offset": Vector2(-420, -4480),
+"offset": Vector2(-500, -4660),
 "start_id": "Accept"
 },
 "0_50": {
-"link": &"1_168",
-"offset": Vector2(-420, -8620),
+"link": &"5_41",
+"offset": Vector2(-1580, -8620),
 "start_id": "Depress5"
 },
 "0_51": {
@@ -338,13 +338,13 @@ nodes = {
 "start_id": "Depress10"
 },
 "0_56": {
-"link": &"1_131",
-"offset": Vector2(-480, -2600),
+"link": &"5_42",
+"offset": Vector2(-2020, -2600),
 "start_id": "Accept4"
 },
 "0_57": {
-"link": &"1_174",
-"offset": Vector2(-520, -2140),
+"link": &"5_43",
+"offset": Vector2(-2040, -2160),
 "start_id": "Accept5"
 },
 "0_58": {
@@ -364,7 +364,7 @@ nodes = {
 },
 "0_60": {
 "link": &"5_34",
-"offset": Vector2(-2580, -1100),
+"offset": Vector2(-2900, -1100),
 "start_id": "Accept8"
 },
 "0_61": {
@@ -403,12 +403,12 @@ nodes = {
 "start_id": "Day5OldMan"
 },
 "0_68": {
-"link": &"1_263",
+"link": &"3_80",
 "offset": Vector2(-40, 6160),
 "start_id": "OldManWaterBottleSpecial"
 },
 "0_69": {
-"link": &"1_264",
+"link": &"3_81",
 "offset": Vector2(-40, 6540),
 "start_id": "OldManBoilingPot"
 },
@@ -418,12 +418,12 @@ nodes = {
 "start_id": "OldMan"
 },
 "0_70": {
-"link": &"1_265",
+"link": &"3_82",
 "offset": Vector2(-60, 6960),
 "start_id": "OldManWaterFilter"
 },
 "0_71": {
-"link": &"1_266",
+"link": &"3_84",
 "offset": Vector2(-80, 7460),
 "start_id": "OldMan7Finish"
 },
@@ -433,8 +433,8 @@ nodes = {
 "start_id": "TaliaTutorial"
 },
 "0_73": {
-"link": &"1_281",
-"offset": Vector2(-80, 7920),
+"link": &"3_85",
+"offset": Vector2(-140, 7920),
 "start_id": "OldMan7FinishRO"
 },
 "0_74": {
@@ -489,29 +489,29 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_101",
+"link": &"3_74",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.012),
+"size": Vector2(300.001, 433.014),
 "speaker": 0
 },
 "1_101": {
 "dialogue": "…",
-"offset": Vector2(1100, 2940),
+"offset": Vector2(1500, 2940),
 "options": {
 0: {
 "condition": {},
-"link": &"1_102",
+"link": &"3_75",
 "text": ""
 }
 },
-"size": Vector2(391, 433.012),
+"size": Vector2(391, 433.014),
 "speaker": 8
 },
 "1_102": {
 "dialogue": "Still no then. Good day and goodbye.",
-"offset": Vector2(1560, 2940),
+"offset": Vector2(2320, 2920),
 "options": {
 0: {
 "condition": {},
@@ -519,7 +519,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.012),
+"size": Vector2(300, 433.013),
 "speaker": 0
 },
 "1_103": {
@@ -558,7 +558,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 4
 },
 "1_106": {
@@ -584,7 +584,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.002, 432.999),
+"size": Vector2(300.002, 433.001),
 "speaker": 6
 },
 "1_108": {
@@ -597,7 +597,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_109": {
@@ -610,12 +610,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.008),
+"size": Vector2(391.001, 433.004),
 "speaker": 8
 },
 "1_11": {
 "dialogue": "(I said I wouldn’t come back here today, and I’m nothing if not truthful)",
-"offset": Vector2(460, -22020),
+"offset": Vector2(740, -22040),
 "options": {
 0: {
 "condition": {},
@@ -632,29 +632,29 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_111",
+"link": &"3_76",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.008),
+"size": Vector2(300.001, 433.004),
 "speaker": 0
 },
 "1_111": {
 "dialogue": "…",
-"offset": Vector2(1100, 3520),
+"offset": Vector2(1500, 3520),
 "options": {
 0: {
 "condition": {},
-"link": &"1_112",
+"link": &"3_77",
 "text": ""
 }
 },
-"size": Vector2(391, 433.008),
+"size": Vector2(391, 433.004),
 "speaker": 8
 },
 "1_112": {
 "dialogue": "Still no then. Good day and goodbye.",
-"offset": Vector2(1540, 3520),
+"offset": Vector2(2320, 3500),
 "options": {
 0: {
 "condition": {},
@@ -662,7 +662,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.008),
+"size": Vector2(300, 433.004),
 "speaker": 0
 },
 "1_113": {
@@ -675,7 +675,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.002, 433),
 "speaker": 0
 },
 "1_114": {
@@ -714,7 +714,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.002),
+"size": Vector2(300, 433.002),
 "speaker": 4
 },
 "1_117": {
@@ -740,7 +740,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391.001, 433),
+"size": Vector2(391, 433),
 "speaker": 0
 },
 "1_119": {
@@ -818,7 +818,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433.001),
 "speaker": 6
 },
 "1_124": {
@@ -831,7 +831,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.002, 432.999),
+"size": Vector2(300.002, 433.001),
 "speaker": 6
 },
 "1_125": {
@@ -844,7 +844,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_126": {
@@ -857,12 +857,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.002),
+"size": Vector2(300.001, 433.002),
 "speaker": 6
 },
 "1_127": {
 "dialogue": "...",
-"offset": Vector2(1180, -2900),
+"offset": Vector2(1900, -2760),
 "options": {
 0: {
 "condition": {},
@@ -875,15 +875,15 @@ nodes = {
 },
 "1_128": {
 "dialogue": "HeythereIrealizedthatIhaven’tbeenasusefulasIcanbesonowI’mofferingToadableatadiscountof {{Discount}}. Wouldyouliketobuyitatthatprice?",
-"offset": Vector2(460, -21580),
+"offset": Vector2(200, -21580),
 "options": {
 0: {
 "condition": {},
-"link": &"1_142",
+"link": &"3_41",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 372),
 "speaker": 0
 },
 "1_129": {
@@ -914,28 +914,28 @@ nodes = {
 },
 "1_130": {
 "dialogue": "HeythereIrealizedthatIhaven’tbeenasusefulasIcanbesonowI’mofferingToadableatadiscountof {{Discount}}. Wouldyouliketobuyitatthatprice?",
-"offset": Vector2(-40, -9060),
+"offset": Vector2(-300, -9060),
 "options": {
 0: {
 "condition": {},
-"link": &"1_144",
+"link": &"3_54",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(302.663, 372),
 "speaker": 0
 },
 "1_131": {
 "dialogue": "HeythereIrealizedthatIhaven’tbeenasusefulasIcanbesonowI’mofferingToadableatadiscountof {{Discount}}. Wouldyouliketobuyitatthatprice?",
-"offset": Vector2(-120, -2600),
+"offset": Vector2(-560, -2640),
 "options": {
 0: {
 "condition": {},
-"link": &"1_146",
+"link": &"3_68",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.004),
+"size": Vector2(300, 372),
 "speaker": 0
 },
 "1_132": {
@@ -961,7 +961,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.006),
+"size": Vector2(391, 433.004),
 "speaker": 8
 },
 "1_134": {
@@ -974,7 +974,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.006),
+"size": Vector2(300.001, 433.004),
 "speaker": 0
 },
 "1_135": {
@@ -987,7 +987,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391.001, 433.006),
+"size": Vector2(391.001, 433.004),
 "speaker": 8
 },
 "1_136": {
@@ -1000,7 +1000,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.006),
+"size": Vector2(300, 433.004),
 "speaker": 0
 },
 "1_137": {
@@ -1013,7 +1013,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391.001, 433.006),
+"size": Vector2(391.001, 433.004),
 "speaker": 8
 },
 "1_138": {
@@ -1026,7 +1026,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.006),
+"size": Vector2(300, 433.004),
 "speaker": 0
 },
 "1_139": {
@@ -1044,7 +1044,7 @@ nodes = {
 "text": "30%"
 }
 },
-"size": Vector2(367.878, 614.006),
+"size": Vector2(367.878, 614.004),
 "speaker": ""
 },
 "1_14": {
@@ -1122,7 +1122,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 5
 },
 "1_145": {
@@ -1135,7 +1135,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 0
 },
 "1_146": {
@@ -1148,7 +1148,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 433.001),
 "speaker": 6
 },
 "1_147": {
@@ -1161,7 +1161,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.01),
+"size": Vector2(300, 433.011),
 "speaker": 0
 },
 "1_148": {
@@ -1244,20 +1244,20 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_153": {
 "dialogue": "Hello there, sorry about yesterday, I realized I hadn’t really gotten to know anyone here. I was wondering if you wanted to buy Toadable at a discount of {{Discount}}? Also, since I’m here, what’s the deal with this town?",
-"offset": Vector2(460, -21120),
+"offset": Vector2(200, -21120),
 "options": {
 0: {
 "condition": {},
-"link": &"1_154",
+"link": &"3_42",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 372),
 "speaker": 0
 },
 "1_154": {
@@ -1400,7 +1400,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_164": {
@@ -1435,7 +1435,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_167",
+"link": &"3_44",
 "text": ""
 }
 },
@@ -1444,7 +1444,7 @@ nodes = {
 },
 "1_167": {
 "dialogue": "…",
-"offset": Vector2(2660, -15040),
+"offset": Vector2(3000, -15040),
 "options": {
 0: {
 "condition": {},
@@ -1457,15 +1457,15 @@ nodes = {
 },
 "1_168": {
 "dialogue": "Hello there, sorry about yesterday, I realized I hadn’t really gotten to know anyone here. I was wondering if you wanted to buy Toadable at a discount of {{Discount}}? Also, since I’m here, what’s the deal with this town?",
-"offset": Vector2(-40, -8620),
+"offset": Vector2(-320, -8620),
 "options": {
 0: {
 "condition": {},
-"link": &"1_169",
+"link": &"3_55",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 372),
 "speaker": 0
 },
 "1_169": {
@@ -1491,7 +1491,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.999),
+"size": Vector2(300.001, 433.001),
 "speaker": 0
 },
 "1_170": {
@@ -1530,7 +1530,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_173": {
@@ -1548,15 +1548,15 @@ nodes = {
 },
 "1_174": {
 "dialogue": "Hello there, sorry about yesterday, I realized I hadn’t really gotten to know anyone here. I was wondering if you wanted to buy Toadable at a discount of {{Discount}}? Also, since I’m here, what’s the deal with this town?",
-"offset": Vector2(-160, -2160),
+"offset": Vector2(-560, -2120),
 "options": {
 0: {
 "condition": {},
-"link": &"1_175",
+"link": &"3_69",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(309.663, 372),
 "speaker": 0
 },
 "1_175": {
@@ -1634,7 +1634,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.008),
+"size": Vector2(300.001, 433.007),
 "speaker": 0
 },
 "1_180": {
@@ -1777,7 +1777,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.006),
+"size": Vector2(300.001, 433.004),
 "speaker": 0
 },
 "1_190": {
@@ -1907,12 +1907,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_2": {
 "dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
-"offset": Vector2(460, -23020),
+"offset": Vector2(460, -23080),
 "options": {
 0: {
 "condition": {},
@@ -1933,7 +1933,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.012),
+"size": Vector2(300.001, 433.014),
 "speaker": 0
 },
 "1_200": {
@@ -1972,7 +1972,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 432.999),
 "speaker": 0
 },
 "1_203": {
@@ -2076,7 +2076,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.008),
+"size": Vector2(300.001, 433.004),
 "speaker": 0
 },
 "1_210": {
@@ -2115,7 +2115,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.012),
+"size": Vector2(300, 433.016),
 "speaker": 0
 },
 "1_213": {
@@ -2128,7 +2128,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.012),
+"size": Vector2(391, 433.016),
 "speaker": 8
 },
 "1_214": {
@@ -2198,7 +2198,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 1
 },
 "1_219": {
@@ -2250,7 +2250,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.003, 433),
+"size": Vector2(300.002, 433),
 "speaker": 1
 },
 "1_222": {
@@ -2276,7 +2276,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 1
 },
 "1_224": {
@@ -2289,7 +2289,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 426),
+"size": Vector2(300, 431),
 "speaker": ""
 },
 "1_225": {
@@ -2411,15 +2411,15 @@ nodes = {
 },
 "1_233": {
 "dialogue": "Sand filters like this one can remove a lot of contaminants and even some bacteria, but it isn’t designed to handle lead in water.",
-"offset": Vector2(860, 6940),
+"offset": Vector2(1160, 6960),
 "options": {
 0: {
 "condition": {},
-"link": &"1_279",
+"link": &"3_83",
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 372),
 "speaker": 8
 },
 "1_234": {
@@ -2523,7 +2523,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.001),
+"size": Vector2(300, 433.002),
 "speaker": 0
 },
 "1_241": {
@@ -2536,12 +2536,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.001),
+"size": Vector2(300.001, 433.002),
 "speaker": 4
 },
 "1_242": {
 "dialogue": "Sure. I can do that…Are you doing alright?",
-"offset": Vector2(580, -13540),
+"offset": Vector2(580, -13700),
 "options": {
 0: {
 "condition": {},
@@ -2554,7 +2554,7 @@ nodes = {
 },
 "1_243": {
 "dialogue": "I will be fine once Croak is.",
-"offset": Vector2(900, -13540),
+"offset": Vector2(940, -13700),
 "options": {
 0: {
 "condition": {},
@@ -2662,7 +2662,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_251",
+"link": &"3_56",
 "text": ""
 }
 },
@@ -2671,20 +2671,20 @@ nodes = {
 },
 "1_251": {
 "dialogue": "…",
-"offset": Vector2(2340, -7000),
+"offset": Vector2(2640, -7000),
 "options": {
 0: {
 "condition": {},
-"link": &"1_252",
+"link": &"3_57",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 5
 },
 "1_252": {
 "dialogue": "Okay then, goodbye.",
-"offset": Vector2(2680, -7000),
+"offset": Vector2(3300, -7000),
 "options": {
 0: {
 "condition": {},
@@ -2705,7 +2705,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.008),
+"size": Vector2(300.001, 433.007),
 "speaker": 0
 },
 "1_254": {
@@ -2718,7 +2718,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.008),
+"size": Vector2(300, 433.007),
 "speaker": 6
 },
 "1_255": {
@@ -2731,7 +2731,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.008),
+"size": Vector2(300, 433.007),
 "speaker": 0
 },
 "1_256": {
@@ -2744,7 +2744,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.008),
+"size": Vector2(300, 433.007),
 "speaker": 6
 },
 "1_257": {
@@ -2757,12 +2757,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.008),
+"size": Vector2(300, 433.007),
 "speaker": 0
 },
 "1_258": {
 "dialogue": "So, I took your advice, and I need a bit of funding to help out in the whole, making your own business thing. You got any jobs I could help with?",
-"offset": Vector2(-100, 8400),
+"offset": Vector2(-100, 8460),
 "options": {
 0: {
 "condition": {},
@@ -2770,12 +2770,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_259": {
 "dialogue": "The others’ll give you plenty of jobs, I’m sure.",
-"offset": Vector2(220, 8380),
+"offset": Vector2(220, 8440),
 "options": {
 0: {
 "condition": {},
@@ -2783,7 +2783,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391.001, 433.004),
+"size": Vector2(391.002, 433.004),
 "speaker": 8
 },
 "1_26": {
@@ -2801,7 +2801,7 @@ nodes = {
 },
 "1_260": {
 "dialogue": "Okay, so a no from you. Bye.",
-"offset": Vector2(660, 8380),
+"offset": Vector2(660, 8440),
 "options": {
 0: {
 "condition": {},
@@ -2827,7 +2827,7 @@ nodes = {
 },
 "1_262": {
 "dialogue": "...",
-"offset": Vector2(-520, 4180),
+"offset": Vector2(-520, 4140),
 "options": {
 0: {
 "condition": {},
@@ -2835,38 +2835,38 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.002),
+"size": Vector2(391, 433),
 "speaker": 8
 },
 "1_263": {
 "dialogue": "Sure, a water bottle exposed to the sun for a long time can be purified by Solar Water Disinfection, but that can’t remove the contaminants like the lead.",
-"offset": Vector2(300, 6040),
+"offset": Vector2(680, 6060),
 "options": {
 0: {
 "condition": {},
-"link": &"1_279",
+"link": &"3_83",
 "text": ""
 }
 },
-"size": Vector2(391, 433.002),
+"size": Vector2(392.464, 372),
 "speaker": 8
 },
 "1_264": {
 "dialogue": "Already tried it. Although boiling water eliminates bacteria, it can't get rid of contaminants like micro plastics or harmful chemicals like lead.",
-"offset": Vector2(300, 6500),
+"offset": Vector2(680, 6500),
 "options": {
 0: {
 "condition": {},
-"link": &"1_279",
+"link": &"3_83",
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 372),
 "speaker": 8
 },
 "1_265": {
 "dialogue": "Of all the things I've tried so far, this is the best one, but it's far from perfect.",
-"offset": Vector2(280, 6960),
+"offset": Vector2(680, 6960),
 "options": {
 0: {
 "condition": {},
@@ -2874,12 +2874,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.002),
+"size": Vector2(391, 372),
 "speaker": 8
 },
 "1_266": {
 "dialogue": "That’s all you’ve got?",
-"offset": Vector2(280, 7460),
+"offset": Vector2(560, 7440),
 "options": {
 0: {
 "condition": {},
@@ -2892,7 +2892,7 @@ nodes = {
 },
 "1_267": {
 "dialogue": "Pretty much.",
-"offset": Vector2(760, 7440),
+"offset": Vector2(1040, 7440),
 "options": {
 0: {
 "condition": {},
@@ -3009,7 +3009,7 @@ nodes = {
 },
 "1_275": {
 "dialogue": "...",
-"offset": Vector2(800, -19120),
+"offset": Vector2(820, -19020),
 "options": {
 0: {
 "condition": {},
@@ -3061,7 +3061,7 @@ nodes = {
 },
 "1_279": {
 "dialogue": "Try something else…",
-"offset": Vector2(1520, 6420),
+"offset": Vector2(1900, 6420),
 "options": {
 0: {
 "condition": {},
@@ -3069,7 +3069,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391.001, 433),
+"size": Vector2(391.001, 432.998),
 "speaker": 8
 },
 "1_28": {
@@ -3087,7 +3087,7 @@ nodes = {
 },
 "1_280": {
 "dialogue": "Then the only way to help is to make something new. You see that crafting station next to my house? You can use it if you want.",
-"offset": Vector2(1120, 7440),
+"offset": Vector2(1400, 7440),
 "options": {
 0: {
 "condition": {},
@@ -3160,7 +3160,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391.002, 433),
+"size": Vector2(391.001, 433),
 "speaker": 8
 },
 "1_286": {
@@ -3225,7 +3225,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_290": {
@@ -3342,7 +3342,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_299": {
@@ -3368,7 +3368,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_30": {
@@ -3446,7 +3446,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_305": {
@@ -3459,7 +3459,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 372),
 "speaker": 4
 },
 "1_306": {
@@ -3472,7 +3472,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.001),
+"size": Vector2(300.001, 433.002),
 "speaker": 4
 },
 "1_307": {
@@ -3485,7 +3485,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.998),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_308": {
@@ -3498,7 +3498,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.998),
+"size": Vector2(300, 433),
 "speaker": 5
 },
 "1_309": {
@@ -3537,7 +3537,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.998),
+"size": Vector2(300.001, 433),
 "speaker": 5
 },
 "1_311": {
@@ -3550,7 +3550,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.998),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_312": {
@@ -3563,7 +3563,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.998),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_313": {
@@ -3576,7 +3576,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.998),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_314": {
@@ -3589,7 +3589,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.002, 432.998),
+"size": Vector2(300.002, 433),
 "speaker": 0
 },
 "1_315": {
@@ -3602,7 +3602,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.998),
+"size": Vector2(300, 433),
 "speaker": 5
 },
 "1_316": {
@@ -3615,7 +3615,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.002),
+"size": Vector2(300.001, 433.004),
 "speaker": 0
 },
 "1_317": {
@@ -3628,7 +3628,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.002),
+"size": Vector2(300.001, 433.004),
 "speaker": 0
 },
 "1_318": {
@@ -3641,7 +3641,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.002),
+"size": Vector2(300.001, 433.004),
 "speaker": 6
 },
 "1_319": {
@@ -3654,7 +3654,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.002),
+"size": Vector2(300, 433.004),
 "speaker": 0
 },
 "1_32": {
@@ -3680,7 +3680,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.002),
+"size": Vector2(300, 433.004),
 "speaker": 6
 },
 "1_321": {
@@ -3797,7 +3797,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_33": {
@@ -3810,7 +3810,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.002, 433),
 "speaker": 0
 },
 "1_330": {
@@ -3893,7 +3893,7 @@ nodes = {
 },
 "1_336": {
 "dialogue": "...",
-"offset": Vector2(-1320, -17560),
+"offset": Vector2(-960, -17500),
 "options": {
 0: {
 "condition": {},
@@ -3906,7 +3906,7 @@ nodes = {
 },
 "1_337": {
 "dialogue": "Thanks for the sticks!",
-"offset": Vector2(-980, -17840),
+"offset": Vector2(-640, -17760),
 "options": {
 0: {
 "condition": {},
@@ -4031,7 +4031,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.997),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_346": {
@@ -4044,7 +4044,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.997),
+"size": Vector2(300.001, 433),
 "speaker": 5
 },
 "1_347": {
@@ -4057,7 +4057,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.997),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_348": {
@@ -4070,7 +4070,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.997),
+"size": Vector2(300, 433),
 "speaker": 5
 },
 "1_349": {
@@ -4083,7 +4083,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.997),
 "speaker": 0
 },
 "1_35": {
@@ -4109,7 +4109,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.997),
 "speaker": 6
 },
 "1_351": {
@@ -4122,7 +4122,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.997),
 "speaker": 0
 },
 "1_352": {
@@ -4135,7 +4135,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.997),
 "speaker": 6
 },
 "1_353": {
@@ -4148,7 +4148,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.997),
 "speaker": 6
 },
 "1_354": {
@@ -4161,7 +4161,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.997),
 "speaker": 0
 },
 "1_355": {
@@ -4174,7 +4174,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.997),
 "speaker": 6
 },
 "1_356": {
@@ -4193,7 +4193,7 @@ nodes = {
 },
 "1_357": {
 "dialogue": "...",
-"offset": Vector2(-660, 6320),
+"offset": Vector2(-480, 6000),
 "options": {
 0: {
 "condition": {},
@@ -4201,12 +4201,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 1844.39),
 "speaker": 8
 },
 "1_358": {
 "dialogue": "(I Should probably talk to everyone first before talking to Tommy)",
-"offset": Vector2(-1480, 9980),
+"offset": Vector2(-1240, 10240),
 "options": {
 0: {
 "condition": {},
@@ -4219,7 +4219,7 @@ nodes = {
 },
 "1_359": {
 "dialogue": "...",
-"offset": Vector2(-1440, -440),
+"offset": Vector2(-1220, -420),
 "options": {
 0: {
 "condition": {},
@@ -4227,7 +4227,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.002),
+"size": Vector2(300, 372),
 "speaker": 6
 },
 "1_36": {
@@ -4245,7 +4245,7 @@ nodes = {
 },
 "1_360": {
 "dialogue": "Great job! Now it's time to hold up my end of the deal.",
-"offset": Vector2(-1440, -960),
+"offset": Vector2(-1240, -860),
 "options": {
 0: {
 "condition": {},
@@ -4253,7 +4253,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300, 372),
 "speaker": 6
 },
 "1_361": {
@@ -4292,7 +4292,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 432.999),
 "speaker": 8
 },
 "1_364": {
@@ -4305,7 +4305,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 0
 },
 "1_365": {
@@ -4344,7 +4344,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 4
 },
 "1_39": {
@@ -4357,7 +4357,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.001),
+"size": Vector2(300.001, 433),
 "speaker": 5
 },
 "1_4": {
@@ -4396,7 +4396,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.001),
+"size": Vector2(300.001, 433),
 "speaker": 5
 },
 "1_42": {
@@ -4422,7 +4422,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.009),
+"size": Vector2(300, 433.008),
 "speaker": 6
 },
 "1_44": {
@@ -4431,7 +4431,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_46",
+"link": &"3_61",
 "text": ""
 }
 },
@@ -4440,11 +4440,11 @@ nodes = {
 },
 "1_45": {
 "dialogue": "It was a pleasure doing business with you. Good day and goodbye!",
-"offset": Vector2(5140, -4420),
+"offset": Vector2(4920, -4420),
 "options": {
 0: {
 "condition": {},
-"link": &"1_46",
+"link": &"3_61",
 "text": ""
 }
 },
@@ -4453,7 +4453,7 @@ nodes = {
 },
 "1_46": {
 "dialogue": "Hey, while you’re here, could you go out to the woods and get me some sticks. I’ve been planning to get some for fire but I haven’t had the chance yet.",
-"offset": Vector2(5540, -4680),
+"offset": Vector2(5900, -4680),
 "options": {
 0: {
 "condition": {},
@@ -4461,12 +4461,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.003, 433.004),
+"size": Vector2(300.003, 433.006),
 "speaker": 6
 },
 "1_47": {
 "dialogue": "Well… Since you’ve helped me out, that’s the least I can do. Be back in back in a bit.",
-"offset": Vector2(5900, -4680),
+"offset": Vector2(6260, -4680),
 "options": {
 0: {
 "condition": {},
@@ -4474,7 +4474,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.004),
+"size": Vector2(300.002, 433.006),
 "speaker": 0
 },
 "1_48": {
@@ -4487,7 +4487,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 432.998),
 "speaker": 7
 },
 "1_49": {
@@ -4500,12 +4500,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 433.002),
 "speaker": 0
 },
 "1_5": {
 "dialogue": "Well hello there, would you like to buy some of Pure-fi’s patented Toadable? It’s guaranteed to fix your water right up! And, right now, it’s at an incredible 83 Rana and 52 Sapo. How’s that sound?",
-"offset": Vector2(660, -4760),
+"offset": Vector2(640, -4800),
 "options": {
 0: {
 "condition": {},
@@ -4513,7 +4513,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.009),
+"size": Vector2(300, 372),
 "speaker": 0
 },
 "1_50": {
@@ -4526,7 +4526,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(390.999, 433),
+"size": Vector2(390.999, 433.002),
 "speaker": 7
 },
 "1_51": {
@@ -4539,7 +4539,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 433.002),
 "speaker": 0
 },
 "1_52": {
@@ -4552,7 +4552,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 433.002),
 "speaker": 7
 },
 "1_53": {
@@ -4565,7 +4565,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 433.002),
 "speaker": 0
 },
 "1_54": {
@@ -4591,7 +4591,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.005),
+"size": Vector2(391, 433.001),
 "speaker": 8
 },
 "1_56": {
@@ -4600,29 +4600,29 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_57",
+"link": &"3_72",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.005),
+"size": Vector2(300.001, 433.001),
 "speaker": 0
 },
 "1_57": {
 "dialogue": "…",
-"offset": Vector2(1140, 2360),
+"offset": Vector2(1500, 2360),
 "options": {
 0: {
 "condition": {},
-"link": &"1_58",
+"link": &"3_73",
 "text": ""
 }
 },
-"size": Vector2(391, 433.003),
+"size": Vector2(391, 432.999),
 "speaker": 8
 },
 "1_58": {
 "dialogue": "Point made. Good day and goodbye.",
-"offset": Vector2(1580, 2360),
+"offset": Vector2(2300, 2340),
 "options": {
 0: {
 "condition": {},
@@ -4630,7 +4630,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.003),
+"size": Vector2(300.001, 432.999),
 "speaker": 0
 },
 "1_59": {
@@ -4656,7 +4656,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 432.998),
 "speaker": 0
 },
 "1_60": {
@@ -4682,7 +4682,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(587.999, 433),
+"size": Vector2(300, 428.168),
 "speaker": 6
 },
 "1_62": {
@@ -4799,7 +4799,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.005),
+"size": Vector2(300.001, 433.001),
 "speaker": 0
 },
 "1_70": {
@@ -4916,7 +4916,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_79": {
@@ -5046,7 +5046,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300.001, 433.004),
 "speaker": 5
 },
 "1_88": {
@@ -5129,7 +5129,7 @@ nodes = {
 },
 "1_93": {
 "dialogue": "Alrighty. You know the drill! It was a pleasure doing business with you. Good day and goodbye!",
-"offset": Vector2(980, -3940),
+"offset": Vector2(720, -3940),
 "options": {
 0: {
 "condition": {},
@@ -5150,7 +5150,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.008),
+"size": Vector2(300, 433.007),
 "speaker": 7
 },
 "1_95": {
@@ -5163,7 +5163,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.008),
+"size": Vector2(300.001, 433.007),
 "speaker": 0
 },
 "1_96": {
@@ -5176,7 +5176,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.008),
+"size": Vector2(300, 433.007),
 "speaker": 0
 },
 "1_97": {
@@ -5189,7 +5189,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.008),
+"size": Vector2(300.001, 433.007),
 "speaker": 7
 },
 "1_98": {
@@ -5202,7 +5202,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.008),
+"size": Vector2(300, 433.007),
 "speaker": 0
 },
 "1_99": {
@@ -5215,7 +5215,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.012),
+"size": Vector2(391, 433.014),
 "speaker": 8
 },
 "2_1": {
@@ -5223,15 +5223,15 @@ nodes = {
 "offset": Vector2(-120, -30780),
 "size": {
 "x": 274.0,
-"y": 597.0
+"y": 612.0
 }
 },
 "2_2": {
 "comment": "Reverse Osmosis",
-"offset": Vector2(-380, 7900),
+"offset": Vector2(-460, 7900),
 "size": {
 "x": 274.0,
-"y": 387.0
+"y": 402.0
 }
 },
 "3_1": {
@@ -5246,7 +5246,7 @@ nodes = {
 },
 "3_11": {
 "link": "END",
-"offset": Vector2(-600, -17820),
+"offset": Vector2(-320, -17740),
 "signalValue": "MainComplete"
 },
 "3_12": {
@@ -5256,7 +5256,7 @@ nodes = {
 },
 "3_13": {
 "link": "END",
-"offset": Vector2(-1082.82, -793.495),
+"offset": Vector2(-920, -680),
 "signalValue": "MainComplete"
 },
 "3_14": {
@@ -5349,30 +5349,315 @@ nodes = {
 "offset": Vector2(2060, -16340),
 "signalValue": "MainComplete"
 },
+"3_30": {
+"link": &"1_11",
+"offset": Vector2(440, -22000),
+"signalValue": "VoiceOff"
+},
+"3_31": {
+"link": &"5_22",
+"offset": Vector2(40, -19380),
+"signalValue": "EndIdx"
+},
+"3_32": {
+"link": &"1_275",
+"offset": Vector2(460, -18980),
+"signalValue": "VoiceOff"
+},
+"3_33": {
+"link": &"5_27",
+"offset": Vector2(-1680, -17780),
+"signalValue": "EndIdx"
+},
+"3_34": {
+"link": &"1_336",
+"offset": Vector2(-1240, -17340),
+"signalValue": "VoiceOff"
+},
+"3_35": {
+"link": &"5_10",
+"offset": Vector2(100, -16540),
+"signalValue": "EndIdx"
+},
+"3_36": {
+"link": &"1_116",
+"offset": Vector2(960, -16220),
+"signalValue": "VoiceOff"
+},
+"3_37": {
+"link": &"1_128",
+"offset": Vector2(-220, -21580),
+"signalValue": "Discount15%"
+},
+"3_38": {
+"link": &"1_128",
+"offset": Vector2(-220, -21420),
+"signalValue": "Discount35%"
+},
+"3_39": {
+"link": &"1_153",
+"offset": Vector2(-202.019, -21243),
+"signalValue": "Discount25%"
+},
 "3_4": {
 "link": "END",
 "offset": Vector2(2820, 7940),
 "signalValue": "PlayerRun"
+},
+"3_40": {
+"link": &"1_153",
+"offset": Vector2(-200, -21000),
+"signalValue": "Discount40%"
+},
+"3_41": {
+"link": &"1_142",
+"offset": Vector2(520, -21520),
+"signalValue": "RealignD1"
+},
+"3_42": {
+"link": &"1_154",
+"offset": Vector2(540, -21080),
+"signalValue": "RealignD2"
+},
+"3_43": {
+"link": &"1_129",
+"offset": Vector2(-320, -15400),
+"signalValue": "VoiceOff"
+},
+"3_44": {
+"link": &"1_167",
+"offset": Vector2(2700, -14860),
+"signalValue": "VoiceOff"
+},
+"3_45": {
+"link": &"5_23",
+"offset": Vector2(-760, -13580),
+"signalValue": "EndIdx"
+},
+"3_46": {
+"link": &"1_277",
+"offset": Vector2(-180, -13000),
+"signalValue": "VoiceOff"
+},
+"3_47": {
+"link": &"5_25",
+"offset": Vector2(-320, -12000),
+"signalValue": "EndIdx"
+},
+"3_48": {
+"link": &"1_305",
+"offset": Vector2(360, -11680),
+"signalValue": "VoiceOff"
+},
+"3_49": {
+"link": &"1_15",
+"offset": Vector2(-360, -9440),
+"signalValue": "VoiceOff"
 },
 "3_5": {
 "link": "END",
 "offset": Vector2(2580, -2920),
 "signalValue": "MainComplete"
 },
+"3_50": {
+"link": &"1_130",
+"offset": Vector2(-580, -9100),
+"signalValue": "Discount15%"
+},
+"3_51": {
+"link": &"1_130",
+"offset": Vector2(-580, -8920),
+"signalValue": "Discount35%"
+},
+"3_52": {
+"link": &"1_168",
+"offset": Vector2(-580, -8700),
+"signalValue": "Discount25%"
+},
+"3_53": {
+"link": &"1_168",
+"offset": Vector2(-584.581, -8521.37),
+"signalValue": "Discount40%"
+},
+"3_54": {
+"link": &"1_144",
+"offset": Vector2(40, -9000),
+"signalValue": "RealignD1"
+},
+"3_55": {
+"link": &"1_169",
+"offset": Vector2(0, -8560),
+"signalValue": "RealignD2"
+},
+"3_56": {
+"link": &"1_251",
+"offset": Vector2(2340, -6940),
+"signalValue": "VoiceOff"
+},
+"3_57": {
+"link": &"1_252",
+"offset": Vector2(2980, -6840),
+"signalValue": "Negate"
+},
+"3_58": {
+"link": &"5_9",
+"offset": Vector2(340, -4360),
+"signalValue": "EndIdx"
+},
+"3_59": {
+"link": &"1_60",
+"offset": Vector2(1320, -4180),
+"signalValue": "VoiceOff"
+},
 "3_6": {
 "link": "END",
 "offset": Vector2(1883.27, -32672.6),
 "signalValue": "TutorialEnded"
+},
+"3_60": {
+"link": &"1_44",
+"offset": Vector2(4877.36, -4980.15),
+"signalValue": "Day1Antonio"
+},
+"3_61": {
+"link": &"1_46",
+"offset": Vector2(5580, -4640),
+"signalValue": "AntonioRealign"
+},
+"3_62": {
+"link": &"5_16",
+"offset": Vector2(160, -3000),
+"signalValue": "EndIdx"
+},
+"3_63": {
+"link": &"1_127",
+"offset": Vector2(1320, -2700),
+"signalValue": "VoiceOff"
+},
+"3_64": {
+"link": &"1_131",
+"offset": Vector2(-940, -2640),
+"signalValue": "Discount15%"
+},
+"3_65": {
+"link": &"1_131",
+"offset": Vector2(-960, -2460),
+"signalValue": "Discount35%"
+},
+"3_66": {
+"link": &"1_174",
+"offset": Vector2(-960, -2220),
+"signalValue": "Discount25%"
+},
+"3_67": {
+"link": &"1_174",
+"offset": Vector2(-960, -2020),
+"signalValue": "Discount40%"
+},
+"3_68": {
+"link": &"1_146",
+"offset": Vector2(-140, -2460),
+"signalValue": "RealignD1"
+},
+"3_69": {
+"link": &"1_175",
+"offset": Vector2(-140, -2060),
+"signalValue": "RealignD2"
 },
 "3_7": {
 "link": "END",
 "offset": Vector2(1660, -24400),
 "signalValue": "MainComplete"
 },
+"3_70": {
+"link": &"5_35",
+"offset": Vector2(-2180, -740),
+"signalValue": "EndIdx"
+},
+"3_71": {
+"link": &"1_359",
+"offset": Vector2(-1500, -380),
+"signalValue": "VoiceOff"
+},
+"3_72": {
+"link": &"1_57",
+"offset": Vector2(1180, 2380),
+"signalValue": "VoiceOff"
+},
+"3_73": {
+"link": &"1_58",
+"offset": Vector2(1980, 2380),
+"signalValue": "Negate"
+},
+"3_74": {
+"link": &"1_101",
+"offset": Vector2(1180, 2940),
+"signalValue": "VoiceOff"
+},
+"3_75": {
+"link": &"1_102",
+"offset": Vector2(1969.22, 2943.26),
+"signalValue": "Negate"
+},
+"3_76": {
+"link": &"1_111",
+"offset": Vector2(1160, 3600),
+"signalValue": "VoiceOff"
+},
+"3_77": {
+"link": &"1_112",
+"offset": Vector2(2000, 3560),
+"signalValue": "Negate"
+},
+"3_78": {
+"link": &"1_262",
+"offset": Vector2(-880, 4160),
+"signalValue": "VoiceOff"
+},
+"3_79": {
+"link": &"1_357",
+"offset": Vector2(-780, 5900),
+"signalValue": "VoiceOff"
+},
 "3_8": {
 "link": "END",
 "offset": Vector2(1480, -19220),
 "signalValue": "MainComplete"
+},
+"3_80": {
+"link": &"1_263",
+"offset": Vector2(360, 6140),
+"signalValue": "OMBottle"
+},
+"3_81": {
+"link": &"1_264",
+"offset": Vector2(340, 6520),
+"signalValue": "OMPot"
+},
+"3_82": {
+"link": &"1_265",
+"offset": Vector2(340, 6960),
+"signalValue": "OMFilter"
+},
+"3_83": {
+"link": &"1_279",
+"offset": Vector2(1560, 6420),
+"signalValue": "EndIdx"
+},
+"3_84": {
+"link": &"1_266",
+"offset": Vector2(280, 7500),
+"signalValue": "OMRequest"
+},
+"3_85": {
+"link": &"1_281",
+"offset": Vector2(-20, 8100),
+"signalValue": "OMDone"
+},
+"3_86": {
+"link": &"1_358",
+"offset": Vector2(-1640, 10240),
+"signalValue": "VoiceOff"
 },
 "3_9": {
 "link": "END",
@@ -5388,7 +5673,7 @@ nodes = {
 },
 "4_10": {
 "link": "END",
-"offset": Vector2(1640, 7440),
+"offset": Vector2(1920, 7440),
 "type": 0,
 "value": "true",
 "variable": "QMain"
@@ -5458,7 +5743,7 @@ nodes = {
 },
 "4_2": {
 "link": "END",
-"offset": Vector2(6300, -4640),
+"offset": Vector2(6660, -4640),
 "type": 0,
 "value": "true",
 "variable": "QMain"
@@ -5469,6 +5754,20 @@ nodes = {
 "type": 0,
 "value": "true",
 "variable": "QMain"
+},
+"4_21": {
+"link": "END",
+"offset": Vector2(-620, -4540),
+"type": 0,
+"value": "",
+"variable": ""
+},
+"4_22": {
+"link": "END",
+"offset": Vector2(-3080, 9700),
+"type": 0,
+"value": "",
+"variable": ""
 },
 "4_3": {
 "link": "END",
@@ -5528,7 +5827,7 @@ nodes = {
 "value2": "true"
 },
 "5_10": {
-"false": &"1_116",
+"false": &"3_36",
 "offset": Vector2(460, -16380),
 "operator": 4,
 "true": &"1_115",
@@ -5539,21 +5838,21 @@ nodes = {
 "false": &"1_240",
 "offset": Vector2(-720, -13960),
 "operator": 0,
-"true": &"5_23",
+"true": &"3_45",
 "value1": "{{Bargin}}",
 "value2": "true"
 },
 "5_12": {
 "false": &"1_5",
-"offset": Vector2(-40, -4480),
+"offset": Vector2(-100, -4680),
 "operator": 0,
-"true": &"5_9",
+"true": &"3_58",
 "value1": "{{Accept}}",
 "value2": "true"
 },
 "5_13": {
-"false": &"1_262",
-"offset": Vector2(-860, 3880),
+"false": &"3_78",
+"offset": Vector2(-1380, 3880),
 "operator": 0,
 "true": &"1_19",
 "value1": "{{Discount}}",
@@ -5561,9 +5860,9 @@ nodes = {
 },
 "5_14": {
 "false": &"1_12",
-"offset": Vector2(-220, -16900),
+"offset": Vector2(-420, -16900),
 "operator": 0,
-"true": &"5_10",
+"true": &"3_35",
 "value1": "{{Bargin}}",
 "value2": "true"
 },
@@ -5571,12 +5870,12 @@ nodes = {
 "false": &"1_17",
 "offset": Vector2(-120, -3400),
 "operator": 0,
-"true": &"5_16",
+"true": &"3_62",
 "value1": "{{Accept}}",
 "value2": "true"
 },
 "5_16": {
-"false": &"1_127",
+"false": &"3_63",
 "offset": Vector2(440, -2860),
 "operator": 4,
 "true": &"1_126",
@@ -5625,23 +5924,23 @@ nodes = {
 },
 "5_21": {
 "false": &"1_236",
-"offset": Vector2(-240, -19740),
+"offset": Vector2(-320, -19740),
 "operator": 0,
-"true": &"5_22",
+"true": &"3_31",
 "value1": "{{Anger}}",
 "value2": "true"
 },
 "5_22": {
-"false": &"1_275",
-"offset": Vector2(340, -19220),
+"false": &"3_32",
+"offset": Vector2(-60, -19180),
 "operator": 4,
 "true": &"1_276",
 "value1": "{{WaterFilter}}",
 "value2": "2"
 },
 "5_23": {
-"false": &"1_277",
-"offset": Vector2(-350.718, -13044.7),
+"false": &"3_46",
+"offset": Vector2(-440, -13360),
 "operator": 4,
 "true": &"1_278",
 "value1": "{{WaterBottle}}",
@@ -5649,15 +5948,15 @@ nodes = {
 },
 "5_24": {
 "false": &"1_300",
-"offset": Vector2(-40, -12360),
+"offset": Vector2(-480, -12380),
 "operator": 0,
-"true": &"5_25",
+"true": &"3_47",
 "value1": "{{Bargin}}",
 "value2": "true"
 },
 "5_25": {
-"false": &"1_305",
-"offset": Vector2(179.058, -11917.4),
+"false": &"3_48",
+"offset": Vector2(-40, -11960),
 "operator": 4,
 "true": &"1_306",
 "value1": "{{TinCans}}",
@@ -5665,15 +5964,15 @@ nodes = {
 },
 "5_26": {
 "false": &"1_330",
-"offset": Vector2(-1440, -18100),
+"offset": Vector2(-2000, -18100),
 "operator": 0,
-"true": &"5_27",
+"true": &"3_33",
 "value1": "{{Anger}}",
 "value2": "true"
 },
 "5_27": {
-"false": &"1_336",
-"offset": Vector2(-1760, -17760),
+"false": &"3_34",
+"offset": Vector2(-1660, -17620),
 "operator": 4,
 "true": &"1_337",
 "value1": "{{Twigs}}",
@@ -5681,14 +5980,14 @@ nodes = {
 },
 "5_28": {
 "false": &"1_225",
-"offset": Vector2(-520, 5620),
+"offset": Vector2(-1320, 5580),
 "operator": 0,
-"true": &"1_357",
+"true": &"3_79",
 "value1": "{{OldMan}}",
 "value2": "true"
 },
 "5_29": {
-"false": &"1_358",
+"false": &"3_86",
 "offset": Vector2(-2600, 9560),
 "operator": 0,
 "true": &"5_30",
@@ -5704,7 +6003,7 @@ nodes = {
 "value2": "true"
 },
 "5_30": {
-"false": &"1_358",
+"false": &"3_86",
 "offset": Vector2(-2120, 9560),
 "operator": 0,
 "true": &"5_31",
@@ -5712,7 +6011,7 @@ nodes = {
 "value2": "true"
 },
 "5_31": {
-"false": &"1_358",
+"false": &"3_86",
 "offset": Vector2(-1640, 9560),
 "operator": 0,
 "true": &"5_33",
@@ -5720,7 +6019,7 @@ nodes = {
 "value2": "true"
 },
 "5_32": {
-"false": &"1_358",
+"false": &"3_86",
 "offset": Vector2(-700, 9580),
 "operator": 0,
 "true": &"1_356",
@@ -5728,7 +6027,7 @@ nodes = {
 "value2": "true"
 },
 "5_33": {
-"false": &"1_358",
+"false": &"3_86",
 "offset": Vector2(-1180, 9580),
 "operator": 0,
 "true": &"5_32",
@@ -5737,14 +6036,14 @@ nodes = {
 },
 "5_34": {
 "false": &"1_253",
-"offset": Vector2(-2200, -1100),
+"offset": Vector2(-2540, -1100),
 "operator": 0,
-"true": &"5_35",
+"true": &"3_70",
 "value1": "{{Accept}}",
 "value2": "true"
 },
 "5_35": {
-"false": &"1_359",
+"false": &"3_71",
 "offset": Vector2(-1899.71, -718.708),
 "operator": 0,
 "true": &"1_360",
@@ -5767,6 +6066,22 @@ nodes = {
 "value1": "{{Discount}}",
 "value2": "25%"
 },
+"5_38": {
+"false": &"3_38",
+"offset": Vector2(-740, -21560),
+"operator": 0,
+"true": &"3_37",
+"value1": "{{Discount}}",
+"value2": "15%"
+},
+"5_39": {
+"false": &"3_40",
+"offset": Vector2(-760, -21160),
+"operator": 0,
+"true": &"3_39",
+"value1": "{{Discount}}",
+"value2": "25%"
+},
 "5_4": {
 "false": &"1_45",
 "offset": Vector2(3620, -4760),
@@ -5774,6 +6089,38 @@ nodes = {
 "true": &"5_6",
 "value1": "{{Denial}}",
 "value2": "true"
+},
+"5_40": {
+"false": &"3_51",
+"offset": Vector2(-1120, -9080),
+"operator": 0,
+"true": &"3_50",
+"value1": "{{Discount}}",
+"value2": "15%"
+},
+"5_41": {
+"false": &"3_53",
+"offset": Vector2(-1120, -8680),
+"operator": 0,
+"true": &"3_52",
+"value1": "{{Discount}}",
+"value2": "25%"
+},
+"5_42": {
+"false": &"3_65",
+"offset": Vector2(-1560, -2600),
+"operator": 0,
+"true": &"3_64",
+"value1": "{{Discount}}",
+"value2": "15%"
+},
+"5_43": {
+"false": &"3_67",
+"offset": Vector2(-1560, -2160),
+"operator": 0,
+"true": &"3_66",
+"value1": "{{Discount}}",
+"value2": "25%"
 },
 "5_5": {
 "false": &"1_45",
@@ -5793,9 +6140,9 @@ nodes = {
 },
 "5_7": {
 "false": &"1_45",
-"offset": Vector2(4580, -4760),
+"offset": Vector2(4560, -4760),
 "operator": 0,
-"true": &"1_44",
+"true": &"3_60",
 "value1": "{{OldMan}}",
 "value2": "true"
 },
@@ -5808,8 +6155,8 @@ nodes = {
 "value2": "true"
 },
 "5_9": {
-"false": &"1_60",
-"offset": Vector2(660, -4240),
+"false": &"3_59",
+"offset": Vector2(600, -4320),
 "operator": 4,
 "true": &"1_59",
 "value1": "{{Twigs}}",
@@ -5895,5 +6242,5 @@ variables = {
 }
 }
 comments = Array[String](["2_1", "2_2"])
-strays = Array[String](["4_13", "4_14", "4_4", "4_18"])
+strays = Array[String](["4_13", "4_14", "4_4", "4_18", "4_21", "4_22"])
 characters = "res://Dialogues/CharacterList.tres"

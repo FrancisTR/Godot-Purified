@@ -207,6 +207,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ndb2o")
 text = "Exit"
 
 [node name="ItemR" type="Label" parent="ListUI"]
+visible = false
 texture_filter = 1
 layout_mode = 0
 anchor_left = 0.3125

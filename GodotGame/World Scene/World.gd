@@ -213,7 +213,7 @@ func _on_open_map():
 	for npc in npcs:
 		npc.show_map_icon()
 		print(npc.name, " vs ", GameData.QVillager)
-		if GameData.day < 3:
+		if GameData.day < 3 or GameData.day == 4 or GameData.day == 5 or GameData.day == 6 or GameData.day >= 8:
 			if not GameData.villagersTalked[GameData.villagersIndex[npc.name]].Talked:
 				npc.show_notif("exclamation")
 			elif GameData.QMain.keys().find(npc.name) != -1:

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8yg6miii1gu6"
+path="res://.godot/imported/Bargaining Barry.mp3-e67d97d3a645a55e44e337bbe0406054.mp3str"
+
+[deps]
+
+source_file="res://Assets/DialogueVoice/Bargaining Barry.mp3"
+dest_files=["res://.godot/imported/Bargaining Barry.mp3-e67d97d3a645a55e44e337bbe0406054.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

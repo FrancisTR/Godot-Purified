@@ -919,10 +919,10 @@ position = Vector2(-5, 700)
 frame_progress = 0.785208
 
 [node name="Marker2D2" parent="Other/CharacterBody2D" index="5"]
-position = Vector2(-179, 329)
+position = Vector2(45, -186)
 
 [node name="Marker2D" parent="Other/CharacterBody2D" index="6"]
-position = Vector2(-50, -8)
+position = Vector2(106, -450)
 
 [node name="door" parent="Other" instance=ExtResource("12_qfqc7")]
 z_index = 100
