@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbvouxvmk4i48"
+path="res://.godot/imported/Anger Angelica.mp3-24e35268b83dc59b9d323851916fd11c.mp3str"
+
+[deps]
+
+source_file="res://Assets/DialogueVoice/Anger Angelica.mp3"
+dest_files=["res://.godot/imported/Anger Angelica.mp3-24e35268b83dc59b9d323851916fd11c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

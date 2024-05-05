@@ -66,6 +66,17 @@ func _ready():
 	#inst(GameData.itemSpawns)
 	inst_json(Utils.static_items_json)
 	inst_json(Utils.non_static_items_json)
+	
+	#Appear the children if it is day 4+
+	if GameData.day >= 4:
+		$IndividualNPCs/Rano.position = Vector2(791, 404)
+		$IndividualNPCs/Leap.position = Vector2(935, 305)
+		$IndividualNPCs/Hop.position = Vector2(609, 553)
+		$IndividualNPCs/Ribbit.position = Vector2(755, -23)
+		
+		
+
+
 
 
 func _process(delta):

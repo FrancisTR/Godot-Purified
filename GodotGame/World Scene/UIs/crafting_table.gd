@@ -34,7 +34,7 @@ func _ready():
 	$UI/CraftingList.visible = false
 	
 	#Well is fixed after day 8
-	if GameData.day > 8:
+	if GameData.day > 8 and $"../Well/Sprite2D" != null:
 		$"../Well/Sprite2D".texture = load("res://Assets/Custom/Wells.png")
 	
 	#TODO Add crafting recipes

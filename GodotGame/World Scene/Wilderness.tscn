@@ -1069,7 +1069,7 @@ position = Vector2(889, -922)
 [node name="IndividualNPCs" type="Node" parent="."]
 
 [node name="Rano" parent="IndividualNPCs" instance=ExtResource("19_82jgc")]
-position = Vector2(452, -514)
+position = Vector2(4292, -669)
 
 [node name="DialogueBox" parent="IndividualNPCs/Rano/FixedDialoguePosition" index="2"]
 start_id = "LeapNoMore"
@@ -1079,7 +1079,7 @@ animation = &"Rano"
 autoplay = "Rano"
 
 [node name="Leap" parent="IndividualNPCs" instance=ExtResource("19_82jgc")]
-position = Vector2(367, -510)
+position = Vector2(4432, -670)
 
 [node name="DialogueBox" parent="IndividualNPCs/Leap/FixedDialoguePosition" index="2"]
 start_id = "LeapNoMore"
@@ -1089,7 +1089,7 @@ animation = &"Leap"
 autoplay = "Leap"
 
 [node name="Hop" parent="IndividualNPCs" instance=ExtResource("19_82jgc")]
-position = Vector2(280, -508)
+position = Vector2(4566, -671)
 
 [node name="DialogueBox" parent="IndividualNPCs/Hop/FixedDialoguePosition" index="2"]
 start_id = "LeapNoMore"
@@ -1099,7 +1099,7 @@ animation = &"Hop"
 autoplay = "Hop"
 
 [node name="Ribbit" parent="IndividualNPCs" instance=ExtResource("19_82jgc")]
-position = Vector2(181, -507)
+position = Vector2(4672, -666)
 
 [node name="DialogueBox" parent="IndividualNPCs/Ribbit/FixedDialoguePosition" index="2"]
 start_id = "LeapNoMore"

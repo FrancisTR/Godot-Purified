@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dqotacq0ekag6"]
+[gd_scene load_steps=30 format=3 uid="uid://dqotacq0ekag6"]
 
 [ext_resource type="Texture2D" uid="uid://cxm7wh81tjegk" path="res://Assets/Custom/Terrain/Grass.png" id="1_0jr5d"]
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/tutorial_2.gd" id="1_g11ls"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://decpyxnu3oocl" path="res://World Scene/characters/npc.tscn" id="9_0aus1"]
 [ext_resource type="Texture2D" uid="uid://bpl17gwn3b6ye" path="res://Assets/Custom/Light.png" id="9_k1gro"]
 [ext_resource type="Texture2D" uid="uid://d2av3w2reug1r" path="res://Assets/Custom/Terrain/Bush.png" id="9_w4ugj"]
-[ext_resource type="Texture2D" uid="uid://bfeu6k4hm7b7y" path="res://Assets/Custom/map icons/talia_icon.png" id="10_aw114"]
 [ext_resource type="PackedScene" uid="uid://diui2nk1yp3cq" path="res://World Scene/Items/rock.tscn" id="11_bpfea"]
 [ext_resource type="PackedScene" uid="uid://bq46ncf7jihje" path="res://Main Menu Scene/Options.tscn" id="12_hqegn"]
 [ext_resource type="Texture2D" uid="uid://wrx3ar3ec3mq" path="res://Assets/Custom/Tutorial/Keys.png" id="13_2u6ge"]
@@ -847,12 +846,6 @@ layer_4/tile_data = PackedInt32Array(-720907, 7, 0, -655371, 7, 1, -589835, 7, 2
 [node name="CharacterBody2D" parent="Other" instance=ExtResource("7_c2iqh")]
 position = Vector2(42, 42)
 
-[node name="MapIcon" parent="Other/CharacterBody2D" index="5"]
-offset_left = -50.0
-offset_top = -51.0
-offset_right = -25.0
-offset_bottom = -26.0
-
 [node name="ShadowRealm" type="PointLight2D" parent="Other"]
 texture_filter = 1
 position = Vector2(-162.5, -20)
@@ -1278,13 +1271,6 @@ offset_right = 13.8571
 offset_bottom = -26.2857
 scale = Vector2(1.1, 1.1)
 vertical_alignment = 1
-
-[node name="MapIcon" parent="NPC/Talia" index="4"]
-offset_left = -50.0
-offset_top = -62.8571
-offset_right = -25.0
-offset_bottom = -37.8571
-texture = ExtResource("10_aw114")
 
 [node name="StaticBody2D" parent="NPC/Talia" index="7"]
 scale = Vector2(0.7, 0.7)
