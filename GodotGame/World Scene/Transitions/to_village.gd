@@ -3,6 +3,101 @@ extends StaticBody2D
 @onready var dialogue_box = $Dialogue/Dialogue/DialogueBox
 
 
+
+var dialogue_voices = [
+	# Days 1
+	{	
+		"Rano": [
+			{"Name": "LL", "Start": "1:13.5", "End": "1:17", "Emotion": ""},
+		],
+		"ChildrenDone": [
+			{"Name": "LL", "Start": "1:19.8", "End": "1:23.8", "Emotion": "Surprised"},
+			{"Name": "LL", "Start": "0:26.8", "End": "0:31.5", "Emotion": "Anger"},
+			{"Name": "Croak", "Start": "0:33", "End": "0:34.8", "Emotion": "Happy"},
+			{"Name": "LL", "Start": "1:25.3", "End": "1:30.5", "Emotion": "Happy"},
+		],
+	},
+	
+	# Days 2
+	{	
+		"Rano": [
+			{"Name": "LL", "Start": "1:13.5", "End": "1:17", "Emotion": ""},
+		],
+		"ChildrenDone": [
+			{"Name": "LL", "Start": "0:09", "End": "0:11", "Emotion": "Surprised"},
+			{"Name": "Main", "Start": "03:37.27", "End": "03:42.10", "Emotion": "Happy"},
+			{"Name": "LL", "Start": "2:45.4", "End": "0:168.713317871094", "Emotion": ""},
+			#TODO: SplitAudio
+			{"Name": "LL", "Start": "1:43", "End": "1:54.5", "Emotion": "Happy"},
+			{"Name": "LL", "Start": "", "End": "", "Emotion": "Happy"},
+			{"Name": "LL", "Start": "", "End": "", "Emotion": "Happy"},
+		],
+	},
+	
+	# Days 3
+	{	
+		"Rano": [
+			{"Name": "LL", "Start": "1:13.5", "End": "1:17", "Emotion": ""},
+		],
+		"ChildrenDone": [
+			{"Name": "LL", "Start": "0:52", "End": "0:54", "Emotion": ""},
+			{"Name": "Main", "Start": "04:28.22", "End": "04:35.15", "Emotion": "Happy"},
+			{"Name": "LL", "Start": "0:20.1", "End": "0:21", "Emotion": "Happy"},
+			{"Name": "LL", "Start": "0:39.5", "End": "0:41", "Emotion": ""},
+			{"Name": "Main", "Start": "04:35.18", "End": "04:38.24", "Emotion": ""},
+			#TODO SplitAudio
+			{"Name": "LL", "Start": "2:16", "End": "0:141.541809082031", "Emotion": "Happy"},
+			{"Name": "LL", "Start": "", "End": "", "Emotion": ""},
+		],
+	},
+	
+]
+
+var dialogue_voiceSpecific
+var audioList = {
+	"Main": "res://Assets/DialogueVoice/MC.mp3",
+	"LL": "res://Assets/DialogueVoice/LLE.mp3",
+	"Croak": "res://Assets/DialogueVoice/Croak.mp3",
+}
+
+var emotionList = {
+	"Main": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	"LL": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	"Croak": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+}
+var load_audio
+var audioCount = -1
+
+var ranoAP = false
+
+
+
+
+
+
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not dialogue_box.running:
@@ -34,7 +129,9 @@ func _on_teleport_body_entered(body):
 				GameData.talkToKid = true
 				SceneTransition.change_scene("res://Globals/text_transition.tscn")
 			else:
+				ranoAP = true
 				dialogue_box.start("Error")
+				
 			#dialogue_box.start("Kids")
 			#GameData.charLock = true
 		elif (GameData.questComplete["Wild"] == false and GameData.inventory_amount.size() != 0 and GameData.day == 2):
@@ -50,7 +147,9 @@ func _on_teleport_body_entered(body):
 				GameData.talkToKid = true
 				SceneTransition.change_scene("res://Globals/text_transition.tscn")
 			else:
+				ranoAP = true
 				dialogue_box.start("Error")
+				
 		elif (GameData.questComplete["Wild"] == false and GameData.inventory_amount.size() != 0 and GameData.day == 3):
 			#dialogue_box.start("Kids3")
 			#GameData.charLock = true
@@ -64,9 +163,11 @@ func _on_teleport_body_entered(body):
 				GameData.talkToKid = true
 				SceneTransition.change_scene("res://Globals/text_transition.tscn")
 			else:
+				ranoAP = true
 				dialogue_box.start("Error")
 		else:
 			#All requirements met
+			ranoAP = false
 			#TODO: Add more days
 			if GameData.questComplete["Wild"] == true and GameData.leaveVillageQuest == false:
 				if (GameData.day == 1):
@@ -82,6 +183,23 @@ func _on_teleport_body_entered(body):
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	SoundControl.is_playing_sound("button")
 	
+	#TODO: Set up the dialogue voices
+	SoundControl.dialogue_audio_stop() #Stop the audio if next dialogue
+	#print(audioCount)
+	print("Dialogue Node: "+str(node_type))
+	if str(node_type) == str(1):
+		audioCount += 1
+	if ranoAP == true:
+		print("Rano")
+		if (audioCount < len(dialogue_voices[GameData.day - 1]["Rano"])):
+			print("Audio Count: "+str(audioCount))
+			dialogue_voiceSpecific = dialogue_voices[GameData.day - 1]["Rano"][-1]
+	else:
+		if (audioCount < len(dialogue_voices[GameData.day - 1]["ChildrenDone"])):
+			print("Audio Count: "+str(audioCount))
+			dialogue_voiceSpecific = dialogue_voices[GameData.day - 1]["ChildrenDone"][audioCount]
+	
+	
 	dialogue_box.custom_effects[0].skip = true
 	dialogue_box.show_options()
 	
@@ -95,16 +213,26 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 		else:
 			#Its the main character
 			idx = Utils.char_dict["Main"]
+		
+		#var CharacterVoice = audioList[dialogue_voiceSpecific["Emotion"]]
+		#if (audioList[dialogue_voiceSpecific["Emotion"]] == ""):
+			#$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
+		#else: #Emotion
+			#$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
 		$Dialogue/Dialogue/CharacterIMG.texture = Utils.character_list.characters[idx].image
 
 
 
 func _on_voice_pressed():
 	print("Play Audio")
+	var CharacterVoice = audioList[dialogue_voiceSpecific["Name"]]
+	##TODO: PLay audio
+	SoundControl.play_audio(CharacterVoice, dialogue_voiceSpecific["Start"], dialogue_voiceSpecific["End"]) # Node, string, int, int
 	dialogue_box.show_options()
 
 
 func _on_dialogue_box_dialogue_ended():
+	audioCount = -1 #Reset audio index
 	$Dialogue/Dialogue/Voice.visible = false
 	$Dialogue/Dialogue/CharacterIMG.visible = false
 

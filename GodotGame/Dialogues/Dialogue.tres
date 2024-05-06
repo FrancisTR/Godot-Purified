@@ -12,7 +12,6 @@ starts = {
 "Accept4": &"0_56",
 "Accept5": &"0_57",
 "Accept6": &"0_58",
-"Accept7": &"0_59",
 "Accept8": &"0_60",
 "Accept9": &"0_61",
 "Anger": &"0_2",
@@ -78,6 +77,7 @@ starts = {
 "OldManWait": &"0_74",
 "OldManWaterBottleSpecial": &"0_68",
 "OldManWaterFilter": &"0_70",
+"Rano10": &"0_59",
 "Talia7": &"0_65",
 "TaliaTutorial": &"0_72"
 }
@@ -353,9 +353,9 @@ nodes = {
 "start_id": "Accept6"
 },
 "0_59": {
-"link": &"1_119",
-"offset": Vector2(-2300, -25500),
-"start_id": "Accept7"
+"link": &"1_74",
+"offset": Vector2(-100, 13100),
+"start_id": "Rano10"
 },
 "0_6": {
 "link": &"1_6",
@@ -519,7 +519,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.013),
+"size": Vector2(300.001, 433.015),
 "speaker": 0
 },
 "1_103": {
@@ -584,7 +584,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.002, 433.001),
+"size": Vector2(300.002, 433),
 "speaker": 6
 },
 "1_108": {
@@ -597,7 +597,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.001),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_109": {
@@ -662,7 +662,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300.001, 433.004),
 "speaker": 0
 },
 "1_113": {
@@ -675,7 +675,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.002, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_114": {
@@ -757,12 +757,13 @@ nodes = {
 "speaker": ""
 },
 "1_12": {
-"dialogue": "Hello again. Remember when you asked about that 1% discount?",
+"dialogue": "Hello again. Remember when you asked about that 1% discount?
+Well, I’m finally back to tell you that Pure-fi can afford to sell it to you for that price today! How does that sound?",
 "offset": Vector2(480, -16920),
 "options": {
 0: {
 "condition": {},
-"link": &"1_74",
+"link": &"1_75",
 "text": ""
 }
 },
@@ -809,21 +810,9 @@ nodes = {
 "speaker": 0
 },
 "1_123": {
-"dialogue": "I almost forgot. I really appreciate you giving me the Twigs the other day. I was wondering if you can give me a couple of Tin Cans.",
+"dialogue": "I almost forgot. I really appreciate you giving me some Twigs the other day. I was wondering if you can give me a couple of Tin Cans. 
+Can you get them for me?",
 "offset": Vector2(1540, -3400),
-"options": {
-0: {
-"condition": {},
-"link": &"1_124",
-"text": ""
-}
-},
-"size": Vector2(300, 433.001),
-"speaker": 6
-},
-"1_124": {
-"dialogue": "Can you get them for me?",
-"offset": Vector2(1900, -3400),
 "options": {
 0: {
 "condition": {},
@@ -831,12 +820,25 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.002, 433.001),
+"size": Vector2(300, 433),
 "speaker": 6
+},
+"1_124": {
+"dialogue": "Yeah… are you not doing that anymore?",
+"offset": Vector2(620, 13060),
+"options": {
+0: {
+"condition": {},
+"link": &"1_317",
+"text": ""
+}
+},
+"size": Vector2(300.003, 433),
+"speaker": 0
 },
 "1_125": {
 "dialogue": "Sure! I can get those Tin Cans for you! I'll be back again!",
-"offset": Vector2(2280, -3400),
+"offset": Vector2(2020, -3420),
 "options": {
 0: {
 "condition": {},
@@ -844,7 +846,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.001),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_126": {
@@ -857,7 +859,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.002),
+"size": Vector2(300, 433.002),
 "speaker": 6
 },
 "1_127": {
@@ -870,7 +872,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.002),
+"size": Vector2(300.001, 433.002),
 "speaker": 6
 },
 "1_128": {
@@ -883,7 +885,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 372),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_129": {
@@ -922,7 +924,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(302.663, 372),
+"size": Vector2(302.663, 433),
 "speaker": 0
 },
 "1_131": {
@@ -935,7 +937,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 372),
+"size": Vector2(300, 433.002),
 "speaker": 0
 },
 "1_132": {
@@ -1022,7 +1024,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_139",
+"link": &"3_87",
 "text": ""
 }
 },
@@ -1030,8 +1032,8 @@ nodes = {
 "speaker": 0
 },
 "1_139": {
-"dialogue": "I need to make up for this. Maybe selling Toadable at a lower price will help them. What discount should I sell Toadable for?",
-"offset": Vector2(2740, 4040),
+"dialogue": "(I need to make up for this. Maybe selling Toadable at a lower price will help them. What discount should I sell Toadable for?)",
+"offset": Vector2(2800, 4040),
 "options": {
 0: {
 "condition": {},
@@ -1044,8 +1046,8 @@ nodes = {
 "text": "30%"
 }
 },
-"size": Vector2(367.878, 614.004),
-"speaker": ""
+"size": Vector2(367.877, 614.004),
+"speaker": 0
 },
 "1_14": {
 "dialogue": "Hello again. Would you like to buy Toadable? I know you weren’t interested yesterday, but since it’s on sale, maybe you would change yo-",
@@ -1057,7 +1059,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_140": {
@@ -1122,7 +1124,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433),
 "speaker": 5
 },
 "1_145": {
@@ -1135,7 +1137,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_146": {
@@ -1148,7 +1150,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.001),
+"size": Vector2(300.001, 433.002),
 "speaker": 6
 },
 "1_147": {
@@ -1161,7 +1163,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.011),
+"size": Vector2(300, 433.012),
 "speaker": 0
 },
 "1_148": {
@@ -1257,7 +1259,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 372),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_154": {
@@ -1465,7 +1467,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 372),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_169": {
@@ -1491,7 +1493,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.001),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_170": {
@@ -1556,7 +1558,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(309.663, 372),
+"size": Vector2(309.663, 433),
 "speaker": 0
 },
 "1_175": {
@@ -1634,7 +1636,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.007),
+"size": Vector2(300.001, 433.009),
 "speaker": 0
 },
 "1_180": {
@@ -1647,7 +1649,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.002, 433),
+"size": Vector2(300.003, 433),
 "speaker": 6
 },
 "1_181": {
@@ -1972,7 +1974,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.999),
+"size": Vector2(300.001, 433.001),
 "speaker": 0
 },
 "1_203": {
@@ -2037,7 +2039,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.999),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_208": {
@@ -2050,7 +2052,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.999),
+"size": Vector2(300.001, 433),
 "speaker": 6
 },
 "1_209": {
@@ -2063,7 +2065,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433),
 "speaker": 6
 },
 "1_21": {
@@ -2089,7 +2091,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.999),
+"size": Vector2(300.001, 433),
 "speaker": 6
 },
 "1_211": {
@@ -2102,7 +2104,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_212": {
@@ -2115,7 +2117,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.016),
+"size": Vector2(300, 433.021),
 "speaker": 0
 },
 "1_213": {
@@ -2128,7 +2130,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.016),
+"size": Vector2(391, 433.021),
 "speaker": 8
 },
 "1_214": {
@@ -2185,7 +2187,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.002, 433),
+"size": Vector2(300.003, 433),
 "speaker": 0
 },
 "1_218": {
@@ -2198,7 +2200,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 1
 },
 "1_219": {
@@ -2263,7 +2265,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.002, 433),
+"size": Vector2(300.001, 433),
 "speaker": 1
 },
 "1_223": {
@@ -2302,7 +2304,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_226": {
@@ -2315,7 +2317,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.004),
+"size": Vector2(391, 433.001),
 "speaker": 8
 },
 "1_227": {
@@ -2328,7 +2330,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_228": {
@@ -2341,20 +2343,21 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.004),
+"size": Vector2(391, 433.001),
 "speaker": 8
 },
 "1_229": {
-"dialogue": "What should I do? I have no reason to stay here for employment, but I still want to help.",
+"dialogue": "What should I do? I have no reason to stay here for employment, but I still want to help.
+I can’t help the people of this village without Toadable and I can’t sell Toadable without being employed at Pure-fi, so what do I do?",
 "offset": Vector2(1480, 5560),
 "options": {
 0: {
 "condition": {},
-"link": &"1_230",
+"link": &"1_231",
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_23": {
@@ -2371,34 +2374,8 @@ nodes = {
 "speaker": 0
 },
 "1_230": {
-"dialogue": "I can’t help the people of this village without Toadable and I can’t sell Toadable without being employed at Pure-fi, so what do I do?",
-"offset": Vector2(1840, 5560),
-"options": {
-0: {
-"condition": {},
-"link": &"1_231",
-"text": ""
-}
-},
-"size": Vector2(300.001, 433.004),
-"speaker": 0
-},
-"1_231": {
-"dialogue": "I’ve been trying to fix our water problem for some time now with little result.",
-"offset": Vector2(2180, 5560),
-"options": {
-0: {
-"condition": {},
-"link": &"1_232",
-"text": ""
-}
-},
-"size": Vector2(391, 433.004),
-"speaker": 8
-},
-"1_232": {
-"dialogue": "You want to really help? Give me something that will help the villagers right now.",
-"offset": Vector2(2620, 5560),
+"dialogue": "",
+"offset": Vector2(3360, 5520),
 "options": {
 0: {
 "condition": {},
@@ -2406,21 +2383,48 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391.002, 433.004),
-"speaker": 8
+"size": Vector2(300.001, 433.001),
+"speaker": ""
 },
-"1_233": {
-"dialogue": "Sand filters like this one can remove a lot of contaminants and even some bacteria, but it isn’t designed to handle lead in water.",
-"offset": Vector2(1160, 6960),
+"1_231": {
+"dialogue": "I’ve been trying to fix our water problem for some time now with little result.
+You want to really help? Give me something that will help the villagers right now.",
+"offset": Vector2(1920, 5560),
 "options": {
 0: {
 "condition": {},
-"link": &"3_83",
+"link": "END",
 "text": ""
 }
 },
-"size": Vector2(391, 372),
+"size": Vector2(391, 433.001),
 "speaker": 8
+},
+"1_232": {
+"dialogue": "",
+"offset": Vector2(2900, 5540),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(391.002, 433.001),
+"speaker": ""
+},
+"1_233": {
+"dialogue": "",
+"offset": Vector2(-560, 13080),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(391, 433.001),
+"speaker": ""
 },
 "1_234": {
 "dialogue": "Well, you could fetch a water bottle for me. It’ll save me some time.",
@@ -2488,7 +2492,7 @@ nodes = {
 "speaker": 0
 },
 "1_239": {
-"dialogue": "Thank me by making the filters right.",
+"dialogue": "Thank me by making the filters, right?",
 "offset": Vector2(1460, -19740),
 "options": {
 0: {
@@ -2705,7 +2709,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.007),
+"size": Vector2(300.001, 433.004),
 "speaker": 0
 },
 "1_254": {
@@ -2718,7 +2722,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.004),
 "speaker": 6
 },
 "1_255": {
@@ -2731,7 +2735,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.004),
 "speaker": 0
 },
 "1_256": {
@@ -2744,7 +2748,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.004),
 "speaker": 6
 },
 "1_257": {
@@ -2757,7 +2761,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.004),
 "speaker": 0
 },
 "1_258": {
@@ -2770,7 +2774,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.001),
+"size": Vector2(300, 433.002),
 "speaker": 0
 },
 "1_259": {
@@ -2783,7 +2787,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391.002, 433.004),
+"size": Vector2(391.002, 433.006),
 "speaker": 8
 },
 "1_26": {
@@ -2809,7 +2813,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.004),
+"size": Vector2(300.001, 433.006),
 "speaker": 0
 },
 "1_261": {
@@ -2848,7 +2852,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(392.464, 372),
+"size": Vector2(392.464, 433.001),
 "speaker": 8
 },
 "1_264": {
@@ -2861,20 +2865,21 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 372),
+"size": Vector2(391, 433.001),
 "speaker": 8
 },
 "1_265": {
-"dialogue": "Of all the things I've tried so far, this is the best one, but it's far from perfect.",
+"dialogue": "Of all the things I've tried so far, this is the best one, but it's far from perfect.
+Sand filters like this one can remove a lot of contaminants and even some bacteria, but it isn’t designed to handle lead in water.",
 "offset": Vector2(680, 6960),
 "options": {
 0: {
 "condition": {},
-"link": &"1_233",
+"link": &"3_83",
 "text": ""
 }
 },
-"size": Vector2(391, 372),
+"size": Vector2(391, 433.001),
 "speaker": 8
 },
 "1_266": {
@@ -2887,7 +2892,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.004),
+"size": Vector2(391, 433.001),
 "speaker": 8
 },
 "1_267": {
@@ -3069,7 +3074,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391.001, 432.998),
+"size": Vector2(391.002, 433.005),
 "speaker": 8
 },
 "1_28": {
@@ -3138,21 +3143,9 @@ nodes = {
 "speaker": 8
 },
 "1_284": {
-"dialogue": "You’ve talked to the villagers about the water problem. Try doing those things.",
+"dialogue": "You’ve talked to the villagers about the water problem. Try doing those things.
+Start your own business to do them, and use whatever money you have to help in whatever way you want. The way I see it, you’ve got more options, not less.",
 "offset": Vector2(1520, 7940),
-"options": {
-0: {
-"condition": {},
-"link": &"1_285",
-"text": ""
-}
-},
-"size": Vector2(391.001, 433),
-"speaker": 8
-},
-"1_285": {
-"dialogue": "Start your own business to do them, and use whatever money you have to help in whatever way you want. The way I see it, you’ve got more options, not less.",
-"offset": Vector2(1937.02, 7942.34),
 "options": {
 0: {
 "condition": {},
@@ -3163,9 +3156,22 @@ nodes = {
 "size": Vector2(391.001, 433),
 "speaker": 8
 },
+"1_285": {
+"dialogue": "",
+"offset": Vector2(3440, 6080),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(391.001, 433.001),
+"speaker": ""
+},
 "1_286": {
 "dialogue": "Okay, that’s actually a good idea. I’ll do it.",
-"offset": Vector2(2440, 7940),
+"offset": Vector2(2100, 7940),
 "options": {
 0: {
 "condition": {},
@@ -3264,7 +3270,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 2
 },
 "1_293": {
@@ -3355,7 +3361,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 3
 },
 "1_3": {
@@ -3459,7 +3465,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 372),
+"size": Vector2(300, 433),
 "speaker": 4
 },
 "1_306": {
@@ -3511,7 +3517,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_31": {
@@ -3524,7 +3530,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_310": {
@@ -3606,21 +3612,9 @@ nodes = {
 "speaker": 5
 },
 "1_316": {
-"dialogue": "Hey there, my business is essentially helping everyone here, and I’m not entirely sure on what you all need, so...",
+"dialogue": "Hey there, my business is essentially helping everyone here, and I’m not entirely sure on what you all need, so...
+Anything you need me for today?",
 "offset": Vector2(-200, -220),
-"options": {
-0: {
-"condition": {},
-"link": &"1_317",
-"text": ""
-}
-},
-"size": Vector2(300.001, 433.004),
-"speaker": 0
-},
-"1_317": {
-"dialogue": "Anything you need me for today?",
-"offset": Vector2(120, -220),
 "options": {
 0: {
 "condition": {},
@@ -3631,9 +3625,22 @@ nodes = {
 "size": Vector2(300.001, 433.004),
 "speaker": 0
 },
+"1_317": {
+"dialogue": "Unfortunately not. After what happened to Croak, we decided to disband the Leaping Lagoon Explorers.",
+"offset": Vector2(1040, 13160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_353",
+"text": ""
+}
+},
+"size": Vector2(300.001, 433.008),
+"speaker": 9
+},
 "1_318": {
 "dialogue": "We could use someone to go to help us push for protection on our water, so that people will get in trouble if they pollute it. Could you help us by signing the petition for our proposal?",
-"offset": Vector2(460, -220),
+"offset": Vector2(300, -220),
 "options": {
 0: {
 "condition": {},
@@ -3646,7 +3653,7 @@ nodes = {
 },
 "1_319": {
 "dialogue": "I certainly could. *pen noises* Here you go!",
-"offset": Vector2(820, -220),
+"offset": Vector2(740, -220),
 "options": {
 0: {
 "condition": {},
@@ -3732,7 +3739,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433),
+"size": Vector2(391, 432.999),
 "speaker": 8
 },
 "1_325": {
@@ -3810,7 +3817,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.002, 433),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_330": {
@@ -4083,7 +4090,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.997),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_35": {
@@ -4109,7 +4116,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.997),
+"size": Vector2(300, 433.001),
 "speaker": 6
 },
 "1_351": {
@@ -4122,25 +4129,13 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.997),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_352": {
-"dialogue": "No, seriously. You’ve been actually helping our community, and at this rate, you’ll go from being an outsider to being welcomed as one of our own.",
+"dialogue": "No, seriously. You’ve been actually helping our community, and at this rate, you’ll go from being an outsider to being welcomed as one of our own.
+You should be proud of the difference you’ve already made.",
 "offset": Vector2(820, 320),
-"options": {
-0: {
-"condition": {},
-"link": &"1_353",
-"text": ""
-}
-},
-"size": Vector2(300, 432.997),
-"speaker": 6
-},
-"1_353": {
-"dialogue": "You should be proud of the difference you’ve already made.",
-"offset": Vector2(1140, 320),
 "options": {
 0: {
 "condition": {},
@@ -4148,25 +4143,12 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.997),
+"size": Vector2(300, 433.001),
 "speaker": 6
 },
-"1_354": {
-"dialogue": "Thanks. I still have a lot left to do.",
-"offset": Vector2(1460, 320),
-"options": {
-0: {
-"condition": {},
-"link": &"1_355",
-"text": ""
-}
-},
-"size": Vector2(300, 432.997),
-"speaker": 0
-},
-"1_355": {
-"dialogue": "I agree. I’ll see you tomorrow.",
-"offset": Vector2(1800, 320),
+"1_353": {
+"dialogue": "It was a sort of wake up call. I will not allow myself to bring harm to any of my other friends.",
+"offset": Vector2(1400, 13160),
 "options": {
 0: {
 "condition": {},
@@ -4174,7 +4156,33 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.997),
+"size": Vector2(300, 433),
+"speaker": 9
+},
+"1_354": {
+"dialogue": "Thanks. I still have a lot left to do.",
+"offset": Vector2(1220, 320),
+"options": {
+0: {
+"condition": {},
+"link": &"1_355",
+"text": ""
+}
+},
+"size": Vector2(300, 433.001),
+"speaker": 0
+},
+"1_355": {
+"dialogue": "I agree. I’ll see you tomorrow.",
+"offset": Vector2(1560, 320),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300.001, 433.001),
 "speaker": 6
 },
 "1_356": {
@@ -4188,7 +4196,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391.001, 433),
+"size": Vector2(391.001, 433.001),
 "speaker": 0
 },
 "1_357": {
@@ -4214,7 +4222,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 431),
+"size": Vector2(300, 430.999),
 "speaker": ""
 },
 "1_359": {
@@ -4227,7 +4235,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 372),
+"size": Vector2(300, 433),
 "speaker": 6
 },
 "1_36": {
@@ -4253,7 +4261,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 372),
+"size": Vector2(300, 433),
 "speaker": 6
 },
 "1_361": {
@@ -4266,7 +4274,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 436.613),
+"size": Vector2(391, 436.614),
 "speaker": 8
 },
 "1_362": {
@@ -4279,7 +4287,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_363": {
@@ -4292,7 +4300,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 432.999),
+"size": Vector2(391, 433.001),
 "speaker": 8
 },
 "1_364": {
@@ -4305,11 +4313,11 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_365": {
-"dialogue": "Gaze off into the boundless skyline.",
+"dialogue": "They stare off into the wilderness. They seem to not notice you.",
 "offset": Vector2(417.911, -33833.8),
 "options": {
 0: {
@@ -4422,7 +4430,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.008),
+"size": Vector2(300, 433.009),
 "speaker": 6
 },
 "1_44": {
@@ -4435,7 +4443,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.008),
+"size": Vector2(300, 433.008),
 "speaker": 0
 },
 "1_45": {
@@ -4448,7 +4456,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_46": {
@@ -4461,7 +4469,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.003, 433.006),
+"size": Vector2(300.004, 433.005),
 "speaker": 6
 },
 "1_47": {
@@ -4474,7 +4482,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.002, 433.006),
+"size": Vector2(300.002, 433.005),
 "speaker": 0
 },
 "1_48": {
@@ -4487,7 +4495,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 432.998),
+"size": Vector2(391, 433.001),
 "speaker": 7
 },
 "1_49": {
@@ -4500,7 +4508,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.002),
+"size": Vector2(300.001, 433.001),
 "speaker": 0
 },
 "1_5": {
@@ -4513,7 +4521,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 372),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_50": {
@@ -4526,7 +4534,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(390.999, 433.002),
+"size": Vector2(390.999, 433.001),
 "speaker": 7
 },
 "1_51": {
@@ -4539,11 +4547,11 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.002),
+"size": Vector2(300.001, 433.001),
 "speaker": 0
 },
 "1_52": {
-"dialogue": "Daddy doesn’t give me that much of an allowance. I’ve only got, um… 10 Rana and 2 Sapo.",
+"dialogue": "Daddy doesn’t give me that much of an allowance. I only got um… 10 Rana and 2 Sapo.",
 "offset": Vector2(2700, 11800),
 "options": {
 0: {
@@ -4552,7 +4560,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.002),
+"size": Vector2(391, 433.001),
 "speaker": 7
 },
 "1_53": {
@@ -4565,7 +4573,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.002),
+"size": Vector2(300, 433.001),
 "speaker": 0
 },
 "1_54": {
@@ -4578,7 +4586,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(390.999, 433),
+"size": Vector2(390.999, 433.001),
 "speaker": 7
 },
 "1_55": {
@@ -4617,7 +4625,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 432.999),
+"size": Vector2(391, 433.001),
 "speaker": 8
 },
 "1_58": {
@@ -4630,7 +4638,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.999),
+"size": Vector2(300.001, 433.001),
 "speaker": 0
 },
 "1_59": {
@@ -4643,7 +4651,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.999),
+"size": Vector2(300, 433),
 "speaker": 6
 },
 "1_6": {
@@ -4656,7 +4664,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.998),
+"size": Vector2(300.001, 433.001),
 "speaker": 0
 },
 "1_60": {
@@ -4682,7 +4690,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 428.168),
+"size": Vector2(300, 433),
 "speaker": 6
 },
 "1_62": {
@@ -4829,7 +4837,7 @@ nodes = {
 "speaker": 0
 },
 "1_72": {
-"dialogue": "I also said I preferred you not come back at all! Go away!",
+"dialogue": "Also said I preferred you not come back at all! Go away!",
 "offset": Vector2(1500, -22560),
 "options": {
 0: {
@@ -4855,17 +4863,17 @@ nodes = {
 "speaker": 0
 },
 "1_74": {
-"dialogue": "Well, I’m finally back to tell you that Pure-fi can afford to sell it to you for that price today! How does that sound?",
-"offset": Vector2(840, -16920),
+"dialogue": "Hey there, salesperson. You were probably expecting us to challenge you again.",
+"offset": Vector2(260, 13100),
 "options": {
 0: {
 "condition": {},
-"link": &"1_75",
+"link": &"1_124",
 "text": ""
 }
 },
 "size": Vector2(300.001, 433),
-"speaker": 0
+"speaker": 9
 },
 "1_75": {
 "dialogue": "What about for 50% off?",
@@ -4955,7 +4963,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_81": {
@@ -4981,7 +4989,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_83": {
@@ -4994,7 +5002,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 4
 },
 "1_84": {
@@ -5046,7 +5054,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.004),
+"size": Vector2(300.001, 433.003),
 "speaker": 5
 },
 "1_88": {
@@ -5059,7 +5067,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.004),
+"size": Vector2(300.001, 433.003),
 "speaker": 0
 },
 "1_89": {
@@ -5072,7 +5080,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.004),
+"size": Vector2(300.001, 433.003),
 "speaker": 5
 },
 "1_9": {
@@ -5098,7 +5106,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300, 433.003),
 "speaker": 0
 },
 "1_91": {
@@ -5111,7 +5119,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.004),
+"size": Vector2(300.002, 433.003),
 "speaker": 5
 },
 "1_92": {
@@ -5124,7 +5132,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300, 433.003),
 "speaker": 0
 },
 "1_93": {
@@ -5150,7 +5158,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.009),
 "speaker": 7
 },
 "1_95": {
@@ -5163,7 +5171,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.007),
+"size": Vector2(300.001, 433.009),
 "speaker": 0
 },
 "1_96": {
@@ -5176,7 +5184,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.009),
 "speaker": 0
 },
 "1_97": {
@@ -5189,7 +5197,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.007),
+"size": Vector2(300.002, 433.009),
 "speaker": 7
 },
 "1_98": {
@@ -5202,7 +5210,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.009),
 "speaker": 0
 },
 "1_99": {
@@ -5223,7 +5231,7 @@ nodes = {
 "offset": Vector2(-120, -30780),
 "size": {
 "x": 274.0,
-"y": 612.0
+"y": 687.0
 }
 },
 "2_2": {
@@ -5231,7 +5239,7 @@ nodes = {
 "offset": Vector2(-460, 7900),
 "size": {
 "x": 274.0,
-"y": 402.0
+"y": 477.0
 }
 },
 "3_1": {
@@ -5401,7 +5409,7 @@ nodes = {
 },
 "3_4": {
 "link": "END",
-"offset": Vector2(2820, 7940),
+"offset": Vector2(2500, 7940),
 "signalValue": "PlayerRun"
 },
 "3_40": {
@@ -5657,6 +5665,11 @@ nodes = {
 "3_86": {
 "link": &"1_358",
 "offset": Vector2(-1640, 10240),
+"signalValue": "VoiceOff"
+},
+"3_87": {
+"link": &"1_139",
+"offset": Vector2(2680, 3900),
 "signalValue": "VoiceOff"
 },
 "3_9": {
@@ -6242,5 +6255,5 @@ variables = {
 }
 }
 comments = Array[String](["2_1", "2_2"])
-strays = Array[String](["4_13", "4_14", "4_4", "4_18", "4_21", "4_22"])
+strays = Array[String](["4_13", "4_14", "4_4", "4_18", "4_21", "4_22", "1_230", "1_232", "1_285", "1_233"])
 characters = "res://Dialogues/CharacterList.tres"

@@ -4,6 +4,107 @@ extends Control
 @onready var dialogue_idx = 0 #For printing out the dialogue sound
 
 var text = load("res://Dialogues/CharacterList.tres")
+
+#TODO SplitAudio
+var dialogue_voices = [
+	# Tutorial
+	{
+		"Tutorial": [
+			{"Name": "Talia", "Start": "0:00", "End": "0:28.8", "Emotion": ""},
+			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
+			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""}, #Confirm Name
+			
+			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""}, #Confirmed name, show town
+			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""}, #Rename
+			
+			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""}, #Yes or no
+			#no
+			{"Name": "Talia", "Start": "0:31", "End": "0:53.6", "Emotion": ""},
+			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
+			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
+			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
+			
+			#Training time
+			{"Name": "Talia", "Start": "0:55.2", "End": "0:59", "Emotion": ""},
+		]
+	},
+	
+	# Tutorial 2
+	{
+		"Tutorial2": [
+			{"Name": "Talia", "Start": "0:59", "End": "1:01", "Emotion": ""},
+			{"Name": "Talia", "Start": "1:02.5", "End": "1:04.2", "Emotion": ""},
+			{"Name": "Talia", "Start": "1:05.7", "End": "1:09.2", "Emotion": ""},
+			
+			#End of training
+			{"Name": "Talia", "Start": "1:14.4", "End": "1:19", "Emotion": ""},
+			
+			
+			#End Idx of getting me that rock again if player has no rock
+			{"Name": "Talia", "Start": "1:11.1", "End": "1:13", "Emotion": ""},
+		]
+	},
+	
+	# Talia 7
+	{
+		"Talia7": [
+			{"Name": "Main", "Start": "07:44.25", "End": "07:46.12", "Emotion": ""},
+			{"Name": "Talia", "Start": "1:19.6", "End": "1:27", "Emotion": ""},
+			
+			#Truth
+			{"Name": "Main", "Start": "", "End": "", "Emotion": ""},
+			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
+			#Lie
+			{"Name": "Main", "Start": "", "End": "", "Emotion": ""},
+			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
+			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
+		]
+	},
+	
+]
+
+
+
+
+
+
+var dialogue_voiceSpecific
+var audioList = {
+	"Main": "res://Assets/DialogueVoice/MC.mp3",
+	"Talia": "res://Assets/DialogueVoice/Tutorial Talia.mp3",
+}
+
+var emotionList = {
+	"Main": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+	"Talia": {
+		"Happy": "IMGLINK",
+		"Sad": "IMGLINK",
+		"Disgust": "IMGLINK",
+		"Fear": "IMGLINK",
+		"Surprise": "IMGLINK",
+		"Anger": "IMGLINK",
+	},
+}
+var load_audio
+var audioCount = -1
+
+
+
+
+
+
+
+
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -43,16 +144,6 @@ func _process(delta):
 	dialogue_box.variables["Inventory"] = $Controls/RemapContainer/InventoryButton.text.replace("*", "")
 	dialogue_box.variables["Options"] = $Controls/RemapContainer/BackButton.text.replace("*", "")
 	pass
-
-
-#TODO: Testing. Function not called
-func dialogue_effect(text):
-	var regex = RegEx.new()
-	regex.compile("\\[.*?\\]")
-	var text_without_tags = regex.sub(text, "", true)
-	print(text_without_tags.length())
-	for i in range(0, text_without_tags.length()):
-		SoundControl.is_playing_sound("dialogue")
 
 
 
@@ -95,6 +186,28 @@ func _on_dialogue_box_dialogue_signal(value):
 
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
+	
+	#TODO: Set up the dialogue voices
+	SoundControl.dialogue_audio_stop() #Stop the audio if next dialogue
+	#print(audioCount)
+	print("Dialogue Node: "+str(node_type))
+	if str(node_type) == str(1):
+		audioCount += 1
+	if dialogue_box.start_id == "Tutorial":
+		if (audioCount < len(dialogue_voices[GameData.day - 1]["Tutorial"])):
+			print("Audio Count: "+str(audioCount))
+			dialogue_voiceSpecific = dialogue_voices[GameData.day - 1]["Tutorial"][audioCount]
+	
+	if dialogue_box.start_id == "Tutorial2":
+		if (audioCount < len(dialogue_voices[GameData.day - 1]["Tutorial2"])):
+			print("Audio Count: "+str(audioCount))
+			dialogue_voiceSpecific = dialogue_voices[GameData.day - 1]["Tutorial2"][audioCount]
+	
+	if dialogue_box.start_id == "Talia7":
+		if (audioCount < len(dialogue_voices[GameData.day - 1]["Talia7"])):
+			print("Audio Count: "+str(audioCount))
+			dialogue_voiceSpecific = dialogue_voices[GameData.day - 1]["Talia7"][audioCount]
+	
 	#TODO Stop audio once we continue
 	dialogue_box.custom_effects[0].skip = true
 	dialogue_box.show_options()
@@ -107,17 +220,26 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 		else:
 			#Its the main character
 			idx = Utils.char_dict["Main"]
+		#var CharacterVoice = audioList[dialogue_voiceSpecific["Emotion"]]
+		#if (audioList[dialogue_voiceSpecific["Emotion"]] == ""):
+			#$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
+		#else: #Emotion
+			#$FixedDialoguePosition/CharacterIMG.texture = Utils.character_list.characters[idx].image
 		$CharacterIMG.texture = Utils.character_list.characters[idx].image
 
 
 
 func _on_voice_pressed():
 	print("Play Audio")
+	var CharacterVoice = audioList[dialogue_voiceSpecific["Name"]]
+	##TODO: PLay audio
+	SoundControl.play_audio(CharacterVoice, dialogue_voiceSpecific["Start"], dialogue_voiceSpecific["End"]) # Node, string, int, int
 	dialogue_box.show_options()
 	pass # Replace with function body.
 
 
 func _on_dialogue_box_dialogue_ended():
+	audioCount = -1 #Reset audio index
 	$Dialogue/Voice.visible = false
 	$CharacterIMG.visible = false
 	if GameData.day == 7:
