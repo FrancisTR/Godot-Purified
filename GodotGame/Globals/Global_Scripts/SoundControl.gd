@@ -41,16 +41,36 @@ func is_playing_sound(theme):
 
 #Dialogue functions
 func play_audio(dialogue, start, end):
-	$Timer.wait_time = end-start
+	
+	if start == "":
+		return
+	if end == "":
+		return
+	if start == "0":
+		start = "0:00"
+	if end == "end":
+		end = "0:"+str($DialogueAudio.stream.get_length())
+	
+	var s1 = float(start.split(":")[0])
+	var s2 = float(start.split(":")[1])
+	var e1 = float(end.split(":")[0])
+	var e2 = float(end.split(":")[1])
+	print(s1,",", s2, " ||| ", e1,",", e2)
+	print(get_time(s1, s2), " ||| ", get_time(e1, e2))
+	
+	
+	$Timer.wait_time = get_time(e1, e2)-get_time(s1, s2)
 	$DialogueAudio.stream = load(dialogue)
-	$DialogueAudio.play(start)
+	$DialogueAudio.play(get_time(s1, s2))
 	$Timer.start()
 
-#func get_time(minutes, seconds):
-	#return (minutes*60)+seconds
+func get_time(minutes, seconds):
+	return (minutes*60)+seconds
 
 func _on_timer_timeout():
 	$DialogueAudio.stop()
 
 func dialogue_audio_stop():
 	$DialogueAudio.stop()
+
+

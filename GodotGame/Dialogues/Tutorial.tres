@@ -17,7 +17,7 @@ nodes = {
 },
 "0_2": {
 "link": &"3_3",
-"offset": Vector2(-1920, 740),
+"offset": Vector2(-1940, 740),
 "start_id": "Tutorial2"
 },
 "0_3": {

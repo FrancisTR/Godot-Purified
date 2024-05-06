@@ -464,7 +464,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_39",
+"link": &"3_12",
 "text": ""
 }
 },
@@ -477,7 +477,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_40",
+"link": &"3_13",
 "text": ""
 }
 },
@@ -559,7 +559,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_45": {
@@ -680,6 +680,16 @@ nodes = {
 "link": &"1_7",
 "offset": Vector2(400, 3400),
 "signalValue": "CResponse3"
+},
+"3_12": {
+"link": &"1_39",
+"offset": Vector2(2619.89, 2627.95),
+"signalValue": "VoiceOff"
+},
+"3_13": {
+"link": &"1_40",
+"offset": Vector2(2930.93, 2608.41),
+"signalValue": "Negate"
 },
 "3_2": {
 "link": &"1_15",
