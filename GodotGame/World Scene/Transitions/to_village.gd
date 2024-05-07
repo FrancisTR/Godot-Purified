@@ -5,7 +5,7 @@ extends StaticBody2D
 
 
 var dialogue_voices = [
-	# Days 1
+	# Days 1 (Complete)
 	{	
 		"Rano": [
 			{"Name": "LL", "Start": "1:13.5", "End": "1:17", "Emotion": ""},
@@ -18,7 +18,7 @@ var dialogue_voices = [
 		],
 	},
 	
-	# Days 2
+	# Days 2 (Complete)
 	{	
 		"Rano": [
 			{"Name": "LL", "Start": "1:13.5", "End": "1:17", "Emotion": ""},
@@ -27,27 +27,27 @@ var dialogue_voices = [
 			{"Name": "LL", "Start": "0:09", "End": "0:11", "Emotion": "Surprised"},
 			{"Name": "Main", "Start": "03:37.27", "End": "03:42.10", "Emotion": "Happy"},
 			{"Name": "LL", "Start": "2:45.4", "End": "0:168.713317871094", "Emotion": ""},
-			#TODO: SplitAudio
-			{"Name": "LL", "Start": "1:43", "End": "1:54.5", "Emotion": "Happy"},
-			{"Name": "LL", "Start": "", "End": "", "Emotion": "Happy"},
-			{"Name": "LL", "Start": "", "End": "", "Emotion": "Happy"},
+			
+			{"Name": "LL", "Start": "1:43", "End": "1:48.15", "Emotion": "Happy"},
+			{"Name": "LL", "Start": "1:48.19", "End": "1:52.14", "Emotion": "Happy"},
+			{"Name": "LL", "Start": "1:52.23", "End": "1:54.29", "Emotion": "Happy"},
 		],
 	},
 	
-	# Days 3
+	# Days 3 (Complete)
 	{	
 		"Rano": [
 			{"Name": "LL", "Start": "1:13.5", "End": "1:17", "Emotion": ""},
 		],
 		"ChildrenDone": [
 			{"Name": "LL", "Start": "0:52", "End": "0:54", "Emotion": ""},
-			{"Name": "Main", "Start": "04:28.22", "End": "04:35.15", "Emotion": "Happy"},
+			{"Name": "Main", "Start": "04:28.35", "End": "04:35.55", "Emotion": "Happy"},
 			{"Name": "LL", "Start": "0:20.1", "End": "0:21", "Emotion": "Happy"},
 			{"Name": "LL", "Start": "0:39.5", "End": "0:41", "Emotion": ""},
-			{"Name": "Main", "Start": "04:35.18", "End": "04:38.24", "Emotion": ""},
-			#TODO SplitAudio
-			{"Name": "LL", "Start": "2:16", "End": "0:141.541809082031", "Emotion": "Happy"},
-			{"Name": "LL", "Start": "", "End": "", "Emotion": ""},
+			{"Name": "Main", "Start": "04:35.68", "End": "04:38.94", "Emotion": ""},
+			
+			{"Name": "LL", "Start": "2:14.07", "End": "2:19.09", "Emotion": "Happy"},
+			{"Name": "LL", "Start": "2:19.09", "End": "2:22", "Emotion": ""},
 		],
 	},
 	

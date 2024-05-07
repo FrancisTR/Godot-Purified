@@ -58,7 +58,7 @@ func _on_yes_pressed():
 		GameData.itemSpawns[i]["Taken"] = false
 	
 	
-	
+	GameData.Discount = ""
 	GameData.visitedWilderness == false
 	
 	GameData.madeProfit = false

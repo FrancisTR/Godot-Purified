@@ -907,7 +907,7 @@ y_sort_enabled = true
 script = ExtResource("1_1qbtd")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.533333, 0.313726, 1, 1)
+color = Color(0.882353, 0.494118, 0, 1)
 
 [node name="Other" type="Node" parent="."]
 
@@ -915,11 +915,9 @@ color = Color(0.533333, 0.313726, 1, 1)
 y_sort_enabled = true
 position = Vector2(-5, 700)
 
-[node name="Sprite2D" parent="Other/CharacterBody2D" index="0"]
-frame_progress = 0.785208
-
-[node name="Marker2D2" parent="Other/CharacterBody2D" index="5"]
-position = Vector2(45, -186)
+[node name="Sprite2D" parent="Other/CharacterBody2D" index="1"]
+animation = &"Right"
+frame_progress = 0.105994
 
 [node name="Marker2D" parent="Other/CharacterBody2D" index="6"]
 position = Vector2(106, -450)
@@ -1323,7 +1321,7 @@ texture = ExtResource("19_jtihu")
 position = Vector2(1332, -81)
 
 [node name="Sprite2D" parent="NPCs/Bargin" index="1"]
-animation = &"Barry"
+animation = &"Barry_Running"
 autoplay = "Barry"
 
 [node name="MapImage" parent="NPCs/Bargin/MapIcon" index="0"]

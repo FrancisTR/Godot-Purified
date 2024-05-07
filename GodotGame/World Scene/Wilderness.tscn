@@ -930,7 +930,7 @@ y_sort_enabled = true
 script = ExtResource("1_4k4yr")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.533333, 0.313726, 1, 1)
+color = Color(0.882353, 0.494118, 0, 1)
 
 [node name="TileMaps" type="Node" parent="."]
 

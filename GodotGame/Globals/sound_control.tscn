@@ -6,6 +6,7 @@
 script = ExtResource("1_swyf0")
 
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
+volume_db = -5.0
 max_distance = 9.22337e+18
 bus = &"music"
 
@@ -14,6 +15,8 @@ max_distance = 9.22337e+18
 bus = &"sfx"
 
 [node name="DialogueAudio" type="AudioStreamPlayer2D" parent="."]
+volume_db = 4.0
+max_distance = 9.22337e+18
 bus = &"sfx"
 
 [node name="Timer" type="Timer" parent="."]
