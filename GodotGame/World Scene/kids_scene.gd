@@ -4,18 +4,19 @@ extends Control
 
 #Leaping Dialogue in the VOID
 var dialogue_voices = [
-	# Days 1
+	
+	# Days 1 (COMPLETE)
 	{
 		"Children": [
 			{"Name": "LL", "Start": "0:55", "End": "0:59.5", "Emotion": ""},
 			{"Name": "LL", "Start": "0:21.8", "End": "0:25.5", "Emotion": ""},
-			{"Name": "Main", "Start": "1:27.13", "End": "1:32.24", "Emotion": "Surprised"},
+			{"Name": "Main", "Start": "1:27.13", "End": "1:32.44", "Emotion": "Surprised"},
 			
 			{"Name": "LL", "Start": "0:42.3", "End": "0:44", "Emotion": ""},
 			{"Name": "Croak", "Start": "0:25.6", "End": "0:29.8", "Emotion": "Happy"},
 			{"Name": "LL", "Start": "0:00", "End": "0:03", "Emotion": "Happy"},
 			
-			{"Name": "Main", "Start": "1:33.20", "End": "1:34.25", "Emotion": "Happy"},
+			{"Name": "Main", "Start": "1:33.20", "End": "1:34.75", "Emotion": "Happy"},
 			{"Name": "LL", "Start": "1:01.5", "End": "1:06", "Emotion": ""},
 			{"Name": "LL", "Start": "1:06.3", "End": "1:13", "Emotion": "Happy"},
 		]
@@ -28,12 +29,12 @@ var dialogue_voices = [
 	
 	
 	
-	# Days 2
+	# Days 2 (COMPLETE)
 	{
 		"Children": [
 			{"Name": "LL", "Start": "0:55", "End": "0:59.5", "Emotion": ""},
 			{"Name": "LL", "Start": "0:21.8", "End": "0:25.5", "Emotion": ""},
-			{"Name": "Main", "Start": "03:29.26", "End": "03:32.19", "Emotion": "Sad"},
+			{"Name": "Main", "Start": "03:29.26", "End": "03:32.39", "Emotion": "Sad"},
 			
 			{"Name": "LL", "Start": "0:05", "End": "0:07", "Emotion": "Happy"},
 			{"Name": "Main", "Start": "03:33.14", "End": "03:36.21", "Emotion": ""},
@@ -53,14 +54,14 @@ var dialogue_voices = [
 	
 	
 	
-	# Days 3
+	# Days 3 (COMPLETE)
 	{
 		"Children": [
 			{"Name": "LL", "Start": "0:55", "End": "0:59.5", "Emotion": ""},
 			{"Name": "Main", "Start": "04:21.11", "End": "04:25.02", "Emotion": "Sad"},
 			{"Name": "LL", "Start": "1:55", "End": "2:01.5", "Emotion": ""},
 			
-			{"Name": "Main", "Start": "04:26.03", "End": "04:28.16", "Emotion": ""},
+			{"Name": "Main", "Start": "04:26.03", "End": "04:28.36", "Emotion": ""},
 			
 			{"Name": "LL", "Start": "0", "End": "0", "Emotion": ""},
 			

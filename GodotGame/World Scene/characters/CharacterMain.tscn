@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://crmshmhby6akr"]
+[gd_scene load_steps=26 format=3 uid="uid://crmshmhby6akr"]
 
 [ext_resource type="Script" path="res://World Scene/characters/CharacterMain.gd" id="1_cyksq"]
 [ext_resource type="Texture2D" uid="uid://ghsool2pdp04" path="res://Assets/Custom/Sprites/MC_Sprite_Sheet.png" id="2_3sxfq"]
+[ext_resource type="PackedScene" uid="uid://da83nftwdjagk" path="res://Globals/sound_control.tscn" id="2_tmd25"]
 [ext_resource type="AudioStream" uid="uid://5jxvmdhelg28" path="res://Assets/Sounds/Fantozzi-SandL1.ogg" id="3_ai8dy"]
 [ext_resource type="PackedScene" uid="uid://dyge3pmntuk1g" path="res://World Scene/UIs/Inventory.tscn" id="4_2u5re"]
 [ext_resource type="Texture2D" uid="uid://c64de0u81kuwt" path="res://Assets/Custom/map icons/mc_icon.png" id="5_ugh86"]
@@ -158,6 +159,8 @@ z_index = 300
 texture_filter = 1
 script = ExtResource("1_cyksq")
 
+[node name="SoundControl" parent="." instance=ExtResource("2_tmd25")]
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 texture_filter = 1
@@ -209,8 +212,6 @@ offset_bottom = 64.0
 [node name="ItemR6" parent="Inventory Layer/Inventory/ListUI" index="7"]
 offset_right = 122.0
 offset_bottom = 64.0
-
-[node name="Marker2D2" type="Marker2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
 

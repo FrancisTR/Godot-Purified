@@ -122,7 +122,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"3_6",
 "text": ""
 }
 },
@@ -163,7 +163,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": &"1_16",
+"link": &"3_5",
 "text": ""
 }
 },
@@ -220,7 +220,7 @@ nodes = {
 },
 1: {
 "condition": {},
-"link": &"3_5",
+"link": &"1_18",
 "text": "Actually, no..."
 }
 },
@@ -313,13 +313,13 @@ nodes = {
 "signalValue": "Negate"
 },
 "3_12": {
-"link": "END",
-"offset": Vector2(6020, 1580),
+"link": &"3_9",
+"offset": Vector2(7540, 3340),
 "signalValue": "Negate"
 },
 "3_2": {
-"link": "END",
-"offset": Vector2(-1560, 240),
+"link": &"1_16",
+"offset": Vector2(7920, 3560),
 "signalValue": "ShowControls"
 },
 "3_3": {
@@ -333,13 +333,13 @@ nodes = {
 "signalValue": "Done"
 },
 "3_5": {
-"link": &"1_18",
-"offset": Vector2(-960, 1320),
+"link": &"1_16",
+"offset": Vector2(7980, 3360),
 "signalValue": "Rename"
 },
 "3_6": {
-"link": "END",
-"offset": Vector2(6020, 1300),
+"link": &"3_12",
+"offset": Vector2(7220, 3120),
 "signalValue": "Marks"
 },
 "3_7": {
@@ -353,8 +353,8 @@ nodes = {
 "signalValue": "Negate"
 },
 "3_9": {
-"link": "END",
-"offset": Vector2(6000, 1780),
+"link": &"3_2",
+"offset": Vector2(7520, 3540),
 "signalValue": "Quota"
 }
 }
@@ -377,5 +377,5 @@ variables = {
 }
 }
 comments = Array[String]([])
-strays = Array[String](["3_12", "3_6", "3_9", "3_2"])
+strays = Array[String]([])
 characters = "res://Dialogues/CharacterList.tres"

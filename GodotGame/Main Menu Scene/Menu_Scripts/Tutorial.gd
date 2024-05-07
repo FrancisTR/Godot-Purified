@@ -10,54 +10,44 @@ var dialogue_voices = [
 	# Tutorial
 	{
 		"Tutorial": [
-			{"Name": "Talia", "Start": "0:00", "End": "0:28.8", "Emotion": ""},
-			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
-			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""}, #Confirm Name
+			{"Name": "Talia", "Start": "0:0.6", "End": "0:4.08", "Emotion": ""},
+			{"Name": "Talia", "Start": "0:4.13", "End": "0:6.01", "Emotion": ""},
 			
-			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""}, #Confirmed name, show town
-			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""}, #Rename
+			{"Name": "Talia", "Start": "0:7.04", "End": "0:12.13", "Emotion": ""}, #Confirm Name
 			
-			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""}, #Yes or no
+			{"Name": "Talia", "Start": "0:12.26", "End": "0:17.16", "Emotion": ""}, #Rename Repeat line15
+			{"Name": "Talia", "Start": "0:18.09", "End": "0:26.16", "Emotion": ""}, #Confirmed name, show town
+			
+			{"Name": "Talia", "Start": "0:26.22", "End": "0:28.99", "Emotion": ""}, #Yes or no
 			#no
-			{"Name": "Talia", "Start": "0:31", "End": "0:53.6", "Emotion": ""},
-			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
-			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
-			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
+			{"Name": "Talia", "Start": "0:31", "End": "0:35.18", "Emotion": ""},
+			{"Name": "Talia", "Start": "0:36.03", "End": "0:38.15", "Emotion": ""},
+			{"Name": "Talia", "Start": "0:38.15", "End": "0:44.12", "Emotion": ""},
+			{"Name": "Talia", "Start": "0:44.16", "End": "0:54.08", "Emotion": ""},
 			
 			#Training time
 			{"Name": "Talia", "Start": "0:55.2", "End": "0:59", "Emotion": ""},
 		]
 	},
 	
-	# Tutorial 2
-	{
-		"Tutorial2": [
-			{"Name": "Talia", "Start": "0:59", "End": "1:01", "Emotion": ""},
-			{"Name": "Talia", "Start": "1:02.5", "End": "1:04.2", "Emotion": ""},
-			{"Name": "Talia", "Start": "1:05.7", "End": "1:09.2", "Emotion": ""},
-			
-			#End of training
-			{"Name": "Talia", "Start": "1:14.4", "End": "1:19", "Emotion": ""},
-			
-			
-			#End Idx of getting me that rock again if player has no rock
-			{"Name": "Talia", "Start": "1:11.1", "End": "1:13", "Emotion": ""},
-		]
-	},
-	
 	# Talia 7
 	{
 		"Talia7": [
-			{"Name": "Main", "Start": "07:44.25", "End": "07:46.12", "Emotion": ""},
+			{"Name": "Main", "Start": "07:44.25", "End": "07:46.32", "Emotion": ""},
 			{"Name": "Talia", "Start": "1:19.6", "End": "1:27", "Emotion": ""},
 			
 			#Truth
-			{"Name": "Main", "Start": "", "End": "", "Emotion": ""},
-			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
-			#Lie
-			{"Name": "Main", "Start": "", "End": "", "Emotion": ""},
-			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
-			{"Name": "Talia", "Start": "", "End": "", "Emotion": ""},
+			{"Name": "Main", "Start": "07:47.18", "End": "07:50.18", "Emotion": ""},
+			{"Name": "Main", "Start": "07:51.18", "End": "07:57.21", "Emotion": ""},
+			{"Name": "Talia", "Start": "1:29.13", "End": "1:36.24", "Emotion": ""},
+			
+			#Lie TaliaLie
+			{"Name": "Main", "Start": "07:58.19", "End": "08:04.05", "Emotion": ""},
+			{"Name": "Talia", "Start": "1:39.10", "End": "1:49.14", "Emotion": ""},
+			{"Name": "Talia", "Start": "1:49.20", "End": "1:53.16", "Emotion": ""},
+			{"Name": "Talia", "Start": "1:53.30", "End": "1:59.03", "Emotion": ""},
+			
+			{"Name": "Talia", "Start": "1:36.64", "End": "1:37.50", "Emotion": ""}, #Say Goodbye
 		]
 	},
 	
@@ -159,14 +149,22 @@ func _on_dialogue_box_dialogue_signal(value):
 		$Controls.visible = true
 		
 	elif (value == "ShowName"):
+		audioCount = 1
 		$Name.visible = true
 		
 	elif (value == "Marks"):
 		$Marks.visible = true
 	
 	elif (value == "Town"):
+		audioCount = 3
 		$Map.visible = true
-		
+	elif (value == "ContentSkip"):
+		audioCount = len(dialogue_voices[0]["Tutorial"]) - 2
+	
+	elif (value == "TaliaLie"):
+		audioCount = 4
+	elif (value == "EndIdx"):
+		audioCount = len(dialogue_voices[1]["Talia7"]) - 2
 	
 	elif (value == "Done"):
 		TextTransition.set_to_click(
@@ -193,20 +191,21 @@ func _on_dialogue_box_dialogue_proceeded(node_type):
 	print("Dialogue Node: "+str(node_type))
 	if str(node_type) == str(1):
 		audioCount += 1
-	if dialogue_box.start_id == "Tutorial":
-		if (audioCount < len(dialogue_voices[GameData.day - 1]["Tutorial"])):
-			print("Audio Count: "+str(audioCount))
-			dialogue_voiceSpecific = dialogue_voices[GameData.day - 1]["Tutorial"][audioCount]
 	
-	if dialogue_box.start_id == "Tutorial2":
-		if (audioCount < len(dialogue_voices[GameData.day - 1]["Tutorial2"])):
+	if dialogue_box.start_id == "Tutorial" or dialogue_box.start_id == "Tutorial2":
+		if (audioCount < len(dialogue_voices[0]["Tutorial"])):
 			print("Audio Count: "+str(audioCount))
-			dialogue_voiceSpecific = dialogue_voices[GameData.day - 1]["Tutorial2"][audioCount]
+			dialogue_voiceSpecific = dialogue_voices[0]["Tutorial"][audioCount]
+	
+	#if dialogue_box.start_id == "Tutorial2":
+		#if (audioCount < len(dialogue_voices[1]["Tutorial2"])):
+			#print("Audio Count: "+str(audioCount))
+			#dialogue_voiceSpecific = dialogue_voices[1]["Tutorial2"][audioCount]
 	
 	if dialogue_box.start_id == "Talia7":
-		if (audioCount < len(dialogue_voices[GameData.day - 1]["Talia7"])):
+		if (audioCount < len(dialogue_voices[1]["Talia7"])):
 			print("Audio Count: "+str(audioCount))
-			dialogue_voiceSpecific = dialogue_voices[GameData.day - 1]["Talia7"][audioCount]
+			dialogue_voiceSpecific = dialogue_voices[1]["Talia7"][audioCount]
 	
 	#TODO Stop audio once we continue
 	dialogue_box.custom_effects[0].skip = true
