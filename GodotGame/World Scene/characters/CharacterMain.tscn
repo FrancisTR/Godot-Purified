@@ -252,6 +252,7 @@ texture = ExtResource("5_ugh86")
 
 [node name="Outline" type="TextureRect" parent="MapIcon"]
 modulate = Color(100, 100, 100, 1)
+z_index = 998
 offset_left = -86.0
 offset_top = -86.0
 offset_right = -44.0

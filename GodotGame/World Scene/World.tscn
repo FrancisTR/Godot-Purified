@@ -1360,6 +1360,15 @@ texture = ExtResource("22_1bejx")
 [node name="Croak" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(862, -476)
 
+[node name="CharacterIMG" parent="NPCs/Croak/FixedDialoguePosition" index="1"]
+offset_top = 431.0
+offset_bottom = 995.0
+
+[node name="DialogueBox" parent="NPCs/Croak/FixedDialoguePosition" index="2"]
+self_modulate = Color(1, 1, 1, 0)
+offset_top = 52.0
+offset_bottom = 278.0
+
 [node name="Sprite2D" parent="NPCs/Croak" index="1"]
 autoplay = "Croak"
 
