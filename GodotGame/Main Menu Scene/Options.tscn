@@ -754,13 +754,62 @@ theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
 text = "[right]Music Volume:"
 
+[node name="VoiceSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 511.0
+offset_right = 813.0
+offset_bottom = 527.0
+focus_neighbor_top = NodePath("../SfxSlider")
+focus_next = NodePath("../BackButton")
+focus_previous = NodePath("../SfxSlider")
+theme_override_styles/slider = SubResource("StyleBoxLine_myaiv")
+value = 100.0
+script = ExtResource("2_jtr8r")
+bus_name = "Voice"
+
+[node name="SFXVolumeValueLabel" type="RichTextLabel" parent="VoiceSlider"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 249.0
+offset_top = -29.0
+offset_right = 464.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "100%"
+
+[node name="SFXVolumeLabel" type="RichTextLabel" parent="VoiceSlider"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -505.0
+offset_top = -29.0
+offset_right = -252.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[right]Voice Volume:"
+
 [node name="BackButton" type="Button" parent="."]
 texture_filter = 1
 layout_mode = 0
 offset_left = 34.0
-offset_top = 511.0
+offset_top = 551.0
 offset_right = 254.0
-offset_bottom = 570.0
+offset_bottom = 610.0
 scale = Vector2(1.5, 1.5)
 focus_next = NodePath("../RemapContainer/DownMapButton")
 focus_previous = NodePath("../RemapContainer/DownMapButton")

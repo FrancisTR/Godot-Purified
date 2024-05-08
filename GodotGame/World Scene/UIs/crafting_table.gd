@@ -85,7 +85,7 @@ func _process(delta):
 		itemImage = load("res://Assets/Custom/Wells.png")
 	
 	
-	if ((GameData.day == 7 and GameData.villagersTalked[6]["Talked"] == false) or GameData.day == 10):
+	if ((GameData.day == 7 and GameData.villagersTalked[6]["Talked"] == false) or GameData.day == 9 or GameData.day == 10):
 		$UI/CraftingList/CraftButton.visible = false
 	elif (GameData.day != 1):
 		#Clear everything first

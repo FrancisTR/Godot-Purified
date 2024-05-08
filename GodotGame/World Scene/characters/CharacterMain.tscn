@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://World Scene/characters/CharacterMain.gd" id="1_cyksq"]
 [ext_resource type="Texture2D" uid="uid://ghsool2pdp04" path="res://Assets/Custom/Sprites/MC_Sprite_Sheet.png" id="2_3sxfq"]
 [ext_resource type="PackedScene" uid="uid://da83nftwdjagk" path="res://Globals/sound_control.tscn" id="2_tmd25"]
-[ext_resource type="AudioStream" uid="uid://5jxvmdhelg28" path="res://Assets/Sounds/Fantozzi-SandL1.ogg" id="3_ai8dy"]
 [ext_resource type="PackedScene" uid="uid://dyge3pmntuk1g" path="res://World Scene/UIs/Inventory.tscn" id="4_2u5re"]
+[ext_resource type="AudioStream" uid="uid://ccocdbooy8vvi" path="res://Sounds_and_Music/Walking On Grass.mp3" id="4_qxxj8"]
 [ext_resource type="Texture2D" uid="uid://c64de0u81kuwt" path="res://Assets/Custom/map icons/mc_icon.png" id="5_ugh86"]
 [ext_resource type="Texture2D" uid="uid://bpl17gwn3b6ye" path="res://Assets/Custom/Light.png" id="6_dhoas"]
 [ext_resource type="Texture2D" uid="uid://d0rtr7ojbum5p" path="res://Assets/Custom/Shadow.png" id="7_43qi3"]
@@ -183,7 +183,7 @@ position_smoothing_speed = 7.0
 rotation_smoothing_speed = 3.0
 
 [node name="FootstepAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ai8dy")
+stream = ExtResource("4_qxxj8")
 volume_db = -8.433
 bus = &"sfx"
 

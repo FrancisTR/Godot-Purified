@@ -2,7 +2,6 @@ extends Control
 
 
 func _ready():
-	$Logo/AnimationPlayer.play("Icon")
 	$Timer.start()
 
 

@@ -6,12 +6,11 @@ extends Node2D
 var signal_method = ""
 var stopMusic = false
 
-#@export var NumTwigs: int = 0
 
-#TODO: Add cord for all NPCs
+
 var npc_positions = {
 	'day1':[Vector2(2721, -234), Vector2(1715, 514), Vector2(1332, -81), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-219, 100)],
-	'day2':[Vector2(108, -353), Vector2(497, 201), Vector2(731, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-219, 100)],
+	'day2':[Vector2(108, -353), Vector2(432, 201), Vector2(731, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(862, -476), Vector2(-219, 100)],
 	'day3':[Vector2(48, 406), Vector2(997, 101), Vector2(771, -478), Vector2(-483, -705), Vector2(1861, -380), Vector2(999999999, 999999999), Vector2(-219, 100)],
 	
 	#DLC
@@ -41,17 +40,13 @@ func _ready():
 		$Other/CharacterBody2D.position = GameData.player_position
 		GameData.save_position = false
 		
-	#TODO: Make inventory system into its own scene w/ graphics
-	#$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
-	#SceneTransition.manual_fade.connect(go_to_next_day)
+
 	$UI/Day.text = "Day " + str(GameData.day)
-	#$NPCs/PressForDialogue.text = "s"
-	#$NPC/PressForDialogue.text = "s"
+
 	for i in range(0, len(npcs)):
 		var day = GameData.day
 		if GameData.day > 10:
 			day = 10
-		
 		# Set position
 		npcs[i].position = npc_positions[('day'+str(day))][i]
 		print(npcs[i], "is set to", npc_positions[('day'+str(day))][i])
@@ -63,7 +58,9 @@ func _process(delta):
 	if (stopMusic == false):
 		if GameData.day <= 2:
 			SoundControl.is_playing_theme("afternoon")
-		elif GameData.day >= 3:
+		elif GameData.day == 4:
+			SoundControl.is_playing_theme("croak")
+		elif GameData.day >= 3 and GameData.day != 4:
 			SoundControl.is_playing_theme("main")
 
 
@@ -206,6 +203,7 @@ func _on_open_map():
 	$Other/CharacterBody2D.show_map_icon()
 	$"Map/The Wilderness".show()
 	$"Map/Village Exit".show()
+	$UI/Controls.hide()
 	#for i in range(0, len(npcs)):
 		#npcs[i].show_map_icon()
 		
@@ -238,6 +236,7 @@ func _on_close_map():
 	$Other/CharacterBody2D.hide_map_icon()
 	$"Map/The Wilderness".hide()
 	$"Map/Village Exit".hide()
+	$UI/Controls.show()
 	for npc in npcs:
 		npc.hide_map_icon()
 		npc.hide_notif()

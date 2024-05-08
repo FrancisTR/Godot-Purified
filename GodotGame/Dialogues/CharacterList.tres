@@ -1,97 +1,97 @@
 [gd_resource type="Resource" script_class="CharacterList" load_steps=29 format=3 uid="uid://bksin52k7pe8u"]
 
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="1_2cgx6"]
-[ext_resource type="Texture2D" uid="uid://cuidqfb00toq7" path="res://Assets/Custom/Sprites/MC.png" id="1_jnr02"]
+[ext_resource type="Texture2D" uid="uid://ba8no2y28wumc" path="res://Assets/Custom/Character Splash/MC.png" id="1_3usq6"]
 [ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="1_p0fqg"]
-[ext_resource type="Texture2D" uid="uid://b20ka352pbpa6" path="res://Assets/Custom/Sprites/Talia.png" id="3_ofust"]
-[ext_resource type="Texture2D" uid="uid://djx5rl7iobm8m" path="res://Assets/Custom/Sprites/Danny.png" id="4_0a2qj"]
-[ext_resource type="Texture2D" uid="uid://d2fnbceys5gli" path="res://Assets/Custom/Sprites/Barry.png" id="4_17g0i"]
-[ext_resource type="Texture2D" uid="uid://cdrpnr6p77usy" path="res://Assets/Custom/Sprites/Croak.png" id="5_6rik2"]
-[ext_resource type="Texture2D" uid="uid://bna313s5hn76v" path="res://Assets/Custom/Sprites/Angelica.png" id="5_mafuk"]
-[ext_resource type="Texture2D" uid="uid://cd5a0quy0s3kv" path="res://Assets/Custom/Sprites/Rano.png" id="6_bgjav"]
-[ext_resource type="Texture2D" uid="uid://borcws4ydxocc" path="res://Assets/Custom/Sprites/Derick.png" id="7_4rhxa"]
-[ext_resource type="Texture2D" uid="uid://dj4mk1sc8olny" path="res://Assets/Custom/Sprites/Ribbit.png" id="7_gshb6"]
-[ext_resource type="Texture2D" uid="uid://b7wkhk0eulw37" path="res://Assets/Custom/Sprites/Antonio.png" id="8_p5h0a"]
-[ext_resource type="Texture2D" uid="uid://50l0bglac124" path="res://Assets/Custom/Sprites/Hop.png" id="8_wanih"]
-[ext_resource type="Texture2D" uid="uid://3l6628awkgb" path="res://Assets/Custom/Sprites/Leap.png" id="9_vwcai"]
-[ext_resource type="Texture2D" uid="uid://cfxvp151wo3uq" path="res://Assets/Custom/Sprites/Old_Man.png" id="10_3ktxo"]
+[ext_resource type="Texture2D" uid="uid://dilior35vbu7m" path="res://Assets/Custom/Character Splash/Talia.png" id="3_3vnm4"]
+[ext_resource type="Texture2D" uid="uid://bwsaa751cl84a" path="res://Assets/Custom/Character Splash/Danny.png" id="4_w2of7"]
+[ext_resource type="Texture2D" uid="uid://chj3dn5vgx2vn" path="res://Assets/Custom/Character Splash/Angelica.png" id="5_u6gxv"]
+[ext_resource type="Texture2D" uid="uid://bwv8dll2wp1yw" path="res://Assets/Custom/Character Splash/Barry.png" id="6_3k38h"]
+[ext_resource type="Texture2D" uid="uid://cqsx7j7mgr5re" path="res://Assets/Custom/Character Splash/Derick.png" id="7_5yln7"]
+[ext_resource type="Texture2D" uid="uid://b3vh6d2npwhou" path="res://Assets/Custom/Character Splash/Antonio.png" id="8_1j5r3"]
+[ext_resource type="Texture2D" uid="uid://i3xm427l7sbr" path="res://Assets/Custom/Character Splash/Croak.png" id="9_1fdxo"]
+[ext_resource type="Texture2D" uid="uid://cngxo24g5xspg" path="res://Assets/Custom/Character Splash/Old Man Tommy.png" id="10_iwtoj"]
+[ext_resource type="Texture2D" uid="uid://3vykreu07gwr" path="res://Assets/Custom/Character Splash/Rano.png" id="11_3atfa"]
+[ext_resource type="Texture2D" uid="uid://dpu5x7gjyoil" path="res://Assets/Custom/Character Splash/Ribbit.png" id="12_vetyw"]
+[ext_resource type="Texture2D" uid="uid://dchbkbpkna33w" path="res://Assets/Custom/Character Splash/Hop.png" id="13_nspp8"]
+[ext_resource type="Texture2D" uid="uid://cidvg4bh4rh8x" path="res://Assets/Custom/Character Splash/Leap.png" id="14_3l5m7"]
 
 [sub_resource type="Resource" id="Resource_d68ut"]
 script = ExtResource("1_p0fqg")
 name = "Main"
-image = ExtResource("1_jnr02")
+image = ExtResource("1_3usq6")
 color = Color(1, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_1b4a2"]
 script = ExtResource("1_p0fqg")
 name = "Talia"
-image = ExtResource("3_ofust")
+image = ExtResource("3_3vnm4")
 color = Color(1, 0.596078, 0.282353, 1)
 
 [sub_resource type="Resource" id="Resource_umkq6"]
 script = ExtResource("1_p0fqg")
 name = "Danny"
-image = ExtResource("4_0a2qj")
+image = ExtResource("4_w2of7")
 color = Color(0.698039, 0.0862745, 0.247059, 1)
 
 [sub_resource type="Resource" id="Resource_01wqa"]
 script = ExtResource("1_p0fqg")
 name = "Angelica"
-image = ExtResource("5_mafuk")
+image = ExtResource("5_u6gxv")
 color = Color(1, 0.752941, 0.309804, 1)
 
 [sub_resource type="Resource" id="Resource_lt2hy"]
 script = ExtResource("1_p0fqg")
 name = "Barry"
-image = ExtResource("4_17g0i")
+image = ExtResource("6_3k38h")
 color = Color(0.768627, 0.462745, 0.278431, 1)
 
 [sub_resource type="Resource" id="Resource_0h6xi"]
 script = ExtResource("1_p0fqg")
 name = "Derick"
-image = ExtResource("7_4rhxa")
+image = ExtResource("7_5yln7")
 color = Color(0.745098, 0.517647, 1, 1)
 
 [sub_resource type="Resource" id="Resource_evr13"]
 script = ExtResource("1_p0fqg")
 name = "Antonio"
-image = ExtResource("8_p5h0a")
+image = ExtResource("8_1j5r3")
 color = Color(1, 0.921569, 0.427451, 1)
 
 [sub_resource type="Resource" id="Resource_2dvo0"]
 script = ExtResource("1_p0fqg")
 name = "Croak"
-image = ExtResource("5_6rik2")
+image = ExtResource("9_1fdxo")
 color = Color(0.219608, 0.611765, 1, 1)
 
 [sub_resource type="Resource" id="Resource_ixiiq"]
 script = ExtResource("1_p0fqg")
 name = "Old Man Tommy"
-image = ExtResource("10_3ktxo")
+image = ExtResource("10_iwtoj")
 color = Color(0.721569, 0.862745, 0.721569, 1)
 
 [sub_resource type="Resource" id="Resource_ubiec"]
 script = ExtResource("1_p0fqg")
 name = "Rano"
-image = ExtResource("6_bgjav")
+image = ExtResource("11_3atfa")
 color = Color(1, 0.0901961, 0.0666667, 1)
 
 [sub_resource type="Resource" id="Resource_7kjnv"]
 script = ExtResource("1_p0fqg")
 name = "Ribbit"
-image = ExtResource("7_gshb6")
+image = ExtResource("12_vetyw")
 color = Color(0.811765, 0, 0.811765, 1)
 
 [sub_resource type="Resource" id="Resource_jsre7"]
 script = ExtResource("1_p0fqg")
 name = "Hop"
-image = ExtResource("8_wanih")
+image = ExtResource("13_nspp8")
 color = Color(0.894118, 0.72549, 0.819608, 1)
 
 [sub_resource type="Resource" id="Resource_eq73d"]
 script = ExtResource("1_p0fqg")
 name = "Leap"
-image = ExtResource("9_vwcai")
+image = ExtResource("14_3l5m7")
 color = Color(0.913725, 0.458824, 0, 1)
 
 [resource]

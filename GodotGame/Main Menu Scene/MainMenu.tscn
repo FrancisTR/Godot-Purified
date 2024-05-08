@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c7qq0rsxbi34h" path="res://Assets/Custom/Terrain/murky_water.png" id="2_woi1u"]
 [ext_resource type="Texture2D" uid="uid://cbid64fvoqhpa" path="res://Assets/UISprites/UI_Flat_Button_Medium_Lock_02a1.png" id="3_1l2m6"]
 [ext_resource type="Texture2D" uid="uid://upcjq487h48j" path="res://Assets/Custom/Items/BoilingPot.png" id="4_a8gck"]
-[ext_resource type="FontFile" uid="uid://b7mdadk4bmsxs" path="res://Aquaphonic-Damp.otf" id="4_kcnmo"]
+[ext_resource type="Texture2D" uid="uid://b3vhgylwtw1xu" path="res://Assets/MainMenuTitle.png" id="4_jogv3"]
 [ext_resource type="Texture2D" uid="uid://cjejwnyoxhj4t" path="res://Assets/Custom/Items/WaterBottle.png" id="5_f5q6v"]
 [ext_resource type="Texture2D" uid="uid://cf370ycp56cnk" path="res://Assets/UISprites/UI_Flat_Button_Medium_Press_02a1.png" id="5_sefst"]
 [ext_resource type="Texture2D" uid="uid://r86vb8ttq4iq" path="res://Assets/Custom/Items/BoilingPot2.png" id="6_15xeq"]
@@ -120,26 +120,19 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_woi1u")
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -540.0
-offset_top = 39.0
-offset_right = 1373.0
-offset_bottom = 629.0
+offset_left = -541.0
+offset_top = 34.0
+offset_right = 141.0
+offset_bottom = 209.0
 grow_horizontal = 2
-scale = Vector2(0.3, 0.3)
-theme_override_colors/font_color = Color(0.329412, 0.729412, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_kcnmo")
-theme_override_font_sizes/font_size = 600
-text = "Purified"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("4_jogv3")
+expand_mode = 1
 
 [node name="ImageDecoration" type="Node" parent="."]
 

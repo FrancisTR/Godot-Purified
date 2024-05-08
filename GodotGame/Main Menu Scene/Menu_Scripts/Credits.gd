@@ -53,52 +53,58 @@ var credits = [
 	
 	[
 		"Art Producers / Designer",
-		"Michelle",
-		"Bev",
+		"Michelle M.",
+		"Bev A.",
 		"John T.",
 		"Francis T.",
 	],
 	
 	[
 		"Writers",
-		"Ben",
-		"Zach",
+		"Ben M.",
+		"Zach S.",
 		"John T.",
 	],
 	
 	[
 		"Voice Director",
-		"Mike"
+		"Mike I."
 	],
 	[
 		"Voice Actors",
-		"Main Character                         ???",
-		"Talia                                  ???",
-		"Danny                                  ???",
-		"Angelica                               ???",
-		"Barry                                  ???",
-		"Derek                                  ???",
-		"Antonio                                ???",
-		"Croak                                  ???",
-		"Old Man Tommy                          ???",
-		"Leaping Lagoon Explorers               ???",
+		"Main Character                         Mike I.",
+		"Talia                                  Michelle M.",
+		"Danny                                  Ben M.",
+		"Angelica                               Michelle M.",
+		"Derek                                  Bev A.",
+		"Antonio                                John T.",
+		"Barry                                  Mike I.",
+		"Old Man Tommy                          Mike I.",
+		"Rano                                   Mike I.",
+		"Leap                                   Mike I.",
+		"Croak                                  Michelle M.",
+		"Hop                                    Michelle M.",
+		"Ribbit                                 Michelle M.",
 	],
 	
 	[
 		"Testers",
-		"TBD"
+		"TBD                                               ",
 	],
 	
 	[
 		"Special Thanks",
+		"Lake Middle School",
 		"Dr. Sky (Anderson Sky)",
+		"Ralph and Jack"
 	],
 	
 	[
 		"Music OSTs",
 		"Afternoon Tadpole",
 		"Croak of the Fireflies",
-		"Woodsy Labyrinth"
+		"Woodsy Labyrinth",
+		"Leaping to a New Chapter"
 	],
 	
 	[
@@ -139,6 +145,7 @@ func _ready():
 
 
 func _process(delta):
+	SoundControl.is_playing_theme("Credits")
 	var scroll_speed = base_speed * delta
 	
 	if section_next:

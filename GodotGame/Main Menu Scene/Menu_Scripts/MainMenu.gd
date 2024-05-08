@@ -5,8 +5,10 @@ extends Control
 func _ready():
 	
 	#Reset global values
+		
 	GameData.day = 1
-	
+
+
 	GameData.username = ""
 
 	GameData.inventory = []
@@ -38,6 +40,7 @@ func _ready():
 	GameData.QMain = {}
 	GameData.QWild = false
 	GameData.QMainLocationIdx = {}
+	GameData.well = false #Is the well fixed?
 	GameData.madeProfit = false
 	GameData.NPCgiveNoMore = false #Give items once and not dup
 	#Quest is finished
@@ -120,7 +123,7 @@ func _ready():
 			"Talked": false
 		}
 	]
-
+	
 	GameData.get_item_posX = null
 	GameData.get_item_posY = null
 
