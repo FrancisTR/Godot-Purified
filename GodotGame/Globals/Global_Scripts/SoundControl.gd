@@ -2,6 +2,7 @@ extends Node
 var afternoonTheme = preload("res://Sounds_and_Music/OST/Afternoon Tadpole.mp3")
 var croakTheme = preload("res://Sounds_and_Music/OST/Croak of the Fireflies.mp3")
 var WoodsyTheme = preload("res://Sounds_and_Music/OST/Woodsy Labyrinth.mp3")
+var creditTheme = preload("res://Sounds_and_Music/OST/Leaping to a New Chapter.mp3")
 
 var button_sound = preload("res://Sounds_and_Music/ButtonClick.wav")
 var dialogue_sound = preload("res://Sounds_and_Music/DialogueSound.wav")
@@ -18,7 +19,9 @@ func is_playing_theme(theme):
 			$Background.stream = croakTheme
 		elif theme == "afternoon":
 			$Background.stream = afternoonTheme
-			
+		elif theme == "Credits":
+			$Background.stream = creditTheme
+		
 		$Background.play()
 
 func stop_playing():
@@ -41,6 +44,27 @@ func is_playing_sound(theme):
 
 #Dialogue functions
 func play_audio(dialogue, start, end):
+	
+	#"Talia": "res://Assets/DialogueVoice/Tutorial Talia.mp3",
+	#"Main": "res://Assets/DialogueVoice/MC.mp3",
+	#"Denial": "res://Assets/DialogueVoice/Denial Danny.mp3",
+	#"Anger": "res://Assets/DialogueVoice/Anger Angelica.mp3",
+	#"Bargin": "res://Assets/DialogueVoice/Bargaining Barry.mp3",
+	#"Depress": "res://Assets/DialogueVoice/Depression_Derick.mp3",
+	#"Accept": "res://Assets/DialogueVoice/Acceptence Antonio.mp3",
+	#"Croak": "res://Assets/DialogueVoice/Croak.mp3",
+	#"OldMan": "res://Assets/DialogueVoice/Old Man Tommy.mp3"
+	#Increase volume for specific dialogues
+	$DialogueAudio.volume_db = 0
+	if dialogue == "res://Assets/DialogueVoice/Tutorial Talia.mp3":
+		$DialogueAudio.volume_db = 13
+	if dialogue == "res://Assets/DialogueVoice/Denial Danny.mp3":
+		$DialogueAudio.volume_db = 8
+	if dialogue == "res://Assets/DialogueVoice/Depression_Derick.mp3":
+		$DialogueAudio.volume_db = 9
+	if dialogue == "res://Assets/DialogueVoice/Acceptence Antonio.mp3":
+		$DialogueAudio.volume_db = 7
+	
 	
 	if start == "":
 		return

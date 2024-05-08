@@ -12,6 +12,7 @@ func _on_yes_pressed():
 	emit_signal("leave_village")
 	print("y")
 	
+	
 	GameData.QVillager = {}
 	GameData.charLock = false
 	if GameData.inventory_amount.keys().find("Twig") != -1:
@@ -44,7 +45,6 @@ func _on_yes_pressed():
 	GameData.questComplete = {"Main": false, "Wild": false}
 	GameData.NPCgiveNoMore = false
 	
-	#TODO: Add more when needed
 	GameData.itemDialogue[0]["Value"] = 0
 	GameData.itemDialogue[1]["Value"] = 0
 	GameData.itemDialogue[2]["Value"] = 0

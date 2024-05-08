@@ -1,11 +1,10 @@
 extends Control
 
 @onready var dialogue_box = $Dialogue/DialogueBox
-@onready var dialogue_idx = 0 #For printing out the dialogue sound
 
 var text = load("res://Dialogues/CharacterList.tres")
 
-#TODO SplitAudio
+
 var dialogue_voices = [
 	# Tutorial
 	{
@@ -33,13 +32,13 @@ var dialogue_voices = [
 	# Talia 7
 	{
 		"Talia7": [
-			{"Name": "Main", "Start": "07:44.25", "End": "07:46.32", "Emotion": ""},
+			{"Name": "Main", "Start": "07:44.95", "End": "07:46.32", "Emotion": ""},
 			{"Name": "Talia", "Start": "1:19.6", "End": "1:27", "Emotion": ""},
 			
 			#Truth
-			{"Name": "Main", "Start": "07:47.18", "End": "07:50.18", "Emotion": ""},
-			{"Name": "Main", "Start": "07:51.18", "End": "07:57.21", "Emotion": ""},
-			{"Name": "Talia", "Start": "1:29.13", "End": "1:36.24", "Emotion": ""},
+			{"Name": "Main", "Start": "07:47.18", "End": "07:54.10", "Emotion": ""},
+			{"Name": "Main", "Start": "07:54.10", "End": "07:57.81", "Emotion": ""},
+			{"Name": "Talia", "Start": "1:29.13", "End": "1:36.84", "Emotion": ""},
 			
 			#Lie TaliaLie
 			{"Name": "Main", "Start": "07:58.19", "End": "08:04.05", "Emotion": ""},
@@ -117,12 +116,11 @@ func _ready():
 
 
 
-#var testDic = {"Talia": 2}
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
 	if GameData.day <= 2:
-			SoundControl.is_playing_theme("afternoon")
+		SoundControl.is_playing_theme("afternoon")
 	elif GameData.day >= 3:
 		SoundControl.is_playing_theme("main")
 	
@@ -185,7 +183,6 @@ func _on_dialogue_box_dialogue_signal(value):
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	#print($Dialogue/DialogueBox.speaker.text," addf")
 	
-	#TODO: Set up the dialogue voices
 	SoundControl.dialogue_audio_stop() #Stop the audio if next dialogue
 	#print(audioCount)
 	print("Dialogue Node: "+str(node_type))

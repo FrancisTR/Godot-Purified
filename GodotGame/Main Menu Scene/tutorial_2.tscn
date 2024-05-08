@@ -821,7 +821,7 @@ sources/7 = SubResource("TileSetAtlasSource_6c3h7")
 script = ExtResource("1_g11ls")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.529412, 0.298039, 1, 1)
+color = Color(0.882353, 0.494118, 0, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(3, 3)
@@ -1291,6 +1291,9 @@ position = Vector2(142, 643)
 
 [node name="OptionsHidden" parent="DisplayControls" instance=ExtResource("12_hqegn")]
 visible = false
+
+[node name="VoiceSlider" parent="DisplayControls/OptionsHidden" index="7"]
+layout_mode = 0
 
 [node name="Movement" type="Control" parent="DisplayControls"]
 layout_mode = 3

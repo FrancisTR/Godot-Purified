@@ -18,6 +18,9 @@ var scenes = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if GameData.day >= 4:
+		$CroakFlag.position = Vector2(607, 492)
+		
 	GameData.visitedWilderness = true
 	#TODO: Make inventory system into its own scene w/ graphics
 	#$UI/Inventory.text = "Inventory\nTwigs: " + str(NumTwigs)
@@ -69,10 +72,10 @@ func _ready():
 	
 	#Appear the children if it is day 4+
 	if GameData.day >= 4:
-		$IndividualNPCs/Rano.position = Vector2(791, 404)
-		$IndividualNPCs/Leap.position = Vector2(935, 305)
-		$IndividualNPCs/Hop.position = Vector2(609, 553)
-		$IndividualNPCs/Ribbit.position = Vector2(755, -23)
+		$IndividualNPCs/Rano.position = Vector2(678, 584)
+		$IndividualNPCs/Leap.position = Vector2(2421, 403)
+		$IndividualNPCs/Hop.position = Vector2(-310, -555)
+		$IndividualNPCs/Ribbit.position = Vector2(317, 976)
 		
 		
 
@@ -94,7 +97,9 @@ func _process(delta):
 	#TODO: Add theme song based on the day
 	if GameData.day <= 2:
 		SoundControl.is_playing_theme("afternoon")
-	elif GameData.day >= 3:
+	elif GameData.day == 4:
+		SoundControl.is_playing_theme("croak")
+	elif GameData.day >= 3 and GameData.day != 4:
 		SoundControl.is_playing_theme("main")
 			
 
@@ -154,7 +159,9 @@ func _on_open_map():
 	$"Map/Map Camera".make_current()
 	$Other/CharacterBody2D.show_map_icon()
 	$"Map/Wilderness Exit".show()
+	$UI/Controls.hide()
 
 func _on_close_map():
 	$Other/CharacterBody2D.hide_map_icon()
 	$"Map/Wilderness Exit".hide()
+	$UI/Controls.show()

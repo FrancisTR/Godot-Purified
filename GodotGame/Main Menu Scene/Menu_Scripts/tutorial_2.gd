@@ -37,9 +37,8 @@ func _process(delta):
 func _on_open_map():
 	$"Map/Map Camera".make_current()
 	$Other/CharacterBody2D.show_map_icon()
-	#for i in range(0, len(npcs)):
-		#npcs[i].show_map_icon()
-	#TODO Edit based on the day's dialogue
+
+
 	for npc in npcs:
 		npc.show_map_icon()
 		print(npc.name, " vs ", GameData.QVillager)
@@ -54,5 +53,3 @@ func _on_close_map():
 	for npc in npcs:
 		npc.hide_map_icon()
 		npc.hide_notif()
-	#for i in range(0, len(npcs)):
-		#npcs[i].hide_map_icon()

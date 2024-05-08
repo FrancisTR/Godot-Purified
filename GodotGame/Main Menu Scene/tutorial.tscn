@@ -43,7 +43,7 @@ Button/styles/normal = SubResource("StyleBoxTexture_vdbo4")
 Button/styles/pressed = SubResource("StyleBoxTexture_wpafn")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pox36"]
-bg_color = Color(0, 0.305882, 0.313726, 1)
+bg_color = Color(0, 0.305882, 0.313726, 0.839216)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -94,19 +94,23 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -752.0
 offset_top = -444.0
+offset_right = 748.0
 offset_bottom = 428.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_k7iqa")
 
 [node name="CharacterIMG" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 239.0
-offset_top = 15.0
+offset_top = 57.0
 offset_right = 514.0
-offset_bottom = 536.0
-expand_mode = 1
+offset_bottom = 621.0
+expand_mode = 3
+stretch_mode = 4
 
 [node name="Dialogue" type="CanvasLayer" parent="."]
 
@@ -280,7 +284,13 @@ visible = false
 [node name="MusicSlider" parent="Controls" index="6"]
 visible = false
 
-[node name="BackButton" parent="Controls" index="7"]
+[node name="VoiceSlider" parent="Controls" index="7"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 476.0
+offset_bottom = 16.0
+
+[node name="BackButton" parent="Controls" index="8"]
 visible = false
 
 [connection signal="dialogue_ended" from="Dialogue/DialogueBox" to="." method="_on_dialogue_box_dialogue_ended"]

@@ -7,22 +7,6 @@ extends Control
 func _process(delta):
 	if $"..".visible == true:
 		GameData.charLock = true
-	#$Items/slot0/ItemName0.visible = false
-	#$Items/slot1/ItemName1.visible = false
-	#$Items/slot2/ItemName2.visible = false
-	#$Items/slot3/ItemName3.visible = false
-	#$Items/slot4/ItemName4.visible = false
-	#$Items/slot5/ItemName5.visible = false
-	#$Items/slot6/ItemName6.visible = false
-	#$Items/slot7/ItemName7.visible = false
-	#$Items/slot8/ItemName8.visible = false
-	#$Items/slot9/ItemName9.visible = false
-	#$Items/slot10/ItemName10.visible = false
-	#$Items/slot11/ItemName11.visible = false
-	#$Items/slot12/ItemName12.visible = false
-	#$Items/slot13/ItemName13.visible = false
-	#$Items/slot14/ItemName14.visible = false
-	pass
 	
 	
 	

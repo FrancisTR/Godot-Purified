@@ -5,11 +5,6 @@ extends Control
 ## Called when the node enters the scene tree for the first time.
 func _ready():
 	#line_edit.grab_focus()
-	#TODO TESTING PURPOSES ONLY
-	if GameData.day == 7:
-		Utils.add_to_inventory("WaterBottleSpecial", 1)
-		Utils.add_to_inventory("BoilingPot", 1)
-		Utils.add_to_inventory("WaterFilter", 1)
 	
 	$BackButton.grab_focus()
 	
@@ -25,7 +20,9 @@ func _process(delta):
 		SoundControl.is_playing_theme("afternoon")
 	elif GameData.day <= 2:
 		SoundControl.is_playing_theme("afternoon")
-	elif GameData.day >= 3:
+	elif GameData.day == 4:
+		SoundControl.is_playing_theme("croak")
+	elif GameData.day >= 3 and GameData.day != 4:
 		SoundControl.is_playing_theme("main")
 	
 	

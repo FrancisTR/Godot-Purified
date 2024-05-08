@@ -1,11 +1,11 @@
 extends Node
 
 
-var day:int = 7
+var day:int = 1
 
 var twigItem = 0
 
-var username = "lol"
+var username = ""
 
 var inventory:Array
 

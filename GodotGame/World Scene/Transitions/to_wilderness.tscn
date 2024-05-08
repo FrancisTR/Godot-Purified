@@ -44,7 +44,7 @@ Button/styles/normal = SubResource("StyleBoxTexture_j88io")
 Button/styles/pressed = SubResource("StyleBoxTexture_3ev5n")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i12ll"]
-bg_color = Color(0, 0.305882, 0.313726, 1)
+bg_color = Color(0, 0.305882, 0.313726, 0.839216)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
@@ -83,7 +83,6 @@ shape = SubResource("RectangleShape2D_pqafc")
 [node name="Dialogue" type="CanvasLayer" parent="Dialogue"]
 
 [node name="DialogueBox" type="Panel" parent="Dialogue/Dialogue"]
-visible = false
 z_index = 101
 texture_filter = 1
 custom_minimum_size = Vector2(256, 128)

@@ -32,9 +32,10 @@ var oldManTempLock = false
 var dialogue_voices = [
 	
 	
-	# Days 1
+	# Days 1 #CONFIRMED
 	{	
 		# Tutorial 2
+		#CONFIRMED
 		"Talia": [
 			{"Name": "Talia", "Start": "0:59", "End": "1:01", "Emotion": ""},
 			{"Name": "Talia", "Start": "1:02.5", "End": "1:04.2", "Emotion": ""},
@@ -96,19 +97,19 @@ var dialogue_voices = [
 			{"Name": "Main", "Start": "1:06.17", "End": "1:11.04", "Emotion": ""},
 		],
 		
-		
+		#CONFIRMED
 		"Accept": [
 			{"Name": "Main", "Start": "0:0.26", "End": "0:12.80", "Emotion": "Happy"},
 			{"Name": "Accept", "Start": "0:00", "End": "0:01", "Emotion": "Happy"},
 			
-			{"Name": "Main", "Start": "1:17.05", "End": "1:20.19", "Emotion": "Happy"},
+			{"Name": "Main", "Start": "1:17.05", "End": "1:20.59", "Emotion": "Happy"},
 			{"Name": "Main", "Start": "1:11.06", "End": "1:16.02", "Emotion": "Happy"}, #Great!...
 			
-			#TODO SplitAudio
-			{"Name": "Accept", "Start": "1:14.8", "End": "1:22", "Emotion": ""},
+
+			{"Name": "Accept", "Start": "1:14.8", "End": "1:20.90", "Emotion": ""},
 			{"Name": "Main", "Start": "1:21.00", "End": "1:26.22", "Emotion": ""},
 			
-			{"Name": "Accept", "Start": "?", "End": "?", "Emotion": "Happy"}, #Thanks
+			{"Name": "Accept", "Start": "1:21", "End": "1:22", "Emotion": "Happy"}, #Thanks
 		],
 		
 		#CONFIRMED
@@ -143,22 +144,22 @@ var dialogue_voices = [
 	
 	
 	
-	# Days 2
+	# Days 2 #CONFIRMED
 	{	
 		#All Characters
 		
+		#CONFIRMED
 		"Denial": [
-			#TODO: SplitAudio
-			{"Name": "Main", "Start": "02:09.07", "End": "02:36.16", "Emotion": ""},
-			{"Name": "Main", "Start": "", "End": "", "Emotion": "Happy"},
-			{"Name": "Main", "Start": "", "End": "", "Emotion": "Happy"},
-			{"Name": "Main", "Start": "", "End": "", "Emotion": "Happy"},
+			{"Name": "Main", "Start": "02:09.07", "End": "02:15.89", "Emotion": ""},
+			{"Name": "Main", "Start": "2:16.06", "End": "2:27.12", "Emotion": "Happy"},
+			{"Name": "Main", "Start": "2:27.14", "End": "2:35.05", "Emotion": "Happy"},
+			{"Name": "Main", "Start": "2:35.08", "End": "2:36.09", "Emotion": "Happy"},
 			
 			{"Name": "Denial", "Start": "0:9.6", "End": "0:16.3", "Emotion": ""},
 			{"Name": "Main", "Start": "02:37.06", "End": "02:38.17", "Emotion": ""},
 			{"Name": "Denial", "Start": "0:16.4", "End": "0:17.7", "Emotion": "Happy"},
 			{"Name": "Main", "Start": "1:11.06", "End": "1:16.02", "Emotion": "Happy"},
-			{"Name": "Main", "Start": "1:17.05", "End": "1:20.19", "Emotion": "Happy"},
+			{"Name": "Main", "Start": "1:17.05", "End": "1:20.89", "Emotion": "Happy"},
 		],
 		
 		#CONFIRMED
@@ -170,33 +171,33 @@ var dialogue_voices = [
 			{"Name": "Main", "Start": "02:51.13", "End": "02:54.73", "Emotion": "Sad"},
 		],
 		
+		#CONFIRMED
 		"Bargin": [
-			{"Name": "Main", "Start": "02:55.23", "End": "03:05.25", "Emotion": "Happy"},
+			{"Name": "Main", "Start": "02:55.13", "End": "03:05.95", "Emotion": "Happy"},
 			
-			{"Name": "Bargin", "Start": "05.08", "End": "07.16", "Emotion": ""},
-			{"Name": "Main", "Start": "42.20", "End": "45.00", "Emotion": ""},
+			{"Name": "Bargin", "Start": "0:05.08", "End": "0:07.18", "Emotion": ""},
+			{"Name": "Main", "Start": "0:42.20", "End": "0:45.00", "Emotion": ""},
 			
-			{"Name": "Bargin", "Start": "08.07", "End": "09.26", "Emotion": ""},
-			{"Name": "Main", "Start": "42.20", "End": "45.00", "Emotion": ""},
+			{"Name": "Bargin", "Start": "0:08.07", "End": "0:09.96", "Emotion": ""},
+			{"Name": "Main", "Start": "0:42.20", "End": "0:45.00", "Emotion": ""},
 			
-			{"Name": "Bargin", "Start": "10.20", "End": "12.04", "Emotion": ""},
-			{"Name": "Main", "Start": "42.20", "End": "45.00", "Emotion": ""},
+			{"Name": "Bargin", "Start": "0:10.20", "End": "0:12.04", "Emotion": ""},
+			{"Name": "Main", "Start": "0:42.20", "End": "0:45.00", "Emotion": ""},
 			
-			{"Name": "Bargin", "Start": "12.27", "End": "14.06", "Emotion": ""},
-			{"Name": "Main", "Start": "42.20", "End": "45.00", "Emotion": ""},
+			{"Name": "Bargin", "Start": "0:12.27", "End": "0:14.06", "Emotion": ""},
+			{"Name": "Main", "Start": "0:42.20", "End": "0:45.00", "Emotion": ""},
 			
-			{"Name": "Bargin", "Start": "20.12", "End": "22.06", "Emotion": ""},
-			{"Name": "Main", "Start": "03:07.29", "End": "03:09.26", "Emotion": ""},
-			{"Name": "Bargin", "Start": "22.27", "End": "24.08", "Emotion": ""},
+			{"Name": "Bargin", "Start": "0:20.12", "End": "0:22.06", "Emotion": ""},
+			{"Name": "Main", "Start": "03:07.29", "End": "03:09.86", "Emotion": ""},
+			{"Name": "Bargin", "Start": "0:22.47", "End": "0:24.08", "Emotion": ""},
 			
 			{"Name": "Main", "Start": "1:11.06", "End": "1:16.02", "Emotion": "Happy"},
 			
-			#TODO Split Audio for requests
-			{"Name": "Bargin", "Start": "1:55.09", "End": "2:04.02", "Emotion": ""},
+			{"Name": "Bargin", "Start": "1:55.09", "End": "2:01.16", "Emotion": ""},
 			
 			{"Name": "Main", "Start": "13:27.03", "End": "13:30.20", "Emotion": ""},
 			
-			{"Name": "Bargin", "Start": "??", "End": "??", "Emotion": ""}, #Thanks
+			{"Name": "Bargin", "Start": "2:02.05", "End": "2:04.02", "Emotion": ""}, #Thanks
 		],
 		
 		#CONFIRMED
@@ -246,7 +247,7 @@ var dialogue_voices = [
 	
 	
 	
-	# Days 3
+	# Days 3 #CONFIRMED
 	{	
 		#All Characters
 		
@@ -303,7 +304,7 @@ var dialogue_voices = [
 	
 	
 	
-	# Days 4
+	# Days 4 #CONFIRMED
 	{	
 		#All Characters
 		
@@ -321,16 +322,15 @@ var dialogue_voices = [
 			{"Name": "Main", "Start": "05:42.28", "End": "05:44.95", "Emotion": "Fear"},
 		],
 		
-		
+		#CONFIRMED
 		"Anger": [
 			#Start: 05:21.09 (15%) 05:31.26 (35%)
 			#End: 05:31.02 (15%) 05:41.29 (35%)
 			{"Name": "Main", "Start": "05:21.09", "End": "05:31.02", "Emotion": "Fear"},
 			{"Name": "Main", "Start": "05:31.26", "End": "05:41.99", "Emotion": "Fear"},
 			
-			#TODO MISSING AUDIO FOR ANGER FOR THIS ONE BELOW
-			{"Name": "Anger", "Start": "0", "End": "0", "Emotion": ""},
-			{"Name": "Main", "Start": "05:42.28", "End": "05:44.95", "Emotion": "Fear"},
+			{"Name": "Anger", "Start": "3:12.16", "End": "3:19.08", "Emotion": ""},
+			{"Name": "Main", "Start": "05:42.28", "End": "05:44.90", "Emotion": "Fear"},
 		],
 		
 		
@@ -392,7 +392,7 @@ var dialogue_voices = [
 	
 	
 	
-	# Days 5
+	# Days 5 #CONFIRMED
 	{	
 		#All Characters
 		#CONFIRMED
@@ -408,16 +408,17 @@ var dialogue_voices = [
 			{"Name": "Main", "Start": "06:21.01", "End": "06:23.15", "Emotion": ""},
 		],
 		
+		#CONFIRMED
 		"Anger": [
 			#Start: 05:51.08 (25%) 06:06.02 (40%)
 			#End: 06:04.29 (25%) 06:17.18 (40%)
 			{"Name": "Main", "Start": "05:51.08", "End": "06:04.59", "Emotion": ""},
 			{"Name": "Main", "Start": "06:06.02", "End": "06:17.18", "Emotion": ""},
 			
-			#TODO SplitAudio
-			{"Name": "Anger", "Start": "0:57.8", "End": "1:27", "Emotion": "Happy"},
-			{"Name": "Anger", "Start": "", "End": "", "Emotion": "Anger"},
-			{"Name": "Anger", "Start": "", "End": "", "Emotion": ""},
+			
+			{"Name": "Anger", "Start": "0:57.22", "End": "1:05.27", "Emotion": "Happy"},
+			{"Name": "Anger", "Start": "1:06.04", "End": "1:14.08", "Emotion": "Anger"},
+			{"Name": "Anger", "Start": "1:14.23", "End": "1:27.05", "Emotion": ""},
 			
 			{"Name": "Main", "Start": "06:24.16", "End": "06:25.22", "Emotion": "Surprised"},
 			{"Name": "Anger", "Start": "1:28", "End": "1:38.5", "Emotion": "Anger"},
@@ -458,17 +459,18 @@ var dialogue_voices = [
 			{"Name": "Depress", "Start": "0:07.74", "End": "0:08.13", "Emotion": ""},
 		],
 		
+		#CONFIRMED
 		"Accept": [
 			#Start: 05:51.08 (25%) 06:06.02 (40%)
 			#End: 06:04.29 (25%) 06:17.18 (40%)
 			{"Name": "Main", "Start": "05:51.08", "End": "06:04.59", "Emotion": ""},
 			{"Name": "Main", "Start": "06:06.02", "End": "06:17.18", "Emotion": ""},
 			
-			#TODO SplitAudio
-			{"Name": "Accept", "Start": "0:11.8", "End": "0:31", "Emotion": ""},
-			{"Name": "Accept", "Start": "", "End": "", "Emotion": ""},
-			{"Name": "Accept", "Start": "", "End": "", "Emotion": "Sad"},
-			{"Name": "Accept", "Start": "", "End": "", "Emotion": ""},
+			
+			{"Name": "Accept", "Start": "0:11.95", "End": "0:14.02", "Emotion": ""},
+			{"Name": "Accept", "Start": "0:14.42", "End": "0:19.35", "Emotion": ""},
+			{"Name": "Accept", "Start": "0:19.35", "End": "0:26.87", "Emotion": "Sad"},
+			{"Name": "Accept", "Start": "0:26.97", "End": "0:31.02", "Emotion": ""},
 			
 			{"Name": "Main", "Start": "06:54.12", "End": "06:57.10", "Emotion": "Happy"},
 			{"Name": "Accept", "Start": "0:07.8", "End": "0:09", "Emotion": "Happy"},
@@ -509,24 +511,24 @@ var dialogue_voices = [
 	# Days 6
 	{	
 		#All Characters
+		#CONFIRMED
 		"Denial": [
 			{"Name": "Main", "Start": "07:08.00", "End": "07:16.12", "Emotion": "Happy"},
-			#TODO SplitAudio
-			{"Name": "Denial", "Start": "0:46.26", "End": "1:09.29", "Emotion": ""},
-			{"Name": "Denial", "Start": "", "End": "", "Emotion": "Happy"},
-			{"Name": "Denial", "Start": "", "End": "", "Emotion": ""},
+			
+			{"Name": "Denial", "Start": "0:46.26", "End": "0:54.14", "Emotion": ""},
+			{"Name": "Denial", "Start": "0:54.15", "End": "1:07.11", "Emotion": "Happy"},
+			{"Name": "Denial", "Start": "1:07.16", "End": "1:10.03", "Emotion": ""},
 			
 			{"Name": "Main", "Start": "07:17.05", "End": "07:19.02", "Emotion": "Happy"},
 		],
 		
-		
+		#CONFIRMED
 		"Anger": [
 			{"Name": "Main", "Start": "07:08.00", "End": "07:16.12", "Emotion": "Happy"},
 			
-			#TODO SplitAudio
-			{"Name": "Anger", "Start": "1:38.6", "End": "2:02", "Emotion": ""},
-			{"Name": "Anger", "Start": "", "End": "", "Emotion": ""},
-			{"Name": "Anger", "Start": "", "End": "", "Emotion": ""},
+			{"Name": "Anger", "Start": "1:38.93", "End": "1:49", "Emotion": ""},
+			{"Name": "Anger", "Start": "1:49.06", "End": "1:57.03", "Emotion": ""},
+			{"Name": "Anger", "Start": "1:57.10", "End": "2:01.01", "Emotion": ""},
 			
 			{"Name": "Main", "Start": "07:17.05", "End": "07:19.02", "Emotion": "Happy"},
 		],
@@ -551,13 +553,14 @@ var dialogue_voices = [
 			{"Name": "Main", "Start": "07:17.05", "End": "07:19.02", "Emotion": "Happy"},
 		],
 		
+		#CONFIRMED
 		"Accept": [
 			{"Name": "Main", "Start": "07:08.00", "End": "07:16.12", "Emotion": "Happy"},
 			
-			#TODO SplitAudio
-			{"Name": "Accept", "Start": "0:31", "End": "0:45", "Emotion": ""},
-			{"Name": "Accept", "Start": "", "End": "", "Emotion": ""},
-			{"Name": "Accept", "Start": "", "End": "", "Emotion": "Happy"},
+			
+			{"Name": "Accept", "Start": "0:31.02", "End": "0:37.07", "Emotion": ""},
+			{"Name": "Accept", "Start": "0:37.07", "End": "0:42.69", "Emotion": ""},
+			{"Name": "Accept", "Start": "0:43.01", "End": "0:45", "Emotion": "Happy"},
 			
 			{"Name": "Main", "Start": "07:17.05", "End": "07:19.02", "Emotion": "Happy"},
 		],
@@ -587,7 +590,7 @@ var dialogue_voices = [
 	
 	
 	
-	# Days 7
+	# Days 7 #CONFIRMED
 	{	
 		#All Characters
 		"Denial": [
@@ -669,16 +672,17 @@ var dialogue_voices = [
 	
 	
 	
-	# Days 8
+	# Days 8 #CONFIRMED
 	{	
 		#All Characters
+		#CONFIRMED
 		"Denial": [
 			{"Name": "Main", "Start": "08:39.28", "End": "08:52.07", "Emotion": "Sad"},
-			#TODO SplitAudio for Request
-			{"Name": "Denial", "Start": "2:01.14", "End": "2:10.03", "Emotion": ""},
+			
+			{"Name": "Denial", "Start": "2:01.14", "End": "2:07.07", "Emotion": ""},
 			
 			{"Name": "Main", "Start": "14:01.10", "End": "14:04.26", "Emotion": "Happy"},
-			{"Name": "Denial", "Start": "???", "End": "???", "Emotion": "Happy"}, #Thanks
+			{"Name": "Denial", "Start": "2:07.29", "End": "2:10.08", "Emotion": "Happy"}, #Thanks
 		],
 		
 		#CONFIRMED
@@ -691,15 +695,14 @@ var dialogue_voices = [
 			{"Name": "Anger", "Start": "2:17", "End": "2:18", "Emotion": ""}, #Thanks
 		],
 		
-		
+		#CONFIRMED
 		"Bargin": [
 			{"Name": "Main", "Start": "08:39.28", "End": "08:52.07", "Emotion": "Sad"},
-			{"Name": "Bargin", "Start": "2:04.02", "End": "2:14.25", "Emotion": "Sad"},
+			{"Name": "Bargin", "Start": "2:04.02", "End": "2:15", "Emotion": "Sad"},
 			{"Name": "Main", "Start": "09:01.09", "End": "09:04.09", "Emotion": ""},
 			
-			#TODO SplitAudio
-			{"Name": "Bargin", "Start": "1:41.03", "End": "1:46.18", "Emotion": ""},
-			{"Name": "Bargin", "Start": "???", "End": "???", "Emotion": ""}, #Thanks
+			{"Name": "Bargin", "Start": "1:41.03", "End": "1:44.02", "Emotion": ""},
+			{"Name": "Bargin", "Start": "1:44.18", "End": "1:46.18", "Emotion": ""}, #Thanks
 		],
 		
 		#CONFIRMED
@@ -755,7 +758,7 @@ var dialogue_voices = [
 	
 	
 	
-	# Days 9
+	# Days 9 #CONFIRMED
 	{	
 		#All Characters
 		#CONFIRMED
@@ -769,42 +772,43 @@ var dialogue_voices = [
 			{"Name": "Main", "Start": "10:02.27", "End": "10:07.10", "Emotion": "Happy"},
 		],
 		
+		#CONFIRMED
 		"Anger": [
 			{"Name": "Main", "Start": "10:08.18", "End": "10:10.05", "Emotion": "Happy"},
 			{"Name": "Anger", "Start": "2:19.5", "End": "2:30", "Emotion": "Fear"},
 			
-			#TODO SplitAudio
-			{"Name": "Main", "Start": "10:10.20", "End": "10:36.03", "Emotion": "Disgust"},
-			{"Name": "Main", "Start": "", "End": "", "Emotion": ""},
-			{"Name": "Main", "Start": "", "End": "", "Emotion": "Happy"},
+			{"Name": "Main", "Start": "10:10.20", "End": "10:23.24", "Emotion": "Disgust"},
+			{"Name": "Main", "Start": "10:24.01", "End": "10:31.20", "Emotion": ""},
+			{"Name": "Main", "Start": "10:31.24", "End": "10:36.18", "Emotion": "Happy"},
 			
 			{"Name": "Anger", "Start": "2:30", "End": "2:34", "Emotion": "Surprised"},
 		],
 		
+		#CONFIRMED
 		"Bargin": [
 			{"Name": "Main", "Start": "10:38.07", "End": "10:41.03", "Emotion": "Happy"},
 			{"Name": "Bargin", "Start": "1:46.23", "End": "1:55.09", "Emotion": ""},
-			{"Name": "Main", "Start": "10:41.25", "End": "10:46.26", "Emotion": ""},
+			{"Name": "Main", "Start": "10:41.25", "End": "10:46.96", "Emotion": ""},
 			{"Name": "Bargin", "Start": "1:27.17", "End": "1:29.20", "Emotion": "Sad"},
 			{"Name": "Main", "Start": "10:47.24", "End": "10:49.12", "Emotion": ""},
 			
-			#TODO Use the same audio "Thanks" on Day 8
-			{"Name": "Bargin", "Start": "?", "End": "?", "Emotion": "Happy"},
+			#Use the same audio "Thanks" on Day 8
+			{"Name": "Bargin", "Start": "1:44.18", "End": "1:46.18", "Emotion": "Happy"},
 		],
 		
+		#CONFIRMED
 		"Depress": [
 			{"Name": "Main", "Start": "10:50.09", "End": "10:55.12", "Emotion": "Happy"},
-			{"Name": "Depress", "Start": "0:04.10", "End": "0:04.26", "Emotion": ""},
+			{"Name": "Depress", "Start": "0:04.20", "End": "0:04.90", "Emotion": ""},
 			{"Name": "Main", "Start": "10:56.08", "End": "11:01.10", "Emotion": ""},
-			{"Name": "Depress", "Start": "0:09.01", "End": "0:09.25", "Emotion": ""},
+			{"Name": "Depress", "Start": "0:09.03", "End": "0:09.95", "Emotion": ""},
 			
-			#TODO SplitAudio
-			{"Name": "Main", "Start": "11:02.08", "End": "11:26.15", "Emotion": ""},
-			{"Name": "Main", "Start": "", "End": "", "Emotion": ""},
-			{"Name": "Main", "Start": "", "End": "", "Emotion": "Happy"},
-			{"Name": "Main", "Start": "", "End": "", "Emotion": "Happy"},
+			{"Name": "Main", "Start": "11:02.08", "End": "11:08.18", "Emotion": ""},
+			{"Name": "Main", "Start": "11:08.21", "End": "11:13.26", "Emotion": ""},
+			{"Name": "Main", "Start": "11:13.30", "End": "11:21.27", "Emotion": "Happy"},
+			{"Name": "Main", "Start": "11:21.28", "End": "11:26.28", "Emotion": "Happy"},
 			
-			{"Name": "Depress", "Start": "0:09.27", "End": "0:10.18", "Emotion": "Happy"},
+			{"Name": "Depress", "Start": "0:09.80", "End": "0:10.75", "Emotion": "Happy"},
 		],
 		
 		#CONFIRMED
@@ -846,7 +850,7 @@ var dialogue_voices = [
 	
 	
 	
-	# Days 10
+	# Days 10 #CONFIRMED
 	{	
 		#All Characters
 		#CONFIRMED
@@ -858,14 +862,15 @@ var dialogue_voices = [
 			{"Name": "Main", "Start": "11:56.06", "End": "11:58.07", "Emotion": ""},
 		],
 		
+		#CONFIRMED
 		"Anger": [
-			{"Name": "Main", "Start": "11:58.25", "End": "12:00.13", "Emotion": "Happy"},
+			{"Name": "Main", "Start": "11:58.25", "End": "12:00.43", "Emotion": "Happy"},
 			{"Name": "Anger", "Start": "3:04.4", "End": "3:10.5", "Emotion": ""},
 			{"Name": "Main", "Start": "12:00.22", "End": "12:06.16", "Emotion": ""},
 			
-			#TODO SplitAudio
-			{"Name": "Anger", "Start": "2:44.5", "End": "3:02", "Emotion": "Anger"},
-			{"Name": "Anger", "Start": "", "End": "", "Emotion": ""},
+			
+			{"Name": "Anger", "Start": "2:44.16", "End": "2:50.02", "Emotion": "Anger"},
+			{"Name": "Anger", "Start": "2:50.12", "End": "3:01.23", "Emotion": ""},
 			
 			{"Name": "Main", "Start": "12:07.03", "End": "12:12.05", "Emotion": ""},
 			
@@ -901,7 +906,7 @@ var dialogue_voices = [
 			{"Name": "Accept", "Start": "1:12.8", "End": "0:74.1367797851563", "Emotion": "Happy"}, #TODO Broken
 		],
 		
-		#CONFIRMED?
+		#CONFIRMED
 		"OldMan": [
 			{"Name": "Main", "Start": "13:09.22", "End": "13:10.44", "Emotion": "Happy"},
 			{"Name": "OldMan", "Start": "2:05.2", "End": "2:09.3", "Emotion": "Happy"},
@@ -910,9 +915,10 @@ var dialogue_voices = [
 			{"Name": "Main", "Start": "13:18.05", "End": "13:19.07", "Emotion": ""},
 		],
 		
+		
 		"Rano": [
 			{"Name": "Rano", "Start": "2:22.1", "End": "2:27.5", "Emotion": "Sad"},
-			{"Name": "Main", "Start": "14:07.00", "End": "14:11.27", "Emotion": ""},
+			{"Name": "Main", "Start": "14:07.00", "End": "14:11.87", "Emotion": ""},
 			{"Name": "Rano", "Start": "2:28.4", "End": "2:36", "Emotion": "Sad"},
 			{"Name": "Rano", "Start": "2:36.8", "End": "0:164.463562011719", "Emotion": "Sad"},
 		],
@@ -963,7 +969,8 @@ var audioList = {
 	"Depress": "res://Assets/DialogueVoice/Depression_Derick.mp3",
 	"Accept": "res://Assets/DialogueVoice/Acceptence Antonio.mp3",
 	"Croak": "res://Assets/DialogueVoice/Croak.mp3",
-	"OldMan": "res://Assets/DialogueVoice/Old Man Tommy.mp3"
+	"OldMan": "res://Assets/DialogueVoice/Old Man Tommy.mp3",
+	"Rano": "res://Assets/DialogueVoice/LLE.mp3"
 }
 
 var emotionList = {
@@ -1265,9 +1272,12 @@ func increase_day(amount):
 		
 
 
-# TODO: Map more ID's for dialogue for more days
 func _process(delta):
-	print(GameData.day)
+	
+	#Wilderness exclusive
+	if (NPCname == "Rano" or NPCname == "Leap" or NPCname == "Hop" or NPCname == "Ribbit") and dialogue_box.running:
+		GameData.charLock = true
+	
 	#Day 5 Exclusive
 	if not dialogue_box.running and GameData.day == 5 and GameData.Discount == "":
 		GameData.charLock = true
@@ -1280,6 +1290,13 @@ func _process(delta):
 		$FixedDialoguePosition/CharacterIMG.visible = false
 		$FixedDialoguePosition/Voice.visible = false
 		print(GameData.current_ui)
+
+
+
+
+
+
+
 
 	#Barry gone if he was gone before. This is for Day 3 only
 	if (GameData.barryDespawned == true and $"../Bargin" != null):
@@ -1483,6 +1500,9 @@ func _process(delta):
 			dialogue_box.start_id = "Accept10"
 		elif NPCname == "OldMan":
 			dialogue_box.start_id = "OldMan10"
+			
+		elif NPCname == "Rano":
+			dialogue_box.start_id = "Rano10"
 			
 			
 		
