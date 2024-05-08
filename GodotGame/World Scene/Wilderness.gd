@@ -159,9 +159,11 @@ func _on_open_map():
 	$"Map/Map Camera".make_current()
 	$Other/CharacterBody2D.show_map_icon()
 	$"Map/Wilderness Exit".show()
+	$"TileMaps/Hidden Forest".show()
 	$UI/Controls.hide()
 
 func _on_close_map():
 	$Other/CharacterBody2D.hide_map_icon()
 	$"Map/Wilderness Exit".hide()
+	$"TileMaps/Hidden Forest".hide()
 	$UI/Controls.show()
