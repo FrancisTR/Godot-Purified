@@ -79,7 +79,8 @@ starts = {
 "OldManWaterFilter": &"0_70",
 "Rano10": &"0_59",
 "Talia7": &"0_65",
-"TaliaTutorial": &"0_72"
+"TaliaTutorial": &"0_72",
+"ThyRibbit": &"0_76"
 }
 nodes = {
 "0_1": {
@@ -447,6 +448,11 @@ nodes = {
 "offset": Vector2(-160, -33820),
 "start_id": "LeapNoMore"
 },
+"0_76": {
+"link": &"3_89",
+"offset": Vector2(-380, 13780),
+"start_id": "ThyRibbit"
+},
 "0_8": {
 "link": &"1_8",
 "offset": Vector2(120, -28160),
@@ -493,7 +499,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.017),
+"size": Vector2(300.001, 433.016),
 "speaker": 0
 },
 "1_101": {
@@ -506,7 +512,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.017),
+"size": Vector2(391, 433.016),
 "speaker": 8
 },
 "1_102": {
@@ -519,7 +525,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.018),
+"size": Vector2(300.001, 433.02),
 "speaker": 0
 },
 "1_103": {
@@ -610,7 +616,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391.001, 433.003),
+"size": Vector2(391.001, 433.002),
 "speaker": 8
 },
 "1_11": {
@@ -636,7 +642,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.003),
+"size": Vector2(300.001, 433.002),
 "speaker": 0
 },
 "1_111": {
@@ -649,7 +655,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(391, 433.003),
+"size": Vector2(391, 433.002),
 "speaker": 8
 },
 "1_112": {
@@ -662,7 +668,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.003),
+"size": Vector2(300.001, 433.004),
 "speaker": 0
 },
 "1_113": {
@@ -675,7 +681,7 @@ nodes = {
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_114": {
@@ -846,7 +852,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300, 433.001),
+"size": Vector2(300, 433.002),
 "speaker": 0
 },
 "1_126": {
@@ -937,7 +943,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.009),
 "speaker": 0
 },
 "1_132": {
@@ -963,7 +969,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(391, 433.01),
+"size": Vector2(391, 433.008),
 "speaker": 8
 },
 "1_134": {
@@ -976,7 +982,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.01),
+"size": Vector2(300.001, 433.008),
 "speaker": 0
 },
 "1_135": {
@@ -989,7 +995,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(391.001, 433.01),
+"size": Vector2(391.001, 433.008),
 "speaker": 8
 },
 "1_136": {
@@ -1002,7 +1008,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300, 433.01),
+"size": Vector2(300, 433.008),
 "speaker": 0
 },
 "1_137": {
@@ -1015,7 +1021,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(391.001, 433.01),
+"size": Vector2(391.001, 433.008),
 "speaker": 8
 },
 "1_138": {
@@ -1028,7 +1034,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300, 433.01),
+"size": Vector2(300, 433.008),
 "speaker": 0
 },
 "1_139": {
@@ -1046,7 +1052,7 @@ Can you get them for me?",
 "text": "35%"
 }
 },
-"size": Vector2(367.877, 614.009),
+"size": Vector2(367.877, 614.008),
 "speaker": 0
 },
 "1_14": {
@@ -1059,7 +1065,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300, 433.001),
+"size": Vector2(300, 433.002),
 "speaker": 0
 },
 "1_140": {
@@ -1150,7 +1156,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.003),
+"size": Vector2(300.001, 433.004),
 "speaker": 6
 },
 "1_147": {
@@ -1163,7 +1169,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300, 433.01),
+"size": Vector2(300, 433.011),
 "speaker": 0
 },
 "1_148": {
@@ -1350,7 +1356,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 432.999),
 "speaker": 0
 },
 "1_160": {
@@ -1636,7 +1642,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.011),
+"size": Vector2(300.001, 433.01),
 "speaker": 0
 },
 "1_180": {
@@ -1779,7 +1785,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.01),
+"size": Vector2(300.001, 433.008),
 "speaker": 0
 },
 "1_190": {
@@ -1935,7 +1941,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.017),
+"size": Vector2(300.001, 433.016),
 "speaker": 0
 },
 "1_200": {
@@ -1948,7 +1954,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_201": {
@@ -1961,7 +1967,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.999),
+"size": Vector2(300.001, 433),
 "speaker": 5
 },
 "1_202": {
@@ -1987,7 +1993,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433),
 "speaker": 5
 },
 "1_204": {
@@ -2000,7 +2006,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_205": {
@@ -2013,7 +2019,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.999),
+"size": Vector2(300.001, 433),
 "speaker": 5
 },
 "1_206": {
@@ -2026,7 +2032,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.999),
+"size": Vector2(300.001, 433),
 "speaker": 0
 },
 "1_207": {
@@ -2078,7 +2084,7 @@ Can you get them for me?",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.003),
+"size": Vector2(300.001, 433.002),
 "speaker": 0
 },
 "1_210": {
@@ -2383,7 +2389,7 @@ I can’t help the people of this village without Toadable and I can’t sell To
 "text": ""
 }
 },
-"size": Vector2(300.001, 432.996),
+"size": Vector2(300.001, 432.994),
 "speaker": ""
 },
 "1_231": {
@@ -2410,12 +2416,12 @@ You want to really help? Give me something that will help the villagers right no
 "text": ""
 }
 },
-"size": Vector2(391.002, 432.996),
+"size": Vector2(391.002, 432.998),
 "speaker": ""
 },
 "1_233": {
-"dialogue": "",
-"offset": Vector2(-560, 13080),
+"dialogue": "They stare off into the wilderness. They seem to ignore you.",
+"offset": Vector2(200, 13660),
 "options": {
 0: {
 "condition": {},
@@ -2709,7 +2715,7 @@ You want to really help? Give me something that will help the villagers right no
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.007),
+"size": Vector2(300.001, 433.005),
 "speaker": 0
 },
 "1_254": {
@@ -2722,7 +2728,7 @@ You want to really help? Give me something that will help the villagers right no
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.005),
 "speaker": 6
 },
 "1_255": {
@@ -2735,7 +2741,7 @@ You want to really help? Give me something that will help the villagers right no
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.005),
 "speaker": 0
 },
 "1_256": {
@@ -2748,7 +2754,7 @@ You want to really help? Give me something that will help the villagers right no
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.005),
 "speaker": 6
 },
 "1_257": {
@@ -2761,7 +2767,7 @@ You want to really help? Give me something that will help the villagers right no
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.005),
 "speaker": 0
 },
 "1_258": {
@@ -2774,7 +2780,7 @@ You want to really help? Give me something that will help the villagers right no
 "text": ""
 }
 },
-"size": Vector2(300, 432.999),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_259": {
@@ -2787,7 +2793,7 @@ You want to really help? Give me something that will help the villagers right no
 "text": ""
 }
 },
-"size": Vector2(391.002, 433.01),
+"size": Vector2(391.002, 433.012),
 "speaker": 8
 },
 "1_26": {
@@ -2813,7 +2819,7 @@ You want to really help? Give me something that will help the villagers right no
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.01),
+"size": Vector2(300.001, 433.012),
 "speaker": 0
 },
 "1_261": {
@@ -2839,7 +2845,7 @@ You want to really help? Give me something that will help the villagers right no
 "text": ""
 }
 },
-"size": Vector2(391, 433.001),
+"size": Vector2(391, 433.002),
 "speaker": ""
 },
 "1_263": {
@@ -2852,7 +2858,7 @@ You want to really help? Give me something that will help the villagers right no
 "text": ""
 }
 },
-"size": Vector2(392.464, 433.003),
+"size": Vector2(392.464, 433.004),
 "speaker": 8
 },
 "1_264": {
@@ -2865,7 +2871,7 @@ You want to really help? Give me something that will help the villagers right no
 "text": ""
 }
 },
-"size": Vector2(391, 433.001),
+"size": Vector2(391, 433),
 "speaker": 8
 },
 "1_265": {
@@ -2879,7 +2885,7 @@ Sand filters like this one can remove a lot of contaminants and even some bacter
 "text": ""
 }
 },
-"size": Vector2(391, 433.005),
+"size": Vector2(391, 433.004),
 "speaker": 8
 },
 "1_266": {
@@ -3052,7 +3058,7 @@ Sand filters like this one can remove a lot of contaminants and even some bacter
 "speaker": ""
 },
 "1_278": {
-"dialogue": "Thanks for removing the Water Bottles from the river! I can take those from you.",
+"dialogue": "Thanks for cleaning up the river!",
 "offset": Vector2(440, -12980),
 "options": {
 0: {
@@ -3074,7 +3080,7 @@ Sand filters like this one can remove a lot of contaminants and even some bacter
 "text": ""
 }
 },
-"size": Vector2(391.002, 433.001),
+"size": Vector2(391.002, 433.002),
 "speaker": 8
 },
 "1_28": {
@@ -3113,7 +3119,7 @@ Sand filters like this one can remove a lot of contaminants and even some bacter
 "text": ""
 }
 },
-"size": Vector2(391, 433.001),
+"size": Vector2(391, 433),
 "speaker": 8
 },
 "1_282": {
@@ -3126,7 +3132,7 @@ Sand filters like this one can remove a lot of contaminants and even some bacter
 "text": ""
 }
 },
-"size": Vector2(300, 433.001),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_283": {
@@ -3139,7 +3145,7 @@ Sand filters like this one can remove a lot of contaminants and even some bacter
 "text": ""
 }
 },
-"size": Vector2(391, 432.997),
+"size": Vector2(391, 433.002),
 "speaker": 8
 },
 "1_284": {
@@ -3153,7 +3159,7 @@ Start your own business to do them, and use whatever money you have to help in w
 "text": ""
 }
 },
-"size": Vector2(391.001, 433.001),
+"size": Vector2(391.001, 433),
 "speaker": 8
 },
 "1_285": {
@@ -3179,7 +3185,7 @@ Start your own business to do them, and use whatever money you have to help in w
 "text": ""
 }
 },
-"size": Vector2(300, 433.001),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_287": {
@@ -3465,11 +3471,11 @@ Start your own business to do them, and use whatever money you have to help in w
 "text": ""
 }
 },
-"size": Vector2(306.442, 372),
+"size": Vector2(306.442, 431),
 "speaker": ""
 },
 "1_306": {
-"dialogue": "Thanks for cleaning up the river! I'll take those from you!",
+"dialogue": "Thanks for cleaning up the river!",
 "offset": Vector2(940, -11900),
 "options": {
 0: {
@@ -3622,7 +3628,7 @@ Anything you need me for today?",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 432.997),
 "speaker": 0
 },
 "1_317": {
@@ -3648,7 +3654,7 @@ Anything you need me for today?",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433),
+"size": Vector2(300.001, 432.997),
 "speaker": 6
 },
 "1_319": {
@@ -3661,7 +3667,7 @@ Anything you need me for today?",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.997),
 "speaker": 0
 },
 "1_32": {
@@ -3687,7 +3693,7 @@ Anything you need me for today?",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.997),
 "speaker": 6
 },
 "1_321": {
@@ -3700,7 +3706,7 @@ Anything you need me for today?",
 "text": ""
 }
 },
-"size": Vector2(300, 433.005),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_322": {
@@ -3713,7 +3719,7 @@ Anything you need me for today?",
 "text": ""
 }
 },
-"size": Vector2(391, 433.005),
+"size": Vector2(391, 433),
 "speaker": 8
 },
 "1_323": {
@@ -3726,7 +3732,7 @@ Anything you need me for today?",
 "text": ""
 }
 },
-"size": Vector2(300, 433.005),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_324": {
@@ -3739,7 +3745,7 @@ Anything you need me for today?",
 "text": ""
 }
 },
-"size": Vector2(391, 433.003),
+"size": Vector2(391, 433.002),
 "speaker": 8
 },
 "1_325": {
@@ -4090,7 +4096,7 @@ Anything you need me for today?",
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.006),
 "speaker": 0
 },
 "1_35": {
@@ -4116,7 +4122,7 @@ Anything you need me for today?",
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.006),
 "speaker": 6
 },
 "1_351": {
@@ -4129,7 +4135,7 @@ Anything you need me for today?",
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.006),
 "speaker": 0
 },
 "1_352": {
@@ -4143,7 +4149,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.006),
 "speaker": 6
 },
 "1_353": {
@@ -4169,7 +4175,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300, 433.007),
+"size": Vector2(300, 433.006),
 "speaker": 0
 },
 "1_355": {
@@ -4182,7 +4188,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.007),
+"size": Vector2(300.001, 433.006),
 "speaker": 6
 },
 "1_356": {
@@ -4196,7 +4202,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(391.001, 433.004),
+"size": Vector2(391.001, 433),
 "speaker": 0
 },
 "1_357": {
@@ -4235,7 +4241,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300, 433.005),
+"size": Vector2(300, 433.004),
 "speaker": ""
 },
 "1_36": {
@@ -4261,7 +4267,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300, 433.003),
+"size": Vector2(300, 433.001),
 "speaker": 6
 },
 "1_361": {
@@ -4274,7 +4280,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(391, 436.621),
+"size": Vector2(391, 436.617),
 "speaker": 8
 },
 "1_362": {
@@ -4287,7 +4293,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300, 433.004),
+"size": Vector2(300, 433),
 "speaker": 0
 },
 "1_363": {
@@ -4430,7 +4436,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300, 433.012),
+"size": Vector2(300, 433.013),
 "speaker": 6
 },
 "1_44": {
@@ -4482,7 +4488,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300.002, 433.004),
+"size": Vector2(300.001, 433.004),
 "speaker": 0
 },
 "1_48": {
@@ -4495,7 +4501,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(391, 433.001),
+"size": Vector2(391, 433.002),
 "speaker": 7
 },
 "1_49": {
@@ -4508,7 +4514,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.005),
+"size": Vector2(300.001, 433.006),
 "speaker": 0
 },
 "1_5": {
@@ -4534,7 +4540,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(390.999, 433.005),
+"size": Vector2(390.999, 433.006),
 "speaker": 7
 },
 "1_51": {
@@ -4547,7 +4553,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.005),
+"size": Vector2(300.001, 433.006),
 "speaker": 0
 },
 "1_52": {
@@ -4560,7 +4566,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(390.999, 433.005),
+"size": Vector2(390.999, 433.006),
 "speaker": 7
 },
 "1_53": {
@@ -4573,7 +4579,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300, 433.005),
+"size": Vector2(300, 433.006),
 "speaker": 0
 },
 "1_54": {
@@ -4586,7 +4592,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(391, 433.001),
+"size": Vector2(391, 433.002),
 "speaker": 7
 },
 "1_55": {
@@ -4599,7 +4605,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(391, 433.007),
+"size": Vector2(391, 433.005),
 "speaker": 8
 },
 "1_56": {
@@ -4612,7 +4618,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.007),
+"size": Vector2(300.001, 433.005),
 "speaker": 0
 },
 "1_57": {
@@ -4625,7 +4631,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(391, 433.002),
+"size": Vector2(391, 433.003),
 "speaker": 8
 },
 "1_58": {
@@ -4638,7 +4644,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300, 433.003),
+"size": Vector2(300, 433.002),
 "speaker": 0
 },
 "1_59": {
@@ -4664,7 +4670,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.001),
+"size": Vector2(300.001, 433.002),
 "speaker": 0
 },
 "1_60": {
@@ -4690,7 +4696,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 6
 },
 "1_62": {
@@ -4807,7 +4813,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.007),
+"size": Vector2(300.001, 433.005),
 "speaker": 0
 },
 "1_70": {
@@ -5145,7 +5151,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300, 433),
+"size": Vector2(300, 432.999),
 "speaker": 0
 },
 "1_94": {
@@ -5158,7 +5164,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300, 433.011),
+"size": Vector2(300, 433.01),
 "speaker": 7
 },
 "1_95": {
@@ -5171,7 +5177,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300.001, 433.011),
+"size": Vector2(300.001, 433.01),
 "speaker": 0
 },
 "1_96": {
@@ -5184,7 +5190,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300, 433.011),
+"size": Vector2(300, 433.01),
 "speaker": 0
 },
 "1_97": {
@@ -5197,7 +5203,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300.002, 433.011),
+"size": Vector2(300.002, 433.01),
 "speaker": 7
 },
 "1_98": {
@@ -5210,7 +5216,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(300, 433.011),
+"size": Vector2(300, 433.01),
 "speaker": 0
 },
 "1_99": {
@@ -5223,7 +5229,7 @@ You should be proud of the difference you’ve already made.",
 "text": ""
 }
 },
-"size": Vector2(391, 433.017),
+"size": Vector2(391, 433.016),
 "speaker": 8
 },
 "2_1": {
@@ -5231,7 +5237,7 @@ You should be proud of the difference you’ve already made.",
 "offset": Vector2(-120, -30780),
 "size": {
 "x": 274.0,
-"y": 762.0
+"y": 777.0
 }
 },
 "2_2": {
@@ -5239,7 +5245,7 @@ You should be proud of the difference you’ve already made.",
 "offset": Vector2(-460, 7900),
 "size": {
 "x": 274.0,
-"y": 552.002
+"y": 567.0
 }
 },
 "3_1": {
@@ -5675,6 +5681,11 @@ You should be proud of the difference you’ve already made.",
 "3_88": {
 "link": &"1_365",
 "offset": Vector2(140, -33700),
+"signalValue": "VoiceOff"
+},
+"3_89": {
+"link": &"1_233",
+"offset": Vector2(-60, 13700),
 "signalValue": "VoiceOff"
 },
 "3_9": {
@@ -6260,5 +6271,5 @@ variables = {
 }
 }
 comments = Array[String](["2_1", "2_2"])
-strays = Array[String](["4_13", "4_14", "4_4", "4_18", "4_21", "4_22", "1_230", "1_232", "1_285", "1_233"])
+strays = Array[String](["4_13", "4_14", "4_4", "4_18", "4_21", "4_22", "1_230", "1_232", "1_285"])
 characters = "res://Dialogues/CharacterList.tres"

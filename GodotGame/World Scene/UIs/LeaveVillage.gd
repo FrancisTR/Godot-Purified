@@ -3,6 +3,7 @@ extends Control
 signal leave_village
 
 func _ready():
+	#Utils.non_static_items_json = duplicate(Utils.non_static_items_json_FINAL)
 	self.hide()
 
 #TODO: Remove more items
@@ -11,6 +12,10 @@ func _on_yes_pressed():
 	SoundControl.is_playing_sound("button")
 	emit_signal("leave_village")
 	print("y")
+	Utils.non_static_items_json.clear()
+	Utils.non_static_items_json = Utils.non_static_items_json_FINAL.duplicate(true)
+	
+	GameData.day_8_count = 0
 	
 	
 	GameData.QVillager = {}

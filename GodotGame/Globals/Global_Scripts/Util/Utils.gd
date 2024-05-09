@@ -14,10 +14,12 @@ func load_game():
 var items_json
 var static_items_json
 var non_static_items_json
+var non_static_items_json_FINAL
 func _ready():
 	items_json = get_JSON("res://Globals/items.json")
 	static_items_json = get_JSON("res://Globals/static_items.json")
 	non_static_items_json = get_JSON("res://Globals/non_static_items.json")
+	non_static_items_json_FINAL = get_JSON("res://Globals/non_static_items_final.json")
 	print("Utils.gd: jsons loaded")
 
 ################DIALOGUE################

@@ -3,7 +3,6 @@ extends Node2D
 var enterBody = false
 var CTtype = "" # Two different crafting tables
 
-
 var craftingList:Dictionary
 var ItemOfTheDay
 var itemImage
@@ -68,7 +67,7 @@ func _process(delta):
 		itemImage = load("res://Assets/Custom/Items/RO.png")
 	
 	#Crafting table or Well Crafting
-	if GameData.day == 8 and CTtype != "Well":
+	if GameData.day == 8 and CTtype != "Well" and GameData.day_8_count < 2:
 		craftingList = {"WaterBottle": 1, "Sand": 2, "Rock": 2, "Moss": 2}
 		listKeys = craftingList.keys()
 		listValues = craftingList.values()
@@ -126,7 +125,8 @@ func _process(delta):
 	else:
 		$UI/CraftingList/CraftButton.visible = false
 		
-		
+	if GameData.day_8_count >= 2:
+		$UI/CraftingList/CraftButton.visible = false
 		
 	if Input.is_action_just_pressed("Interaction") and enterBody == true:	
 		#if (self.name == "CraftingTablePRIME"):
@@ -145,7 +145,7 @@ func _process(delta):
 		elif CTtype == "Well" and GameData.day < 8: #Well Broke
 			$UI/BrokenWell.visible = true
 			$PressInteraction.visible = false
-		elif (CTtype == "Well" and GameData.day > 8) or GameData.well == true: #Well not broke
+		elif (CTtype == "Well" and GameData.day > 8) or (GameData.well == true and CTtype == "Well"): #Well not broke
 			$UI/Well.visible = true
 			$PressInteraction.visible = false
 		elif CTtype == "Well" and GameData.day == 8: #Well Crafing to fix it
@@ -215,6 +215,7 @@ func _on_body_exited(body):
 		enterBody = false
 		print("Exit crafting")
 		GameData.current_ui = ""
+		CTtype = ""
 
 
 
@@ -222,6 +223,8 @@ func _on_craft_button_pressed():
 		SoundControl.is_playing_sound("crafted")
 		print("Crafted!")
 		# For Day 8 Only	
+		if GameData.day == 8 and ItemOfTheDay == "WaterFilter":
+			GameData.day_8_count = GameData.day_8_count + 1
 		if ItemOfTheDay == "WaterFilter":
 			GameData.itemDialogue[4]["Value"] = GameData.itemDialogue[4]["Value"] + 1
 		
