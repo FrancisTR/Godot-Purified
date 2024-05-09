@@ -353,6 +353,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_bd86a")
 text = "Options"
 
 [node name="ExitButton" type="Button" parent="."]
+visible = false
 z_index = 1
 texture_filter = 1
 layout_mode = 2

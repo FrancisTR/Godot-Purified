@@ -3,6 +3,7 @@ extends Control
 
 ## Called when the node enters the scene tree for the first time.
 func _ready():
+	SoundControl.stop_playing()
 	
 	#Reset global values
 		

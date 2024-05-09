@@ -1299,6 +1299,15 @@ vertical_alignment = 1
 [node name="Denial" parent="NPCs" instance=ExtResource("11_omtwb")]
 position = Vector2(2721, -234)
 
+[node name="CharacterIMG" parent="NPCs/Denial/FixedDialoguePosition" index="1"]
+offset_top = 431.0
+offset_bottom = 995.0
+
+[node name="DialogueBox" parent="NPCs/Denial/FixedDialoguePosition" index="2"]
+self_modulate = Color(1, 1, 1, 0)
+offset_top = 52.0
+offset_bottom = 278.0
+
 [node name="Sprite2D" parent="NPCs/Denial" index="1"]
 animation = &"Danny"
 autoplay = "Danny"
@@ -1340,15 +1349,13 @@ autoplay = "Derick"
 texture = ExtResource("21_lt74b")
 
 [node name="Accept" parent="NPCs" instance=ExtResource("11_omtwb")]
-position = Vector2(1861, -380)
+position = Vector2(1848, -396)
 
 [node name="CharacterIMG" parent="NPCs/Accept/FixedDialoguePosition" index="1"]
-offset_top = 349.0
-offset_bottom = 870.0
+offset_bottom = 254.0
 
 [node name="DialogueBox" parent="NPCs/Accept/FixedDialoguePosition" index="2"]
-offset_top = 31.0
-offset_bottom = 270.0
+offset_bottom = -22.9999
 
 [node name="Sprite2D" parent="NPCs/Accept" index="1"]
 animation = &"Antonio"

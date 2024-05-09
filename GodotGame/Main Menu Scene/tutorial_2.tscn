@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dqotacq0ekag6"]
+[gd_scene load_steps=31 format=3 uid="uid://dqotacq0ekag6"]
 
 [ext_resource type="Texture2D" uid="uid://cxm7wh81tjegk" path="res://Assets/Custom/Terrain/Grass.png" id="1_0jr5d"]
 [ext_resource type="Script" path="res://Main Menu Scene/Menu_Scripts/tutorial_2.gd" id="1_g11ls"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://diui2nk1yp3cq" path="res://World Scene/Items/rock.tscn" id="11_bpfea"]
 [ext_resource type="PackedScene" uid="uid://bq46ncf7jihje" path="res://Main Menu Scene/Options.tscn" id="12_hqegn"]
 [ext_resource type="Texture2D" uid="uid://wrx3ar3ec3mq" path="res://Assets/Custom/Tutorial/Keys.png" id="13_2u6ge"]
+[ext_resource type="Texture2D" uid="uid://bfeu6k4hm7b7y" path="res://Assets/Custom/map icons/talia_icon.png" id="13_a4tr5"]
 [ext_resource type="Texture2D" uid="uid://ya0djldgn61a" path="res://Assets/Custom/Tutorial/Arrow.png" id="15_3nf2i"]
 [ext_resource type="Texture2D" uid="uid://wche1hdwl8oq" path="res://Assets/Custom/Tutorial/NPC.png" id="16_c30xx"]
 [ext_resource type="Texture2D" uid="uid://smcmv0ghs5fq" path="res://Assets/Custom/Tutorial/Map.png" id="16_jl02i"]
@@ -1272,6 +1273,9 @@ offset_bottom = -26.2857
 scale = Vector2(1.1, 1.1)
 vertical_alignment = 1
 
+[node name="MapImage" parent="NPC/Talia/MapIcon" index="0"]
+texture = ExtResource("13_a4tr5")
+
 [node name="StaticBody2D" parent="NPC/Talia" index="7"]
 scale = Vector2(0.7, 0.7)
 
@@ -1293,7 +1297,10 @@ position = Vector2(142, 643)
 visible = false
 
 [node name="VoiceSlider" parent="DisplayControls/OptionsHidden" index="7"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 476.0
+offset_bottom = 16.0
 
 [node name="Movement" type="Control" parent="DisplayControls"]
 layout_mode = 3

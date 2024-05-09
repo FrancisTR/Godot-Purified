@@ -370,7 +370,10 @@ var dialogue_voices = [
 		],
 		
 		"Rano": [
-			{"Name": "Rano", "Start": "0", "End": "0", "Emotion": ""},
+			{"Name": "Rano", "Start": "2:22.1", "End": "2:27.5", "Emotion": "Sad"},
+			{"Name": "Main", "Start": "14:07.00", "End": "14:11.87", "Emotion": ""},
+			{"Name": "Rano", "Start": "2:28.4", "End": "2:36", "Emotion": "Sad"},
+			{"Name": "Rano", "Start": "2:36.8", "End": "0:164.463562011719", "Emotion": "Sad"},
 		],
 		"Leap": [
 			{"Name": "Leap", "Start": "0", "End": "0", "Emotion": ""},
@@ -917,10 +920,7 @@ var dialogue_voices = [
 		
 		
 		"Rano": [
-			{"Name": "Rano", "Start": "2:22.1", "End": "2:27.5", "Emotion": "Sad"},
-			{"Name": "Main", "Start": "14:07.00", "End": "14:11.87", "Emotion": ""},
-			{"Name": "Rano", "Start": "2:28.4", "End": "2:36", "Emotion": "Sad"},
-			{"Name": "Rano", "Start": "2:36.8", "End": "0:164.463562011719", "Emotion": "Sad"},
+			{"Name": "Rano", "Start": "0", "End": "0", "Emotion": "Sad"},
 		],
 		"Leap": [
 			{"Name": "Leap", "Start": "0", "End": "0", "Emotion": ""},
@@ -1187,8 +1187,12 @@ func go_pos(delta):
 		$"../../Other/CharacterBody2D/Sprite2D".animation = "Right"
 		
 		emit_signal("leave_village")
+		Utils.non_static_items_json.clear()
+		Utils.non_static_items_json = Utils.non_static_items_json_FINAL.duplicate(true)
+		
+		GameData.day_8_count = 0
 		GameData.QVillager = {}
-		#GameData.charLock = false
+		GameData.charLock = false
 		if GameData.inventory_amount.keys().find("Twig") != -1:
 			Utils.remove_from_inventory("Twig", int(GameData.inventory_amount["Twig"]))
 		
@@ -1213,15 +1217,17 @@ func go_pos(delta):
 			GameData.villagersTalked[i]["Talked"] = false
 
 		GameData.QMain = {}
+		GameData.QMainLocationIdx = {}
+		
 		GameData.QWild = false
 		GameData.questComplete = {"Main": false, "Wild": false}
 		GameData.NPCgiveNoMore = false
 		
-		#TODO: Add more when needed
 		GameData.itemDialogue[0]["Value"] = 0
 		GameData.itemDialogue[1]["Value"] = 0
 		GameData.itemDialogue[2]["Value"] = 0
 		GameData.itemDialogue[3]["Value"] = 0
+		GameData.itemDialogue[4]["Value"] = 0
 			
 		#Reset take items and spawn again on the next day
 		GameData.get_item_posX = null
@@ -1230,7 +1236,7 @@ func go_pos(delta):
 			GameData.itemSpawns[i]["Taken"] = false
 		
 		
-		
+		GameData.Discount = ""
 		GameData.visitedWilderness == false
 		
 		GameData.madeProfit = false
@@ -1402,12 +1408,18 @@ func _process(delta):
 			dialogue_box.start_id = "Accept4"
 		elif NPCname == "OldMan":
 			dialogue_box.start_id = "OldMan4"
+		elif NPCname == "Rano":
+			dialogue_box.start_id = "Rano10"
+		elif NPCname == "Ribbit":
+			dialogue_box.start_id = "ThyRibbit"
 		else:
 			dialogue_box.start_id = "Day4"
 	elif GameData.day == 5:
 		# Who is the player talking to?
 		if NPCname == "Denial":
 			dialogue_box.start_id = "Denial5"
+		elif NPCname == "Ribbit":
+			dialogue_box.start_id = "ThyRibbit"
 		elif NPCname == "Anger":
 			dialogue_box.start_id = "Anger5"
 		elif NPCname == "Bargin":
@@ -1431,6 +1443,8 @@ func _process(delta):
 		# Who is the player talking to?
 		if NPCname == "Denial":
 			dialogue_box.start_id = "Denial6"
+		elif NPCname == "Ribbit":
+			dialogue_box.start_id = "ThyRibbit"
 		elif NPCname == "Anger":
 			dialogue_box.start_id = "Anger6"
 		elif NPCname == "Bargin":
@@ -1445,6 +1459,8 @@ func _process(delta):
 		# Who is the player talking to?
 		if NPCname == "Denial":
 			dialogue_box.start_id = "Day7Negate"
+		elif NPCname == "Ribbit":
+			dialogue_box.start_id = "ThyRibbit"
 		elif NPCname == "Anger":
 			dialogue_box.start_id = "Day7Negate"
 		elif NPCname == "Bargin":
@@ -1462,6 +1478,8 @@ func _process(delta):
 		# Who is the player talking to?
 		if NPCname == "Denial":
 			dialogue_box.start_id = "Denial8"
+		elif NPCname == "Ribbit":
+			dialogue_box.start_id = "ThyRibbit"
 		elif NPCname == "Anger":
 			dialogue_box.start_id = "Anger8"
 		elif NPCname == "Bargin":
@@ -1476,6 +1494,8 @@ func _process(delta):
 		# Who is the player talking to?
 		if NPCname == "Denial":
 			dialogue_box.start_id = "Denial9"
+		elif NPCname == "Ribbit":
+			dialogue_box.start_id = "ThyRibbit"
 		elif NPCname == "Anger":
 			dialogue_box.start_id = "Anger9"
 		elif NPCname == "Bargin":
@@ -1490,6 +1510,8 @@ func _process(delta):
 		# Who is the player talking to?
 		if NPCname == "Denial":
 			dialogue_box.start_id = "Denial10"
+		elif NPCname == "Ribbit":
+			dialogue_box.start_id = "ThyRibbit"
 		elif NPCname == "Anger":
 			dialogue_box.start_id = "Anger10"
 		elif NPCname == "Bargin":
@@ -1500,9 +1522,6 @@ func _process(delta):
 			dialogue_box.start_id = "Accept10"
 		elif NPCname == "OldMan":
 			dialogue_box.start_id = "OldMan10"
-			
-		elif NPCname == "Rano":
-			dialogue_box.start_id = "Rano10"
 			
 			
 		
@@ -1860,10 +1879,12 @@ func _on_dialogue_box_dialogue_signal(value):
 	if value == "FinishGame":
 		TextTransition.set_to_chained_click(
 			[
-				"The.",
-				"End."
+				"You've shown Old Man Tommy all the accomplishments you have made.",
+				"You continued to help the village whenever you can.",
+				"The company, Pure-Fi, eventually went bankrupt after the major protest that Angelica participated in.",
+				"The End.",
 			],
-			"res://Main Menu Scene/intro_screen.tscn",
+			"res://Main Menu Scene/credits.tscn",
 			"Click To Continue"
 		)
 		SceneTransition.change_scene("res://Globals/text_transition.tscn")

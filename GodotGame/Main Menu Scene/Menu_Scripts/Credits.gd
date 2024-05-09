@@ -72,24 +72,92 @@ var credits = [
 	],
 	[
 		"Voice Actors",
-		"Main Character                         Mike I.",
-		"Talia                                  Michelle M.",
-		"Danny                                  Ben M.",
-		"Angelica                               Michelle M.",
-		"Derek                                  Bev A.",
-		"Antonio                                John T.",
-		"Barry                                  Mike I.",
-		"Old Man Tommy                          Mike I.",
-		"Rano                                   Mike I.",
-		"Leap                                   Mike I.",
-		"Croak                                  Michelle M.",
-		"Hop                                    Michelle M.",
-		"Ribbit                                 Michelle M.",
+		"Main Character: Mike I.",
+		"Talia: Michelle M.",
+		"Danny: Ben M.",
+		"Angelica: Michelle M.",
+		"Derek: Bev A.",
+		"Antonio: John T.",
+		"Barry: Mike I.",
+		"Old Man Tommy: Mike I.",
+		"Rano: Mike I.",
+		"Leap: Mike I.",
+		"Croak: Michelle M.",
+		"Hop: Michelle M.",
+		"Ribbit: Michelle M.",
 	],
 	
 	[
-		"Testers",
-		"TBD                                               ",
+		"Game Testers",
+		"Braden",
+		"Trinity L.",
+		"Emily T.",
+		"Maria Q.",
+		"Zin" ,
+		"Cheng",
+		"Jasper",
+		"Jake H.",
+		"Anthony" ,
+		"Julianne",
+		"Mrs. M.",
+		"Zach",
+		"Dr. Sky",
+		"John N.",
+		"Mason",
+		"Xarieh",
+		"Drew J.",
+		"Nicholas Santa Claus",
+		"GT1",
+		"Ovsloth",
+		"Hunter V.",
+		"Ophelia",
+		"Nathan",
+		"Nathan",
+		"Emily",
+		"Lily",
+		"Lucky",
+		"Carson",
+		"Landon",
+		"Jack",
+		"Carson",
+		"Carcar",
+		"Maddie",
+		"Tyler",
+		"GT2",
+		"Carson",
+		"Elijah",
+		"Lucy",
+		"Piperrr",
+		"Nadal",
+		"Narayan",
+		"Harper",
+		"Daisy",
+		"Colton",
+		"Clara",
+		"Savanna",
+		"Valentina",
+		"Issac",
+		"Cathan",
+		"Mason",
+		"Jack",
+		"TJ",
+		"Tharun",
+		"Christopher",
+		"Keagah",
+		"Evalynn",
+		"Ana",
+		"Ben B.",
+		"Monk",
+		"Leo",
+		"Kevin",
+		"Michelle",
+		"Cheeta",
+		"Andrea",
+		"Yaretzy",
+		"Zach",
+		"Ben M.",
+		"Cat",
+		"Vader The King",
 	],
 	
 	[
@@ -124,7 +192,10 @@ var credits = [
 		"Music produced using Flat.io",
 		"",
 		"Fonts from 1001 Fonts",
-		"https://www.1001fonts.com/"
+		"https://www.1001fonts.com/",
+		"",
+		"Audacity",
+		"https://www.audacityteam.org/",
 	],
 	[
 		"Asset used from itch.io",
@@ -136,6 +207,15 @@ var credits = [
 		"",
 		"World Assets by CraftPix.net (Assets modified for this game)",
 		"(https://craftpix.net/freebies/free-swamp-game-tileset-pixel-art/)",
+	],
+	
+	[
+		"Other Resources",
+		"Walking Sound by Joao Janz",
+	],
+	
+	[
+		"A game created for DIMA 346 'Game Production' at the University of St. Thomas",
 	],
 ]
 
@@ -187,6 +267,7 @@ func finish():
 		$Thankyou.visible = true
 		$AnimationPlayer.play("ThankYou")
 		await get_tree().create_timer(5).timeout
+		SoundControl.stop_playing()
 		SceneTransition.change_scene("res://Main Menu Scene/MainMenu.tscn")
 
 func add_line():
@@ -212,5 +293,6 @@ func _unhandled_input(event):
 
 
 func _on_back_main_pressed():
+	SoundControl.stop_playing()
 	SoundControl.is_playing_sound("button")
 	SceneTransition.change_scene("res://Main Menu Scene/MainMenu.tscn")
