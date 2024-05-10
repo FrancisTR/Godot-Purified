@@ -69,7 +69,6 @@ func _process(delta):
 	#Crafting table or Well Crafting
 	if GameData.day == 8 and CTtype != "Well" and GameData.day_8_count < 2:
 		craftingList = {"WaterBottle": 1, "Sand": 2, "Rock": 2, "Moss": 2}
-		craftingList = {} #delete
 		listKeys = craftingList.keys()
 		listValues = craftingList.values()
 		ItemOfTheDay = "WaterFilter"
@@ -78,7 +77,6 @@ func _process(delta):
 	if GameData.day == 8 and CTtype == "Well":
 		#Well Recipe
 		craftingList = {"Twig": 5, "Rock": 5}
-		craftingList = {} #delete
 		listKeys = craftingList.keys()
 		listValues = craftingList.values()
 		ItemOfTheDay = "Well"
@@ -126,9 +124,7 @@ func _process(delta):
 				listTextImg[i].texture = load("res://Assets/Custom/Items/Moss.png")
 	else:
 		$UI/CraftingList/CraftButton.visible = false
-		
-	#print(get_tree().current_scene.scene_file_path, " bbb ", "res://World Scene/Wilderness.tscn")
-	#print("res://World Scene/Wilderness.tscn"," ... ", str(get_tree().current_scene.scene_file_path) == "res://World Scene/Wilderness.tscn")
+	
 	if GameData.day_8_count >= 2 and str(get_tree().current_scene.scene_file_path) == "res://World Scene/Wilderness.tscn":
 		$UI/CraftingList/CraftButton.visible = false
 	else:
