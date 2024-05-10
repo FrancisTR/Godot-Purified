@@ -125,10 +125,11 @@ func _process(delta):
 	else:
 		$UI/CraftingList/CraftButton.visible = false
 	
-	if GameData.day_8_count >= 2 and str(get_tree().current_scene.scene_file_path) == "res://World Scene/Wilderness.tscn":
-		$UI/CraftingList/CraftButton.visible = false
-	else:
-		$UI/CraftingList/CraftButton.visible = true
+	if GameData.day == 8:
+		if GameData.day_8_count >= 2 and str(get_tree().current_scene.scene_file_path) == "res://World Scene/Wilderness.tscn":
+			$UI/CraftingList/CraftButton.visible = false
+		else:
+			$UI/CraftingList/CraftButton.visible = true
 		
 	if Input.is_action_just_pressed("Interaction") and enterBody == true:	
 		#if (self.name == "CraftingTablePRIME"):
