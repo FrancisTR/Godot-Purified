@@ -124,9 +124,12 @@ func _process(delta):
 				listTextImg[i].texture = load("res://Assets/Custom/Items/Moss.png")
 	else:
 		$UI/CraftingList/CraftButton.visible = false
-		
-	if GameData.day_8_count >= 2:
-		$UI/CraftingList/CraftButton.visible = false
+	
+	if GameData.day == 8:
+		if GameData.day_8_count >= 2 and CTtype != "Well":
+			$UI/CraftingList/CraftButton.visible = false
+		else:
+			$UI/CraftingList/CraftButton.visible = true
 		
 	if Input.is_action_just_pressed("Interaction") and enterBody == true:	
 		#if (self.name == "CraftingTablePRIME"):
