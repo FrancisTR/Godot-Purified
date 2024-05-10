@@ -126,7 +126,7 @@ func _process(delta):
 		$UI/CraftingList/CraftButton.visible = false
 	
 	if GameData.day == 8:
-		if GameData.day_8_count >= 2 and str(get_tree().current_scene.scene_file_path) == "res://World Scene/Wilderness.tscn":
+		if GameData.day_8_count >= 2 and CTtype != "Well":
 			$UI/CraftingList/CraftButton.visible = false
 		else:
 			$UI/CraftingList/CraftButton.visible = true
