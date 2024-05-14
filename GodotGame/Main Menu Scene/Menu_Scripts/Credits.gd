@@ -11,6 +11,7 @@ var scroll_speed = base_speed
 var speed_up = false
 
 @onready var line = $Line
+@onready var back = $BackMain
 var started = false
 var finished = false
 
@@ -222,6 +223,7 @@ var credits = [
 
 func _ready():
 	SoundControl.stop_playing()
+	back.grab_focus()
 
 
 func _process(delta):
