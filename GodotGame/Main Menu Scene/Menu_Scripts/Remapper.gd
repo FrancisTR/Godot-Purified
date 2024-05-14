@@ -91,21 +91,29 @@ func get_all_actions() -> Array[String]:
 
 
 
-func get_keymap_name(action_name: String) -> String:
-	var tmp = InputMap.action_get_events(action_name)[0].as_text().split(" ")
+func get_keymap_name(plr_input) -> String: # originally: action_name
+	var tmp
+	if plr_input is InputEventKey: # currently not being used
+		var keycode = DisplayServer.keyboard_get_keycode_from_physical(plr_input.physical_keycode)
+		tmp = OS.get_keycode_string(keycode)
 
-	if tmp.size() > 1:
-		tmp = tmp[0]
+	elif plr_input is String:
+		var keycode = DisplayServer.keyboard_get_keycode_from_physical(
+			InputMap.action_get_events(plr_input)[0].physical_keycode
+		)
+		tmp = OS.get_keycode_string(keycode)
+
 	else:
-		tmp = tmp[0] + "*"
-
+		tmp = str(plr_input)
+		print('KeymapTypeError in get_keymap_name(): ' + tmp + ' must be String or InputEventKey')
+	
 	return " " + tmp + " "
 
 
 
 func toggle_disabled_other_buttons():
-	remap_container.button_in_use = not remap_container.button_in_use
 	var is_disabled = remap_container.button_in_use
+	remap_container.button_in_use = not is_disabled
 	
 	$"../../BackButton".disabled = is_disabled
 	if GameData.visitTutorial == false:
