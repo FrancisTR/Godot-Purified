@@ -1,4 +1,5 @@
 extends Button
+# todo: ideally, key changes should only take effect after saving changes
 
 @export var action: String
 #@onready var button = $"."
@@ -90,30 +91,24 @@ func get_all_actions() -> Array[String]:
 	return arr
 
 
-
-func get_keymap_name(plr_input) -> String: # originally: action_name
-	var tmp
-	if plr_input is InputEventKey: # currently not being used
-		var keycode = DisplayServer.keyboard_get_keycode_from_physical(plr_input.physical_keycode)
-		tmp = OS.get_keycode_string(keycode)
-
-	elif plr_input is String:
-		var keycode = DisplayServer.keyboard_get_keycode_from_physical(
-			InputMap.action_get_events(plr_input)[0].physical_keycode
-		)
-		tmp = OS.get_keycode_string(keycode)
-
+func get_keymap_name(action_name: String) -> String:
+	var input_map_key = InputMap.action_get_events(action_name)[0]
+	var physical_keycode: int = input_map_key.physical_keycode
+	var display_keycode: int
+	if physical_keycode == 0:
+		display_keycode = input_map_key.keycode
 	else:
-		tmp = str(plr_input)
-		print('KeymapTypeError in get_keymap_name(): ' + tmp + ' must be String or InputEventKey')
-	
-	return " " + tmp + " "
-
+		display_keycode = DisplayServer.keyboard_get_keycode_from_physical(
+			physical_keycode
+		)
+		
+	#print('string: "%s" keycode: %s' % [OS.get_keycode_string(display_keycode), display_keycode])
+	return " " + OS.get_keycode_string(display_keycode) + " "
 
 
 func toggle_disabled_other_buttons():
-	var is_disabled = remap_container.button_in_use
-	remap_container.button_in_use = not is_disabled
+	var is_disabled = not remap_container.button_in_use
+	remap_container.button_in_use = is_disabled
 	
 	$"../../BackButton".disabled = is_disabled
 	if GameData.visitTutorial == false:
