@@ -1,4 +1,5 @@
 extends Button
+# todo: ideally, key changes should only take effect after saving changes
 
 @export var action: String
 #@onready var button = $"."
@@ -64,10 +65,8 @@ func _unhandled_input(e):
 
 
 func update_text():
-	text = get_keymap_name(action)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-	#pass
+	text = RemapperData.get_keymap_name(action)
+
 
 func get_all_keymaps() -> Array[InputEventKey]:
 	var arr: Array[InputEventKey]
@@ -90,22 +89,9 @@ func get_all_actions() -> Array[String]:
 	return arr
 
 
-
-func get_keymap_name(action_name: String) -> String:
-	var tmp = InputMap.action_get_events(action_name)[0].as_text().split(" ")
-
-	if tmp.size() > 1:
-		tmp = tmp[0]
-	else:
-		tmp = tmp[0] + "*"
-
-	return " " + tmp + " "
-
-
-
 func toggle_disabled_other_buttons():
-	remap_container.button_in_use = not remap_container.button_in_use
-	var is_disabled = remap_container.button_in_use
+	var is_disabled = not remap_container.button_in_use
+	remap_container.button_in_use = is_disabled
 	
 	$"../../BackButton".disabled = is_disabled
 	if GameData.visitTutorial == false:

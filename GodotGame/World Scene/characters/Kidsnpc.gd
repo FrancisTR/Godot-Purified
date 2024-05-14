@@ -13,7 +13,7 @@ var PressForDialogue_was_opened = false
 func _ready():
 	NPCname = null
 	set_process_input(true)
-	$PressForDialogue.text = InputMap.action_get_events("Interaction")[0].as_text()
+	$PressForDialogue.text = RemapperData.get_keymap_name("Interaction")
 	if (GameData.day == 3):
 		$Sprite2D.animation = "Day3Sad"
 

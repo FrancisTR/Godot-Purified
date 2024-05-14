@@ -29,7 +29,7 @@ var listValues
 
 
 func _ready():
-	$PressInteraction.text = InputMap.action_get_events("Interaction")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
+	$PressInteraction.text = RemapperData.get_keymap_name("Interaction")
 	$UI/CraftingList.visible = false
 	
 	#Well is fixed after day 8

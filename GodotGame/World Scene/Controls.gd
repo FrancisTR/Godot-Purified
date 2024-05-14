@@ -3,14 +3,14 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Top/Label.text = InputMap.action_get_events("Up")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
-	$Left/Label.text = InputMap.action_get_events("Left")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
-	$Mid/Label.text = InputMap.action_get_events("Down")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
-	$Right/Label.text = InputMap.action_get_events("Right")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
-	$Sprint/Label.text = InputMap.action_get_events("Sprint")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
+	$Top/Label.text = RemapperData.get_keymap_name("Up")
+	$Left/Label.text = RemapperData.get_keymap_name("Left")
+	$Mid/Label.text = RemapperData.get_keymap_name("Down")
+	$Right/Label.text = RemapperData.get_keymap_name("Right")
+	$Sprint/Label.text = RemapperData.get_keymap_name("Sprint")
 	
-	$Map/Label.text = InputMap.action_get_events("Map")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
-	$Inventory/Label.text = InputMap.action_get_events("Inventory")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
+	$Map/Label.text = RemapperData.get_keymap_name("Map")
+	$Inventory/Label.text = RemapperData.get_keymap_name("Inventory")
 
 
 func _process(delta):
