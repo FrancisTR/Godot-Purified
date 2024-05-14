@@ -23,6 +23,7 @@ TextTransition="*res://Globals/Global_Scripts/text_transition.gd"
 TextTransitionData="*res://Globals/Global_Scripts/TextTransitionData.gd"
 Utils="*res://Globals/Global_Scripts/Util/Utils.gd"
 SoundControl="*res://Globals/sound_control.tscn"
+RemapperData="*res://Globals/Global_Scripts/RemapperData.gd"
 
 [display]
 

@@ -1140,7 +1140,7 @@ var audioCount = -1
 func _ready():
 	NPCname = null
 	set_process_input(true)
-	$PressForDialogue.text = InputMap.action_get_events("Interaction")[0].as_text().replace("(Physical)", "").strip_edges(true, true)
+	$PressForDialogue.text = RemapperData.get_keymap_name("Interaction")
 	if GameData.day == 3:
 		if $"../Bargin/Sprite2D" != null:
 			$"../Bargin/Sprite2D".animation = "Barry_Sad"

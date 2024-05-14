@@ -65,10 +65,8 @@ func _unhandled_input(e):
 
 
 func update_text():
-	text = get_keymap_name(action)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-	#pass
+	text = RemapperData.get_keymap_name(action)
+
 
 func get_all_keymaps() -> Array[InputEventKey]:
 	var arr: Array[InputEventKey]
@@ -89,21 +87,6 @@ func get_all_actions() -> Array[String]:
 		arr.append(child.action)
 
 	return arr
-
-
-func get_keymap_name(action_name: String) -> String:
-	var input_map_key = InputMap.action_get_events(action_name)[0]
-	var physical_keycode: int = input_map_key.physical_keycode
-	var display_keycode: int
-	if physical_keycode == 0:
-		display_keycode = input_map_key.keycode
-	else:
-		display_keycode = DisplayServer.keyboard_get_keycode_from_physical(
-			physical_keycode
-		)
-		
-	#print('string: "%s" keycode: %s' % [OS.get_keycode_string(display_keycode), display_keycode])
-	return " " + OS.get_keycode_string(display_keycode) + " "
 
 
 func toggle_disabled_other_buttons():
