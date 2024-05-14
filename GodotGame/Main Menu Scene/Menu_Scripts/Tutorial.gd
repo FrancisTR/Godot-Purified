@@ -131,7 +131,6 @@ func _process(delta):
 	dialogue_box.variables["Interaction"] = $Controls/RemapContainer/InteractionButton.text.replace("*", "")
 	dialogue_box.variables["Inventory"] = $Controls/RemapContainer/InventoryButton.text.replace("*", "")
 	dialogue_box.variables["Options"] = $Controls/RemapContainer/BackButton.text.replace("*", "")
-	pass
 
 
 
@@ -231,7 +230,6 @@ func _on_voice_pressed():
 	##TODO: PLay audio
 	SoundControl.play_audio(CharacterVoice, dialogue_voiceSpecific["Start"], dialogue_voiceSpecific["End"]) # Node, string, int, int
 	dialogue_box.show_options()
-	pass # Replace with function body.
 
 
 func _on_dialogue_box_dialogue_ended():
@@ -246,4 +244,3 @@ func _on_dialogue_box_dialogue_ended():
 			"Click To Continue"
 		)
 		SceneTransition.change_scene("res://Globals/text_transition.tscn")
-	pass # Replace with function body.
