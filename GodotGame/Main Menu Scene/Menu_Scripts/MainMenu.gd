@@ -1,10 +1,10 @@
 extends Control
+@onready var start_button = $StartButton
 
 
 ## Called when the node enters the scene tree for the first time.
 func _ready():
 	SoundControl.stop_playing()
-	
 	#Reset global values
 		
 	GameData.day = 1
@@ -127,6 +127,8 @@ func _ready():
 	
 	GameData.get_item_posX = null
 	GameData.get_item_posY = null
+	
+	start_button.grab_focus()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
